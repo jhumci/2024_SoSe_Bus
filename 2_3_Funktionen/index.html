@@ -58,10 +58,6 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Funktionen</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#steuerfunktion">Steuerfunktion</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#messfunktion">Messfunktion</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
@@ -125,9 +121,110 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="funktionen">Funktionen</h1>
+                <!-- paginate: true -->
+
+<h1 id="bussysteme">Bussysteme</h1>
+<p><strong>SoSe 2023</strong>
+Dr. Julian Huber</p>
+<hr />
+<h1 id="funktionen">Funktionen</h1>
+<h2 id="funktionale-programmierung">Funktionale Programmierung</h2>
+<ul>
+<li>Berechnung von Output aus Input wird in wieder aufrufbaren Funktionen gekapselt</li>
+<li>Funktion hat nur Input und Output aber keinen Speicher / Zustand </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 3</span>
+<span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># 7</span>
+</code></pre></div>
+<hr />
 <h2 id="steuerfunktion">Steuerfunktion</h2>
-<h2 id="messfunktion">Messfunktion</h2>
+<div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">)</span> <span class="ow">or</span> <span class="n">l_man</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tageslichtschaltung</span> <span class="kn">import</span> <span class="n">l_set</span>
+<span class="kn">from</span> <span class="nn">mapping</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">l_set_value</span> <span class="o">=</span> <span class="n">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="writing_hand-aufgabe-2_3_1-implementierung-einer-tageslichtschaltung">:writing_hand: Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung</h3>
+<ul>
+<li>Implementieren Sie die Tageslichtschaltung in Python</li>
+<li>Stellen Sie zunächst sicher, dass LED, Button und Analog-Digital-Wandler korrekt angeschlossen sind</li>
+<li>Setzen Sie die manuelle Einstellung <code>l_man</code> dauerhaft auf <code>False</code> </li>
+<li>Setzen Sie den Sollwert <code>PAR_SETPT</code> auf einen geigneten Wert</li>
+<li>Legen Sie die beiden Module <code>tageslichtschaltung.py</code> und <code>mappings.py</code> in den gleichen Ordner wie Ihre Hauptdatei</li>
+<li>:nerd_face: Recherchieren Sie einen geeigneten Sensor, den Sie für die Anwesenheitserkennung verwenden können</li>
+</ul>
+<hr />
+<h4 id="moglicher-startpunkt">Möglicher Startpunkt</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+<span class="kn">from</span> <span class="nn">tageslichtschaltung</span> <span class="kn">import</span> <span class="n">l_set</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Initialisierung der LED</span>
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="c1"># Initialisierung Button</span>
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+
+<span class="c1"># Parameter setzen</span>
+<span class="n">PAR_SETPT</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l_man</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+</code></pre></div>
+<hr />
+<h4 id="tageslichtschaltungpy"><code>tageslichtschaltung.py</code></h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">)</span> <span class="ow">or</span> <span class="n">l_man</span>
+</code></pre></div>
+<hr />
+<h4 id="mappingspy"><code>mappings.py</code></h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+<hr />
+<h3 id="writing_hand-aufgabe-2_3_2">:writing_hand: Aufgabe 2_3_2:</h3>
+<ul>
+<li>Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?</li>
+<li>Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?</li>
+</ul>
               
             </div>
           </div><footer>

@@ -56,28 +56,6 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Steuerung</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#ablaufsteuerung">Ablaufsteuerung</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#finite-state-machine">Finite State Machine</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#writing_hand-aufgabe-implementierung-eines-treppenhauslichts">:writing_hand: Aufgabe: Implementierung eines Treppenhauslichts</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#writing_hand-aufgabe-implementierung-von-drei-helligkeitsstufen-mit-einem-taster">:writing_hand: Aufgabe: Implementierung von drei Helligkeitsstufen mit einem Taster</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#zustandssteuerung">Zustandssteuerung</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#writing_hand-aufgabe-bedarfsgerechte-beleuchtungssteuerung">:writing_hand: Aufgabe: Bedarfsgerechte Beleuchtungssteuerung</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#funktionen">Funktionen</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#messfunktion">Messfunktion</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#steuerfunktion">Steuerfunktion</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
@@ -143,16 +121,386 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="steuerung">Steuerung</h1>
+                <!-- paginate: true -->
+
+<h1 id="bussysteme">Bussysteme</h1>
+<p><strong>SoSe 2023</strong>
+Dr. Julian Huber</p>
+<hr />
+<h1 id="steuerung">Steuerung</h1>
+<hr />
+<h2 id="ursprunge-der-steuerungstechnik-und-automatisierung">Ursprünge der Steuerungstechnik und Automatisierung</h2>
+<ul>
+<li><strong>20–62</strong> - Heron von Alexandria Automaten einer Wein und Milch spendenden Bacchus-Figur</li>
+<li><strong>1784</strong> Webmaschinen von hölzernen Lochkarten </li>
+<li><strong>1835</strong> erfindet Joseph Henry das elektromechanische Relais</li>
+<li><strong>1969</strong>  Odo J. Struger beim US-Unternehmen Allen-Bradley eine SPS (zeitgleich mit  Richard E. Morley)</li>
+</ul>
+<p><img alt="bg right:33%" src="images/Hero_of_Alexandria,_Automata,_Venice,_Gr._516.jpg" /></p>
+<hr />
+<h3 id="evolution-zu-industrie-40">🧠 Evolution zu Industrie 4.0</h3>
+<ul>
+<li>
+<p><strong>Industrie 1.0</strong> (1784): Einsatz von mechanischen Webstühlen, die insbesondere durch <strong>Lochkarten-Steuerungen</strong> und später durch umlaufenden Bänder zu Webmaschinen weiterentwickelt wurden.</p>
+</li>
+<li>
+<p><strong>Industrie 2.0</strong> (1870): erster Einsatz von Fließbändern in den USA (Schlachthöfe) unter Nutzung elektrischer Antriebe, die durch entsprechende <strong>Schütz- und Relais-Steuerungen</strong> geschaltet wurden.</p>
+</li>
+<li>
+<p><strong>Industrie 3.0</strong> (1969) <strong>Speicherprogrammierbaren Steuerungen</strong>, Durchbruch bei der Industrieelektronik und Informationstechnik zur massenweisen Steuerung und Automatisierung der Produktion</p>
+</li>
+<li>
+<p><strong>Industrie 4.0</strong> (2012) Cyber-Physikalischer Systeme mit globaler Vernetzung zur global optimierten Steuerung der international organisierten Produktion (<strong>Internet der Dinge</strong>). </p>
+</li>
+</ul>
+<hr />
 <h2 id="ablaufsteuerung">Ablaufsteuerung</h2>
-<h3 id="finite-state-machine">Finite State Machine</h3>
-<h2 id="writing_hand-aufgabe-implementierung-eines-treppenhauslichts">:writing_hand: Aufgabe: Implementierung eines Treppenhauslichts</h2>
-<h2 id="writing_hand-aufgabe-implementierung-von-drei-helligkeitsstufen-mit-einem-taster">:writing_hand: Aufgabe: Implementierung von drei Helligkeitsstufen mit einem Taster</h2>
-<h2 id="zustandssteuerung">Zustandssteuerung</h2>
-<h2 id="writing_hand-aufgabe-bedarfsgerechte-beleuchtungssteuerung">:writing_hand: Aufgabe: Bedarfsgerechte Beleuchtungssteuerung</h2>
-<h2 id="funktionen">Funktionen</h2>
-<h3 id="messfunktion">Messfunktion</h3>
-<h3 id="steuerfunktion">Steuerfunktion</h3>
+<ul>
+<li>steuert den Ablauf <em>ereignisdiskreter Prozesse</em> (Schrittkette). Beim Erreichen eines Schwellwertes einer Steuergröße (Ereignis) wir ein weiterer Prozess angestoßen.<ul>
+<li>z.B. Ablauf in einer Waschmaschine</li>
+<li>z.B. Human Centric Lighting</li>
+<li>z.B. Treppenhauslicht</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="beispiel-treppenlichtschaltung">Beispiel Treppenlichtschaltung</h3>
+<blockquote>
+<p>Über die Funktion Treppenlichtschaltung können Beleuchtungseinrichtungen temporär eingeschaltet werden. Nach Ablauf der Treppenlichthaltezeit kann eine Abschaltvorwarnzeit aktiv werden, die den Nutzer z. B. durch kurzzeitige Unterbrechung(„Flackern“) über die bevorstehende Abschaltung informiert. Ein erneuter Empfang einer Eingabeinformation zum Einschalten startet die Verzögerungszeit neu. Die Funktion benötigt als Eingabeinformation das Ergebnis der Bedienfunktion Licht stellen und liefert ihrerseits die Ausgabeinformation für eine oder mehrere Aktorfunktionen Lichtaktor.</p>
+</blockquote>
+<p><img alt="bg right:45% h:720" src="../images/Treppenlichtschaltung.pdf.png" /></p>
+<hr />
+<h4 id="naive-losung">Naive Lösung</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">PAR_HOLD</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">PAR_WARN</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>  
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_HOLD</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_WARN</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<hr />
+<h4 id="probleme-mit-der-naiven-losung">Probleme mit der naiven Lösung</h4>
+<p><img alt="bg right h:420" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<ul>
+<li>Erneutes betätigen des Taster setzt die Wartezeit nicht zurück</li>
+<li>Unser System hat kein Gedächtnis (Zustands)</li>
+<li>Der Ablauf sollte besser nicht nur durch einen Zeitlichen Rahmen, sondern auch durch Zustände gesteuert werden</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : LED ein
+    B : LED flackert
+    E : LED aus
+    [*] --&gt; E : Systemstart
+    E --&gt; A : L_MAN
+    B --&gt; A : L_MAN
+    A --&gt; B : PAR_HOLD
+    B --&gt; E : PAR_WARN
+</code></pre></div>
+<hr />
+<h3 id="finite-state-machine-endlicher-automat">Finite State Machine (Endlicher Automat)</h3>
+<ul>
+<li>In Abhängigkeit vom Systemzustand erwarten wir unterschiedliches Verhalten z.B.<ul>
+<li>Nach Tastendruck soll die Lampe angeschaltet werden</li>
+<li>Nach Ablauf einer Wartezeit soll die Lampe ausgeschaltet werden</li>
+<li>Davor gibt es ein Flackern als Warnung</li>
+<li>Nach einem weiteren Tastendruck wird die Wartezeit zurückgesetzt</li>
+</ul>
+</li>
+<li>Einfache Systeme lassen sich meist durch Ihre Zustände und deren Übergänge beschreiben</li>
+<li>Durch die Beschreibung als State-Machine können wir das Verhalten des Systems sauber trennen und die Implementierung vereinfachen</li>
+</ul>
+<hr />
+<h4 id="implementierung-eines-cola-automaten">Implementierung eines Cola-Automaten</h4>
+<ul>
+<li>Der Automat startet im Zustand <code>Auswahl anfordern</code></li>
+<li>Der Automat kann in den Zustand <code>Bezahlung anfordern</code> wechseln</li>
+<li>Wird die geforderte Summe erreicht, wechselt der Automat in den Zustand <code>Ware ausgeben</code></li>
+<li>Ist die Ausgabe abgeschlossen, wechselt der Automat wieder in den Zustand <code>Auswahl anfordern</code></li>
+<li>Wird die Bezahlung abgebrochen, wechselt der Automat in den Zustand <code>Rückgeld herausgeben</code> und dann wieder in den Zustand <code>Auswahl anfordern</code></li>
+</ul>
+<p><img alt="bg right:35% w:450" src="images/state_machice_cola.svg" /></p>
+<hr />
+<h4 id="deterministic-finite-state-machine-endlicher-automat">(Deterministic) Finite State Machine (Endlicher Automat)</h4>
+<ul>
+<li>Dieser Ansatz basiert auf der Theorie der formalen Sprachen</li>
+<li>Eine DFSM beschreibt ein System mit endlich vielen Zuständen beschreibt</li>
+<li>Eine DFSM ist ein 5-Tupel <span class="arithmatex">\(M = (Q, \Sigma, q_0, F, \delta)\)</span> mit<ul>
+<li>Endlicher Zustandsmenge <span class="arithmatex">\(Q\)</span></li>
+<li>Endliche Eingabealphabet <span class="arithmatex">\(\Sigma\)</span></li>
+<li>Endlicher Startzustand <span class="arithmatex">\(q_0 \in Q\)</span></li>
+<li>Endlicher Endzustandsmenge <span class="arithmatex">\(F \subseteq Q\)</span></li>
+<li>Übergangsfunktion <span class="arithmatex">\(\delta: Q \times \Sigma \rightarrow Q\)</span></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="in-der-theorie-der-formalen-sprachen-nerd_face">In der Theorie der formalen Sprachen :nerd_face:</h4>
+<p><img alt="bg right:33% h:250" src="images/1920px-DFAexample.svg.png" />
+* <span class="arithmatex">\(Q = \{S_1, S_2\}\)</span>
+* <span class="arithmatex">\(\Sigma = \{0,1\}\)</span>
+* <span class="arithmatex">\(q_0 = S_1\)</span>
+* <span class="arithmatex">\(F = \{S_1\}\)</span>
+* <span class="arithmatex">\(\delta(S_1, 0) = S_2\)</span>,  <span class="arithmatex">\(\delta(S_1, 1) = S_1\)</span>
+* <span class="arithmatex">\(\delta(S_2, 0) = S_1\)</span>,  <span class="arithmatex">\(\delta(S_2, 1) = S_2\)</span>
+* Akzeptiert (endet in <span class="arithmatex">\(F\)</span>)
+    * <code>1</code>, <code>11</code>, <code>01101</code>, <code>11001</code> 
+* Akzeptiert nicht (endet nicht in <span class="arithmatex">\(F\)</span>)
+    * <code>0</code>, <code>10</code>, <code>10100</code>, <code>01001</code>
+* Anwendung
+    * Parser
+    * <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a></p>
+<hr />
+<h4 id="in-der-programmierpraxis">In der Programmierpraxis</h4>
+<p><img alt="bg right:35% w:450" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<ul>
+<li>Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. Zeit muss z.B. mitgezählt werden)</li>
+<li>Die gerichteten Kanten stellen Übergänge zwischen den Zuständen dar, die durch Events und Bedingungen ausgelöst werden</li>
+<li>Die Systemzustände können nur in festgelegten Reihenfolgen durchlaufen werden</li>
+<li>Ein Endzustand ist optional</li>
+</ul>
+<hr />
+<h3 id="writing_hand-aufgabe-2_2_2-implementierung-eines-treppenhauslichts">:writing_hand: Aufgabe 2_2_2: Implementierung eines Treppenhauslichts</h3>
+<ul>
+<li>In <a href="Aufgaben\2_2_2\code_state_machine.py">Aufgaben\2_2_2\code_state_machine.py</a> ist das auf der rechten Seite dargestellte Programm implementiert</li>
+<li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
+<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zusammengefasst wurden</li>
+</ul>
+<p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : Start
+    C:  LED an
+    D:  LED leuchtet
+    E:  LED leuchtet2
+    F:  LED flackert
+    G : LED aus
+    [*] --&gt; A : Systemstart
+    A --&gt; C : Taster wird gedrückt
+    C --&gt; D : 
+    D --&gt; F : PAR_HOLD vergeht
+    E --&gt; G : PAR_WARN vergeht
+    F --&gt; E: 
+    D --&gt; C: Taster wird gedrückt
+    E --&gt; C: Taster wird gedrückt   
+    G --&gt; C: Taster wird gedrückt   
+</code></pre></div>
+<hr />
+<h3 id="writing_hand-aufgabe-3_1_2-state-machine-fur-einen-dimmschalter">:writing_hand: Aufgabe 3_1_2: State Machine für einen Dimmschalter</h3>
+<ul>
+<li>Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
+<li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
+<li>Durch Loslassen wir die Richung umgekehrt</li>
+<li>Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
+<li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
+</ul>
+<hr />
+<p><img alt="bg h:720" src="../images/mermaid-diagram-2024-01-25-115643.svg" /></p>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : 100%
+    B : 0%
+    C : aufwärts
+    D : abwärts
+    A --&gt; B: kurzer Druck
+    B --&gt; A: kurzer Druck
+    A --&gt; D: langer Druck
+    B --&gt; C: langer Druck
+    C --&gt; D: loslassen
+    D --&gt; C: loslassen
+</code></pre></div>
+<hr />
+<h3 id="nerd_face-writing_hand-aufgabe-3_3_3-implementierung-eines-dimmschalter">:nerd_face: :writing_hand: Aufgabe 3_3_3: Implementierung eines Dimmschalter</h3>
+<ul>
+<li>Implementieren Sie einen Dimmer</li>
+</ul>
+<hr />
+<h2 id="verknupfungssteuerungen">Verknüpfungssteuerungen</h2>
+<ul>
+<li>Während Ablaufsteuerungen den Ablauf eines Prozesses steuern, verknüpfen Verknüpfungssteuerungen die Eingangssignale mit den Ausgangssignalen</li>
+<li>Diese Trennung ist jedoch eher akademisch, da die meisten Systeme sowohl Ablauf- als auch Verknüpfungssteuerungen enthalten</li>
+</ul>
+<hr />
+<h3 id="beispiel-wechselschalter">Beispiel: Wechselschalter</h3>
+<ul>
+<li>Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden</li>
+<li>Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)</li>
+</ul>
+<p><strong>Wahrheitstabelle</strong></p>
+<table>
+<thead>
+<tr>
+<th>Schalter 1</th>
+<th>Schalter 2</th>
+<th>Lampe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Boolsche Funktion</strong>
+<span class="arithmatex">\(L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)\)</span></p>
+<hr />
+<h2 id="writing_hand-aufgabe-3_1_2-implementierung-einer-vereinfachten-tageslichtschaltung">:writing_hand: Aufgabe 3_1_2: Implementierung einer vereinfachten Tageslichtschaltung</h2>
+<p><img alt="bg right:33% h:720" src="../images/Tageslichtschaltung.png" /></p>
+<ul>
+<li>Wir vereinfachen die Tagelichtschaltung, indem wir die Zeitparameter weglassen</li>
+<li>Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th><code>P_ACT</code></th>
+<th><code>H_ROOM</code> <code>&lt;</code> <code>PAR_SETPT</code></th>
+<th><code>L_MAN</code></th>
+<th><code>L_SET</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
               
             </div>
           </div><footer>
