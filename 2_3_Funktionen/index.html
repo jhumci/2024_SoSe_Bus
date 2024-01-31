@@ -225,6 +225,44 @@ Dr. Julian Huber</p>
 <li>Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?</li>
 <li>Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?</li>
 </ul>
+<hr />
+<h2 id="sichtbarkeit-von-variablen">Sichtbarkeit von Variablen</h2>
+<hr />
+<h3 id="lokale-variablen">Lokale Variablen</h3>
+<ul>
+<li>Variablen, die innerhalb einer Funktion definiert werden (z.B. <code>s</code>) sind außerhalb der Funktion nicht sichtbar (<em>Kapselung</em>)</li>
+<li>Dies gilt für die meisten Programmiersprachen und z.B. auch für Schleifen</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="c1"># NameError Traceback (most recent call last)</span>
+<span class="c1"># &lt;ipython-input-11-76c4dd40fb41&gt; in &lt;module&gt;</span>
+<span class="c1"># ----&gt; 1 print(s)</span>
+
+<span class="c1"># NameError: name &#39;s&#39; is not defined</span>
+</code></pre></div>
+<hr />
+<h3 id="globale-variablen">Globale Variablen</h3>
+<ul>
+<li>Variablen, die (bewusst) überall im Programmcode aufrufbar sind (z.B. <code>PAR_SETPT</code>) sind <strong>globale Variablen</strong></li>
+<li>in Python werden globale Variablen in Großbuchstaben geschrieben</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">A_GLOBAL_VAR</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+  <span class="n">a_local_variable</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="k">return</span> <span class="n">a_local_variable</span>
+
+<span class="n">another_variable</span> <span class="o">=</span> <span class="n">my_function</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A_GLOBAL_VAR</span><span class="p">)</span> <span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a_local_variable</span><span class="p">)</span> <span class="c1"># Error</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">another_variable</span><span class="p">)</span> <span class="c1"># 2</span>
+</code></pre></div>
               
             </div>
           </div><footer>

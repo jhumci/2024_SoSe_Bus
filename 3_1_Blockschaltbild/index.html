@@ -128,7 +128,275 @@
 Dr. Julian Huber</p>
 <hr />
 <h1 id="blockschaltbild">Blockschaltbild</h1>
-<p><img alt="" src="../images/Tageslichtschaltung.png" /></p>
+<hr />
+<h2 id="blockschaltbild_1">Blockschaltbild</h2>
+<p><img alt="" src="../images/Blockschaltbild1.png" /></p>
+<ul>
+<li>Grafische Beschreibung von Systemen in der Regelungs- und Steuerungstechnik</li>
+<li>Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind</li>
+<li>z.B. Steuerungsfunktion (z.B. in Python)</li>
+<li>z.B. thermodynamisches Modell eines Raums</li>
+<li>I.d.R. beschäftigen wir uns mit <strong>dynamischen Systemen</strong><ul>
+<li>Die Ausgangsgröße hängt nicht nur  von den Eingangsgrößen ab (vgl. Funktion) </li>
+<li>sondern auch vom Systemzustand und damit inneren Zustandsgrößen (vgl. Objekt)</li>
+</ul>
+</li>
+</ul>
+<h6 id="lunze">Lunze</h6>
+<hr />
+<h3 id="dynamische-systeme">Dynamische Systeme</h3>
+<ul>
+<li>lineare Systeme: Systemfunktion ist eine lineare Funktion</li>
+<li>nichtlineare Systeme: Systemfunktion ist eine nichtlineare Funktion</li>
+<li>zeitinvariante Systeme: Systemfunktion ist unabhängig von der Zeit</li>
+<li>zeitvariante Systeme: Systemfunktion ist abhängig von der Zeit</li>
+<li>Totzeit: Systemfunktion ist eine Funktion der Zeit, die für <span class="arithmatex">\(t&lt;0\)</span> verschwindet</li>
+</ul>
+<hr />
+<h2 id="elemente-eines-blockschaltbildes">Elemente eines Blockschaltbildes</h2>
+<p><img alt="bg left w:600" src="../images/Blockschaltbild2.png" /></p>
+<ul>
+<li>Übertragungsglieder beschreiben Systeme mit deren Eigenschaften / Funktionen</li>
+<li>Pfeile die Ein- und Ausgangsgrößen</li>
+<li>Komplexe Systeme können durch mehrere Systeme zusammengesetzt werden</li>
+<li>Systeme werden im Zeitbereich durch ihre Funktionsbeziehung zwischen Ausgang <span class="arithmatex">\(y\)</span> und Eingang <span class="arithmatex">\(u\)</span> unterschieden <span class="arithmatex">\(f(u)=y\)</span></li>
+</ul>
+<hr />
+<h3 id="proportionalglied-p-glied">Proportionalglied (P-Glied)</h3>
+<ul>
+<li>Linear und zeitinvariant</li>
+<li>Beschreibt Systeme mit direktem proportionaler Systemfunktion <span class="arithmatex">\(f\)</span> für den Zusammenhang zwischen Eingang (<span class="arithmatex">\(u\)</span>) und Ausgang (<span class="arithmatex">\(y\)</span>)</li>
+<li><span class="arithmatex">\(y = f(u)=K_p \cdot u\)</span></li>
+<li><span class="arithmatex">\(K_p\)</span> ... Proportionalitätsfaktor</li>
+</ul>
+<p><img alt="bg right:33% w:400" src="../images/P-controller-symbol-1.svg" /></p>
+<hr />
+<h4 id="wirkweise-eines-p-glieds">Wirkweise eines P-Glieds</h4>
+<ul>
+<li><span class="arithmatex">\(y = f(u)=K_p \cdot u\)</span></li>
+<li>Beispiel: </li>
+<li>je höher die <span class="arithmatex">\(\text{CO}_2\)</span> Konzentration in einem Raum, desto schneller dreht sich ein Ventilator in einer Lüftungsanlage</li>
+<li><span class="arithmatex">\(y\)</span> ... Drehfrequenz der Ventilators in <span class="arithmatex">\(Hz\)</span></li>
+<li><span class="arithmatex">\(u\)</span> ... <span class="arithmatex">\(\text{CO}_2\)</span> Konzentration in <span class="arithmatex">\(ppm\)</span></li>
+<li><span class="arithmatex">\(K_p\)</span> ... Proportionalitätsfaktor in <span class="arithmatex">\(\frac{Hz}{ppm}\)</span></li>
+</ul>
+<p><img alt="bg right:37% h:400" src="../images/p-glied-verhalten.svg" /></p>
+<hr />
+<p><img alt="bg left h:500" src="../images/p-zusammenhang.svg" /></p>
+<ul>
+<li>Unabhängig vom Verlauf der Eingangsgröße <span class="arithmatex">\(u(t)\)</span> ist der Wert der Ausgangsgröße <span class="arithmatex">\(y(t)\)</span> immer proportional</li>
+</ul>
+<hr />
+<h4 id="einheits-sprungfunktion">🧠 Einheits-Sprungfunktion</h4>
+<ul>
+<li>Eine Funktion, die am Zeitpunkt <span class="arithmatex">\(t=0\)</span> von <span class="arithmatex">\(u=0\)</span> auf <span class="arithmatex">\(u=1\)</span> springt und sonst konstant bleibt</li>
+<li>beliebtes Werkzeug in die Regelungstechnik: Wie reagiert ein System, wenn wir eine Sprungfunktion an den Eingang legen (auch in der E-Technik!)</li>
+</ul>
+<p><img alt="bg right h:300" src="../images/Sprungfunktion.svg" /></p>
+<hr />
+<h4 id="sprungantwort-reaktion-eines-p-glieds-auf-eine-sprungfunktion">🧠 Sprungantwort (Reaktion) eines P-Glieds auf eine Sprungfunktion</h4>
+<p><img alt="h:500" src="../images/P-Glied-Reaktion_Sprungfunktion.svg" /></p>
+<hr />
+<p><img alt="" src="../images/P-controller-symbol-1.svg" /></p>
+<ul>
+<li>Das Symbol repräsentiert die Sprungantwort</li>
+<li>weitere Beispiele:</li>
+<li>Entwicklung Spannungsabfall am Ohmschen Widerstand 
+  beim Anlegen einer Quellenspannung</li>
+<li>Antwort eines Helligkeitssensors auf Lichteinfall</li>
+</ul>
+<h6 id="lunze_1">Lunze</h6>
+<hr />
+<h3 id="totzeitglied-t-glied">Totzeitglied (T-Glied)</h3>
+<ul>
+<li>beschreibt die zeitliche Verzögerung, bis ein System auf das Eingangssignal (z.B. der Sprungfunktion) reagiert. </li>
+<li>Nicht die Trägheit des Systems sondern eine Leerlaufzeit <span class="arithmatex">\(T_t\)</span>. </li>
+</ul>
+<p><img alt="bg right w:400" src="../images/Totzeit-controller-symbol-1.svg.png" /></p>
+<hr />
+<p><img alt="" src="../images/VerzoegerterSprung.svg" /></p>
+<hr />
+<h4 id="sprungantwort-eines-t-glieds-auf-eine-sprungfunktion">🧠 Sprungantwort eines T-Glieds auf eine Sprungfunktion</h4>
+<p><img alt="h:500" src="../images/totzeitglied.svg" /></p>
+<hr />
+<h2 id="writing_hand-aufgabe-3_1_0-proportional-mit-totzeitglied">:writing_hand: Aufgabe 3_1_0: Proportional mit Totzeitglied</h2>
+<ul>
+<li>Öffnen Sie <a href="Aufgaben\3_1_0">Aufgaben\3_1_0</a> in <a href="https://www.scilab.org/download/scilab-2024.0.0">scilab xcos</a></li>
+<li>Testen Sie verschiedene Werte für den P-Wert beim <code>PID</code>-Block und die Totzeit beim <code>Continuous fix delay</code>-Block</li>
+</ul>
+<hr />
+<h3 id="proportionalglied-mit-verzogerung-1-ordnung-pt1-glied">Proportionalglied mit Verzögerung 1. Ordnung (PT1-Glied)</h3>
+<ul>
+<li>beschreibt Trägheit im System oder eine Dämpfung </li>
+<li>nähert sich über die Zeit einer waagrechten Linie an</li>
+<li>z.B. Spannung am Kondensator</li>
+<li>z.B. Temperatur im Raum nach dem Einschalten einer Fußbodenheizung</li>
+<li>Beschränktes Wachstum</li>
+</ul>
+<p><img alt="bg right:40% w:400" src="../images/Pt1-controller-symbol-1.svg.png" /></p>
+<hr />
+<ul>
+<li>Es gibt noch viele weitere typische Glieder </li>
+<li>Mehr dazu beim Thema stetige Regler</li>
+<li>aus diesen lassen sich komplexe Modelle zusammenstellen lassen 
+(z.B. als Blockschaltbild)</li>
+</ul>
+<hr />
+<h2 id="blockschaltbild-einer-steuerung">Blockschaltbild einer Steuerung</h2>
+<p><img alt="" src="../images/SteuerungBlock.png" /></p>
+<ul>
+<li>Die <strong>Führungsgröße</strong> ist die Größe, welche das Verhalten der Stellglieds bestimmt (<span class="arithmatex">\(\rightarrow\)</span> z.B. die aktuelle Beleuchtungsstärke gemessen am Lichtsensor  im Freien)</li>
+<li>Durch das Stellen eines <strong>Stellglieds</strong> (oder Stelleinrichtung bzw. Aktor) wird die Steuerstrecke beeinflusst (<span class="arithmatex">\(\rightarrow\)</span> Mikrocotroller steuert Spannung an LED an oder aus basierend auf einen Schwellenwert)</li>
+</ul>
+<h6 id="httpsuploadwikimediaorgwikipediacommons664r_s_blocksvg">https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg</h6>
+<hr />
+<h2 id="steuerung">🧠 Steuerung</h2>
+<p><img alt="height:150" src="../images/SteuerungBlock.png" /></p>
+<ul>
+<li><strong>Stellgröße</strong> ist die Ausgangsgröße des Stellglieds (<span class="arithmatex">\(\rightarrow\)</span> Spannung an der LED)</li>
+<li><strong>Steuerstrecke</strong> ist das System, das durch die Stellgröße und Störgrößen beeinflusst wird (<span class="arithmatex">\(\rightarrow\)</span> Helligkeit im Raum)</li>
+<li>Auf die Steuerstrecke wirken neben der Stellgröße aus <strong>Störgrößen</strong> 
+(<span class="arithmatex">\(\rightarrow\)</span> Lichteinfall von Außen, weitere nicht gesteuerte Lichtquellen im Raum)</li>
+</ul>
+<h6 id="httpsuploadwikimediaorgwikipediacommons664r_s_blocksvg_1">https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg</h6>
+<hr />
+<h3 id="stellglied">Stellglied</h3>
+<ul>
+<li>ist nun kein standardisiertes Glied,
+ sondern hat eine spezielle Funktion die sich aus Hard- und Software ergibt</li>
+<li>diese beinhaltet Steuerungslogik</li>
+<li>und physikalische Umsetzung</li>
+<li>zeitliche Reaktion meist nicht unmittelbar, sondern verzögert 
+(z.B. Rechenzeit als Totzeit)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">)</span> <span class="ow">or</span> <span class="n">l_man</span>
+</code></pre></div>
+<hr />
+<h3 id="steuerstrecke">Steuerstrecke</h3>
+<ul>
+<li>beschreibt die echte Welt</li>
+<li>häufig in vereinfachten Modellen</li>
+<li>zeitliche Reaktion meist nicht unmittelbar (z.B. PT1-Glied)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">beleuchtungsstraerke_raum_lux</span><span class="p">(</span><span class="n">lichtabgabe_led</span><span class="p">,</span> <span class="n">lichteinfall_aussen</span><span class="p">,</span> <span class="n">wand_farbe</span><span class="p">):</span>
+  <span class="c1"># Größe des Raumes</span>
+  <span class="c1"># Größe der Fenster</span>
+  <span class="c1"># Reflexion der Wände</span>
+  <span class="o">&lt;...&gt;</span>
+  <span class="k">return</span> <span class="n">beleuchtungsstraerke_raum_lux</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">raumtemperatur</span><span class="p">(</span><span class="n">heizleistung_in_w</span><span class="p">,</span> <span class="n">aussen_temp_in_c</span><span class="p">):</span>
+  <span class="c1"># Temperatur im Zeitpunkt zuvor</span>
+  <span class="c1"># Trägheit der Temperaturänderung</span>
+  <span class="c1"># Größe des Raumes</span>
+  <span class="c1"># Isolation der Raumes</span>
+  <span class="o">&lt;...&gt;</span>
+  <span class="k">return</span> <span class="n">raum_temp_in_c</span>
+</code></pre></div>
+<hr />
+<h2 id="simulation-mit-scilab-xcos">Simulation mit scilab xcos</h2>
+<ul>
+<li>Xcos ist ein grafischer Editor für Blockschaltbilder</li>
+<li>die Funktionalität entspricht in etwa matlab simulink</li>
+<li>allerdings ist die Software open source und kostenlos</li>
+</ul>
+<hr />
+<h2 id="writing_hand-aufgabe-3_1_1-wassertank-ohne-steuerung">:writing_hand: Aufgabe 3_1_1: Wassertank ohne Steuerung</h2>
+<ul>
+<li>passen Sie den Inflow an in <a href="Aufgaben\3_1_1"></a> so an, dass der Tank langsamer überläuft</li>
+</ul>
+<p><img alt="" src="../images/xcos_simple.png" /></p>
+<hr />
+<h2 id="writing_hand-aufgabe-3_1_2-einfache-tageslichtschaltung">:writing_hand: Aufgabe 3_1_2: Einfache Tageslichtschaltung</h2>
+<ul>
+<li>passen Sie den Threshold in <code>Dynamic</code> in <a href="Aufgaben\3_1_2">Aufgaben\3_1_2</a> so an, dass die LED bei einer Helligkeit von 220 Lux angeht
+<img alt="" src="../images/Tageslichtschaltung_xcos.png" /></li>
+</ul>
+<hr />
+<h2 id="zwei-punkt-regelung">Zwei-Punkt Regelung</h2>
+<ul>
+<li>Vorteile</li>
+<li>einfach zu verstehen</li>
+<li>und zu implementieren</li>
+</ul>
+<p>```Python
+ regelabweichung = soll_lux- ist_lux </p>
+<p>zweipunkt_regler(regelabweichung):
+    if regelabweichung &gt; 0:
+      licht = True
+    else:
+      licht = False
+    return licht
+```</p>
+<hr />
+<h3 id="probleme-zwei-punkt-regelung">Probleme Zwei-Punkt Regelung</h3>
+<ul>
+<li>Nachteile bei zeitlich wenig trägen Systemen</li>
+<li>Regler schaltet ständig zwischen den Ausgangswerten</li>
+<li>kritisch insbesondere bei mechanische Belastung</li>
+<li>z.B. Motor wird ständig an und aus geschaltet</li>
+</ul>
+<hr />
+<h2 id="hysterese">Hysterese</h2>
+<ul>
+<li>bewirkt eine Schalttoleranz ober- und unterhalb des Sollwerts</li>
+</ul>
+<p><img alt="h:500" src="../images/zweipunkt_hysterese.svg" /></p>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zweipunkt_hysterese</span><span class="p">(</span><span class="n">ist_lux</span><span class="p">,</span> <span class="n">on_level</span><span class="p">,</span> <span class="n">off_level</span><span class="p">,</span> <span class="n">letzter_zustand</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ist_lux</span> <span class="o">&gt;</span> <span class="n">off_level</span><span class="p">:</span>
+      <span class="n">licht</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">ist_lux</span> <span class="o">&lt;</span> <span class="n">on_level</span><span class="p">:</span>
+      <span class="n">licht</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">licht</span> <span class="o">=</span> <span class="n">letzter_zustand</span>
+
+    <span class="k">return</span> <span class="n">licht</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">zweipunkt_hysterese</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">on_level</span><span class="p">,</span> <span class="n">off_level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_level</span> <span class="o">=</span> <span class="n">on_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">off_level</span> <span class="o">=</span> <span class="n">off_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">letzter_zustand</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">calc_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ist_lux</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ist_lux</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">off_level</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">letzter_zustand</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">ist_lux</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_level</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">letzter_zustand</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">letzter_zustand</span>
+</code></pre></div>
+<p><img alt="bg right w:500" src="../images/Zweipunktkennlinie_mit_hysterese.png" /></p>
+<h6 id="httpswwwwikiwandcomdemethode_der_harmonischen_balancemediadateizweipunktkennliniepng">https://www.wikiwand.com/de/Methode_der_harmonischen_Balance#Media/Datei:Zweipunktkennlinie.png</h6>
+<hr />
+<p><img alt="" src="../images/ohne_hysterese.gif" /></p>
+<h6 id="httpswwwyoutubecomwatchvnc5zpepth9w">https://www.youtube.com/watch?v=nC5ZPEPtH9w</h6>
+<hr />
+<h3 id="drei-punkt-regelung">Drei-Punkt Regelung</h3>
+<ul>
+<li>vermeidet ständiges Umschalten</li>
+<li>sinnvoll bei Neutralstellung z.B. Motoren</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">drei_punk_regler</span><span class="p">(</span><span class="n">abstand</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">abstand</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="n">fahre</span> <span class="o">=</span> <span class="s2">&quot;vorwärts&quot;</span>
+  <span class="k">elif</span> <span class="n">abstand</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">fahre</span> <span class="o">=</span> <span class="s2">&quot;rückwärts&quot;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">fahre</span> <span class="o">=</span> <span class="s2">&quot;nicht&quot;</span>
+  <span class="k">return</span> <span class="n">fahre</span>
+
+<span class="n">bewegung</span> <span class="o">=</span> <span class="n">drei_punk_regler</span><span class="p">(</span><span class="n">abstand</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="bg right:33% w:400" src="../images/Dreipunktkennlinie.png" /></p>
+<hr />
+<h2 id="writing_hand-aufgabe-3_1_3-einfache-tageslichtschaltung">:writing_hand: Aufgabe 3_1_3: Einfache Tageslichtschaltung</h2>
+<ul>
+<li>Ersetzen Sie den Schalter <code>Dynamic</code> mit einem Hystereseschalter </li>
+</ul>
+<p><img alt="" src="../images/TagesLichtHystere.png" /></p>
               
             </div>
           </div><footer>
