@@ -54,6 +54,112 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Messkette</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#eva-prinzip">EVA-Prinzip</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#digitale-eingange">Digitale Eingänge</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#circuitpython-installieren">CircuitPython installieren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hauptprogramm-codepy">Hauptprogramm code.py</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-ubersicht">Pin-Übersicht</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2002191htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#breadboards">Breadboards</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitespraxisbauteil_steckbretthtm">https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-purpose-inputoutput">General Purpose Input/Output</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_1-anschluss-eines-tasters-an-einen-raspberry-pi-pico">Aufgabe 2_1_1: Anschluss eines Tasters an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gpio-eingang-mit-tasterschalter-und-pullup-widerstand">GPIO-Eingang mit Taster/Schalter und Pullup-Widerstand</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2110081htm-httpswwwelektronik-kompendiumdesitesraspberry-pi2006051htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gpio-eingang-mit-tasterschalter-und-pulldown-widerstand">GPIO-Eingang mit Taster/Schalter und Pulldown-Widerstand</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-schalter-und-taster">Zusammenfassung Schalter und Taster</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#digitale-ausgange">Digitale Ausgänge</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico">Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2612031htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#leuchtdioden">Leuchtdioden</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsnawi-werftdebausteineled-ansteuern">https://nawi-werft.de/bausteine/led-ansteuern/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten">Ausgang verschalten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2102181htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten_1">Ausgang verschalten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#relais-und-schutze">Relais und Schütze</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pulsweitenmodulation">Pulsweitenmodulation</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-eingange">Analoge Eingänge</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#analog-digital-wandler">Analog-Digital-Wandler</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_4-anschluss-eines-analogen-helligkeitssensors">Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2612221htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">Verwendung von Globalen Variablen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_6">Aufgabe 2_1_6:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-ausgange">Analoge Ausgänge</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
@@ -123,11 +229,7 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
-<hr />
-<h1 id="messkette">Messkette</h1>
+<h1 id="21-messkette">2.1 Messkette</h1>
 <hr />
 <h2 id="eva-prinzip">EVA-Prinzip</h2>
 <p><img alt="" src="../images/Messkette.svg" /></p>
@@ -145,7 +247,7 @@ Dr. Julian Huber</p>
 <li>i.d.R. gibt es Spannungsbereiche, die als 0 oder 1 interpretiert werden</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">:writing_hand: Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</h2>
+<h2 id="aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller"><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</h2>
 <ul>
 <li>Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann</li>
 <li>Im folgenden wird folgende Hardware benötigt:<ul>
@@ -229,7 +331,7 @@ Dr. Julian Huber</p>
 </ul>
 <p><img alt="bg left h:500" src="images/raspberry-pi-gpio.png" /></p>
 <hr />
-<h2 id="writing_hand-aufgabe-2_1_1-anschluss-eines-tasters-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe 2_1_1: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
+<h2 id="aufgabe-2_1_1-anschluss-eines-tasters-an-einen-raspberry-pi-pico"><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_1: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Schließen Sie den Taster wie folgt an
 <img alt="" src="../images/20060511.gif" /></li>
@@ -298,7 +400,7 @@ Dr. Julian Huber</p>
 <li>Die Ausgänge können bis zu <span class="arithmatex">\(16 \,\text{mA}\)</span> liefern</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</h2>
+<h2 id="aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico"><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Nun wollen wir eine LED anschließen in der Folge über den Taster schalten</li>
 <li>Sie LED soll nach einem Druck auf den Taster für <span class="arithmatex">\(1\,\text{s}\)</span> leuchten</li>
@@ -370,7 +472,7 @@ Dr. Julian Huber</p>
 <p><img alt="bg right w:500" src="images/04011113.png" /> </p>
 <h6 id="httpswwwelektronik-kompendiumdesiteskom0401111htm">https://www.elektronik-kompendium.de/sites/kom/0401111.htm</h6>
 <hr />
-<h2 id="nerd_face-writing_hand-aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">:nerd_face: :writing_hand: Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
+<h2 id="aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico"><img alt="🤓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f913.svg" title=":nerd_face:" /> <img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für <span class="arithmatex">\(1\,\text{s}\)</span> leuchtet und dann langsam über <span class="arithmatex">\(5\,\text{s}\)</span> ausgeht</li>
 </ul>
@@ -406,7 +508,7 @@ Dr. Julian Huber</p>
 <li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-2_1_4-anschluss-eines-analogen-helligkeitssensors">:writing_hand: Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_4-anschluss-eines-analogen-helligkeitssensors"><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors</h2>
 <ul>
 <li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
 <li>Links (-): GND / Masse / 0 Volt</li>
@@ -534,7 +636,7 @@ Dr. Julian Huber</p>
 <p><img alt="bg right:43% w:550" src="../images/helligkeitssensor-0555-3001-helligkeitsf%C3%BChler-helligkeitsmelder-lichtf%C3%BChler-lichtsensor.jpg" /></p>
 <h6 id="httpsshopbb-sensorscommesstechnik-je-branchegebaeudetechnikhelligkeitssensor-mit-messumformer-0-10-vhtml">https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html</h6>
 <hr />
-<h2 id="writing_hand-aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">:writing_hand: Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors"><img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
 <ul>
 <li>Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet</li>
 <li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus</li>
@@ -596,7 +698,7 @@ Dr. Julian Huber</p>
 </code></pre></div>
 <hr />
 <ul>
-<li>:nerd_face: Im besten Fall wird <code>map_ln</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden    </li>
+<li><img alt="🤓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f913.svg" title=":nerd_face:" /> Im besten Fall wird <code>map_ln</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden    </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
@@ -618,7 +720,7 @@ Dr. Julian Huber</p>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="nerd_face-verwendung-von-globalen-variablen">:nerd_face: Verwendung von Globalen Variablen</h2>
+<h2 id="verwendung-von-globalen-variablen"><img alt="🤓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f913.svg" title=":nerd_face:" /> Verwendung von Globalen Variablen</h2>
 <ul>
 <li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
 <li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
@@ -635,7 +737,7 @@ Dr. Julian Huber</p>
 <li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
 </ul>
 <hr />
-<h2 id="nerd_face-writing_hand-aufgabe-2_1_6">:nerd_face: :writing_hand: Aufgabe 2_1_6:</h2>
+<h2 id="aufgabe-2_1_6"><img alt="🤓" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f913.svg" title=":nerd_face:" /> <img alt="✍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/270d.svg" title=":writing_hand:" /> Aufgabe 2_1_6:</h2>
 <ul>
 <li>Nicht bei jedem Sensor wird die gefittete Kurve perfekt passen</li>
 <li>passen Sie den Code so an, dass die Parameter der Kurve in der <code>settings.toml</code> hinterlegt werden können, um diese möglichst einfach anzupassen</li>
