@@ -69,6 +69,96 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Regelverhalten</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pid-regler">🧠 PID-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#systeme-ohne-zeitliche-verzogerung">Systeme ohne zeitliche Verzögerung</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#systeme-mit-zeitlicher-verzogerung">Systeme mit zeitlicher Verzögerung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bestimmung-des-dynamischen-verhaltens">Bestimmung des dynamischen Verhaltens</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwsamsongroupcomdocumentl102depdf">https://www.samsongroup.com/document/l102de.pdf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fazit">Fazit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#regelverlauf-der-verschiedenen-reglertypen-im-zeitverlauf">Regelverlauf der verschiedenen Reglertypen im Zeitverlauf</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpsrn-wissendewikiindexphpregelungstechnik">https://rn-wissen.de/wiki/index.php/Regelungstechnik</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kriterien-zur-beurteilung-eines-regelkreises">Kriterien zur Beurteilung eines Regelkreises</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpssrvifringtu-bsdestaticfileslehrevorlesungengdrskript_gdrpdf">https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#regelflache">Regelfläche</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpssrvifringtu-bsdestaticfileslehrevorlesungengdrskript_gdrpdf_1">https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#praktische-uberlegungen">Praktische Überlegungen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#praktische-uberlegungen-pid-regler">🤓 Praktische Überlegungen PID-Regler</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_3_1-auswahl-reglerverhalten">✍️ Aufgabe 3_3_1: Auswahl Reglerverhalten</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik_1">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik_2">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#beispiele">Beispiele</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hardware-pid-regler">Hardware PID-Regler</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwreicheltatatdepid-regler-quantrol-lc100-5-55-c-quan-lc100-d-24-p147710htmlprovid2807">https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#software-baustein-pid-regler">Software Baustein PID-Regler</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsinfosysbeckhoffcomindexphpcontentcontent1031tf8000_tc3_hvac4685059723htmlid">https://infosys.beckhoff.com/index.php?content=../content/1031/tf8000_tc3_hvac/4685059723.html&amp;id=</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methode-von-ziegler-und-nichols">Methode von Ziegler und Nichols</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpwwwchemgapediadevsenginevluvscdech7tcregelunggrundlagenregelung_grundlagenvlupagevscdech7tcregelunggrundlagenregparamregparamvscmlhtml">http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/7/tc/regelung/grundlagen/regelung_grundlagen.vlu/Page/vsc/de/ch/7/tc/regelung/grundlagen/regparam/regparam.vscml.html</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#umformung-mit-vorhalt-und-nachstellzeit-fur-pid-regler">Umformung mit Vorhalt- und Nachstellzeit für PID-Regler:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vorgehen-methode-von-ziegler-und-nichols-i">Vorgehen Methode von Ziegler und Nichols (I)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methode-von-ziegler-und-nichols-ii">Methode von Ziegler und Nichols (II)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ziegler-john-g-and-nathaniel-b-nichols-optimum-settings-for-automatic-controllers-trans-asme-6411-1942">Ziegler, John G., and Nathaniel B. Nichols. "Optimum settings for automatic controllers." trans. ASME 64.11 (1942)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#einstellregeln-nach-ziegler-und-nichols-iii">Einstellregeln nach Ziegler und Nichols (III)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2">✍️ Aufgabe 3_2_2:</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -78,18 +168,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,13 +213,9 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
-<hr />
 <h1 id="regelverhalten">Regelverhalten</h1>
 <hr />
-<h3 id="pid-regler">🧠 PID-Regler</h3>
+<h2 id="pid-regler">🧠 PID-Regler</h2>
 <p><img alt="" src="../images/Idealer_PID_Sprungantwort.svg" /></p>
 <ul>
 <li><strong>universellste</strong> der klassischen Regler</li>
@@ -137,14 +223,14 @@ Dr. Julian Huber</p>
 <li><span class="arithmatex">\(u(t)=K_P \cdot e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}\)</span></li>
 </ul>
 <hr />
-<h3 id="systeme-ohne-zeitliche-verzogerung">Systeme ohne zeitliche Verzögerung</h3>
+<h2 id="systeme-ohne-zeitliche-verzogerung">Systeme ohne zeitliche Verzögerung</h2>
 <p><img alt="h:400" src="images/ohneTrägheit.svg" /></p>
 <ul>
 <li>alle Systeme reagieren unmittelbar auf Veränderungen der Eingänge</li>
 <li>z.B. wird die Lichtstärke der Lampe (<span class="arithmatex">\(u_r\)</span>) erhöht, erhöht sich die Helligkeit im Raum (<span class="arithmatex">\(y\)</span>)</li>
 </ul>
 <hr />
-<h3 id="systeme-mit-zeitlicher-verzogerung">Systeme mit zeitlicher Verzögerung</h3>
+<h2 id="systeme-mit-zeitlicher-verzogerung">Systeme mit zeitlicher Verzögerung</h2>
 <p><img alt="h:400" src="../images/TraegeSysteme.svg" /></p>
 <ul>
 <li>z.B. mit Erhöhung des Durchfluss durch die Heizung (<span class="arithmatex">\(u_r\)</span>) erwärmt sich der Raum nur langsam (<span class="arithmatex">\(y\)</span>). Das Thermometer gibt die gemessene Temperatur (<span class="arithmatex">\(y_m\)</span>) nur mit Verzögerung weiter</li>
@@ -169,7 +255,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 <li>Kalibrierung am realen System</li>
 </ul>
 <hr />
-<h3 id="regelverlauf-der-verschiedenen-reglertypen-im-zeitverlauf">Regelverlauf der verschiedenen Reglertypen im Zeitverlauf</h3>
+<h2 id="regelverlauf-der-verschiedenen-reglertypen-im-zeitverlauf">Regelverlauf der verschiedenen Reglertypen im Zeitverlauf</h2>
 <p><img alt="" src="../images/Reglervergleich.gif" /></p>
 <ul>
 <li>Reaktion auf Sprungfunktion im einfachen Regelkreis</li>
@@ -178,7 +264,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 </ul>
 <h6 id="httpsrn-wissendewikiindexphpregelungstechnik">https://rn-wissen.de/wiki/index.php/Regelungstechnik</h6>
 <hr />
-<h3 id="kriterien-zur-beurteilung-eines-regelkreises">🧠 Kriterien zur Beurteilung eines Regelkreises</h3>
+<h2 id="kriterien-zur-beurteilung-eines-regelkreises">Kriterien zur Beurteilung eines Regelkreises</h2>
 <ul>
 <li>Führungsverhalten bei Anregung mit Sprungfunktion:</li>
 <li><strong>Ausregelzeit</strong> <span class="arithmatex">\(t_\epsilon\)</span>: gibt den Zeitpunkt an, ab dem die Regelabweichung kleiner als eine vorgegebene Schranke <span class="arithmatex">\(±\epsilon\)</span> ist.</li>
@@ -187,26 +273,27 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 <p><img alt="bg height:350 right:33%" src="../images/KriterienRegelkreis.png" /></p>
 <h6 id="httpssrvifringtu-bsdestaticfileslehrevorlesungengdrskript_gdrpdf">https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf</h6>
 <hr />
-<h3 id="kriterien-zur-beurteilung-eines-regelkreises_1">🧠 Kriterien zur Beurteilung eines Regelkreises</h3>
+<h3 id="regelflache">Regelfläche</h3>
 <ul>
 <li><strong>Regelfläche</strong>: Die Fläche zwischen Führungsgröße und Ist-Wert kann als Maß definiert werden. </li>
 <li>Besonders sinnvoll ist die Beurteilung mittels der Regelfläche allerdings nur, wenn kein Überschwingen auftritt</li>
 <li>Alternativ z.B. Absolutwert des Integrals der Regelfläche</li>
 </ul>
-<p><img alt="bg height:350 right:33%" src="images/Regelfläche.png" /></p>
+<p><img alt="bg height:350 right:33%" src="../images/Regelflache.png" /></p>
 <h6 id="httpssrvifringtu-bsdestaticfileslehrevorlesungengdrskript_gdrpdf_1">https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf</h6>
 <hr />
 <h3 id="praktische-uberlegungen">Praktische Überlegungen</h3>
 <ul>
 <li>Um eine gewünschtes Regelverhalten zu erreichen, muss ein geeigneter Regler mit den passenden Faktoren (z.B. Verstärkungsfaktor <span class="arithmatex">\(K_P\)</span>) ausgewählt oder <strong>kalibriert</strong> werden. </li>
-<li>Hier lässt sich entweder ein <strong>Modell der Regelstrecke</strong> bilden. In der Praxis werden Regelkreise häufig durch <strong>Ausprobieren</strong> von Reglereinstellungen eines PID-Regler kalibriert.</li>
+<li>Hier lässt sich entweder ein <strong>Modell der Regelstrecke</strong> bilden. In der Praxis werden Regelkreise häufig durch <strong>Ausprobieren</strong> von Reglere
+instellungen eines PID-Regler kalibriert.</li>
 </ul>
 <hr />
 <h3 id="praktische-uberlegungen-pid-regler">🤓 Praktische Überlegungen PID-Regler</h3>
 <p><img alt="height:400 " src="../images/Xqt_Regler.png" /></p>
 <h6 id="httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</h6>
 <hr />
-<h3 id="aufgabe">🧠 Aufgabe</h3>
+<h2 id="aufgabe-3_3_1-auswahl-reglerverhalten">✍️ Aufgabe 3_3_1: Auswahl Reglerverhalten</h2>
 <p>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 - <strong>Startoptimierung</strong> der Raumtemperatur 
 (unter Energieffizienzgesichtspunkten)
@@ -216,7 +303,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 <p><img alt="bg height:200 right:30%" src="../images/Xqt_Regler.png" /></p>
 <h6 id="httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik_1">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</h6>
 <hr />
-<h3 id="aufgabe_1">Aufgabe</h3>
+<h3 id="losung">Lösung</h3>
 <p>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 - <strong>Startoptimierung</strong> der Raumtemperatur 
 (unter Energieffizinzgesichtspunkten)
@@ -229,6 +316,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 <p><img alt="bg height:200 right:30%" src="../images/Xqt_Regler.png" /></p>
 <h6 id="httpsdewikipediaorgwikifaustformelverfahren_automatisierungstechnik_2">https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)</h6>
 <hr />
+<h2 id="beispiele">Beispiele</h2>
 <h3 id="hardware-pid-regler">Hardware PID-Regler</h3>
 <p><img alt="" src="../images/pid_regler_hardware.png" /></p>
 <h6 id="httpswwwreicheltatatdepid-regler-quantrol-lc100-5-55-c-quan-lc100-d-24-p147710htmlprovid2807">https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807</h6>
@@ -249,7 +337,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 </ul>
 <h6 id="httpsinfosysbeckhoffcomindexphpcontentcontent1031tf8000_tc3_hvac4685059723htmlid">https://infosys.beckhoff.com/index.php?content=../content/1031/tf8000_tc3_hvac/4685059723.html&amp;id=</h6>
 <hr />
-<h3 id="methode-von-ziegler-und-nichols">Methode von Ziegler und Nichols</h3>
+<h2 id="methode-von-ziegler-und-nichols">Methode von Ziegler und Nichols</h2>
 <ul>
 <li><strong>heuristisches</strong> Verfahren zur Bestimmung von Reglerparametern</li>
 <li>nur für existierenden <strong>stabile Anlagen</strong> geeignet</li>
@@ -264,7 +352,7 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 </ul>
 <h6 id="httpwwwchemgapediadevsenginevluvscdech7tcregelunggrundlagenregelung_grundlagenvlupagevscdech7tcregelunggrundlagenregparamregparamvscmlhtml">http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/7/tc/regelung/grundlagen/regelung_grundlagen.vlu/Page/vsc/de/ch/7/tc/regelung/grundlagen/regparam/regparam.vscml.html</h6>
 <hr />
-<h4 id="umformung-mit-vorhalt-und-nachstellzeit-fur-pid-regler">Umformung mit Vorhalt- und Nachstellzeit für PID-Regler:</h4>
+<h3 id="umformung-mit-vorhalt-und-nachstellzeit-fur-pid-regler">Umformung mit Vorhalt- und Nachstellzeit für PID-Regler:</h3>
 <ul>
 <li>Neben der Darstellung mit Vorhalte- und  Nachhaltezeit findet sich auch häufig eine Darstellung mit Faktoren (<span class="arithmatex">\(K\)</span>):</li>
 <li>
@@ -332,9 +420,9 @@ Messung der beobachtbaren Periodendauer <span class="arithmatex">\(T^{krit}\)</s
 </tbody>
 </table>
 <hr />
-<h3 id="aufgabe-3_2_1">✍️ Aufgabe 3_2_1:</h3>
-<p><img alt="" src="images/ReglerEinstellen.png" />
-<a href="https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing">Colab</a></p>
+<h2 id="aufgabe-3_2_2">✍️ Aufgabe 3_2_2:</h2>
+<p><img alt="" src="images/ReglerEinstellen.png" /></p>
+<p>Kalibierten Sie den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: <a href="https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing">Colab</a></p>
               
             </div>
           </div><footer>
@@ -374,7 +462,9 @@ Messung der beobachtbaren Periodendauer <span class="arithmatex">\(T^{krit}\)</s
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

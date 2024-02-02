@@ -60,6 +60,36 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Objektorientierung</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#grundkonzepte-der-objektorientierung">Grundkonzepte der Objektorientierung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#klassen-und-objekte">Klassen und Objekte</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attribute">Attribute</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methoden-funktionen">Methoden &amp; Funktionen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_1-implementierung-einer-sensor-klasse">✍️ Aufgabe 2_4_1: Implementierung einer Sensor-Klasse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_2">🤓 ✍️ Aufgabe 2_4_2:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vererbung">Vererbung</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#serialisierung-von-objekten">Serialisierung von Objekten</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dictionaries">Dictionaries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#javascriptobjectnotation-json">JavaScriptObjectNotation (JSON)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -78,18 +108,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,11 +153,8 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
+<h1 id="24-objektorientierung">2.4 Objektorientierung</h1>
 <hr />
-<h1 id="objektorientierung">Objektorientierung</h1>
 <h2 id="motivation">Motivation</h2>
 <ul>
 <li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
@@ -221,7 +248,7 @@ Dr. Julian Huber</p>
 <span class="n">sensor1</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
 </code></pre></div>
 <hr />
-<h3 id="aufgabe-2_4_1-implementierung-einer-sensor-klasse">✍️ Aufgabe 2_4_1: Implementierung einer Sensor-Klasse</h3>
+<h2 id="aufgabe-2_4_1-implementierung-einer-sensor-klasse">✍️ Aufgabe 2_4_1: Implementierung einer Sensor-Klasse</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -273,7 +300,7 @@ Dr. Julian Huber</p>
 </code></pre></div></li>
 </ul>
 <hr />
-<h3 id="aufgabe-2_4_2">🤓 ✍️ Aufgabe 2_4_2:</h3>
+<h2 id="aufgabe-2_4_2">🤓 ✍️ Aufgabe 2_4_2:</h2>
 <ul>
 <li>Stellen Sie sicher, dass maximal die letzten 10 Messwerte gespeichert werden</li>
 <li>Erweitern die Methode <code>calc_mean</code> so, dass optional nur die letzten <code>n</code>  Messwerte berücksichtigt werden und <code>n</code> als Parameter übergeben werden kann </li>
@@ -293,6 +320,7 @@ Dr. Julian Huber</p>
 <p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
 <hr />
 <h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
+<hr />
 <h3 id="serialisierung-von-objekten">Serialisierung von Objekten</h3>
 <p><img alt="h:300" src="../images/Signalisierung.svg" /></p>
 <ul>
@@ -336,9 +364,17 @@ Dr. Julian Huber</p>
 <span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ADC&quot;</span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>über eine eignete Codierung (z.B. ASCII, UTF) können auch Binärdaten übertragen werden
+<li>über eine eignete Codierung (z.B. ASCII, UTF) können auch Binärdaten übertragen werden <code>&lt;stings&gt;.encode("ascii")</code>
 <div class="highlight"><pre><span></span><code>1111011001001110110110101100101011101000110010101110010010111110110100101100100001001110011101000100000...
 </code></pre></div></li>
+</ul>
+<hr />
+<h2 id="aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</h2>
+<ul>
+<li>Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen</li>
+<li>Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?</li>
+<li>Würden Sie die Messwerte erst als JSON, ASCII und dann als Binärdaten übertragen? Wenn nein, warum nicht?</li>
+<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht</li>
 </ul>
               
             </div>
@@ -379,7 +415,9 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

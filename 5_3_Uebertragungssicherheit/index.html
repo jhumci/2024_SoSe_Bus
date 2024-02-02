@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Übertragungssicherheit - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u00dcbertragungssicherheit";
+        var mkdocs_page_input_path = "5_3_Uebertragungssicherheit.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Übertragungssicherheit</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lernziele">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#informationsgehalt-von-telegrammen">🧠 Informationsgehalt von Telegrammen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#datensicherung">🧠 Datensicherung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fehlerarten">🧠 Fehlerarten</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fehlermae">🧠 Fehlermaße</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#erkennen-von-ubertragungsfehlern">🧠 Erkennen von Übertragungsfehlern</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#erkennen-von-ubertragungsfehlern_1">🧠 Erkennen von Übertragungsfehlern</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hamming-abstand">🧠 Hamming-Abstand</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#beachte-bei-den-strings-zahlt-nicht-wie-weit-die-buchstaben-auseinander-liegen">Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#anwendung-des-hamming-abstand-zur-fehlererkennung">🧠 Anwendung des Hamming-Abstand zur Fehlererkennung</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#anwendungsbeispiel">🧠 Anwendungsbeispiel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#anwendungsbeispiel-und-aufgabe">🧠 Anwendungsbeispiel und Aufgabe</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#losung">🧠 Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hamming-distanz-bei-bus-systemen">Hamming-Distanz bei Bus-Systemen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paritatsbit-zur-fehlererkennung">🧠 Paritätsbit zur Fehlererkennung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blocksicherung">🧠 Blocksicherung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gerhard-schnell-bernhard-wiedemann">Gerhard Schnell &amp; Bernhard Wiedemann</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lernfortschritt">🎯 Lernfortschritt</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Bussysteme</li>
+      <li class="breadcrumb-item active">Übertragungssicherheit</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="3-ubertragungssicherheit">3 Übertragungssicherheit</h2>
+<h3 id="lernziele">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* verschiedene Fehlertypen bei der Datenübertragung unterscheiden
+* Maßnahmen zur Erkennung und Behebung von Übertragungsfehlern beschreiben
+* die Hammingdistanz verschiedener Codes ermitteln</p>
+<hr />
+<h3 id="informationsgehalt-von-telegrammen">🧠 Informationsgehalt von Telegrammen</h3>
+<p><img alt="" src="../images/2022-05-10-13_47_26-Window.webp" /></p>
+<ul>
+<li>Steuerfeld: Priorität der Nachricht</li>
+<li>Quelladresse: Absender (vgl. MAC-Adresse)</li>
+<li>Zieladresse: Empfänger (vgl. MAC-Adresse)</li>
+<li>Routing Zähler: Zählt wie oft über Koppler gesendet</li>
+<li>Nutzinformation: Eigentlich Information (z.B. Messwerte eines Sensor)</li>
+<li>Sicherungs-Feld: Wurden die Daten richtig übertragen (vgl. Hash)</li>
+</ul>
+<hr />
+<h3 id="datensicherung">🧠 Datensicherung</h3>
+<p><div class="highlight"><pre><span></span><code>Gesendet:    010000010000001110000000
+Empfangen 1: 010000110000001110000000
+Empfangen 2: 01000010000001110000000
+</code></pre></div>
+- wie stellt man sicher, dass keine Daten <strong>verloren</strong> gehen 
+oder <strong>korrumpiert</strong> werden?
+  - Schicht 1: <strong>technische Vorkehrungen</strong> die Wahrscheinlichkeit von Störungen, z. B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
+  - Schicht 2: <strong>Überwachung</strong> der Nachricht auf Fehler und Gegenmaßnahmen</p>
+<hr />
+<h4 id="fehlerarten">🧠 Fehlerarten</h4>
+<ul>
+<li>Wir betrachten im Folgenden stets transparente (<strong>bitorientierte</strong>) Codes. (d.h. jede Bitkombination ist erlaubt und sinnvoll)</li>
+<li>Bitfolge allein lässt nicht auf einen eventuellen Fehler schließen</li>
+<li>Es gibt drei Arten von Fehlern </li>
+</ul>
+<p><img alt="bg right:33% height:300" src="../images/Fehlertypen.svg" /></p>
+<hr />
+<h4 id="fehlermae">🧠 Fehlermaße</h4>
+<ul>
+<li><strong>Bitfehlerrate</strong> <span class="arithmatex">\(p\)</span>
+  <span class="arithmatex">\(p = \frac{Anzahl \ der \ fehlerhaften \ Bits}{Gesamtzahl \ der \ gesendeten \ Bits}\)</span></li>
+<li>Der ungünstigste Wert <span class="arithmatex">\(p = 0.5\)</span>. 
+Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
+<li>wäre <span class="arithmatex">\(p=1\)</span>: </li>
+<li><code>001</code> : <code>110</code></li>
+<li>realistischer Wert <span class="arithmatex">\(p = 10^{-4}\)</span></li>
+</ul>
+<hr />
+<h3 id="erkennen-von-ubertragungsfehlern">🧠 Erkennen von Übertragungsfehlern</h3>
+<ul>
+<li>Ob Fehler erkennbar sind, hängt auch davon ab, wie die Information codiert wurde</li>
+<li>Code: Deutsche Sprache</li>
+<li>Fehler ist offensichtlich: <code>Mein</code>, <code>Tein</code></li>
+<li>Fehler ist nicht erkennbar: <code>Mein</code>, <code>Dein</code></li>
+<li>Fehler ist erkennbar und korrigierbar: <code>Gxbäude</code>, <code>Gebäude</code>
+<img alt="bg right height:300" src="../images/Fehlertypen.svg" /></li>
+</ul>
+<hr />
+<h3 id="erkennen-von-ubertragungsfehlern_1">🧠 Erkennen von Übertragungsfehlern</h3>
+<ul>
+<li>Codes können so definiert, werden, dass das Auftreten einzelner Übertragungsfehler offensichtlich wird.</li>
+<li><code>00</code>: Schalter <strong>ein</strong></li>
+<li><code>01</code>: nicht definiert</li>
+<li><code>10</code>: nicht definiert  </li>
+<li><code>11</code>: Schalter <strong>aus</strong></li>
+<li>Die Schalterstellung kann nicht verwechselt werden (bei einem Ein-Bit-Fehler) </li>
+</ul>
+<p><img alt="bg right height:300" src="../images/Fehlertypen.svg" /></p>
+<hr />
+<h4 id="hamming-abstand">🧠 Hamming-Abstand</h4>
+<ul>
+<li>Unter dem Hamming-Abstand eines Codes versteht man das <strong>Minimum aller Abstände</strong> zwischen verschiedenen Wörtern innerhalb des Codes</li>
+<li><strong>Abstand</strong>: An wie vielen Stellen muss ein Wort verändert werden</li>
+<li><span class="arithmatex">\(H(\{ 00,11\})=2\)</span></li>
+<li><span class="arithmatex">\(H(\{ 00,01,10,11\})=1\)</span></li>
+<li><span class="arithmatex">\(H(\{ 00110,00100\})=1\)</span></li>
+<li><span class="arithmatex">\(H(\{ '12345','13349'\})=2\)</span></li>
+<li><span class="arithmatex">\(H(\{ 'Haus','Baum', 'Tier'\})=2\)</span></li>
+</ul>
+<h6 id="beachte-bei-den-strings-zahlt-nicht-wie-weit-die-buchstaben-auseinander-liegen">Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen</h6>
+<hr />
+<h5 id="anwendung-des-hamming-abstand-zur-fehlererkennung">🧠 Anwendung des Hamming-Abstand zur Fehlererkennung</h5>
+<ul>
+<li>Ein Code besteht aus folgenden drei Wörtern:</li>
+<li><code>aus</code>, <code>ein</code>, <code>sie</code></li>
+<li>Der kleinste der drei Abstände ist 2, also ist der Hamming-Abstand des Codes ebenfalls gleich <span class="arithmatex">\(h=2\)</span> (<code>ein</code>, <code>sie</code>).</li>
+<li>Bei Codes mit Hamming-Abstand <code>h=2</code> <strong>können alle <code>1</code>-Bit-Fehler erkannt werden.</strong> D.h. der veränderte Code kann mit keinem anderen Wort verwechselt werden (<code>_ie</code>, <code>s_e</code>, <code>si_</code>)</li>
+<li>Ein  <code>2</code>-Bit-Fehler kann nicht immer erkannt werden  (<code>ein</code>, <code>_i_</code>, <code>sie</code>)</li>
+</ul>
+<hr />
+<h5 id="anwendungsbeispiel">🧠 Anwendungsbeispiel</h5>
+<ul>
+<li>Drehschalter <strong>vier Einstellmöglichkeiten</strong></li>
+<li>werden als binäre Zahl (Codewort) an einen Empfänger übermittelt:  </li>
+<li><code>00</code>, <code>01</code>, <code>10</code>, <code>11</code></li>
+<li>Empfänger erhält das Codewort, hat sonst keine Möglichkeit, die Schalterstellung zu überprüfen</li>
+</ul>
+<p><img alt="bg right" src="../images/Drehschalter.png" /></p>
+<h6 id="httpsatrs-onlinecomwebpnockenschalter2212822">https://at.rs-online.com/web/p/nockenschalter/2212822</h6>
+<hr />
+<h5 id="anwendungsbeispiel-und-aufgabe">🧠 Anwendungsbeispiel und Aufgabe</h5>
+<ul>
+<li><code>00</code>, <code>01</code>, <code>10</code>, <code>11</code></li>
+<li>Hamming-Abstand zwischen den vier Worten ist jeweils 1, </li>
+<li>d. h. falls durch einen Fehler nur ein Bit umgekehrt wird, erhält der Empfänger zwar ein anderes, aber ebenso gültiges Codewort</li>
+<li>✍️ <strong>Aufgabe</strong></li>
+<li>Angenommen es treten nur Einfachfehler auf (es wird also maximal ein Bit geflippt)</li>
+<li>Kann man einen binären Code entwickeln, der es nicht nur ermöglicht Fehler zu erkennen, sondern diese auch zu beheben?</li>
+</ul>
+<hr />
+<h5 id="losung">🧠 Lösung</h5>
+<ul>
+<li>Um Einfachfehler zu korrigieren benötigt man einen Code, der einen Hamming-Abstand ≥ 3 hat: </li>
+<li>z. B. <code>11000000</code>, <code>00110000</code>, <code>00001100</code>,<code>00000011</code> .</li>
+<li>Einfachfehler können nur erkannt und behoben werden:</li>
+<li><code>10000000</code> --&gt; <code>11000000</code></li>
+<li><code>11100000</code> --&gt; <code>11000000</code></li>
+<li><code>10110000</code> --&gt; <code>00110000</code></li>
+</ul>
+<hr />
+<h4 id="hamming-distanz-bei-bus-systemen">Hamming-Distanz bei Bus-Systemen</h4>
+<ul>
+<li><span class="arithmatex">\(h\)</span> Maß für die Störfestigkeit eines Codes </li>
+<li>
+<p>Bei Feldbus-Systemen ist <span class="arithmatex">\(h = 4\)</span> üblich, 
+für sehr hohe Sicherheitsbedürfnisse <span class="arithmatex">\(h = 6\)</span>.</p>
+</li>
+<li>
+<p>Damit nimmt die jedoch <strong>Telegrammübertragungseffizienz</strong> ab. Es müssen die eigentlich Informationen (z.b. 4 Werte eines Schalters) durch längere Bitfolgen codiert werden.</p>
+</li>
+</ul>
+<hr />
+<h4 id="paritatsbit-zur-fehlererkennung">🧠 Paritätsbit zur Fehlererkennung</h4>
+<ul>
+<li>Wir senden eine Zahl mit 4 Bit, z. B. <code>0010</code> (<span class="arithmatex">\(2_{10}\)</span>)</li>
+<li>Zahl der positiven Bits im Binärcode ist ungerade </li>
+<li>
+<p>Paritätsbit <code>E=1</code> (even = True) wird hinzugefügt (Paritäts-/ Evenbit ist 1, wenn einegerade Zahl von Bit übertagen werden)
+und mit übertragen</p>
+</li>
+<li>
+<p>Alle ungeraden Anzahlen an Fehlern werden erkannt:</p>
+</li>
+<li>Original:   <code>0010</code> - <code>E=1</code> - erwartet <code>E=1</code></li>
+<li>1 Fehler:   <code>0011</code> - <code>E=1</code> - erwartet <code>E=0</code></li>
+<li>1 Fehler:   <code>0010</code> - <code>E=0</code> - erwartet <code>E=1</code></li>
+<li>1 Fehler:   <code>0110</code> - <code>E=1</code> - erwartet <code>E=1</code></li>
+</ul>
+<p><img alt="bg right:25% width:300" src="../images/800px-Code_Even_dualergaenzt.svg.png" /></p>
+<hr />
+<h4 id="blocksicherung">🧠 Blocksicherung</h4>
+<ul>
+<li>Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit eingefügt</li>
+<li>Vorsicht: Hier wird <span class="arithmatex">\(P\)</span> selbst nicht mitgezählt</li>
+</ul>
+<p><img alt="height:350" src="../images/Blocksicherung.png" /></p>
+<h6 id="gerhard-schnell-bernhard-wiedemann">Gerhard Schnell &amp; Bernhard Wiedemann</h6>
+<hr />
+<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie1.JPG" /></p>
+<hr />
+<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie2.JPG" /></p>
+<hr />
+<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie3.JPG" /></p>
+<hr />
+<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie4.JPG" /></p>
+<hr />
+<h3 id="lernfortschritt">🎯 Lernfortschritt</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* verschiedene Fehlertypen bei der Datenübertragung unterscheiden
+* Maßnahmen zur Erkennung und Behebung von Übertragungsfehlern beschreiben
+* die Hammingdistanz verschiedener Codes ermitteln</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5_2_Buszugriffsverfahren/" class="btn btn-neutral float-left" title="Buszugriffsverfahren"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" class="btn btn-neutral float-right" title="Bussysteme in der Gebäudeautomation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5_2_Buszugriffsverfahren/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
