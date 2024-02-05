@@ -41,7 +41,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![bg right](images/DALIVerdrahtungsdiagramm.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -63,7 +63,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![](images/BeispielSzenen.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -73,7 +73,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![](images/BeispielSzenen.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 
 ----
@@ -94,7 +94,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![](images/DALI-Systembild1-800x439.jpg)
 
-###### https://www.ledclusive.de/blog/anleitung-zur-dali-installation-im-privathaus-fuer-jedermann/
+[Quelle](https://www.ledclusive.de/blog/anleitung-zur-dali-installation-im-privathaus-fuer-jedermann/)
 
 ---
 
@@ -110,7 +110,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
   - Gewisse **Parameter** sind dabei direkt **im DALI-Betriebsgerät** abgelegt (z.B. Szenenwerte, Gruppenadresse).
 
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -130,7 +130,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ![bg right w:600](images/manchest.png)
 
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832)
 
 
 
@@ -140,7 +140,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![centered](images/5839436427__de__Web.jpg)
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832)
 
 * FF: Forward Frame eines Masters
 * BF: Backward Frame Antwort eines Slaves
@@ -151,7 +151,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ![](images/dali-forward-frame-structure.jpg)
 
-###### https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding
+[Quelle](https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding)
 
 ---
 
@@ -159,7 +159,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 * `1-1-01110...`
 
-###### https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding
+[Quelle](https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding)
 
 
 
@@ -196,7 +196,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 
 
-###### [Handbuch](https://www.tridonic.com/com/de/download/technical/Manual_DALI_XC_de.pdf)
+[Quelle]([Handbuch](https://www.tridonic.com/com/de/download/technical/Manual_DALI_XC_de.pdf))
 
 
 ---
@@ -250,7 +250,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 - Ist die Stromversorgung stark genug für alle Betriebsmittel?
 - Hierbei sind nur die Controller gemeint, die durch die DALI-Leitung versorgt werden
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -298,7 +298,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ![](images/DALIkabel.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 
 ---
@@ -311,7 +311,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ![](images/Dali_Anschluss.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 - **Safety Extra Low Voltage**= Sicherheitskleinspannung) bezeichnet Spannungen, die aufgrund ihrer geringen Spannungshöhe und Isolierung besonderen Schutz gegen elektrischen Schlag bieten
 
@@ -358,7 +358,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 
 ![bg right:40% height:400](images/lichtszenen--00093d2894e020221cba45bf434793ae.jpg)
 
-###### https://www.light11.de/lightmag/lichtsteuerung/
+[Quelle](https://www.light11.de/lightmag/lichtsteuerung/)
 
 ---
 
@@ -391,7 +391,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 
 ![bg right:27% height:300](images/DALI_Besprechungszimmer.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -413,7 +413,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 |4| 6 |DALI LED Betriegsgerät für Langfeldleuchte LCAI one4all|
 |5| 2 |DALI LED Betriebsgerät für LED Downlights LCAI one4all|
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 
 ---
@@ -430,7 +430,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 5 Adern zu jeder Leuchte  | 5 x 1,5mm² | 
 |DALI LED Betriebsgerät in Leuchte |Tridonic LCAI one4all | |
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -448,7 +448,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
   - individuelle **Dimmen der beiden Leuchtengruppen**.
   - 4 Taster, je zwei für jede Gruppe
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -467,7 +467,7 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 | Szene 3 |  nicht verdrahtet  | Präsentation | 50% | 20 %|
 | Szene 4 |  nicht verdrahtet  | Besprechung | 0% | 100% |
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -478,14 +478,14 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
   - **Schalter im Programmiermodus**
   - **PC-Anbindung** mit Software
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 ---
 
 #### Ergebnis
 
 ![](images/BeispielSzenen.png)
 
-###### https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
 ---
 
@@ -636,7 +636,7 @@ Installationsbus (EIB)
 ![bg right w:600](images/KnxVielfaltpng.png)
 
 
-###### https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf
+[Quelle](https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf)
 
 --- 
 
@@ -648,7 +648,7 @@ Installationsbus (EIB)
 
 ![](images/1920px-EIB_Verkabelung-1.png)
 
-###### https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/EIB_Verkabelung-1.png/1920px-EIB_Verkabelung-1.png
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/EIB_Verkabelung-1.png/1920px-EIB_Verkabelung-1.png)
 
 ---
 
@@ -656,7 +656,7 @@ Installationsbus (EIB)
 
 ![bg right:33% height:200](images/KNXSensorAktor.png)
 
-###### https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf
+[Quelle](https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf)
 
 * **Sensoren erkennen Ereignisse** im Gebäude (Tastenbetätigung,
 Bewegung, Über-/Unterschreitung eines Temperaturwerts etc.) und wandeln diese in
@@ -683,7 +683,7 @@ Bewegung, Über-/Unterschreitung eines Temperaturwerts etc.) und wandeln diese i
 
 ![bg right:66% height:720](images/ListeSensorenKNX.png)
 
-###### https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf
+[Quelle](https://www.knx.org/wAssets/docs/downloads/Marketing/Flyers/KNX-Basics/KNX-Basics_de.pdf)
 
 ---
 
@@ -785,7 +785,7 @@ einer Bereichslinie zu einem Gesamtsystem erweitert werden
 ![bg right width:600](images/knxAdressvergabe.gif)
 
 
-###### https://kompendium.infotip.de/knx-installationsbus.html
+[Quelle](https://kompendium.infotip.de/knx-installationsbus.html)
 
 
 ---
@@ -801,7 +801,7 @@ einer Bereichslinie zu einem Gesamtsystem erweitert werden
 
 ![bg right:33% width:400](images/ABB_2752_01_16_Gruppenadr.gif)
 
-###### https://kompendium.infotip.de/knx-installationsbus.html
+[Quelle](https://kompendium.infotip.de/knx-installationsbus.html)
 
 ---
 
@@ -810,7 +810,7 @@ einer Bereichslinie zu einem Gesamtsystem erweitert werden
 ![ width:600](images/FOT_2752_01_14_Aktoren.jpg)
 
 
-###### https://kompendium.infotip.de/knx-installationsbus.html
+[Quelle](https://kompendium.infotip.de/knx-installationsbus.html)
 
 
 ---
@@ -821,7 +821,7 @@ einer Bereichslinie zu einem Gesamtsystem erweitert werden
 
 - mechanische Aktoren und Sensoren werden im Feld verbaut
 
-###### https://kompendium.infotip.de/knx-installationsbus.html
+[Quelle](https://kompendium.infotip.de/knx-installationsbus.html)
 
 
 ---
@@ -838,7 +838,7 @@ und Inbetriebnahme
 ![bg right width:600](images/ETS-Lizenzen.png)
 
 
-###### https://www.knx.org/knx-de/fuer-fachleute/software/software-vergleichen/
+[Quelle](https://www.knx.org/knx-de/fuer-fachleute/software/software-vergleichen/)
 
 ---
 
@@ -850,7 +850,7 @@ und Inbetriebnahme
 
 ![bg right width:600](images/ETS5-Katalog.jpg)
 
-###### https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/
+[Quelle](https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/)
 
 ---
 
@@ -858,7 +858,7 @@ und Inbetriebnahme
 
 ![height:500](images/ETS5-Gruppenadresse-zuweisen.jpg)
 
-###### https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/
+[Quelle](https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/)
 
 ---
 
@@ -866,7 +866,7 @@ und Inbetriebnahme
 
 ![height:500](images/ETS5-Bulk-Wertezuweisung.jpg)
 
-###### https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/
+[Quelle](https://www.meintechblog.de/2015/04/knx-aktor-in-10-schritten-mit-ets5-programmieren/)
 
 ---
 
@@ -897,11 +897,11 @@ Refrigeration, and Air Conditioning Engineers Inc
 
 ![height:250](images/ibox-bac-router.jpg)
 
-###### https://www.intesis.com/de/produkte/protocol-translator/bacnet-gateways/router-f%C3%BCr-bacnet-ms-tp-auf-bacnet-ip?ordercode=INBACRTR0320000
+[Quelle](https://www.intesis.com/de/produkte/protocol-translator/bacnet-gateways/router-f%C3%BCr-bacnet-ms-tp-auf-bacnet-ip?ordercode=INBACRTR0320000)
 
 
-###### https://www.wago.com/at/bacnet#:~:text=BACnet%C2%AE%20%E2%80%9EBuilding%20Automation%20and,unterschiedlicher%20Hersteller%20in%20der%20Geb%C3%A4udeautomation.
-###### https://www.ta.hu-berlin.de/res/co.php?id=14081
+[Quelle](https://www.wago.com/at/bacnet#:~:text=BACnet%C2%AE%20%E2%80%9EBuilding%20Automation%20and,unterschiedlicher%20Hersteller%20in%20der%20Geb%C3%A4udeautomation.)
+[Quelle](https://www.ta.hu-berlin.de/res/co.php?id=14081)
 
 ---
 
@@ -914,7 +914,7 @@ Refrigeration, and Air Conditioning Engineers Inc
 
 ![height:250](images/inknxbacxxxxxxx.jpg)
 
-###### https://www.intesis.com/de/produkte/protocol-translator/knx-gateways/knx-tp-gateway-f%C3%BCr-bacnet-ip-ms-tp-client?ordercode=INKNXBAC1000000
+[Quelle](https://www.intesis.com/de/produkte/protocol-translator/knx-gateways/knx-tp-gateway-f%C3%BCr-bacnet-ip-ms-tp-client?ordercode=INKNXBAC1000000)
 
 ---
 
@@ -960,7 +960,7 @@ bInAnwesenheitErkannt = { "Object_Identifier" : 0,
 
 ![](images/BAC-Objekte.png)
 
-######  https://www.ta.hu-berlin.de/res/co.php?id=14081
+[Quelle]( https://www.ta.hu-berlin.de/res/co.php?id=14081)
 
 
 ---
@@ -969,7 +969,7 @@ bInAnwesenheitErkannt = { "Object_Identifier" : 0,
 
 ![h:500](images/BacNetObjectTwincat.png)
 
-###### https://download.beckhoff.com/download/document/automation/twincat3/TF8020_TC3_BACnet_DE.pdf
+[Quelle](https://download.beckhoff.com/download/document/automation/twincat3/TF8020_TC3_BACnet_DE.pdf)
 
 ---
 
@@ -977,7 +977,7 @@ bInAnwesenheitErkannt = { "Object_Identifier" : 0,
 
 ![](images/12749355787__Web.gif)
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tcbacnet/12748477963.html&id=
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcbacnet/12748477963.html&id=)
 
 ---
 
@@ -1018,7 +1018,7 @@ Time Value, Timer, Trend Log, Trend Log Multiple
 * Ein **Sensor** (Geräteprofil) sollte einen **Alarm** (Dienst) auslösen können
 * Der Alarm könnte auf einen **Analogwert** oder dem **Mittwert eines Analogwertes** basieren
 
-###### saia-burgess Controls 2011 - BACnet Workshop
+[Quelle](saia-burgess Controls 2011 - BACnet Workshop)
 
 ![bg right:20% h:700](images/12269958667__Web.jpg)
 
@@ -1051,7 +1051,7 @@ der anderen als Client aufrufen
 
 ![](images/Modbus_TCP_IP_devices_sensors_meters_with_Vutlan_monitoring_control_system.jpg)
 
-###### https://vutlan.com/blog/post/modbus-tcpip-modbus-rtu-readwrite-support.html
+[Quelle](https://vutlan.com/blog/post/modbus-tcpip-modbus-rtu-readwrite-support.html)
 
 ---
 
@@ -1075,7 +1075,7 @@ der anderen als Client aufrufen
 ![bg right](images/LONtool.png)
 
 
-###### https://download.beckhoff.com/download/document/Application_Notes/DK9221-0111-0038.pdf
+[Quelle](https://download.beckhoff.com/download/document/Application_Notes/DK9221-0111-0038.pdf)
 
 ---
 
@@ -1087,7 +1087,7 @@ der anderen als Client aufrufen
 
 ![bg right height:400](images/Instalaltion3.jpg)
 
-###### https://www.lcn.eu/lcn-bus/installation/
+[Quelle](https://www.lcn.eu/lcn-bus/installation/)
 
 ---
 
@@ -1102,7 +1102,7 @@ der anderen als Client aufrufen
 
 ![bg right:33% height:400](images/SMI.png)
 
-###### https://standard-motor-interface.com/
+[Quelle](https://standard-motor-interface.com/)
 
 ---
 
@@ -1118,7 +1118,7 @@ der anderen als Client aufrufen
 - Schockautomatik (Einbruchschutz)
 
 
-###### https://standard-motor-interface.com/wp-content/uploads/2020/10/160224_SMI_Planungshandbuch_DE.pdf
+[Quelle](https://standard-motor-interface.com/wp-content/uploads/2020/10/160224_SMI_Planungshandbuch_DE.pdf)
 
 
 ----
@@ -1142,7 +1142,7 @@ der anderen als Client aufrufen
 
 ![bg right:33% height:200](images/dipschalter.png)
 
-###### https://www.reichelt.de/it/de/dip-schalter-liegend-10-polig-nt-10-p13535.html
+[Quelle](https://www.reichelt.de/it/de/dip-schalter-liegend-10-polig-nt-10-p13535.html)
 
 
 ---
@@ -1156,7 +1156,7 @@ und **negativ mit Reichweite**
 
 ![bg right height:300](images/WiFi-IEEE-802_11-ah.png)
 
-###### https://trendblog.euronics.de/smart-home/funkstandards-im-smart-home-teil-1-woran-wlan-und-bluetooth-kranken-50589/
+[Quelle](https://trendblog.euronics.de/smart-home/funkstandards-im-smart-home-teil-1-woran-wlan-und-bluetooth-kranken-50589/)
 
 ---
 
@@ -1180,7 +1180,7 @@ Anwendungen in Wohn- und Nichtwohngebäuden
 
 ![bg right height:300](images/BTmesh.png)
 
-###### https://www.all-electronics.de/elektronik-entwicklung/bluetooth-mesh-lichtsteuerung-kontrolliert-smart-building-system.html
+[Quelle](https://www.all-electronics.de/elektronik-entwicklung/bluetooth-mesh-lichtsteuerung-kontrolliert-smart-building-system.html)
 
 ---
 
@@ -1197,7 +1197,7 @@ Anwendungen in Wohn- und Nichtwohngebäuden
 
 ![bg right height:300](images/900px-STM350-2_front_back_300dpi.jpg)
 
-###### https://de.wikipedia.org/wiki/Enocean
+[Quelle](https://de.wikipedia.org/wiki/Enocean)
 
 ---
 

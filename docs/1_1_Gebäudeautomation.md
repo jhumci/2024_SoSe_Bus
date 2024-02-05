@@ -41,7 +41,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![w:700](images/Sktruktur_Gebäudeautomation.png)
 
-###### Lauckner und Krimmling 2020
+[Quelle](Lauckner und Krimmling 2020)
 
 ---
 
@@ -65,7 +65,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 ![](images/Schalenmodell.png)
 
-###### VDI 3813 Blatt 1
+[Quelle](VDI 3813 Blatt 1)
 
 ---
 
@@ -96,7 +96,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 ![bg right:33% w:400](images/epidaurus-amphitheater_1.jpg)
 
-###### 1BayBO Art. 2 Abs. 2 [26]
+[Quelle](1BayBO Art. 2 Abs. 2 [26])
 
 ---
 
@@ -106,7 +106,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 übergeordnete Prozesse, zur Überwachung und Steuerung (Gebäudeleittechnik)
 
-###### https://link.springer.com/chapter/10.1007/978-3-319-25876-8_9
+[Quelle](https://link.springer.com/chapter/10.1007/978-3-319-25876-8_9)
 
 ---
 
@@ -121,7 +121,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 * Verknüpfung erfolgt in der **Automationsebene**  z. B. Prozessüberwachung und  Optimierung
 
 
-###### Lauckner und Krimmling 2020
+[Quelle](Lauckner und Krimmling 2020)
 
 ---
 

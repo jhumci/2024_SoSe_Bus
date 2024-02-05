@@ -116,7 +116,7 @@ while True:
 - Einige GPIOs können als Busleitungen genutzt werden: UART, SPI, I2C
 
 
-###### https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm)
 
 ---
 
@@ -128,7 +128,7 @@ while True:
 - vier Reihen für Spannungsversorgung
 - weitere Raster sind längs verbunden 
 
-###### https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm)
 
 
 --- 
@@ -199,7 +199,7 @@ while True:
 - (RaspBerry Pis haben eingebaute Widerstände, die aktiviert werden können)
 
 
-###### https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm)
 
 ---
 
@@ -269,7 +269,7 @@ while True:
 ```
 
 
-###### https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm)
 
 ---
 
@@ -279,7 +279,7 @@ while True:
 
 - Langes Bein: Anode
 
-###### https://nawi-werft.de/bausteine/led-ansteuern/
+[Quelle](https://nawi-werft.de/bausteine/led-ansteuern/)
 
 
 ---
@@ -297,7 +297,7 @@ while True:
 ![](images/21021815.gif) ![](images/21021814.gif)
 
 
-###### https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm)
 
 
 ---
@@ -330,7 +330,7 @@ while True:
 
 ![bg right w:500](images/04011113.png) 
 
-###### https://www.elektronik-kompendium.de/sites/kom/0401111.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/kom/0401111.htm)
 
 ---
 
@@ -415,7 +415,7 @@ while True:
     time.sleep(1)
 ```
 
-###### https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm)
 
 ---
 
@@ -470,7 +470,7 @@ while True:
 * Informationen hierzu finden sich meinst im [Datenblatt](https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf)
 
 ![bg right:43% w:550](images/helligkeitssensor-0555-3001-helligkeitsfühler-helligkeitsmelder-lichtfühler-lichtsensor.jpg)
-###### https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html
+[Quelle](https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html)
 
 ---
 

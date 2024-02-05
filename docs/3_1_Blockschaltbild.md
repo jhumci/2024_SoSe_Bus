@@ -34,7 +34,7 @@ theme: lemon
     * sondern auch vom Systemzustand und damit inneren Zustandsgrößen (vgl. Objekt)
 
 
-###### Lunze 
+[Quelle](Lunze )
 
 ---
 
@@ -121,7 +121,7 @@ theme: lemon
   beim Anlegen einer Quellenspannung
   * Antwort eines Helligkeitssensors auf Lichteinfall
 
-###### Lunze 
+[Quelle](Lunze )
 
 
 ---
@@ -185,7 +185,7 @@ theme: lemon
 
 
 
-###### https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg)
 
 ---
 
@@ -200,7 +200,7 @@ theme: lemon
 
 
 
-###### https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg)
 
 
 ---
@@ -297,7 +297,7 @@ zweipunkt_regler(regelabweichung):
   return licht
 ```
 
-###### Vorsicht: Wir greifen hier zum Thema Regelung vor, setzen den Regler aber in einer Steuerung ohne Regelkreis ein!
+[Quelle](Vorsicht: Wir greifen hier zum Thema Regelung vor, setzen den Regler aber in einer Steuerung ohne Regelkreis ein!)
 
 ---
 
@@ -353,14 +353,14 @@ class zweipunkt_hysterese():
 
 ![bg right w:500](images/Zweipunktkennlinie_mit_hysterese.png)
 
-###### https://www.wikiwand.com/de/Methode_der_harmonischen_Balance#Media/Datei:Zweipunktkennlinie.png
+[Quelle](https://www.wikiwand.com/de/Methode_der_harmonischen_Balance#Media/Datei:Zweipunktkennlinie.png)
 
 
 ---
 
 ![](images/ohne_hysterese.gif)
 
-###### https://www.youtube.com/watch?v=nC5ZPEPtH9w
+[Quelle](https://www.youtube.com/watch?v=nC5ZPEPtH9w)
 
 ---
 

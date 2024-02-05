@@ -495,7 +495,7 @@ pressure_bar := FUN_LinearTransformation(value_to_transform := aInPressure, min_
 | Bool XOR                         | `XOR`                            |                    |
 | Bool OR                          | `OR`                             | Schwächste Bindung |
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tcplccontrol/html/tcplcctrl_languages%20st.htm&id=5754912264349492758
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplccontrol/html/tcplcctrl_languages%20st.htm&id=5754912264349492758)
 
 ---
 

@@ -119,7 +119,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 * $H(\{ '12345','13349'\})=2$
 * $H(\{ 'Haus','Baum', 'Tier'\})=2$
 
-###### Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen
+[Quelle](Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen)
  
 ---
 
@@ -145,7 +145,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 
 ![bg right](images/Drehschalter.png)
 
-###### https://at.rs-online.com/web/p/nockenschalter/2212822
+[Quelle](https://at.rs-online.com/web/p/nockenschalter/2212822)
 
 ---
 
@@ -196,7 +196,7 @@ und mit übertragen
 
 ![height:350](images/Blocksicherung.png)
 
-###### Gerhard Schnell & Bernhard Wiedemann 
+[Quelle](Gerhard Schnell & Bernhard Wiedemann )
 
 ---
 

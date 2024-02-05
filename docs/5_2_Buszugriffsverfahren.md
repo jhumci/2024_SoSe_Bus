@@ -35,7 +35,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![bg](images/Bus-I2C-Aufbau.png)
 
-###### http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#img1
+[Quelle](http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#img1)
 
 ---
 
@@ -63,7 +63,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ![bg width:400 right:33%](images/polling.png)
 
 
-###### https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf
+[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
@@ -189,7 +189,7 @@ sequenceDiagram
 
 ![height:500](images/Buszugriffsverfahren.png)
 
-###### Schnell & Wiedemann 2019
+[Quelle](Schnell & Wiedemann 2019)
 
 ---
 
@@ -216,7 +216,7 @@ sequenceDiagram
 ![bg right height:400](images/ZeitverhaltenEhternet.png)
 
 
-###### Schnell & Wiedemann 2019
+[Quelle](Schnell & Wiedemann 2019)
 
 
 ---
@@ -227,7 +227,7 @@ sequenceDiagram
 
 ![bg right](images/800px-Trautenfels_-_Bemalter_Schrank_2a.jpg)
 
-###### https://de.wikipedia.org/wiki/Schneckenpost
+[Quelle](https://de.wikipedia.org/wiki/Schneckenpost)
 
 
 
@@ -252,7 +252,7 @@ sequenceDiagram
 
 ![bg right](images/Netzplan_Innsbrucker_Mittelgebirgsbahn_2012.png)
 
-###### Wiki
+[Quelle](Wiki)
 
 ---
 
@@ -260,7 +260,7 @@ sequenceDiagram
 
 ![center](images/Bukit_Timah_Railway_Station_in_Singapore_-_train_driver_taking_key_token.png)
 
-###### Wiki
+[Quelle](Wiki)
 
 ---
 
@@ -271,7 +271,7 @@ sequenceDiagram
 
 - **Vorsicht:** Logischer Ablauf muss nicht der verbauten Topologie entsprechen
 
-###### https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf
+[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
@@ -283,7 +283,7 @@ sequenceDiagram
 
 ![bg right:35% height:200 ](images/TokenPassing.png)
 
-###### https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf
+[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
@@ -297,7 +297,7 @@ sequenceDiagram
 * sehr effiziente Busauslastung
 
 
-###### https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf
+[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 ---
 
 ##### Summenrahmenprotokoll Beispiel EtherCat
@@ -305,7 +305,7 @@ sequenceDiagram
 ![height:450](images/EhterCat.png)
 
 
-###### https://www.youtube.com/watch?v=z2OagcHG-UU
+[Quelle](https://www.youtube.com/watch?v=z2OagcHG-UU)
 
 
 ---
@@ -315,7 +315,7 @@ sequenceDiagram
 * Ein- und Ausgangsklemmen werden über Ethercat angesprochen
 * Hardware wie Ethernet, jedoch mit Summenrahmenprotokoll
 
-###### https://www.beckhoff.com/de-de/produkte/i-o/ethercat/
+[Quelle](https://www.beckhoff.com/de-de/produkte/i-o/ethercat/)
 
 ---
 
@@ -327,7 +327,7 @@ sequenceDiagram
 
 ![bg right:40% height:300](images/Buszugriffsverfahren.png)
 
-###### Schnell & Wiedemann 2019
+[Quelle](Schnell & Wiedemann 2019)
 
 
 
@@ -405,7 +405,7 @@ mit $t_s$ Signallaufzeit,
 
 ![bg height:600 right:45%](images/BusKollision.png)
 
-###### Schnell & Wiedemann 2019
+[Quelle](Schnell & Wiedemann 2019)
 
 ---
 
@@ -418,7 +418,7 @@ mit $t_s$ Signallaufzeit,
 
 ![bg right height:380](images/ZeitverhaltenEhternet.png)
 
-###### Schnell & Wiedemann 2019
+[Quelle](Schnell & Wiedemann 2019)
 
 ---
 

@@ -22,7 +22,7 @@ theme: lemon
 
 ![height:200](images/ZentraleSPS.png) ![height:200](images/DezentralerBus.png)
 
-###### https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf
+[Quelle](https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf)
 
 
 ---
@@ -36,7 +36,7 @@ theme: lemon
 
 ![bg width:400 right:40%](images/VorteilFeldbus.png)
 
-###### https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf
+[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
@@ -69,7 +69,7 @@ theme: lemon
 
 ![bg width:400 right:35%](images/csm_Gateways-Bussysteme-sicher-verbinden_a5b35a71af.jpg)
 
-###### https://www.wachendorff-prozesstechnik.de/produktgruppen/gateways-und-protokollwandler/informationen/busprotokolle-besser-verstehen/?type=98
+[Quelle](https://www.wachendorff-prozesstechnik.de/produktgruppen/gateways-und-protokollwandler/informationen/busprotokolle-besser-verstehen/?type=98)
 
 ---
 
@@ -213,7 +213,7 @@ theme: lemon
 * Probleme: 
   * Taktleitung benötigt zusätzliche Leitung
   * Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master schon weitergezogen
-###### http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_
+[Quelle](http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_)
 
 
 ---
@@ -245,7 +245,7 @@ mehr Symbole bei gleicher Baud-Rate übertragen werden
 * Half-Duplex: Beide Richtungen, aber nicht gleichzeitig
 * Full-Duplex: Beide Richtungen gleichzeitig
 
-###### https://www.black-box.de/de-de/page/25078/Information/Technische-Ressourcen/black-box-erklaert/Glasfaserkabel/Simplex-versus-Duplex-Glasfaser-Patchkabel
+[Quelle](https://www.black-box.de/de-de/page/25078/Information/Technische-Ressourcen/black-box-erklaert/Glasfaserkabel/Simplex-versus-Duplex-Glasfaser-Patchkabel)
 
 ---
 
@@ -258,7 +258,7 @@ mehr Symbole bei gleicher Baud-Rate übertragen werden
 * Zwei Drähte für Daten (Werte immer gegenläufig - half duplex)
 * Kein Draht für Takt (spezielle NRZ-S Kodierung mit Bit Stuffing)
 * $480 \text{ Baud}$
-###### https://commons.wikimedia.org/wiki/File:USB_3.0_Kabel_und_Stecker.png, https://de.wikipedia.org/wiki/Non_Return_to_Zero
+[Quelle](https://commons.wikimedia.org/wiki/File:USB_3.0_Kabel_und_Stecker.png, https://de.wikipedia.org/wiki/Non_Return_to_Zero)
 
 
 ---

@@ -77,7 +77,7 @@ stateDiagram-v2
     s4 --> s2: Schalter 2 = off
 ```
 
-###### https://mermaid.live/
+[Quelle](https://mermaid.live/)
 
 
 
@@ -96,7 +96,7 @@ stateDiagram-v2
 
 ![](images/EinbauWechselschaltung.png)
 
-###### https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf
+[Quelle](https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf)
 
 ---
 
@@ -136,7 +136,7 @@ stateDiagram-v2
 
 ![bg right h:500](images/Datenblatt_ESW12DX-UC.png)
 
-###### https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf
+[Quelle](https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf)
 
 ---
 
@@ -145,7 +145,7 @@ stateDiagram-v2
 
 ![bg right h:500](images/AnschlussStromstross.png)
 
-###### https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf
+[Quelle](https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf)
 
 
 ---
@@ -155,7 +155,7 @@ stateDiagram-v2
 
 ![](images/StromStossSchaltung.png)
 
-###### https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf
+[Quelle](https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf)
 
 
 ---
@@ -183,7 +183,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![height:400](images/Loxone.png)
 
-###### https://www.loxone.com/dede/produkte/gebaeude-und-hausautomation-miniserver/
+[Quelle](https://www.loxone.com/dede/produkte/gebaeude-und-hausautomation-miniserver/)
 
 ---
 
@@ -204,7 +204,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![bg h:400 right:40%](images/S7CPU3V2.png)
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=294
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=294)
 
 - Anbringung meist an Hutschiene (**modular**)
 - Rechen- und Speichereinheit oft Anbindung an Bus-System 
@@ -241,7 +241,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![bg h:400 right:40%](images/S7CPU3V2.png)
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=294
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=294)
 
 ---
 
@@ -261,7 +261,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * häufig sternförmige Verkabelung
 * Ein- und Ausgänge der SPS sind digital (nur zwei Zustände) oder analog
 
-###### https://de.wikipedia.org/wiki/Nervensystem#
+[Quelle](https://de.wikipedia.org/wiki/Nervensystem#)
 
 ---
 
@@ -275,7 +275,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![bg right:66% height:600](images/GehirnOktopus.png)
 
-###### https://quizizz.com/admin/quiz/605a064f172bf7001b1ea35d/tintenfische
+[Quelle](https://quizizz.com/admin/quiz/605a064f172bf7001b1ea35d/tintenfische)
 
 ---
 
@@ -308,7 +308,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 ---
 
@@ -316,7 +316,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![bg h:400 right:40%](images/S7CPU3V2.png)
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=294
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=294)
 
 - Anbringung meist an Hutschiene (**modular**)
 - Rechen- und Speichereinheit oft Anbindung an Bus-System 
@@ -341,14 +341,14 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 ---
 
 ### Adressierung 
 
 ![bg h:400 right](images/SPS.png)
-###### https://www.xplore-dna.net/mod/page/view.php?id=294
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=294)
 
 * Digitale Ein- und Ausgänge schalten und erfassen Spannungen bis 24V (i.d.R.)
 * Jeder digitale Ein- und Ausgang wird durch ein Bit repräsentiert (`True`: 24V, `False`: 0V)
@@ -379,7 +379,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 ---
 
@@ -401,7 +401,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 ![height:500](images/EVA-Prinzip.svg)
 
 
-###### https://upload.wikimedia.org/wikipedia/commons/f/f2/EVA-Prinzip.svg
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/f/f2/EVA-Prinzip.svg)
 
 ---
 
@@ -423,7 +423,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/C6915.png)
 
-###### Beckhoff Automation
+[Quelle](Beckhoff Automation)
 
 ---
 
@@ -431,7 +431,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 ---
 
@@ -466,7 +466,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 
 
-###### https://blog.wika.de/know-how/pt100-in-2-3-oder-4-leiter-schaltung/
+[Quelle](https://blog.wika.de/know-how/pt100-in-2-3-oder-4-leiter-schaltung/)
 
 ---
 
@@ -482,7 +482,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * $T \approx 100°C$
 * Sollten wir den PT-Widerstand direkt mit $24 V$ beaufschlagen?
 
-###### Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
+[Quelle](Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C))
 
 ---
 
@@ -490,7 +490,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 * Linearisierung des Signals
 * Anpassung des Signals auf definierten Ausgangsbereich 
@@ -540,7 +540,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * PT-Eingänge: 
   Spezielle Eingänge zum Anschluss von PT-Widerständen
 
-###### https://www.beckhoff.com/de-at/produkte/i-o/ethercat-klemmen/el3xxx-analog-eingang/
+[Quelle](https://www.beckhoff.com/de-at/produkte/i-o/ethercat-klemmen/el3xxx-analog-eingang/)
 
 ---
 
@@ -557,7 +557,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 ![h:450](images/Singalformen.png)
 
 * live zero lässt Kabelbruch erkennen
-###### https://download.beckhoff.com/download/document/Application_Notes/DK9221-1111-0059.pdf
+[Quelle](https://download.beckhoff.com/download/document/Application_Notes/DK9221-1111-0059.pdf)
 
 ---
 
@@ -568,7 +568,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * Single-Ended: alle Sensoren liegen auf dem gleichen V- Potential (nur ein Kabel zurück)
 * Differential: jeder Sensor hat sein eigenes V- Potential (weniger Störanfällig)
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/ep3356/1668832651.html&id=
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/ep3356/1668832651.html&id=)
 
 ---
 
@@ -590,7 +590,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
   * Wie hoch ist die Zykluszeit der SPS?
   * Wie viel Bit stehen zur Speicherung eines Wertes zu Verfügung?
 
-###### https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/
+[Quelle](https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/)
 
 ---
 
@@ -607,7 +607,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 | 0 | 0| 
 | 10 | 50000 |  
 
-###### https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/
+[Quelle](https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/)
 
 ---
 
@@ -615,7 +615,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![bg left w:700](images/AD-DA-Wandlung-Digitalisierung-uai-516x516.jpg)
 
-###### https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/
+[Quelle](https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/)
 
 * Wie viele Spannungswerte kann der Eingang unterscheiden (resolution)
 * Angabe auf der Klemme: 12 Bit verteilt auf $-0-..10$ V
@@ -632,7 +632,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/Messkette.svg)
 
-###### https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a
+[Quelle](https://mermaid.live/edit#pako:eNp1UMtqw0AM_BWj0wZsQpo-wIeAwZdCQqGGFtrtQXhle4m9a2QtpYT8Tf-kP9ZNg6GlRCdpNBpJc4DaG4Icmt6_1x2yJNtH7ZIY1qxeK3KT57ckyzaxvlJPxJN8ffKeeBExa9aqWJbZMzrTz9C1qoQCcXDtRNZ1ZOXcuFHlsvjLvf2veKeKvXhezEesV6q0rRWMQ8m9G4NcXjPPXD7ht9hDkJMapDAQD2hNtOFwktAgHQ2kIY-poQZDLxq0O0YqBvHVh6shFw6UQhgNCpUWW8YB8gb7KaJkbPxhd7b2x-EURnQv3s-c4zdLjX9a)
 
 ---
 
@@ -642,7 +642,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * Nach der Umwandlung im Speicher der SPS
 
 ![bg left w:700](images/AD-DA-Wandlung-Digitalsignal.jpg)
-###### https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/
+[Quelle](https://chrishoermann.at/analog-digital-wandlung-digital-analog-wandlung/)
 
 
 | T in ms | Beleuchtungsstärke in Lux | 
@@ -695,7 +695,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 * Was ist die kleinste Druckdifferenz, die Sie an der SPS erfassen können?
 * Zeichen Sie, wie sie den Sensor anschließen würden
 
-###### https://www.sensorshop24.de/productpdf/download/file/id/1009/name/Drucktransmitter_G14%2522_oder_G12%2522_f%25C3%25BCr_%25C3%259Cber-_und_Unterdruck_mit_Normstecker_%25280%25E2%2580%259110V4%25E2%2580%259120mA%2529.pdf/
+[Quelle](https://www.sensorshop24.de/productpdf/download/file/id/1009/name/Drucktransmitter_G14%2522_oder_G12%2522_f%25C3%25BCr_%25C3%259Cber-_und_Unterdruck_mit_Normstecker_%25280%25E2%2580%259110V4%25E2%2580%259120mA%2529.pdf/)
 
 ---
 
@@ -745,7 +745,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/DokumentationEL3051.png)
 
-###### https://download.beckhoff.com/download/Document/io/ethercat-terminals/el30xxde.pdf
+[Quelle](https://download.beckhoff.com/download/Document/io/ethercat-terminals/el30xxde.pdf)
 
 ---
 
@@ -758,7 +758,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/DokumentationEL3021.png)
 
-###### https://download.beckhoff.com/download/Document/io/ethercat-terminals/el30xxde.pdf
+[Quelle](https://download.beckhoff.com/download/Document/io/ethercat-terminals/el30xxde.pdf)
 
 ---
 

@@ -27,7 +27,7 @@ theme: lemon
 
 ![w:900](images/PlanungGebäudeautimatisierung.png)
 
-###### Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation
+[Quelle](Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation)
 
 
 ---
@@ -45,7 +45,7 @@ theme: lemon
 |           9           | Objektbetreuung                                      |       2 %      |        2 %        |              1 %             |
 |         Summe         |                                                      |      100 %     |       100 %       |             100 %            |
 
-###### Leistungsbild gemäß HOAI 2013 und HOAI 2021
+[Quelle](Leistungsbild gemäß HOAI 2013 und HOAI 2021)
 
 ---
 
@@ -94,7 +94,7 @@ theme: lemon
 
 ![](images/light-building-eplan-preplanning-02.jpg)
 
-###### https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/
+[Quelle](https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/)
 
 ---
 
@@ -120,7 +120,7 @@ theme: lemon
 
 ![bg right:20% h:400](images/Raumautomationschema_siemens.png)
 
-###### Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein
+[Quelle](Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein)
 
 
 ---
@@ -154,7 +154,7 @@ theme: lemon
 
 ![bg right](images/rfft_frontal_display.jpg)
 
-###### https://www.sensorshop24.de/raumkombifuehler-fuer-temperatur-und-feuchte-0-10v-4-20ma
+[Quelle](https://www.sensorshop24.de/raumkombifuehler-fuer-temperatur-und-feuchte-0-10v-4-20ma)
 
 ---
 
@@ -163,7 +163,7 @@ theme: lemon
 
 ![](images/11659900299__de__Web.jpg)
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclibhvac/11659363083.html&id=
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclibhvac/11659363083.html&id=)
 
 ---
 
@@ -227,7 +227,7 @@ theme: lemon
 
 ![h:400](images/RA-Schema.pdf.png)
 
-###### https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf
+[Quelle](https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf)
 
 
 

@@ -59,7 +59,7 @@ der Regelgröße $y$ zu erhalten
 * Mathematische Beschreibung und Analyse
 * Simulationsprogramme: z.B. [Matlab Simulink](https://de.mathworks.com/solutions/control-systems.html) oder [Scilab Xcos](https://www.scilab.org/scilab/features)
 
-###### https://www.samsongroup.com/document/l102de.pdf
+[Quelle](https://www.samsongroup.com/document/l102de.pdf)
 
 
 ---
@@ -84,7 +84,7 @@ der Regelgröße $y$ zu erhalten
 * Das schnelle Verhalten der Regler mit D-Anteil
 
 
-###### https://rn-wissen.de/wiki/index.php/Regelungstechnik
+[Quelle](https://rn-wissen.de/wiki/index.php/Regelungstechnik)
 
 
 ---
@@ -98,7 +98,7 @@ der Regelgröße $y$ zu erhalten
 
 ![bg height:350 right:33%](images/KriterienRegelkreis.png)
 
-###### https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf
+[Quelle](https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf)
 
 
 
@@ -114,7 +114,7 @@ der Regelgröße $y$ zu erhalten
 
 ![bg height:350 right:33%](images/Regelflache.png)
 
-###### https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf
+[Quelle](https://srv.ifr.ing.tu-bs.de/static/files/lehre/vorlesungen/gdr/Skript_GdR.pdf)
 
 ---
 
@@ -132,7 +132,7 @@ instellungen eines PID-Regler kalibriert.
 
 ![height:400 ](images/Xqt_Regler.png)
 
-###### https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)
+[Quelle](https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik))
 
 ---
 
@@ -148,7 +148,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 
 ![bg height:200 right:30%](images/Xqt_Regler.png)
 
-###### https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)
+[Quelle](https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik))
 
 ---
 
@@ -166,7 +166,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 
 ![bg height:200 right:30%](images/Xqt_Regler.png)
 
-###### https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)
+[Quelle](https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik))
 
 
 ---
@@ -177,7 +177,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 
 ![](images/pid_regler_hardware.png)
 
-###### https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807
+[Quelle](https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807)
 
 
 ---
@@ -200,7 +200,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
   * `rXW`: Regelabweichung
 
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tf8000_tc3_hvac/4685059723.html&id=
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tf8000_tc3_hvac/4685059723.html&id=)
 
 ---
 
@@ -219,7 +219,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 * Ab bestimmtem $K_P^{krit}$ beginnt die Regelgröße zu schwingen (Stabilitätsgrenze)
 
 
-###### http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/7/tc/regelung/grundlagen/regelung_grundlagen.vlu/Page/vsc/de/ch/7/tc/regelung/grundlagen/regparam/regparam.vscml.html
+[Quelle](http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/7/tc/regelung/grundlagen/regelung_grundlagen.vlu/Page/vsc/de/ch/7/tc/regelung/grundlagen/regparam/regparam.vscml.html)
 
 ---
 
@@ -260,7 +260,7 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 * **Berechnung der Reglerparameter** ($K_P$, $T_n$, $T_v$) entsprechend den folgenden Regeln:
 
 
-###### Ziegler, John G., and Nathaniel B. Nichols. "Optimum settings for automatic controllers." trans. ASME 64.11 (1942)
+[Quelle](Ziegler, John G., and Nathaniel B. Nichols. "Optimum settings for automatic controllers." trans. ASME 64.11 (1942))
 ---
 
 ### Einstellregeln nach Ziegler und Nichols (III)

@@ -140,7 +140,7 @@ Entfernen Sie den I und D-Anteil des PID-Reglers und beobachten Sie die Reaktion
 * Je länger ($t$) die Regelabweichung besteht und umso größer sie ist, desto stärker die Antwort
 * $u(t)=\frac{1}{T_n}\int_0^te(\tau)d\tau$
 
-###### Abbildung rechts ist Reaktion auf Sprungfunktion 
+[Quelle](Abbildung rechts ist Reaktion auf Sprungfunktion )
 
 ---
 

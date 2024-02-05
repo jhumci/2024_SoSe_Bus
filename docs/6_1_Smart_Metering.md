@@ -28,7 +28,7 @@ theme: lemon
 
 ![bg right height:700](images/slaves.jpg)
 
-###### Tourane Corbière-Nicollier & Olivier Jolliet 2001 
+[Quelle](Tourane Corbière-Nicollier & Olivier Jolliet 2001 )
 
 
 ---
@@ -37,7 +37,7 @@ theme: lemon
 
 ![bg height:680](images/PrimaryEnergyPerCapita.png)
 
-###### https://www.bpb.de/kurz-knapp/zahlen-und-fakten/globalisierung/52758/verbrauch-von-primaerenergie-pro-kopf/
+[Quelle](https://www.bpb.de/kurz-knapp/zahlen-und-fakten/globalisierung/52758/verbrauch-von-primaerenergie-pro-kopf/)
 
 
 ---
@@ -48,7 +48,7 @@ theme: lemon
 > misst den gesamten Energiebedarf (eines Landes). Er umfasst den Verbrauch des Energiesektors selbst, Verluste bei der Umwandlung (z.B. von Öl oder Gas in Elektrizität) und Verteilung von Energie sowie den Endverbrauch durch die Endverbraucher. Ausgeschlossen sind Energieträger, die für nichtenergetische Zwecke verwendet werden (z.B. Erdöl, das nicht zur Verbrennung, sondern zur Herstellung von Kunststoffen verwendet wird).
 
 
-###### https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Primary_energy_consumption#:~:text=Primary%20energy%20consumption%20measures%20the,final%20consumption%20by%20end%20users.
+[Quelle](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Primary_energy_consumption#:~:text=Primary%20energy%20consumption%20measures%20the,final%20consumption%20by%20end%20users.)
 
 
 ---
@@ -59,7 +59,7 @@ theme: lemon
 
 ![](images/1200px-Energyflows.png)
 
-###### https://energyeducation.ca/encyclopedia/Total_final_consumption
+[Quelle](https://energyeducation.ca/encyclopedia/Total_final_consumption)
 
 ---
 
@@ -67,7 +67,7 @@ theme: lemon
 
 ![](images/Energiegruppen_Bilanzbereich_AGEB.png)
 
-###### https://upload.wikimedia.org/wikipedia/commons/b/b4/Energiegruppen_Bilanzbereich_AGEB.png
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/b/b4/Energiegruppen_Bilanzbereich_AGEB.png)
 
 ---
 
@@ -79,7 +79,7 @@ theme: lemon
 ![bg right](images/59df0a759270b.jpg)
 
 
-###### https://en.wikipedia.org/wiki/Tonne_of_oil_equivalent, http://www.huashuochem.com/wap_product_detail_en/id/29.html
+[Quelle](https://en.wikipedia.org/wiki/Tonne_of_oil_equivalent, http://www.huashuochem.com/wap_product_detail_en/id/29.html)
 
 ---
 
@@ -107,7 +107,7 @@ $= 49.2$
 ![bg right](images/WaterKettle.png)
 
 
-###### James Hoffmann
+[Quelle](James Hoffmann)
 
 ---
 
@@ -119,7 +119,7 @@ $= 49.2$
 * This forecast was from before Russia's attack on Ukraine
 
 
-###### https://www.bloomberg.com/news/articles/2022-03-16/energy-costs-set-to-reach-record-13-of-global-gdp-this-year
+[Quelle](https://www.bloomberg.com/news/articles/2022-03-16/energy-costs-set-to-reach-record-13-of-global-gdp-this-year)
 
 
 ---
@@ -128,7 +128,7 @@ $= 49.2$
 
 ![height:500](images/Finalconsumption_Sector.png)
 
-###### https://www.iea.org/reports/key-world-energy-statistics-2020/final-consumption
+[Quelle](https://www.iea.org/reports/key-world-energy-statistics-2020/final-consumption)
 
 ---
 
@@ -146,7 +146,7 @@ $= 49.2$
 
 ![height:500](images/TotalPrimaryEnergySupply.png)
 
-###### https://www.iea.org/reports/key-world-energy-statistics-2020
+[Quelle](https://www.iea.org/reports/key-world-energy-statistics-2020)
 
 ---
 
@@ -155,7 +155,7 @@ $= 49.2$
 
 ![](images/ForrestFellings.png)
 
-###### Malanima (2013)
+[Quelle](Malanima (2013))
 
 ---
 
@@ -164,7 +164,7 @@ $= 49.2$
 
 > Schätzungen der Waldrodung in Mitteleuropa (Deutschland, Nordostfrankreich) anhand archäologischer Holzreste 200 v. Chr. bis 400 v. Chr. (dekadische Daten; jeder Punkt des Diagramms steht für die Intensität des Holzeinschlags).
 
-###### ###### Malanima, P. (2013). Energy consumption in the Roman world. In The Ancient Mediterranean Environment between Science and History (pp. 13-36). Brill
+[Quelle](###### Malanima, P. (2013). Energy consumption in the Roman world. In The Ancient Mediterranean Environment between Science and History (pp. 13-36). Brill)
 
 
 ---
@@ -192,7 +192,7 @@ $= 49.2$
 
 ![](images/EnergieKosten.png)
 
-###### https://kurier.at/wirtschaft/energiekosten-insgesamt-um-24-milliarden-euro-gestiegen/402181017
+[Quelle](https://kurier.at/wirtschaft/energiekosten-insgesamt-um-24-milliarden-euro-gestiegen/402181017)
 
 
 ---
@@ -234,7 +234,7 @@ $= 49.2$
 * Idee: Netz und Energie werden getrennt behandelt
 * Dies soll den Europäischen Austausch fördern und Kosten senken
 
-###### https://www.europarl.europa.eu/factsheets/de/sheet/45/energiebinnenmarkt
+[Quelle](https://www.europarl.europa.eu/factsheets/de/sheet/45/energiebinnenmarkt)
 
 ![bg right:40% w:400](images/C1009104-Monopoly-Brettspiel-Inhalt.PT01.jpg)
 
@@ -249,7 +249,7 @@ $= 49.2$
 
 ![](images/Atomstromfilter.png)
 
-###### https://traumshop.net/shop/highlights/atomstromfilter/
+[Quelle](https://traumshop.net/shop/highlights/atomstromfilter/)
 
 ---
 
@@ -297,7 +297,7 @@ $= 49.2$
 
 ![bg right:40% h:460](images/Energiemarkt/Folie5.PNG)
 
-###### marginale Kosten/Grenzkosten: Kosten die anfallen, um eine zusätzliche Einheit zu produzieren
+[Quelle](marginale Kosten/Grenzkosten: Kosten die anfallen, um eine zusätzliche Einheit zu produzieren)
 
 ---
 
@@ -306,7 +306,7 @@ $= 49.2$
 
 ![h:550](images/mertiOrder.png)
 
-###### Ökoinstitut Freiburg
+[Quelle](Ökoinstitut Freiburg)
 
 ---
 
@@ -319,7 +319,7 @@ $= 49.2$
 * Der Schnittpunkt zwischen Angebot und nachfrage bestimmt den Preis
 * All abgerufenen Kraftwerke erhalten den Preis, den das letzte Kraftwerk erzielt
 
-###### Ohne diese Regel (Pay-as-Bid) gäbe es ein Anreiz für strategisches Verhalten der Bieter 
+[Quelle](Ohne diese Regel (Pay-as-Bid) gäbe es ein Anreiz für strategisches Verhalten der Bieter )
 
 ---
 
@@ -327,7 +327,7 @@ $= 49.2$
 
 ![h:500](images/StromPreis.png)
 
-###### https://energy-charts.info/charts/price_spot_market/chart.htm?l=de&c=DE&week=44&legendItems=011010000010
+[Quelle](https://energy-charts.info/charts/price_spot_market/chart.htm?l=de&c=DE&week=44&legendItems=011010000010)
 
 ---
 
@@ -350,13 +350,13 @@ $= 49.2$
 
 ![h:600](images/Stromversorgung.svg)
 
-###### https://upload.wikimedia.org/wikipedia/commons/b/b0/Stromversorgung.svg
+[Quelle](https://upload.wikimedia.org/wikipedia/commons/b/b0/Stromversorgung.svg)
 
 ---
 
 ![](images/APG-380-kV-Ring-1.jpg)
 
-###### https://www.hochspannungsblog.at/Wissenswertes/Netzbetreiber/Uebertragungsnetz
+[Quelle](https://www.hochspannungsblog.at/Wissenswertes/Netzbetreiber/Uebertragungsnetz)
 
 ---
 
@@ -393,7 +393,7 @@ $= 49.2$
 
 ![height:500](images/wer-verbraucht-in-deutschland-die-meiste-energie-energieverbrauch-der-heizung-oftmals-untersch-tzt.jpg)
 
-###### https://www.presseportal.de/pm/43338/1208607
+[Quelle](https://www.presseportal.de/pm/43338/1208607)
 
 ---
 
@@ -401,7 +401,7 @@ $= 49.2$
 
 ![height:500](images/csm_heizungssysteme-neubau_b9e96ef74a.png)
 
-###### https://www.heizspiegel.de/heizkosten-pruefen/heizkosten-pro-m2-vergleich/
+[Quelle](https://www.heizspiegel.de/heizkosten-pruefen/heizkosten-pro-m2-vergleich/)
 
 ---
 
@@ -409,7 +409,7 @@ $= 49.2$
 
 ![height:500](images/Primärenergievergleich_fossile_Energie_und_erneuerbare_Energien.png)
 
-###### https://de.wikipedia.org/wiki/Sektorenkopplung#/media/Datei:Prim%C3%A4renergievergleich_fossile_Energie_und_erneuerbare_Energien.png
+[Quelle](https://de.wikipedia.org/wiki/Sektorenkopplung#/media/Datei:Prim%C3%A4renergievergleich_fossile_Energie_und_erneuerbare_Energien.png)
 
 ---
 
@@ -417,7 +417,7 @@ $= 49.2$
 
 ![height:500](images/alt-ern.jpg)
 
-###### https://www.oekosystem-erde.de/html/energiezukunft-03.html
+[Quelle](https://www.oekosystem-erde.de/html/energiezukunft-03.html)
 
 ---
 
@@ -459,7 +459,7 @@ $= 49.2$
 * dienen der Planung (z.B. Auslegung des Netzes, Beschaffung von Strom an der Strombörse)
 * zunehmend unpräzise
 
-###### https://blog.naturstrom.de/intern/standardlastprofil/
+[Quelle](https://blog.naturstrom.de/intern/standardlastprofil/)
 
 ---
 
@@ -480,7 +480,7 @@ $= 49.2$
 
 ![](images/SmartMeterIKB.png)
 
-###### Smart-Meter-Kurzanleitung
+[Quelle](Smart-Meter-Kurzanleitung)
 
 ---
 
@@ -504,7 +504,7 @@ $= 49.2$
 ![height:300](images/Grafik_SmartMeter_670.jpg)
 
 
-###### https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/smart-meter-die-neuen-stromzaehler-kommen-13275, Stand: 5. Februar 2021
+[Quelle](https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/smart-meter-die-neuen-stromzaehler-kommen-13275, Stand: 5. Februar 2021)
 
 
 ---
@@ -528,7 +528,7 @@ $= 49.2$
 
 ![bg right](images/VariablerTarif.png)
 
-###### https://www.awattar.at/
+[Quelle](https://www.awattar.at/)
 
 
 
@@ -553,7 +553,7 @@ $= 49.2$
 
 ![bg right w:600](images/Kundenschnittstelle.png)
 
-###### Konzept für einen „Smart-Meter Kundenschnittstellen Adapter“ zur Standardisierung der Datenbereitstellung in der Kundenanlage
+[Quelle](Konzept für einen „Smart-Meter Kundenschnittstellen Adapter“ zur Standardisierung der Datenbereitstellung in der Kundenanlage)
 
 ---
 
@@ -583,7 +583,7 @@ $= 49.2$
 | Lettland      |  23 |   |
 
 
-###### https://de.statista.com/statistik/daten/studie/387142/umfrage/marktdurchdringung-von-smart-metern-in-europa-nach-laendern/
+[Quelle](https://de.statista.com/statistik/daten/studie/387142/umfrage/marktdurchdringung-von-smart-metern-in-europa-nach-laendern/)
 
 ---
 
@@ -600,7 +600,7 @@ eich-rechtlich zugelassen sein
 - Zähler muss bei in Verkehr bringen der Europäischen Messgeräte-Richtlinie MID entsprechen
 - **Regelmäßig überprüft** (geeicht) werden
 
-###### https://static.fernauslese.de/uploads/Fernauslese.de-Merkblatt-Eichrecht-in-Oesterreich.pdf
+[Quelle](https://static.fernauslese.de/uploads/Fernauslese.de-Merkblatt-Eichrecht-in-Oesterreich.pdf)
 
 ![bg right:20% height:200](images/eichsiegel.jpg)
 
@@ -610,7 +610,7 @@ eich-rechtlich zugelassen sein
 
 ![height:500](images/Smart_Meter_2019.jpg)
 
-###### https://www.arbeiterkammer.at/beratung/konsument/Datenschutz/FAQs_zum_Smart_Meter.html#lg=1&slide=0
+[Quelle](https://www.arbeiterkammer.at/beratung/konsument/Datenschutz/FAQs_zum_Smart_Meter.html#lg=1&slide=0)
 
 
 
@@ -633,7 +633,7 @@ eich-rechtlich zugelassen sein
 ![height:380](images/smart-meter-kommunikation-netzwerk-data2.png)
 
 
-###### https://www.dke.de/de/arbeitsfelder/energy/smart-meter-energiemanagement-digitalisierung-energiewende
+[Quelle](https://www.dke.de/de/arbeitsfelder/energy/smart-meter-energiemanagement-digitalisierung-energiewende)
 
 ---
 
@@ -643,7 +643,7 @@ eich-rechtlich zugelassen sein
 
 ![height:500](images/Uebersicht_ueber_die_minimalen_Anforderungen-735x0-c-default.png)
 
-###### https://www.ffe.de/attachments/article/851/FE_13549_Bericht_final_online.pdf
+[Quelle](https://www.ffe.de/attachments/article/851/FE_13549_Bericht_final_online.pdf)
 
 ---
 
@@ -663,4 +663,4 @@ eich-rechtlich zugelassen sein
 
 ![](images/VerdrahtungFail.png)
 
-###### Zentralverband der Deutschen Elektro- und Informationstechnischen Handwerke 
+[Quelle](Zentralverband der Deutschen Elektro- und Informationstechnischen Handwerke )

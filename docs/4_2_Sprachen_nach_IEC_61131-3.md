@@ -391,7 +391,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![bg width:700 right:40%](images/und-vor-oder-verknuepfung-92.jpg)
 
-###### https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/
+[Quelle](https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/)
 
 
 ---
@@ -403,7 +403,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 * ``` FALSE``` wird zu ``` TRUE```
 ![bg width:700 right](images/negation-in-fup-3e.jpg)
 
-###### https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/
+[Quelle](https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/)
 
 ---
 
@@ -421,7 +421,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![bg width:700 right:40%](images/und-vor-oder-verknuepfung-92.jpg)
 
-###### https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/
+[Quelle](https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/)
 
 ---
 
@@ -453,7 +453,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![height:250](images/Ausschaltverzögerung2.png)
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=168
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=168)
 
 ---
 
@@ -485,7 +485,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ![bg height:400 right](images/Impuls_BS.png)
 
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=166
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=166)
 
 ---
 
@@ -503,7 +503,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ![bg height:400 right](images/Einschaltverzögerung.png)
 
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=167
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=167)
 
 ---
 
@@ -523,7 +523,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ![bg height:400 right](images/Zeitakkumulator2.png)
 
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=168
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=168)
 
 
 ---
@@ -617,7 +617,7 @@ wie die Eingänge auf den vorherigen Block wirken.
 ![bg height:200 right:15%](images/Schaltsymbol_SRFF.gif)
 
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=173
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=173)
 
 ---
 
@@ -638,7 +638,7 @@ wie die Eingänge auf den vorherigen Block wirken.
 
 ![bg height:200 right:15%](images/Schaltsymbol-RS-FF.png)
 
-###### https://www.xplore-dna.net/mod/page/view.php?id=1038
+[Quelle](https://www.xplore-dna.net/mod/page/view.php?id=1038)
 
 
 ---
@@ -671,7 +671,7 @@ wie die Eingänge auf den vorherigen Block wirken.
 - `fOut`: Steuerausgang für Lichtaktoren (0…100 %).
 
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tf8040_tc3_buildingautomation/9255011851.html&id=7218420269355608175
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tf8040_tc3_buildingautomation/9255011851.html&id=7218420269355608175)
 
 
 ---
@@ -692,5 +692,5 @@ wie die Eingänge auf den vorherigen Block wirken.
   * in `stParams`
 
 
-###### https://infosys.beckhoff.com/index.php?content=../content/1031/tf4100_tc3_controller_toolbox/245435787.html&id=
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tf4100_tc3_controller_toolbox/245435787.html&id=)
 
