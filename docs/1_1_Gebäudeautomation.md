@@ -14,18 +14,13 @@ theme: lemon
 
 <!-- paginate: true -->
 
-# Bussysteme
+# 1.1 Gebäudeautomation
 
-**SoSe 2023**
-Dr. Julian Huber
-
----
-
-# Gebäudeautomation
 
 🎯 Lernziele
 
 Nach dieser Einheit sind Sie in der Lage dazu
+
 * Die Aufgaben von Gebäudeautomation-Management, Raumautomation, und Anlagenautomation abgrenzen
 * Die Aufgaben auf Feld-, Automations-, und Managementebene abgrenzen
 

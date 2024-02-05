@@ -76,20 +76,174 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprachen nach IEC 61131-3</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#allgemeiner-aufbau-eines-sps-projekts">Allgemeiner Aufbau eines SPS-Projekts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#projektstruktur">Projektstruktur</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#am-beispiel-twincat">Am Beispiel TwinCat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#programmablauf-in-verarbeitungseinheit">Programmablauf in Verarbeitungseinheit</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hauptprogramm-main-program">Hauptprogramm (Main-Program)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programmiersprachen-fur-sps">Programmiersprachen für SPS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programm">Programm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_1-automatik-licht">✍️ Aufgabe 4_2_1: Automatik Licht</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#wichtige-datentypen">Wichtige Datentypen</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#if-anweisungen">IF-Anweisungen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ausdrucke-in-den-sind-optional">Ausdrücke in den {} sind optional</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#beispiel">Beispiel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_2-wechselschaltung">✍️ Aufgabe 4_2_2: Wechselschaltung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funktionsbausteine">Funktionsbausteine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#funktionsbaustein">Funktionsbaustein</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#warum-gibt-es-beides-funktionen-und-funktionsbausteine">Warum gibt es beides - Funktionen und Funktionsbausteine?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_3-funktionsbaustein-counter">✍️ Aufgabe 4_2_3: Funktionsbaustein Counter</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#verwendung-von-programm-organisationseinheiten">Verwendung von Programm-Organisationseinheiten</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#strukturierter-text">Strukturierter Text</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#anweisungen">Anweisungen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aufruf-von-funktionen-und-funktionsblocken">Aufruf von Funktionen und Funktionsblöcken</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#globale-und-lokale-variablen">Globale und lokale Variablen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#arrays-datenfelder-listen-gleichen-datentyps">Arrays - Datenfelder (Listen gleichen Datentyps)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#weitere-anweisungen">Weitere Anweisungen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funktionsplan">Funktionsplan</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#binarer-funktionsplan-fup">(Binärer) Funktionsplan (FUP)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwsps-lehrgangdezusammengesetzte-verknuepfungen">https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#negieren-von-ein-und-ausgangen">Negieren von Ein- und Ausgängen</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_4-binarer-funktionsplan">✍️ Aufgabe 4_2_4: Binärer Funktionsplan</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwsps-lehrgangdezusammengesetzte-verknuepfungen_2">https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zeitbausteine">Zeitbausteine</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tof-ausschaltverzogerung-timer-off">TOF: Ausschaltverzögerung (Timer Off)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_5-erweiterung-um-nachlauf-von-einer-sekunde">✍️ Aufgabe 4_2_5 Erweiterung um Nachlauf von einer Sekunde</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#impulsbildung">Impulsbildung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwxplore-dnanetmodpageviewphpid166">https://www.xplore-dna.net/mod/page/view.php?id=166</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ton-einschaltverzogerung">TON: Einschaltverzögerung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwxplore-dnanetmodpageviewphpid167">https://www.xplore-dna.net/mod/page/view.php?id=167</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tonr-zeitakkumulator">TONR: Zeitakkumulator</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwxplore-dnanetmodpageviewphpid168_1">https://www.xplore-dna.net/mod/page/view.php?id=168</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_6-zeitbausteine">✍️ Aufgabe 2_4_6: Zeitbausteine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#zahler">Zähler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#weitere-bausteine">Weitere Bausteine</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trigger-bausteine">Trigger-Bausteine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#speicherbausteine">Speicherbausteine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sr-flipflop">SR-Flipflop</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rs-flipflop">RS-Flipflop</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#speicherbausteine-und-variablen">Speicherbausteine und Variablen</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#automatiklicht">Automatiklicht</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsinfosysbeckhoffcomindexphpcontentcontent1031tf8040_tc3_buildingautomation9255011851htmlid7218420269355608175">https://infosys.beckhoff.com/index.php?content=../content/1031/tf8040_tc3_buildingautomation/9255011851.html&amp;id=7218420269355608175</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pid-regler">PID-Regler</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsinfosysbeckhoffcomindexphpcontentcontent1031tf4100_tc3_controller_toolbox245435787htmlid">https://infosys.beckhoff.com/index.php?content=../content/1031/tf4100_tc3_controller_toolbox/245435787.html&amp;id=</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,28 +277,590 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
+<h1 id="sps-programmier-sprachen-nach-iec-61131-3">SPS Programmier-Sprachen nach IEC 61131-3</h1>
 <hr />
-<h1 id="regelverhalten">Regelverhalten</h1>
-<h2 id="motivation">Motivation</h2>
+<h2 id="allgemeiner-aufbau-eines-sps-projekts">Allgemeiner Aufbau eines SPS-Projekts</h2>
 <ul>
-<li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
-<li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
+<li>Die Folgenden Inhalte orientieren sich an der Software Twincat 3 von Beckhoff</li>
+<li>Die Inhalte sind aber auch auf andere SPS-Programmiersysteme übertragbar</li>
+<li>Da die Twincat 3 Software tief ins System eingreift, wird nicht empfohlen diese auf den privaten Rechnern zu installieren</li>
+<li>Die Software ist aber auf den Rechnern im Labor installiert</li>
+<li>Als Alternative, kann die Software <a href="">OpenPLC Editor</a> empfohlen werden</li>
 </ul>
-<h2 id="objektorientierung">Objektorientierung</h2>
-<h3 id="attribute">Attribute</h3>
-<h3 id="methoden">Methoden</h3>
-<h3 id="python">Python</h3>
-<h2 id="writing_hand-aufgabe-implementierung-eines-aggregators-zum-glatten-von-messwerten">:writing_hand: Aufgabe: Implementierung eines Aggregators zum Glätten von Messwerten</h2>
-<h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
+<hr />
+<h3 id="projektstruktur">Projektstruktur</h3>
+<ul>
+<li>Ein Projekt besteht aus einem oder mehreren Programmen, welche in einer <code>POU</code> (Program Organization Unit) zusammengefasst werden</li>
+</ul>
+<!-- _class: white -->
+
+<p><img alt="h:300" src="../images/SPS-EVA.svg" /></p>
+<hr />
+<h4 id="am-beispiel-twincat">Am Beispiel TwinCat</h4>
+<ul>
+<li><strong>Entwicklungsumgebung</strong> der Firma Beckhoff Automation für SPS Steuerungslogiken</li>
+<li>Kann auf der Steuerung oder anderem PC ausgeführt werden</li>
+<li>Links sieht man die Gesamtübersicht über das Projekt (<strong>Projektexplorer</strong>)</li>
+<li>Twincat bietet ein Fester für die Variablendeklaration (rechts oben) und ein Fester für den sonstigen Code an (rechts unten)
+<img alt="bg w:600 right" src="../images/BeckhoffMain.png" /></li>
+</ul>
+<hr />
+<h4 id="programmablauf-in-verarbeitungseinheit">Programmablauf in Verarbeitungseinheit</h4>
+<p><img alt="bg w:600 right" src="../images/SpsZyklus.png" /></p>
+<ul>
+<li>Nach dem EVA-Prinzip überwacht die SPS in regelmäßigen Abständen (<strong>Zykluszeit</strong>) die Werte der Eingänge und führt das</li>
+<li><strong>Hauptprogramm</strong> <code>(.../POUs/MAIN (PRG))</code> aus </li>
+</ul>
+<hr />
+<h4 id="hauptprogramm-main-program">Hauptprogramm (Main-Program)</h4>
+<ul>
+<li>Entsprechend der <code>code.py</code> bei Circuit Python gibt es eine <code>MAIN</code>-Programm</li>
+<li>Währen wir im <code>code.py</code> einen <code>while</code>-Loop erstellen mussten, wir der Inhalt der <code>MAIN</code> immer wieder automatisch in der <strong>Zykluszeit</strong> der SPS ausgeführt</li>
+</ul>
+<hr />
+<ul>
+<li>Das Hauptprogramm wird in einer <strong>Entwicklungsumgebung</strong> geschrieben</li>
+<li>Hierzu kommen <strong>verschiedene Programmiersprachen</strong> zum Einsatz</li>
+<li>Nach Prüfung und Fehlerbeseitigung erstellt der <strong>Compiler</strong> dann den Programmcode, der <strong>auf die Steuerung geladen</strong> werden kann.</li>
+<li>liegt dann auf dem Speicher der SPS und kann verändert werden</li>
+</ul>
+<p><img alt="bg w:400 right:33%" src="../images/SpsZyklus.png" /></p>
+<hr />
+<h3 id="programmiersprachen-fur-sps">Programmiersprachen für SPS</h3>
+<ul>
+<li>fünf Programmiersprachen (nach IEC 61131)</li>
+<li><strong>Strukturierter Text</strong>, ST (engl. Structured Text, ST) ähnlich <a href="https://de.wikipedia.org/wiki/Pascal_(Programmiersprache)">Pascal</a></li>
+<li>Anweisungsliste, AWL (engl. Instruction List, IL)</li>
+<li><strong>Kontaktplan</strong>, KOP (engl. Ladder Diagram, LD)</li>
+<li><strong>Funktionsbausteinsprache</strong>, FBS oder FUP genannt (engl. Function Block Diagram, FBD)</li>
+<li>Ablaufsprache, AS (engl. Sequential Function Chart, SFC)</li>
+</ul>
+<hr />
+<h3 id="programm">Programm</h3>
+<ul>
+<li><strong><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tc3_plc_intro/2530274187.html&amp;id=">Programm</a></strong> liefert bei der Ausführung einen oder mehrere Werte und speichert diese in Variablen </li>
+<li>Alle <strong>Werte bleiben</strong> nach einer Ausführung des Programms bis zur nächsten Ausführung erhalten</li>
+<li>z.B. der Status der Lampe im Hauptprogramm bis zur Ausführung des nächsten Zyklus</li>
+</ul>
+<p><img alt="bg height:700 right:40%" src="../images/6413895563__de__Web.png" /></p>
+<hr />
+<h2 id="aufgabe-4_2_1-automatik-licht">✍️ Aufgabe 4_2_1: Automatik Licht</h2>
+<blockquote>
+<p>Anwendungsfall:  Eine smarte Lichtsteuerung soll eine Leuchte immer anschalten, wenn es dunkel ist und eine Anwesenheit erkannt wird</p>
+</blockquote>
+<ul>
+<li>Für unsere smarte Lichtsteuerung könnte das für eine Programmierung mittels <strong>Strukturiertem Text</strong> wie folgt aussehen, wenn wir statt analogen digitale Eingänge verwenden:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN // Main Programm wird definiert
+
+VAR // Variablen werden deklariert
+  bInAnwesenheit1 : BOOL; // der Variable für Anwesenheit. True = Anwesend
+  bInDunkelheit2 : BOOL; // der Variable für Anwesenheit. True = Dunkel
+  bOutLicht1 : BOOL; // der Variable für Licht. True = An
+END_VAR
+
+bOutLicht1 := bInAnwesenheit1 AND bInDunkelheit2; // Logische Verknüpfung (nur wenn beides erfüllt ist, geht das Licht an)
+</code></pre></div>
+<ul>
+<li>Welche Unterschiede zu Python fallen Ihnen auf?</li>
+</ul>
+<hr />
+<p><img alt="h:500" src="../images/SPS-EVA.svg" /></p>
+<hr />
+<h3 id="losung">Lösung</h3>
+<p><div class="highlight"><pre><span></span><code>PROGRAM MAIN // Main Programm wird definiert
+
+VAR // Variablen werden deklariert
+  bInAnwesenheit1 : BOOL; // der Variable für Anwesenheit. True = Anwesend
+  bInDunkelheit2 : BOOL; // der Variable für Anwesenheit. True = Dunkel
+  bOutLicht1 : BOOL; // der Variable für Licht. True = An
+END_VAR
+
+bOutLicht1 := bInAnwesenheit1 AND bInDunkelheit2; // Logische Verknüpfung (nur wenn beides erfüllt ist, geht das Licht an)
+</code></pre></div>
+* Kommentare mit  <strong><code>//</code></strong> eingeführt
+* Zeilen werden mit <strong><code>;</code></strong> abgeschlossen
+* Variablen und Ihr Typ müssen <strong>deklariert</strong> werden 
+(Name und Datentyp werden festgelegt): <code>&lt;Variablenname&gt;:&lt;Typ&gt;</code>
+* Der Wert der Variable wird über <strong><code>:=</code></strong> gesetzt:
+<code>&lt;Variablenname&gt;:=&lt;Variablenwert&gt;</code></p>
+<hr />
+<h4 id="wichtige-datentypen">Wichtige Datentypen</h4>
+<ul>
+<li><code>BOOL</code>: Boolean</li>
+<li><code>INT</code>: Integer (nur positiv)</li>
+<li>z.B. Bit-Werte der Eingangsklemmen</li>
+<li><code>UNIT</code>: Unsigned  Integer (nur positiv)</li>
+<li><code>REAL</code>: Gleitkommazahl</li>
+<li>z.B. Interne Darstellung der physikalischen Gößen</li>
+<li><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tc3_plc_intro/2529388939.html&amp;id=">weitere</a></li>
+</ul>
+<hr />
+<h2 id="if-anweisungen">IF-Anweisungen</h2>
+<ul>
+<li>IF-Anweisung kann man eine Bedingung <strong>abprüfen</strong> und <strong>abhängig</strong> von dieser Bedingung ein Anweisungen <strong>ausführen</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>IF &lt;Boolescher_Ausdruck1&gt; THEN
+  &lt;IF_Anweisungen&gt;
+{ELSIF &lt;Boolescher_Ausdruck2&gt; THEN
+  &lt;ELSIF_Anweisungen1&gt;
+.
+.
+ELSIF &lt;Boolescher_Ausdruck n&gt; THEN
+  &lt;ELSIF_Anweisungen n-1&gt;
+ELSE
+  &lt;ELSE_Anweisungen&gt;}
+END_IF;
+</code></pre></div>
+<h6 id="ausdrucke-in-den-sind-optional">Ausdrücke in den <code>{}</code> sind optional</h6>
+<hr />
+<h3 id="beispiel">Beispiel</h3>
+<div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="w"> </span><span class="n">temp</span><span class="o">&lt;</span><span class="mi">17</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span>
+<span class="n">heizung_an</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">TRUE</span><span class="o">;</span>
+<span class="k">ELSE</span><span class="w"> </span>
+<span class="n">heizung_an</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">FALSE</span><span class="o">;</span>
+<span class="n">END_IF</span><span class="o">;</span>
+</code></pre></div>
+<ul>
+<li>Keine Einrückungen wie bei Python erforderlich</li>
+</ul>
+<hr />
+<h2 id="aufgabe-4_2_2-wechselschaltung">✍️ Aufgabe 4_2_2: Wechselschaltung</h2>
+<p><img alt="bg right w:500" src="../images/WechselSchalterSPS.svg" /></p>
+<ul>
+<li>Wie können wir dafür sorgen, dass das Licht den Zustand wechselt, wenn einer der beiden Schalter betätigt wird?</li>
+</ul>
+<hr />
+<h3 id="losung_1">Lösung</h3>
+<div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">bInS1</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">bInS2</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">  </span><span class="n">bOut1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">not</span><span class="p">(</span><span class="n">bOut1</span><span class="p">)</span>
+<span class="k">else</span><span class="o">:</span>
+<span class="w">  </span><span class="n">bOut1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bOut1</span>
+</code></pre></div>
+<hr />
+<h2 id="funktionsbausteine">Funktionsbausteine</h2>
+<ul>
+<li><strong><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tc3_plc_intro/2530279563.html&amp;id=">Funktionsbaustein</a></strong> <strong>liefert einen oder mehrere Werte</strong>. </li>
+<li>Die Werte der Ausgabevariablen und der internen Variablen bleiben bis zur nächsten Ausführung erhalten (lokalen Variablen werden nicht gelöscht)</li>
+<li>Vergleichbar eine Klasse, mit einer Methode, die immer wieder aufgerufen wird</li>
+<li><strong>Vorsicht</strong>: bei mehrmaligem Aufruf mit denselben Eingabevariablen werden so nicht unbedingt dieselben Ausgabewerte geliefert vgl. Hysterese)</li>
+</ul>
+<p><img alt="bg height:700 right:40%" src="../images/6413895563__de__Web.png" /></p>
+<hr />
+<h4 id="funktionsbaustein">Funktionsbaustein</h4>
+<ul>
+<li>Zunächst wird eine Blaupause (Klasse) erstellt, sie beschreibt, welche Ein-, Ausgaben, und Zwischenwerte ein Funktionsbaustein enthält (Variablen) und welche Berechnungen diese ausführt</li>
+<li>Im Hauptprogramm (<code>MAIN</code>) können eine oder mehrere Objekte des Bausteins instanziiert werden (als Variable deklariert werden)</li>
+<li>Auch bei der Arbeit mit Funktionsbausteinen gilt das EVA-Prinzip</li>
+</ul>
+<h3 id="warum-gibt-es-beides-funktionen-und-funktionsbausteine">Warum gibt es beides - Funktionen und Funktionsbausteine?</h3>
+<ul>
+<li>z.B. Anwendung von Funktionsbaustein für verschiedene Räume</li>
+<li>nach 100 Bewegungen soll gelüftet werden</li>
+<li>würde mit Funktion eine globale Variable pro Raum benötigen</li>
+</ul>
+<hr />
+<h2 id="aufgabe-4_2_3-funktionsbaustein-counter">✍️ Aufgabe 4_2_3: Funktionsbaustein Counter</h2>
+<ul>
+<li>Schreiben Sie eine Klasse für einen Funktionsbaustein, der eine Zählervariable um eins erhöht und den aktuellen Wert zurückgibt</li>
+<li>Zudem soll der Zähler zurückgesetzt werden können</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">increment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span>
+
+  <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">increment</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">increment</span><span class="p">())</span>
+</code></pre></div>
+<hr />
+<h3 id="verwendung-von-programm-organisationseinheiten">Verwendung von Programm-Organisationseinheiten</h3>
+<ul>
+<li><strong>Programme</strong></li>
+<li>Direkte Verbindung zu Ein- und Ausgabeeinheiten</li>
+<li><strong>Grundgerüst</strong> ist das Hauptprogramm <code>MAIN</code>, welches zyklisch ausgeführt wird und angibt welche Funktionen und Funktionsbausteine aufgerufen werden</li>
+<li><strong>Funktion</strong> </li>
+<li><strong>Wiederverwendbare</strong> Elemente</li>
+<li>Es gibt viele Standardfunktionen</li>
+<li>ohne internen Speicher</li>
+<li><strong>Funktionsbausteine</strong></li>
+<li><strong>Komplexer</strong> as Funktionen</li>
+<li>Können Variablen erhalten</li>
+<li>z.B. Zähler</li>
+</ul>
+<hr />
+<h2 id="strukturierter-text">Strukturierter Text</h2>
+<hr />
+<h3 id="anweisungen">Anweisungen</h3>
+<ul>
+<li>
+<p>Wie in anderen höheren Programmiersprachen gibt es <strong>Anweisungen</strong> die den Text <strong>strukturieren</strong> </p>
+</li>
+<li>
+<p><strong>Zuweisung</strong>: Auf der linken Seite einer Zuweisung <strong><code>:=</code></strong> steht ein Operand (Variable, Adresse), dem der Wert des Ausdrucks auf der rechten Seite zugewiesen wird:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Var1 := Var2 * 10;
+</code></pre></div>
+<hr />
+<h3 id="aufruf-von-funktionen-und-funktionsblocken">Aufruf von Funktionen und Funktionsblöcken</h3>
+<ul>
+<li>Aufruf eines Funktionsblocks: Aufruf durch Namen der Funktion oder Instanz des Funktionsblocks und in Klammer die gewünschten Werte der Parameter
+  <img alt="" src="../images/SPS-function.png" /></li>
+<li>hier wird die Funktion <code>FIND</code> aufgerufen, um <code>STR2</code> in <code>STR1</code> zu finden</li>
+<li>Die übergebenen Parameter sind beide Zeichenketten / Strings</li>
+<li>Funktionen haben einen fixen Rückgabetyp (z.B. die Position als INT)</li>
+</ul>
+<hr />
+<h3 id="globale-und-lokale-variablen">Globale und lokale Variablen</h3>
+<ul>
+<li>Wichtiges Prinzip in der Programmierung</li>
+<li>Verhindert unbeabsichtigte Eingriffe</li>
+<li>Nur <strong>globale Variablen</strong> sind von <strong>überall</strong> sichtbar</li>
+<li><strong>lokale Variablen</strong>, können z.B. <strong>innerhalb</strong> eines Programms oder Funkion definiert werden und sind nur darin sichtbar</li>
+<li>Alle Variablen sind zunächst nur innerhalb der jeweiligen POU sichtbar</li>
+</ul>
+<hr />
+<h3 id="arrays-datenfelder-listen-gleichen-datentyps">Arrays - Datenfelder (Listen gleichen Datentyps)</h3>
+<div class="highlight"><pre><span></span><code>/ Deklaration
+VAR
+    aCounter : ARRAY[0..9] OF INT;
+END_VAR
+
+//Deklaration mit Initialisierung:
+
+aCounter : ARRAY[0..9] OF INT := [0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+//Datenzugriff 1:
+
+//Der lokalen Variablen wird der Wert 20 zugewiesen.
+
+nLocalVariable := aCounter[2];
+</code></pre></div>
+<hr />
+<h3 id="weitere-anweisungen">Weitere Anweisungen</h3>
+<ul>
+<li><code>Return</code> wird genutzt, um einen Baustein zu verlassen</li>
+<li><code>EXIT</code>-Anweisung** wenn diese in einer FOR-, WHILE- oder REPEAT-Schleife vorkommt, dann wird die innerste Schleife beendet, ungeachtet der Abbruchbedingung.</li>
+<li><strong>Aufruf einer Fuktion</strong>: Analog zu Python werden der Funktionsname genannt und in Klammern die Attribute übergeben (z.B. <code>SQRT(IN := 9)</code>)</li>
+</ul>
+<hr />
+<h2 id="funktionsplan">Funktionsplan</h2>
+<h3 id="lernziele">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- einfache binäre Funktionspläne lesen und aufbauen
+- einfache Bausteine (Vergleiche, Mathematische Operatoren) interpretieren
+- die Wirkweise von Zeitbausteinen skizzieren und diese passenden Anwendungsfällen zuzuordnen</p>
+<hr />
+<h3 id="binarer-funktionsplan-fup">(Binärer) Funktionsplan (FUP)</h3>
+<ul>
+<li>Grafische Programmiersprache, nach <strong>EVA</strong>-Prinzip (links nach rechts)</li>
+<li>Jeder Baustein ist ein <strong>Funktionsbaustein</strong> (Funktionsblock)</li>
+<li><strong>Bausteine</strong> mit Symbolen z.B.</li>
+<li><code>&amp;</code> für <em>logisches und</em> (<span class="arithmatex">\(\land\)</span>)</li>
+<li>
+<p><code>&gt;=1</code> für <em>logisches oder</em> (<span class="arithmatex">\(\lor\)</span>)</p>
+</li>
+<li>
+<p><strong>Links</strong> gehen die <strong>Eingänge</strong> in die Bausteine.  <strong>Ergebnisse</strong> werden <strong>rechts</strong> weitergegeben.</p>
+</li>
+<li><strong>Variablen</strong> die <strong>gesetzt</strong> werden stehen <strong>über</strong> den Bausteinen (vgl. Spule bei Kontaktplan, hier <code>A0.1</code>) </li>
+</ul>
+<p><img alt="bg width:700 right:40%" src="../images/und-vor-oder-verknuepfung-92.jpg" /></p>
+<h6 id="httpswwwsps-lehrgangdezusammengesetzte-verknuepfungen">https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/</h6>
+<hr />
+<h4 id="negieren-von-ein-und-ausgangen">Negieren von Ein- und Ausgängen</h4>
+<ul>
+<li>Bei binären Ein- und Ausgängen kann der Wert durch einen <strong>Kreis negiert</strong> werden</li>
+<li><code>TRUE</code> wird zu <code>FALSE</code></li>
+<li><code>FALSE</code> wird zu <code>TRUE</code>
+<img alt="bg width:700 right" src="../images/negation-in-fup-3e.jpg" /></li>
+</ul>
+<h6 id="httpswwwsps-lehrgangdezusammengesetzte-verknuepfungen_1">https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/</h6>
+<hr />
+<h2 id="aufgabe-4_2_4-binarer-funktionsplan">✍️ Aufgabe 4_2_4: Binärer Funktionsplan</h2>
+<p><div class="highlight"><pre><span></span><code>E0.1 = TRUE
+E0.2 = TRUE
+E0.3 = FALSE
+E0.4 = TRUE
+</code></pre></div>
+- Was ist <code>A0.1</code> ?</p>
+<p><img alt="bg width:700 right:40%" src="../images/und-vor-oder-verknuepfung-92.jpg" /></p>
+<h6 id="httpswwwsps-lehrgangdezusammengesetzte-verknuepfungen_2">https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/</h6>
+<hr />
+<p><img alt="" src="../images/FupBeispiel.png" /></p>
+<hr />
+<h3 id="zeitbausteine">Zeitbausteine</h3>
+<ul>
+<li>Ein guter <strong>Bewegungsmelder</strong> würde nicht sofort erlöschen, wenn keine Bewegung mehr registriert wird, sondern für ein <strong>Nachleuchten der Lampen</strong> sorgen (Nachlauf)</li>
+<li>Die könnte über das Zählen der Zyklus-Zeiten gesteuert werden, hierzu müssten aber alle Zyklen auf jeder Steuerung gleich lang sein</li>
+<li>Stattdessen können <strong>spezielle Bausteine</strong>, wie z.B. TOF (Timer off), Ausschaltverzögerung eingesetzt werden.</li>
+</ul>
+<hr />
+<h4 id="tof-ausschaltverzogerung-timer-off">TOF: Ausschaltverzögerung (Timer Off)</h4>
+<blockquote>
+<p>verlängert Signal nach Wechsel auf Off (False)</p>
+</blockquote>
+<ul>
+<li><code>IN</code>  binärer Eingang</li>
+<li><code>PT</code>  Gesetzte Ausschaltverzögerung</li>
+<li><code>Q</code>   binärer Ausgang mit Impuls</li>
+<li><code>ET</code>  Vergangene Zeit seit Erkennen des Ende des Eingangsignals </li>
+</ul>
+<p><img alt="bg height:300 right:33%" src="images/Ausschaltverzögerung1.png" /></p>
+<p><img alt="height:250" src="../images/Ausschaltverz%C3%B6gerung2.png" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid168">https://www.xplore-dna.net/mod/page/view.php?id=168</h6>
+<hr />
+<h2 id="aufgabe-4_2_5-erweiterung-um-nachlauf-von-einer-sekunde">✍️ Aufgabe 4_2_5 Erweiterung um Nachlauf von einer Sekunde</h2>
+<!-- _class: white -->
+
+<p><img alt="h:500" src="../images/SPS-EVA.svg" /></p>
+<hr />
+<p><img alt="h:500" src="../images/ToFbeispiel.png" /></p>
+<hr />
+<h4 id="impulsbildung">Impulsbildung</h4>
+<blockquote>
+<p>wandelt positive Flanke in Impuls mit fixer Länge</p>
+</blockquote>
+<ul>
+<li><code>IN</code>  binärer Eingang</li>
+<li><code>PT</code>  Gesetzte Impulslänge</li>
+<li><code>Q</code>   binärer Ausgang mit Impuls</li>
+<li><code>ET</code>  Vergangene Zeit seit Impulsstart (Elapsed Time)</li>
+</ul>
+<p><img alt="height:250" src="../images/Impuls2.png" /></p>
+<p><img alt="bg height:400 right" src="../images/Impuls_BS.png" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid166">https://www.xplore-dna.net/mod/page/view.php?id=166</h6>
+<hr />
+<h4 id="ton-einschaltverzogerung">TON: Einschaltverzögerung</h4>
+<blockquote>
+<p>verzögerte Aktivierung, sofern Mindestdauer erreicht</p>
+</blockquote>
+<ul>
+<li><code>IN</code>  binärer Eingang</li>
+<li><code>PT</code>  Gesetzte Einschaltverzögerung</li>
+<li><code>Q</code>   binärer Ausgang mit Impuls</li>
+<li><code>ET</code>  Vergangene Zeit seit Erkennen des Eingangsignals </li>
+</ul>
+<p><img alt="height:250" src="../images/Einschaltverz%C3%B6gerung2.png" /></p>
+<p><img alt="bg height:400 right" src="images/Einschaltverzögerung.png" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid167">https://www.xplore-dna.net/mod/page/view.php?id=167</h6>
+<hr />
+<h4 id="tonr-zeitakkumulator">TONR: Zeitakkumulator</h4>
+<blockquote>
+<p>Gibt aufsummierte Zeit sobald Mindestwert erreicht</p>
+</blockquote>
+<ul>
+<li><code>ET</code>  Zeit bis zur Ausgabe</li>
+<li><code>PT</code>  Maximalzeit bis Ausgabe</li>
+<li><code>IN</code>  binärer Start-Eingang</li>
+<li><code>R</code>  binärer Reset-Eingang</li>
+<li><code>Q</code>   binärer Ausgang zeigt wann <code>PT</code> erreicht</li>
+</ul>
+<p><img alt="bg height:400 right" src="../images/Zeitakkumulator2.png" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid168_1">https://www.xplore-dna.net/mod/page/view.php?id=168</h6>
+<hr />
+<h2 id="aufgabe-2_4_6-zeitbausteine">✍️ Aufgabe 2_4_6: Zeitbausteine</h2>
+<ul>
+<li>Zeichnen Sie das Ausgangssignal </li>
+<li>einer Ausschaltverzögerung TOF mit <code>PT = 2s</code></li>
+<li>eines Impulsgenerators TP mit <code>PT = 0.5s</code></li>
+</ul>
+<p><img alt="height:350" src="../images/Impulsvorlage.svg" /></p>
+<hr />
+<h3 id="zahler">Zähler</h3>
+<blockquote>
+<p>Zählt Flanken (Änderungen <code>False</code> auf <code>True</code>)</p>
+</blockquote>
+<ul>
+<li><code>CU</code>  binärer Eingang an dem die Flanken  gezählt werden (Count Up)</li>
+<li><code>R</code>  Reset-Eingang um Zähler zurückzusetzen</li>
+<li><code>PV</code>   Oberer Grenzwert</li>
+<li><code>CV</code>  Ausgang der hoch zählt (Counter Value)</li>
+<li><code>Q</code>  Zählerstatus im Vergleich mit <code>PV</code>  </li>
+</ul>
+<p><img alt="bg height:200 right:33%" src="../images/CTU.gif" /></p>
+<hr />
+<h3 id="weitere-bausteine">Weitere Bausteine</h3>
+<hr />
+<h4 id="trigger-bausteine">Trigger-Bausteine</h4>
+<ul>
+<li>Erkennen steigende oder fallende Flanken</li>
+<li><code>F_TRIG</code> für fallende Flanken</li>
+<li><code>R_TRIG</code> für steigende (rising) Flanken</li>
+</ul>
+<p><img alt="bg height:200 right:33%" src="../images/F_TRIG.gif" /></p>
+<hr />
+<ul>
+<li>Anstelle von zurücksetzen der Taster (Bild)</li>
+<li>Szenenwechsel wird nur bei Aktivierung eines Tasters aktiviert</li>
+</ul>
+<p><img alt="h:400" src="../images/Zur%C3%BCcksetzenDerTaster.png" /></p>
+<hr />
+<h4 id="speicherbausteine">Speicherbausteine</h4>
+<blockquote>
+<p>Zuweisungen bleiben i.d.R. nur solange bestehen
+wie die Eingänge auf den vorherigen Block wirken.</p>
+</blockquote>
+<p><img alt="h:500" src="../images/SPS-EVA.svg" /></p>
+<!-- class: white --->
+<hr />
+<ul>
+<li>Zuweisungen bleiben i.d.R. nur solange wie die Eingänge auf den vorherigen Block wirken.</li>
+<li>
+<p>Speicherglieder und Flipflops <strong>erhalten den Wert</strong>, auch wenn die Setz-Bedingung nicht mehr gegeben ist.</p>
+</li>
+<li>
+<p><strong>Ausgang setzen im FUP</strong></p>
+</li>
+<li>Hier wird der Wert von <code>A0.1</code> gesetzt (S für set)
+<img alt="width:700 right" src="../images/ausgang-setzen-in-fup-a1.jpg" /></li>
+</ul>
+<hr />
+<h4 id="sr-flipflop">SR-Flipflop</h4>
+<ul>
+<li>der Ausgang <code>Q</code> wird abhängig vom Signalzustand der Eingänge <code>S</code>(et) und <code>R</code>(eset) <strong>dauerhaft</strong> gesetzt</li>
+<li>Wenn der Signalzustand am Eingang <code>S=1</code> und am Eingang <code>R=0</code>ist, wird <code>Q=1</code> gesetzt. </li>
+<li><code>S=0</code> und am Eingang <code>R=1</code>ist, wird auf <code>Q=0</code> zurück gesetzt. </li>
+<li>bei SR-Flipfops <strong>dominiert</strong> Eingang <strong><code>S</code></strong> den Eingang <strong><code>R</code></strong>. Bei <code>1</code> an beiden Eingängen wird der Operanden auf "1" gesetzt</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>S</th>
+<th>R</th>
+<th>Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>Q</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="bg height:200 right:15%" src="../images/Schaltsymbol_SRFF.gif" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid173">https://www.xplore-dna.net/mod/page/view.php?id=173</h6>
+<hr />
+<h4 id="rs-flipflop">RS-Flipflop</h4>
+<ul>
+<li>Der Eingang <strong><code>R</code> dominiert</strong> den Eingang <code>S</code>. Bei einem Signalzustand <code>1</code> an beiden Eingängen wird der Signalzustand des angegebenen Operanden auf "0" zurückgesetzt.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>S</th>
+<th>R</th>
+<th>Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>Q</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="bg height:200 right:15%" src="../images/Schaltsymbol-RS-FF.png" /></p>
+<h6 id="httpswwwxplore-dnanetmodpageviewphpid1038">https://www.xplore-dna.net/mod/page/view.php?id=1038</h6>
+<hr />
+<h4 id="speicherbausteine-und-variablen">Speicherbausteine und Variablen</h4>
+<ul>
+<li>Ist das Programm in der Lage interne Variablen zu speichern, kann der Einsatz von Speicherbausteinen durch Zuweisungen ersetzt werden</li>
+</ul>
+<p><img alt="" src="../images/Zuweisung.png" /></p>
+<hr />
+<h2 id="zusammenfassung-und-ausblick">Zusammenfassung und Ausblick</h2>
+<ul>
+<li>komplexe neuartige Probleme lassen sich häufig am besten über strukturierten Text lösen</li>
+<li>für viele bestehende Anwendungsfälle stehen in verschiedenen Softwarelösungen bereits Funktionen und Funktionsblöcke bereit</li>
+</ul>
+<hr />
+<h3 id="automatiklicht">Automatiklicht</h3>
+<p><img alt="bg left:20% w:200" src="../images/9263100939__Web.gif" /></p>
+<ul>
+<li><code>bSwi</code>: Eine steigende Flanke an diesem Eingang schaltet den Baustein und das Licht wechselweise ein und aus.</li>
+<li><code>bOn</code>: Eine steigende Flanke an diesem Eingang schaltet den Baustein und das Licht gezielt ein.</li>
+<li>
+<p><code>bOff</code>: Eine steigende Flanke an diesem Eingang schaltet das Licht und die Gesamtfunktion des Bausteins aus.</p>
+</li>
+<li>
+<p><code>fOut</code>: Steuerausgang für Lichtaktoren (0…100 %).</p>
+</li>
+</ul>
+<h6 id="httpsinfosysbeckhoffcomindexphpcontentcontent1031tf8040_tc3_buildingautomation9255011851htmlid7218420269355608175">https://infosys.beckhoff.com/index.php?content=../content/1031/tf8040_tc3_buildingautomation/9255011851.html&amp;id=7218420269355608175</h6>
+<hr />
+<h3 id="pid-regler">PID-Regler</h3>
+<p><img alt="bg left:40% w:500" src="../images/9007199500459019__Web.gif" /></p>
+<ul>
+<li><code>fSetpointValue</code>: Sollwert der Regelgröße</li>
+<li>
+<p><code>fActualValue</code>: Istwert der Regelgröße</p>
+</li>
+<li>
+<p><code>fOut</code>: Ausgang des PID-Glieds</p>
+</li>
+<li>
+<p>Was fehlt noch?</p>
+</li>
+<li><code>fKp</code>: Reglerbeiwert</li>
+<li><code>tTn</code>: Nachstellzeit</li>
+<li><code>tTv</code>: Vorhaltzeit</li>
+<li>in <code>stParams</code></li>
+</ul>
+<h6 id="httpsinfosysbeckhoffcomindexphpcontentcontent1031tf4100_tc3_controller_toolbox245435787htmlid">https://infosys.beckhoff.com/index.php?content=../content/1031/tf4100_tc3_controller_toolbox/245435787.html&amp;id=</h6>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../4_1_Speicherprogrammierbare_Steuerung/" class="btn btn-neutral float-left" title="Speicherprogrammierbare Steuerung"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../5_1_Bussysteme/" class="btn btn-neutral float-right" title="Bussysteme">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../4_3_Appendix_Twincat/" class="btn btn-neutral float-right" title="Twincat">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -170,7 +886,7 @@ Dr. Julian Huber</p>
       <span><a href="../4_1_Speicherprogrammierbare_Steuerung/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../5_1_Bussysteme/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../4_3_Appendix_Twincat/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -178,7 +894,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>

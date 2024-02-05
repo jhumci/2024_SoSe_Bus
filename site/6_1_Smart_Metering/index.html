@@ -76,24 +76,298 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Smart Metering</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#i-smart-metering">I Smart Metering</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-globale-aspekte-der-energieversorgung">1 Globale Aspekte der Energieversorgung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wie-viele-energie-sklaven-benotigen-wir">Wie viele "Energie-Sklaven" benötigen wir?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tourane-corbiere-nicollier-olivier-jolliet-2001">Tourane Corbière-Nicollier &amp; Olivier Jolliet 2001</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwbpbdekurz-knappzahlen-und-faktenglobalisierung52758verbrauch-von-primaerenergie-pro-kopf">https://www.bpb.de/kurz-knapp/zahlen-und-fakten/globalisierung/52758/verbrauch-von-primaerenergie-pro-kopf/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#primarenergie">🧠 Primärenergie?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpseceuropaeueurostatstatistics-explainedindexphptitleglossaryprimary_energy_consumptiontextprimary20energy20consumption20measures20thefinal20consumption20by20end20users">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Primary_energy_consumption#:~:text=Primary%20energy%20consumption%20measures%20the,final%20consumption%20by%20end%20users.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#primary-and-final-energy-consumption">🧠 Primary and final energy consumption</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsenergyeducationcaencyclopediatotal_final_consumption">https://energyeducation.ca/encyclopedia/Total_final_consumption</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsuploadwikimediaorgwikipediacommonsbb4energiegruppen_bilanzbereich_agebpng">https://upload.wikimedia.org/wikipedia/commons/b/b4/Energiegruppen_Bilanzbereich_AGEB.png</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tonne-of-oil-equivalent">🤓 Tonne of oil equivalent?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsenwikipediaorgwikitonne_of_oil_equivalent-httpwwwhuashuochemcomwap_product_detail_enid29html">https://en.wikipedia.org/wiki/Tonne_of_oil_equivalent, http://www.huashuochem.com/wap_product_detail_en/id/29.html</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wie-viele-energie-sklaven-benotigen-wir_1">Wie viele "Energie-Sklaven" benötigen wir?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wasserkocher">Wasserkocher</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#james-hoffmann">James Hoffmann</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#is-it-bad-to-have-too-many-energy-slaves-kettles">Is it bad to have too many energy slaves / kettles?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#okonomie">Ökonomie</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwbloombergcomnewsarticles2022-03-16energy-costs-set-to-reach-record-13-of-global-gdp-this-year">https://www.bloomberg.com/news/articles/2022-03-16/energy-costs-set-to-reach-record-13-of-global-gdp-this-year</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endenergieverbrauch-nach-sektoren">Endenergieverbrauch nach Sektoren</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwieaorgreportskey-world-energy-statistics-2020final-consumption">https://www.iea.org/reports/key-world-energy-statistics-2020/final-consumption</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nachfrageseite-endverbrauch-nach-sektoren">Nachfrageseite: Endverbrauch nach Sektoren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gesamtprimarenergieversorgung-der-welt-nach-quellen">Gesamtprimärenergieversorgung der Welt nach Quellen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwieaorgreportskey-world-energy-statistics-2020">https://www.iea.org/reports/key-world-energy-statistics-2020</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gesamtprimarenergieversorgung-im-jahr">🤓 Gesamtprimärenergieversorgung im Jahr ?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#malanima-2013">Malanima (2013)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gesamtprimarenergieversorgung-im-jahr_1">🤓 Gesamtprimärenergieversorgung im Jahr ?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#malanima-p-2013-energy-consumption-in-the-roman-world-in-the-ancient-mediterranean-environment-between-science-and-history-pp-13-36-brill">###### Malanima, P. (2013). Energy consumption in the Roman world. In The Ancient Mediterranean Environment between Science and History (pp. 13-36). Brill</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#energiepolitisches-zieldreieck">Energiepolitisches Zieldreieck</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#energiebilanzen-von-industrielandern">Energiebilanzen von Industrieländern</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsenergyeducationcaencyclopediatotal_final_consumption_1">https://energyeducation.ca/encyclopedia/Total_final_consumption</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#landesweite-energiebilanzen">Landesweite Energiebilanzen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#international-energy-agency">International Energy Agency</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung">Zusammenfassung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lernfortschritt">🎯 Lernfortschritt</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-eine-kurze-einfuhrung-in-die-energiewirtschaft">2 Eine kurze Einführung in die Energiewirtschaft</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_1">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#energiekosten-und-erlose">Energiekosten und Erlöse</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpskurieratwirtschaftenergiekosten-insgesamt-um-24-milliarden-euro-gestiegen402181017">https://kurier.at/wirtschaft/energiekosten-insgesamt-um-24-milliarden-euro-gestiegen/402181017</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stadtwerke-welt-mit-beginn-der-elektrifizierung-19-jhd">Stadtwerke-Welt (mit Beginn der Elektrifizierung 19 Jhd.)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#europaische-energiemarktintegration">Europäische Energiemarktintegration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#europaische-energiemarktintegration_1">Europäische Energiemarktintegration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#trennung-von-naturlichem-monopol-netz-und-markt-energie">Trennung von Natürlichem Monopol (Netz) und Markt (Energie)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#elektrische-energie-aus-strom-ist-ein-homogenes-gut">Elektrische Energie aus Strom ist ein Homogenes Gut</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpstraumshopnetshophighlightsatomstromfilter">https://traumshop.net/shop/highlights/atomstromfilter/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#okostrom">Ökostrom</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rollen-auf-dem-energiemarkt-vereinfacht">Rollen auf dem Energiemarkt (vereinfacht)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rollen-auf-dem-energiemarkt-vereinfacht_1">Rollen auf dem Energiemarkt (vereinfacht)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#angebot-und-nachfrage">Angebot und Nachfrage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#merit-order-modell">Merit Order Modell</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#merit-order-modell_1">Merit Order Modell</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#preis-schwankung-intraday">Preis-Schwankung Intraday</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#preis-schwankung-intraday_1">Preis-Schwankung Intraday</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#struktur-des-stromnetz">Struktur des Stromnetz</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsuploadwikimediaorgwikipediacommonsbb0stromversorgungsvg">https://upload.wikimedia.org/wikipedia/commons/b/b0/Stromversorgung.svg</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwhochspannungsblogatwissenswertesnetzbetreiberuebertragungsnetz">https://www.hochspannungsblog.at/Wissenswertes/Netzbetreiber/Uebertragungsnetz</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ubertragungsnetz">Übertragungsnetz</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nachfrage-relevanz-der-elektrischen-energieversorgung">Nachfrage: Relevanz der elektrischen Energieversorgung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwpresseportaldepm433381208607">https://www.presseportal.de/pm/43338/1208607</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nachfrage-zunehmende-elektrifizierung">Nachfrage: Zunehmende Elektrifizierung</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nachfrage-emissionsvermeidung-durch-elektrifizierung">Nachfrage: Emissionsvermeidung durch Elektrifizierung</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#angebot-anstieg-volatiler-erneuerbarer-energien">Angebot: Anstieg volatiler Erneuerbarer Energien</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fazit">🧠 Fazit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_2">🎯 Lernziele</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-energiebedarf-von-gebauden">3 Energiebedarf von Gebäuden</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_3">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#relevanz-des-gebaudeenergieverbrauch">🧠 Relevanz des Gebäudeenergieverbrauch</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwipccchsiteassetsuploads201802ipcc_wg3_ar5_chapter9pdf">https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter9.pdf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwweffizienzhaus-onlinedeenergieverbrauch-haus">https://www.effizienzhaus-online.de/energieverbrauch-haus/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwpassivhausdepassivhaus">https://www.passivhaus.de/passivhaus/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#energie-definitionen">🧠 Energie-Definitionen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endenergietrager-in-gebauden">Endenergieträger in Gebäuden</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#nichterneuerbarer-primarenergiebedarf">🤓 Nichterneuerbarer Primärenergiebedarf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#primarenergiefaktoren">🤓 Primärenergiefaktoren</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_4">🎯 Lernziele</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-einfluss-der-gebaudeautomatisierung-auf-die-energetische-bewertung">4 Einfluss der Gebäudeautomatisierung auf die Energetische Bewertung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_5">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#einfluss-der-gebaudeautomatisierung-auf-die-energetische-bewertung">🧠 Einfluss der Gebäudeautomatisierung auf die Energetische Bewertung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#energierelevante-gebaudetechnik">Energierelevante Gebäudetechnik</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#abschatzung-der-effizienzsteigerung-mit-en-15232">Abschätzung der Effizienzsteigerung mit EN 15232</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwbaulinksdewebplugin20122142php4">https://www.baulinks.de/webplugin/2012/2142.php4</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#abschatzung-der-effizienzsteigerung-nach-en-15232">Abschätzung der Effizienzsteigerung nach EN 15232</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#effizienzklassen">Effizienzklassen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_6">🎯 Lernziele</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-smart-metering">5 Smart Metering</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele_7">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#herkommliche-zahler">🧠 Herkömmliche Zähler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#standardlastprofile">Standardlastprofile</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsblognaturstromdeinternstandardlastprofil">https://blog.naturstrom.de/intern/standardlastprofil/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#intelligente-zahler">🧠 Intelligente Zähler</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#komponenten-eines-smart-meters-at">Komponenten eines Smart Meters (AT)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kommunikation-zwischen-verschiedenen-rollen">Kommunikation zwischen verschiedenen Rollen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#komponenten-eines-intelligentes-messsystems-d">Komponenten eines Intelligentes Messsystems (D)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kommunikationsmodul">Kommunikationsmodul</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kommunikationsmodul-einfuhrung-neuer-stromtarife">Kommunikationsmodul: Einführung neuer Stromtarife</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwawattarat">https://www.awattar.at/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gesetzliches">🧠 Gesetzliches</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#kundenschnittstelle-home-area-network">Kundenschnittstelle (Home Area Network)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stand-smart-meter-rollout-europa-2020">Stand Smart Meter Rollout Europa 2020</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsdestatistacomstatistikdatenstudie387142umfragemarktdurchdringung-von-smart-metern-in-europa-nach-laendern">https://de.statista.com/statistik/daten/studie/387142/umfrage/marktdurchdringung-von-smart-metern-in-europa-nach-laendern/</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eichrecht">🧠 Eichrecht</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#smart-meter-osterreich">🤓 Smart Meter Österreich</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#besonderheit-deutschland">🤓 Besonderheit Deutschland</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#kritik-an-deutschem-system">🤓 Kritik an Deutschem System</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -127,23 +401,945 @@
 <p><strong>SoSe 2023</strong>
 Dr. Julian Huber</p>
 <hr />
-<h1 id="regelverhalten">Regelverhalten</h1>
-<h2 id="motivation">Motivation</h2>
+<h2 id="i-smart-metering">I Smart Metering</h2>
+<p><img alt="h:550" src="images/ThemenübersichtBus.png" /></p>
+<hr />
+<h2 id="1-globale-aspekte-der-energieversorgung">1 Globale Aspekte der Energieversorgung</h2>
+<h3 id="lernziele">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* Primär- und Endenergiebedarf zu unterscheiden
+* eine Einschätzung über den Energiebedarf verschiedener Sektoren zu geben
+* Das Energiepolitische Zieldreieck zu beschreiben</p>
+<hr />
+<h3 id="wie-viele-energie-sklaven-benotigen-wir">Wie viele "Energie-Sklaven" benötigen wir?</h3>
+<blockquote>
+<p>the energy slave is a unit of measurement that allows us to better understand and evaluate the consequences of our life choices. An energy slave works to produce energy 24 hours a day. He produces an average power output of 100 W 
+(875 kWh/year)</p>
+</blockquote>
+<p><img alt="bg right height:700" src="../images/slaves.jpg" /></p>
+<h6 id="tourane-corbiere-nicollier-olivier-jolliet-2001">Tourane Corbière-Nicollier &amp; Olivier Jolliet 2001</h6>
+<hr />
+<p><img alt="bg height:680" src="images//GLO_09_06%20Energieverbrauch%20pro%20Kopf_JPG.jpg" /></p>
+<h6 id="httpswwwbpbdekurz-knappzahlen-und-faktenglobalisierung52758verbrauch-von-primaerenergie-pro-kopf">https://www.bpb.de/kurz-knapp/zahlen-und-fakten/globalisierung/52758/verbrauch-von-primaerenergie-pro-kopf/</h6>
+<hr />
+<h3 id="primarenergie">🧠 Primärenergie?</h3>
+<blockquote>
+<p>misst den gesamten Energiebedarf (eines Landes). Er umfasst den Verbrauch des Energiesektors selbst, Verluste bei der Umwandlung (z.B. von Öl oder Gas in Elektrizität) und Verteilung von Energie sowie den Endverbrauch durch die Endverbraucher. Ausgeschlossen sind Energieträger, die für nichtenergetische Zwecke verwendet werden (z.B. Erdöl, das nicht zur Verbrennung, sondern zur Herstellung von Kunststoffen verwendet wird).</p>
+</blockquote>
+<h6 id="httpseceuropaeueurostatstatistics-explainedindexphptitleglossaryprimary_energy_consumptiontextprimary20energy20consumption20measures20thefinal20consumption20by20end20users">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Primary_energy_consumption#:~:text=Primary%20energy%20consumption%20measures%20the,final%20consumption%20by%20end%20users.</h6>
+<hr />
+<h3 id="primary-and-final-energy-consumption">🧠 Primary and final energy consumption</h3>
+<p><img alt="" src="../images/1200px-Energyflows.png" /></p>
+<h6 id="httpsenergyeducationcaencyclopediatotal_final_consumption">https://energyeducation.ca/encyclopedia/Total_final_consumption</h6>
+<hr />
+<p><img alt="" src="../images/Energiegruppen_Bilanzbereich_AGEB.png" /></p>
+<h6 id="httpsuploadwikimediaorgwikipediacommonsbb4energiegruppen_bilanzbereich_agebpng">https://upload.wikimedia.org/wikipedia/commons/b/b4/Energiegruppen_Bilanzbereich_AGEB.png</h6>
+<hr />
+<h3 id="tonne-of-oil-equivalent">🤓 Tonne of oil equivalent?</h3>
+<blockquote>
+<p>(toe) ist eine Energieeinheit, die als die Energiemenge definiert ist, die bei der Verbrennung einer Tonne Rohöl freigesetzt wird. Sie beträgt etwa 42 Gigajoule oder 11,630 MWh</p>
+</blockquote>
+<p><img alt="bg right" src="../images/59df0a759270b.jpg" /></p>
+<h6 id="httpsenwikipediaorgwikitonne_of_oil_equivalent-httpwwwhuashuochemcomwap_product_detail_enid29html">https://en.wikipedia.org/wiki/Tonne_of_oil_equivalent, http://www.huashuochem.com/wap_product_detail_en/id/29.html</h6>
+<hr />
+<h3 id="wie-viele-energie-sklaven-benotigen-wir_1">Wie viele "Energie-Sklaven" benötigen wir?</h3>
 <ul>
-<li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
-<li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
+<li><span class="arithmatex">\(\text{No. of Energy Slaves}\)</span>
+<span class="arithmatex">\(= 3.7 \frac{toe}{a} \cdot 11.630 \frac{MWh}{toe} \cdot 1000\frac{kWh}{MWh} \frac{1}{875}\frac{a}{kWh} = 49.2\)</span></li>
+<li>Jeder Europäer benötigt mehr als 50 virtuelle Energiesklaven, die Tag und Nacht arbeiten!</li>
 </ul>
-<h2 id="objektorientierung">Objektorientierung</h2>
-<h3 id="attribute">Attribute</h3>
-<h3 id="methoden">Methoden</h3>
-<h3 id="python">Python</h3>
-<h2 id="writing_hand-aufgabe-implementierung-eines-aggregators-zum-glatten-von-messwerten">:writing_hand: Aufgabe: Implementierung eines Aggregators zum Glätten von Messwerten</h2>
-<h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
+<p><img alt="bg right:40% height:700" src="../images/slaves.jpg" /></p>
+<hr />
+<h3 id="wasserkocher">Wasserkocher</h3>
+<ul>
+<li><span class="arithmatex">\(P = 3.7 \cdot \frac{11,630}{8760}\frac{kWh}{h}=4.9kW\)</span></li>
+<li>als würden mehrere Wasserkocher kontinuierlich durchlaufen</li>
+</ul>
+<p><img alt="bg right" src="../images/WaterKettle.png" /></p>
+<h6 id="james-hoffmann">James Hoffmann</h6>
+<hr />
+<h3 id="is-it-bad-to-have-too-many-energy-slaves-kettles">Is it bad to have too many energy slaves / kettles?</h3>
+<hr />
+<h3 id="okonomie">Ökonomie</h3>
+<ul>
+<li>
+<p>Kosten: Energieerzeugung ist teuer
+  <img alt="height:350" src="../images/energy_Cost_bip.png" /></p>
+</li>
+<li>
+<p>This forecast was from before Russias attack on Ukraine</p>
+</li>
+</ul>
+<h6 id="httpswwwbloombergcomnewsarticles2022-03-16energy-costs-set-to-reach-record-13-of-global-gdp-this-year">https://www.bloomberg.com/news/articles/2022-03-16/energy-costs-set-to-reach-record-13-of-global-gdp-this-year</h6>
+<hr />
+<h3 id="endenergieverbrauch-nach-sektoren">Endenergieverbrauch nach Sektoren</h3>
+<p><img alt="height:500" src="../images/Finalconsumption_Sector.png" /></p>
+<h6 id="httpswwwieaorgreportskey-world-energy-statistics-2020final-consumption">https://www.iea.org/reports/key-world-energy-statistics-2020/final-consumption</h6>
+<hr />
+<h3 id="nachfrageseite-endverbrauch-nach-sektoren">Nachfrageseite: Endverbrauch nach Sektoren</h3>
+<ul>
+<li><strong>Privathaushalte</strong>: Heizen, Kochen, Kühlen, usw.</li>
+<li><strong>Verkehr</strong>: Transport von Personen und Gütern</li>
+<li><strong>Gewerblich</strong>: Verkauf von Waren und Dienstleistungen</li>
+<li><strong>Industrie</strong>: Herstellung von Waren, in der Regel aus Rohstoffen.</li>
+<li><strong>Landwirtschaft</strong>: Energieverbrauch: Düngemittel, Licht, Wärme, Maschinen</li>
+</ul>
+<hr />
+<h3 id="gesamtprimarenergieversorgung-der-welt-nach-quellen">Gesamtprimärenergieversorgung der Welt nach Quellen</h3>
+<p><img alt="height:500" src="../images/TotalPrimaryEnergySupply.png" /></p>
+<h6 id="httpswwwieaorgreportskey-world-energy-statistics-2020">https://www.iea.org/reports/key-world-energy-statistics-2020</h6>
+<hr />
+<h3 id="gesamtprimarenergieversorgung-im-jahr">🤓 Gesamtprimärenergieversorgung im Jahr ?</h3>
+<p><img alt="" src="../images/ForrestFellings.png" /></p>
+<h6 id="malanima-2013">Malanima (2013)</h6>
+<hr />
+<h3 id="gesamtprimarenergieversorgung-im-jahr_1">🤓 Gesamtprimärenergieversorgung im Jahr ?</h3>
+<p><img alt="" src="../images/ForrestFellings.png" /></p>
+<blockquote>
+<p>Schätzungen der Waldrodung in Mitteleuropa (Deutschland, Nordostfrankreich) anhand archäologischer Holzreste 200 v. Chr. bis 400 v. Chr. (dekadische Daten; jeder Punkt des Diagramms steht für die Intensität des Holzeinschlags).</p>
+</blockquote>
+<h6 id="malanima-p-2013-energy-consumption-in-the-roman-world-in-the-ancient-mediterranean-environment-between-science-and-history-pp-13-36-brill">###### Malanima, P. (2013). Energy consumption in the Roman world. In The Ancient Mediterranean Environment between Science and History (pp. 13-36). Brill</h6>
+<hr />
+<h3 id="energiepolitisches-zieldreieck">Energiepolitisches Zieldreieck</h3>
+<p><img alt="h:500" src="../images/Zieldreieck.png" /></p>
+<hr />
+<h3 id="energiebilanzen-von-industrielandern">Energiebilanzen von Industrieländern</h3>
+<p><img alt="height:500" src="../images/Total_final_Consumption_Austria.png" /></p>
+<h6 id="httpsenergyeducationcaencyclopediatotal_final_consumption_1">https://energyeducation.ca/encyclopedia/Total_final_consumption</h6>
+<hr />
+<h3 id="landesweite-energiebilanzen">Landesweite Energiebilanzen</h3>
+<p><img alt="height:500" src="../images/_IEASankeyDiagramAlbania.png" /></p>
+<h6 id="international-energy-agency"><a href="https://www.iea.org/sankey/#?c=Albania&amp;s=Balance">International Energy Agency</a></h6>
+<hr />
+<h3 id="zusammenfassung">Zusammenfassung</h3>
+<ul>
+<li>Der größte Teil der Primärenergie weltweit stammt immer noch aus nicht erneuerbaren Energiequellen</li>
+<li>Sichere, erschwingliche Energie ist eine der wichtigsten Triebfedern der menschlichen Entwicklung</li>
+<li>Energie wird in allen Sektoren benötigt (Haushalt, Transport, Produktion)</li>
+<li>Nur ein kleiner Teil der Energie wird in elektrische umgewandelt</li>
+</ul>
+<hr />
+<h3 id="lernfortschritt">🎯 Lernfortschritt</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* Primär- und Endenergiebedarf zu unterscheiden
+* eine Einschätzung über den Energiebedarf verschiedener Sektoren zu geben
+* Das Energiepolitische Zieldreieck zu beschreiben</p>
+<hr />
+<h2 id="2-eine-kurze-einfuhrung-in-die-energiewirtschaft">2 Eine kurze Einführung in die Energiewirtschaft</h2>
+<h3 id="lernziele_1">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- die Marktrollen im Energiemarkt und deren Interessen zu beschreiben
+- die Struktur des Stromnetzes zu beschreiben
+- Preisbildung auf dem Spot-Markt zu beschreiben</p>
+<hr />
+<h3 id="energiekosten-und-erlose">Energiekosten und Erlöse</h3>
+<p><img alt="" src="../images/EnergieKosten.png" /></p>
+<h6 id="httpskurieratwirtschaftenergiekosten-insgesamt-um-24-milliarden-euro-gestiegen402181017">https://kurier.at/wirtschaft/energiekosten-insgesamt-um-24-milliarden-euro-gestiegen/402181017</h6>
+<hr />
+<h3 id="stadtwerke-welt-mit-beginn-der-elektrifizierung-19-jhd">Stadtwerke-Welt (mit Beginn der Elektrifizierung 19 Jhd.)</h3>
+<ul>
+<li>Ein Stadtwerk betreibt Netz und Stromerzeugung in seinem Netzgebiet</li>
+<li>Monopolstellung der Stadtwerke</li>
+</ul>
+<p><img alt="bg left h:400" src="images/Energiemarkt/Folie1.PNG" /></p>
+<hr />
+<h3 id="europaische-energiemarktintegration">Europäische Energiemarktintegration</h3>
+<p><img alt="bg left h:400" src="images/Energiemarkt/Folie2.PNG" /></p>
+<ul>
+<li>Entwicklung eines gemeinsamen Europäischen Stromnetzes (Ausfallsicherheit)</li>
+<li>und Binnenmarktes</li>
+<li>Aus integrierten Stadtwerken (und Energiekonzernen) werden getrennte Netzbetreiber  und Energieversorgungs-unternehmen (EVU)</li>
+</ul>
+<hr />
+<h3 id="europaische-energiemarktintegration_1">Europäische Energiemarktintegration</h3>
+<ul>
+<li>Alle Marktteilnehmer handeln Energiemengen frei miteinander</li>
+<li>Netz wird von neutralen Netzbetreibern verantwortet</li>
+<li>Handel von Strom kann bilateral oder auf der Europäischen Strombörse (EEX) stattfinden</li>
+<li>Netzrestriktionen werden innerhalb einzelner Länder vom Markt ignoriert</li>
+<li>Solange keine Netzrestriktionen an den Grenzkuppelstellen bestehen haben Länder den gleichen Strompreis</li>
+<li>Eine ähnliche Logik gilt für den Gas-Markt</li>
+</ul>
+<hr />
+<h4 id="trennung-von-naturlichem-monopol-netz-und-markt-energie">Trennung von Natürlichem Monopol (Netz) und Markt (Energie)</h4>
+<ul>
+<li>Beim Stromnetz handelt es sich um ein natürliches Monopol (ebenso Gas und Eisenbahn)</li>
+<li>Kein Mitbewerber kann ein Parallelnetz aufbauen, und dieses günstiger anbieten</li>
+<li>Idee: Netz und Energie werden getrennt behandelt</li>
+<li>Dies soll den Europäischen Austausch fördern und Kosten senken</li>
+</ul>
+<h6 id="httpswwweuroparleuropaeufactsheetsdesheet45energiebinnenmarkt">https://www.europarl.europa.eu/factsheets/de/sheet/45/energiebinnenmarkt</h6>
+<p><img alt="bg right:40% w:400" src="../images/C1009104-Monopoly-Brettspiel-Inhalt.PT01.jpg" /></p>
+<hr />
+<h3 id="elektrische-energie-aus-strom-ist-ein-homogenes-gut">Elektrische Energie aus Strom ist ein Homogenes Gut</h3>
+<ul>
+<li>Eine kWh Strom kann überall im Europäischen Stromnetz eingespeist werden</li>
+<li>Eingespeiste und entnommene Energie können nicht nachverfolgt werden</li>
+<li>Das Netz wird nicht beachtet (Kupferplatte, Zonales Preissystem)</li>
+</ul>
+<p><img alt="" src="../images/Atomstromfilter.png" /></p>
+<h6 id="httpstraumshopnetshophighlightsatomstromfilter">https://traumshop.net/shop/highlights/atomstromfilter/</h6>
+<hr />
+<h4 id="okostrom">Ökostrom</h4>
+<ul>
+<li>EVU, dies Ökostrom anbieten haben folgende Möglichkeiten</li>
+<li>Ökostrom selbst produzieren</li>
+<li>per Liefervertrag einkaufen</li>
+<li>
+<p>handelbare Erzeugungszertifikate erwerben</p>
+</li>
+<li>
+<p>Mengengleiche Ökostromversorgung: Ausgleich übers Jahr</p>
+</li>
+<li>Zeitgleiche Ökostromversorgung:  Ausgleich in jeder Viertelstunde</li>
+</ul>
+<p><img alt="bg right:33% w:500" src="../images/agora-1024x685.png" /></p>
+<hr />
+<h3 id="rollen-auf-dem-energiemarkt-vereinfacht">Rollen auf dem Energiemarkt (vereinfacht)</h3>
+<p><img alt="h:500" src="images/Energiemarkt/Folie5.PNG" /></p>
+<hr />
+<h3 id="rollen-auf-dem-energiemarkt-vereinfacht_1">Rollen auf dem Energiemarkt (vereinfacht)</h3>
+<ul>
+<li>Ein Unternehmen kann gleichzeitig unterschiedliche Rollen einnehmen</li>
+<li>Stromanbieter: Große Erzeuger vom elektrischem Strom (Kraftwerksparks) verkaufen Energiemengen</li>
+<li>Stromnachfrager: Energieversorgungsunternehmen (EVU) kaufen Energiemengen</li>
+<li>Endverbraucher: Haushalte und Gewerbe, beziehen Strom von den Energieversorgungsunternehmen und rechen über Tarife ab (nur sehr große Firmen handeln selbst auf der Strombörse)</li>
+<li>Netzbetreiber: Greifen nicht in den Handel mit Strom ein</li>
+</ul>
+<hr />
+<h4 id="angebot-und-nachfrage">Angebot und Nachfrage</h4>
+<ul>
+<li>Stromanbieter bieten zu marginalen Kosten an: Was immer es kostet eine MWh elektrischen Strom zu produzieren</li>
+<li>Erneuerbare Erzeuger haben marginale Kosten von 0 €/MWh</li>
+<li>Gaskraftwerke sind teuer</li>
+<li>Kapitalkosten werden nicht eingepreist (sunk costs)</li>
+<li>Stromnachfrager sind unelastisch: EVU müssen beschaffen, was Haushalte und Gewerbe beziehen</li>
+</ul>
+<p><img alt="bg right:40% h:460" src="images/Energiemarkt/Folie5.PNG" /></p>
+<h6 id="marginale-kostengrenzkosten-kosten-die-anfallen-um-eine-zusatzliche-einheit-zu-produzieren">marginale Kosten/Grenzkosten: Kosten die anfallen, um eine zusätzliche Einheit zu produzieren</h6>
+<hr />
+<h4 id="merit-order-modell">Merit Order Modell</h4>
+<p><img alt="h:550" src="../images/mertiOrder.png" /></p>
+<h6 id="okoinstitut-freiburg">Ökoinstitut Freiburg</h6>
+<hr />
+<h4 id="merit-order-modell_1">Merit Order Modell</h4>
+<ul>
+<li>Die Aufreihung des Angebots wird als Merit Order bezeichnet</li>
+<li>In jeder Viertelstunde wird die der Einsatz der Erzeuger nach der Merit Order festgelegt</li>
+<li>Es muss immer genau so viel Strom abgenommen, wie eingespeist werden</li>
+<li>Die Nachfrage kann kurzfristig als nicht-elastisch (preis-unabhängig) angenommen werden</li>
+<li>Der Schnittpunkt zwischen Angebot und nachfrage bestimmt den Preis</li>
+<li>All abgerufenen Kraftwerke erhalten den Preis, den das letzte Kraftwerk erzielt</li>
+</ul>
+<h6 id="ohne-diese-regel-pay-as-bid-gabe-es-ein-anreiz-fur-strategisches-verhalten-der-bieter">Ohne diese Regel (Pay-as-Bid) gäbe es ein Anreiz für strategisches Verhalten der Bieter</h6>
+<hr />
+<h4 id="preis-schwankung-intraday">Preis-Schwankung Intraday</h4>
+<p><img alt="h:500" src="../images/StromPreis.png" /></p>
+<h6 id="httpsenergy-chartsinfochartsprice_spot_marketcharthtmldecdeweek44legenditems011010000010">https://energy-charts.info/charts/price_spot_market/chart.htm?l=de&amp;c=DE&amp;week=44&amp;legendItems=011010000010</h6>
+<hr />
+<h4 id="preis-schwankung-intraday_1">Preis-Schwankung Intraday</h4>
+<ul>
+<li>Je nach Last und Erzeugungssituation stellen sich unterschiedliche Preise ein</li>
+<li>EVU haben ein Interesse den Verbrauch ihrer Kund:innen in Richtung der günstigen Stunden zu verschieben</li>
+<li>Zeit-dynamische Tarife </li>
+<li>Unterbrechbare Lasten </li>
+<li>Das würde die Elastizität/Flexibilität der Nachfrage erhöhen</li>
+<li>EVUs müssen in teuren Stunden weniger Strom beziehen</li>
+<li>Geschieht dies nicht im ausreichenden Maße</li>
+<li>Strompreis steigt</li>
+<li>Mehr Emissionen</li>
+<li>Lastabschaltungen</li>
+</ul>
+<hr />
+<h3 id="struktur-des-stromnetz">Struktur des Stromnetz</h3>
+<p><img alt="h:600" src="../images/Stromversorgung.svg" /></p>
+<h6 id="httpsuploadwikimediaorgwikipediacommonsbb0stromversorgungsvg">https://upload.wikimedia.org/wikipedia/commons/b/b0/Stromversorgung.svg</h6>
+<hr />
+<p><img alt="" src="../images/APG-380-kV-Ring-1.jpg" /></p>
+<h6 id="httpswwwhochspannungsblogatwissenswertesnetzbetreiberuebertragungsnetz">https://www.hochspannungsblog.at/Wissenswertes/Netzbetreiber/Uebertragungsnetz</h6>
+<hr />
+<h4 id="ubertragungsnetz">Übertragungsnetz</h4>
+<ul>
+<li>Maschen-Topologie</li>
+<li>Engpässe bei starken lokalen Ungleichgewichten</li>
+<li>Marktergebnis kann nicht umgesetzt werden: Redispatch</li>
+<li>Weitere Aufgaben der Übertragungsnetzbetreiber</li>
+<li>Frequenzhaltung</li>
+<li>Systemreserve</li>
+</ul>
+<p><img alt="bg right h:400" src="images/Energiemarkt/Folie2.PNG" /></p>
+<hr />
+<h5 id="verteilnetz">Verteilnetz</h5>
+<ul>
+<li>Ring- oder Strang-Topologie</li>
+<li>Engpässe bei hohen Gleichzeitigkeiten</li>
+<li>Wärmepumpen</li>
+<li><em>"Zahnarzt-Allee"</em>
+  🔥_🚗🚗🚗🚗🚗</li>
+<li>PV-Rückspeisung 
+  🔥_⚡⚡⚡⚡⚡</li>
+</ul>
+<p><img alt="bg right h:400" src="images/Energiemarkt/Folie4.PNG" /></p>
+<hr />
+<h3 id="nachfrage-relevanz-der-elektrischen-energieversorgung">Nachfrage: Relevanz der elektrischen Energieversorgung</h3>
+<p><img alt="height:500" src="../images/wer-verbraucht-in-deutschland-die-meiste-energie-energieverbrauch-der-heizung-oftmals-untersch-tzt.jpg" /></p>
+<h6 id="httpswwwpresseportaldepm433381208607">https://www.presseportal.de/pm/43338/1208607</h6>
+<hr />
+<h4 id="nachfrage-zunehmende-elektrifizierung">Nachfrage: Zunehmende Elektrifizierung</h4>
+<p><img alt="height:500" src="../images/csm_heizungssysteme-neubau_b9e96ef74a.png" /></p>
+<h6 id="httpswwwheizspiegeldeheizkosten-pruefenheizkosten-pro-m2-vergleich">https://www.heizspiegel.de/heizkosten-pruefen/heizkosten-pro-m2-vergleich/</h6>
+<hr />
+<h4 id="nachfrage-emissionsvermeidung-durch-elektrifizierung">Nachfrage: Emissionsvermeidung durch Elektrifizierung</h4>
+<p><img alt="height:500" src="images/Primärenergievergleich_fossile_Energie_und_erneuerbare_Energien.png" /></p>
+<h6 id="httpsdewikipediaorgwikisektorenkopplungmediadateiprimc3a4renergievergleich_fossile_energie_und_erneuerbare_energienpng">https://de.wikipedia.org/wiki/Sektorenkopplung#/media/Datei:Prim%C3%A4renergievergleich_fossile_Energie_und_erneuerbare_Energien.png</h6>
+<hr />
+<h4 id="angebot-anstieg-volatiler-erneuerbarer-energien">Angebot: Anstieg volatiler Erneuerbarer Energien</h4>
+<p><img alt="height:500" src="../images/alt-ern.jpg" /></p>
+<h6 id="httpswwwoekosystem-erdedehtmlenergiezukunft-03html">https://www.oekosystem-erde.de/html/energiezukunft-03.html</h6>
+<hr />
+<h4 id="fazit">🧠 Fazit</h4>
+<ul>
+<li>Strom als <strong>"wertvollster"</strong> Energieträger, da geringe Umwandlungsverluste</li>
+<li>zunehmend höherer Teil an <strong>Energiedienstleistungen</strong> wird aus Strom gedeckt</li>
+<li><strong>Stromangebot wird zeitlich flexibel</strong>
+  (Photovoltaik und Wind nicht immer verfügbar - Dunkelflaute)</li>
+<li>Nicht nur Menge des Strombezugs, sondern auch 
+  dessen <strong>Zeitpunkt ist entscheidend</strong></li>
+<li>EVU und Netzbetreiber benötigen <strong>Daten</strong> über Erzeugung und Verbrauch zu Planung und Optimierung</li>
+<li>EVU und Netzbetreiber haben <strong>Anreize</strong> den Verbrauch der Endverbraucher steuernd <strong>zu beeinflussen</strong></li>
+</ul>
+<hr />
+<h3 id="lernziele_2">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- die Marktrollen im Energiemarkt und deren Interessen zu beschreiben
+- die Struktur des Stromnetzes zu beschreiben
+- Preisbildung auf dem Spot-Markt zu beschreiben</p>
+<hr />
+<h2 id="3-energiebedarf-von-gebauden">3 Energiebedarf von Gebäuden</h2>
+<h3 id="lernziele_3">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* Energieverbraucher im Haushalt nach Energiemengen zu ordnen
+* Mögliche Energieträger eines Gebäudes zu beschreiben
+* Den Primärenergiebedarf eines Gebäudes aus dem gemessen Endenergiebedarf abzuschätzen</p>
+<hr />
+<h3 id="relevanz-des-gebaudeenergieverbrauch">🧠 Relevanz des Gebäudeenergieverbrauch</h3>
+<ul>
+<li>etwa <strong>1/3</strong> des globalen Energiebedarfs</li>
+<li>Ein großer Hebel für Wirtschaftlichkeit und Energieeffizienz</li>
+<li>Großer Anteil <strong>indirekter Emissionen</strong>
+(z.B. Strom der nicht vor Ort produziert wird)</li>
+</ul>
+<p><img alt="height:400" src="../images/EmissionsBuildings.png" /></p>
+<h6 id="httpswwwipccchsiteassetsuploads201802ipcc_wg3_ar5_chapter9pdf">https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter9.pdf</h6>
+<hr />
+<p><img alt="" src="../images/Grafik_Privater_Energieverbrauch_2017.png" /></p>
+<h6 id="httpswwweffizienzhaus-onlinedeenergieverbrauch-haus">https://www.effizienzhaus-online.de/energieverbrauch-haus/</h6>
+<hr />
+<p><img alt="" src="../images/Gebaeudestandards.webp" /></p>
+<h6 id="httpswwwpassivhausdepassivhaus">https://www.passivhaus.de/passivhaus/</h6>
+<hr />
+<h3 id="energie-definitionen">🧠 Energie-Definitionen</h3>
+<p><img alt="bg w:600 right:46%" src="images/primärenergie.png" /></p>
+<ul>
+<li><strong>Nutzenergie (<span class="arithmatex">\(Q^N\)</span>)</strong>: Tatsächlich im Gebäude zweckdienlich genutzte Energie</li>
+<li><strong>Endenergie (<span class="arithmatex">\(Q^E\)</span>)</strong>: Im Gebäude verbrauchte (und meist gemessene) Energie</li>
+<li><strong>Primärenergiebedarf (<span class="arithmatex">\(Q^P\)</span>)</strong> bezieht die gesamte Wertschöpfungskette bis zum Gebäude mit ein (incl. indirekte Emissionen)</li>
+</ul>
+<hr />
+<h3 id="endenergietrager-in-gebauden">Endenergieträger in Gebäuden</h3>
+<ul>
+<li>Elektrische Energie</li>
+<li>Netzbezug</li>
+<li>Lokale Erzeugung</li>
+<li>Gas</li>
+<li>Leitungsgebunden</li>
+<li>Öl</li>
+<li>Speicher</li>
+<li>Biomasse</li>
+<li>Speicher</li>
+</ul>
+<hr />
+<h4 id="nichterneuerbarer-primarenergiebedarf">🤓 Nichterneuerbarer Primärenergiebedarf</h4>
+<ul>
+<li><span class="arithmatex">\(Q^{P,ne}\)</span> ergibt sich für alle zur Versorgung 
+des Gebäudes erforderlichen Endenergieträger <span class="arithmatex">\(i\)</span>:</li>
+</ul>
+<div class="arithmatex">\[Q^{P,ne} = \sum_i{Q^E_{i} f^{P,ne}_i}\]</div>
+<ul>
+<li><span class="arithmatex">\(Q^E_{i}\)</span> ... Endenergieträger i (z.B. Gas, Strom)</li>
+<li><span class="arithmatex">\(f^{P,ne}_i\)</span> ... <strong>Primärenergiefaktor</strong> des nicht-
+erneuerbaren Anteils des Endenergieträgers <span class="arithmatex">\(i\)</span></li>
+</ul>
+<h6 id="httpswwwingenieureimmowikibauphysiknutz-end-und-primc3a4renergie">https://www.ingenieure.immo/wiki/bauphysik/nutz-end-und-prim%C3%A4renergie/</h6>
+<hr />
+<h4 id="primarenergiefaktoren">🤓 Primärenergiefaktoren</h4>
+<ul>
+<li>hängen von der Vorkette ab</li>
+<li>schwer zu berechnen</li>
+<li><strong>EN 15316</strong> Heizungsanlagen in Gebäuden – Verfahren zur Berechnung der Energieanforderungen und Nutzungsgrade der Anlagen</li>
+<li><strong>Deutschland</strong> Energieeinsparverordnung von 2007 und DIN V 18599-1 und DIN 4701-10/A1</li>
+<li><strong>Österreich</strong> ÖNORM EN 15316-4-5 (bisher nur in der Beurteilung von Fernheizsystemen)</li>
+</ul>
+<p><img alt="bg right:33%" src="../images/braunkohle.jpg" /></p>
+<h6 id="httpswwwgeodenaturnachhaltigkeit19619-rtkl-stromerzeugung-was-ist-eigentlich-so-klimaschaedlich-braunkohle">https://www.geo.de/natur/nachhaltigkeit/19619-rtkl-stromerzeugung-was-ist-eigentlich-so-klimaschaedlich-braunkohle</h6>
+<hr />
+<p><img alt="bg w:900" src="../images/OIB-Richtlinie.png" /></p>
+<hr />
+<h5 id="primarenergiefaktoren-nach-oib">🤓 Primärenergiefaktoren nach OIB</h5>
+<p><img alt="bg w:500 right:36%" src="../images/OIB-Richtlinie.png" /></p>
+<ul>
+<li>Primärenergiebedarf (PEB) (<span class="arithmatex">\(f^{P}\)</span> bzw. <span class="arithmatex">\(f_{PE}\)</span>)</li>
+<li>nichterneuerbaren Anteils des PEB 
+(<span class="arithmatex">\(f^{P,ne}\)</span> bzw. <span class="arithmatex">\(f_{PE, n.ern.}\)</span>)</li>
+<li>erneuerbaren Anteils  (<span class="arithmatex">\(f^{P,e}\)</span> bzw. <span class="arithmatex">\(f_{PE, ern.}\)</span>) </li>
+<li>sowie des <span class="arithmatex">\(CO_2\)</span>-Emissionsfaktors (<span class="arithmatex">\(f_{CO2}\)</span>)</li>
+</ul>
+<h6 id="osterreichisches-institut-fur-bautechnik-oib-oib-richtlinie-6-energieeinsparung-und-warmeschutz-marz-2015">Österreichisches Institut für Bautechnik (OIB): OIB-Richtlinie 6 – Energieeinsparung und Wärmeschutz, März 2015</h6>
+<hr />
+<h5 id="primarenergiefaktoren-nach-oib_1">🤓 Primärenergiefaktoren nach OIB</h5>
+<p><img alt="bg w:500 right:36%" src="../images/OIB-Richtlinie.png" /></p>
+<ul>
+<li><strong>Interpretation</strong>: Das Verbrennen von <span class="arithmatex">\(1 kWh\)</span> Heizöl als Endenergie führt zur einem nichterneuerbaren Primärenergiebedarf von <span class="arithmatex">\(1.23~kWh\)</span> Heizöl und einem erneuerbaren Primärenergiebedarf von <span class="arithmatex">\(0.0123~kWh\)</span>.
+Dabei werden <span class="arithmatex">\(CO_2\)</span> Emissionen von <span class="arithmatex">\(311~g/kWh\)</span> verursacht.</li>
+<li>Die Nutzenergie ist dabei kleiner als <span class="arithmatex">\(1~kWh\)</span>. </li>
+</ul>
+<h6 id="osterreichisches-institut-fur-bautechnik-oib-oib-richtlinie-6-energieeinsparung-und-warmeschutz-marz-2015_1">Österreichisches Institut für Bautechnik (OIB): OIB-Richtlinie 6 – Energieeinsparung und Wärmeschutz, März 2015</h6>
+<hr />
+<h5 id="flachenbezug">🤓 Flächenbezug</h5>
+<p>In der Regel wird der so bestimmte nichterneuerbare 
+Primärenergiebedarf auf eine definierte Fläche bezogen:
+* bei Wohngebäuden auf die <strong>Wohnfläche</strong> (Bestimmung nach z.B. EnEV),
+* bei Nichtwohngebäuden auf die <strong>Nettoraumfläche</strong> (siehe DIN 277-1)</p>
+<div class="arithmatex">\[
+q^{P,ne} = \frac{Q^{P,ne}}{A^{bez}}
+\]</div>
+<p><span class="arithmatex">\(A^{bez}\)</span> ... Energiebezugsfläche</p>
+<hr />
+<h5 id="jahresbezug">🤓 Jahresbezug</h5>
+<p><img alt="" src="../images/Energieausweis_2021_01.jpg" /></p>
+<h6 id="httpswwwverbraucherzentraledewissenenergieenergetische-sanierungso-kommen-sie-an-einen-energieausweis-fuer-ihre-immobilie-24058">https://www.verbraucherzentrale.de/wissen/energie/energetische-sanierung/so-kommen-sie-an-einen-energieausweis-fuer-ihre-immobilie-24058</h6>
+<hr />
+<h5 id="aufgabe">🤓 Aufgabe</h5>
+<p>Berechnen Sie für für das Gebäude die jährlichen Heizkosten, <span class="arithmatex">\(CO_2\)</span>-Emissionen (<span class="arithmatex">\(f_{CO2}\)</span>) flächen-bezogenen nichterneuerbaren Primärenergiebedarf (<span class="arithmatex">\(q^{P,ne}\)</span>) für eine Biomasse- und eine Erdgasheizung.</p>
+<ul>
+<li>Wohnfläche: <span class="arithmatex">\(800 m^2\)</span></li>
+<li>Endenergiebedarf: <span class="arithmatex">\(153 \frac{kWh}{m^2 a}\)</span></li>
+<li>Gaspreis: <span class="arithmatex">\(0.06 \frac{€}{kWh}\)</span></li>
+<li>Pelletpreis: <span class="arithmatex">\(0.05 \frac{€}{kWh}\)</span></li>
+</ul>
+<h6 id="httpsdocsgooglecomspreadsheetsd11w776umnfqvs4kg3xlil2lf8dalnmbrfs1l_l3f_f7aedituspsharing">https://docs.google.com/spreadsheets/d/11W776uMNFQVS4KG3XLIl2LF8DalNMbRFS1L_l3F_f7A/edit?usp=sharing</h6>
+<hr />
+<p><img alt="bg w:800" src="../images/OIB-Richtlinie.png" /></p>
+<hr />
+<h5 id="losung">🤓 Lösung</h5>
+<ul>
+<li>Gas:</li>
+<li><span class="arithmatex">\(Q^{P,ne}_{gas}=153 \frac{kWh}{m^2 a} \cdot 800 m^2 \cdot 1.16 = 141{,}984 \frac{kWh}{a}\)</span></li>
+<li><span class="arithmatex">\(C_{gas}=153 \frac{kWh}{m^2 a} \cdot 800 m^2 \cdot 0.06 €  = 7{,}344 \frac{€}{a}\)</span></li>
+<li><span class="arithmatex">\(m^{CO_2}_{gas} =Q^{P}_{gas}  f_{CO_2} =153 \frac{kWh}{m^2 a} \cdot 800 m^2\cdot 236 \frac{g}{kWh} = 28{,}9 \frac{t}{a}\)</span></li>
+</ul>
+<hr />
+<h3 id="lernziele_4">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* Energieverbraucher im Haushalt nach Energiemengen zu ordnen
+* Mögliche Energieträger eines Gebäudes zu beschreiben</p>
+<hr />
+<h2 id="4-einfluss-der-gebaudeautomatisierung-auf-die-energetische-bewertung">4 Einfluss der Gebäudeautomatisierung auf die Energetische Bewertung</h2>
+<h3 id="lernziele_5">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- die vier Energieeffizienzklassen nach EN 15232 zu unterscheiden
+- ein Abschätzung der Effizienzsteigerung nach EN 15232 vorzunehmen</p>
+<hr />
+<h3 id="einfluss-der-gebaudeautomatisierung-auf-die-energetische-bewertung">🧠 Einfluss der Gebäudeautomatisierung auf die Energetische Bewertung</h3>
+<ul>
+<li>Größter Hebel ist die Technologieauswahl und effiziente Auslegung während der Planung</li>
+<li>Energiesparen bedeutet aus Sicht der Raumautomation vor allem <strong>Verschwendung zu vermeiden</strong> z.B.:</li>
+<li>Kühlen oder Heizen bei offenem Fenster, </li>
+<li>eingeschaltete Beleuchtung bei ausreichendem Tageslicht, </li>
+<li>beheizte ungenutzte Räume</li>
+</ul>
+<p><img alt="bg height:400 right:33%" src="../images/2019_waermeverlust_haus-rgb_oh.svg" /></p>
+<hr />
+<h4 id="energierelevante-gebaudetechnik">Energierelevante Gebäudetechnik</h4>
+<ul>
+<li>Sensorik<ul>
+<li>Intelligente Zähler (Smart Meter)</li>
+<li>Anwesenheitserkennung</li>
+<li>Fensterkontakt</li>
+</ul>
+</li>
+<li>Aktorik<ul>
+<li>Heizung</li>
+<li>Lüftung</li>
+<li>Kühlung etc.</li>
+<li>Verschattung</li>
+</ul>
+</li>
+</ul>
+<p><img alt="bg height:400 right:36%" src="../images/2019_waermeverlust_haus-rgb_oh.svg" /></p>
+<hr />
+<h3 id="abschatzung-der-effizienzsteigerung-mit-en-15232">Abschätzung der Effizienzsteigerung mit EN 15232</h3>
+<p><img alt="bg w:550 right:46%" src="../images/1148_x_2142-centraline1.jpg" /></p>
+<ul>
+<li>ca. <strong>40 weitere Normen</strong> betreffen die effiziente Planung von Gebäuden</li>
+<li>die EN15232 berechnet <strong>speziell den Einfluss der Gebäudeautomation</strong> und des Gebäude­managements für thermische und elektrische Installationen</li>
+</ul>
+<h6 id="httpswwwbaulinksdewebplugin20122142php4">https://www.baulinks.de/webplugin/2012/2142.php4</h6>
+<hr />
+<h4 id="abschatzung-der-effizienzsteigerung-nach-en-15232">Abschätzung der Effizienzsteigerung nach EN 15232</h4>
+<ul>
+<li>Einfach gesagt: Die Norm gibt an, was an Gebäudeautomatisierung sinnvoll und notwendig ist, um bestimmte Effizienzklassen zu erreichen</li>
+<li>Anders als beim Primärenergiefaktor geht es hier <strong>nicht</strong> um die <strong>Berechnung konkreter Werte</strong></li>
+</ul>
+<hr />
+<h4 id="effizienzklassen">Effizienzklassen</h4>
+<p><img alt="height:500" src="../images/csm_neues-energielabel-2021-web_76c0838435.png" /></p>
+<h6 id="httpswwwco2onlinedeenergie-sparenstrom-sparenstrom-sparen-stromspartippseu-energielabel-ab-2021">https://www.co2online.de/energie-sparen/strom-sparen/strom-sparen-stromspartipps/eu-energielabel-ab-2021/</h6>
+<hr />
+<h5 id="effizienzklasse-a">Effizienzklasse A</h5>
+<ul>
+<li>Die Norm gibt vier Effizienzklassen für Gebäude und Wohnhäuser an (Klasse C ist die Referenzklasse; Auszug aus Tabelle 2 der EN15232):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Heizen/ Kühlen</th>
+<th>Air conditioning</th>
+<th>Beleuchtung</th>
+<th>Sonnenschutz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>z.B. Einzelraumre­gelung mit Kom­munikation und Bedarfsanforde­rung</td>
+<td>z.B. Zuluftregelung mit lastabhängigem Sollwert</td>
+<td>autom. Beleuchtung z.B. mit automati­scher Anwesenheits­erfassung</td>
+<td>kombinierte Steuerung von Jalousien und Temperatur­</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="effizienzklassen-b-und-c">Effizienzklassen B und C</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Heizen/ Kühlen</th>
+<th>Air conditioning</th>
+<th>Beleuchtung</th>
+<th>Sonnenschutz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>z.B. Einzelraumre­gelung mit Kom­mu­nikation z.B. stufig gere­gel­te Pumpen</td>
+<td>z.B. mehrstufige Ventilatorsteuerung</td>
+<td>autom. Beleuchtung z.B. mit automati­scher Anwesenheits­erfassung</td>
+<td>automatische Steuerung der Jalousien</td>
+</tr>
+<tr>
+<td>C</td>
+<td>z.B. Einzelraumre­gelung mit Ther­mos­tatventil</td>
+<td>z.B. Ventilator mit Ein/Aus-Steuerung</td>
+<td>manuelle Lichtsteue­rung</td>
+<td>manuelle Bedienung der motorisierten Jalousien</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="effizienzklasse-d">Effizienzklasse D</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Heizen/ Kühlen</th>
+<th>Air conditioning</th>
+<th>Beleuchtung</th>
+<th>Sonnenschutz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td>z.B. keine Einzel­raum­regelung z.B Pumpen nicht geregelt</td>
+<td>z.B. keine Luftmen­genregelung z.B. keine Zuluftre­gelung</td>
+<td>manuelle Lichtsteue­rung</td>
+<td>manuelle Bedienung der Jalousien</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="die-idee-dahinter">🧠 Die Idee dahinter</h5>
+<p>Bei der Anwendung der EN 15232 auf Sanierungsprojekte mit bekanntem Energie­verbrauch können dadurch die <strong>Einsparungen</strong> bei geplanten Investitionen in die Gebäudeautomation mittels eines Rechenfaktors (<span class="arithmatex">\(f^{BSCS}\)</span>) leicht <strong>über­schlagen</strong> werden:</p>
+<ul>
+<li><span class="arithmatex">\(f^{BSCS,th}\)</span> ... für die <strong>thermischen</strong> Verbraucher</li>
+<li><span class="arithmatex">\(f^{BSCS,el}\)</span> ... für die <strong>elektrischen</strong> Verbraucher</li>
+<li><span class="arithmatex">\(Q^{E, vor}\)</span>... Endenergiebedarf <strong>vor Renovierung</strong></li>
+<li><span class="arithmatex">\(Q^{E, nach}\)</span> ... Endenergiebedarf <strong>nach Renovierung</strong>
+  mit Gebäudeautomatisierung</li>
+</ul>
+<div class="arithmatex">\[Q^{E, nach} =   \frac{f^{BSCS,nach}}{f^{BSCS,vor}}  Q^{E, vor}\]</div>
+<hr />
+<h5 id="tabelle-thermische-effizienzfaktoren-fbscsth">Tabelle: Thermische Effizienzfaktoren <span class="arithmatex">\(f^{BSCS,th}\)</span></h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D      (Nicht energieeffizient)</th>
+<th>C (Standard / Referenz)</th>
+<th>B     (Erweitert)</th>
+<th>A  (Hohe Energieeffizienz)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Büros</td>
+<td>1,51</td>
+<td>1</td>
+<td>0,80</td>
+<td>0,70</td>
+</tr>
+<tr>
+<td>Hörsaal</td>
+<td>1,24</td>
+<td>1</td>
+<td>0,75</td>
+<td>0,50</td>
+</tr>
+<tr>
+<td>Schulgebäude</td>
+<td>1,20</td>
+<td>1</td>
+<td>0,88</td>
+<td>0,80</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="tabelle-elektrische-effizienzfaktoren-fbscsel">Tabelle: Elektrische Effizienzfaktoren <span class="arithmatex">\(f^{BSCS,el}\)</span></h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>D      (Nicht energieeffizient)</th>
+<th>C (Standard / Referenz)</th>
+<th>B     (Erweitert)</th>
+<th>A  (Hohe Energieeffizienz)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Büros</td>
+<td>1,10</td>
+<td>1</td>
+<td>0,93</td>
+<td>0,87</td>
+</tr>
+<tr>
+<td>Hörsaal</td>
+<td>1,06</td>
+<td>1</td>
+<td>0,94</td>
+<td>0,89</td>
+</tr>
+<tr>
+<td>Schulgebäude</td>
+<td>1,07</td>
+<td>1</td>
+<td>0,93</td>
+<td>0,86</td>
+</tr>
+<tr>
+<td>Krankenhäuser</td>
+<td>1,05</td>
+<td>1</td>
+<td>0,98</td>
+<td>0,96</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="aufgabe_1">✍️ Aufgabe</h5>
+<p>Im ersten Planungsstand wird der neue Audimax (als eigenes Gebäude) mit einer Gebäudeautomatisierung geplant, die elektrisch Effizienzklasse C und thermisch Klasse D entspricht. Geben Sie eine erste Einschätzung, wie viel elektrische und thermische Energie eingespart werden kann, wenn der Hörsaal stattdessen jeweils mit Effizienzklasse B geplant wird.</p>
+<p><img alt="bg right:45%" src="../images/30769483_XXL.jpg" /></p>
+<hr />
+<h5 id="losung_1">Lösung</h5>
+<ul>
+<li><span class="arithmatex">\(Q^{E, nach} =   \frac{f^{BSCS,nach}}{f^{BSCS,vor}}  Q^{E, vor}\)</span></li>
+<li>
+<p><span class="arithmatex">\(\frac{Q^{E, nach, el}}{Q^{E, vor,el}} =   \frac{f^{BSCS,nach,el}}{f^{BSCS,vor,el}} = \frac{0,94}{1} =94\%\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\frac{Q^{E, nach, th}}{Q^{E, vor, th}} =   \frac{f^{BSCS,nach,th}}{f^{BSCS,vor,th}} = \frac{0,75}{   1,24} =60\%\)</span></p>
+</li>
+</ul>
+<hr />
+<h3 id="lernziele_6">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- die vier Energieeffizienzklassen nach EN 15232 zu unterscheiden
+- ein Abschätzung der Effizienzsteigerung nach EN 15232 vorzunehmen</p>
+<hr />
+<h2 id="5-smart-metering">5 Smart Metering</h2>
+<h3 id="lernziele_7">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+* Schnittstellen eines Smart Meters zu benennen
+* Funktionen intelligenter Messsysteme beschreiben
+* Vorteile und Anwendungsfälle einer Echtzeitmessung erläutern</p>
+<hr />
+<h3 id="herkommliche-zahler">🧠 Herkömmliche Zähler</h3>
+<ul>
+<li><strong>integrierende</strong> Messung</li>
+<li>keine Messzeitreihe</li>
+<li><strong>Visuelles Ablesen</strong> eines Momentanwerts</li>
+</ul>
+<p><img alt="bg right" src="../images/ferrariszaehler.jpg" /></p>
+<hr />
+<h3 id="standardlastprofile">Standardlastprofile</h3>
+<p><img alt="bg right h:400" src="../images/Standardlastprofil-Beispiel-1024x855.jpg" /></p>
+<ul>
+<li>auf historischen Daten basierende Annahmen über typische Verbrauchsmuster</li>
+<li>gemittelt (enthalten keine Lastspitzen)</li>
+<li>dienen der Planung (z.B. Auslegung des Netzes, Beschaffung von Strom an der Strombörse)</li>
+<li>zunehmend unpräzise</li>
+</ul>
+<h6 id="httpsblognaturstromdeinternstandardlastprofil">https://blog.naturstrom.de/intern/standardlastprofil/</h6>
+<hr />
+<h3 id="intelligente-zahler">🧠 Intelligente Zähler</h3>
+<ul>
+<li>
+<p>(Smart Meter) sind <strong>Gas-, Wasser- oder Stromzähler</strong>, die digital Daten auszeichnen, senden und ggf. auch empfangen (Busteilnehmer)</p>
+</li>
+<li>
+<p>Basisfunktionen:</p>
+</li>
+<li><strong>Messung</strong></li>
+<li><strong>Datenspeicherung</strong></li>
+<li><strong>Kommunikation</strong></li>
+</ul>
+<p><img alt="bg right" src="../images/ferrariszaehler.jpg" /></p>
+<hr />
+<h4 id="komponenten-eines-smart-meters-at">Komponenten eines Smart Meters (AT)</h4>
+<p><img alt="" src="../images/SmartMeterIKB.png" /></p>
+<h6 id="smart-meter-kurzanleitung">Smart-Meter-Kurzanleitung</h6>
+<hr />
+<h3 id="kommunikation-zwischen-verschiedenen-rollen">Kommunikation zwischen verschiedenen Rollen</h3>
+<!-- _backgroundColor: white -->
+
+<p><img alt="" src="../images/LokalesEnergiemangement.svg" /></p>
+<hr />
+<h4 id="komponenten-eines-intelligentes-messsystems-d">Komponenten eines Intelligentes Messsystems (D)</h4>
+<ul>
+<li>Strikte Trennung in zwei kompatible Komponenten:</li>
+<li><strong>Modernen Messeinrichtung</strong> erfasst Energiefluss digital</li>
+<li>Smart Meter Gateway <strong>Kommunikations-Schnittstelle</strong>, welche die Zählerwerte speichern, Daten verarbeiten und mit einem Netzwerk kommuniziert (Kommunikationsmodul)</li>
+</ul>
+<p><img alt="height:300" src="../images/Grafik_SmartMeter_670.jpg" /></p>
+<h6 id="httpswwwverbraucherzentraledewissenenergiepreise-tarife-anbieterwechselsmart-meter-die-neuen-stromzaehler-kommen-13275-stand-5-februar-2021">https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/smart-meter-die-neuen-stromzaehler-kommen-13275, Stand: 5. Februar 2021</h6>
+<hr />
+<h3 id="kommunikationsmodul">Kommunikationsmodul</h3>
+<ul>
+<li>Anbindung über diverse Bus-Systeme 
+(Power-Line-Communication, Mobilfunk, M-Bus, TCP/IP, ...)</li>
+<li>ermöglicht <strong>Fernauslesung</strong>: Energieversorgungsunternehmen kann Stromverbrauch aus der Ferne ablesen</li>
+<li><strong>Privatsphäre</strong>: Bedenken, dass auf Verhalten und Anwesenheit geschlossen werden kann</li>
+</ul>
+<p><img alt="bg right:33% w:400" src="../images/SmartMeterTV.png" /></p>
+<hr />
+<h3 id="kommunikationsmodul-einfuhrung-neuer-stromtarife">Kommunikationsmodul: Einführung neuer Stromtarife</h3>
+<ul>
+<li><strong>Zeitvariable Tarife</strong>: Strom kostet mehr zu Hochlastzeiten (abends, Wärmepumpen)</li>
+<li><strong>Last-variable Tarife</strong>: Strom kostet in Abhängigkeit der bezogenen Leistung</li>
+<li><strong>Zeit-dynamische Tarife</strong>: Strompreise können sich flexibel verändern (z.B. alle 15 Minuten)</li>
+</ul>
+<p><img alt="bg right" src="../images/VariablerTarif.png" /></p>
+<h6 id="httpswwwawattarat">https://www.awattar.at/</h6>
+<hr />
+<h3 id="gesetzliches">🧠 Gesetzliches</h3>
+<ul>
+<li><strong>EU Richtlinie 2006</strong>: allen Mitgliedstaaten, soweit technisch machbar, finanziell vertretbar und im Vergleich zu den potentiellen Energieeinsparungen angemessen, alle Endkunden in den Bereichen Strom, Erdgas, Fernheizung und/oder -kühlung und Warmbrauchwasser individuelle Zähler</li>
+<li>tatsächlichen Energieverbrauch des Endkunden </li>
+<li>
+<p>und die tatsächliche Nutzungszeit anzeigt</p>
+</li>
+<li>
+<p>mögliche Lösung: M-Bus Sensor + Display</p>
+</li>
+</ul>
+<hr />
+<h5 id="kundenschnittstelle-home-area-network">Kundenschnittstelle (Home Area Network)</h5>
+<ul>
+<li>in Österreich nicht fix definiert</li>
+<li>Spannung, Wirkleistung, Blindleistung aller Phasen</li>
+<li>häufig MBUS, aber auch andere Bussysteme</li>
+<li>teilweise verschlüsselt</li>
+</ul>
+<p><img alt="bg right w:600" src="../images/Kundenschnittstelle.png" /></p>
+<h6 id="konzept-fur-einen-smart-meter-kundenschnittstellen-adapter-zur-standardisierung-der-datenbereitstellung-in-der-kundenanlage">Konzept für einen „Smart-Meter Kundenschnittstellen Adapter“ zur Standardisierung der Datenbereitstellung in der Kundenanlage</h6>
+<hr />
+<h3 id="stand-smart-meter-rollout-europa-2020">Stand Smart Meter Rollout Europa 2020</h3>
+<table>
+<thead>
+<tr>
+<th>Land</th>
+<th style="text-align: right;">Durchdringung in %</th>
+<th>Bemerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spanien</td>
+<td style="text-align: right;">100</td>
+<td></td>
+</tr>
+<tr>
+<td>Irland</td>
+<td style="text-align: right;">100</td>
+<td></td>
+</tr>
+<tr>
+<td>Dänemark</td>
+<td style="text-align: right;">100</td>
+<td></td>
+</tr>
+<tr>
+<td>Finnland</td>
+<td style="text-align: right;">100</td>
+<td></td>
+</tr>
+<tr>
+<td>Malta</td>
+<td style="text-align: right;">100</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Italien</strong></td>
+<td style="text-align: right;">99</td>
+<td><a href="https://www.faz.net/aktuell/wirtschaft/unternehmen/smart-meter-dem-schwarzen-stromzaehler-schlaegt-die-stunde-1625653.html">Treiber Stromklau?</a></td>
+</tr>
+<tr>
+<td>Luxemburg</td>
+<td style="text-align: right;">95</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Österreich</strong></td>
+<td style="text-align: right;">95</td>
+<td><a href="https://oesterreichsenergie.at/fileadmin/user_upload/Oesterreichs_Energie/Publikationsdatenbank/Factsheets/FactSheet_Smart_Meter.pdf">Prakmatisch</a></td>
+</tr>
+<tr>
+<td>Frankreich</td>
+<td style="text-align: right;">95</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Land</th>
+<th style="text-align: right;">Durchdringung in %</th>
+<th>Bemerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Griechenland</td>
+<td style="text-align: right;">80</td>
+<td></td>
+</tr>
+<tr>
+<td>Polen</td>
+<td style="text-align: right;">80</td>
+<td></td>
+</tr>
+<tr>
+<td>Rumänien</td>
+<td style="text-align: right;">80</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Deutschland</strong></td>
+<td style="text-align: right;">23</td>
+<td><a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Smart-Meter-Gateway.pdf;jsessionid=7BD90C53F0BECB122DCE8CFC6411F913.internet082?__blob=publicationFile&amp;v=2">Overengineering</a></td>
+</tr>
+<tr>
+<td>Lettland</td>
+<td style="text-align: right;">23</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h6 id="httpsdestatistacomstatistikdatenstudie387142umfragemarktdurchdringung-von-smart-metern-in-europa-nach-laendern">https://de.statista.com/statistik/daten/studie/387142/umfrage/marktdurchdringung-von-smart-metern-in-europa-nach-laendern/</h6>
+<hr />
+<h4 id="eichrecht">🧠 Eichrecht</h4>
+<ul>
+<li><strong>abrechnungs-relevante</strong> Zähler müssen 
+eich-rechtlich zugelassen sein</li>
+<li><strong>Maß- und Eichgesetz</strong> (MEG)</li>
+<li>Mengenmessgeräte für Gas,</li>
+<li>Mengenmessgeräte für sauberes Wasser aus Versorgungsleitungen,</li>
+<li>Mengenmessgeräte für thermische Energie (Wärmezähler, Kältezähler),</li>
+<li>Elektrizitätszähler</li>
+<li>Zähler muss bei in Verkehr bringen der Europäischen Messgeräte-Richtlinie MID entsprechen</li>
+<li><strong>Regelmäßig überprüft</strong> (geeicht) werden</li>
+</ul>
+<h6 id="httpsstaticfernauslesedeuploadsfernauslesede-merkblatt-eichrecht-in-oesterreichpdf">https://static.fernauslese.de/uploads/Fernauslese.de-Merkblatt-Eichrecht-in-Oesterreich.pdf</h6>
+<p><img alt="bg right:20% height:200" src="../images/eichsiegel.jpg" /></p>
+<hr />
+<h4 id="smart-meter-osterreich">🤓 Smart Meter Österreich</h4>
+<p><img alt="height:500" src="../images/Smart_Meter_2019.jpg" /></p>
+<h6 id="httpswwwarbeiterkammeratberatungkonsumentdatenschutzfaqs_zum_smart_meterhtmllg1slide0">https://www.arbeiterkammer.at/beratung/konsument/Datenschutz/FAQs_zum_Smart_Meter.html#lg=1&amp;slide=0</h6>
+<hr />
+<h4 id="besonderheit-deutschland">🤓 Besonderheit Deutschland</h4>
+<ul>
+<li>Technische Richtlinie 03109-1 <strong>Anforderungen an die Interoperabilität</strong> der Kommunikationseinheit eines intelligenten Messsystems</li>
+<li><strong>Bundesamt für Sicherheit in der Informationstechni</strong>k – BSI definierte umfassende Anforderungen, welche von der Herstellern umgesetzt werden mussten</li>
+<li>z.B. Übertragung über asymmetrische Verschlüsselung und Zertifizierung</li>
+<li><strong>Standardisierte Basisfunktionen</strong> (Tarifanwendungsfälle) </li>
+</ul>
+<hr />
+<h5 id="smart-meter-deutschland">🤓 Smart Meter Deutschland</h5>
+<ul>
+<li>soll Ökosystem zum Vernetzung verschiedenster Akteure spielen</li>
+<li>Zusätzlich zur Kommunikationsmodul (WAN) und Kundenschnittstellen (HAN) können noch weitere Zähler integriert werden (LMN)
+<img alt="height:380" src="../images/smart-meter-kommunikation-netzwerk-data2.png" /></li>
+</ul>
+<h6 id="httpswwwdkededearbeitsfelderenergysmart-meter-energiemanagement-digitalisierung-energiewende">https://www.dke.de/de/arbeitsfelder/energy/smart-meter-energiemanagement-digitalisierung-energiewende</h6>
+<hr />
+<h5 id="tarifanwendungsfalle">🤓 Tarifanwendungsfälle</h5>
+<p><img alt="height:500" src="../images/Uebersicht_ueber_die_minimalen_Anforderungen-735x0-c-default.png" /></p>
+<h6 id="httpswwwffedeattachmentsarticle851fe_13549_bericht_final_onlinepdf">https://www.ffe.de/attachments/article/851/FE_13549_Bericht_final_online.pdf</h6>
+<hr />
+<h4 id="kritik-an-deutschem-system">🤓 Kritik an Deutschem System</h4>
+<ul>
+<li><strong>Späte Markteinführung</strong></li>
+<li><strong>hohe Kosten</strong> (&gt;100 €/a)</li>
+<li><strong>Überreglementierung</strong></li>
+<li>Kein Freitraum für Tarifentwicklung</li>
+<li>Anforderungen</li>
+<li>EVU über WAN-Schnittstelle: Abrechnung auf 15 Minuten-Basis ausreichend</li>
+<li>Liegenschaftsbetreiber über HAN-Schnittstelle: Mess- und Regelung in Gebäudeleittechnik erfordert höhere Auflösung (<strong>Parallelstruktur</strong>)</li>
+</ul>
+<hr />
+<h5 id="einbauempfehlung-deutschland">🤓 Einbauempfehlung Deutschland</h5>
+<p><img alt="" src="../images/VerdrahtungFail.png" /></p>
+<h6 id="zentralverband-der-deutschen-elektro-und-informationstechnischen-handwerke">Zentralverband der Deutschen Elektro- und Informationstechnischen Handwerke</h6>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../5_5_Bussysteme_in_der_MSR-Technik/" class="btn btn-neutral float-left" title="Bussysteme in der MSR-Technik"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" class="btn btn-neutral float-left" title="Bussysteme in der Gebäudeautomation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -166,7 +1362,7 @@ Dr. Julian Huber</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../5_5_Bussysteme_in_der_MSR-Technik/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
@@ -175,7 +1371,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>

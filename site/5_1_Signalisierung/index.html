@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Signalisierung - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Signalisierung";
+        var mkdocs_page_input_path = "5_1_Signalisierung.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Signalisierung</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#httpswebuserhs-furtwangendehoenig2016wikiac_080_inhalt01_u-han6feldbuspdf">https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#feldbus">Feldbus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwxplore-dnanetpluginfilephp623mod_resourcecontent2einfc3bchrung20feldbussystemepdf">https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vielfalt-an-bussystemen">Vielfalt an Bussystemen</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unterscheidungsmerkmale-von-bussystemen">Unterscheidungsmerkmale von Bussystemen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwwachendorff-prozesstechnikdeproduktgruppengateways-und-protokollwandlerinformationenbusprotokolle-besser-verstehentype98">https://www.wachendorff-prozesstechnik.de/produktgruppen/gateways-und-protokollwandler/informationen/busprotokolle-besser-verstehen/?type=98</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unterscheidungsmerkmale-von-bussystemen_1">Unterscheidungsmerkmale von Bussystemen</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Bussysteme</li>
+      <li class="breadcrumb-item active">Signalisierung</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="unterschiede-sps-und-bussysteme">Unterschiede SPS und Bussysteme</h2>
+<p><img alt="height:200" src="../images/ZentraleSPS.png" /> <img alt="height:200" src="../images/DezentralerBus.png" /></p>
+<h6 id="httpswebuserhs-furtwangendehoenig2016wikiac_080_inhalt01_u-han6feldbuspdf">https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf</h6>
+<hr />
+<h3 id="feldbus">Feldbus</h3>
+<ul>
+<li>Bei einer konventionellen SPS sind alle Komponenten sternförmig verbunden (analoges oder digitale Signale werden übertragen)</li>
+<li>Beim Bus ein Datenkabel (Buskabel) </li>
+<li>Zentraler Aufbau mit SPS und steckbaren Schnittstellenkarten (<strong>Master</strong>) möglich</li>
+</ul>
+<p><img alt="bg width:400 right:40%" src="../images/VorteilFeldbus.png" /></p>
+<h6 id="httpswwwxplore-dnanetpluginfilephp623mod_resourcecontent2einfc3bchrung20feldbussystemepdf">https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf</h6>
+<hr />
+<h3 id="vielfalt-an-bussystemen">Vielfalt an Bussystemen</h3>
+<!-- _class: white -->
+<p><img alt="bg right:60%" src="../images/overview-fieldbus-systems.png" /> </p>
+<ul>
+<li>Spezielle Anwendungsfälle in <strong>Gebäuden</strong></li>
+<li>DALI, KNX, ...</li>
+<li>Geschwindigkeit und Zuverlässigkeit</li>
+<li>CAN-Bus in <strong>Fahrzeugen</strong></li>
+<li><strong>Funk</strong> Reichweite und Energiebedarf</li>
+<li>LoRaWAN, Bluetooth Low Energy </li>
+</ul>
+<hr />
+<h3 id="unterscheidungsmerkmale-von-bussystemen">Unterscheidungsmerkmale von Bussystemen</h3>
+<ul>
+<li><strong>Telegramminhalt</strong>: welche Information</li>
+<li><strong>Topologie</strong>: Verkabelung</li>
+<li><strong>Teilnehmerhierarchie</strong>: Master, Slave, ...</li>
+<li><strong>Adressierung</strong>: Wie erreicht man Komponenten</li>
+<li><strong>Buszugriffsverfahren</strong>: Wer sendet wann?</li>
+<li><strong>Signalisierung</strong>: Wie werden Telegramme übertragen</li>
+<li><strong>Übertragungsmedium</strong>: z.B: Kabel oder Funk</li>
+</ul>
+<p><img alt="bg width:400 right:35%" src="../images/csm_Gateways-Bussysteme-sicher-verbinden_a5b35a71af.jpg" /></p>
+<h6 id="httpswwwwachendorff-prozesstechnikdeproduktgruppengateways-und-protokollwandlerinformationenbusprotokolle-besser-verstehentype98">https://www.wachendorff-prozesstechnik.de/produktgruppen/gateways-und-protokollwandler/informationen/busprotokolle-besser-verstehen/?type=98</h6>
+<hr />
+<h3 id="unterscheidungsmerkmale-von-bussystemen_1">Unterscheidungsmerkmale von Bussystemen</h3>
+<p><img alt="bg width:400 right:35%" src="../images/osi.png" /></p>
+<ul>
+<li><strong>Telegramminhalt</strong>: welche Information</li>
+<li><strong>Topologie</strong>: Verkabelung</li>
+<li><strong>Teilnehmerhierarchie</strong>: Master, Slave, ...</li>
+<li><strong>Adressierung</strong>: Wie erreicht man Komponenten</li>
+<li><strong>Buszugriffsverfahren</strong>: Wer sendet wann?</li>
+<li><strong>Signalisierung</strong>: Wie werden Telegramme übertragen</li>
+<li><strong>Übertragungsmedium</strong>: z.B: Kabel oder Funk</li>
+</ul>
+<hr />
+<h2 id="bitubertragungsschicht-signalisierung-von-telegrammen">Bitübertragungsschicht /  Signalisierung von Telegrammen</h2>
+<p><img alt="width:1200" src="images/signalisierung.svg" /></p>
+<ul>
+<li>Wireless über <strong>Wellen</strong></li>
+<li>Frequenzmodulation</li>
+<li>Amplitudenmodulation</li>
+<li><strong>Kabelgebundene</strong> Kodierung</li>
+<li>Über Spannungslevel</li>
+</ul>
+<hr />
+<h3 id="informationsgehalt-von-telegrammen">Informationsgehalt von Telegrammen</h3>
+<p><img alt="" src="../images/2022-05-10-13_47_26-Window.webp" /></p>
+<ul>
+<li>Steuerfeld: Priorität der Nachricht</li>
+<li>Quelladresse: Absender (vgl. MAC-Adresse)</li>
+<li>Zieladresse: Empfänger (vgl. MAC-Adresse)</li>
+<li>Routing Zähler: Zählt wie oft über Koppler gesendet (verhindert Irrläufer)</li>
+<li>Nutzinformation: Eigentlich Information (z.B. Messwerte eines Sensor)</li>
+<li>Sicherungs-Feld: Wurden die Daten richtig übertragen (vgl. Hash)</li>
+</ul>
+<hr />
+<h2 id="symbolrate-und-bitrate">Symbolrate und Bitrate</h2>
+<p><img alt="bg right:33% w:340" src="../images/NRZcode.png" /></p>
+<ul>
+<li>Anzahl der übertragenen Symbole pro Zeiteinheit</li>
+<li>In der Abbildung rechts gibt es ein Symbolalphabet <span class="arithmatex">\({\displaystyle d_{i}\in \{-1,1\}}.\)</span></li>
+<li>Die Bitrate ist die Anzahl der übertragenen Bits pro Zeiteinheit (bei einem Bit pro Symbol entspricht die Bitrate der Symbolrate)</li>
+<li><span class="arithmatex">\(1 \text{ Baud} = 1 \frac{\text{Symbol}}{\text{s}}\)</span> </li>
+<li>Beispiele</li>
+<li>CAN-Bus: <span class="arithmatex">\(5 \text{ bis } 500.000 \text{ Baud}\)</span></li>
+<li>DMX: <span class="arithmatex">\(500.000 \text{ Baud}\)</span></li>
+<li>DALI-Bus: <span class="arithmatex">\(1.200 \text{ Baud}\)</span></li>
+</ul>
+<hr />
+<h2 id="aufgabe-5_1_1-symbolrate">✍️ Aufgabe 5_1_1: Symbolrate</h2>
+<ul>
+<li>Wie groß ist jeweils die Symbolrate und die Bitrate?</li>
+</ul>
+<p><img alt="" src="../images/bit-vs-baud.png" /></p>
+<hr />
+<h3 id="losung">Lösung</h3>
+<p><img alt="" src="../images/bit-vs-baud-Aufgabe.png" /></p>
+<ul>
+<li>In beiden Fällen ändert sich die Spannung zehn mal pro Sekunde <span class="arithmatex">\(\text{Symbolrate} = 10 \text{ Baud}\)</span></li>
+<li>Links: Es gibt zwei Spannungen, jedes Symbol codiert ein Bit <span class="arithmatex">\(\text{Bitrate} = 10 \frac{\text{Bit}}{\text{s}}\)</span></li>
+<li>Rechts: Es gibt vier Spannungen, jedes Symbol codiert zwei Bit <span class="arithmatex">\(\text{Bitrate} = 20 \frac{\text{Bit}}{\text{s}}\)</span></li>
+</ul>
+<hr />
+<h2 id="leitungscodes">Leitungscodes</h2>
+<ul>
+<li>Wie wird die Symbolrate ausgenutzt?</li>
+<li>z.B. Non-Return-to-Zero High Level</li>
+<li>Hohes Spannungslevel codiert <code>1</code></li>
+<li>in jedem Schritt wird ein Bit übertragen</li>
+<li>dazwischen gibt es keine zurückfallen auf eine neutrale Spannung</li>
+<li>Baud-Rate entspricht Bit-Rate</li>
+<li><span class="arithmatex">\(1 \text{ Baud} \cdot \frac{\text{Bit}}{\text{Signal}}= 1 \frac{\text{Bit}}{\text{s}}\)</span> </li>
+</ul>
+<p><img alt="bg right:33% w:300" src="../images/NRZcode.png" /></p>
+<hr />
+<h3 id="weitere-leitungscodes">Weitere Leitungscodes</h3>
+<p><img alt="width:1200" src="../images/Codierung.png" /></p>
+<hr />
+<h2 id="aufgabe-5_1_2-leitungscodes">✍️ Aufgabe 5_1_2: Leitungscodes</h2>
+<p><img alt="h:200" src="../images/Codierung.png" /></p>
+<ul>
+<li>Erklären Sie verbal, wie die Leitungscodes funktionieren</li>
+<li>Non-Return-to-Zero Low Level</li>
+<li>Non-Return-to-Zero Inverted</li>
+<li>Return-to-Zero</li>
+<li>Welche Vor- und Nachteile haben die verschiedenen Leitungscodes?</li>
+</ul>
+<hr />
+<h3 id="losung_1">Lösung</h3>
+<p><img alt="h:200" src="../images/Codierung.png" /></p>
+<ul>
+<li>Non-Return-to-Zero Low Level: eine <code>1</code> wird durch eine niedrige Spannung codiert</li>
+<li>Non-Return-to-Zero Inverted: Bei jedem Auftreten einer <code>1</code> wird die Spannung invertiert</li>
+<li>Return-to-Zero: eine <code>1</code> wird durch eine hohe Spannung codiert, nach jedem Bit wird auf eine neutrale Spannung zurückgekehrt (halbiert die Bitrate bei gleicher Baud-Rate)</li>
+</ul>
+<hr />
+<h2 id="ubermittlung-der-taktrate">Übermittlung der Taktrate</h2>
+<ul>
+<li>Signal ohne Taktrate (z.B. Non-Return-to-Zero Low Level): 
+<img alt="" src="../images/BusSignal.png" /></li>
+<li>Ohne gemeinsame Uhr nur schwer zu entschlüsseln</li>
+<li>Lösungen:</li>
+<li>Einsatz einer Return-to-Zero-Code Kodierung</li>
+<li>Pausen mit definierter Länge mit definiertem Rhythmus z.B. bei RS-232</li>
+<li>Separate Leitung für Takt z.B. bei I²C-Bus</li>
+</ul>
+<hr />
+<h3 id="synchrone-datenubertragung">Synchrone Datenübertragung</h3>
+<p><img alt="w:550" src="../images/Bus-I2C-PullUp.png" /><img alt="w:550" src="../images/Bus-I2C-Zeitdiagramm.png" /></p>
+<ul>
+<li>Neben der Datenleitung <code>SDA</code> gibt es eine Taktleitung <code>SCL</code>, mit welcher der Master vorgibt, wann <code>SDA</code> gelesen wird (z.B.<code>I²C</code>-Bus)</li>
+<li>Probleme: </li>
+<li>Taktleitung benötigt zusätzliche Leitung</li>
+<li>Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master schon weitergezogen</li>
+</ul>
+<h6 id="httpfmh-studiosdetheorieinformationstechniki2c-bus_">http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_</h6>
+<hr />
+<h3 id="asynchrone-datenubertragung">Asynchrone Datenübertragung</h3>
+<ul>
+<li>Jeder Busteilnehmer verfügt über eine eigene Taktquelle (<code>Sample Clock</code>), die deutlich schneller taktet als die Datenübertragung</li>
+<li>Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. RS-232) </li>
+</ul>
+<p><img alt="w:550" src="../images/assync.png" /></p>
+<hr />
+<h2 id="serielle-und-parallele-busse">Serielle und Parallele Busse</h2>
+<p><img alt="" src="../images/Parallel.png" /></p>
+<ul>
+<li>Mit mehreren parallelen Leitungen können ebenfalls 
+mehr Symbole bei gleicher Baud-Rate übertragen werden</li>
+<li>Kaum Einsatz in Feldbussen (welche Geräte <em>im Feld</em> verbinden), häufig jedoch in Computern (<a href="https://de.wikipedia.org/wiki/Peripheral_Component_Interconnect">PCI</a>, <a href="https://de.wikipedia.org/wiki/ATA/ATAPI">ATA</a>)</li>
+</ul>
+<hr />
+<h2 id="ubertragungsarten">Übertragungsarten</h2>
+<p><img alt="h:400" src="../images/BBE_SimplexvsDuplex_Transmissions.png" /></p>
+<ul>
+<li>Simplex: Eine Richtung</li>
+<li>Half-Duplex: Beide Richtungen, aber nicht gleichzeitig</li>
+<li>Full-Duplex: Beide Richtungen gleichzeitig</li>
+</ul>
+<h6 id="httpswwwblack-boxdede-depage25078informationtechnische-ressourcenblack-box-erklaertglasfaserkabelsimplex-versus-duplex-glasfaser-patchkabel">https://www.black-box.de/de-de/page/25078/Information/Technische-Ressourcen/black-box-erklaert/Glasfaserkabel/Simplex-versus-Duplex-Glasfaser-Patchkabel</h6>
+<hr />
+<h2 id="beispiel-universal-serial-bus-usb-11-und-20">Beispiel: Universal Serial Bus (USB  1.1 und 2.0)</h2>
+<p><img alt="bg left w:600" src="../images/7a3372ffcf82dc9282666d36df90361f--gadgets.jpg" /></p>
+<ul>
+<li>Leitungen sind über Schirmung gegen Störungen abgesichert</li>
+<li>Zwei Drähte für Spannungspotentiale</li>
+<li>Zwei Drähte für Daten (Werte immer gegenläufig - half duplex)</li>
+<li>Kein Draht für Takt (spezielle NRZ-S Kodierung mit Bit Stuffing)</li>
+<li><span class="arithmatex">\(480 \text{ Baud}\)</span></li>
+</ul>
+<h6 id="httpscommonswikimediaorgwikifileusb_30_kabel_und_steckerpng-httpsdewikipediaorgwikinon_return_to_zero">https://commons.wikimedia.org/wiki/File:USB_3.0_Kabel_und_Stecker.png, https://de.wikipedia.org/wiki/Non_Return_to_Zero</h6>
+<hr />
+<h4 id="nrz-s-bitwechsel-bei-null">🤓 NRZ-S: Bitwechsel bei Null</h4>
+<p>Bei jeder <code>0</code> im Datenbit findet ein Wechsel statt
+<div class="highlight"><pre><span></span><code># Beispiel 1:   
+Datenbits (logisch):                      1 1 1 1 1 1 1 1
+phys. Leitung bei Ausgangszustand „1“:    1 1 1 1 1 1 1 1
+phys. Leitung bei Ausgangszustand „0“:    0 0 0 0 0 0 0 0
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code># Beispiel 2:   
+Datenbits (logisch):                      0 0 0 0 0 0 0 0
+phys. Leitung bei Ausgangszustand „1“:    0 1 0 1 0 1 0 1
+phys. Leitung bei Ausgangszustand „0“:    1 0 1 0 1 0 1 0
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># Beispiel 3:   
+Datenbits (logisch):                    1 1 1 1 1 0 1 0 1 0 1 1 0 0 0 1
+phys. Leitung bei Ausgangszustand „1“:  1 1 1 1 1 0 0 1 1 0 0 0 1 0 1 1
+phys. Leitung bei Ausgangszustand „0“:  0 0 0 0 0 1 1 0 0 1 1 1 0 1 0 0
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4_3_Appendix_Twincat/" class="btn btn-neutral float-left" title="Twincat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_2_Buszugriffsverfahren/" class="btn btn-neutral float-right" title="Buszugriffsverfahren">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4_3_Appendix_Twincat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5_2_Buszugriffsverfahren/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

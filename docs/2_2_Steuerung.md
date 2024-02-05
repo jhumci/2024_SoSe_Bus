@@ -14,14 +14,8 @@ theme: lemon
 
 <!-- paginate: true -->
 
-# Bussysteme
 
-**SoSe 2023**
-Dr. Julian Huber
-
----
-
-# Steuerung
+# 2.2 Steuerung
 
 ---
 
@@ -155,6 +149,7 @@ stateDiagram
 ---
 
 #### (Deterministic) Finite State Machine (Endlicher Automat)
+
 * Dieser Ansatz basiert auf der Theorie der formalen Sprachen
 * Eine DFSM beschreibt ein System mit endlich vielen Zuständen beschreibt
 * Eine DFSM ist ein 5-Tupel $M = (Q, \Sigma, q_0, F, \delta)$ mit
@@ -166,9 +161,10 @@ stateDiagram
 
 ---
 
-#### In der Theorie der formalen Sprachen :nerd_face:
+#### In der Theorie der formalen Sprachen 🤓
 
-![bg right:33% h:250](images/1920px-DFAexample.svg.png)
+![bg right:33% h:250](images/DFAexample.svg)
+
 * $Q = \{S_1, S_2\}$
 * $\Sigma = \{0,1\}$
 * $q_0 = S_1$
@@ -197,9 +193,9 @@ stateDiagram
 
 ---
 
-### :writing_hand: Aufgabe 3_1_1: Implementierung eines Treppenhauslichts
+## ✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts
 
-* In [Aufgaben\3_3_1\code_state_machine.py](Aufgaben\3_3_1\code_state_machine.py) ist das auf der rechten Seite dargestellte Programm implementiert
+* In [`code_state_machine.py`](Aufgaben\2_2_1\code_state_machine.py) ist das auf der rechten Seite dargestellte Programm implementiert
 * Beschreiben Sie verbal, was in jedem der Zustände passiert
 * Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände `LED leuchtet` und `LED flackert` gibt und diese nicht in einem Zusammengefasst wurden
 
@@ -229,7 +225,16 @@ stateDiagram
 
 ---
 
-### :writing_hand: Aufgabe 3_1_2: State Machine für einen Dimmschalter 
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_2_1\code_state_machine.py"
+    ```
+
+---
+
+## ✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter 
 
 * Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert
 * Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden
@@ -262,7 +267,7 @@ stateDiagram
 
 ---
 
-### :nerd_face: :writing_hand: Aufgabe 3_3_3: Implementierung eines Dimmschalter
+## 🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
 
 * Implementieren Sie einen Dimmer
 
@@ -271,22 +276,60 @@ stateDiagram
 ## Verknüpfungssteuerungen
 
 * Während Ablaufsteuerungen den Ablauf eines Prozesses steuern, verknüpfen Verknüpfungssteuerungen die Eingangssignale mit den Ausgangssignalen
-* Diese Trennung ist jed
+* Diese Trennung ist jedoch eher akademisch, da die meisten Systeme sowohl Ablauf- als auch Verknüpfungssteuerungen enthalten
+
+---
+
+### Beispiel: Wechselschalter
+
+* Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden
+* Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)
+
+![](images/Wechselschaltung.svg)
+
+**Wahrheitstabelle**
+
+| Schalter 1 | Schalter 2 | Lampe |
+|------------|------------|-------|
+|     0      |     0      |   0   |
+|     0      |     1      |   1   |
+|     1      |     0      |   1   |
+|     1      |     1      |   0   |
+
+**Boolsche Funktion**
+$L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
+
 
 ---
 
 
-## :writing_hand: Aufgabe 3_1_2: Implementierung einer vereinfachten Tageslichtschaltung
+## ✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung
 
-![](images/Tageslichtschaltung.png)
+![bg right:33% h:720](images/Tageslichtschaltung.png)
 
----
-
-vereinfacht: wenn H_ROOM zu genüge hell ist, dann schalte das Licht aus
-
-
+* Wir vereinfachen die Tagelichtschaltung, indem wir die Zeitparameter weglassen
+* Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
 
 ---
 
-## :writing_hand: Aufgabe 3_1_3: Implementierung einer vollständigen Tageslichtschaltung
+| `P_ACT` | `H_ROOM` `<` `PAR_SETPT` | `L_MAN` | `L_SET` |
+|-------|----------------|-------|-------|
+|   0   |        0       |   0   |   0   |
+|   1   |        0       |   0   |   0   |
+|   0   |        0       |   0   |   0   |
+|   1   |        0       |   0   |   0   |
+|   0   |        1       |   0   |   0   |
+|   1   |        1       |   0   |   1   |
+|   0   |        1       |   0   |   0   |
+|   1   |        1       |   0   |   1   |
+|   0   |        0       |   1   |   1   |
+|   1   |        0       |   1   |   1   |
+|   0   |        0       |   1   |   1   |
+|   1   |        0       |   1   |   1   |
+|   0   |        1       |   1   |   1   |
+|   1   |        1       |   1   |   1   |
+|   0   |        1       |   1   |   1   |
+|   1   |        1       |   1   |   1   |
+
+$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})$$
 

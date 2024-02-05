@@ -14,6 +14,7 @@ footer: Julian Huber - ecture Title
 
 ## Quicklinks
 
+- [«Quelle»](Quelle)
 - [Google Colabs]()
 - [Sakai Aufgaben]()
 

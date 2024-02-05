@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Twincat - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Twincat";
+        var mkdocs_page_input_path = "4_3_Appendix_Twincat.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Twincat</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation-twincat-und-erstes-projekt">Installation Twincat und Erstes Projekt</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lernziele">🎯 Lernziele</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installation-twincat-und-erstes-projekt_1">Installation Twincat und Erstes Projekt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#was-ist-twincat">Was ist TwinCat</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ausfuhren-des-programms">Ausführen des Programms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#entwicklungsumgebung">Entwicklungsumgebung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#anlegen-eines-neuen-projektes">Anlegen eines neuen Projektes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#anlegen-eines-neuen-sps-projektes">Anlegen eines neuen SPS-Projektes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#offnen-des-main-programms">Öffnen des Main Programms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variablen-deklarieren">Variablen Deklarieren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wichtige-datentypen">Wichtige Datentypen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zyklische-ausfuhrung">Zyklische Ausführung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zyklische-ausfuhrung_1">Zyklische Ausführung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_3_1-blinker">✍️ Aufgabe 4_3_1: Blinker</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#aufgabe">Aufgabe</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implementieren-der-steuerungslogik">Implementieren der Steuerungslogik</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#befullen-des-main-programmes">Befüllen des Main Programmes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kompilieren">Kompilieren</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testlizenz">Testlizenz</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#testlizenz-aktivieren-und-sps-auswahlen">Testlizenz aktivieren und SPS auswählen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#twincat-startet-im-laufzeitmodus">TwinCat startet im Laufzeitmodus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#auf-sps-einloggen-und-programm-in-speicher-laden">Auf SPS einloggen und Programm in Speicher laden</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#werte-in-sps-schreiben">Werte in SPS schreiben</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zyklus-schritt-umsetzen">Zyklus-Schritt umsetzen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ausloggen">Ausloggen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4_3_1aufgabe-4_3_2-bewegungsmelder-fup">✍️ 4_3_1Aufgabe 4_3_2: Bewegungsmelder FUP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variablendeklaration">Variablendeklaration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bausteine">Bausteine</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#problemlosung-wenn-sps-nicht-ausfuhrbar">Problemlösung, wenn SPS nicht ausführbar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-twincat-entwicklung">Zusammenfassung TwinCat - Entwicklung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-twincat-ausfuhrung">Zusammenfassung TwinCat - Ausführung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#epc-verbinden">ePC Verbinden</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#klemmen-scannen">Klemmen Scannen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verbindung-von-hardwaresignalen-zu-variablen">Verbindung von Hardwaresignalen zu Variablen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_3_3-funktion-lineare-transformation">✍️ Aufgabe 4_3_3: Funktion Lineare Transformation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung-fun_lineartransformation">Lösung: FUN_LinearTransformation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung-main">Lösung: MAIN</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#operatoren-nach-bindungsstarke">Operatoren nach Bindungsstärke</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpsinfosysbeckhoffcomindexphpcontentcontent1031tcplccontrolhtmltcplcctrl_languages20sthtmid5754912264349492758">https://infosys.beckhoff.com/index.php?content=../content/1031/tcplccontrol/html/tcplcctrl_languages%20st.htm&amp;id=5754912264349492758</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4_3_4-aufgabe-auswertung-von-ausdrucken">✍️ 4_3_4 Aufgabe: Auswertung von Ausdrücken</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassungen-anweisungen">Zusammenfassungen Anweisungen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4_3_5-aufgabe-heizungsanlage">✍️ 4_3_5: Aufgabe Heizungsanlage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hinweise">Hinweise:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_3">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_7">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Speicherprogrammierbare Steuerung</li>
+      <li class="breadcrumb-item active">Twincat</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <!-- paginate: true -->
+
+<h1 id="appendix-twincat">🤓 Appendix: Twincat</h1>
+<hr />
+<h2 id="installation-twincat-und-erstes-projekt">Installation Twincat und Erstes Projekt</h2>
+<h3 id="lernziele">🎯 Lernziele</h3>
+<p>Nach dieser Einheit sind Sie in der Lage dazu
+- eine Testinstanz von TwinCat 3 auf ihrem Rechner auszuführen
+- ein einfaches Hallo World Programm mit Strukturiertem Text schreiben und ausführen</p>
+<hr />
+<h3 id="installation-twincat-und-erstes-projekt_1">Installation Twincat und Erstes Projekt</h3>
+<ul>
+<li><a href="https://www.beckhoff.com/de-at/support/downloadfinder/software-und-tools/">Download</a> und Installation von TwinCat</li>
+<li><a href="https://download.beckhoff.com/download/document/automation/twincat3/TC3_Installation_DE.pdf">Handbuch</a></li>
+<li><a href="https://www.youtube.com/watch?v=GOFUsWc61Hk">Quelle</a> und gutes Video zum nachmachen</li>
+<li>Problemlösung, wenn Code nicht ausführbar</li>
+<li><a href="https://www.sps-forum.de/threads/twincat-3-4024-10-visual-studio-2019-xar-adserror-4132-hyperv-problem.101584/">AdsError: 4132 + "HyperV" Problem</a></li>
+<li><code>win8settick.bat</code> im TwinCat Ordner als Admin ausführen</li>
+</ul>
+<hr />
+<h3 id="was-ist-twincat">Was ist TwinCat</h3>
+<p><img alt="bg w:600 right" src="../images/TwiNCatSetup.png" /></p>
+<ul>
+<li>Software für SPS Entwicklungen und Bertrieb</li>
+<li><strong>Entwicklungsumgebung</strong>: Programm zum Entwickeln von Programmen</li>
+<li><strong>Laufzeitumgebung</strong>: Überwachnung von kompilierten Programmen </li>
+<li>Code wird auf SPS geladen und dort ausgeführt</li>
+<li>Alternativ kann zum Testen eine <strong>virutelle SPS</strong> auf dem Entwicklungs-PC gestartet werden</li>
+</ul>
+<hr />
+<h2 id="ausfuhren-des-programms">Ausführen des Programms</h2>
+<ul>
+<li>TwinCat wird in der Regel auf einem PC gestartet</li>
+<li>Teilweise sind auch kleine PCs direkt auf die Hutschiene mit der SPS installiert</li>
+</ul>
+<p><img alt="" src="../images/TwiNCatXAE.png" /></p>
+<hr />
+<h3 id="entwicklungsumgebung">Entwicklungsumgebung</h3>
+<p><img alt="" src="../images/TwinCatUmgebung.png" /></p>
+<ul>
+<li>Zunächst startet TwiNCat im Entwicklungsmodus</li>
+<li>Erkennbar am blauen Zahnrad</li>
+</ul>
+<hr />
+<h3 id="anlegen-eines-neuen-projektes">Anlegen eines neuen Projektes</h3>
+<p><img alt="height:400" src="../images/TCnewProject.png" /></p>
+<ul>
+<li>Neues Projekt anlegen</li>
+<li>kein SPS-Projekt</li>
+</ul>
+<hr />
+<h3 id="anlegen-eines-neuen-sps-projektes">Anlegen eines neuen SPS-Projektes</h3>
+<p><img alt="height:400" src="../images/TCspsHelloWorld.png" /></p>
+<ul>
+<li>Innerhalb des Projektes wird ein neues SPS-Projekt angelegt</li>
+<li>Rechtsklick auf SPS (Neues Element hinzufügen)</li>
+<li>Nutzen der Vorlage (Standard PLC Project)</li>
+</ul>
+<hr />
+<h3 id="offnen-des-main-programms">Öffnen des Main Programms</h3>
+<p><img alt="height:400" src="../images/TCpou.png" /></p>
+<ul>
+<li>Relevant ist das MAIN-Programm unter /POU/ </li>
+<li>Dieses besteht aus einem Variablen (oben)</li>
+<li>und einem Code-Editor (mitte)</li>
+</ul>
+<hr />
+<h3 id="variablen-deklarieren">Variablen Deklarieren</h3>
+<p><img alt="height:400" src="../images/TC-VariableDeklarieren.png" /></p>
+<ul>
+<li>Variablen können in Tabellen- und Textueller Ansicht angezeigt werden (rechts oben)</li>
+</ul>
+<hr />
+<h3 id="wichtige-datentypen">Wichtige Datentypen</h3>
+<ul>
+<li><code>BOOL</code>: Boolean</li>
+<li><code>INT</code>: Integer (nur positiv)</li>
+<li>z.B. Bit-Werte der Eingangsklemmen</li>
+<li><code>UNIT</code>: Unsigned  Integer (nur positiv)</li>
+<li><code>REAL</code>: Gleitkommazahl</li>
+<li>z.B. Interne Darstellung der physikalischen Gößen</li>
+<li><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tc3_plc_intro/2529388939.html&amp;id=">weitere</a></li>
+</ul>
+<hr />
+<h3 id="zyklische-ausfuhrung">Zyklische Ausführung</h3>
+<p><img alt="h:300" src="../images/SPS-EVA.svg" /></p>
+<ul>
+<li>SPS hat eine feste Zykluszeit</li>
+<li>In dieser wir das Main-Programm wiederholt ausgeführt</li>
+<li>Variablenzustände werden erhalten</li>
+</ul>
+<hr />
+<h3 id="zyklische-ausfuhrung_1">Zyklische Ausführung</h3>
+<ul>
+<li>Ablauf</li>
+<li>Eingänge werden gelesen</li>
+<li>Main-Programm wird ausgeführt</li>
+<li>Ausgänge werden geschrieben</li>
+<li>Änderungen nach dem Einlesen, werden erst im nächsten Zyklus erfasst</li>
+</ul>
+<hr />
+<h2 id="aufgabe-4_3_1-blinker">✍️ Aufgabe 4_3_1: Blinker</h2>
+<p>Schreiben Sie ein Main Programm, das den Zustand einer LED alle 100 Zyklen wechselt.</p>
+<p>Tipps:
+  - <code>LedStatus := NOT(LedStatus)</code> zum wechseln (toggeln)
+  - Variable, die die Zyklen zählt
+  - <code>IF</code>-Anweisung</p>
+<hr />
+<h3 id="aufgabe">Aufgabe</h3>
+<ul>
+<li>Programmieren Sie einen einfachen Bewegungsmelder basierend auf drei Variablen:<ul>
+<li><code>bInAnwesenheit1 : BOOL;</code> // der Variable für Anwesenheit. True = Anwesend</li>
+<li><code>bInDunkelheit2 : BOOL;</code> // der Variable für Anwesenheit. True = Dunkel</li>
+<li><code>bOutLicht1 : BOOL</code>; // der Variable für Licht. True = An</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="losung">Lösung</h3>
+<p>Wir möchten einen Bewegungsmelder implementieren, 
+welcher nur bei Dunkelheit und Bewegung ein Licht anschaltet.</p>
+<p>Hierzu definieren wir die Variablen als:
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN        // Beschreibung an welcher Stelle die Variablen gültig sein sollen
+VAR                 // Beginn der Variablen Deklaration
+  bInAnwesenheit1 : BOOL; // der Variable für Anwesenheit. True = Anwesend
+  bInDunkelheit2 : BOOL; // der Variable für Anwesenheit. True = Dunkel
+  bOutLicht1 : BOOL; // der Variable für Licht. True = An
+END_VAR
+</code></pre></div></p>
+<hr />
+<h3 id="implementieren-der-steuerungslogik">Implementieren der Steuerungslogik</h3>
+<ul>
+<li>Das Licht soll nur angehen, wenn <code>bInAnwesenheit1</code> und <code>bInDunkelheit2</code> auf <code>True</code> stehen.</li>
+<li>
+<p>Standardmäßig ist das Main-Programm Strukturierter Text. 
+Dies kann aber geändert werden.</p>
+</li>
+<li>
+<p>Lösung
+  ```
+  bOutLicht1 := bInAnwesenheit1 AND bInDunkelheit2; 
+  // Logische Verknüpfung (nur wenn beides erfüllt ist, geht das Licht an)
+  ```` </p>
+</li>
+</ul>
+<hr />
+<h3 id="befullen-des-main-programmes">Befüllen des Main Programmes</h3>
+<p><img alt="height:400" src="../images/tc_variablen_und_main.png" /></p>
+<ul>
+<li>fertiges Programm, welches in jedem Zyklus ausgeführt wird</li>
+</ul>
+<hr />
+<h3 id="kompilieren">Kompilieren</h3>
+<p><img alt="height:400" src="../images/TCcampilieren.png" /></p>
+<ul>
+<li>Zum Ausführen muss der Code kompiliert werden</li>
+<li>Hierzu dient das Symbol mit der kleinen blauen Treppe</li>
+</ul>
+<hr />
+<h2 id="testlizenz">Testlizenz</h2>
+<p><img alt="height:200" src="../images/Tclicence1.png" /></p>
+<ul>
+<li>Die Testlizenz läuft 7 Tage und kann immer wieder erneuert werden</li>
+<li>Im Produktivbetrieb wäre regelmäßiges Erneuern sehr störend</li>
+</ul>
+<hr />
+<h3 id="testlizenz-aktivieren-und-sps-auswahlen">Testlizenz aktivieren und SPS auswählen</h3>
+<p><img alt="height:200" src="../images/tclicence2.png" /></p>
+<hr />
+<h3 id="twincat-startet-im-laufzeitmodus">TwinCat startet im Laufzeitmodus</h3>
+<p><img alt="height:400" src="../images/tcRun.png" /></p>
+<ul>
+<li>Nun kann der Code grundlegend ausgeführt werden</li>
+<li>Erkennbar am grünen Zahnrad unten rechts</li>
+</ul>
+<hr />
+<h3 id="auf-sps-einloggen-und-programm-in-speicher-laden">Auf SPS einloggen und Programm in Speicher laden</h3>
+<ul>
+<li>Als nächstes loggen wir uns auf eine SPS ein, um den Code dorthin zu übertragen <img alt="height:40" src="../images/tcspslogin1.png" /></li>
+<li>In unserem Fall ist das die virtuelle SPS auf unserem Rechner</li>
+<li>Meldung, das Programm bisher noch nicht besteht
+  <img alt="height:200" src="../images/tcrunterladen.png" /></li>
+</ul>
+<hr />
+<h3 id="werte-in-sps-schreiben">Werte in SPS schreiben</h3>
+<ul>
+<li>Um nun Werte zu setzen (die nicht von außen vorgegeben sind), 
+gibt es folgendes Vorgehen</li>
+<li>"Vorbereiteten Wert" eingeben</li>
+<li>"Wert schreiben", um den Wert zu setzen
+  <img alt="height:200" src="../images/TcWerte_schreiben.png" /></li>
+</ul>
+<hr />
+<h3 id="zyklus-schritt-umsetzen">Zyklus-Schritt umsetzen</h3>
+<ul>
+<li>Damit die Änderung auf im Ergebnis wirksam wird, 
+können wir manuell einen Zyklusschritt durchführen (blauer Kreispfeil)</li>
+<li>Hierdurch wird das Main-Programm einmal mit
+den neuen Werten ausgeführt</li>
+<li>alternativ kann die SPS auch im Echtzeitbetrieb betrieben werden (grüner Pfeil)</li>
+</ul>
+<p><img alt="bg right height:300" src="images/tc_schritt_ausführen.png" /></p>
+<hr />
+<h3 id="ausloggen">Ausloggen</h3>
+<ul>
+<li>Nach Beendigung können wir uns wieder ausloggen</li>
+<li>und in den Entwicklungsmodus zurückkehren
+  <img alt="height:100" src="../images/TCausloggen.png" /></li>
+</ul>
+<hr />
+<h2 id="4_3_1aufgabe-4_3_2-bewegungsmelder-fup">✍️ 4_3_1Aufgabe 4_3_2: Bewegungsmelder FUP</h2>
+<blockquote>
+<p>Erstellen Sie für die gleiche Logik ein Funktionsbausteinplan</p>
+</blockquote>
+<ul>
+<li>Legen Sie ein neues SPS-Projekt an (Rechtsklick)</li>
+<li>Löschen Sie das MAIN-Programm</li>
+<li>Erstellen Sie in neues POU MAIN als Funktionsbausteinsprache (FUP)</li>
+</ul>
+<p><img alt="bg right:33% width:400" src="images/_POUhinzufügen.png" /></p>
+<hr />
+<h3 id="variablendeklaration">Variablendeklaration</h3>
+<ul>
+<li>Übernehmen Sie die Variablendeklaration</li>
+<li>Ziehen Sie einen Baustein aus der Toolbox in das FUP-Feld</li>
+</ul>
+<p><img alt="bg right width:600" src="../images/Baustein.png" /></p>
+<hr />
+<h3 id="bausteine">Bausteine</h3>
+<ul>
+<li>Wählen sie den Typ des Bausteins (<code>...</code>)</li>
+<li>Benennen Sie den Baustein mit <code>AND</code> wird dies automatisch erkannt</li>
+<li>Wählen Sie die Variablen als Eingänge</li>
+<li>Fügen Sie eine Zuweisung am Ausgang an und vergeben Sie die Variable</li>
+<li>Im Gegensatz zu Funktionen (z.B. <code>AND</code>) werden Funktionsblöcke als Variablen mit eigenem Namen instanziiert</li>
+</ul>
+<p><img alt="bg right width:600" src="../images/BausteiNTyp.png" /></p>
+<hr />
+<h3 id="losung_1">Lösung</h3>
+<p><img alt="width:600" src="../images/LoesungFup.png" /></p>
+<hr />
+<h2 id="problemlosung-wenn-sps-nicht-ausfuhrbar">Problemlösung, wenn SPS nicht ausführbar</h2>
+<ul>
+<li><a href="https://www.sps-forum.de/threads/twincat-3-4024-10-visual-studio-2019-xar-adserror-4132-hyperv-problem.101584/">AdsError: 4132 + "HyperV" Problem</a></li>
+<li>win8settick.bat im TwinCat Ordner als Admin ausführen</li>
+</ul>
+<hr />
+<h3 id="zusammenfassung-twincat-entwicklung">Zusammenfassung TwinCat - Entwicklung</h3>
+<ul>
+<li>Oberste Ebene ist das <strong>Projekt</strong> (ErsteSchritteVorlesung)</li>
+<li>Darunter gibt es <strong>SPS</strong>-Projekte (1_SPS_HelloWorld)</li>
+<li>In <strong>POUs</strong> liegen die Programme</li>
+<li>Daneben Visualisierungen (VISUs) und andere Funktionn</li>
+</ul>
+<p><img alt="bg right width:500" src="../images/TC-Menue.png" /></p>
+<hr />
+<h3 id="zusammenfassung-twincat-ausfuhrung">Zusammenfassung TwinCat - Ausführung</h3>
+<ul>
+<li>Es muss das richtige <strong>Zielsystem</strong> ausgewählt werden</li>
+<li>Ansonsten wird der Code <strong>Lokal</strong> auf dem aktuellen Rechner ausgeführt</li>
+<li>Ist ein Zielsystem mit Klemmen verbunden, so werden diese unter <strong>E/A</strong> angezeigt</li>
+</ul>
+<p><img alt="bg right width:500" src="images/TwinCatAusführung.png" /></p>
+<hr />
+<h3 id="epc-verbinden">ePC Verbinden</h3>
+<ul>
+<li>Wird lokal auf einem PC entwickelt, und möchte man den Code auf der SPS ausführen, muss man den PC und den embeddedPC der SPS mit einem Netzwerkkabel verbinden</li>
+<li>Schritte aus <a href="https://www.youtube.com/watch?v=LJUcyWCAH_Y&amp;list=PL2LjUivoqcmUNF4wfaZdWQEZm9ptpIFuw&amp;index=11">Video</a></li>
+<li>TwinCat im Configmodus starten</li>
+<li>verbinden digitale und analoge Welt</li>
+<li>Dropdown <Local> / Zielsystem wählen</li>
+<li>Suchen im Netzwerk: Suchen (Ethernet) / Broadcastsuche</li>
+<li>ePC auswählen (MAC1-Addresse, letzte &amp; Zeichen)</li>
+</ul>
+<hr />
+<h3 id="klemmen-scannen">Klemmen Scannen</h3>
+<ul>
+<li>Schritte:</li>
+<li>TwinCat im Configmodus starten</li>
+<li>Menüpunkt E/A / Scannen - Nach Boxen (Klemmen) suchen - Free Run aktivieren</li>
+<li>Klemmen mit Typ werden angezeigt</li>
+<li>Funktion: Zeige Online-Daten aktivieren (Blaue Kugel mit roten Pfeilen)</li>
+<li>Channel / Input / Öffnen</li>
+<li>Datentyp der Varialben überprüfen</li>
+</ul>
+<hr />
+<h3 id="verbindung-von-hardwaresignalen-zu-variablen">Verbindung von Hardwaresignalen zu Variablen</h3>
+<ul>
+<li>Passende Variablen in Main anlegen</li>
+<li>Deklarieren ob Eingangs oder Ausgangs-Variable (<code>AT%I*</code>vs <code>AT%Q*</code>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+  bInTaster AT%I*: BOOL;
+  bInTaster AT%Q*: BOOL;  
+END_VAR
+</code></pre></div>
+<ul>
+<li>Button: Konfiguration Aktivieren</li>
+<li>Klemme und Channel auswählen</li>
+<li>Reiter Variable </li>
+<li>Verknüpft mit auswählen</li>
+<li>Konfiguration aktivieren</li>
+</ul>
+<hr />
+<h2 id="aufgabe-4_3_3-funktion-lineare-transformation">✍️ Aufgabe 4_3_3: Funktion Lineare Transformation</h2>
+<ul>
+<li>An einen Analog-Eingang (z.B. 0...10 V) mit einer Auflösung von 12 Bit (<span class="arithmatex">\(2^{12}=4096\)</span> mögliche Zustände) ist ein Drucksensor mit Messbereich von 0...10 bar angeschlossen</li>
+<li>Durch eine Funktion sollten die vom Eingang gemessenen Integer-Werte in einen Druck in bar umgerechnet werden</li>
+</ul>
+<hr />
+<h3 id="losung-fun_lineartransformation">Lösung: <code>FUN_LinearTransformation</code></h3>
+<div class="highlight"><pre><span></span><code>FUNCTION FUN_LinearTransformation : REAL // Funktionsname und Typ der Rückgabe
+VAR_INPUT
+    value_to_transform : INT;   // Wert der Transformiert werden soll
+    min_eingang : REAL; // Untere Grenze der Eingabe (z.B. 0)
+    min_ausgang : REAL; // Untere Grenze der Ausgabe (z.B. 0 bar)
+    max_eingang : REAL; // Obere Grenze der Eingabe (z.B. 2**12)
+    max_ausgang : REAL; // Obere Grenze der Ausgabe (z.B. 10 bar)
+END_VAR
+VAR
+    steigung : REAL;  // Steigung als Zwischenvariable
+END_VAR
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>steigung := (max_ausgang-min_ausgang)/(max_eingang-min_eingang); // Berechnung der Steigung der Geraden, Wird jedes mal neu berechnet
+
+FUN_LinearTransformation := value_to_transform * steigung + min_ausgang; // Anwendungs der linearen Transformation
+</code></pre></div>
+<hr />
+<h3 id="losung-main">Lösung: <code>MAIN</code></h3>
+<div class="highlight"><pre><span></span><code>PROGRAM MAIN
+VAR
+    aInPressure : INT;      // Eingangswert von Analogem Eingang
+    pressure_bar : REAL;    // Umgerechneter Wert in physikalische Größe z.B. bar
+END_VAR
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>pressure_bar := FUN_LinearTransformation(value_to_transform := aInPressure, min_eingang := 0, min_ausgang := 0, max_eingang := 4096, max_ausgang := 10);
+</code></pre></div>
+<hr />
+<p><img alt="" src="../images/Loesung_Funktion_Linear.png" /></p>
+<hr />
+<h2 id="operatoren-nach-bindungsstarke">Operatoren nach Bindungsstärke</h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Symbol</th>
+<th>Bindungsstärke</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Einklammern</td>
+<td><code>(&lt;Ausdruck&gt;)</code></td>
+<td>Stärkste Bindung</td>
+</tr>
+<tr>
+<td>Funktionsaufruf</td>
+<td><code>&lt;Funktionsname&gt;(Parameterliste)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Potenzieren</td>
+<td><code>EXPT</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Negieren</td>
+<td><code>-</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Komplementbildung</td>
+<td><code>NOT</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Multiplizieren</td>
+<td><code>*</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Dividieren</td>
+<td><code>/</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Modulo</td>
+<td><code>MOD</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Addieren</td>
+<td><code>+</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Symbol</th>
+<th>Bindungsstärke</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subtrahieren</td>
+<td><code>-</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Vergleiche</td>
+<td><code>&lt;</code>,<code>&gt;</code>,<code>&lt;=</code>,<code>&gt;=</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Gleichheit Ungleichheit</td>
+<td><code>=</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Gleichheit Ungleichheit</td>
+<td><code>&lt;&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bool AND</td>
+<td><code>AND</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bool XOR</td>
+<td><code>XOR</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bool OR</td>
+<td><code>OR</code></td>
+<td>Schwächste Bindung</td>
+</tr>
+</tbody>
+</table>
+<h6 id="httpsinfosysbeckhoffcomindexphpcontentcontent1031tcplccontrolhtmltcplcctrl_languages20sthtmid5754912264349492758">https://infosys.beckhoff.com/index.php?content=../content/1031/tcplccontrol/html/tcplcctrl_languages%20st.htm&amp;id=5754912264349492758</h6>
+<hr />
+<h2 id="4_3_4-aufgabe-auswertung-von-ausdrucken">✍️ 4_3_4 Aufgabe: Auswertung von Ausdrücken</h2>
+<p>Werten Sie die folgenden Ausdrücke aus</p>
+<div class="highlight"><pre><span></span><code>foo := (3+2) EXPT 2;    (* *) 
+ba := 3 + 2 EXPT 2;     (* *) 
+blub := foo + 3         (* *)
+result := blub &gt; 10    (* *)
+</code></pre></div>
+<hr />
+<h3 id="losung_2">Lösung</h3>
+<div class="highlight"><pre><span></span><code>foo := (3+2) EXPT 2;    (* 25 *) 
+ba := 3 + 2 EXPT 2;     (* 7 *) 
+blub := foo + 3;         (* 28 *)
+result := blub &gt; 10;     (* TRUE *)
+</code></pre></div>
+<hr />
+<h3 id="zusammenfassungen-anweisungen">Zusammenfassungen Anweisungen</h3>
+<table>
+<thead>
+<tr>
+<th>Anweisungsart</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zuweisung</td>
+<td><code>A:=B; CV := CV + 1; C:=SIN(X);</code></td>
+</tr>
+<tr>
+<td>Aufruf eines Funktionsblocks</td>
+<td><code>CMD_TMR(IN := %IX5, PT := 300);A:=CMD_TMR.Q;</code></td>
+</tr>
+<tr>
+<td>RETURN</td>
+<td><code>RETURN;</code></td>
+</tr>
+<tr>
+<td>IF</td>
+<td><code>IF D&lt;0.0  THEN C:=A; ELSIF D=0.0  THEN C:=B; ELSE C:=D; END_IF;</code></td>
+</tr>
+<tr>
+<td>CASE</td>
+<td><code>CASE INT1 OF 1: BOOL1 := TRUE; 2: BOOL2 := TRUE; ELSE  BOOL1 := FALSE;  BOOL2 := FALSE; END_CASE;</code></td>
+</tr>
+<tr>
+<td>FOR</td>
+<td><code>FOR J:=101; FOR I:=1 TO 100 BY 2 DO     IF ARR[I] = 70        THEN J:=I;        EXIT;     END_IF; END_FOR;</code></td>
+</tr>
+<tr>
+<td>WHILE</td>
+<td><code>WHILE J&lt;= 100 AND ARR[J] &lt;&gt; 70 DO     J:=J+2; END_WHILE;</code></td>
+</tr>
+<tr>
+<td>REPEAT</td>
+<td><code>REPEAT J:=J+2; UNTIL J= 101 OR ARR[J] = 70 END_REPEAT;</code></td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td><code>EXIT;</code></td>
+</tr>
+<tr>
+<td>Leere Anweisung</td>
+<td><code>;</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4_3_5-aufgabe-heizungsanlage">✍️ 4_3_5: Aufgabe Heizungsanlage</h2>
+<p>Im Falle eines Appartmenthauses haben Sie es mit einer sehr störrischen Heizungsanlage zu kämpfen. Fällt diese aus, so startet sie häufig erst nach einigen Anlaufversuchen. Um über die nächsten Wochen zu kommen, bis eine neue Heizung installiert werden kann, programmieren Sie eine Notlösung:</p>
+<p><img alt="bg right" src="../images/pellet-zentralheizung.jpg" /></p>
+<hr />
+<p>Den Heizungsstatus können Sie über die Boolesche Variable <code>aInHeatingStatus</code> auslesen.
+. Die Heizungsanlage kann mit der Funktion <code>START_HEATING_SYSTEM()</code> neu gestartet. Die Funktion hat keine Parameter, gibt aber den Wert <code>TRUE</code> zurück, wenn der Startversuch erfolgreich war. Wenn dies nach 20 Versuchen nicht funktionieren sollte, wird es Zeit die Techniker:in zu informieren, damit diese sich dem Problem vor Ort annimmt. Hierzu wurde die Funktion <code>NOTIFY_TECHNICIAN()</code> bereitgestellt. Wenn es besonders kalt ist (5°C) ist das Problem besonders kritisch: anstelle des Techniker:innen, sollen in diesem Fall alle Mitarbeitenden informiert werden (<code>NOTIFY_ALL()</code>). Die Umgebungstemperatur können Sie mit der Variable <code>aInTempOutside</code> abrufen.</p>
+<hr />
+<p>Schreiben Sie ein Steuerungsprogramm als Strukturierten Text, welches in jedem Zyklus die Status der Heizungsanlage überwacht, diese bei Bedarf neu startet und ggf. die Techniker:innen und anderen Mitarbeiter:innen informiert.  Nutzen Sie dazu Schleifen und IF-Anweisungen. Gehen Sie von einer sehr langsamen Zykluszeit der Steuerung aus (ca. 5 Minute). Ein Startversuch hingegen dauert nur 2 Sekunden.</p>
+<hr />
+<h3 id="hinweise">Hinweise:</h3>
+<div class="highlight"><pre><span></span><code>// Abfrage des Status zu Beginn jedes Zyklus
+IF aInHeatingStatus = False THEN
+  &lt;...&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// Mehrfacher Versuch des Starts
+FOR Versuch:=1 TO 20 BY 1 DO
+  &lt;...&gt;
+
+END_FOR;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// Aufruf der Startfunktion und gleichzeitiges Speichern der Rückgabe
+aInHeatingStatus := START_HEATING_SYSTEM()
+</code></pre></div>
+<hr />
+<h3 id="losung_3">Lösung</h3>
+<p>In jedem Zyklus fragen wird zu Beginn den Status der Anlage ab und werden nur aktiv, wenn diese nicht läuft</p>
+<div class="highlight"><pre><span></span><code>// Abfrage des Status zu Beginn jedes Zyklus
+IF aInHeatingStatus = False THEN
+  &lt;...&gt;
+</code></pre></div>
+<hr />
+<p>Dann führen wir 20 Startversuche auf.</p>
+<p>Dazu rufen wir die Funktion <code>START_HEATING_SYSTEM</code>in der For-Schleife auf.</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+START_HEATING_SYSTEM(); (* Rufe die Funktion zum Starten auf*)
+
+END_FOR;
+</code></pre></div>
+<hr />
+<h3 id="losung_4">Lösung</h3>
+<p>Da wir die Versuche stoppen können, wenn die Heizung erfolgreich gestartet ist, wollen wir das Ergebnis des Startversuches in einer neuen Variable <code>aInHeatingStatus</code> speichern.</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus := START_HEATING_SYSTEM(); (* Rufe die Funktion zum Starten auf*)
+
+END_FOR;
+</code></pre></div>
+<hr />
+<h3 id="losung_5">Lösung</h3>
+<p>Dazu überprüfen wir in jedem Schleifendurchlauf, ob das Starten geklappt hat. Wenn es geklappt hat, dann können wir die For-Schleife mit der Anweisung <code>EXIT</code>verlasse, ohne sie 20 mal zu durchlaufen.</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus :=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+END_FOR;
+</code></pre></div>
+<hr />
+<h3 id="losung_6">Lösung</h3>
+<p>Wenn wir beim 20. Versuch angelangt sind, und die Schleife immer noch nicht wegen Erfolgs verlassen haben, wird es Zeit den Techniker zu informieren. 
+Die Funktion zur Information <code>NOTIFY_TECHNICIAN</code> wird ausgelöst, wenn wir den 20. Durchlauf erreichen. Das Prüfen wir über eine IF-Anweisung.
+Hier rufen wir eine Funktion ohne Rückgabe auf. Deswegen steht kein neuer Variablename links der Funktion.</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+IF Versuch = 20 THEN                 (* Beim 20. Versuch*)
+NOTIFY_TECHNICIAN();                    (* Benachrichtige die Techniker:in *)
+END_IF;
+
+END_FOR;
+</code></pre></div>
+<hr />
+<h3 id="losung_7">Lösung</h3>
+<p>Um alle zu informieren, müssen wir zusätzlich die Außentemperatur überprüfen. Hierzu können eine zweite If-Abfrage mit etwas komplizierterem Booleschen Ausdruck </p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+IF Versuch = 20 THEN                  (* Beim 20. Versuch*)
+NOTIFY_ALL();                           (* Benachrichtige alle *)
+END_IF;
+
+IF Versuch = 20 AND TEMP_OUTSIDE&lt;5 THEN
+NOTIFY_TECHNICIAN();                    (* Benachrichtige die Techniker:in *)
+END_IF;
+
+
+END_FOR;
+</code></pre></div>
+<hr />
+<p>Alternativ lassen sich auch zwei If-Anweisungen schachteln</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+IF Versuch = 20 THEN                  (* Beim 20. Versuch *)
+  NOTIFY_TECHNICIAN();                  (*  Benachrichtige die Techniker:in *)
+
+  IF TEMP_OUTSIDE&lt;5 THEN              (* und kalter Witterung*)
+    NOTIFY_ALL();                       (* Benachrichtige all *)
+  END_IF;
+
+END_IF;
+
+END_FOR;
+</code></pre></div>
+<hr />
+<p>Gehen wir davon aus, dass der die Techniker:in sowohl auf der Liste in <code>NOTIFY_TECHNICIAN</code>als auch in <code>NOTIFY_ALL</code> steht, wäre es schön, wenn er/sie nur einmal informiert wird.  Hierzu können wir die <code>ELSIF</code>Anweisung nutzen.</p>
+<div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+IF Versuch = 20 AND TEMP_OUTSIDE&lt;5 THEN          (* Beim 20. Versuch und kalter Witterung*)
+NOTIFY_ALL();                            (* Benachrichtige all *)
+
+ELSIF Versuch = 20 THEN                (* Beim 20. Versuch *)
+NOTIFY_TECHNICIAN();                     (*  Benachrichtige die Techniker:in *)
+
+END_IF;
+
+
+END_FOR;
+</code></pre></div>
+<hr />
+<ul>
+<li>Ergänzen des äußeren <code>FOR</code>-Loops, damit der Code nur ausgeführt wird, wenn die Analge nicht läuft:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>IF aInHeatingStatus = False THEN
+
+FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
+
+aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
+
+IF aInHeatingStatus THEN                       (* Wenn es erfolgreich war *)
+EXIT;                                 (* Verlasse die for-Schleife *)
+END_IF;
+
+IF Versuch = 20 AND TEMP_OUTSIDE&lt;5 THEN          (* Beim 20. Versuch und kalter Witterung*)
+NOTIFY_ALL();                            (* Benachrichtige all *)
+
+ELSIF Versuch = 20 THEN                (* Beim 20. Versuch *)
+NOTIFY_TECHNICIAN();                     (*  Benachrichtige die Techniker:in *)
+
+END_IF;
+
+
+END_FOR;
+
+END_IF;
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4_2_Sprachen_nach_IEC_61131-3/" class="btn btn-neutral float-left" title="Sprachen nach IEC 61131-3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_1_Signalisierung/" class="btn btn-neutral float-right" title="Signalisierung">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4_2_Sprachen_nach_IEC_61131-3/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5_1_Signalisierung/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

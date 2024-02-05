@@ -14,23 +14,18 @@ theme: lemon
 
 <!-- paginate: true -->
 
-# Bussysteme
 
-**SoSe 2023**
-Dr. Julian Huber
+# 2.1 Messkette	
 
 ---
 
-# Messkette	
-
----
 ## EVA-Prinzip
 
 
 ![](images/Messkette.svg)
 
 * Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert
-* Hierzu werden Eingangssingale gemessen und Ausgangssignale erzeugt
+* Hierzu werden Eingangs-Signale gemessen und Ausgangssignale erzeugt
 * In der Steuerungseinheit werden Funktionen implementiert, die die Messsignale in Ausgangssignale umwandeln
 * Steuerungseinheiten sind heute meist frei programmierbar (z.B. Speicherprogrammierbare Steuerung) oder wurden für bestimmte Funktionen vorprogrammiert (z.B. Mikrocontroller in LED-Vorschaltgeräten)
 
@@ -38,13 +33,13 @@ Dr. Julian Huber
 
 ### Digitale Eingänge
 
-* Digitale Eingänge können nur zwei Zustände annehmen (0 /`False` oder 1 : `True`)
+* Digitale Eingänge können nur zwei Zustände annehmen (0:`False` oder 1:`True`)
 * Die Zustände werden durch Spannungen repräsentiert
-* i.d.R. gibt es Spannungsbereiche, die als 0 oder 1 interpretiert werden
+* i.d.R. gibt es Spannungsbereiche, die als `0` oder `1` interpretiert werden
 
 ---
 
-## :writing_hand: Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller
+## ✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller
 
 * Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann
 * Im folgenden wird folgende Hardware benötigt:
@@ -54,6 +49,7 @@ Dr. Julian Huber
     * Widerstand ca. $470 \Omega$ und $10 \,\text{k}\Omega$
     * Jumperkabel
 * Ziel ist es, dass der Mikrocontroller den Taster ausliest und den Zustand auf der Konsole ausgibt
+
 
 ---
 
@@ -104,12 +100,14 @@ while True:
         print("Sleep!")
 ```
 
+
 ---
+
 
 
 ### Pin-Übersicht
 
-![bg left h:500](images/raspberry-pi-gpio.png)
+![bg left h:500](images/raspberry-pi-pico-gpio.png)
 
 - VCC Voltage Common Connector: Spannungs- Versorgung $5$ oder $3.3 \,\text{V}$
      - Alles unter $0,8\,\text{V}$ ist low
@@ -140,12 +138,20 @@ while True:
 * GPIO arbeiten von $2...16 \,\text{mA}$
 * GPIOs können binär gelesen und geschaltet werden
 
-![bg left h:500](images/raspberry-pi-gpio.png)
-
+![bg left h:500](images/raspberry-pi-pico-gpio.png)
 
 ---
 
-## :writing_hand: Aufgabe 2_1_1: Anschluss eines Tasters an einen Raspberry Pi Pico
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_1\code.py"
+    ```
+
+---
+
+## ✍️ Aufgabe 2_1_2: Anschluss eines Tasters an einen Raspberry Pi Pico
 
 
 - Schließen Sie den Taster wie folgt an
@@ -189,7 +195,7 @@ while True:
 - Unbeschaltet oszillieren die GPIOs häufig unsauber zwischen den Zuständen
 - Grundzustand des Eingangs bei offenem Schalter: `high`
 - Durch schließen: `low`
-- $4{,}7~k\Omega$ als Standardwert
+- $4{,}7~\text{k}\Omega$ als Standardwert
 - (RaspBerry Pis haben eingebaute Widerstände, die aktiviert werden können)
 
 
@@ -206,7 +212,7 @@ while True:
 
 - Grundzustand des Eingangs: `low`
 - Durch schließen: `high`
--  der Regel $10~k\Omega$
+-  der Regel $10~\text{k}\Omega$
 
 ---
 
@@ -214,7 +220,7 @@ while True:
 
 - In der Praxis tendiert man dazu, GPIO-Eingänge mit einem Pullup-Widerstand mit +VCC zu verbinden und gegen Ground (GND) zu schalten
 - Erfordert Negation in der Software
-- Werte von $10$ bis $100~k\Omega$
+- Werte von $10$ bis $100~\text{k}\Omega$
 - [GPIO-Eingang mit Taster/Schalter und Querwiderstand](https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm)
 - [Mehr zu Pull-Up vs Pull-Down](https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm)
 
@@ -226,10 +232,18 @@ while True:
 * Bei einem Raspberry Pi Pico sind die Ausgänge auf $3.3 \,\text{V}$ begrenzt
 * Die Ausgänge können bis zu $16 \,\text{mA}$ liefern
 
+---
+
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_2\code.py"
+    ```
 
 ---
 
-## :writing_hand: Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico
+## ✍️ Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico
 
 * Nun wollen wir eine LED anschließen in der Folge über den Taster schalten
 * Sie LED soll nach einem Druck auf den Taster für $1\,\text{s}$ leuchten
@@ -298,7 +312,7 @@ while True:
 
 #### Relais und Schütze
 
-* Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend ($P=UI=3.3V \cdot 4mA = 13.2 mW$)
+* Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend ($P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}$)
 * Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)
 * Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen
 * heute meist nicht mehr mechanisch sondern elektronisch realisiert
@@ -320,7 +334,16 @@ while True:
 
 ---
 
-## :nerd_face: :writing_hand: Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_3\code.py"
+    ```
+
+---
+
+## 🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico
 
 * Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für $1\,\text{s}$ leuchtet und dann langsam über $5\,\text{s}$ ausgeht
 
@@ -360,7 +383,7 @@ while True:
 
 ---
 
-## :writing_hand: Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors
+## ✍️ Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors
 
 * Schließen Sie einen [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
     * Links (-): GND / Masse / 0 Volt
@@ -397,7 +420,7 @@ while True:
 ---
 
 
-![](images/aufbau_pico_ldr.png)
+![](images/aufbau_pico_ky018.png)
 
 ---
 
@@ -451,7 +474,16 @@ while True:
 
 ---
 
-## :writing_hand: Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_4\code.py"
+    ```
+
+---
+
+## ✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors
 
 * Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet
 * Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus
@@ -496,7 +528,7 @@ def map_lin(z):
 
 ---
 
-* :nerd_face: Im besten Fall wird `map_ln` in einer eigenen Datei `mappings.py` gespeichert und kann dann mittels `import mappings` in anderen Programmen genutzt werden	
+* 🤓 Im besten Fall wird `map_ln` in einer eigenen Datei `mappings.py` gespeichert und kann dann mittels `import mappings` in anderen Programmen genutzt werden	
 
 ```Python
 import board
@@ -523,7 +555,7 @@ while True:
 
 ---
 
-## :nerd_face: Verwendung von Globalen Variablen
+## 🤓 Verwendung von Globalen Variablen
 
 - einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen
 - Hierzu können wird Umgebungsvariablen in der `settings.toml` verändern im Verzeichnis `CIRCUITPY` ändern
@@ -544,7 +576,22 @@ print(os.getenv('MY_NAME'))
 
 ---
 
-## :nerd_face: :writing_hand: Aufgabe 2_1_6: 
+### Lösung 
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\code.py"
+    ```
+
+??? optional-class "Lösung anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\mappings.py"
+    ```
+
+
+---
+
+## 🤓 ✍️ Aufgabe 2_1_6: 
 
 * Nicht bei jedem Sensor wird die gefittete Kurve perfekt passen
 * passen Sie den Code so an, dass die Parameter der Kurve in der `settings.toml` hinterlegt werden können, um diese möglichst einfach anzupassen

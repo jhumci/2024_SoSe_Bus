@@ -20,25 +20,32 @@ nav:
   - 'Speicherprogrammierbare Steuerung' :
     - 'Speicherprogrammierbare Steuerung' : 4_1_Speicherprogrammierbare_Steuerung.md
     - 'Sprachen nach IEC 61131-3' : 4_2_Sprachen_nach_IEC_61131-3.md
+    - 'Twincat' : 4_3_Appendix_Twincat.md
   - 'Bussysteme' :
-    - 'Bussysteme' : 5_1_Bussysteme.md
-    - 'Theoretische Grundlagen' : 5_2_Theoretische_Grundlagen.md
-    - 'Feldbusse' : 5_3_Feldbusse.md
-    - 'Bussysteme in der Gebäudeautomation' : 5_4_Bussysteme_in_der_Gebäudeautomation.md
-    - 'Bussysteme in der MSR-Technik' : 5_5_Bussysteme_in_der_MSR-Technik.md
+    - 'Signalisierung' : 5_1_Signalisierung.md
+    - 'Buszugriffsverfahren' : 5_2_Buszugriffsverfahren.md
+    - 'Übertragungssicherheit' : 5_3_Uebertragungssicherheit.md
+    - 'Bussysteme in der Gebäudeautomation' : 5_4_Bussysteme_in_der_Gebudeautomation.md
   - 'Smart Metering' :
     - 'Smart Metering' : 6_1_Smart_Metering.md
   
 theme:
   name: readthedocs
-  
+
+ 
+
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets
+  - pymdownx.details
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - /javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

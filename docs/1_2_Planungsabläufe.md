@@ -14,14 +14,13 @@ theme: lemon
 
 <!-- paginate: true -->
 
-# Bussysteme
 
-**SoSe 2023**
-Dr. Julian Huber
+
+# 1.2 Planungsabläufe
 
 ---
 
-# Planungsabläufe
+## Planungsabläufe für die Gebäudeautomation
 
 * Im  folgenden wird ein Planungsablauf für die Gebäudeautomation (vereinfacht stilisiert) vorgestellt
 * Hierbei wird auf das Beispiel einer Raumautomation eingegangen
@@ -33,7 +32,7 @@ Dr. Julian Huber
 
 ---
 
-| Leistungs-phase |                      Bezeichnung                     | Gebäude (§ 34) | Innenräume (§ 34) | Technische Ausrüstung (§ 55) |
+| Leistungsphase |                      Bezeichnung                     | Gebäude (§ 34) | Innenräume (§ 34) | Technische Ausrüstung (§ 55) |
 |:---------------------:|:----------------------------------------------------:|:--------------:|:-----------------:|:----------------------------:|
 |           1           | Grundlagenermittlung                                 |       2 %      |        2 %        |              2 %             |
 |           2           | Vorplanung                                           |       7 %      |        7 %        |              9 %             |
@@ -252,17 +251,19 @@ Dr. Julian Huber
 
 ---
 
-## :writing_hand: Aufgabe: Raumautomationsschema für ein Treppenhaus
+## ✍️ Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus
 
 - Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses
 - Alle Leuchten werden über einen Aktor für das gemachte Treppenhaus zusammengefasst
 - Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein bedienelement für die Beleuchtung angebracht werden
-- Die Anwendungsfunktion Treppenlichtschaltung soll hierrüber gesteuert werden können
-- zusätzlich soll die Beleuchtung auch direkt aus der Gebeudeleittechnik gesteuert werden können
+- Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können
+- zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik gesteuert werden können
+
+![h:400](images/RA_schemaCut.png)
 
 ---
 
-## :writing_hand: Lösung
+### Lösung
 
 ---
 
@@ -271,19 +272,19 @@ Dr. Julian Huber
 * Entscheidung für Hardware und Software, um die Funktionen umzusetzen
 * Erstellung von **Detailplänen** und **Dokumentationen**
 * Installation der Hardware und Verkabelung
-* Implemetierung von Software
+* Implementierung von Software
 * Funktionstests
 
 
 ---
 
-#### Beispiel: Parametrisierung eines DALI-Systems
+### Beispiel: Parametrisierung eines DALI-Systems
 
 ![h:600](images/DaliMasterConfig2.png)
 
 ---
 
-#### Beispiel: Programmierung eine SPS 
+### Beispiel: Programmierung eine SPS 
 
 ![height:600](images/tcRun.png)
 
@@ -327,7 +328,7 @@ Wartbarkeit:
 ### Cloud
 
 * Zunehmende Bedeutung von Cloud-Systemen
-* 
+* Insbesondere die höheren Ebenen der Automatisierungspyramide werden zunehmend in die Cloud verlagert
 
 ---
 
@@ -396,7 +397,7 @@ In Räumen ohne ausreichende Tageslichtversorgung, z. B. in Fluren oder Sanitär
 
 
 - **Sonnenautomatik**
-**Außenliegende** Jalousien und bedingt auch Markisen sorgen vor allem für einen **Wärmeschutz** des Gebäudes. **Innenliegende** Jalousien, Vertikallamellen u. ä. sorgen vor allem für **Blendfreiheit** an Arbeitsplätzen. Die Sonnenautomatik sorgt nutzt Wetterdaten, damit der außenliegende Sonnenschutz eine einstellbare Position immer dann einnimmt, wenn eine bestimmte Strahlungsintensität überschritten wird. Der innenliegende Blendschutz ist i. d. R. nicht automatisiert, da das Blendungsempfinden individuell zu bewerten ist.
+**Außenliegende** Jalousien und bedingt auch Markisen sorgen vor allem für einen **Wärmeschutz** des Gebäudes. **Innenliegende** Jalousien, Vertikallamellen u. ä. sorgen vor allem für **Blendfreiheit** an Arbeitsplätzen. Die Sonnenautomatik sorgt nutzt Wetterdaten, damit der außenliegende Sonnenschutz eine einstellbare Position immer dann einnimmt, wenn eine bestimmte Strahlungsintensität überschritten wird. Der innen liegende Blendschutz ist i. d. R. nicht automatisiert, da das Blendungsempfinden individuell zu bewerten ist.
 
 ---
 

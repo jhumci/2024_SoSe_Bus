@@ -56,6 +56,54 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Steuerung</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ursprunge-der-steuerungstechnik-und-automatisierung">Ursprünge der Steuerungstechnik und Automatisierung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#evolution-zu-industrie-40">🧠 Evolution zu Industrie 4.0</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ablaufsteuerung">Ablaufsteuerung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#beispiel-treppenlichtschaltung">Beispiel Treppenlichtschaltung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#naive-losung">Naive Lösung</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#probleme-mit-der-naiven-losung">Probleme mit der naiven Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#finite-state-machine-endlicher-automat">Finite State Machine (Endlicher Automat)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#implementierung-eines-cola-automaten">Implementierung eines Cola-Automaten</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deterministic-finite-state-machine-endlicher-automat">(Deterministic) Finite State Machine (Endlicher Automat)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#in-der-theorie-der-formalen-sprachen">In der Theorie der formalen Sprachen 🤓</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#in-der-programmierpraxis">In der Programmierpraxis</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_1-implementierung-eines-treppenhauslichts">✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verknupfungssteuerungen">Verknüpfungssteuerungen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#beispiel-wechselschalter">Beispiel: Wechselschalter</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_4-implementierung-einer-vereinfachten-tageslichtschaltung">✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
@@ -78,18 +126,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,11 +171,7 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
-<hr />
-<h1 id="steuerung">Steuerung</h1>
+<h1 id="21-steuerung">2.1 Steuerung</h1>
 <hr />
 <h2 id="ursprunge-der-steuerungstechnik-und-automatisierung">Ursprünge der Steuerungstechnik und Automatisierung</h2>
 <ul>
@@ -136,7 +180,7 @@ Dr. Julian Huber</p>
 <li><strong>1835</strong> erfindet Joseph Henry das elektromechanische Relais</li>
 <li><strong>1969</strong>  Odo J. Struger beim US-Unternehmen Allen-Bradley eine SPS (zeitgleich mit  Richard E. Morley)</li>
 </ul>
-<p><img alt="bg right:33%" src="images/Hero_of_Alexandria,_Automata,_Venice,_Gr._516.jpg" /></p>
+<p><img alt="bg right:33%" src="../images/Hero_of_Alexandria%2C_Automata%2C_Venice%2C_Gr._516.jpg" /></p>
 <hr />
 <h3 id="evolution-zu-industrie-40">🧠 Evolution zu Industrie 4.0</h3>
 <ul>
@@ -164,7 +208,65 @@ Dr. Julian Huber</p>
 </li>
 </ul>
 <hr />
-<h3 id="finite-state-machine">Finite State Machine</h3>
+<h3 id="beispiel-treppenlichtschaltung">Beispiel Treppenlichtschaltung</h3>
+<blockquote>
+<p>Über die Funktion Treppenlichtschaltung können Beleuchtungseinrichtungen temporär eingeschaltet werden. Nach Ablauf der Treppenlichthaltezeit kann eine Abschaltvorwarnzeit aktiv werden, die den Nutzer z. B. durch kurzzeitige Unterbrechung(„Flackern“) über die bevorstehende Abschaltung informiert. Ein erneuter Empfang einer Eingabeinformation zum Einschalten startet die Verzögerungszeit neu. Die Funktion benötigt als Eingabeinformation das Ergebnis der Bedienfunktion Licht stellen und liefert ihrerseits die Ausgabeinformation für eine oder mehrere Aktorfunktionen Lichtaktor.</p>
+</blockquote>
+<p><img alt="bg right:45% h:720" src="../images/Treppenlichtschaltung.pdf.png" /></p>
+<hr />
+<h4 id="naive-losung">Naive Lösung</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">PAR_HOLD</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">PAR_WARN</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>  
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_HOLD</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_WARN</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<hr />
+<h4 id="probleme-mit-der-naiven-losung">Probleme mit der naiven Lösung</h4>
+<p><img alt="bg right h:420" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<ul>
+<li>Erneutes betätigen des Taster setzt die Wartezeit nicht zurück</li>
+<li>Unser System hat kein Gedächtnis (Zustands)</li>
+<li>Der Ablauf sollte besser nicht nur durch einen Zeitlichen Rahmen, sondern auch durch Zustände gesteuert werden</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : LED ein
+    B : LED flackert
+    E : LED aus
+    [*] --&gt; E : Systemstart
+    E --&gt; A : L_MAN
+    B --&gt; A : L_MAN
+    A --&gt; B : PAR_HOLD
+    B --&gt; E : PAR_WARN
+</code></pre></div>
+<hr />
+<h3 id="finite-state-machine-endlicher-automat">Finite State Machine (Endlicher Automat)</h3>
 <ul>
 <li>In Abhängigkeit vom Systemzustand erwarten wir unterschiedliches Verhalten z.B.<ul>
 <li>Nach Tastendruck soll die Lampe angeschaltet werden</li>
@@ -201,127 +303,330 @@ Dr. Julian Huber</p>
 </li>
 </ul>
 <hr />
-<h4 id="in-der-theorie-der-formalen-sprachen-nerd_face">In der Theorie der formalen Sprachen :nerd_face:</h4>
-<p><img alt="bg right:33% h:250" src="images/1920px-DFAexample.svg.png" />
-* <span class="arithmatex">\(Q = \{S_1, S_2\}\)</span>
-* <span class="arithmatex">\(\Sigma = \{0,1\}\)</span>
-* <span class="arithmatex">\(q_0 = S_1\)</span>
-* <span class="arithmatex">\(F = \{S_1\}\)</span>
-* <span class="arithmatex">\(\delta(S_1, 0) = S_2\)</span>,  <span class="arithmatex">\(\delta(S_1, 1) = S_1\)</span>
-* <span class="arithmatex">\(\delta(S_2, 0) = S_1\)</span>,  <span class="arithmatex">\(\delta(S_2, 1) = S_2\)</span>
-* Akzeptiert (endet in <span class="arithmatex">\(F\)</span>)
-    * <code>1</code>, <code>11</code>, <code>01101</code>, <code>11001</code> 
-* Akzeptiert nicht (endet nicht in <span class="arithmatex">\(F\)</span>)
-    * <code>0</code>, <code>10</code>, <code>10100</code>, <code>01001</code>
-* Anwendung
-    * Parser
-    * <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a></p>
+<h4 id="in-der-theorie-der-formalen-sprachen">In der Theorie der formalen Sprachen 🤓</h4>
+<p><img alt="bg right:33% h:250" src="../images/DFAexample.svg" /></p>
+<ul>
+<li><span class="arithmatex">\(Q = \{S_1, S_2\}\)</span></li>
+<li><span class="arithmatex">\(\Sigma = \{0,1\}\)</span></li>
+<li><span class="arithmatex">\(q_0 = S_1\)</span></li>
+<li><span class="arithmatex">\(F = \{S_1\}\)</span></li>
+<li><span class="arithmatex">\(\delta(S_1, 0) = S_2\)</span>,  <span class="arithmatex">\(\delta(S_1, 1) = S_1\)</span></li>
+<li><span class="arithmatex">\(\delta(S_2, 0) = S_1\)</span>,  <span class="arithmatex">\(\delta(S_2, 1) = S_2\)</span></li>
+<li>Akzeptiert (endet in <span class="arithmatex">\(F\)</span>)<ul>
+<li><code>1</code>, <code>11</code>, <code>01101</code>, <code>11001</code> </li>
+</ul>
+</li>
+<li>Akzeptiert nicht (endet nicht in <span class="arithmatex">\(F\)</span>)<ul>
+<li><code>0</code>, <code>10</code>, <code>10100</code>, <code>01001</code></li>
+</ul>
+</li>
+<li>Anwendung<ul>
+<li>Parser</li>
+<li><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a></li>
+</ul>
+</li>
+</ul>
 <hr />
 <h4 id="in-der-programmierpraxis">In der Programmierpraxis</h4>
-<p><img alt="bg right:35% w:450" src="images/state_machice_cola.svg" /></p>
+<p><img alt="bg right:35% w:450" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
 <ul>
-<li>Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. kann während dem Systemzustand <code>Bezahlung anfordern</code> Münzgeld eingeworfen werden)</li>
+<li>Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. Zeit muss z.B. mitgezählt werden)</li>
 <li>Die gerichteten Kanten stellen Übergänge zwischen den Zuständen dar, die durch Events und Bedingungen ausgelöst werden</li>
 <li>Die Systemzustände können nur in festgelegten Reihenfolgen durchlaufen werden</li>
 <li>Ein Endzustand ist optional</li>
 </ul>
 <hr />
-<h3 id="beispiel-treppenlicht">Beispiel: Treppenlicht</h3>
-<p><img alt="h:720" src="../images/mermaid-diagram-2024-01-19-175603.svg" /></p>
+<h2 id="aufgabe-2_2_1-implementierung-eines-treppenhauslichts">✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts</h2>
+<ul>
+<li>In <a href="Aufgaben\2_2_1\code_state_machine.py"><code>code_state_machine.py</code></a> ist das auf der rechten Seite dargestellte Programm implementiert</li>
+<li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
+<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zusammengefasst wurden</li>
+</ul>
+<p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
 <hr />
 <div class="highlight"><pre><span></span><code>stateDiagram
-    A : LED ein
-    B : LED flackert
-    E : LED aus
-    [*] --&gt; E : Systemstart
-    E --&gt; A : Button
-    B --&gt; A : Button
-    A --&gt; B : 2 Sekunden
-    B --&gt; E : 2 Sekunden
+    A : Start
+    C:  LED an
+    D:  LED leuchtet
+    E:  LED leuchtet2
+    F:  LED flackert
+    G : LED aus
+    [*] --&gt; A : Systemstart
+    A --&gt; C : Taster wird gedrückt
+    C --&gt; D : 
+    D --&gt; F : PAR_HOLD vergeht
+    E --&gt; G : PAR_WARN vergeht
+    F --&gt; E: 
+    D --&gt; C: Taster wird gedrückt
+    E --&gt; C: Taster wird gedrückt   
+    G --&gt; C: Taster wird gedrückt   
 </code></pre></div>
 <hr />
+<h3 id="losung">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">digitalio</span>
-<span class="kn">from</span> <span class="nn">adafruit_debouncer</span> <span class="kn">import</span> <span class="n">Debouncer</span>
 
-<span class="c1"># GPIO-Pins für LED und Button konfigurieren</span>
-<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP15</span>  <span class="c1"># Beispiel-Pin, bitte anpassen</span>
-<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP14</span>  <span class="c1"># Beispiel-Pin, bitte anpassen</span>
+<span class="n">PAR_HOLD</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">PAR_WARN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span>
 
-<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
-<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+    <span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
 
-<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
-<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
-<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>
-</code></pre></div>
-<hr />
-<div class="highlight"><pre><span></span><code><span class="c1"># Zustandsvariablen initialisieren</span>
-<span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED_AUS&quot;</span>
-<span class="n">start_time</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">flashing_time</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Dauer des kurzen Flackerns in Sekunden</span>
-<span class="n">flashing</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
 
-<span class="c1"># Button-Entprellung konfigurieren</span>
-<span class="n">button_debouncer</span> <span class="o">=</span> <span class="n">Debouncer</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+    <span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+    <span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+    <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED aus&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erfolgreich gestartet&quot;</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">button_debouncer</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED aus&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;State: LED aus </span><span class="se">\n</span><span class="s2">  Warte auf Aktion&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="c1"># Zustandsübergänge überwachen</span>
-    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_AUS&quot;</span> <span class="ow">and</span> <span class="n">button_debouncer</span><span class="o">.</span><span class="n">fell</span><span class="p">:</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED_AN&quot;</span>
-        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
-        <span class="n">flashing</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Zurücksetzen des Flackerstatus</span>
-    <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_AN&quot;</span> <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED_GEDIMMT&quot;</span>
-        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
-        <span class="n">flashing</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Aktivieren des Flackerns</span>
-    <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_GEDIMMT&quot;</span> <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED_AUS&quot;</span>
-        <span class="n">start_time</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="n">flashing</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Zurücksetzen des Flackerstatus</span>
 
-    <span class="c1"># Zustandsaktionen ausführen</span>
-    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_AN&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED an&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;State: LED an&quot;</span><span class="p">)</span>
+        <span class="n">time_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  um: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED leuchtet&quot;</span>
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED leuchtet&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED leuchtet&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; seit: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_start</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_start</span> <span class="o">&gt;</span> <span class="n">PAR_HOLD</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED flackert&quot;</span> 
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED leuchtet2&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; seit Warnung: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_warning</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_warning</span> <span class="o">&gt;</span> <span class="n">PAR_WARN</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED aus&quot;</span> 
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED flackert&quot;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">time_warning</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED leuchtet2&quot;</span> 
         <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_GEDIMMT&quot;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">flashing</span><span class="p">:</span>
-            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Flackern umschalten</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Dauerhaft eingeschaltet</span>
-    <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED_AUS&quot;</span><span class="p">:</span>
-        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Kurze Pause für die Stabilität des Debouncers</span>
 </code></pre></div>
+</details>
 <hr />
-<h2 id="writing_hand-aufgabe-implementierung-eines-treppenhauslichts">:writing_hand: Aufgabe: Implementierung eines Treppenhauslichts</h2>
+<h2 id="aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</h2>
 <ul>
-<li>Zeichen Sie eine State Machine, die nach dem Flackern noch einmal 2 Sekunden wartet, bevor sie die LED ausschaltet</li>
-<li>Implementieren Sie die State Machine in Python</li>
+<li>Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
+<li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
+<li>Durch Loslassen wir die Richung umgekehrt</li>
+<li>Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
+<li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
 </ul>
 <hr />
-<h2 id="nerd_face-writing_hand-aufgabe-implementierung-eines-dimmers">:nerd_face: :writing_hand: Aufgabe: Implementierung eines Dimmers</h2>
+<p><img alt="bg h:720" src="../images/mermaid-diagram-2024-01-25-115643.svg" /></p>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : 100%
+    B : 0%
+    C : aufwärts
+    D : abwärts
+    A --&gt; B: kurzer Druck
+    B --&gt; A: kurzer Druck
+    A --&gt; D: langer Druck
+    B --&gt; C: langer Druck
+    C --&gt; D: loslassen
+    D --&gt; C: loslassen
+</code></pre></div>
+<hr />
+<h2 id="aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</h2>
 <ul>
-<li>Implementieren Sie einen Dimmer, der durch halten des Tasters die Helligkeit die PWM steuert</li>
-<li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
-<li>durch kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
+<li>Implementieren Sie einen Dimmer</li>
 </ul>
 <hr />
 <h2 id="verknupfungssteuerungen">Verknüpfungssteuerungen</h2>
 <ul>
-<li>verknüpfen Bedien- und/oder Messsignale gemäß einem Steuerprogramms mit (binären) Stellsignalen</li>
-<li>z.B. Wechsel- oder Kreuzschaltungen für das Ein- und Ausschalten von Leuchten</li>
+<li>Während Ablaufsteuerungen den Ablauf eines Prozesses steuern, verknüpfen Verknüpfungssteuerungen die Eingangssignale mit den Ausgangssignalen</li>
+<li>Diese Trennung ist jedoch eher akademisch, da die meisten Systeme sowohl Ablauf- als auch Verknüpfungssteuerungen enthalten</li>
 </ul>
 <hr />
-<p><img alt="" src="../images/Tageslichtschaltung.png" /></p>
+<h3 id="beispiel-wechselschalter">Beispiel: Wechselschalter</h3>
+<ul>
+<li>Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden</li>
+<li>Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)</li>
+</ul>
+<p><img alt="" src="../images/Wechselschaltung.svg" /></p>
+<p><strong>Wahrheitstabelle</strong></p>
+<table>
+<thead>
+<tr>
+<th>Schalter 1</th>
+<th>Schalter 2</th>
+<th>Lampe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Boolsche Funktion</strong>
+<span class="arithmatex">\(L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)\)</span></p>
 <hr />
-<p>vereinfacht: wenn H_ROOM zu genüge hell ist, dann schalte das Licht aus</p>
+<h2 id="aufgabe-2_2_4-implementierung-einer-vereinfachten-tageslichtschaltung">✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung</h2>
+<p><img alt="bg right:33% h:720" src="../images/Tageslichtschaltung.png" /></p>
+<ul>
+<li>Wir vereinfachen die Tagelichtschaltung, indem wir die Zeitparameter weglassen</li>
+<li>Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung</li>
+</ul>
 <hr />
-<h2 id="writing_hand-aufgabe-implementierung-einer-vereinfachten-tageslichschaltung">:writing_hand: Aufgabe: Implementierung einer vereinfachten Tageslichschaltung</h2>
-<hr />
+<table>
+<thead>
+<tr>
+<th><code>P_ACT</code></th>
+<th><code>H_ROOM</code> <code>&lt;</code> <code>PAR_SETPT</code></th>
+<th><code>L_MAN</code></th>
+<th><code>L_SET</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
               
             </div>
           </div><footer>
@@ -361,7 +666,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>

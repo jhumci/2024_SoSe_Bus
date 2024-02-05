@@ -67,6 +67,40 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Regelkreis</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#beispiel-konstantlicht-regelung">Beispiel Konstantlicht-Regelung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#konstantlichtregelung">Konstantlichtregelung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_1-konstantlicht-regelung">✍️ Aufgabe 3_2_1: Konstantlicht-Regelung</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-regler">Proportional-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2-regelung-der-co2-konzentration">✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-p-regler">Zusammenfassung P-Regler</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_3-wassertank-mit-pid-regler">✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#integral-regler">🧠 Integral-Regler</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#abbildung-rechts-ist-reaktion-auf-sprungfunktion">Abbildung rechts ist Reaktion auf Sprungfunktion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-integral-regler">Proportional-Integral-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-differenzial-regler">🧠 Proportional-Differenzial-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_4-reaktion-d-regler">✍️ Aufgabe 3_2_4: Reaktion D-Regler</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
@@ -78,18 +112,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,22 +157,131 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
+<h1 id="regelkreise">Regelkreise</h1>
 <hr />
-<h1 id="regelkreis">Regelkreis</h1>
-<h2 id="motivation">Motivation</h2>
+<h2 id="beispiel-konstantlicht-regelung">Beispiel Konstantlicht-Regelung</h2>
+<blockquote>
+<p>regelt die Raumbeleuchtung oder Teile davon bei Belegung automatisch so, dass eine eingestellte Mindestbeleuchtungsstärke nicht unterschritten wird</p>
+</blockquote>
 <ul>
-<li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
-<li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
+<li>Im Gegensatz zur Tageslichtschaltung, soll es aber auch nicht unnötig hell sein, wenn es draußen schon hell ist</li>
 </ul>
-<h2 id="objektorientierung">Objektorientierung</h2>
-<h3 id="attribute">Attribute</h3>
-<h3 id="methoden">Methoden</h3>
-<h3 id="python">Python</h3>
-<h2 id="writing_hand-aufgabe-implementierung-eines-aggregators-zum-glatten-von-messwerten">:writing_hand: Aufgabe: Implementierung eines Aggregators zum Glätten von Messwerten</h2>
-<h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
+<p><img alt="bg right:35% h:720" src="../images/RA_Konstantlicht.pdf.png" /></p>
+<hr />
+<h3 id="konstantlichtregelung">Konstantlichtregelung</h3>
+<ul>
+<li>Lichtstärke kann (quasi) stetig gesteuert werden (z.B. über Dimmer oder Pulsweitenmodulation)</li>
+</ul>
+<p><img alt="" src="../images/Helligkeitsregelung.svg" /></p>
+<hr />
+<h2 id="aufgabe-3_2_1-konstantlicht-regelung">✍️ Aufgabe 3_2_1: Konstantlicht-Regelung</h2>
+<ul>
+<li>Laden Sie die Datei <a href="">Konstantlicht_nur_p.zcos</a> und passen Sie den P-Parameter in <code>PID</code>-Baustein an und beobachten Sie die Reaktion des Systems</li>
+<li>Welche Komponenten werden durch welche Bausteine dargestellt?</li>
+</ul>
+<p><img alt="" src="../images/Konstantlichtregelung_nur_p.png" /></p>
+<hr />
+<h2 id="proportional-regler">Proportional-Regler</h2>
+<ul>
+<li>Reaktion der Stellgröße bzw. Steuerungsgröße 
+<span class="arithmatex">\(u(t)=K_P \cdot e(t)\)</span></li>
+<li>multipliziert die Regelabweichung <span class="arithmatex">\(e_t\)</span> mit dem Verstärkungsfaktor <span class="arithmatex">\(K_P\)</span> und gibt das Ergebnis aus</li>
+<li>je dunkler <span class="arithmatex">\(y_m\)</span> im Verhältnis zur Führungsgröße (<span class="arithmatex">\(w\)</span>), desto heller die Beleuchtung (<span class="arithmatex">\(u\)</span>)</li>
+</ul>
+<p><img alt="bg right w:600" src="../images/Helligkeitsregelung.svg" /></p>
+<hr />
+<ul>
+<li>Reaktion der Stellgröße:</li>
+<li>$
+  u(t)=K_P \cdot e(t)$</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">p</span><span class="o">-</span><span class="n">regler</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">k_p</span><span class="p">):</span>
+  <span class="n">ausgang</span> <span class="o">=</span> <span class="n">e</span> <span class="o">*</span> <span class="n">k_p</span>
+  <span class="k">return</span> <span class="n">ausgang</span>
+</code></pre></div>
+<p><img alt="bg right:60% height:600" src="../images/P-Regler-Funktionen.svg" /></p>
+<hr />
+<h2 id="aufgabe-3_2_2-regelung-der-co2-konzentration">✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration</h2>
+<ul>
+<li>Ziel ist der Entwurf eines Reglers zur Steuerung einer Belüftungsanlage auf Basis der Schadstoffkonzentration im Raum in ppm </li>
+<li>Zeichnen Sie den Verlauf der Stellgrößen (Drehzahl der Anlage) für folgende zwei Regler:</li>
+<li>stetiger Proportionalregler: <span class="arithmatex">\(u(t) = \frac{2}{min \cdot ppm} e(t)\)</span> </li>
+<li>Regelung nach Logik nächste Seite.</li>
+</ul>
+<hr />
+<h3 id="losung">Lösung</h3>
+<p><img alt="bg right:66% height:600" src="../images/AufgabeRegler.svg" /></p>
+<hr />
+<h3 id="losung_1">Lösung</h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">regler</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">letzte_drehzahl</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">e</span> <span class="o">==</span><span class="mi">1000</span><span class="p">:</span>
+    <span class="n">drehzahl</span> <span class="o">=</span> <span class="n">letzte_drehzahl</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+      <span class="n">drehzahl</span> <span class="o">=</span> <span class="n">e</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">drehzahl</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">return</span> <span class="n">drehzahl</span>
+</code></pre></div>
+<hr />
+<h3 id="zusammenfassung-p-regler">Zusammenfassung P-Regler</h3>
+<p><img alt="bg right w:500" src="../images/Idealer_P_Sprungantwort.svg" /></p>
+<ul>
+<li>P-Glied, welches als Regler eingesetzt wird</li>
+<li>Zeitverhalten: reagiert <strong>unverzögert</strong> </li>
+<li>bleibende Regelabweichung bei Systemen mit Ausgleich (Regelstrecken die bei konstantem Eingang einen konstanten Wert anstreben)</li>
+</ul>
+<hr />
+<h2 id="aufgabe-3_2_3-wassertank-mit-pid-regler">✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler</h2>
+<p>Entfernen Sie den I und D-Anteil des PID-Reglers und beobachten Sie die Reaktion des Systems</p>
+<p><img alt="" src="../images/PID_internal.zcos.png" /></p>
+<p><a href="https://help.scilab.org/PID"></a></p>
+<hr />
+<h2 id="integral-regler">🧠 Integral-Regler</h2>
+<p><img alt="bg right w:500" src="../images/Idealer_I_Sprungantwort.svg" /></p>
+<ul>
+<li>Antwort <span class="arithmatex">\(u(t)\)</span> auf Sprung unmittelbar, jedoch nicht sofort mit voller Stärke</li>
+<li>Je länger (<span class="arithmatex">\(t\)</span>) die Regelabweichung besteht und umso größer sie ist, desto stärker die Antwort</li>
+<li><span class="arithmatex">\(u(t)=\frac{1}{T_n}\int_0^te(\tau)d\tau\)</span></li>
+</ul>
+<h6 id="abbildung-rechts-ist-reaktion-auf-sprungfunktion">Abbildung rechts ist Reaktion auf Sprungfunktion</h6>
+<hr />
+<p><img alt="bg right w:500" src="../images/Idealer_I_Sprungantwort.svg" /></p>
+<ul>
+<li><span class="arithmatex">\(u(t)=\frac{1}{T_n}\int_0^te(\tau)d\tau\)</span></li>
+<li><span class="arithmatex">\(u(t)=K_I \cdot \int_0^te(\tau)d\tau\)</span></li>
+<li><span class="arithmatex">\(T_n\)</span> ... Nachstellzeit bestimmt den Gradienten des Anstieges von <span class="arithmatex">\(u\)</span> </li>
+<li><em>summiert</em> die Regelabweichung über die Zeit auf</li>
+<li><strong>Regelabweichungen</strong> werden auch bei Strecken mit Ausgleich vollständig <strong>eliminiert</strong>, dafür <strong>langsamer</strong></li>
+</ul>
+<hr />
+<p><img alt="height:600" src="../images/i-Regler.svg" /></p>
+<hr />
+<h2 id="proportional-integral-regler">Proportional-Integral-Regler</h2>
+<p><img alt="" src="../images/Idealer_PI_Sprungantwort.svg" /></p>
+<ul>
+<li>Sprungantwort: <span class="arithmatex">\(u(t)=K_Pe(t) + K_I \cdot \int_0^te(\tau)d\tau\)</span></li>
+<li>PI-Regler <strong>Kombination</strong> aus P- und I-Regler</li>
+<li>schnelle Reaktion (wie P-Regler)</li>
+<li>exakte Ausregelung ohne eine bleibende Regelabweichung (wie I-Regler) </li>
+</ul>
+<hr />
+<h2 id="proportional-differenzial-regler">🧠 Proportional-Differenzial-Regler</h2>
+<p><img alt="" src="../images/Idealer_PD_Sprungantwort.svg" /></p>
+<ul>
+<li>Sprungantwort: <span class="arithmatex">\(u(t)=K_Pe(t)+K_d \frac{de(t)}{dt}=K_Pe(t)+T_v \frac{de(t)}{dt}\)</span></li>
+<li>kombiniert P-Regler mit Differenzial-Anteil</li>
+<li>der D-Anteil bewertet die Änderung einer Regelabweichung (differenziert) und berechnet so deren <strong>Änderungsgeschwindigkeit</strong></li>
+<li>reagiert schon auf "Ankündigungen" von Veränderungen </li>
+<li><strong>sehr schnell</strong>, doch bleibende <strong>Regelabweichung</strong></li>
+<li>Unruhe im Regelkreis wird verstärkt, wenn Sensorsignal verrauscht </li>
+</ul>
+<hr />
+<p><img alt="height:600" src="../images/d-regler.svg" /></p>
+<hr />
+<h2 id="aufgabe-3_2_4-reaktion-d-regler">✍️ Aufgabe 3_2_4: Reaktion D-Regler</h2>
+<p>✍️ Wie sieht die Reaktion aus?</p>
+<p><img alt="height:600" src="../images/d-regler-Aufgabe.svg" /></p>
               
             </div>
           </div><footer>
@@ -178,7 +321,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>

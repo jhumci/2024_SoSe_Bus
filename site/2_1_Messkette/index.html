@@ -54,6 +54,124 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Messkette</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#eva-prinzip">EVA-Prinzip</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#digitale-eingange">Digitale Eingänge</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#circuitpython-installieren">CircuitPython installieren</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hauptprogramm-codepy">Hauptprogramm code.py</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-ubersicht">Pin-Übersicht</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2002191htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#breadboards">Breadboards</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitespraxisbauteil_steckbretthtm">https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-purpose-inputoutput">General Purpose Input/Output</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_2-anschluss-eines-tasters-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_2: Anschluss eines Tasters an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gpio-eingang-mit-tasterschalter-und-pullup-widerstand">GPIO-Eingang mit Taster/Schalter und Pullup-Widerstand</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2110081htm-httpswwwelektronik-kompendiumdesitesraspberry-pi2006051htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gpio-eingang-mit-tasterschalter-und-pulldown-widerstand">GPIO-Eingang mit Taster/Schalter und Pulldown-Widerstand</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-schalter-und-taster">Zusammenfassung Schalter und Taster</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#digitale-ausgange">Digitale Ausgänge</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2612031htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#leuchtdioden">Leuchtdioden</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpsnawi-werftdebausteineled-ansteuern">https://nawi-werft.de/bausteine/led-ansteuern/</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten">Ausgang verschalten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2102181htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten_1">Ausgang verschalten</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#relais-und-schutze">Relais und Schütze</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pulsweitenmodulation">Pulsweitenmodulation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-eingange">Analoge Eingänge</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#analog-digital-wandler">Analog-Digital-Wandler</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_4-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#httpswwwelektronik-kompendiumdesitesraspberry-pi2612221htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_3">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_6">🤓 ✍️ Aufgabe 2_1_6:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-ausgange">Analoge Ausgänge</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
@@ -78,18 +196,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,36 +241,32 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
-<hr />
-<h1 id="messkette">Messkette</h1>
+<h1 id="21-messkette">2.1 Messkette</h1>
 <hr />
 <h2 id="eva-prinzip">EVA-Prinzip</h2>
-<p><img alt="" src="images/Messkette.svg" /></p>
+<p><img alt="" src="../images/Messkette.svg" /></p>
 <ul>
 <li>Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert</li>
-<li>Hierzu werden Eingangssingale gemessen und Ausgangssignale erzeugt</li>
+<li>Hierzu werden Eingangs-Signale gemessen und Ausgangssignale erzeugt</li>
 <li>In der Steuerungseinheit werden Funktionen implementiert, die die Messsignale in Ausgangssignale umwandeln</li>
 <li>Steuerungseinheiten sind heute meist frei programmierbar (z.B. Speicherprogrammierbare Steuerung) oder wurden für bestimmte Funktionen vorprogrammiert (z.B. Mikrocontroller in LED-Vorschaltgeräten)</li>
 </ul>
 <hr />
 <h3 id="digitale-eingange">Digitale Eingänge</h3>
 <ul>
-<li>Digitale Eingänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
+<li>Digitale Eingänge können nur zwei Zustände annehmen (0:<code>False</code> oder 1:<code>True</code>)</li>
 <li>Die Zustände werden durch Spannungen repräsentiert</li>
-<li>i.d.R. gibt es Spannungsbereiche, die als 0 oder 1 interpretiert werden</li>
+<li>i.d.R. gibt es Spannungsbereiche, die als <code>0</code> oder <code>1</code> interpretiert werden</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-anschluss-eines-tasters-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
+<h2 id="aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</h2>
 <ul>
 <li>Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann</li>
 <li>Im folgenden wird folgende Hardware benötigt:<ul>
 <li>Raspberry Pi Pico</li>
 <li>Breadboard</li>
 <li>Taster</li>
-<li>Widerstand ca. <span class="arithmatex">\(470 \Omega\)</span></li>
+<li>Widerstand ca. <span class="arithmatex">\(470 \Omega\)</span> und <span class="arithmatex">\(10 \,\text{k}\Omega\)</span></li>
 <li>Jumperkabel</li>
 </ul>
 </li>
@@ -166,11 +280,11 @@ Dr. Julian Huber</p>
 <li>Pico sollte jetzt neue Starten und die Firmware installieren</li>
 <li>Nach dem erneuten Verbinden sollten nun einige Programme im Pico liegen</li>
 </ul>
-<p><img alt="bg right w:700" src="images/circuitpy.png" /></p>
+<p><img alt="bg right w:700" src="../images/circuitpy.png" /></p>
 <hr />
 <h3 id="programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</h3>
 <ul>
-<li>Öffenen Sie im Chrome Browser die Seite des Editors <a href="https://code.circuitpython.org/">https://circuitpython.org/</a></li>
+<li>Öffenen Sie im Chrome Browser die Seite des <a href="https://code.circuitpython.org/">Online Editors</a></li>
 <li>Verbinden Sie Sich mittels USB</li>
 <li>Wählen Sie die Schnittstelle <code>CircuitPython CDC Control</code> aus</li>
 <li>Öffnen Sie das Verzeichnis (USB-Laufwerk) <code>CIRCUITPY</code> und wählen Sie <code>USE /</code></li>
@@ -181,7 +295,8 @@ Dr. Julian Huber</p>
 <h3 id="hauptprogramm-codepy">Hauptprogramm <code>code.py</code></h3>
 <ul>
 <li>Dieses Programm wird automatisch ausgeführt und ist der Einsteigspunkt für alle Programme (vgl. <code>MAIN</code> bei TwinCat)</li>
-<li>Passen Sie das Hauptprogramm so an, dass die LED länger hell als dunkel ist
+<li>Passen Sie das Hauptprogramm so an, dass die LED länger hell als dunkel ist</li>
+<li>Passen Sie die Ausgabe an indem Sie <code>"Sleep!"</code> ersetzen
 <div class="highlight"><pre><span></span><code><span class="c1"># Externe Bibliotheken laden</span>
 <span class="kn">import</span> <span class="nn">time</span>     <span class="c1"># Bibliothek Zeit-Funktionen</span>
 <span class="kn">import</span> <span class="nn">digitalio</span><span class="c1"># Bibliothek zur Steuerung von GPIOs</span>
@@ -194,16 +309,15 @@ Dr. Julian Huber</p>
 <span class="c1"># Endlosschleife</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
         <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleep!&quot;</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 <hr />
-<hr />
 <h3 id="pin-ubersicht">Pin-Übersicht</h3>
-<p><img alt="bg left h:500" src="images/raspberry-pi-gpio.png" /></p>
+<p><img alt="bg left h:500" src="../images/raspberry-pi-gpio.png" /></p>
 <ul>
 <li>VCC Voltage Common Connector: Spannungs- Versorgung <span class="arithmatex">\(5\)</span> oder <span class="arithmatex">\(3.3 \,\text{V}\)</span><ul>
 <li>Alles unter <span class="arithmatex">\(0,8\,\text{V}\)</span> ist low</li>
@@ -216,7 +330,7 @@ Dr. Julian Huber</p>
 <h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2002191htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm</h6>
 <hr />
 <h3 id="breadboards">Breadboards</h3>
-<p><img alt="bg left h:560" src="images/bauteil_steckbrett.png" />
+<p><img alt="bg left h:560" src="../images/bauteil_steckbrett.png" />
 - Steckplatine für Systemtest und Prototyping
 - vier Reihen für Spannungsversorgung
 - weitere Raster sind längs verbunden </p>
@@ -227,32 +341,68 @@ Dr. Julian Huber</p>
 <li>GPIO arbeiten von <span class="arithmatex">\(2...16 \,\text{mA}\)</span></li>
 <li>GPIOs können binär gelesen und geschaltet werden</li>
 </ul>
-<p><img alt="bg left h:500" src="images/raspberry-pi-gpio.png" /></p>
+<p><img alt="bg left h:500" src="../images/raspberry-pi-gpio.png" /></p>
 <hr />
-<h3 id="taster-anschlieen">Taster anschließen</h3>
-<ul>
-<li>Schließen Sie den Taster wie folgt an</li>
-<li>Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0</li>
-<li>Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm
-<div class="highlight"><pre><span></span><code><span class="n">inTaster</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP0</span><span class="p">)</span> <span class="c1"># Die Variable inTaster wird mit dem GPIO 0 verbunden</span>
+<h3 id="losung">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="c1"># Externe Bibliotheken laden</span>
+<span class="kn">import</span> <span class="nn">time</span>     <span class="c1"># Bibliothek Zeit-Funktionen</span>
+<span class="kn">import</span> <span class="nn">digitalio</span><span class="c1"># Bibliothek zur Steuerung von GPIOs</span>
+<span class="kn">import</span> <span class="nn">board</span>    <span class="c1"># Bibliothek welches die Adressen der Pins kennt: z.B. board.LED</span>
 
-<span class="k">if</span> <span class="n">inTaster</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taster gedrückt&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taster nicht gedrückt&quot;</span><span class="p">)</span>
-</code></pre></div></li>
+<span class="c1"># Ein- und Ausgänge definieren</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">LED</span><span class="p">)</span> <span class="c1"># Die Variable LED wird mit dem GPIO der LED auf dem Board verbunden</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span> <span class="c1"># Legt Richtung des PIN fest -&gt; Output</span>
+
+<span class="c1"># Endlosschleife</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleep!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="aufgabe-2_1_2-anschluss-eines-tasters-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_2: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
+<ul>
+<li>Schließen Sie den Taster wie folgt an
+<img alt="" src="../images/20060511.gif" /></li>
+<li><span class="arithmatex">\(R_{pullup} = 10 \,\text{k}\Omega\)</span></li>
+<li>Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0</li>
+<li>Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm</li>
 </ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Released!&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
+</code></pre></div>
 <hr />
 <h4 id="gpio-eingang-mit-tasterschalter-und-pullup-widerstand">GPIO-Eingang mit Taster/Schalter und Pullup-Widerstand</h4>
 <!-- _backgroundColor: white -->
 <!-- _color: grey -->
 
-<p><img alt="bg right h:400" src="images/20060511.gif" /></p>
+<p><img alt="bg right h:400" src="../images/20060511.gif" /></p>
 <ul>
 <li>Unbeschaltet oszillieren die GPIOs häufig unsauber zwischen den Zuständen</li>
 <li>Grundzustand des Eingangs bei offenem Schalter: <code>high</code></li>
 <li>Durch schließen: <code>low</code></li>
-<li><span class="arithmatex">\(4{,}7~k\Omega\)</span> als Standardwert</li>
+<li><span class="arithmatex">\(4{,}7~\text{k}\Omega\)</span> als Standardwert</li>
 <li>(RaspBerry Pis haben eingebaute Widerstände, die aktiviert werden können)</li>
 </ul>
 <h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2110081htm-httpswwwelektronik-kompendiumdesitesraspberry-pi2006051htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm</h6>
@@ -261,18 +411,18 @@ Dr. Julian Huber</p>
 <!-- _backgroundColor: white -->
 <!-- _color: grey -->
 
-<p><img alt="bg right h:400" src="images/20060512.gif" /></p>
+<p><img alt="bg right h:400" src="../images/20060512.gif" /></p>
 <ul>
 <li>Grundzustand des Eingangs: <code>low</code></li>
 <li>Durch schließen: <code>high</code></li>
-<li>der Regel <span class="arithmatex">\(10~k\Omega\)</span></li>
+<li>der Regel <span class="arithmatex">\(10~\text{k}\Omega\)</span></li>
 </ul>
 <hr />
 <h3 id="zusammenfassung-schalter-und-taster">Zusammenfassung Schalter und Taster</h3>
 <ul>
 <li>In der Praxis tendiert man dazu, GPIO-Eingänge mit einem Pullup-Widerstand mit +VCC zu verbinden und gegen Ground (GND) zu schalten</li>
 <li>Erfordert Negation in der Software</li>
-<li>Werte von <span class="arithmatex">\(10\)</span> bis <span class="arithmatex">\(100~k\Omega\)</span></li>
+<li>Werte von <span class="arithmatex">\(10\)</span> bis <span class="arithmatex">\(100~\text{k}\Omega\)</span></li>
 <li><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm">GPIO-Eingang mit Taster/Schalter und Querwiderstand</a></li>
 <li><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm">Mehr zu Pull-Up vs Pull-Down</a></li>
 </ul>
@@ -284,31 +434,55 @@ Dr. Julian Huber</p>
 <li>Die Ausgänge können bis zu <span class="arithmatex">\(16 \,\text{mA}\)</span> liefern</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-anschluss-einer-led-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe: Anschluss einer LED an einen Raspberry Pi Pico</h2>
+<h3 id="losung_1">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Released!&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Nun wollen wir eine LED anschließen in der Folge über den Taster schalten</li>
 <li>Sie LED soll nach einem Druck auf den Taster für <span class="arithmatex">\(1\,\text{s}\)</span> leuchten</li>
 <li>passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
 
-<span class="c1"># Initialisierung von GPIO13 als Ausgang</span>
-<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
-<span class="c1"># LED einschalten</span>
-<span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
 
-<span class="c1"># 5 Sekunden warten</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
 
-<span class="c1"># LED ausschalten</span>
-<span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </code></pre></div>
 <h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2612031htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm</h6>
 <hr />
 <h3 id="leuchtdioden">Leuchtdioden</h3>
-<p><img alt="h:500" src="images/LED-Aufbau.png" /></p>
+<p><img alt="h:500" src="../images/LED-Aufbau.png" /></p>
 <ul>
 <li>Langes Bein: Anode</li>
 </ul>
@@ -328,7 +502,7 @@ Dr. Julian Huber</p>
 </ul>
 </li>
 </ul>
-<p><img alt="" src="images/21021815.gif" /> <img alt="" src="images/21021814.gif" /></p>
+<p><img alt="" src="../images/21021815.gif" /> <img alt="" src="../images/21021814.gif" /></p>
 <h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2102181htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm</h6>
 <hr />
 <h3 id="ausgang-verschalten_1">Ausgang verschalten</h3>
@@ -339,12 +513,12 @@ Dr. Julian Huber</p>
 <hr />
 <h4 id="relais-und-schutze">Relais und Schütze</h4>
 <ul>
-<li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3V \cdot 4mA = 13.2 mW\)</span>)</li>
+<li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}\)</span>)</li>
 <li>Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)</li>
 <li>Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen</li>
 <li>heute meist nicht mehr mechanisch sondern elektronisch realisiert</li>
 </ul>
-<p><img alt="width:500 right" src="images/Relais_Animation.gif" /></p>
+<p><img alt="width:500 right" src="../images/Relais_Animation.gif" /></p>
 <hr />
 <h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
 <ul>
@@ -352,34 +526,45 @@ Dr. Julian Huber</p>
 <li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern</li>
 <li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> geeignet setzen</li>
 </ul>
-<p><img alt="bg right w:500" src="images/04011113.png" /> </p>
+<p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
 <h6 id="httpswwwelektronik-kompendiumdesiteskom0401111htm">https://www.elektronik-kompendium.de/sites/kom/0401111.htm</h6>
 <hr />
-<h2 id="nerd_face-writing_hand-aufgabe-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">:nerd_face: :writing_hand: Aufgabe: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
+<h3 id="losung_2">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für <span class="arithmatex">\(1\,\text{s}\)</span> leuchtet und dann langsam über <span class="arithmatex">\(5\,\text{s}\)</span> ausgeht</li>
 </ul>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pwmio</span>
+<span class="kn">import</span> <span class="nn">board</span>
 
-<span class="c1"># Initialisierung Onboard-LED/PWM-Ausgang</span>
-<span class="n">led</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">))</span>
+<span class="n">pwm</span> <span class="o">=</span> <span class="n">pwmio</span><span class="o">.</span><span class="n">PWMOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP1</span><span class="p">)</span>  <span class="c1"># output on LED pin with default of 500Hz</span>
 
-<span class="c1"># PWM-Einstellung: Frequenz in Hertz (Hz)</span>
-<span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="c1"># Wiederholung (Endlos-Schleife)</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># Anpassung des Duty-Cycle (0-65535)</span>
-    <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3000</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">65535</span><span class="p">:</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">):</span>  <span class="c1"># Cycles through the full PWM range from 0 to 65535</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
+    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
 </code></pre></div>
 <hr />
 <h3 id="analoge-eingange">Analoge Eingänge</h3>
@@ -401,40 +586,165 @@ Dr. Julian Huber</p>
 <li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
 </ul>
 <hr />
-<h2 id="writing_hand-aufgabe-anschluss-eines-analogen-helligkeitssensors">:writing_hand: Aufgabe: Anschluss eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_4-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors</h2>
 <ul>
-<li>Schließen Sie einen analogen Helligkeitssensor an den Raspberry Pi Pico an</li>
+<li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
+<li>Links (-): GND / Masse / 0 Volt</li>
+<li>Mitte: +VCC z.B. 3,3 oder 5 Volt</li>
+<li>Rechts (S): Verbindungspunkt des Spannungsteilers </li>
+</ul>
+</li>
+<li>Fixwiderstand <span class="arithmatex">\(10 \,\text{k}\Omega\)</span> zwischen +VCC und S</li>
+<li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
+</ul>
+<hr />
+<ul>
+<li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
 <li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">ADC</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="c1"># Initialisierung des ADC0</span>
-<span class="n">ldr</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
 
 <span class="c1"># Wiederholung</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># ADC als Dezimalzahl lesen</span>
-    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
     <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC: &quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
     <span class="c1"># Warten</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2612221htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm</h6>
 <hr />
-<h4 id="lineares-mapping">Lineares Mapping</h4>
+<p><img alt="" src="../images/aufbau_pico_ky018.png" /></p>
+<hr />
+<h4 id="mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</h4>
 <ul>
 <li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
-<li>Da wir keine andere Information zur Verfügung haben, nehmen wir an, dass der Sensor linear arbeitet (d.h. die Spannung linear mit der Helligkeit steigt)</li>
-<li>Zur Referenzmessung steht ein Messgerät MiniLux zur Verfügung</li>
+<li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
+<li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
+<li>$a =0.0015 $ ist die Steigung der Parabel</li>
+<li><span class="arithmatex">\(s = 44000\)</span> ist der Verschiebung der Parabel auf der x-Achse</li>
+<li><span class="arithmatex">\(x\)</span> ist der Eingangswert</li>
 </ul>
+</li>
+</ul>
+<p><img alt="bg right:43% w:550" src="../images/CurveFitHelligkeit.png" /></p>
 <hr />
-<h2 id="writing_hand-aufgabe-anschluss-eines-analogen-helligkeitssensors_1">:writing_hand: Aufgabe: Anschluss eines Analogen Helligkeitssensors</h2>
+<h5 id="ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken <span class="arithmatex">\(E\)</span></h5>
+<table>
+<thead>
+<tr>
+<th>Umfeld</th>
+<th><span class="arithmatex">\(E \text{ in lux}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mondlose, klare Nacht</td>
+<td>0,0003</td>
+</tr>
+<tr>
+<td>Nachts bei Vollmond</td>
+<td>0,2</td>
+</tr>
+<tr>
+<td>Beleuchtete Strassen, Plätze</td>
+<td>10..20</td>
+</tr>
+<tr>
+<td>Abstellräume, Lagerräume</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Lagerräume, Toiletten, Treppen</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Speiseräume, Werkhallen,</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Läden, Sitzungszimmer</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Arbeitsplätze, Schulzimmer</td>
+<td>500</td>
+</tr>
+<tr>
+<td>erhöhte Ansprüche</td>
+<td>750</td>
+</tr>
+<tr>
+<td>Elektronikmontage, Uhrenmacher</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>Bedeckter Himmel im Winter</td>
+<td>1.000.. 2.000</td>
+</tr>
+<tr>
+<td>Bedeckter Himmel im Sommer</td>
+<td>5.000..20.000</td>
+</tr>
+<tr>
+<td>Sonnenlicht im Winter</td>
+<td>10.000</td>
+</tr>
+<tr>
+<td>Sonnenlicht im Sommer</td>
+<td>100.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="bg right:43% w:550" src="../images/CurveFitHelligkeit.png" /></p>
+<hr />
+<h5 id="nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</h5>
 <ul>
-<li>Bestimmen Sie eine Funktion, die die gemessenen Werte in Lux umrechnet</li>
-<li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Helligkeit in Lux aus</li>
+<li>Viele (teurere) Peripherie-Geräte kommen als Transmitter (Kombination aus dem Sensor selbst und einem Messumformer)</li>
+<li>Diese linearisieren sie spannungs-(oder Strom) Ausgabe</li>
+<li>Eine Umrechnung der Spannungswerte an Eingang in die Physikalische Größen muss jedoch weiterhin stattfinden</li>
+<li>Informationen hierzu finden sich meinst im <a href="https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf">Datenblatt</a></li>
+</ul>
+<p><img alt="bg right:43% w:550" src="../images/helligkeitssensor-0555-3001-helligkeitsf%C3%BChler-helligkeitsmelder-lichtf%C3%BChler-lichtsensor.jpg" /></p>
+<h6 id="httpsshopbb-sensorscommesstechnik-je-branchegebaeudetechnikhelligkeitssensor-mit-messumformer-0-10-vhtml">https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html</h6>
+<hr />
+<h3 id="losung_3">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pwmio</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">pwm</span> <span class="o">=</span> <span class="n">pwmio</span><span class="o">.</span><span class="n">PWMOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP1</span><span class="p">)</span>  <span class="c1"># output on LED pin with default of 500Hz</span>
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="mi">65535</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
+            <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
+<ul>
+<li>Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet</li>
+<li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus</li>
+<li>Orientieren Sie sich dabei an folgendem Code, der ein Beispiel für ein lineares Mapping zeigt</li>
 </ul>
 <hr />
 <table>
@@ -464,7 +774,7 @@ Dr. Julian Huber</p>
 </tbody>
 </table>
 <ul>
-<li>Annahme: Linearer zusammenhang
+<li>Annahme: Linearer Zusammenhang
     <span class="arithmatex">\(E = f(z) = \beta_0 + \beta_1 z\)</span></li>
 <li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
 <li>Bei welchen Wert hat <span class="arithmatex">\(E\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
@@ -477,8 +787,12 @@ Dr. Julian Huber</p>
 </li>
 </ul>
 <hr />
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_e</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1000</span>
+<ul>
+<li>Der folgende Code übernimmt dein Eingangswert und gibt einen normalisierten Wert zwischen 1 und 0 zurück</li>
+<li>Erstellen Sie in einer Datei <code>mappings.py</code> (im gleichen Ordner, wie die <code>code.py</code>) eine Funktion <code>map_quat()</code>, die stattdessen die oben angegeben Formel implementiert</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
     <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
@@ -486,18 +800,31 @@ Dr. Julian Huber</p>
     <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
 </code></pre></div>
-<ul>
-<li>Im besten fall wird <code>map_e</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden </li>
-</ul>
 <hr />
-<h3 id="analoge-ausgange">Analoge Ausgänge</h3>
 <ul>
-<li>Entsprechend gibt es auch analoge Ausgänge</li>
-<li>Diese können z.B. zur Ansteuerung von Motoren genutzt werden</li>
-<li>Dabei wird einer meist der Wert einer Integer-Variable im Speicher in einen Spannungswert umgewandelt</li>
+<li>🤓 Im besten Fall wird <code>map_ln</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden  </li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_lin</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_lin</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 <hr />
-<h2 id="nerd_face-verwendung-von-globalen-variablen">:nerd_face: Verwendung von Globalen Variablen</h2>
+<h2 id="verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</h2>
 <ul>
 <li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
 <li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
@@ -512,6 +839,60 @@ Dr. Julian Huber</p>
 </code></pre></div>
 <ul>
 <li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
+</ul>
+<hr />
+<h3 id="losung_4">Lösung</h3>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="optional-class">
+<summary>Lösung anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="aufgabe-2_1_6">🤓 ✍️ Aufgabe 2_1_6:</h2>
+<ul>
+<li>Nicht bei jedem Sensor wird die gefittete Kurve perfekt passen</li>
+<li>passen Sie den Code so an, dass die Parameter der Kurve in der <code>settings.toml</code> hinterlegt werden können, um diese möglichst einfach anzupassen</li>
+</ul>
+<hr />
+<h3 id="analoge-ausgange">Analoge Ausgänge</h3>
+<ul>
+<li>Entsprechend gibt es auch analoge Ausgänge</li>
+<li>Diese können z.B. zur Ansteuerung von Motoren genutzt werden</li>
+<li>Dabei wird einer meist der Wert einer Integer-Variable im Speicher in einen Spannungswert umgewandelt</li>
 </ul>
               
             </div>
@@ -552,7 +933,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>

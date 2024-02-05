@@ -60,6 +60,36 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Objektorientierung</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#grundkonzepte-der-objektorientierung">Grundkonzepte der Objektorientierung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#klassen-und-objekte">Klassen und Objekte</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attribute">Attribute</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#methoden-funktionen">Methoden &amp; Funktionen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_1-implementierung-einer-sensor-klasse">✍️ Aufgabe 2_4_1: Implementierung einer Sensor-Klasse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_2">🤓 ✍️ Aufgabe 2_4_2:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vererbung">Vererbung</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#serialisierung-von-objekten">Serialisierung von Objekten</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dictionaries">Dictionaries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#javascriptobjectnotation-json">JavaScriptObjectNotation (JSON)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</a>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -78,18 +108,18 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Bussysteme</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -123,22 +153,229 @@
               
                 <!-- paginate: true -->
 
-<h1 id="bussysteme">Bussysteme</h1>
-<p><strong>SoSe 2023</strong>
-Dr. Julian Huber</p>
+<h1 id="24-objektorientierung">2.4 Objektorientierung</h1>
 <hr />
-<h1 id="objektorientierung">Objektorientierung</h1>
 <h2 id="motivation">Motivation</h2>
 <ul>
 <li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
 <li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
 </ul>
-<h2 id="objektorientierung_1">Objektorientierung</h2>
+<p><img alt="bg right" src="../images/Schwanken.png" /></p>
+<hr />
+<h2 id="grundkonzepte-der-objektorientierung">Grundkonzepte der Objektorientierung</h2>
+<ul>
+<li>Objektorientierte Programmierung: Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten</li>
+<li>z.B. Objekt der Klasse <code>Sensor</code></li>
+<li>Attribute (Eigenschaften mit Datentyp):<ul>
+<li>Zählernummer</li>
+<li>Aktueller Messerwert </li>
+<li>Liste bisheriger Messerwerte</li>
+<li>Einheit</li>
+</ul>
+</li>
+<li>Methoden (wie Funktionen):<ul>
+<li>Mittelwert bilden</li>
+<li>Messen</li>
+<li>Letzten Messwert übermitteln</li>
+</ul>
+</li>
+</ul>
+<p><img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /></p>
+<hr />
+<h3 id="klassen-und-objekte">Klassen und Objekte</h3>
+<ul>
+<li>Die Sensor-Klasse beschreibt allgemein das Verhalten jedes Sensors!</li>
+<li>Jeder einzelne Sensor ist ein Objekt der Klasse Sensor, bei dem die Attribute individuell ausgeprägt 
+<img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /></li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code>classDiagram
+    class Sensor{
+        +string name
+        +string unit
+        +float measurement
+        +[]float measurements
+        +do_measurement()
+        +calc_mean()
+        +print_data()
+    }
+</code></pre></div>
+<hr />
 <h3 id="attribute">Attribute</h3>
-<h3 id="methoden">Methoden</h3>
-<h3 id="python">Python</h3>
-<h2 id="writing_hand-aufgabe-implementierung-eines-aggregators-zum-glatten-von-messwerten">:writing_hand: Aufgabe: Implementierung eines Aggregators zum Glätten von Messwerten</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition einer Klasse</span>
+<span class="k">class</span> <span class="nc">Sensor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurement</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Instanziierung eines Objekts</span>
+<span class="n">sensor1</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Temperatursensor&quot;</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="n">sensor2</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Beleuchtungsstärke&quot;</span><span class="p">,</span> <span class="s2">&quot;Lux&quot;</span><span class="p">)</span>
+
+<span class="c1"># Aufruf der Attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor2</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Die Methode <strong><code>__init__</code></strong> wird aufgerufen, sobald ein <strong>Objekt</strong> einer <strong>Klasse</strong> instanziiert wird. Die Methode kann dafür benutzt werden, ihr Objekt auf irgendeine Weise zu initialisieren</li>
+<li>wichtig ist in jeder Methode als erstes Argument <strong><code>self</code></strong> zu übergeben, damit die Methode auf das Objekt zugreifen kann</li>
+<li>Ebenso werden Attribute mit <strong><code>self</code></strong> definiert, damit sie dem Objekt zugeordnet werden</li>
+</ul>
+<hr />
+<h3 id="methoden-funktionen">Methoden &amp; Funktionen</h3>
+<ul>
+<li>Methoden sind Funktionen, die zu einer Klasse gehören</li>
+<li>Funktionen sind wieder aufrufbare Code-Einheiten, denen Argumente als Parameter übergeben werden können</li>
+<li>Funktionen geben einen Rückgabewert aus, der weiterverarbeitet werden kann</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition einer Klasse</span>
+<span class="k">class</span> <span class="nc">Sensor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurement</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;returns data in &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="c1"># Instanziierung eines Objekts</span>
+<span class="n">sensor1</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Temperatursensor&quot;</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+
+<span class="c1"># Aufruf der Attribute</span>
+<span class="n">sensor1</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="aufgabe-2_4_1-implementierung-einer-sensor-klasse">✍️ Aufgabe 2_4_1: Implementierung einer Sensor-Klasse</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Sensor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_measurement</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">do_measurement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ldr</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_measurement</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measurements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">last_measurement</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;returns data in &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+
+<span class="n">beleuchtungs_sensor</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s2">&quot;Beleuchtungsstärke&quot;</span><span class="p">,</span> <span class="s2">&quot;ADC&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">beleuchtungs_sensor</span><span class="o">.</span><span class="n">do_measurement</span><span class="p">(</span><span class="n">ldr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">beleuchtungs_sensor</span><span class="o">.</span><span class="n">last_measurement</span><span class="p">)</span>    
+
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<ul>
+<li>Passen Sie den gegeben Code so an, dass der Sensor auch über eine Methode verfügt, welche den Mittelwert der Messwerte zurückgibt</li>
+<li>Sie können die folgende Funktion als Ausgangspunkt verwenden</li>
+<li>Vergessen sie nicht das <code>self</code>-Argument zu übergeben</li>
+<li>Hierdurch können sie auch die Übergabe des Parameters <code>list_of_measurements</code> vermeiden, die Sie sich im Objekt direkt auf <code>self.measurements</code> beziehen können
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">bilde_mittelwert</span><span class="p">(</span><span class="n">list_of_measurements</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Eine Funktion, die eine Liste von Werten übernimmt und das arithmetische Mittel zurück gibt&quot;&quot;&quot;</span>
+
+  <span class="n">mittelwert</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">list_of_measurements</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_of_measurements</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">mittelwert</span>
+
+<span class="n">ergebnis</span> <span class="o">=</span> <span class="n">bilde_mittelwert</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="aufgabe-2_4_2">🤓 ✍️ Aufgabe 2_4_2:</h2>
+<ul>
+<li>Stellen Sie sicher, dass maximal die letzten 10 Messwerte gespeichert werden</li>
+<li>Erweitern die Methode <code>calc_mean</code> so, dass optional nur die letzten <code>n</code>  Messwerte berücksichtigt werden und <code>n</code> als Parameter übergeben werden kann </li>
+<li>Integrieren Sie die <code>mappings.py</code> in Ihre Sensor-Klasse, damit diese Lux-Werte zurückgibt</li>
+<li>🤓 🤓 Überlegen Sie, wie Sie dem Sensor bei der Instanziierung unterschiedliche Mapping-Funktionen übergeben können</li>
+</ul>
+<hr />
+<h2 id="vererbung">Vererbung</h2>
+<!-- _backgroundColor: grey -->
+
+<ul>
+<li>Durch Vererbung können die <strong>Attribute</strong> und <strong>Methoden</strong> einer (Parent-)Klasse <strong>an andere</strong> (Child-)<strong>Klassen weitergegeben</strong> werden. </li>
+<li>Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. </li>
+<li>Im UML-Klassendiagramm wird die Vererbung mit meinem im <strong>leeren Dreieck endenden Pfeil</strong> dargestellt.</li>
+<li>Dies ermöglicht eine <strong>hierarchische Strukturierung</strong> von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen</li>
+</ul>
+<p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
+<hr />
 <h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
+<hr />
+<h3 id="serialisierung-von-objekten">Serialisierung von Objekten</h3>
+<p><img alt="h:300" src="../images/Signalisierung.svg" /></p>
+<ul>
+<li>Zur Übertragung zwischen Systemen müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden</li>
+<li>Serialisierung:</li>
+<li>Objekt aus dem Arbeitsspeicher wird in eine Folge von Zeichen übersetzt (letztlich eine Folge von Bits)</li>
+<li>Austauschdateiformat (meist in Form einer Auszeichnungssprache)</li>
+</ul>
+<hr />
+<h3 id="dictionaries">Dictionaries</h3>
+<ul>
+<li>Sind die Implementierung von Hash-Tabellen in Python (ein Datentyp vergleichbar mit einer Liste)</li>
+<li>Anstelle einer Liste, in der Werte über eine Indexposition abgerufen werden, werden Werte über einen Schlüssel abgerufen</li>
+<li>Schlüssel-Wert-Paare <code>{&lt;key1&gt;:&lt;value1&gt;, &lt;key2&gt;:&lt;value2&gt;, &lt;key3&gt;:&lt;value3}</code>
+<div class="highlight"><pre><span></span><code><span class="n">my_dict</span> <span class="o">=</span> <span class="n">beleuchtungs_sensor</span><span class="o">.</span><span class="vm">__dict__</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;last_measurement&#39;</span><span class="p">:</span> <span class="mi">43114</span><span class="p">,</span>
+ <span class="s1">&#39;measurements&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">43130</span><span class="p">,</span> <span class="mi">43034</span><span class="p">,</span> <span class="mi">43066</span><span class="p">,</span> <span class="mi">42666</span><span class="p">,</span> <span class="mi">43370</span><span class="p">,</span> <span class="mi">43114</span><span class="p">,</span> <span class="mi">42426</span><span class="p">,</span> <span class="mi">43114</span><span class="p">],</span> 
+ <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Beleuchtungsstärke&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="s1">&#39;ADC&#39;</span><span class="p">}</span>
+</code></pre></div>
+* Das <code>__dict__</code>-Attribut enthält alle Attribute des Objekts als Dictionary
+* Auf die Werte im Dictionary kann über den Schlüssel zugegriffen werden
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="s2">&quot;last_measurement&quot;</span><span class="p">])</span>
+</code></pre></div></p>
+<hr />
+<h3 id="javascriptobjectnotation-json">JavaScriptObjectNotation (JSON)</h3>
+<ul>
+<li>Dictionary-Objekte können in JSON-Objekte umgewandelt werden</li>
+<li>JSON is eine Auszeichnungssprache, die für den Datenaustausch zwischen Systemen verwendet wird
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span> 
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span> 
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">my_dict</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;last_measurement&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43114</span><span class="p">,</span><span class="w"> </span>
+<span class="nt">&quot;measurements&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">43130</span><span class="p">,</span><span class="w"> </span><span class="mi">43034</span><span class="p">,</span><span class="w"> </span><span class="mi">43066</span><span class="p">,</span><span class="w"> </span><span class="mi">42666</span><span class="p">,</span><span class="w"> </span><span class="mi">43370</span><span class="p">,</span><span class="w"> </span><span class="mi">43114</span><span class="p">,</span><span class="w"> </span><span class="mi">42426</span><span class="p">,</span><span class="w"> </span><span class="mi">43114</span><span class="p">],</span><span class="w"> </span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beleuchtungsst\u00e4rke&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ADC&quot;</span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>über eine eignete Codierung (z.B. ASCII, UTF) können auch Binärdaten übertragen werden <code>&lt;stings&gt;.encode("ascii")</code>
+<div class="highlight"><pre><span></span><code>1111011001001110110110101100101011101000110010101110010010111110110100101100100001001110011101000100000...
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</h2>
+<ul>
+<li>Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen</li>
+<li>Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?</li>
+<li>Würden Sie die Messwerte erst als JSON, ASCII und dann als Binärdaten übertragen? Wenn nein, warum nicht?</li>
+<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht</li>
+</ul>
               
             </div>
           </div><footer>
@@ -178,7 +415,7 @@ Dr. Julian Huber</p>
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
-      <script src="../javascripts/mathjax.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
