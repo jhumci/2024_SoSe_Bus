@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Messkette - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Messkette";
+        var mkdocs_page_input_path = "2_1_Messkette.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Messkette</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Bussysteme/">Bussysteme</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Theoretische_Grundlagen/">Theoretische Grundlagen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Feldbusse/">Feldbusse</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_5_Bussysteme_in_der_MSR-Technik/">Bussysteme in der MSR-Technik</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Computer-Systeme</li>
+      <li class="breadcrumb-item active">Messkette</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <!-- paginate: true -->
+
+<h1 id="bussysteme">Bussysteme</h1>
+<p><strong>SoSe 2023</strong>
+Dr. Julian Huber</p>
+<hr />
+<h1 id="messkette">Messkette</h1>
+<hr />
+<h2 id="eva-prinzip">EVA-Prinzip</h2>
+<p><img alt="" src="images/Messkette.svg" /></p>
+<ul>
+<li>Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert</li>
+<li>Hierzu werden Eingangssingale gemessen und Ausgangssignale erzeugt</li>
+<li>In der Steuerungseinheit werden Funktionen implementiert, die die Messsignale in Ausgangssignale umwandeln</li>
+<li>Steuerungseinheiten sind heute meist frei programmierbar (z.B. Speicherprogrammierbare Steuerung) oder wurden für bestimmte Funktionen vorprogrammiert (z.B. Mikrocontroller in LED-Vorschaltgeräten)</li>
+</ul>
+<hr />
+<h3 id="digitale-eingange">Digitale Eingänge</h3>
+<ul>
+<li>Digitale Eingänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
+<li>Die Zustände werden durch Spannungen repräsentiert</li>
+<li>i.d.R. gibt es Spannungsbereiche, die als 0 oder 1 interpretiert werden</li>
+</ul>
+<hr />
+<h2 id="writing_hand-aufgabe-anschluss-eines-tasters-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
+<ul>
+<li>Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann</li>
+<li>Im folgenden wird folgende Hardware benötigt:<ul>
+<li>Raspberry Pi Pico</li>
+<li>Breadboard</li>
+<li>Taster</li>
+<li>Widerstand ca. <span class="arithmatex">\(470 \Omega\)</span></li>
+<li>Jumperkabel</li>
+</ul>
+</li>
+<li>Ziel ist es, dass der Mikrocontroller den Taster ausliest und den Zustand auf der Konsole ausgibt</li>
+</ul>
+<hr />
+<h3 id="circuitpython-installieren">CircuitPython installieren</h3>
+<ul>
+<li>Halte den <code>BOOTSEL</code> Taster auf dem Pico gedrückt und verbinde diesen über USB mit dem Rechner</li>
+<li>Passende Firmware <a href="https://circuitpython.org/board/raspberry_pi_pico_w/">UF2-File</a> herunterladen und in den als USB-Laufwerk erkannten Pico kopieren</li>
+<li>Pico sollte jetzt neue Starten und die Firmware installieren</li>
+<li>Nach dem erneuten Verbinden sollten nun einige Programme im Pico liegen</li>
+</ul>
+<p><img alt="bg right w:700" src="images/circuitpy.png" /></p>
+<hr />
+<h3 id="programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</h3>
+<ul>
+<li>Öffenen Sie im Chrome Browser die Seite des Editors <a href="https://code.circuitpython.org/">https://circuitpython.org/</a></li>
+<li>Verbinden Sie Sich mittels USB</li>
+<li>Wählen Sie die Schnittstelle <code>CircuitPython CDC Control</code> aus</li>
+<li>Öffnen Sie das Verzeichnis (USB-Laufwerk) <code>CIRCUITPY</code> und wählen Sie <code>USE /</code></li>
+<li>Öffnen Sie die Datei <code>code.py</code> und fügen Sie den folgenden Inhalt ein</li>
+<li>Öffnen Sie die Serielle Schnittstellen, um die Ausgabe zu sehen <code>Serial</code>, übertragen Sie den Code und starten Sie den Pico neu <code>Save + Run</code></li>
+</ul>
+<hr />
+<h3 id="hauptprogramm-codepy">Hauptprogramm <code>code.py</code></h3>
+<ul>
+<li>Dieses Programm wird automatisch ausgeführt und ist der Einsteigspunkt für alle Programme (vgl. <code>MAIN</code> bei TwinCat)</li>
+<li>Passen Sie das Hauptprogramm so an, dass die LED länger hell als dunkel ist
+<div class="highlight"><pre><span></span><code><span class="c1"># Externe Bibliotheken laden</span>
+<span class="kn">import</span> <span class="nn">time</span>     <span class="c1"># Bibliothek Zeit-Funktionen</span>
+<span class="kn">import</span> <span class="nn">digitalio</span><span class="c1"># Bibliothek zur Steuerung von GPIOs</span>
+<span class="kn">import</span> <span class="nn">board</span>    <span class="c1"># Bibliothek welches die Adressen der Pins kennt: z.B. board.LED</span>
+
+<span class="c1"># Ein- und Ausgänge definieren</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">LED</span><span class="p">)</span> <span class="c1"># Die Variable LED wird mit dem GPIO der LED auf dem Board verbunden</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span> <span class="c1"># Legt Richtung des PIN fest -&gt; Output</span>
+
+<span class="c1"># Endlosschleife</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleep!&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<hr />
+<h3 id="pin-ubersicht">Pin-Übersicht</h3>
+<p><img alt="bg left h:500" src="images/raspberry-pi-gpio.png" /></p>
+<ul>
+<li>VCC Voltage Common Connector: Spannungs- Versorgung <span class="arithmatex">\(5\)</span> oder <span class="arithmatex">\(3.3 \,\text{V}\)</span><ul>
+<li>Alles unter <span class="arithmatex">\(0,8\,\text{V}\)</span> ist low</li>
+<li>alles über <span class="arithmatex">\(1,3\,\text{V}\)</span> ist high</li>
+</ul>
+</li>
+<li>Ground: <span class="arithmatex">\(0 \,\text{V}\)</span></li>
+<li>Einige GPIOs können als Busleitungen genutzt werden: UART, SPI, I2C</li>
+</ul>
+<h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2002191htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2002191.htm</h6>
+<hr />
+<h3 id="breadboards">Breadboards</h3>
+<p><img alt="bg left h:560" src="images/bauteil_steckbrett.png" />
+- Steckplatine für Systemtest und Prototyping
+- vier Reihen für Spannungsversorgung
+- weitere Raster sind längs verbunden </p>
+<h6 id="httpswwwelektronik-kompendiumdesitespraxisbauteil_steckbretthtm">https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm</h6>
+<hr />
+<h3 id="general-purpose-inputoutput">General Purpose Input/Output</h3>
+<ul>
+<li>GPIO arbeiten von <span class="arithmatex">\(2...16 \,\text{mA}\)</span></li>
+<li>GPIOs können binär gelesen und geschaltet werden</li>
+</ul>
+<p><img alt="bg left h:500" src="images/raspberry-pi-gpio.png" /></p>
+<hr />
+<h3 id="taster-anschlieen">Taster anschließen</h3>
+<ul>
+<li>Schließen Sie den Taster wie folgt an</li>
+<li>Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0</li>
+<li>Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm
+<div class="highlight"><pre><span></span><code><span class="n">inTaster</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP0</span><span class="p">)</span> <span class="c1"># Die Variable inTaster wird mit dem GPIO 0 verbunden</span>
+
+<span class="k">if</span> <span class="n">inTaster</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taster gedrückt&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Taster nicht gedrückt&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h4 id="gpio-eingang-mit-tasterschalter-und-pullup-widerstand">GPIO-Eingang mit Taster/Schalter und Pullup-Widerstand</h4>
+<!-- _backgroundColor: white -->
+<!-- _color: grey -->
+
+<p><img alt="bg right h:400" src="images/20060511.gif" /></p>
+<ul>
+<li>Unbeschaltet oszillieren die GPIOs häufig unsauber zwischen den Zuständen</li>
+<li>Grundzustand des Eingangs bei offenem Schalter: <code>high</code></li>
+<li>Durch schließen: <code>low</code></li>
+<li><span class="arithmatex">\(4{,}7~k\Omega\)</span> als Standardwert</li>
+<li>(RaspBerry Pis haben eingebaute Widerstände, die aktiviert werden können)</li>
+</ul>
+<h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2110081htm-httpswwwelektronik-kompendiumdesitesraspberry-pi2006051htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm</h6>
+<hr />
+<h4 id="gpio-eingang-mit-tasterschalter-und-pulldown-widerstand">GPIO-Eingang mit Taster/Schalter und Pulldown-Widerstand</h4>
+<!-- _backgroundColor: white -->
+<!-- _color: grey -->
+
+<p><img alt="bg right h:400" src="images/20060512.gif" /></p>
+<ul>
+<li>Grundzustand des Eingangs: <code>low</code></li>
+<li>Durch schließen: <code>high</code></li>
+<li>der Regel <span class="arithmatex">\(10~k\Omega\)</span></li>
+</ul>
+<hr />
+<h3 id="zusammenfassung-schalter-und-taster">Zusammenfassung Schalter und Taster</h3>
+<ul>
+<li>In der Praxis tendiert man dazu, GPIO-Eingänge mit einem Pullup-Widerstand mit +VCC zu verbinden und gegen Ground (GND) zu schalten</li>
+<li>Erfordert Negation in der Software</li>
+<li>Werte von <span class="arithmatex">\(10\)</span> bis <span class="arithmatex">\(100~k\Omega\)</span></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm">GPIO-Eingang mit Taster/Schalter und Querwiderstand</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm">Mehr zu Pull-Up vs Pull-Down</a></li>
+</ul>
+<hr />
+<h3 id="digitale-ausgange">Digitale Ausgänge</h3>
+<ul>
+<li>Ausgänge können mit einer Spannung beschaltet werden</li>
+<li>Bei einem Raspberry Pi Pico sind die Ausgänge auf <span class="arithmatex">\(3.3 \,\text{V}\)</span> begrenzt</li>
+<li>Die Ausgänge können bis zu <span class="arithmatex">\(16 \,\text{mA}\)</span> liefern</li>
+</ul>
+<hr />
+<h2 id="writing_hand-aufgabe-anschluss-einer-led-an-einen-raspberry-pi-pico">:writing_hand: Aufgabe: Anschluss einer LED an einen Raspberry Pi Pico</h2>
+<ul>
+<li>Nun wollen wir eine LED anschließen in der Folge über den Taster schalten</li>
+<li>Sie LED soll nach einem Druck auf den Taster für <span class="arithmatex">\(1\,\text{s}\)</span> leuchten</li>
+<li>passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Initialisierung von GPIO13 als Ausgang</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="c1"># LED einschalten</span>
+<span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+
+<span class="c1"># 5 Sekunden warten</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># LED ausschalten</span>
+<span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</code></pre></div>
+<h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2612031htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm</h6>
+<hr />
+<h3 id="leuchtdioden">Leuchtdioden</h3>
+<p><img alt="h:500" src="images/LED-Aufbau.png" /></p>
+<ul>
+<li>Langes Bein: Anode</li>
+</ul>
+<h6 id="httpsnawi-werftdebausteineled-ansteuern">https://nawi-werft.de/bausteine/led-ansteuern/</h6>
+<hr />
+<h3 id="ausgang-verschalten">Ausgang verschalten</h3>
+<!-- _backgroundColor: white -->
+<!-- _color: black -->
+
+<ul>
+<li>links: LED an Masse <ul>
+<li>GPIO auf high &gt; LED an</li>
+</ul>
+</li>
+<li>rechts: LED an VCC<ul>
+<li>GPIO auf low &gt; LED an</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="images/21021815.gif" /> <img alt="" src="images/21021814.gif" /></p>
+<h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2102181htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm</h6>
+<hr />
+<h3 id="ausgang-verschalten_1">Ausgang verschalten</h3>
+<ul>
+<li>Wählen Sie einen geeigneten GPIO</li>
+<li>Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground (<span class="arithmatex">\(0V\)</span>)</li>
+</ul>
+<hr />
+<h4 id="relais-und-schutze">Relais und Schütze</h4>
+<ul>
+<li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3V \cdot 4mA = 13.2 mW\)</span>)</li>
+<li>Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)</li>
+<li>Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen</li>
+<li>heute meist nicht mehr mechanisch sondern elektronisch realisiert</li>
+</ul>
+<p><img alt="width:500 right" src="images/Relais_Animation.gif" /></p>
+<hr />
+<h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
+<ul>
+<li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
+<li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern</li>
+<li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> geeignet setzen</li>
+</ul>
+<p><img alt="bg right w:500" src="images/04011113.png" /> </p>
+<h6 id="httpswwwelektronik-kompendiumdesiteskom0401111htm">https://www.elektronik-kompendium.de/sites/kom/0401111.htm</h6>
+<hr />
+<h2 id="nerd_face-writing_hand-aufgabe-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">:nerd_face: :writing_hand: Aufgabe: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
+<ul>
+<li>Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für <span class="arithmatex">\(1\,\text{s}\)</span> leuchtet und dann langsam über <span class="arithmatex">\(5\,\text{s}\)</span> ausgeht</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Initialisierung Onboard-LED/PWM-Ausgang</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">))</span>
+
+<span class="c1"># PWM-Einstellung: Frequenz in Hertz (Hz)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Wiederholung (Endlos-Schleife)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Anpassung des Duty-Cycle (0-65535)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3000</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">65535</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+<hr />
+<h3 id="analoge-eingange">Analoge Eingänge</h3>
+<ul>
+<li>Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)</li>
+<li>z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen</li>
+<li>Damit änder sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann</li>
+</ul>
+<hr />
+<h4 id="analog-digital-wandler">Analog-Digital-Wandler</h4>
+<ul>
+<li>Der Analog-Digital-Wandler (ADC) wandelt ein analoges Signal in eine digitale Zahl um</li>
+<li>Dabei gibt es zwei relevante Parameter<ul>
+<li>Auflösung: Anzahl der möglichen Werte</li>
+<li>Referenzspannung: Spannungsbereich, der in die Auflösung abgebildet wird</li>
+<li>z.B. 16 Bit Auflösung und <span class="arithmatex">\(3.3 \,\text{V}\)</span> Referenzspannung <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(2^{16} = 65536\)</span> Werte zwischen <span class="arithmatex">\(0\)</span> und <span class="arithmatex">\(3.3 \,\text{V}\)</span></li>
+</ul>
+</li>
+<li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
+</ul>
+<hr />
+<h2 id="writing_hand-aufgabe-anschluss-eines-analogen-helligkeitssensors">:writing_hand: Aufgabe: Anschluss eines Analogen Helligkeitssensors</h2>
+<ul>
+<li>Schließen Sie einen analogen Helligkeitssensor an den Raspberry Pi Pico an</li>
+<li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bibliotheken laden</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">ADC</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Initialisierung des ADC0</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC: &quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="c1"># Warten</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<h6 id="httpswwwelektronik-kompendiumdesitesraspberry-pi2612221htm">https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm</h6>
+<hr />
+<h4 id="lineares-mapping">Lineares Mapping</h4>
+<ul>
+<li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
+<li>Da wir keine andere Information zur Verfügung haben, nehmen wir an, dass der Sensor linear arbeitet (d.h. die Spannung linear mit der Helligkeit steigt)</li>
+<li>Zur Referenzmessung steht ein Messgerät MiniLux zur Verfügung</li>
+</ul>
+<hr />
+<h2 id="writing_hand-aufgabe-anschluss-eines-analogen-helligkeitssensors_1">:writing_hand: Aufgabe: Anschluss eines Analogen Helligkeitssensors</h2>
+<ul>
+<li>Bestimmen Sie eine Funktion, die die gemessenen Werte in Lux umrechnet</li>
+<li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Helligkeit in Lux aus</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(E_{max}\)</span></td>
+<td>maximale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_{min}\)</span></td>
+<td>minimale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{max}\)</span></td>
+<td>maximaler Messwert des ADC</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{min}\)</span></td>
+<td>minimaler Messwert des ADC</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Annahme: Linearer zusammenhang
+    <span class="arithmatex">\(E = f(z) = \beta_0 + \beta_1 z\)</span></li>
+<li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
+<li>Bei welchen Wert hat <span class="arithmatex">\(E\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
+</ul>
+</li>
+<li>2: Wie groß ist die Steigung <span class="arithmatex">\(\beta_1\)</span>?<ul>
+<li>Wie groß ist die Änderung von <span class="arithmatex">\(E\)</span> pro Änderung von <span class="arithmatex">\(z\)</span>?</li>
+<li><span class="arithmatex">\(\beta_1 = \frac{E_{max} - E_{min}}{z_{max} - z_{min}}\)</span></li>
+</ul>
+</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_e</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+</code></pre></div>
+<ul>
+<li>Im besten fall wird <code>map_e</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden </li>
+</ul>
+<hr />
+<h3 id="analoge-ausgange">Analoge Ausgänge</h3>
+<ul>
+<li>Entsprechend gibt es auch analoge Ausgänge</li>
+<li>Diese können z.B. zur Ansteuerung von Motoren genutzt werden</li>
+<li>Dabei wird einer meist der Wert einer Integer-Variable im Speicher in einen Spannungswert umgewandelt</li>
+</ul>
+<hr />
+<h2 id="nerd_face-verwendung-von-globalen-variablen">:nerd_face: Verwendung von Globalen Variablen</h2>
+<ul>
+<li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
+<li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>MY_NAME = &quot;Julian&quot;
+</code></pre></div>
+- Im Code können diese mittels <code>os</code> aufgerufen werden</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#  connect to your SSID</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MY_NAME&#39;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../1_2_Planungsabl%C3%A4ufe/" class="btn btn-neutral float-left" title="Planungsabläufe"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2_2_Steuerung/" class="btn btn-neutral float-right" title="Steuerung">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../1_2_Planungsabl%C3%A4ufe/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../2_2_Steuerung/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

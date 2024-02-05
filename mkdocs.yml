@@ -5,33 +5,30 @@ site_author: Julian Huber
 # Navigation menu
 nav:
   - 'Übersicht' : index.md
-  - 'Gebäudeautomation' : 
-    - 'Anlagenautomation' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Raumautomation' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Gebäudeautomation-Management' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md  
-  - 'Planungsabläufe' :' : 
-    - 'Bauherr' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Fachplaner' :' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Ausführung' :' : 
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Betrieb' :' :
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-    - 'Raumautomations-Schema':
-      - 'Topic1-Content' : topic1-content.md
-      - 'Topic1-Task' : topic1-task.md
-
+  - 'Gebäudeautomation' :
+    - 'Gebäudeautomation' : 1_1_Gebäudeautomation.md
+    - 'Planungsabläufe':  1_2_Planungsabläufe.md
+  - 'Computer-Systeme' : 
+    - 'Messkette' : 2_1_Messkette.md
+    - 'Steuerung' : 2_2_Steuerung.md
+    - 'Funktionen' : 2_3_Funktionen.md
+    - 'Objektorientierung' : 2_4_Objektorientierung.md
+  - 'Regelungstechnik' : 
+    - 'Blockschaltbild ': 3_1_Blockschaltbild.md
+    - 'Regelkreis' : 3_2_Regelkreis.md
+    - 'Regelverhalten' : 3_3_Regelverhalten.md
+  - 'Speicherprogrammierbare Steuerung' :
+    - 'Speicherprogrammierbare Steuerung' : 4_1_Speicherprogrammierbare_Steuerung.md
+    - 'Sprachen nach IEC 61131-3' : 4_2_Sprachen_nach_IEC_61131-3.md
+  - 'Bussysteme' :
+    - 'Bussysteme' : 5_1_Bussysteme.md
+    - 'Theoretische Grundlagen' : 5_2_Theoretische_Grundlagen.md
+    - 'Feldbusse' : 5_3_Feldbusse.md
+    - 'Bussysteme in der Gebäudeautomation' : 5_4_Bussysteme_in_der_Gebäudeautomation.md
+    - 'Bussysteme in der MSR-Technik' : 5_5_Bussysteme_in_der_MSR-Technik.md
+  - 'Smart Metering' :
+    - 'Smart Metering' : 6_1_Smart_Metering.md
+  
 theme:
   name: readthedocs
   
