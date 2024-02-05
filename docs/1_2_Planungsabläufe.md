@@ -259,11 +259,18 @@ theme: lemon
 - Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können
 - zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik gesteuert werden können
 
+---
+
 ![h:400](images/RA_schemaCut.png)
 
 ---
 
-### Lösung
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+   TODO
 
 ---
 

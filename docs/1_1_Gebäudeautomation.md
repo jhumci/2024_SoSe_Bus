@@ -35,7 +35,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ---
 
-## 🧠 Abgrenzung verschiedene Ebenen der Gebäudeautomation
+## Abgrenzung verschiedene Ebenen der Gebäudeautomation
 
 >Struktur nach VDI 3814
 

@@ -142,9 +142,11 @@ while True:
 
 ---
 
-### Lösung 
+### [✔️ Lösung](Aufgaben\2_1_1\code.py)
 
-??? optional-class "Lösung anzeigen"
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_1\code.py"
     ```
@@ -234,9 +236,11 @@ while True:
 
 ---
 
-### Lösung 
+### [✔️ Lösung](Aufgaben\2_1_2\code.py)
 
-??? optional-class "Lösung anzeigen"
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_2\code.py"
     ```
@@ -334,12 +338,29 @@ while True:
 
 ---
 
-### Lösung 
+### [✔️ Lösung](Aufgaben\2_1_3\code.py)
 
-??? optional-class "Lösung anzeigen"
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_3\code.py"
     ```
+
+### [✔️ Lösung](Aufgaben\2_1_4\code.py)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_4\code.py"
+    ```
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_4\plot.ipynb"
+    ```
+
 
 ---
 
@@ -383,7 +404,7 @@ while True:
 
 ---
 
-## ✍️ Aufgabe 2_1_4: Anschluss eines Analogen Helligkeitssensors
+## ✍️ Aufgabe 2_1_5: Anschluss eines Analogen Helligkeitssensors
 
 * Schließen Sie einen [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
     * Links (-): GND / Masse / 0 Volt
@@ -551,7 +572,19 @@ while True:
     time.sleep(1)
 ```
 
+---
 
+### [✔️ Lösung](Aufgaben\2_1_5\code.py)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\code.py"
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\mappings.py"
 
 ---
 
