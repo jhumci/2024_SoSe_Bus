@@ -108,7 +108,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufbau-sps-am-beispiel-beckhoff">Aufbau SPS - am Beispiel Beckhoff</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#aufbau-einer-sps">🧠 Aufbau einer SPS</a>
+    <li class="toctree-l3"><a class="reference internal" href="#aufbau-einer-sps">Aufbau einer SPS</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#aufbau-sps">Aufbau SPS</a>
         <ul>
@@ -206,6 +206,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_1_1-anbindung-eines-helligkeitssensors">✍️ Aufgabe 4_1_1: Anbindung eines Helligkeitssensors</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#analoger-eingang_1">Analoger Eingang</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#beispiele-fur-analoge-und-digitale-signale">Beispiele für analoge und digitale Signale</a>
@@ -216,7 +218,7 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#ubersicht-klemmen">Übersicht Klemmen</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#el3051">EL3051</a>
     </li>
@@ -227,8 +229,6 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#ausgange">Ausgänge</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#lernfortschritt">🎯 Lernfortschritt</a>
     </li>
         </ul>
     </li>
@@ -438,7 +438,7 @@
 <h2 id="aufbau-sps-am-beispiel-beckhoff">Aufbau SPS - am Beispiel Beckhoff</h2>
 <p><img alt="height:400" src="../images/sps-Aufbau-simpel-drawio.svg" /></p>
 <hr />
-<h3 id="aufbau-einer-sps">🧠 Aufbau einer SPS</h3>
+<h3 id="aufbau-einer-sps">Aufbau einer SPS</h3>
 <p><img alt="bg h:400 right:40%" src="../images/S7CPU3V2.png" /></p>
 <p><a href="https://www.xplore-dna.net/mod/page/view.php?id=294">Quelle</a></p>
 <ul>
@@ -829,6 +829,12 @@
 <li>Was ist der kleinste Spannungsunterschied, der unterschieden werden kann?</li>
 </ul>
 <hr />
+<h3 id="losung">✔️ Lösung</h3>
+<ul>
+<li><span class="arithmatex">\(2^{12}=4096\)</span> diskrete Helligkeitsstufen</li>
+<li><span class="arithmatex">\(\Delta U_{min}=\frac{U_{max}-U_{min}}{n}=\frac{10-0 \text{ V}}{4096}=2.44 \text{ mV}\)</span></li>
+</ul>
+<hr />
 <h3 id="analoger-eingang_1">Analoger Eingang</h3>
 <p><img alt="height:400" src="../images/EL3024.png" /></p>
 <ul>
@@ -877,7 +883,7 @@
 <h3 id="ubersicht-klemmen">Übersicht Klemmen</h3>
 <p><a href="https://www.beckhoff.com/de-at/produkte/i-o/ethercat-klemmen/el3xxx-analog-eingang/">Link</a></p>
 <hr />
-<h3 id="losung">Lösung</h3>
+<h3 id="losung_1">✔️ Lösung</h3>
 <ul>
 <li>mit einem Stromsignal (4...20mA) kann ein Drahtbruch sicher erkannt werden</li>
 <li>Entsprechende Klemme z.B. EL3021 | EtherCAT-Klemme, 1-Kanal-Analog-Eingang, Strom, 4…20 mA, 12 Bit, differentiell</li>
@@ -912,12 +918,6 @@
 <ul>
 <li>Für Digitale und Analoge Ausgänge gelten sie selben Prinzipien</li>
 </ul>
-<hr />
-<h3 id="lernfortschritt">🎯 Lernfortschritt</h3>
-<p>Nach dieser Einheit sind Sie in der Lage dazu
-- zwischen digitalen und analogen Ein- und Ausgängen zu unterscheiden
-- geeignete Ein- und Ausgänge zu Sensoren auszuwählen
-- und anzuschließen</p>
               
             </div>
           </div><footer>

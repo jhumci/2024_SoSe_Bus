@@ -96,7 +96,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_1-automatik-licht">✍️ Aufgabe 4_2_1: Automatik Licht</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#wichtige-datentypen">Wichtige Datentypen</a>
     </li>
@@ -114,7 +114,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_2-wechselschaltung">✍️ Aufgabe 4_2_2: Wechselschaltung</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
     </li>
         </ul>
     </li>
@@ -128,6 +128,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_3-funktionsbaustein-counter">✍️ Aufgabe 4_2_3: Funktionsbaustein Counter</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#verwendung-von-programm-organisationseinheiten">Verwendung von Programm-Organisationseinheiten</a>
     </li>
         </ul>
@@ -160,6 +162,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_4-binarer-funktionsplan">✍️ Aufgabe 4_2_4: Binärer Funktionsplan</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_3">✔️ Lösung</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#zeitbausteine">Zeitbausteine</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#tof-ausschaltverzogerung-timer-off">TOF: Ausschaltverzögerung (Timer Off)</a>
@@ -170,16 +174,22 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-4_2_5-erweiterung-um-nachlauf-von-einer-sekunde">✍️ Aufgabe 4_2_5 Erweiterung um Nachlauf von einer Sekunde</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#impulsbildung">Impulsbildung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#impulsbildung">Impulsbildung</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ton-einschaltverzogerung">TON: Einschaltverzögerung</a>
+    <li class="toctree-l4"><a class="reference internal" href="#ton-einschaltverzogerung">TON: Einschaltverzögerung</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tonr-zeitakkumulator">TONR: Zeitakkumulator</a>
+    <li class="toctree-l4"><a class="reference internal" href="#tonr-zeitakkumulator">TONR: Zeitakkumulator</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_6-zeitbausteine">✍️ Aufgabe 2_4_6: Zeitbausteine</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#zahler">Zähler</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#weitere-bausteine">Weitere Bausteine</a>
@@ -343,7 +353,7 @@ bOutLicht1 := bInAnwesenheit1 AND bInDunkelheit2; // Logische Verknüpfung (nur 
 <hr />
 <p><img alt="h:500" src="../images/SPS-EVA.svg" /></p>
 <hr />
-<h3 id="losung">Lösung</h3>
+<h3 id="losung">✔️ Lösung</h3>
 <p><div class="highlight"><pre><span></span><code>PROGRAM MAIN // Main Programm wird definiert
 
 VAR // Variablen werden deklariert
@@ -407,7 +417,7 @@ END_IF;
 <li>Wie können wir dafür sorgen, dass das Licht den Zustand wechselt, wenn einer der beiden Schalter betätigt wird?</li>
 </ul>
 <hr />
-<h3 id="losung_1">Lösung</h3>
+<h3 id="losung_1">✔️ Lösung</h3>
 <div class="highlight"><pre><span></span><code><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">bInS1</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">bInS2</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
 <span class="w">  </span><span class="n">bOut1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">not</span><span class="p">(</span><span class="n">bOut1</span><span class="p">)</span>
 <span class="k">else</span><span class="o">:</span>
@@ -446,6 +456,7 @@ END_IF;
     <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
 <hr />
+<h3 id="losung_2">✔️ Lösung</h3>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Counter</span><span class="p">:</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -569,12 +580,22 @@ nLocalVariable := aCounter[2];
 <p><a href="https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/">Quelle</a></p>
 <hr />
 <h2 id="aufgabe-4_2_4-binarer-funktionsplan">✍️ Aufgabe 4_2_4: Binärer Funktionsplan</h2>
-<p><div class="highlight"><pre><span></span><code>E0.1 = TRUE
+<div class="highlight"><pre><span></span><code>E0.1 = TRUE
 E0.2 = TRUE
-E0.3 = FALSE
-E0.4 = TRUE
 </code></pre></div>
-- Was ist <code>A0.1</code> ?</p>
+<ul>
+<li>Was ist <code>A0.1</code> ?</li>
+</ul>
+<hr />
+<h3 id="losung_3">✔️ Lösung</h3>
+<ul>
+<li><code>E0.1</code> wird negiert</li>
+<li><code>E0.2</code> wird negiert</li>
+<li><code>not(E0.1) and not(E0.2) = False</code> wird negiert</li>
+<li>Ausgang des <code>&amp;</code>-Bausteins wird negiert</li>
+<li><code>A0.1 = True</code> </li>
+</ul>
+<hr />
 <p><img alt="bg width:700 right:40%" src="../images/und-vor-oder-verknuepfung-92.jpg" /></p>
 <p><a href="https://www.sps-lehrgang.de/zusammengesetzte-verknuepfungen/">Quelle</a></p>
 <hr />
@@ -606,6 +627,7 @@ E0.4 = TRUE
 
 <p><img alt="h:500" src="../images/SPS-EVA.svg" /></p>
 <hr />
+<h3 id="losung_4">✔️ Lösung</h3>
 <p><img alt="h:500" src="../images/ToFbeispiel.png" /></p>
 <hr />
 <h4 id="impulsbildung">Impulsbildung</h4>
@@ -657,6 +679,9 @@ E0.4 = TRUE
 <li>eines Impulsgenerators TP mit <code>PT = 0.5s</code></li>
 </ul>
 <p><img alt="height:350" src="../images/Impulsvorlage.svg" /></p>
+<hr />
+<h3 id="losung_5">✔️ Lösung</h3>
+<p><img alt="height:350" src="../images/ImpulsvorlageL.png" /></p>
 <hr />
 <h3 id="zahler">Zähler</h3>
 <blockquote>

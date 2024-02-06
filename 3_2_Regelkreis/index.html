@@ -74,14 +74,18 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_1-konstantlicht-regelung">✍️ Aufgabe 3_2_1: Konstantlicht-Regelung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#proportional-regler">Proportional-Regler</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2-regelung-der-co2-konzentration">✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_1">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-p-regler">Zusammenfassung P-Regler</a>
     </li>
@@ -172,10 +176,18 @@
 <hr />
 <h2 id="aufgabe-3_2_1-konstantlicht-regelung">✍️ Aufgabe 3_2_1: Konstantlicht-Regelung</h2>
 <ul>
-<li>Laden Sie die Datei <a href="">Konstantlicht_nur_p.zcos</a> und passen Sie den P-Parameter in <code>PID</code>-Baustein an und beobachten Sie die Reaktion des Systems</li>
+<li>Laden Sie die Datei <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_1/Konstantlicht_nur_p.zcos">Konstantlicht_nur_p.zcos</a> und passen Sie den P-Parameter in <code>PID</code>-Baustein an und beobachten Sie die Reaktion des Systems</li>
 <li>Welche Komponenten werden durch welche Bausteine dargestellt?</li>
 </ul>
 <p><img alt="" src="../images/Konstantlichtregelung_nur_p.png" /></p>
+<hr />
+<h3 id="losung">✔️ Lösung</h3>
+<p><img alt="" src="../images/Konstantlicht_P.png" /></p>
+<ul>
+<li>Bleibende Regelabweichung. Die 100 Lux werden nie erreicht</li>
+<li>Schwingen des Systems</li>
+<li>Sprunghaftes Verhalten (wegen Delay)</li>
+</ul>
 <hr />
 <h2 id="proportional-regler">Proportional-Regler</h2>
 <ul>
@@ -205,10 +217,10 @@
 <li>Regelung nach Logik nächste Seite.</li>
 </ul>
 <hr />
-<h3 id="losung">Lösung</h3>
+<h3 id="losung_1">✔️ Lösung</h3>
 <p><img alt="bg right:66% height:600" src="../images/AufgabeRegler.svg" /></p>
 <hr />
-<h3 id="losung_1">Lösung</h3>
+<h3 id="losung_2">✔️ Lösung</h3>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">regler</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">letzte_drehzahl</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">e</span> <span class="o">==</span><span class="mi">1000</span><span class="p">:</span>
     <span class="n">drehzahl</span> <span class="o">=</span> <span class="n">letzte_drehzahl</span>
@@ -229,9 +241,10 @@
 </ul>
 <hr />
 <h2 id="aufgabe-3_2_3-wassertank-mit-pid-regler">✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler</h2>
-<p>Entfernen Sie den I und D-Anteil des PID-Reglers und beobachten Sie die Reaktion des Systems</p>
-<p><img alt="" src="../images/PID_internal.zcos.png" /></p>
-<p><a href="https://help.scilab.org/PID"></a></p>
+<ul>
+<li>Entfernen Sie den I und D-Anteil des PID-Reglers in <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_3/demo_watertank.zcos">demo_watertank.zcos</a> und beobachten Sie die Reaktion des Systems
+<img alt="" src="../images/demo_watertank.png" /></li>
+</ul>
 <hr />
 <h2 id="integral-regler">🧠 Integral-Regler</h2>
 <p><img alt="bg right w:500" src="../images/Idealer_I_Sprungantwort.svg" /></p>
@@ -277,7 +290,7 @@
 <hr />
 <h2 id="aufgabe-3_2_4-reaktion-d-regler">✍️ Aufgabe 3_2_4: Reaktion D-Regler</h2>
 <p>✍️ Wie sieht die Reaktion aus?</p>
-<p><img alt="height:600" src="../images/d-regler-Aufgabe.svg" /></p>
+<p><img alt="height:400" src="../images/d-regler-Aufgabe.svg" /></p>
               
             </div>
           </div><footer>
