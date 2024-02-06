@@ -135,12 +135,27 @@ def map_quat(x):
 
 ```
 
+### [✔️ Lösung](Aufgaben\2_3_1)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_3_1\code.py"
+    ```
+
 ---
 
 ## ✍️ Aufgabe 2_3_2:
 
 * Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?
 * Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?
+
+### ✔️ Lösung
+
+* Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändern
+* Umrechnungen
+* Einfacher, wenn mehr in Funktionen ausgelagert wird
 
 ---
 

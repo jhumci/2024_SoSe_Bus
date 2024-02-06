@@ -198,10 +198,30 @@ ergebnis = bilde_mittelwert([1,2,3])
 
 ---
 
+### [✔️ Lösung](Aufgaben\2_4_2)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_4_2\code.py"
+    ```
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_4_2\mappings.py"
+    ```
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_4_2\my_classes.py"
+    ```
+
+---
+
 
 ## Vererbung
 
-<!-- _backgroundColor: grey -->
+<!-- _class: white -->
 
 - Durch Vererbung können die **Attribute** und **Methoden** einer (Parent-)Klasse **an andere** (Child-)**Klassen weitergegeben** werden. 
 - Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. 
@@ -280,5 +300,21 @@ with open("sample.json", "w") as outfile:
 
 - Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen
 - Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?
-- Würden Sie die Messwerte erst als JSON, ASCII und dann als Binärdaten übertragen? Wenn nein, warum nicht?
 - Implementieren Sie eine Methode `prepare_data()`, die Ihren Vorstellungen entspricht
+
+---
+
+### ✔️ Lösung
+
+* Ob es sinnvoll ist das gesamte Dictionary zu übertragen, hängt von unter anderem von der Bandbreite des Bussystems ab. Ist diese begrenzt macht es ggf. Sinn nur die sich verändernden Werte zu übertragen. Wenn man alle Information aus den Nachrichten extrahieren möchte, ist es aber auch sinnvolle das ganze Dictionary zu übertragen. 
+* Priorität hat die Übertragung der Messwerte und ggf. die Einheit
+
+
+---
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_4_2\my_classes.py"
+    ```

@@ -41,10 +41,20 @@ theme: lemon
 
 ## ✍️ Aufgabe 3_2_1: Konstantlicht-Regelung
 
-* Laden Sie die Datei [Konstantlicht_nur_p.zcos]() und passen Sie den P-Parameter in `PID`-Baustein an und beobachten Sie die Reaktion des Systems
+* Laden Sie die Datei [Konstantlicht_nur_p.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_1/Konstantlicht_nur_p.zcos) und passen Sie den P-Parameter in `PID`-Baustein an und beobachten Sie die Reaktion des Systems
 * Welche Komponenten werden durch welche Bausteine dargestellt?
 
 ![](images/Konstantlichtregelung_nur_p.png)
+
+---
+
+### ✔️ Lösung
+
+![](images/Konstantlicht_P.png)
+
+* Bleibende Regelabweichung. Die 100 Lux werden nie erreicht
+* Schwingen des Systems
+* Sprunghaftes Verhalten (wegen Delay)
 
 ---
 
@@ -86,13 +96,13 @@ def p-regler(e, k_p):
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 ![bg right:66% height:600](images/AufgabeRegler.svg)
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 
 
@@ -124,11 +134,9 @@ def regler (e, letzte_drehzahl):
 
 ## ✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler
 
-Entfernen Sie den I und D-Anteil des PID-Reglers und beobachten Sie die Reaktion des Systems
+- Entfernen Sie den I und D-Anteil des PID-Reglers in [demo_watertank.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_3/demo_watertank.zcos) und beobachten Sie die Reaktion des Systems
+![](images/demo_watertank.png)
 
-![](images/PID_internal.zcos.png)
-
-[](https://help.scilab.org/PID)
 
 ---
 
@@ -195,6 +203,6 @@ Entfernen Sie den I und D-Anteil des PID-Reglers und beobachten Sie die Reaktion
 
 ✍️ Wie sieht die Reaktion aus?
 
-![height:600](images/d-regler-Aufgabe.svg)
+![height:400](images/d-regler-Aufgabe.svg)
 
 

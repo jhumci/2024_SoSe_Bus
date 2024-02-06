@@ -90,7 +90,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 * Abrufen eines Slaves:
   * Übertragungszeit (wie lange belegt das Signal die Leitung):
@@ -431,6 +431,7 @@ mit $t_s$ Signallaufzeit,
 
 ---
 
+### ✔️ Lösung 
 * Wenn der defekte Schalter wirklich dauerhaft sendet, dann wird der Bus durch den defekten Schalter blockiert
 * Beim Master-Slave Verfahren würde der Master den defekten Schalter erkennen und die Leuchten auf `leuchtend` schalten und in der Folge den defekten Schalter nicht mehr ansprechen
 

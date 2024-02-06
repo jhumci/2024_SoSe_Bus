@@ -225,7 +225,9 @@ stateDiagram
 
 ---
 
-### Lösung 
+### [✔️ Lösung](Aufgaben\2_2_1)
+
+<!-- _color: black -->
 
 ??? optional-class "Lösung anzeigen"
     ```python
@@ -238,7 +240,7 @@ stateDiagram
 
 * Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert
 * Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden
-* Durch Loslassen wir die Richung umgekehrt
+* Durch Loslassen wir die Richtung umgekehrt
 * Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden
 * Zeichen Sie eine State Machine, die dieses Verhalten beschreibt
 
@@ -264,12 +266,26 @@ stateDiagram
     D --> C: loslassen
 ```
 
+### [✔️ Lösung](Aufgaben\2_2_2)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_2_2\code.py"
+    ```
 
 ---
 
 ## 🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
 
 * Implementieren Sie einen Dimmer
+
+---
+
+### ❌ Lösung
+
+> Für diese Zusatzaufgabe gibt es noch keine Muster-Lösung. Senden Sie mir gerne Ihre Lösung zu, damit ich sie hier veröffentlichen kann. Für richtig gelöste Aufgaben gibt es 1% Bonus auf die Klausur.
 
 ---
 
@@ -307,8 +323,9 @@ $L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
 
 ![bg right:33% h:720](images/Tageslichtschaltung.png)
 
-* Wir vereinfachen die Tagelichtschaltung, indem wir die Zeitparameter weglassen
+* Wir vereinfachen die Tageslichtschaltung, indem wir die Zeitparameter weglassen
 * Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
+* Setzen Sie `L_MAN` zunächst auf `False` und schließen Sie dafür nur einen Button an, wenn Sie mit der restlichen Schaltung fertig sind
 
 ---
 
@@ -333,3 +350,32 @@ $L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
 
 $$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})$$
 
+---
+
+### Hinweise 
+
+- Baue Sie auf Aufgaben 2_1_3 und 2_1_5 auf
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_3\code.py"
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\code.py"
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\mappings.py"
+
+
+---
+
+### [✔️ Lösung](Aufgaben\2_2_4)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_2_4\code.py"
+    ```

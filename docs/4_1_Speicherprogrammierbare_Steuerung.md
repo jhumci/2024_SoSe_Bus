@@ -200,7 +200,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ---
 
-### 🧠 Aufbau einer SPS
+### Aufbau einer SPS
 
 ![bg h:400 right:40%](images/S7CPU3V2.png)
 
@@ -663,6 +663,13 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ---
 
+###  ✔️ Lösung
+
+* $2^{12}=4096$ diskrete Helligkeitsstufen
+* $\Delta U_{min}=\frac{U_{max}-U_{min}}{n}=\frac{10-0 \text{ V}}{4096}=2.44 \text{ mV}$
+
+---
+
 ### Analoger Eingang
 
 ![height:400](images/EL3024.png)
@@ -711,7 +718,7 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 * mit einem Stromsignal (4...20mA) kann ein Drahtbruch sicher erkannt werden
 * Entsprechende Klemme z.B. EL3021 | EtherCAT-Klemme, 1-Kanal-Analog-Eingang, Strom, 4…20 mA, 12 Bit, differentiell
@@ -768,12 +775,3 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 * Für Digitale und Analoge Ausgänge gelten sie selben Prinzipien
 
-
----
-
-### 🎯 Lernfortschritt
-
-Nach dieser Einheit sind Sie in der Lage dazu
-- zwischen digitalen und analogen Ein- und Ausgängen zu unterscheiden
-- geeignete Ein- und Ausgänge zu Sensoren auszuwählen
-- und anzuschließen

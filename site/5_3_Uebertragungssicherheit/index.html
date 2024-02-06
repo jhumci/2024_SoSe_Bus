@@ -91,49 +91,35 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#informationsgehalt-von-telegrammen">🧠 Informationsgehalt von Telegrammen</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#datensicherung">🧠 Datensicherung</a>
+    <li class="toctree-l2"><a class="reference internal" href="#datensicherung">Datensicherung</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#fehlerarten">🧠 Fehlerarten</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fehlermae">🧠 Fehlermaße</a>
+    <li class="toctree-l3"><a class="reference internal" href="#fehlermae">Fehlermaße</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erkennen-von-ubertragungsfehlern">Erkennen von Übertragungsfehlern</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#erkennen-von-ubertragungsfehlern">🧠 Erkennen von Übertragungsfehlern</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#erkennen-von-ubertragungsfehlern_1">🧠 Erkennen von Übertragungsfehlern</a>
+    <li class="toctree-l2"><a class="reference internal" href="#hamming-abstand">Hamming-Abstand</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#hamming-abstand">🧠 Hamming-Abstand</a>
+    <li class="toctree-l3"><a class="reference internal" href="#anwendung-des-hamming-abstand-zur-fehlererkennung">Anwendung des Hamming-Abstand zur Fehlererkennung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-5_3_1-drehschalter">✍️ Aufgabe 5_3_1: Drehschalter</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#beachte-bei-den-strings-zahlt-nicht-wie-weit-die-buchstaben-auseinander-liegen">Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#anwendung-des-hamming-abstand-zur-fehlererkennung">🧠 Anwendung des Hamming-Abstand zur Fehlererkennung</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#anwendungsbeispiel">🧠 Anwendungsbeispiel</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#anwendungsbeispiel-und-aufgabe">🧠 Anwendungsbeispiel und Aufgabe</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#losung">🧠 Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#hamming-distanz-bei-bus-systemen">Hamming-Distanz bei Bus-Systemen</a>
+    <li class="toctree-l2"><a class="reference internal" href="#paritatsbit-zur-fehlererkennung">Paritätsbit zur Fehlererkennung</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#paritatsbit-zur-fehlererkennung">🧠 Paritätsbit zur Fehlererkennung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#blocksicherung">🧠 Blocksicherung</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#gerhard-schnell-bernhard-wiedemann">Gerhard Schnell &amp; Bernhard Wiedemann</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lernfortschritt">🎯 Lernfortschritt</a>
+    <li class="toctree-l2"><a class="reference internal" href="#blocksicherung">Blocksicherung</a>
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Gebudeautomation/">Bussysteme in der Gebäudeautomation</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -165,33 +151,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="3-ubertragungssicherheit">3 Übertragungssicherheit</h2>
-<h3 id="lernziele">🎯 Lernziele</h3>
+                <style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<h1 id="53-ubertragungssicherheit">5.3 Übertragungssicherheit</h1>
+<h2 id="lernziele">🎯 Lernziele</h2>
 <p>Nach dieser Einheit sind Sie in der Lage dazu
 * verschiedene Fehlertypen bei der Datenübertragung unterscheiden
 * Maßnahmen zur Erkennung und Behebung von Übertragungsfehlern beschreiben
-* die Hammingdistanz verschiedener Codes ermitteln</p>
+* die Hamming-Distanz verschiedener Codes ermitteln</p>
 <hr />
-<h3 id="informationsgehalt-von-telegrammen">🧠 Informationsgehalt von Telegrammen</h3>
+<h2 id="informationsgehalt-von-telegrammen">🧠 Informationsgehalt von Telegrammen</h2>
 <p><img alt="" src="../images/2022-05-10-13_47_26-Window.webp" /></p>
 <ul>
-<li>Steuerfeld: Priorität der Nachricht</li>
-<li>Quelladresse: Absender (vgl. MAC-Adresse)</li>
-<li>Zieladresse: Empfänger (vgl. MAC-Adresse)</li>
-<li>Routing Zähler: Zählt wie oft über Koppler gesendet</li>
-<li>Nutzinformation: Eigentlich Information (z.B. Messwerte eines Sensor)</li>
-<li>Sicherungs-Feld: Wurden die Daten richtig übertragen (vgl. Hash)</li>
+<li>Unterscheidet sich je nach Bussystem, üblich sind unter anderem:</li>
+<li><strong>Steuerfeld</strong>: Priorität der Nachricht</li>
+<li><strong>Quelladresse</strong>: Absender (vgl. MAC-Adresse)</li>
+<li><strong>Zieladresse</strong>: Empfänger (vgl. MAC-Adresse)</li>
+<li><strong>Routing Zähler</strong>: Zählt wie oft über Koppler gesendet</li>
+<li><strong>Nutzinformation</strong>: Eigentlich Information (z.B. Messwerte eines Sensor)</li>
+<li><strong>Sicherungs-Feld</strong>: Wurden die Daten richtig übertragen (vgl. Hash)</li>
 </ul>
 <hr />
-<h3 id="datensicherung">🧠 Datensicherung</h3>
+<h2 id="datensicherung">Datensicherung</h2>
 <p><div class="highlight"><pre><span></span><code>Gesendet:    010000010000001110000000
 Empfangen 1: 010000110000001110000000
 Empfangen 2: 01000010000001110000000
 </code></pre></div>
-- wie stellt man sicher, dass keine Daten <strong>verloren</strong> gehen 
+- Bit können aus verschiedenen Gründen verloren gehen (z.B. Störung durch Elektromagnetische Felder, Probleme mit der Taktung, etc.)
+* wie stellt man sicher, dass keine Daten <strong>verloren</strong> gehen 
 oder <strong>korrumpiert</strong> werden?
-  - Schicht 1: <strong>technische Vorkehrungen</strong> die Wahrscheinlichkeit von Störungen, z. B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
-  - Schicht 2: <strong>Überwachung</strong> der Nachricht auf Fehler und Gegenmaßnahmen</p>
+  * OSI-Schicht 1: <strong>technische Vorkehrungen</strong> die Wahrscheinlichkeit von Störungen, z. B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
+  * OSI-Schicht 2: <strong>Überwachung</strong> der Nachricht auf Fehler und Gegenmaßnahmen</p>
 <hr />
 <h4 id="fehlerarten">🧠 Fehlerarten</h4>
 <ul>
@@ -201,7 +196,7 @@ oder <strong>korrumpiert</strong> werden?
 </ul>
 <p><img alt="bg right:33% height:300" src="../images/Fehlertypen.svg" /></p>
 <hr />
-<h4 id="fehlermae">🧠 Fehlermaße</h4>
+<h3 id="fehlermae">Fehlermaße</h3>
 <ul>
 <li><strong>Bitfehlerrate</strong> <span class="arithmatex">\(p\)</span>
   <span class="arithmatex">\(p = \frac{Anzahl \ der \ fehlerhaften \ Bits}{Gesamtzahl \ der \ gesendeten \ Bits}\)</span></li>
@@ -212,17 +207,16 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
 <li>realistischer Wert <span class="arithmatex">\(p = 10^{-4}\)</span></li>
 </ul>
 <hr />
-<h3 id="erkennen-von-ubertragungsfehlern">🧠 Erkennen von Übertragungsfehlern</h3>
+<h3 id="erkennen-von-ubertragungsfehlern">Erkennen von Übertragungsfehlern</h3>
 <ul>
 <li>Ob Fehler erkennbar sind, hängt auch davon ab, wie die Information codiert wurde</li>
-<li>Code: Deutsche Sprache</li>
+<li>Code: z.B. Deutsche Sprache</li>
 <li>Fehler ist offensichtlich: <code>Mein</code>, <code>Tein</code></li>
 <li>Fehler ist nicht erkennbar: <code>Mein</code>, <code>Dein</code></li>
-<li>Fehler ist erkennbar und korrigierbar: <code>Gxbäude</code>, <code>Gebäude</code>
-<img alt="bg right height:300" src="../images/Fehlertypen.svg" /></li>
+<li>Fehler ist erkennbar und korrigierbar: <code>Gxbäude</code>, <code>Gebäude</code></li>
 </ul>
+<p><img alt="bg right:40% height:300" src="../images/Fehlertypen.svg" /></p>
 <hr />
-<h3 id="erkennen-von-ubertragungsfehlern_1">🧠 Erkennen von Übertragungsfehlern</h3>
 <ul>
 <li>Codes können so definiert, werden, dass das Auftreten einzelner Übertragungsfehler offensichtlich wird.</li>
 <li><code>00</code>: Schalter <strong>ein</strong></li>
@@ -231,11 +225,11 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
 <li><code>11</code>: Schalter <strong>aus</strong></li>
 <li>Die Schalterstellung kann nicht verwechselt werden (bei einem Ein-Bit-Fehler) </li>
 </ul>
-<p><img alt="bg right height:300" src="../images/Fehlertypen.svg" /></p>
+<p><img alt="bg right:40% height:300" src="../images/Fehlertypen.svg" /></p>
 <hr />
-<h4 id="hamming-abstand">🧠 Hamming-Abstand</h4>
+<h2 id="hamming-abstand">Hamming-Abstand</h2>
 <ul>
-<li>Unter dem Hamming-Abstand eines Codes versteht man das <strong>Minimum aller Abstände</strong> zwischen verschiedenen Wörtern innerhalb des Codes</li>
+<li>Unter dem Hamming-Abstand <span class="arithmatex">\(H\)</span> eines Codes versteht man das <strong>Minimum aller Abstände</strong> zwischen verschiedenen Wörtern innerhalb des Codes</li>
 <li><strong>Abstand</strong>: An wie vielen Stellen muss ein Wort verändert werden</li>
 <li><span class="arithmatex">\(H(\{ 00,11\})=2\)</span></li>
 <li><span class="arithmatex">\(H(\{ 00,01,10,11\})=1\)</span></li>
@@ -243,18 +237,19 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
 <li><span class="arithmatex">\(H(\{ '12345','13349'\})=2\)</span></li>
 <li><span class="arithmatex">\(H(\{ 'Haus','Baum', 'Tier'\})=2\)</span></li>
 </ul>
-<h6 id="beachte-bei-den-strings-zahlt-nicht-wie-weit-die-buchstaben-auseinander-liegen">Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen</h6>
+<p><a href="Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen">Quelle</a></p>
 <hr />
-<h5 id="anwendung-des-hamming-abstand-zur-fehlererkennung">🧠 Anwendung des Hamming-Abstand zur Fehlererkennung</h5>
+<h3 id="anwendung-des-hamming-abstand-zur-fehlererkennung">Anwendung des Hamming-Abstand zur Fehlererkennung</h3>
 <ul>
 <li>Ein Code besteht aus folgenden drei Wörtern:</li>
 <li><code>aus</code>, <code>ein</code>, <code>sie</code></li>
-<li>Der kleinste der drei Abstände ist 2, also ist der Hamming-Abstand des Codes ebenfalls gleich <span class="arithmatex">\(h=2\)</span> (<code>ein</code>, <code>sie</code>).</li>
-<li>Bei Codes mit Hamming-Abstand <code>h=2</code> <strong>können alle <code>1</code>-Bit-Fehler erkannt werden.</strong> D.h. der veränderte Code kann mit keinem anderen Wort verwechselt werden (<code>_ie</code>, <code>s_e</code>, <code>si_</code>)</li>
+<li>Der kleinste der drei Abstände ist 2, also ist der Hamming-Abstand des Codes ebenfalls gleich <span class="arithmatex">\(h=2\)</span> (zwischen <code>ein</code>, <code>sie</code>).</li>
+<li>Bei Codes mit Hamming-Abstand <code>h=2</code> <strong>können alle <code>1</code>-Bit-Fehler erkannt werden.</strong> </li>
+<li>D.h. der veränderte Code kann mit keinem anderen Wort verwechselt werden (<code>_ie</code>, <code>s_e</code>, <code>si_</code>)</li>
 <li>Ein  <code>2</code>-Bit-Fehler kann nicht immer erkannt werden  (<code>ein</code>, <code>_i_</code>, <code>sie</code>)</li>
 </ul>
 <hr />
-<h5 id="anwendungsbeispiel">🧠 Anwendungsbeispiel</h5>
+<h2 id="aufgabe-5_3_1-drehschalter">✍️ Aufgabe 5_3_1: Drehschalter</h2>
 <ul>
 <li>Drehschalter <strong>vier Einstellmöglichkeiten</strong></li>
 <li>werden als binäre Zahl (Codewort) an einen Empfänger übermittelt:  </li>
@@ -262,19 +257,17 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
 <li>Empfänger erhält das Codewort, hat sonst keine Möglichkeit, die Schalterstellung zu überprüfen</li>
 </ul>
 <p><img alt="bg right" src="../images/Drehschalter.png" /></p>
-<h6 id="httpsatrs-onlinecomwebpnockenschalter2212822">https://at.rs-online.com/web/p/nockenschalter/2212822</h6>
+<p><a href="https://at.rs-online.com/web/p/nockenschalter/2212822">Quelle</a></p>
 <hr />
-<h5 id="anwendungsbeispiel-und-aufgabe">🧠 Anwendungsbeispiel und Aufgabe</h5>
 <ul>
 <li><code>00</code>, <code>01</code>, <code>10</code>, <code>11</code></li>
 <li>Hamming-Abstand zwischen den vier Worten ist jeweils 1, </li>
 <li>d. h. falls durch einen Fehler nur ein Bit umgekehrt wird, erhält der Empfänger zwar ein anderes, aber ebenso gültiges Codewort</li>
-<li>✍️ <strong>Aufgabe</strong></li>
 <li>Angenommen es treten nur Einfachfehler auf (es wird also maximal ein Bit geflippt)</li>
 <li>Kann man einen binären Code entwickeln, der es nicht nur ermöglicht Fehler zu erkennen, sondern diese auch zu beheben?</li>
 </ul>
 <hr />
-<h5 id="losung">🧠 Lösung</h5>
+<h3 id="losung">Lösung</h3>
 <ul>
 <li>Um Einfachfehler zu korrigieren benötigt man einen Code, der einen Hamming-Abstand ≥ 3 hat: </li>
 <li>z. B. <code>11000000</code>, <code>00110000</code>, <code>00001100</code>,<code>00000011</code> .</li>
@@ -284,19 +277,9 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos</li>
 <li><code>10110000</code> --&gt; <code>00110000</code></li>
 </ul>
 <hr />
-<h4 id="hamming-distanz-bei-bus-systemen">Hamming-Distanz bei Bus-Systemen</h4>
-<ul>
-<li><span class="arithmatex">\(h\)</span> Maß für die Störfestigkeit eines Codes </li>
-<li>
-<p>Bei Feldbus-Systemen ist <span class="arithmatex">\(h = 4\)</span> üblich, 
-für sehr hohe Sicherheitsbedürfnisse <span class="arithmatex">\(h = 6\)</span>.</p>
-</li>
-<li>
-<p>Damit nimmt die jedoch <strong>Telegrammübertragungseffizienz</strong> ab. Es müssen die eigentlich Informationen (z.b. 4 Werte eines Schalters) durch längere Bitfolgen codiert werden.</p>
-</li>
-</ul>
-<hr />
-<h4 id="paritatsbit-zur-fehlererkennung">🧠 Paritätsbit zur Fehlererkennung</h4>
+<h2 id="paritatsbit-zur-fehlererkennung">Paritätsbit zur Fehlererkennung</h2>
+<!-- class: white -->
+
 <ul>
 <li>Wir senden eine Zahl mit 4 Bit, z. B. <code>0010</code> (<span class="arithmatex">\(2_{10}\)</span>)</li>
 <li>Zahl der positiven Bits im Binärcode ist ungerade </li>
@@ -310,37 +293,32 @@ und mit übertragen</p>
 <li>Original:   <code>0010</code> - <code>E=1</code> - erwartet <code>E=1</code></li>
 <li>1 Fehler:   <code>0011</code> - <code>E=1</code> - erwartet <code>E=0</code></li>
 <li>1 Fehler:   <code>0010</code> - <code>E=0</code> - erwartet <code>E=1</code></li>
-<li>1 Fehler:   <code>0110</code> - <code>E=1</code> - erwartet <code>E=1</code></li>
+<li>2 Fehler:   <code>1010</code> - <code>E=1</code> - erwartet <code>E=1</code></li>
 </ul>
 <p><img alt="bg right:25% width:300" src="../images/800px-Code_Even_dualergaenzt.svg.png" /></p>
 <hr />
-<h4 id="blocksicherung">🧠 Blocksicherung</h4>
+<h2 id="blocksicherung">Blocksicherung</h2>
 <ul>
-<li>Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit eingefügt</li>
-<li>Vorsicht: Hier wird <span class="arithmatex">\(P\)</span> selbst nicht mitgezählt</li>
+<li>Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit </li>
 </ul>
 <p><img alt="height:350" src="../images/Blocksicherung.png" /></p>
-<h6 id="gerhard-schnell-bernhard-wiedemann">Gerhard Schnell &amp; Bernhard Wiedemann</h6>
+<p><a href="Gerhard Schnell &amp; Bernhard Wiedemann">Quelle</a></p>
 <hr />
-<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie1.JPG" /></p>
+<p><img alt="height:700" src="../images/BeispielBlocksicherung/Folie1.JPG" /></p>
 <hr />
-<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie2.JPG" /></p>
+<p><img alt="height:700" src="../images/BeispielBlocksicherung/Folie2.JPG" /></p>
 <hr />
-<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie3.JPG" /></p>
+<p><img alt="height:700" src="../images/BeispielBlocksicherung/Folie3.JPG" /></p>
 <hr />
-<p><img alt="height:700" src="images/BeispielBlocksicherung/Folie4.JPG" /></p>
+<p><img alt="height:700" src="../images/BeispielBlocksicherung/Folie4.JPG" /></p>
 <hr />
-<h3 id="lernfortschritt">🎯 Lernfortschritt</h3>
-<p>Nach dieser Einheit sind Sie in der Lage dazu
-* verschiedene Fehlertypen bei der Datenübertragung unterscheiden
-* Maßnahmen zur Erkennung und Behebung von Übertragungsfehlern beschreiben
-* die Hammingdistanz verschiedener Codes ermitteln</p>
+<p><a href="https://www.youtube.com/watch?v=X8jsijhllIA">▶️ 3Blue1Brown: A discovery-oriented introduction to error correction code</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../5_2_Buszugriffsverfahren/" class="btn btn-neutral float-left" title="Buszugriffsverfahren"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" class="btn btn-neutral float-right" title="Bussysteme in der Gebäudeautomation">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../5_4_Bussysteme_in_der_Gebudeautomation/" class="btn btn-neutral float-right" title="Bussysteme in der Gebäudeautomation">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -366,7 +344,7 @@ und mit übertragen</p>
       <span><a href="../5_2_Buszugriffsverfahren/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../5_4_Bussysteme_in_der_Gebudeautomation/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

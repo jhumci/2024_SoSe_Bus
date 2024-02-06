@@ -261,6 +261,7 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 
 
 [Quelle](Ziegler, John G., and Nathaniel B. Nichols. "Optimum settings for automatic controllers." trans. ASME 64.11 (1942))
+
 ---
 
 ### Einstellregeln nach Ziegler und Nichols (III)
@@ -277,8 +278,23 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 
 ---
 
-## ✍️ Aufgabe 3_2_2:
+## ✍️ Aufgabe 3_3_2:
 
 ![](images/ReglerEinstellen.png)
 
-Kalibierten Sie den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: [Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing)
+- Kalibrieren Sie den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: [Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing)
+
+---
+
+## 🤓 ✍️ Aufgabe 3_3_2:
+
+- Kalibrieren Sie das folgende [System](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied.zcos) nach der Methode von Ziegler und Nichols
+
+---
+
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied_Loesung.zcos)

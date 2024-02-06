@@ -1,4 +1,5 @@
 import mappings
+import json
 
 class Sensor:
     def __init__(self, name, unit, selected_mapping):
@@ -22,7 +23,15 @@ class Sensor:
         else:
             return sum(self.measurements) / len(self.measurements)
         
-
-            
+    def prepare_data(self):
+        dict_representation = self.__dict__
+        dict_representation.pop("measurements")
+        dict_representation.pop("name")
+        dict_representation.pop("mapping")
+        # Vorsicht json.dumps() erstellt einen String, json.dump() schreibt eine Datei!
+        json_representation = json.dumps(dict_representation)
+        return json_representation.encode("ascii")
+    
     def print_data(self):
         print("This " + self.name + "returns data in " + self.unit)
+

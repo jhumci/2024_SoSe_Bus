@@ -112,6 +112,7 @@ theme: lemon
 
 ---
 
+<!-- _class: white-->
 
 ![](images/P-controller-symbol-1.svg)
 
@@ -146,11 +147,25 @@ theme: lemon
 
 ---
 
+## Simulation mit scilab xcos
+
+- Installieren Sie [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
+- Xcos ist ein grafischer Editor für Blockschaltbilder
+- die Funktionalität entspricht in etwa matlab simulink
+- allerdings ist die Software open source und kostenlos
+
+![](images/scilabhome.png)
+
+---
+
 ## ✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied
 
+![h:400](images/xcos_start.webp)
 
-- Öffnen Sie [Aufgaben\3_1_0](Aufgaben\3_1_0) in [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
+- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
 - Testen Sie verschiedene Werte für den P-Wert beim `PID`-Block und die Totzeit beim `Continuous fix delay`-Block
+- Ersetzen Sie den `PID`-Block durch einen `GAIN_f`-Block
+
 
 ---
 
@@ -246,34 +261,43 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
   return raum_temp_in_c
 ```
 
----
 
-## Simulation mit scilab xcos
-
-- Installieren Sie [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
-- Xcos ist ein grafischer Editor für Blockschaltbilder
-- die Funktionalität entspricht in etwa matlab simulink
-- allerdings ist die Software open source und kostenlos
-
-![](images/scilabhome.png)
 
 ---
 
 ## ✍️ Aufgabe 3_1_1: Wassertank ohne Steuerung
 
-- passen Sie den Inflow an in [](Aufgaben\3_1_1) so an, dass der Tank langsamer überläuft
+- Bauen Sie das folgende Modell aus `CONST`, `INTEGRAL_m`, `CSCOPE` und `CLOCK_c` nach
+- Modellieren Sie einen 100 l fassenden Wassertank, der zu Begin mit 10 l gefüllt ist und in den 5 l pro Minute einfließen
 
-![](images/xcos_simple.png)
+![h:400](images/xcos_simple.png)
 
+---
 
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.zcos)
 
 ---
 
 ## ✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung
 
 
-- passen Sie den Threshold in `Dynamic` in [Aufgaben\3_1_2](Aufgaben\3_1_2) so an, dass die LED bei einer Helligkeit von 220 Lux angeht
-![](images/Tageslichtschaltung_xcos.png)
+- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos) so an, dass die LED bei einer Helligkeit von 220 Lux angeht
+
+![h:400](images/Tageslichtschaltung_xcos_.png)
+
+---
+
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos)
 
 ---
 
@@ -390,6 +414,15 @@ class zweipunkt_hysterese():
 
 ## ✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung
 
-- Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter 
+- Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS`
 
 ![](images/TagesLichtHystere.png)
+
+---
+
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_3/3_1_3_Tageslichtschaltung_Hysterese.zcos)

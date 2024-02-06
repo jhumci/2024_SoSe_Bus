@@ -129,7 +129,7 @@ bOutLicht1 := bInAnwesenheit1 AND bInDunkelheit2; // Logische Verknüpfung (nur 
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 ```SPS
 PROGRAM MAIN // Main Programm wird definiert
@@ -211,7 +211,7 @@ END_IF;
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 ```PASCAL
 IF (bInS1 OR bInS2) THEN
@@ -261,6 +261,8 @@ class Counter:
 ```
     
 ---
+
+### ✔️ Lösung
 
 ```Python
 class Counter:
@@ -412,12 +414,21 @@ Nach dieser Einheit sind Sie in der Lage dazu
   ```
   E0.1 = TRUE
   E0.2 = TRUE
-  E0.3 = FALSE
-  E0.4 = TRUE
   ```
+
 - Was ist ```A0.1``` ?
 
+---
 
+### ✔️ Lösung 
+
+* `E0.1` wird negiert
+* `E0.2` wird negiert
+* `not(E0.1) and not(E0.2) = False` wird negiert
+* Ausgang des `&`-Bausteins wird negiert
+* `A0.1 = True` 
+
+--- 
 
 ![bg width:700 right:40%](images/und-vor-oder-verknuepfung-92.jpg)
 
@@ -466,6 +477,8 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 
 ---
+
+### ✔️ Lösung
 
 ![h:500](images/ToFbeispiel.png)
 
@@ -532,9 +545,15 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 - Zeichnen Sie das Ausgangssignal 
   - einer Ausschaltverzögerung TOF mit ```PT = 2s```
-  -  eines Impulsgenerators TP mit ```PT = 0.5s```
+  - eines Impulsgenerators TP mit ```PT = 0.5s```
 
 ![height:350](images/Impulsvorlage.svg)
+
+---
+
+### ✔️ Lösung
+
+![height:350](images/ImpulsvorlageL.png)
 
 ---
 

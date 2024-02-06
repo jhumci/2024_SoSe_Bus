@@ -314,6 +314,17 @@ while True:
 
 ---
 
+### [✔️ Lösung](Aufgaben\2_1_3\code.py)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_3\code.py"
+    ```
+
+---
+
 #### Relais und Schütze
 
 * Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend ($P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}$)
@@ -336,31 +347,6 @@ while True:
 
 [Quelle](https://www.elektronik-kompendium.de/sites/kom/0401111.htm)
 
----
-
-### [✔️ Lösung](Aufgaben\2_1_3\code.py)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_3\code.py"
-    ```
-
-### [✔️ Lösung](Aufgaben\2_1_4\code.py)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_4\code.py"
-    ```
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_4\plot.ipynb"
-    ```
-
 
 ---
 
@@ -369,6 +355,8 @@ while True:
 * Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für $1\,\text{s}$ leuchtet und dann langsam über $5\,\text{s}$ ausgeht
 
 ---
+
+### Beispielcode für PWM
 
 ```python
 import pwmio
@@ -382,6 +370,17 @@ while True:
     for cycle in range(65534, 0, -1):  # Cycles through the PWM range backwards from 65534 to 0
         pwm.duty_cycle = cycle  # Cycles the LED pin duty cycle through the range of values
 ```
+
+---
+
+### [✔️ Lösung](Aufgaben\2_1_4)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_4\code.py"
+    ```
 
 ---
 
@@ -495,12 +494,17 @@ while True:
 
 ---
 
-### Lösung 
+### [✔️ Lösung](Aufgaben\2_1_5\code.py)
 
-??? optional-class "Lösung anzeigen"
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
     ```python
-    --8<-- "Aufgaben\2_1_4\code.py"
-    ```
+    --8<-- "Aufgaben\2_1_5\code.py"
+
+??? optional-class "💡 anzeigen"
+    ```python
+    --8<-- "Aufgaben\2_1_5\mappings.py"
 
 ---
 

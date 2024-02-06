@@ -140,7 +140,7 @@ theme: lemon
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 ![](images/bit-vs-baud-Aufgabe.png)
 
@@ -183,7 +183,7 @@ theme: lemon
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 ![h:200](images/Codierung.png)
 

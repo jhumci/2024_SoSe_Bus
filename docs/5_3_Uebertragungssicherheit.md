@@ -158,7 +158,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 
 ---
 
-### Lösung
+### ✔️ Lösung
 
 - Um Einfachfehler zu korrigieren benötigt man einen Code, der einen Hamming-Abstand ≥ 3 hat: 
   * z. B. ```11000000```, ```00110000```, `00001100`,`00000011` .

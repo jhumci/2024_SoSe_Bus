@@ -88,13 +88,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_1-implementierung-eines-treppenhauslichts">✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">❌ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#verknupfungssteuerungen">Verknüpfungssteuerungen</a>
         <ul>
@@ -103,6 +111,10 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_4-implementierung-einer-vereinfachten-tageslichtschaltung">✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hinweise">Hinweise</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -137,7 +149,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Geb%C3%A4udeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Gebudeautomation/">Bussysteme in der Gebäudeautomation</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Smart Metering</span></p>
@@ -171,7 +183,7 @@
               
                 <!-- paginate: true -->
 
-<h1 id="21-steuerung">2.1 Steuerung</h1>
+<h1 id="22-steuerung">2.2 Steuerung</h1>
 <hr />
 <h2 id="ursprunge-der-steuerungstechnik-und-automatisierung">Ursprünge der Steuerungstechnik und Automatisierung</h2>
 <ul>
@@ -287,7 +299,7 @@
 <li>Ist die Ausgabe abgeschlossen, wechselt der Automat wieder in den Zustand <code>Auswahl anfordern</code></li>
 <li>Wird die Bezahlung abgebrochen, wechselt der Automat in den Zustand <code>Rückgeld herausgeben</code> und dann wieder in den Zustand <code>Auswahl anfordern</code></li>
 </ul>
-<p><img alt="bg right:35% w:450" src="images/state_machice_cola.svg" /></p>
+<p><img alt="bg right:35% w:450" src="../images/state_machice_cola.svg" /></p>
 <hr />
 <h4 id="deterministic-finite-state-machine-endlicher-automat">(Deterministic) Finite State Machine (Endlicher Automat)</h4>
 <ul>
@@ -362,7 +374,9 @@
     G --&gt; C: Taster wird gedrückt   
 </code></pre></div>
 <hr />
-<h3 id="losung">Lösung</h3>
+<h3 id="losung"><a href="Aufgaben\2_2_1">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
 <details class="optional-class">
 <summary>Lösung anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
@@ -439,7 +453,7 @@
 <ul>
 <li>Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
 <li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
-<li>Durch Loslassen wir die Richung umgekehrt</li>
+<li>Durch Loslassen wir die Richtung umgekehrt</li>
 <li>Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
 <li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
 </ul>
@@ -458,11 +472,24 @@
     C --&gt; D: loslassen
     D --&gt; C: loslassen
 </code></pre></div>
+<h3 id="losung_1"><a href="Aufgaben\2_2_2">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</details>
 <hr />
 <h2 id="aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</h2>
 <ul>
 <li>Implementieren Sie einen Dimmer</li>
 </ul>
+<hr />
+<h3 id="losung_2">❌ Lösung</h3>
+<blockquote>
+<p>Für diese Zusatzaufgabe gibt es noch keine Muster-Lösung. Senden Sie mir gerne Ihre Lösung zu, damit ich sie hier veröffentlichen kann. Für richtig gelöste Aufgaben gibt es 1% Bonus auf die Klausur.</p>
+</blockquote>
 <hr />
 <h2 id="verknupfungssteuerungen">Verknüpfungssteuerungen</h2>
 <ul>
@@ -514,8 +541,9 @@
 <h2 id="aufgabe-2_2_4-implementierung-einer-vereinfachten-tageslichtschaltung">✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung</h2>
 <p><img alt="bg right:33% h:720" src="../images/Tageslichtschaltung.png" /></p>
 <ul>
-<li>Wir vereinfachen die Tagelichtschaltung, indem wir die Zeitparameter weglassen</li>
+<li>Wir vereinfachen die Tageslichtschaltung, indem wir die Zeitparameter weglassen</li>
 <li>Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung</li>
+<li>Setzen Sie <code>L_MAN</code> zunächst auf <code>False</code> und schließen Sie dafür nur einen Button an, wenn Sie mit der restlichen Schaltung fertig sind</li>
 </ul>
 <hr />
 <table>
@@ -627,6 +655,103 @@
 </tbody>
 </table>
 <div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
+<hr />
+<h3 id="hinweise">Hinweise</h3>
+<ul>
+<li>Baue Sie auf Aufgaben 2_1_3 und 2_1_5 auf</li>
+</ul>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p>```python
+import time
+import board
+import digitalio</p>
+<p>led_pin = board.GP1      # Replace with the GPIO pin connected to your LED</p>
+<p>led = digitalio.DigitalInOut(led_pin)
+led.direction = digitalio.Direction.OUTPUT</p>
+<p>while True:
+    led.value = not led.value  # Toggle the LED state
+    time.sleep(0.2)  # Add a small delay for debouncing
+    time.sleep(0.1)</p>
+</details>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p>```python
+import board
+import analogio
+import time
+from mappings import map_quat</p>
+<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
+<p>ldr = analogio.AnalogIn(board.A2)</p>
+<h1 id="wiederholung">Wiederholung</h1>
+<p>while True:
+    # ADC als Dezimalzahl lesen
+    read = ldr.value
+    # Ausgabe in der Kommandozeile/Shell
+    print("ADC:", read)
+    print("E in Lux", map_quat(read))
+    # Warten
+    time.sleep(1)</p>
+</details>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p>```python
+def map_lin(z):
+    E_max = 1
+    E_min = 0
+    z_max = 65535
+    z_min = 0
+    beta_0 = E_min
+    beta_1 = (E_max - E_min) / (z_max - z_min)
+    return beta_0 + beta_1 * z</p>
+<p>def map_quat(x):
+    s = 44000
+    a = 0.0015
+    return ((x-s)<em>a) </em>*2</p>
+</details>
+<hr />
+<h3 id="losung_3"><a href="Aufgaben\2_2_4">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+<span class="c1"># LED</span>
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+<span class="n">PAR_SETPT</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">PAR_SETPT</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="c1"># Button</span>
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="n">L_MAN</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">L_SET</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">P_ACT</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">H_ROOM</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">H_ROOM</span><span class="p">))</span>
+
+    <span class="n">PAR_SETPT</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_ACT</span> <span class="ow">and</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">H_ROOM</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">L_SET</span><span class="p">)</span> <span class="ow">or</span> <span class="n">L_MAN</span><span class="p">)</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
               
             </div>
           </div><footer>
