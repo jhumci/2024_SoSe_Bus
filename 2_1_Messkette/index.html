@@ -99,6 +99,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten">Ausgang verschalten</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#ausgang-verschalten_1">Ausgang verschalten</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#relais-und-schutze">Relais und Schütze</a>
     </li>
@@ -106,14 +108,14 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_3">✔️ Lösung</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#beispielcode-fur-pwm">Beispielcode für PWM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_3">✔️ Lösung</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#analoge-eingange">Analoge Eingänge</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#analog-digital-wandler">Analog-Digital-Wandler</a>
@@ -132,13 +134,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_4">Lösung</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
     </li>
         </ul>
     </li>
@@ -485,24 +481,6 @@
 <li>Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground (<span class="arithmatex">\(0V\)</span>)</li>
 </ul>
 <hr />
-<h4 id="relais-und-schutze">Relais und Schütze</h4>
-<ul>
-<li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}\)</span>)</li>
-<li>Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)</li>
-<li>Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen</li>
-<li>heute meist nicht mehr mechanisch sondern elektronisch realisiert</li>
-</ul>
-<p><img alt="width:500 right" src="../images/Relais_Animation.gif" /></p>
-<hr />
-<h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
-<ul>
-<li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
-<li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern</li>
-<li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> geeignet setzen</li>
-</ul>
-<p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
-<p><a href="https://www.elektronik-kompendium.de/sites/kom/0401111.htm">Quelle</a></p>
-<hr />
 <h3 id="losung_2"><a href="Aufgaben\2_1_3\code.py">✔️ Lösung</a></h3>
 <!-- _color: black -->
 
@@ -525,7 +503,44 @@
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<h3 id="losung_3"><a href="Aufgaben\2_1_4\code.py">✔️ Lösung</a></h3>
+<hr />
+<h4 id="relais-und-schutze">Relais und Schütze</h4>
+<ul>
+<li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}\)</span>)</li>
+<li>Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)</li>
+<li>Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen</li>
+<li>heute meist nicht mehr mechanisch sondern elektronisch realisiert</li>
+</ul>
+<p><img alt="width:500 right" src="../images/Relais_Animation.gif" /></p>
+<hr />
+<h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
+<ul>
+<li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
+<li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern</li>
+<li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> geeignet setzen</li>
+</ul>
+<p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
+<p><a href="https://www.elektronik-kompendium.de/sites/kom/0401111.htm">Quelle</a></p>
+<hr />
+<h2 id="aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
+<ul>
+<li>Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für <span class="arithmatex">\(1\,\text{s}\)</span> leuchtet und dann langsam über <span class="arithmatex">\(5\,\text{s}\)</span> ausgeht</li>
+</ul>
+<hr />
+<h3 id="beispielcode-fur-pwm">Beispielcode für PWM</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pwmio</span>
+<span class="kn">import</span> <span class="nn">board</span>
+
+<span class="n">pwm</span> <span class="o">=</span> <span class="n">pwmio</span><span class="o">.</span><span class="n">PWMOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP1</span><span class="p">)</span>  <span class="c1"># output on LED pin with default of 500Hz</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">):</span>  <span class="c1"># Cycles through the full PWM range from 0 to 65535</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
+    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
+</code></pre></div>
+<hr />
+<h3 id="losung_3"><a href="Aufgaben\2_1_4">✔️ Lösung</a></h3>
 <!-- _color: black -->
 
 <details class="optional-class">
@@ -552,132 +567,6 @@
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span>
 </code></pre></div>
 </details>
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
- <span class="s2">&quot;cells&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="p">{</span>
-   <span class="s2">&quot;cell_type&quot;</span><span class="p">:</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;execution_count&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
-   <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-     <span class="s2">&quot;ename&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;evalue&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;output_type&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;traceback&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&quot;</span><span class="se">\u001b</span><span class="s2">[1;31mThe kernel failed to start due to the missing module &#39;pwmio&#39;. Consider installing this module.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;</span><span class="se">\u001b</span><span class="s2">[1;31mClick &lt;a href=&#39;https://aka.ms/kernelFailuresMissingModule&#39;&gt;here&lt;/a&gt; for more info.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;</span><span class="se">\u001b</span><span class="s2">[1;31mSome of the following files found in the working directory may have prevented the Kernel from starting. Consider renaming them.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;</span><span class="se">\u001b</span><span class="s2">[1;31mFile(s): &lt;a href=&#39;file://mcifs02/jlhuber%24/Work/Vorlesungen/2024_SoSe_Bus/Aufgaben/2_1_4/code.py?line=1&#39;&gt;~</span><span class="se">\\</span><span class="s2">code.py&lt;/a&gt; might need to be renamed.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;</span><span class="se">\u001b</span><span class="s2">[1;31mClick &lt;a href=&#39;https://aka.ms/JupyterKernelStartFailureOverrideReservedName&#39;&gt;here&lt;/a&gt; for more info.&quot;</span>
-     <span class="p">]</span>
-    <span class="p">}</span>
-   <span class="p">],</span>
-   <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;import pandas as pd</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;import seaborn as sns</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;import matplotlib.pyplot as plt</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Create a DataFrame from your data</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data = {</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;    &#39;Lux&#39;: [0, 130, 330, 1000],</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;    &#39;ADC&#39;: [44000, 52000, 58000, 63000]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;df = pd.DataFrame(data)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Create the plot</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sns.set_theme(style=</span><span class="se">\&quot;</span><span class="s2">whitegrid</span><span class="se">\&quot;</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.figure(figsize=(10, 6))</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sns.lineplot(x=&#39;Lux&#39;, y=&#39;ADC&#39;, data=df)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Set the labels</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.xlabel(&#39;Beleuchtungsstärke in Lux&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.ylabel(&#39;ADC Wert&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.show()&quot;</span>
-   <span class="p">]</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-   <span class="s2">&quot;cell_type&quot;</span><span class="p">:</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;execution_count&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-   <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{},</span>
-   <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[],</span>
-   <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;import pandas as pd</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;import seaborn as sns</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;import matplotlib.pyplot as plt</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Create a DataFrame from your data</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;data = {</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;    &#39;Lux&#39;: [0, 130, 330, 1000],</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;    &#39;ADC&#39;: [44000, 52000, 58000, 63000]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;df = pd.DataFrame(data)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;from scipy.optimize import curve_fit</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;import numpy as np</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;def func(x,a,s):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;    return ((x-s)*a) **2</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Get the x and y values</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;xdata = df[&#39;Lux&#39;]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ydata = df[&#39;ADC&#39;]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Plot the original data</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;sns.lineplot(x=&#39;ADC&#39;, y=&#39;Lux&#39;, data=df)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;xdata =np.linspace(44000,2**16,20)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;popt = [0.0015,44000]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;# Plot the fitted curve</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;#plt.plot(xdata, func(xdata, *popt), &#39;r-&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.plot(xdata, func(xdata, *popt), &#39;r-&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.xlabel(&#39;Beleuchtungsstärke in Lux&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;plt.ylabel(&#39;ADC&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span>
-   <span class="p">]</span>
-  <span class="p">}</span>
- <span class="p">],</span>
- <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-  <span class="s2">&quot;kernelspec&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;display_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Python 3&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;python3&quot;</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;language_info&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;3.12.0&quot;</span>
-  <span class="p">}</span>
- <span class="p">},</span>
- <span class="s2">&quot;nbformat&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
- <span class="s2">&quot;nbformat_minor&quot;</span><span class="p">:</span> <span class="mi">2</span>
-<span class="p">}</span>
-</code></pre></div>
-</details>
-<hr />
-<h2 id="aufgabe-2_1_4-anschluss-einer-led-mit-pwm-an-einen-raspberry-pi-pico">🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico</h2>
-<ul>
-<li>Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für <span class="arithmatex">\(1\,\text{s}\)</span> leuchtet und dann langsam über <span class="arithmatex">\(5\,\text{s}\)</span> ausgeht</li>
-</ul>
-<hr />
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pwmio</span>
-<span class="kn">import</span> <span class="nn">board</span>
-
-<span class="n">pwm</span> <span class="o">=</span> <span class="n">pwmio</span><span class="o">.</span><span class="n">PWMOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP1</span><span class="p">)</span>  <span class="c1"># output on LED pin with default of 500Hz</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">):</span>  <span class="c1"># Cycles through the full PWM range from 0 to 65535</span>
-        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
-    <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
-        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
-</code></pre></div>
 <hr />
 <h3 id="analoge-eingange">Analoge Eingänge</h3>
 <ul>
@@ -826,30 +715,43 @@
 <p><img alt="bg right:43% w:550" src="../images/helligkeitssensor-0555-3001-helligkeitsf%C3%BChler-helligkeitsmelder-lichtf%C3%BChler-lichtsensor.jpg" />
 <a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
 <hr />
-<h3 id="losung_4">Lösung</h3>
+<h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
 <details class="optional-class">
-<summary>Lösung anzeigen</summary>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pwmio</span>
-<span class="kn">import</span> <span class="nn">board</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">digitalio</span>
-
-<span class="n">pwm</span> <span class="o">=</span> <span class="n">pwmio</span><span class="o">.</span><span class="n">PWMOut</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">GP1</span><span class="p">)</span>  <span class="c1"># output on LED pin with default of 500Hz</span>
-<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
-
-<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
-<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
-<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
-        <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="mi">65535</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
-            <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.0005</span><span class="p">)</span>
-</code></pre></div>
+<summary>💡 anzeigen</summary>
+<p>```python
+import board
+import analogio
+import time
+from mappings import map_quat</p>
+<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
+<p>ldr = analogio.AnalogIn(board.A2)</p>
+<h1 id="wiederholung">Wiederholung</h1>
+<p>while True:
+    # ADC als Dezimalzahl lesen
+    read = ldr.value
+    # Ausgabe in der Kommandozeile/Shell
+    print("ADC:", read)
+    print("E in Lux", map_quat(read))
+    # Warten
+    time.sleep(1)</p>
+</details>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p>```python
+def map_lin(z):
+    E_max = 1
+    E_min = 0
+    z_max = 65535
+    z_min = 0
+    beta_0 = E_min
+    beta_1 = (E_max - E_min) / (z_max - z_min)
+    return beta_0 + beta_1 * z</p>
+<p>def map_quat(x):
+    s = 44000
+    a = 0.0015
+    return ((x-s)<em>a) </em>*2</p>
 </details>
 <hr />
 <h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
@@ -946,9 +848,9 @@ import board
 import analogio
 import time
 from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
+<h1 id="initialisierung-des-adc-analog-digital-converter_1">Initialisierung des ADC (Analog-Digital Converter)</h1>
 <p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung">Wiederholung</h1>
+<h1 id="wiederholung_1">Wiederholung</h1>
 <p>while True:
     # ADC als Dezimalzahl lesen
     read = ldr.value

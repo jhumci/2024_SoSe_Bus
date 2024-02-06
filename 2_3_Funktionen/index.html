@@ -70,9 +70,15 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#mappingspy">mappings.py</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_3_2">✍️ Aufgabe 2_3_2:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#sichtbarkeit-von-variablen">Sichtbarkeit von Variablen</a>
         <ul>
@@ -240,11 +246,70 @@
     <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
     <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
 </code></pre></div>
+<h3 id="losung"><a href="Aufgaben\2_3_1">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+<span class="kn">from</span> <span class="nn">tageslichtschaltung</span> <span class="kn">import</span> <span class="n">l_set</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Initialisierung der LED</span>
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="c1"># Initialisierung Button</span>
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+
+<span class="c1"># Parameter setzen</span>
+<span class="n">PAR_SETPT</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l_man</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+
+    <span class="c1"># Anwesenheit mit Button verbinden</span>
+    <span class="n">p_act</span> <span class="o">=</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Gemessene Helligkeit mit Sensor verbinden</span>
+    <span class="n">h_room</span> <span class="o">=</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">)</span>
+
+
+    <span class="n">l_set_value</span> <span class="o">=</span> <span class="n">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lampe ist: &quot;</span><span class="p">,</span> <span class="n">l_set_value</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">l_set_value</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
 <hr />
 <h2 id="aufgabe-2_3_2">✍️ Aufgabe 2_3_2:</h2>
 <ul>
 <li>Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?</li>
 <li>Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?</li>
+</ul>
+<h3 id="losung_1">✔️ Lösung</h3>
+<ul>
+<li>Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändern</li>
+<li>Umrechnungen</li>
+<li>Einfacher, wenn mehr in Funktionen ausgelagert wird</li>
 </ul>
 <hr />
 <h2 id="sichtbarkeit-von-variablen">Sichtbarkeit von Variablen</h2>
