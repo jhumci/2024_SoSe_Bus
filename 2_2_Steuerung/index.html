@@ -114,6 +114,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#hinweise">Hinweise</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_3">✔️ Lösung</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -662,52 +664,61 @@
 </ul>
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-import time
-import board
-import digitalio</p>
-<p>led_pin = board.GP1      # Replace with the GPIO pin connected to your LED</p>
-<p>led = digitalio.DigitalInOut(led_pin)
-led.direction = digitalio.Direction.OUTPUT</p>
-<p>while True:
-    led.value = not led.value  # Toggle the LED state
-    time.sleep(0.2)  # Add a small delay for debouncing
-    time.sleep(0.1)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+
+<span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre></div>
 </details>
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-import board
-import analogio
-import time
-from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
-<p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung">Wiederholung</h1>
-<p>while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
-    # Warten
-    time.sleep(1)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 </details>
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z</p>
-<p>def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)<em>a) </em>*2</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
 </details>
 <hr />
 <h3 id="losung_3"><a href="Aufgaben\2_2_4">✔️ Lösung</a></h3>
