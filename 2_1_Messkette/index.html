@@ -124,7 +124,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines Analogen Helligkeitssensors</a>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
         <ul>
@@ -210,7 +210,10 @@
 <h1 id="21-messkette">2.1 Messkette</h1>
 <hr />
 <h2 id="eva-prinzip">EVA-Prinzip</h2>
+<!-- _class: white -->
+<p><center></p>
 <p><img alt="" src="../images/Messkette.svg" /></p>
+<p></center></p>
 <ul>
 <li>Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert</li>
 <li>Hierzu werden Eingangs-Signale gemessen und Ausgangssignale erzeugt</li>
@@ -224,12 +227,13 @@
 <li>Die Zustände werden durch Spannungen repräsentiert</li>
 <li>i.d.R. gibt es Spannungsbereiche, die als <code>0</code> oder <code>1</code> interpretiert werden</li>
 </ul>
+<p><img alt="bg left h:500" src="../images/raspberry-pi-pico-gpio.png" /></p>
 <hr />
 <h2 id="aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</h2>
 <ul>
 <li>Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann</li>
 <li>Im folgenden wird folgende Hardware benötigt:<ul>
-<li>Raspberry Pi Pico</li>
+<li>Raspberry Pi Pico (WH)</li>
 <li>Breadboard</li>
 <li>Taster</li>
 <li>Widerstand ca. <span class="arithmatex">\(470 \Omega\)</span> und <span class="arithmatex">\(10 \,\text{k}\Omega\)</span></li>
@@ -241,7 +245,7 @@
 <hr />
 <h3 id="circuitpython-installieren">CircuitPython installieren</h3>
 <ul>
-<li>Halte den <code>BOOTSEL</code> Taster auf dem Pico gedrückt und verbinde diesen über USB mit dem Rechner</li>
+<li>Halten Sie den <code>BOOTSEL</code> Taster auf dem Pico gedrückt und verbinden Sie diesen über USB mit dem Rechner</li>
 <li>Passende Firmware <a href="https://circuitpython.org/board/raspberry_pi_pico_w/">UF2-File</a> herunterladen und in den als USB-Laufwerk erkannten Pico kopieren</li>
 <li>Pico sollte jetzt neue Starten und die Firmware installieren</li>
 <li>Nach dem erneuten Verbinden sollten nun einige Programme im Pico liegen</li>
@@ -250,7 +254,7 @@
 <hr />
 <h3 id="programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</h3>
 <ul>
-<li>Öffenen Sie im Chrome Browser die Seite des <a href="https://code.circuitpython.org/">Online Editors</a></li>
+<li>Öffnen Sie im Chrome Browser die Seite des <a href="https://code.circuitpython.org/">Online Editors</a></li>
 <li>Verbinden Sie Sich mittels USB</li>
 <li>Wählen Sie die Schnittstelle <code>CircuitPython CDC Control</code> aus</li>
 <li>Öffnen Sie das Verzeichnis (USB-Laufwerk) <code>CIRCUITPY</code> und wählen Sie <code>USE /</code></li>
@@ -334,9 +338,13 @@
 </details>
 <hr />
 <h2 id="aufgabe-2_1_2-anschluss-eines-tasters-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_2: Anschluss eines Tasters an einen Raspberry Pi Pico</h2>
+<!-- _class: white -->
+
 <ul>
-<li>Schließen Sie den Taster wie folgt an
-<img alt="" src="../images/20060511.gif" /></li>
+<li>Schließen Sie den Taster wie folgt an</li>
+</ul>
+<p><img alt="bg right h:600" src="../images/20060511.gif" /></p>
+<ul>
 <li><span class="arithmatex">\(R_{pullup} = 10 \,\text{k}\Omega\)</span></li>
 <li>Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0</li>
 <li>Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm</li>
@@ -396,6 +404,10 @@
 </ul>
 <hr />
 <h3 id="digitale-ausgange">Digitale Ausgänge</h3>
+<!-- _class: white -->
+<p><center></p>
+<p><img alt="" src="../images/Messkette.svg" /></p>
+<p></center></p>
 <ul>
 <li>Ausgänge können mit einer Spannung beschaltet werden</li>
 <li>Bei einem Raspberry Pi Pico sind die Ausgänge auf <span class="arithmatex">\(3.3 \,\text{V}\)</span> begrenzt</li>
@@ -452,15 +464,16 @@
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm">Quelle</a></p>
 <hr />
 <h3 id="leuchtdioden">Leuchtdioden</h3>
-<p><img alt="h:500" src="../images/LED-Aufbau.png" /></p>
+<p><center></p>
+<p><img alt="h:450" src="../images/LED-Aufbau.png" /></p>
+<p></center></p>
 <ul>
 <li>Langes Bein: Anode</li>
 </ul>
 <p><a href="https://nawi-werft.de/bausteine/led-ansteuern/">Quelle</a></p>
 <hr />
 <h3 id="ausgang-verschalten">Ausgang verschalten</h3>
-<!-- _backgroundColor: white -->
-<!-- _color: black -->
+<!-- _class: white -->
 
 <ul>
 <li>links: LED an Masse <ul>
@@ -471,6 +484,7 @@
 <li>GPIO auf low &gt; LED an</li>
 </ul>
 </li>
+<li><span class="arithmatex">\(R_v = 470 \,\Omega\)</span></li>
 </ul>
 <p><img alt="" src="../images/21021815.gif" /> <img alt="" src="../images/21021814.gif" /></p>
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2102181.htm">Quelle</a></p>
@@ -509,15 +523,19 @@
 <li>Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend (<span class="arithmatex">\(P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}\)</span>)</li>
 <li>Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)</li>
 <li>Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen</li>
-<li>heute meist nicht mehr mechanisch sondern elektronisch realisiert</li>
+<li>heute meist nicht mehr mechanisch sondern elektronisch realisiert mit Zusatzfunktionen (Stromstoßrelais, Zeitrelais, Schütze)</li>
 </ul>
-<p><img alt="width:500 right" src="../images/Relais_Animation.gif" /></p>
+<p><center></p>
+<p><img alt="width:500" src="../images/Relais_Animation.gif" /></p>
+<p></center></p>
 <hr />
 <h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
+<!-- _class: white -->
+
 <ul>
 <li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
-<li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern</li>
-<li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> geeignet setzen</li>
+<li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)</li>
+<li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> (Impulsdauer) geeignet setzen</li>
 </ul>
 <p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
 <p><a href="https://www.elektronik-kompendium.de/sites/kom/0401111.htm">Quelle</a></p>
@@ -569,6 +587,10 @@
 </details>
 <hr />
 <h3 id="analoge-eingange">Analoge Eingänge</h3>
+<!-- _class: white -->
+<p><center></p>
+<p><img alt="" src="../images/Messkette.svg" /></p>
+<p></center></p>
 <ul>
 <li>Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)</li>
 <li>z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen</li>
@@ -587,7 +609,7 @@
 <li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
 </ul>
 <hr />
-<h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</h2>
 <ul>
 <li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
 <li>Links (-): GND / Masse / 0 Volt</li>
@@ -621,14 +643,16 @@
 </code></pre></div>
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
 <hr />
-<p><img alt="" src="../images/aufbau_pico_ky018.png" /></p>
+<p><center></p>
+<p><img alt="h:500" src="../images/aufbau_pico_ky018.png" /></p>
+<p></center></p>
 <hr />
 <h4 id="mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</h4>
 <ul>
 <li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
 <li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
 <li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
-<li>$a =0.0015 $ ist die Steigung der Parabel</li>
+<li><span class="arithmatex">\(a =0.0015\)</span> ist die Steigung der Parabel</li>
 <li><span class="arithmatex">\(s = 44000\)</span> ist der Verschiebung der Parabel auf der x-Achse</li>
 <li><span class="arithmatex">\(x\)</span> ist der Eingangswert</li>
 </ul>
@@ -712,8 +736,8 @@
 <li>Eine Umrechnung der Spannungswerte an Eingang in die Physikalische Größen muss jedoch weiterhin stattfinden</li>
 <li>Informationen hierzu finden sich meinst im <a href="https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf">Datenblatt</a></li>
 </ul>
-<p><img alt="bg right:43% w:550" src="../images/helligkeitssensor-0555-3001-helligkeitsf%C3%BChler-helligkeitsmelder-lichtf%C3%BChler-lichtsensor.jpg" />
-<a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
+<p><img alt="bg right:43% w:550" src="../images/BB-Helligkeit_Datenblatt.png" /></p>
+<p><a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
 <hr />
 <h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
 <!-- _color: black -->
@@ -942,6 +966,10 @@ def map_lin(z):
 </ul>
 <hr />
 <h3 id="analoge-ausgange">Analoge Ausgänge</h3>
+<!-- _class: white -->
+<p><center></p>
+<p><img alt="" src="../images/Messkette.svg" /></p>
+<p></center></p>
 <ul>
 <li>Entsprechend gibt es auch analoge Ausgänge</li>
 <li>Diese können z.B. zur Ansteuerung von Motoren genutzt werden</li>

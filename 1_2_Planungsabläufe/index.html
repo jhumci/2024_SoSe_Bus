@@ -204,13 +204,16 @@
                 <!-- paginate: true -->
 
 <h1 id="12-planungsablaufe">1.2 Planungsabläufe</h1>
-<hr />
-<h2 id="planungsablaufe-fur-die-gebaudeautomation">Planungsabläufe für die Gebäudeautomation</h2>
 <ul>
 <li>Im  folgenden wird ein Planungsablauf für die Gebäudeautomation (vereinfacht stilisiert) vorgestellt</li>
 <li>Hierbei wird auf das Beispiel einer Raumautomation eingegangen</li>
 </ul>
-<p><img alt="w:900" src="../images/PlanungGeb%C3%A4udeautimatisierung.png" /></p>
+<hr />
+<h2 id="planungsablaufe-fur-die-gebaudeautomation">Planungsabläufe für die Gebäudeautomation</h2>
+<!-- _class: white -->
+<p><center></p>
+<p><img alt="w:850" src="../images/PlanungGeb%C3%A4udeautimatisierung.png" /></p>
+<p></center></p>
 <p><a href="Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation">Quelle</a></p>
 <hr />
 <table>
@@ -335,17 +338,21 @@
 <li>Typisch für diese Phase ist die Erstellung von <strong>Fließbildern</strong> und <strong>Schemata</strong><ul>
 <li>z.B. Stromlaufpläne, Pneumatikpläne, Hydraulikpläne, etc.</li>
 <li>Raumautomations-Schema und Raumautomations-Funktionschema (VDI 3813)</li>
-<li>Analgenautomations-Schema und Anlagenautomations-Funktionschema (VDI 3814)</li>
+<li>Anlagenautomations-Schema und Anlagenautomations-Funktionschema (VDI 3814)</li>
 </ul>
 </li>
 </ul>
 <hr />
 <h3 id="komponenten-sicht-durch-preplanning">Komponenten-Sicht durch Preplanning</h3>
-<p><img alt="" src="../images/light-building-eplan-preplanning-02.jpg" /></p>
+<p><center></p>
+<p><img alt="h:580" src="../images/light-building-eplan-preplanning-02.jpg" /></p>
+<p></center></p>
 <p><a href="https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/">Quelle</a></p>
 <hr />
 <h3 id="funktions-sicht-durch-raumautomations-schema-vdi-3813">Funktions-Sicht durch Raumautomations-Schema (VDI 3813)</h3>
-<p><img alt="h:350" src="../images/RA-Schema.png" /></p>
+<p><center></p>
+<p><img alt="h:390" src="../images/RA-Schema.png" /></p>
+<p></center></p>
 <ul>
 <li>Zuordnung von Sensoren, Aktoren und <strong>Funktionen</strong> zueinander</li>
 <li>und zu Raum vs. Segment (keine genaue Räumliche Positionierung)</li>
@@ -353,6 +360,15 @@
 </ul>
 <hr />
 <h4 id="funktionen">Funktionen</h4>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;this function&#39;s name is f. It takes a value x and returns a value y&quot;&quot;&quot;</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe aus</span>
+</code></pre></div>
+<hr />
 <ul>
 <li><strong>Eingaben</strong>: Werte, die in die Funktion eingehen und sich abhängig vom Systemzustand ändern können</li>
 <li><strong>Parameter</strong>: unveränderliche Werte, die einmalig konfiguriert werden (z.B. in Abhängigkeit der Raumgröße)</li>
@@ -361,7 +377,7 @@
 <li>oder können selbst implementiert werden</li>
 </ul>
 <p><img alt="bg right:20% h:400" src="../images/Raumautomationschema_siemens.png" /></p>
-<p><a href="Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein">Quelle</a></p>
+<p>Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein</p>
 <hr />
 <h5 id="sensorfunktionen">Sensorfunktionen</h5>
 <p><img alt="bg right:40% h:720" src="../images/Helligektismessung.pdf.png" /></p>
@@ -378,6 +394,7 @@
 <li>Windgeschwindigkeit,</li>
 <li>Niederschlag</li>
 </ul>
+<p><a href="VDI 3813">Quelle</a></p>
 <hr />
 <h5 id="sensorfuktionen-sensoren-datenpunkte">Sensorfuktionen != Sensoren / Datenpunkte</h5>
 <ul>
@@ -392,7 +409,9 @@
 <p><a href="https://www.sensorshop24.de/raumkombifuehler-fuer-temperatur-und-feuchte-0-10v-4-20ma">Quelle</a></p>
 <hr />
 <h5 id="beispiel-verschattungkorrektur">Beispiel Verschattungkorrektur</h5>
+<p><center></p>
 <p><img alt="" src="../images/11659900299__de__Web.jpg" /></p>
+<p></center></p>
 <p><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclibhvac/11659363083.html&amp;id=">Quelle</a></p>
 <hr />
 <h4 id="aktorfunktionen">Aktorfunktionen</h4>
@@ -452,11 +471,15 @@
 <p><img alt="bg right:45% h:720" src="../images/Treppenlichtschaltung.pdf.png" /></p>
 <hr />
 <h5 id="zusammenhang-zwischen-verschiedenen-funktionen">Zusammenhang zwischen verschiedenen Funktionen</h5>
+<p><center></p>
 <p><img alt="h:400" src="../images/RA-Schema.pdf.png" /></p>
+<p></center></p>
 <p><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf">Quelle</a></p>
 <hr />
 <h4 id="schritt-raumautomations-schema">Schritt Raumautomations-Schema</h4>
+<p><center></p>
 <p><img alt="" src="../images/Funktionsschema.svg" /></p>
+<p></center></p>
 <hr />
 <h4 id="ableitungen-aus-vorplanung-und-raumautomations-schema">Ableitungen aus Vorplanung und Raumautomations-Schema</h4>
 <ul>
@@ -469,14 +492,16 @@
 <hr />
 <h2 id="aufgabe-1_2_1-raumautomationsschema-fur-ein-treppenhaus">✍️ Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus</h2>
 <ul>
-<li>Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses</li>
+<li>Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses (aus den Folien zuvor)</li>
 <li>Alle Leuchten werden über einen Aktor für das gemachte Treppenhaus zusammengefasst</li>
-<li>Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein bedienelement für die Beleuchtung angebracht werden</li>
+<li>Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein Bedienelement für die Beleuchtung angebracht werden</li>
 <li>Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können</li>
-<li>zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik gesteuert werden können</li>
+<li>zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik für den Bereich gesteuert werden können</li>
 </ul>
 <hr />
-<p><img alt="h:400" src="../images/RA_schemaCut.png" /></p>
+<p><center></p>
+<p><img alt="h:600" src="../images/RA_schemaCut.png" /></p>
+<p></center></p>
 <hr />
 <h3 id="losung">✔️ Lösung</h3>
 <!-- _color: black -->
@@ -484,7 +509,7 @@
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
 </details>
-<p>TODO</p>
+<p><img alt="h:580" src="../images/RA_Loesung.png" /></p>
 <hr />
 <h2 id="ausfuhrung">Ausführung</h2>
 <ul>
