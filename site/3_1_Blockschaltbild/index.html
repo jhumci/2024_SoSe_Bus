@@ -91,6 +91,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simulation-mit-scilab-xcos">Simulation mit scilab xcos</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_1_0-proportional-mit-totzeitglied">✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#proportionalglied-mit-verzogerung-1-ordnung-pt1-glied">Proportionalglied mit Verzögerung 1. Ordnung (PT1-Glied)</a>
@@ -107,11 +109,17 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#simulation-mit-scilab-xcos">Simulation mit scilab xcos</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_1_1-wassertank-ohne-steuerung">✍️ Aufgabe 3_1_1: Wassertank ohne Steuerung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_1_2-einfache-tageslichtschaltung">✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#zwei-punkt-regelung">Zwei-Punkt Regelung</a>
         <ul>
@@ -126,6 +134,10 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_1_3-einfache-tageslichtschaltung">✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -279,10 +291,21 @@
 <h4 id="sprungantwort-eines-t-glieds-auf-eine-sprungfunktion">🧠 Sprungantwort eines T-Glieds auf eine Sprungfunktion</h4>
 <p><img alt="h:500" src="../images/totzeitglied.svg" /></p>
 <hr />
-<h2 id="aufgabe-3_1_0-proportional-mit-totzeitglied">✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied</h2>
+<h2 id="simulation-mit-scilab-xcos">Simulation mit scilab xcos</h2>
 <ul>
-<li>Öffnen Sie <a href="Aufgaben\3_1_0">Aufgaben\3_1_0</a> in <a href="https://www.scilab.org/download/scilab-2024.0.0">scilab xcos</a></li>
+<li>Installieren Sie <a href="https://www.scilab.org/download/scilab-2024.0.0">scilab xcos</a></li>
+<li>Xcos ist ein grafischer Editor für Blockschaltbilder</li>
+<li>die Funktionalität entspricht in etwa matlab simulink</li>
+<li>allerdings ist die Software open source und kostenlos</li>
+</ul>
+<p><img alt="" src="../images/scilabhome.png" /></p>
+<hr />
+<h2 id="aufgabe-3_1_0-proportional-mit-totzeitglied">✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied</h2>
+<p><img alt="h:400" src="../images/xcos_start.webp" /></p>
+<ul>
+<li>Öffnen Sie <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos">P_totzeit.zcos</a> in <a href="https://www.scilab.org/download/scilab-2024.0.0">scilab xcos</a></li>
 <li>Testen Sie verschiedene Werte für den P-Wert beim <code>PID</code>-Block und die Totzeit beim <code>Continuous fix delay</code>-Block</li>
+<li>Ersetzen Sie den <code>PID</code>-Block durch einen <code>GAIN_f</code>-Block</li>
 </ul>
 <hr />
 <h3 id="proportionalglied-mit-verzogerung-1-ordnung-pt1-glied">Proportionalglied mit Verzögerung 1. Ordnung (PT1-Glied)</h3>
@@ -355,26 +378,34 @@
   <span class="k">return</span> <span class="n">raum_temp_in_c</span>
 </code></pre></div>
 <hr />
-<h2 id="simulation-mit-scilab-xcos">Simulation mit scilab xcos</h2>
-<ul>
-<li>Installieren Sie <a href="https://www.scilab.org/download/scilab-2024.0.0">scilab xcos</a></li>
-<li>Xcos ist ein grafischer Editor für Blockschaltbilder</li>
-<li>die Funktionalität entspricht in etwa matlab simulink</li>
-<li>allerdings ist die Software open source und kostenlos</li>
-</ul>
-<p><img alt="" src="../images/scilabhome.png" /></p>
-<hr />
 <h2 id="aufgabe-3_1_1-wassertank-ohne-steuerung">✍️ Aufgabe 3_1_1: Wassertank ohne Steuerung</h2>
 <ul>
-<li>passen Sie den Inflow an in <a href="Aufgaben\3_1_1"></a> so an, dass der Tank langsamer überläuft</li>
+<li>Bauen Sie das folgende Modell aus <code>CONST</code>, <code>INTEGRAL_m</code>, <code>CSCOPE</code> und <code>CLOCK_c</code> nach</li>
+<li>Modellieren Sie einen 100 l fassenden Wassertank, der zu Begin mit 10 l gefüllt ist und in den 5 l pro Minute einfließen</li>
 </ul>
-<p><img alt="" src="../images/xcos_simple.png" /></p>
+<p><img alt="h:400" src="../images/xcos_simple.png" /></p>
+<hr />
+<h3 id="losung">✔️ Lösung</h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p><a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.zcos">Link</a></p>
+</details>
 <hr />
 <h2 id="aufgabe-3_1_2-einfache-tageslichtschaltung">✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung</h2>
 <ul>
-<li>passen Sie den Threshold in <code>Dynamic</code> in <a href="Aufgaben\3_1_2">Aufgaben\3_1_2</a> so an, dass die LED bei einer Helligkeit von 220 Lux angeht
-<img alt="" src="../images/Tageslichtschaltung_xcos.png" /></li>
+<li>passen Sie den Threshold in <code>Dynamic</code> in <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos">3_1_2_Tageslichtschaltung.zcos</a> so an, dass die LED bei einer Helligkeit von 220 Lux angeht</li>
 </ul>
+<p><img alt="h:400" src="../images/Tageslichtschaltung_xcos_.png" /></p>
+<hr />
+<h3 id="losung_1">✔️ Lösung</h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p><a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos">Link</a></p>
+</details>
 <hr />
 <h2 id="zwei-punkt-regelung">Zwei-Punkt Regelung</h2>
 <ul>
@@ -457,9 +488,17 @@
 <hr />
 <h2 id="aufgabe-3_1_3-einfache-tageslichtschaltung">✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung</h2>
 <ul>
-<li>Ersetzen Sie den Schalter <code>Dynamic</code> mit einem Hystereseschalter </li>
+<li>Ersetzen Sie den Schalter <code>Dynamic</code> mit einem Hystereseschalter <code>HYSTERESIS</code></li>
 </ul>
 <p><img alt="" src="../images/TagesLichtHystere.png" /></p>
+<hr />
+<h3 id="losung_2">✔️ Lösung</h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<p><a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_3/3_1_3_Tageslichtschaltung_Hysterese.zcos">Link</a></p>
+</details>
               
             </div>
           </div><footer>

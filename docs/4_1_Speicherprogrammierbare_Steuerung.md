@@ -775,3 +775,4 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 * Für Digitale und Analoge Ausgänge gelten sie selben Prinzipien
 
+

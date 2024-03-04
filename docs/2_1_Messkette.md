@@ -21,8 +21,13 @@ theme: lemon
 
 ## EVA-Prinzip
 
+<!-- _class: white -->
+<center>
 
 ![](images/Messkette.svg)
+
+</center>
+
 
 * Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert
 * Hierzu werden Eingangs-Signale gemessen und Ausgangssignale erzeugt
@@ -37,13 +42,17 @@ theme: lemon
 * Die Zustände werden durch Spannungen repräsentiert
 * i.d.R. gibt es Spannungsbereiche, die als `0` oder `1` interpretiert werden
 
+
+![bg left h:500](images/raspberry-pi-pico-gpio.png)
+
+
 ---
 
 ## ✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller
 
 * Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann
 * Im folgenden wird folgende Hardware benötigt:
-    * Raspberry Pi Pico
+    * Raspberry Pi Pico (WH)
     * Breadboard
     * Taster
     * Widerstand ca. $470 \Omega$ und $10 \,\text{k}\Omega$
@@ -55,7 +64,7 @@ theme: lemon
 
 ### CircuitPython installieren
 
-* Halte den `BOOTSEL` Taster auf dem Pico gedrückt und verbinde diesen über USB mit dem Rechner
+* Halten Sie den `BOOTSEL` Taster auf dem Pico gedrückt und verbinden Sie diesen über USB mit dem Rechner
 * Passende Firmware [UF2-File](https://circuitpython.org/board/raspberry_pi_pico_w/) herunterladen und in den als USB-Laufwerk erkannten Pico kopieren
 * Pico sollte jetzt neue Starten und die Firmware installieren
 * Nach dem erneuten Verbinden sollten nun einige Programme im Pico liegen
@@ -68,7 +77,7 @@ theme: lemon
 
 ### Programmieren des Pico mittels CircuitPython
 
-* Öffenen Sie im Chrome Browser die Seite des [Online Editors](https://code.circuitpython.org/)
+* Öffnen Sie im Chrome Browser die Seite des [Online Editors](https://code.circuitpython.org/)
 * Verbinden Sie Sich mittels USB
 * Wählen Sie die Schnittstelle `CircuitPython CDC Control` aus
 * Öffnen Sie das Verzeichnis (USB-Laufwerk) `CIRCUITPY` und wählen Sie `USE /`
@@ -155,9 +164,12 @@ while True:
 
 ## ✍️ Aufgabe 2_1_2: Anschluss eines Tasters an einen Raspberry Pi Pico
 
+<!-- _class: white -->
 
 - Schließen Sie den Taster wie folgt an
-![](images/20060511.gif)
+
+![bg right h:600](images/20060511.gif)
+
 - $R_{pullup} = 10 \,\text{k}\Omega$
 - Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0
 - Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm
@@ -230,9 +242,17 @@ while True:
 
 ### Digitale Ausgänge
 
+<!-- _class: white -->
+<center>
+
+![](images/Messkette.svg)
+
+</center>
+
 * Ausgänge können mit einer Spannung beschaltet werden
 * Bei einem Raspberry Pi Pico sind die Ausgänge auf $3.3 \,\text{V}$ begrenzt
 * Die Ausgänge können bis zu $16 \,\text{mA}$ liefern
+
 
 ---
 
@@ -279,7 +299,11 @@ while True:
 
 ### Leuchtdioden
 
-![h:500](images/LED-Aufbau.png)
+<center>
+
+![h:450](images/LED-Aufbau.png)
+
+</center>
 
 - Langes Bein: Anode
 
@@ -290,13 +314,14 @@ while True:
 
 ### Ausgang verschalten
 
-<!-- _backgroundColor: white -->
-<!-- _color: black -->
+<!-- _class: white -->
+
 
 * links: LED an Masse 
     * GPIO auf high > LED an
 * rechts: LED an VCC
     * GPIO auf low > LED an
+* $R_v = 470 \,\Omega$
 
 ![](images/21021815.gif) ![](images/21021814.gif)
 
@@ -330,18 +355,25 @@ while True:
 * Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend ($P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}$)
 * Eine höhere Spannung an den Ausgängen ist nicht möglich (Sicherheit, Energieeffizienz, Bauform)
 * Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen
-* heute meist nicht mehr mechanisch sondern elektronisch realisiert
+* heute meist nicht mehr mechanisch sondern elektronisch realisiert mit Zusatzfunktionen (Stromstoßrelais, Zeitrelais, Schütze)
 
-![width:500 right](images/Relais_Animation.gif)
+<center>
+
+![width:500](images/Relais_Animation.gif)
+
+</center>
+
 
 
 ---
 
 #### Pulsweitenmodulation
 
+<!-- _class: white -->
+
 * Digitale Ausgänge können nur zwei Zustände annehmen (0 /`False` oder 1 : `True`)
-* Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern
-* Hierzu muss man Periodendauer $T$ und Duty Cycle $t$ geeignet setzen
+* Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)
+* Hierzu muss man Periodendauer $T$ und Duty Cycle $t$ (Impulsdauer) geeignet setzen
 
 ![bg right w:500](images/04011113.png) 
 
@@ -386,6 +418,13 @@ while True:
 
 ### Analoge Eingänge
 
+<!-- _class: white -->
+<center>
+
+![](images/Messkette.svg)
+
+</center>
+
 * Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)
 * z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen
 * Damit änder sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann
@@ -403,7 +442,7 @@ while True:
 
 ---
 
-## ✍️ Aufgabe 2_1_5: Anschluss eines Analogen Helligkeitssensors
+## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
 * Schließen Sie einen [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
     * Links (-): GND / Masse / 0 Volt
@@ -439,8 +478,12 @@ while True:
 
 ---
 
+<center>
 
-![](images/aufbau_pico_ky018.png)
+![h:500](images/aufbau_pico_ky018.png)
+
+</center>
+
 
 ---
 
@@ -449,7 +492,7 @@ while True:
 * Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte `read` in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen
 * Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen
 * $E= f(x) = (a(x-s))^2$
-    * $a =0.0015 $ ist die Steigung der Parabel
+    * $a =0.0015$ ist die Steigung der Parabel
     * $s = 44000$ ist der Verschiebung der Parabel auf der x-Achse
     * $x$ ist der Eingangswert
 
@@ -489,7 +532,9 @@ while True:
 * Eine Umrechnung der Spannungswerte an Eingang in die Physikalische Größen muss jedoch weiterhin stattfinden
 * Informationen hierzu finden sich meinst im [Datenblatt](https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf)
 
-![bg right:43% w:550](images/helligkeitssensor-0555-3001-helligkeitsfühler-helligkeitsmelder-lichtfühler-lichtsensor.jpg)
+![bg right:43% w:550](images/BB-Helligkeit_Datenblatt.png)
+
+
 [Quelle](https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html)
 
 ---
@@ -637,6 +682,13 @@ print(os.getenv('MY_NAME'))
 ---
 
 ### Analoge Ausgänge
+
+<!-- _class: white -->
+<center>
+
+![](images/Messkette.svg)
+
+</center>
 
 * Entsprechend gibt es auch analoge Ausgänge
 * Diese können z.B. zur Ansteuerung von Motoren genutzt werden

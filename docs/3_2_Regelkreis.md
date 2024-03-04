@@ -71,8 +71,7 @@ $u(t)=K_P \cdot e(t)$
 ---
 
 * Reaktion der Stellgröße:
-* $
-  u(t)=K_P \cdot e(t)$
+* $u(t)=K_P \cdot e(t)$
 
 ```Python
 def p-regler(e, k_p):

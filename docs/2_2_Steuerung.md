@@ -86,7 +86,7 @@ while True:
     if not(button.value):  # Button is pressed (LOW)
         print("Button Pressed!")  
         led.value = True
-        time.sleep(PAR_HOLD)  # Add a small delay to debounce the button
+        time.sleep(PAR_HOLD)  
         for i in range(1,5):
             led.value = False
             time.sleep(0.1)
@@ -100,10 +100,12 @@ while True:
 
 #### Probleme mit der naiven Lösung
 
-![bg right h:420](images/mermaid-diagram-2024-01-25-100419.svg)
+<!-- _class: white -->
+
+![bg right:35% h:420](images/mermaid-diagram-2024-01-25-100419.svg)
 
 * Erneutes betätigen des Taster setzt die Wartezeit nicht zurück
-* Unser System hat kein Gedächtnis (Zustands)
+* Unser System hat kein Gedächtnis (über den Zustand)
 * Der Ablauf sollte besser nicht nur durch einen Zeitlichen Rahmen, sondern auch durch Zustände gesteuert werden
 
 ---
@@ -138,6 +140,9 @@ stateDiagram
 
 #### Implementierung eines Cola-Automaten
 
+<!-- _class: white -->
+
+
 * Der Automat startet im Zustand `Auswahl anfordern`
 * Der Automat kann in den Zustand `Bezahlung anfordern` wechseln
 * Wird die geforderte Summe erreicht, wechselt der Automat in den Zustand `Ware ausgeben`
@@ -163,6 +168,9 @@ stateDiagram
 
 #### In der Theorie der formalen Sprachen 🤓
 
+<!-- _class: white -->
+
+
 ![bg right:33% h:250](images/DFAexample.svg)
 
 * $Q = \{S_1, S_2\}$
@@ -183,6 +191,8 @@ stateDiagram
 
 #### In der Programmierpraxis
 
+<!-- _class: white -->
+
 
 ![bg right:35% w:450](images/mermaid-diagram-2024-01-25-100419.svg)
 
@@ -194,6 +204,9 @@ stateDiagram
 ---
 
 ## ✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts
+
+<!-- _class: white -->
+
 
 * In [`code_state_machine.py`](Aufgaben\2_2_1\code_state_machine.py) ist das auf der rechten Seite dargestellte Programm implementiert
 * Beschreiben Sie verbal, was in jedem der Zustände passiert
@@ -247,6 +260,7 @@ stateDiagram
 ---
 
 
+<!-- _class: white -->
 
 ![bg h:720](images/mermaid-diagram-2024-01-25-115643.svg)
 
@@ -298,10 +312,15 @@ stateDiagram
 
 ### Beispiel: Wechselschalter
 
+<!-- _class: white -->
+
 * Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden
 * Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)
 
-![](images/Wechselschaltung.svg)
+
+![h:300](images/Wechselschaltung.svg)
+
+---
 
 **Wahrheitstabelle**
 
@@ -325,7 +344,8 @@ $L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
 
 * Wir vereinfachen die Tageslichtschaltung, indem wir die Zeitparameter weglassen
 * Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
-* Setzen Sie `L_MAN` zunächst auf `False` und schließen Sie dafür nur einen Button an, wenn Sie mit der restlichen Schaltung fertig sind
+* Setzen Sie `L_MAN` zunächst auf `False` und schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
+* Nutzen Sie einen Button, um den Anwesenheitszustand `P_ACT` zu simulieren
 
 ---
 
@@ -359,15 +379,15 @@ $$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SE
 ??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_3\code.py"
-
+    ```
 ??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\code.py"
-
+    ```
 ??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\mappings.py"
-
+    ```
 
 ---
 

@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -18,14 +18,20 @@ theme: lemon
 
 # 1.2 Planungsabläufe
 
+* Im  folgenden wird ein Planungsablauf für die Gebäudeautomation (vereinfacht stilisiert) vorgestellt
+* Hierbei wird auf das Beispiel einer Raumautomation eingegangen
+
 ---
 
 ## Planungsabläufe für die Gebäudeautomation
 
-* Im  folgenden wird ein Planungsablauf für die Gebäudeautomation (vereinfacht stilisiert) vorgestellt
-* Hierbei wird auf das Beispiel einer Raumautomation eingegangen
+<!-- _class: white -->
+<center>
 
-![w:900](images/PlanungGebäudeautimatisierung.png)
+![w:850](images/PlanungGebäudeautimatisierung.png)
+
+</center>
+
 
 [Quelle](Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation)
 
@@ -85,14 +91,19 @@ theme: lemon
 * Typisch für diese Phase ist die Erstellung von **Fließbildern** und **Schemata**
     * z.B. Stromlaufpläne, Pneumatikpläne, Hydraulikpläne, etc.
     * Raumautomations-Schema und Raumautomations-Funktionschema (VDI 3813)
-    * Analgenautomations-Schema und Anlagenautomations-Funktionschema (VDI 3814)
+    * Anlagenautomations-Schema und Anlagenautomations-Funktionschema (VDI 3814)
 
 
 ---
 
 ### Komponenten-Sicht durch Preplanning
 
-![](images/light-building-eplan-preplanning-02.jpg)
+<center>
+
+![h:580](images/light-building-eplan-preplanning-02.jpg)
+
+
+</center>
 
 [Quelle](https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/)
 
@@ -100,7 +111,12 @@ theme: lemon
 
 ### Funktions-Sicht durch Raumautomations-Schema (VDI 3813)
 
-![h:350](images/RA-Schema.png)
+<center>
+
+![h:390](images/RA-Schema.png)
+
+</center>
+
 
 * Zuordnung von Sensoren, Aktoren und **Funktionen** zueinander
 * und zu Raum vs. Segment (keine genaue Räumliche Positionierung)
@@ -112,6 +128,20 @@ theme: lemon
 
 #### Funktionen
 
+```Python
+def f(x):
+    """this function's name is f. It takes a value x and returns a value y"""
+    [...]
+    y = 2*x
+    return y
+
+f(2) # Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe aus
+```
+
+
+---
+
+
 * **Eingaben**: Werte, die in die Funktion eingehen und sich abhängig vom Systemzustand ändern können
 * **Parameter**: unveränderliche Werte, die einmalig konfiguriert werden (z.B. in Abhängigkeit der Raumgröße)
 * **Ausgaben**: Werte, welche von der Funktion abhängig von Parametern und Eingaben zurückgegeben werden
@@ -120,7 +150,7 @@ theme: lemon
 
 ![bg right:20% h:400](images/Raumautomationschema_siemens.png)
 
-[Quelle](Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein)
+Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein
 
 
 ---
@@ -140,6 +170,7 @@ theme: lemon
 - Windgeschwindigkeit,
 - Niederschlag
 
+[Quelle](VDI 3813)
 
 ---
 
@@ -161,7 +192,12 @@ theme: lemon
 
 ##### Beispiel Verschattungkorrektur
 
+<center>
+
 ![](images/11659900299__de__Web.jpg)
+
+</center>
+
 
 [Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclibhvac/11659363083.html&id=)
 
@@ -225,7 +261,12 @@ theme: lemon
 
 ##### Zusammenhang zwischen verschiedenen Funktionen
 
+<center>
+
 ![h:400](images/RA-Schema.pdf.png)
+
+</center>
+
 
 [Quelle](https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf)
 
@@ -235,7 +276,12 @@ theme: lemon
 
 #### Schritt Raumautomations-Schema
 
+<center>
+
+
 ![](images/Funktionsschema.svg)
+
+</center>
 
 
 ---
@@ -253,15 +299,20 @@ theme: lemon
 
 ## ✍️ Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus
 
-- Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses
+- Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses (aus den Folien zuvor)
 - Alle Leuchten werden über einen Aktor für das gemachte Treppenhaus zusammengefasst
-- Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein bedienelement für die Beleuchtung angebracht werden
+- Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein Bedienelement für die Beleuchtung angebracht werden
 - Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können
-- zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik gesteuert werden können
+- zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik für den Bereich gesteuert werden können
 
 ---
 
-![h:400](images/RA_schemaCut.png)
+<center>
+
+![h:600](images/RA_schemaCut.png)
+
+</center>
+
 
 ---
 
@@ -270,7 +321,7 @@ theme: lemon
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-   TODO
+  ![h:580](images/RA_Loesung.png)
 
 ---
 
@@ -308,8 +359,8 @@ theme: lemon
     * Wie einfach ist es, neue Komponenten hinzuzufügen?
     * Wie offen  ist das System für Veränderungen?
 Wartbarkeit:
-    * Sind Dienstleister oder Personal verfügbar, die das System warten können?    
-    * Ist davon auszugehen, dass das System in 10 Jahren noch verfügbar ist?
+      * Sind Dienstleister oder Personal verfügbar, die das System warten können?    
+      * Ist davon auszugehen, dass das System in 10 Jahren noch verfügbar ist?
 
 ---
 

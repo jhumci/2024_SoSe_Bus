@@ -39,7 +39,11 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 >Struktur nach VDI 3814
 
+<center>
+
 ![w:700](images/Sktruktur_Gebäudeautomation.png)
+
+</center>
 
 [Quelle](Lauckner und Krimmling 2020)
 
@@ -63,7 +67,13 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 ### Schalenmodell nach VDI 3813 Blatt 1
 
+<!-- _class: white -->
+
+<center>
+
 ![](images/Schalenmodell.png)
+
+</center>
 
 [Quelle](VDI 3813 Blatt 1)
 
@@ -72,7 +82,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 #### Segment: 
 * kleinste Einheit im Schalenmodell
 * ein Raum kann aus mehreren Segmenten bestehen,
-* die für sich selbst funktionsfähig sind.
+* die für sich selbst funktionsfähig sind
 
 ![bg right w:400](images/gal_grossraumbuero-5.2216203.jpg)
 
@@ -112,6 +122,7 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 ## Hierarchie der Gebäudeautomation (Automatisierungspyramide)
 
+<!-- _class: white -->
 
 ![bg w:600 right:46%](images/HierarchischeGliederungderFunktionenderGebäudeautomation.png)
 
