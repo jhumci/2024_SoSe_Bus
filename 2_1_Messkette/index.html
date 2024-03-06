@@ -254,7 +254,7 @@
 <hr />
 <h3 id="programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</h3>
 <ul>
-<li>Öffnen Sie im Chrome Browser die Seite des <a href="https://code.circuitpython.org/">Online Editors</a></li>
+<li>Öffnen Sie im Chrome Browser die Seite des <a href="https://code.circuitpython.org/">Online Editors</a> in einem Chromium-basierten Browser</li>
 <li>Verbinden Sie Sich mittels USB</li>
 <li>Wählen Sie die Schnittstelle <code>CircuitPython CDC Control</code> aus</li>
 <li>Öffnen Sie das Verzeichnis (USB-Laufwerk) <code>CIRCUITPY</code> und wählen Sie <code>USE /</code></li>
@@ -348,7 +348,7 @@
 <p><img alt="bg right h:600" src="../images/20060511.gif" /></p>
 <ul>
 <li><span class="arithmatex">\(R_{pullup} = 10 \,\text{k}\Omega\)</span></li>
-<li>Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0</li>
+<li>Verbinden Sie den Taster mit dem 3.3V Pin und dem <code>GPIO 0</code></li>
 <li>Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm</li>
 </ul>
 <hr />
@@ -444,7 +444,7 @@
 <h2 id="aufgabe-2_1_3-anschluss-einer-led-an-einen-raspberry-pi-pico">✍️ Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico</h2>
 <ul>
 <li>Nun wollen wir eine LED anschließen in der Folge über den Taster schalten</li>
-<li>Sie LED soll nach einem Druck auf den Taster für <span class="arithmatex">\(1\,\text{s}\)</span> leuchten</li>
+<li>Die LED soll nach einem Druck auf den Taster ihren Zustand wechseln</li>
 <li>passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
@@ -494,7 +494,7 @@
 <h3 id="ausgang-verschalten_1">Ausgang verschalten</h3>
 <ul>
 <li>Wählen Sie einen geeigneten GPIO</li>
-<li>Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground (<span class="arithmatex">\(0V\)</span>)</li>
+<li>Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground (<span class="arithmatex">\(0\text{ V}\)</span>)</li>
 </ul>
 <hr />
 <h3 id="losung_2"><a href="Aufgaben\2_1_3\code.py">✔️ Lösung</a></h3>
@@ -513,10 +513,21 @@
 <span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
 <span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
 
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Released!&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
 </code></pre></div>
 </details>
 <hr />
@@ -530,6 +541,16 @@
 <p><center></p>
 <p><img alt="width:500" src="../images/Relais_Animation.gif" /></p>
 <p></center></p>
+<hr />
+<h5 id="selbsthaltefunktion">Selbsthaltefunktion</h5>
+<ul>
+<li>Hierbei wird durch das Schließen des Schalters ein Stromkreis geschlossen, der das Relais anzieht und somit ein andauerndes Schließen des Schalters ermöglicht<blockquote>
+<p>Wenn der Taster S2 (Schließer) betätigt wird, zieht das Relais K1 an und schließt den Kontakt K1. Wenn der Taster S2 nun losgelassen wird, überbrückt ihn der Kontakt K1 und das Relais bleibt weiterhin angezogen. Durch Betätigung des Tasters S1 (Öffner) wird das Relais stromlos und fällt ab, K1 ist damit offen. Wenn S2 betätigt wird, würde wieder K1 anziehen und in die Selbsthaltung gehen.</p>
+</blockquote>
+</li>
+</ul>
+<p><img alt="bg right" src="../images/Selbsthaltung.gif" /></p>
+<p><a href="https://de.wikipedia.org/wiki/Selbsthaltefunktion">Quelle</a></p>
 <hr />
 <h4 id="pulsweitenmodulation">Pulsweitenmodulation</h4>
 <!-- _class: white -->
