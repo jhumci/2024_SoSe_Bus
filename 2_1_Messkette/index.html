@@ -542,7 +542,7 @@
 <p><img alt="width:500" src="../images/Relais_Animation.gif" /></p>
 <p></center></p>
 <hr />
-<h5 id="selbsthaltefunktion">Selbsthaltefunktion</h5>
+<h5 id="selbsthaltefunktion">🤓 Selbsthaltefunktion</h5>
 <ul>
 <li>Hierbei wird durch das Schließen des Schalters ein Stromkreis geschlossen, der das Relais anzieht und somit ein andauerndes Schließen des Schalters ermöglicht<blockquote>
 <p>Wenn der Taster S2 (Schließer) betätigt wird, zieht das Relais K1 an und schließt den Kontakt K1. Wenn der Taster S2 nun losgelassen wird, überbrückt ihn der Kontakt K1 und das Relais bleibt weiterhin angezogen. Durch Betätigung des Tasters S1 (Öffner) wird das Relais stromlos und fällt ab, K1 ist damit offen. Wenn S2 betätigt wird, würde wieder K1 anziehen und in die Selbsthaltung gehen.</p>
@@ -617,7 +617,7 @@
 <ul>
 <li>Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)</li>
 <li>z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen</li>
-<li>Damit änder sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann</li>
+<li>Damit ändert sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann</li>
 </ul>
 <hr />
 <h4 id="analog-digital-wandler">Analog-Digital-Wandler</h4>
@@ -626,10 +626,11 @@
 <li>Dabei gibt es zwei relevante Parameter<ul>
 <li>Auflösung: Anzahl der möglichen Werte</li>
 <li>Referenzspannung: Spannungsbereich, der in die Auflösung abgebildet wird</li>
-<li>z.B. 16 Bit Auflösung und <span class="arithmatex">\(3.3 \,\text{V}\)</span> Referenzspannung <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(2^{16} = 65536\)</span> Werte zwischen <span class="arithmatex">\(0\)</span> und <span class="arithmatex">\(3.3 \,\text{V}\)</span></li>
+<li>z.B. 16 Bit Auflösung und <span class="arithmatex">\(3.3 \,\text{V}\)</span> Referenzspannung 
+<span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(2^{16} = 65536\)</span> Werte zwischen <span class="arithmatex">\(0\)</span> und <span class="arithmatex">\(3.3 \,\text{V}\)</span></li>
 </ul>
 </li>
-<li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
+<li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können (z.B. durch den Sleep-Timer im <code>while</code>-loop)</li>
 </ul>
 <hr />
 <h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</h2>
@@ -637,10 +638,10 @@
 <li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
 <li>Links (-): GND / Masse / 0 Volt</li>
 <li>Mitte: +VCC z.B. 3,3 oder 5 Volt</li>
-<li>Rechts (S): Verbindungspunkt des Spannungsteilers </li>
+<li>Rechts (S): Verbindungspunkt des Spannungsteilers</li>
 </ul>
 </li>
-<li>Fixwiderstand <span class="arithmatex">\(10 \,\text{k}\Omega\)</span> zwischen +VCC und S</li>
+<li>Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden</li>
 <li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
 </ul>
 <hr />
