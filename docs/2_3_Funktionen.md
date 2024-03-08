@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
+class: invert
 
 theme: lemon
 
