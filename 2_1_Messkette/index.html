@@ -559,6 +559,7 @@
 <li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
 <li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)</li>
 <li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> (Impulsdauer) geeignet setzen</li>
+<li>Die Frequenz <span class="arithmatex">\(f = \frac{1}{T}\)</span> ist beim Raspberry Pi Pico standardmäßig <span class="arithmatex">\(500 \,\text{Hz}\)</span></li>
 </ul>
 <p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
 <p><a href="https://www.elektronik-kompendium.de/sites/kom/0401111.htm">Quelle</a></p>
@@ -580,6 +581,12 @@
     <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
         <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
 </code></pre></div>
+<ul>
+<li>Die Länge des Duty-Cycles wird durch <span class="arithmatex">\(2^{16}=65536\)</span> Werte abgestuft</li>
+<li>bei <code>duty_cycle = 0</code> der Duty-Cycle bei <span class="arithmatex">\(0 \%\)</span> und die LED aus</li>
+<li>bei <code>duty_cycle = 65535</code> der Duty-Cycle  genau so lang wie die Periodendauer</li>
+</ul>
+<p><a href="https://docs.circuitpython.org/en/latest/shared-bindings/pwmio/index.html">Quelle</a></p>
 <hr />
 <h3 id="losung_3"><a href="Aufgaben\2_1_4">✔️ Lösung</a></h3>
 <!-- _color: black -->
@@ -635,7 +642,7 @@
 <hr />
 <h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</h2>
 <ul>
-<li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
+<li>Schließen Sie einen Fotowiderstand als <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
 <li>Links (-): GND / Masse / 0 Volt</li>
 <li>Mitte: +VCC z.B. 3,3 oder 5 Volt</li>
 <li>Rechts (S): Verbindungspunkt des Spannungsteilers</li>
@@ -643,11 +650,14 @@
 </li>
 <li>Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden</li>
 <li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
+<li>Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. </li>
+<li>Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen</li>
 </ul>
 <hr />
 <ul>
 <li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
 <li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
+<li>Notieren Sie sich einige Werte (<code>ADC</code>) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
@@ -676,7 +686,7 @@
 <li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
 <li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
 <li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
-<li><span class="arithmatex">\(a =0.0015\)</span> ist die Steigung der Parabel</li>
+<li><span class="arithmatex">\(a =0.0015\)</span> beschreibt die Steilheit der Parabel</li>
 <li><span class="arithmatex">\(s = 44000\)</span> ist der Verschiebung der Parabel auf der x-Achse</li>
 <li><span class="arithmatex">\(x\)</span> ist der Eingangswert</li>
 </ul>
