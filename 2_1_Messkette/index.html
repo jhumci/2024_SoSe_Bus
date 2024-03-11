@@ -138,6 +138,24 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_6">🤓 ✍️ Aufgabe 2_1_6:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-ausgange">Analoge Ausgänge</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
@@ -778,38 +796,42 @@
 
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-import board
-import analogio
-import time
-from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
-<p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung">Wiederholung</h1>
-<p>while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
-    # Warten
-    time.sleep(1)</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
 </details>
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z</p>
-<p>def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)<em>a) </em>*2</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
 </details>
 <hr />
 <h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
@@ -901,60 +923,6 @@ def map_lin(z):
 
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-import board
-import analogio
-import time
-from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter_1">Initialisierung des ADC (Analog-Digital Converter)</h1>
-<p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung_1">Wiederholung</h1>
-<p>while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
-    # Warten
-    time.sleep(1)</p>
-</details>
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<p>```python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z</p>
-<p>def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)<em>a) </em>*2</p>
-</details>
-<hr />
-<h2 id="verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</h2>
-<ul>
-<li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
-<li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>MY_NAME = &quot;Julian&quot;
-</code></pre></div>
-- Im Code können diese mittels <code>os</code> aufgerufen werden</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#  connect to your SSID</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MY_NAME&#39;</span><span class="p">))</span>
-</code></pre></div>
-<ul>
-<li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
-</ul>
-<hr />
-<h3 id="losung_6">Lösung</h3>
-<details class="optional-class">
-<summary>Lösung anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -976,7 +944,67 @@ def map_lin(z):
 </code></pre></div>
 </details>
 <details class="optional-class">
-<summary>Lösung anzeigen</summary>
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</h2>
+<ul>
+<li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
+<li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>MY_NAME = &quot;Julian&quot;
+</code></pre></div>
+- Im Code können diese mittels <code>os</code> aufgerufen werden</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#  connect to your SSID</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MY_NAME&#39;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
+</ul>
+<hr />
+<h3 id="losung_6">Lösung</h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
     <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
