@@ -264,7 +264,7 @@
 <h4 id="probleme-mit-der-naiven-losung">Probleme mit der naiven Lösung</h4>
 <!-- _class: white -->
 
-<p><img alt="bg right:35% h:420" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<p><img alt="bg right:35% h:520" src="../images/mermaid-diagram-2024-03-12-163310.svg" /></p>
 <ul>
 <li>Erneutes betätigen des Taster setzt die Wartezeit nicht zurück</li>
 <li>Unser System hat kein Gedächtnis (über den Zustand)</li>
@@ -272,14 +272,15 @@
 </ul>
 <hr />
 <div class="highlight"><pre><span></span><code>stateDiagram
-    A : LED ein
+    A : LED ein 1
     B : LED flackert
+    C : LED ein 2
     E : LED aus
     [*] --&gt; E : Systemstart
     E --&gt; A : L_MAN
-    B --&gt; A : L_MAN
     A --&gt; B : PAR_HOLD
-    B --&gt; E : PAR_WARN
+    C --&gt; E : PAR_WARN
+    B --&gt; C
 </code></pre></div>
 <hr />
 <h3 id="finite-state-machine-endlicher-automat">Finite State Machine (Endlicher Automat)</h3>
@@ -350,7 +351,7 @@
 <h4 id="in-der-programmierpraxis">In der Programmierpraxis</h4>
 <!-- _class: white -->
 
-<p><img alt="bg right:35% w:450" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<p><img alt="bg right:35% w:450" src="../images/mermaid-diagram-2024-03-12-163310.svg" /></p>
 <ul>
 <li>Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. Zeit muss z.B. mitgezählt werden)</li>
 <li>Die gerichteten Kanten stellen Übergänge zwischen den Zuständen dar, die durch Events und Bedingungen ausgelöst werden</li>
@@ -385,6 +386,78 @@
     E --&gt; C: Taster wird gedrückt   
     G --&gt; C: Taster wird gedrückt   
 </code></pre></div>
+<hr />
+<!-- _class : white -->
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">digitalio</span>
+
+<span class="n">PAR_HOLD</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">PAR_WARN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span>
+
+<span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+    <span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+    <span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+    <span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
+    <span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
+    <span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+
+    <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED aus&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erfolgreich gestartet&quot;</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED aus&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;State: LED aus </span><span class="se">\n</span><span class="s2">  Warte auf Aktion&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED an&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;State: LED an&quot;</span><span class="p">)</span>
+        <span class="n">time_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  um: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED leuchtet&quot;</span>
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED leuchtet&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LED leuchtet&quot;</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; seit: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_start</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_start</span> <span class="o">&gt;</span> <span class="n">PAR_HOLD</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED flackert&quot;</span> 
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED leuchtet2&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED an&quot;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; seit Warnung: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_warning</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">time_warning</span> <span class="o">&gt;</span> <span class="n">PAR_WARN</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED aus&quot;</span> 
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED flackert&quot;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="n">time_warning</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="s2">&quot;LED leuchtet2&quot;</span> 
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
 <hr />
 <h3 id="losung"><a href="Aufgaben\2_2_1">✔️ Lösung</a></h3>
 <!-- _color: black -->
@@ -463,11 +536,12 @@
 <hr />
 <h2 id="aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</h2>
 <ul>
-<li>Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
+<li>Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
 <li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
 <li>Durch Loslassen wir die Richtung umgekehrt</li>
 <li>Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
 <li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
+<li>Überlegen Sie sich dazu zunächst sinnvoll Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen</li>
 </ul>
 <hr />
 <h3 id="losung_1"><a href="Aufgaben\2_2_2">✔️ Lösung</a></h3>
@@ -674,7 +748,7 @@
 <hr />
 <h3 id="hinweise">Hinweise</h3>
 <ul>
-<li>Baue Sie auf Aufgaben 2_1_3 und 2_1_5 auf</li>
+<li>Bauen Sie auf Aufgaben 2_1_3 und 2_1_5 auf, um die Tageslichtschaltung zu implementieren</li>
 </ul>
 <details class="optional-class">
 <summary>💡 anzeigen</summary>

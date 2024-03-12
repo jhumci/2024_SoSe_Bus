@@ -126,27 +126,25 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_6">✔️ Lösung</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_7">Lösung</a>
     </li>
         </ul>
     </li>
@@ -660,22 +658,9 @@
 <hr />
 <h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</h2>
 <ul>
-<li>Schließen Sie einen Fotowiderstand als <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
-<li>Links (-): GND / Masse / 0 Volt</li>
-<li>Mitte: +VCC z.B. 3,3 oder 5 Volt</li>
-<li>Rechts (S): Verbindungspunkt des Spannungsteilers</li>
-</ul>
-</li>
-<li>Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden</li>
-<li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
-<li>Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. </li>
-<li>Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen</li>
-</ul>
-<hr />
-<ul>
-<li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
-<li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
-<li>Notieren Sie sich einige Werte (<code>ADC</code>) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) </li>
+<li>Verbinden Sie die <code>+</code> und <code>-</code> Leiste des Breadboards mit <span class="arithmatex">\(3.3 \,\text{V}\)</span> und <code>GND</code> des Raspberry Pi Pico</li>
+<li>Verbinden Sie den analogen Eingang <code>A2</code> mit einem Female-to-Female-Kabel</li>
+<li>Fügen Sie den folgenden Code ein</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
@@ -693,6 +678,67 @@
     <span class="c1"># Warten</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+<ul>
+<li>Verbinden Sie den Eingang zunächst mit <code>+</code>, dann mit <code>-</code> </li>
+<li>Welche Werte erhalten Sie?</li>
+</ul>
+<hr />
+<h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<ul>
+<li>Bei einer direkten Verbindung des Eingangs mit <code>+</code> oder <code>-</code> erhalten Sie die maximalen (<code>2**16</code>) bzw. minimalen Werte (nahe <code>0</code>)</li>
+</ul>
+</details>
+<hr />
+<ul>
+<li>Schließen Sie einen Fotowiderstand als <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
+<li>Links (I): +VCC z.B. 3,3 oder 5 Volt</li>
+<li>Mitte: GND / Masse / 0 Volt</li>
+<li>Rechts (S): Verbindungspunkt des Spannungsteilers</li>
+</ul>
+</li>
+<li>Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden</li>
+<li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
+<li>Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. </li>
+<li>Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen</li>
+</ul>
+<hr />
+<ul>
+<li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
+<li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
+<li>Notieren Sie sich einige Werte (<code>ADC</code>) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Umgebung</th>
+<th>ADC</th>
+<th>E in Lux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abgedunkelt</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Raumlicht</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taschenlampe</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
 <hr />
 <p><center></p>
@@ -791,7 +837,7 @@
 <p><img alt="bg right:43% w:550" src="../images/BB-Helligkeit_Datenblatt.png" /></p>
 <p><a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
 <hr />
-<h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<h3 id="losung_5"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
 <!-- _color: black -->
 
 <details class="optional-class">
@@ -918,7 +964,7 @@
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="losung_5"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<h3 id="losung_6"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
 <!-- _color: black -->
 
 <details class="optional-class">
@@ -978,7 +1024,7 @@
 <li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
 </ul>
 <hr />
-<h3 id="losung_6">Lösung</h3>
+<h3 id="losung_7">Lösung</h3>
 <!-- _color: black -->
 
 <details class="optional-class">
