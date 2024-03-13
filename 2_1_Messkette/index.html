@@ -130,17 +130,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</a>
     </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#die-spannung-und-der-adc-wert-sind-linear-zueinander">* Die Spannung und der ADC- Wert sind linear zueinander</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
     </li>
         </ul>
     </li>
@@ -672,6 +662,7 @@
 <li>Verbinden Sie den analogen Eingang <code>A2</code> mit einem Female-to-Female-Kabel</li>
 <li>Fügen Sie den folgenden Code ein</li>
 </ul>
+<hr />
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -761,7 +752,11 @@
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
 <hr />
 <h4 id="mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</h4>
-<h2 id="die-spannung-und-der-adc-wert-sind-linear-zueinander">* Die Spannung und der <code>ADC</code>- Wert sind linear zueinander</h2>
+<ul>
+<li>Die Spannung und der <code>ADC</code>- Wert sind linear zueinander</li>
+<li>Entsprechend kann jeder Wert des <code>ADC</code> über einer lineare Funktion in eine Spannung umgerechnet werden</li>
+</ul>
+<hr />
 <table>
 <thead>
 <tr>
