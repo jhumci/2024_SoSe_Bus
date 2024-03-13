@@ -363,29 +363,11 @@
 <!-- _class: white -->
 
 <ul>
-<li>In <a href="Aufgaben\2_2_1\code_state_machine.py"><code>code_state_machine.py</code></a> ist das auf der rechten Seite dargestellte Programm implementiert</li>
+<li>In <code>code_state_machine.py</code> (folgende Folie) ist das auf der rechten Seite dargestellte Programm implementiert</li>
 <li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
 <li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zusammengefasst wurden</li>
 </ul>
 <p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
-<hr />
-<div class="highlight"><pre><span></span><code>stateDiagram
-    A : Start
-    C:  LED an
-    D:  LED leuchtet
-    E:  LED leuchtet2
-    F:  LED flackert
-    G : LED aus
-    [*] --&gt; A : Systemstart
-    A --&gt; C : Taster wird gedrückt
-    C --&gt; D : 
-    D --&gt; F : PAR_HOLD vergeht
-    E --&gt; G : PAR_WARN vergeht
-    F --&gt; E: 
-    D --&gt; C: Taster wird gedrückt
-    E --&gt; C: Taster wird gedrückt   
-    G --&gt; C: Taster wird gedrückt   
-</code></pre></div>
 <hr />
 <!-- _class : white -->
 
@@ -458,6 +440,24 @@
         <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
 </code></pre></div>
 <p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
+<hr />
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : Start
+    C:  LED an
+    D:  LED leuchtet
+    E:  LED leuchtet2
+    F:  LED flackert
+    G : LED aus
+    [*] --&gt; A : Systemstart
+    A --&gt; C : Taster wird gedrückt
+    C --&gt; D : 
+    D --&gt; F : PAR_HOLD vergeht
+    E --&gt; G : PAR_WARN vergeht
+    F --&gt; E: 
+    D --&gt; C: Taster wird gedrückt
+    E --&gt; C: Taster wird gedrückt   
+    G --&gt; C: Taster wird gedrückt   
+</code></pre></div>
 <hr />
 <h3 id="losung"><a href="Aufgaben\2_2_1">✔️ Lösung</a></h3>
 <!-- _color: black -->

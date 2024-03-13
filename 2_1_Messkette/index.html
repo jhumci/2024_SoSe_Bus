@@ -128,23 +128,33 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
-    </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+    <li class="toctree-l2"><a class="reference internal" href="#die-spannung-und-der-adc-wert-sind-linear-zueinander">* Die Spannung und der ADC- Wert sind linear zueinander</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_6">✔️ Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_7">Lösung</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
     </li>
         </ul>
     </li>
@@ -678,6 +688,7 @@
     <span class="c1"># Warten</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+<hr />
 <ul>
 <li>Verbinden Sie den Eingang zunächst mit <code>+</code>, dann mit <code>-</code> </li>
 <li>Welche Werte erhalten Sie?</li>
@@ -706,6 +717,10 @@
 <li>Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen</li>
 </ul>
 <hr />
+<p><center></p>
+<p><img alt="h:500" src="../images/aufbau_pico_ky018.png" /></p>
+<p></center></p>
+<hr />
 <ul>
 <li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
 <li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
@@ -718,6 +733,7 @@
 <th>Umgebung</th>
 <th>ADC</th>
 <th>E in Lux</th>
+<th>U in V</th>
 </tr>
 </thead>
 <tbody>
@@ -725,14 +741,17 @@
 <td>Abgedunkelt</td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Raumlicht</td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td>Taschenlampe</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -741,13 +760,69 @@
 <p></center></p>
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
 <hr />
-<p><center></p>
-<p><img alt="h:500" src="../images/aufbau_pico_ky018.png" /></p>
-<p></center></p>
+<h4 id="mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</h4>
+<h2 id="die-spannung-und-der-adc-wert-sind-linear-zueinander">* Die Spannung und der <code>ADC</code>- Wert sind linear zueinander</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(U_{max}\)</span></td>
+<td>maximale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(U_{min}\)</span></td>
+<td>minimale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{max}\)</span></td>
+<td>maximaler Messwert des ADC</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{min}\)</span></td>
+<td>minimaler Messwert des ADC</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Annahme: Linearer Zusammenhang
+    <span class="arithmatex">\(U = f(z) = \beta_0 + \beta_1 z\)</span></li>
+<li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
+<li>Bei welchen Wert hat <span class="arithmatex">\(U\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
+</ul>
+</li>
+<li>2: Wie groß ist die Steigung <span class="arithmatex">\(\beta_1\)</span>?<ul>
+<li>Wie groß ist die Änderung von <span class="arithmatex">\(U\)</span> pro Änderung von <span class="arithmatex">\(z\)</span>?</li>
+<li><span class="arithmatex">\(\beta_1 = \frac{{U_{max}} - U_{min}}{z_{max} - z_{min}}\)</span></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Der folgende Code übernimmt dein Eingangswert und gibt einen Spannungs-Wert zwischen 3.3 und 0 zurück</li>
+<li>Fügen Sie die Funktion <code>map_lin</code> in den Code ein und geben Sie die Spannung auf der Konsole aus</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">U_max</span> <span class="o">=</span> <span class="mf">3.3</span>
+    <span class="n">U_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">U_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">U_max</span> <span class="o">-</span> <span class="n">U_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+</code></pre></div>
+<ul>
+<li>Wenn Sie Ihren Code schön aufgeräumt haben wollen können eine Datei <code>mappings.py</code> im gleiche Ordner wie <code>code.py</code> erstellen und die Funktion dort speichern</li>
+<li>Sie können diese dann mittels <code>from mappings import map_lin</code> ins <code>main.py</code> importieren und nutzen</li>
+</ul>
 <hr />
 <h4 id="mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</h4>
 <ul>
-<li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
+<li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen <code>ADC</code>-Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
 <li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
 <li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
 <li><span class="arithmatex">\(a =0.0015\)</span> beschreibt die Steilheit der Parabel</li>
@@ -757,6 +832,9 @@
 </li>
 </ul>
 <p><img alt="bg right:43% w:550" src="../images/CurveFitHelligkeit.png" /></p>
+<ul>
+<li>Erstellen Sie in eine Datei <code>mappings.py</code> (im gleichen Ordner, wie die <code>code.py</code>) eine Funktion <code>map_quat()</code>, die stattdessen die oben angegeben Formel implementiert</li>
+</ul>
 <hr />
 <h5 id="ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken <span class="arithmatex">\(E\)</span></h5>
 <table>
@@ -837,109 +915,13 @@
 <p><img alt="bg right:43% w:550" src="../images/BB-Helligkeit_Datenblatt.png" /></p>
 <p><a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
 <hr />
-<h3 id="losung_5"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
-<!-- _color: black -->
-
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
-<span class="kn">import</span> <span class="nn">analogio</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
-
-
-<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
-<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
-
-<span class="c1"># Wiederholung</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="c1"># ADC als Dezimalzahl lesen</span>
-    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
-    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
-    <span class="c1"># Warten</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-</details>
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
-    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
-    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
-
-<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
-    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
-</code></pre></div>
-</details>
-<hr />
-<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
 <ul>
 <li>Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet</li>
 <li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus</li>
 <li>Orientieren Sie sich dabei an folgendem Code, der ein Beispiel für ein lineares Mapping zeigt</li>
+<li>Evtl. müssen Sie die Werte an Ihren Sensor und Aufbau anpassen, um die Beleuchtungsstärke in Lux zu erhalten</li>
 </ul>
-<hr />
-<table>
-<thead>
-<tr>
-<th>Symbol</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(E_{max}\)</span></td>
-<td>maximale Beleuchtungsstärke</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(E_{min}\)</span></td>
-<td>minimale Beleuchtungsstärke</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(z_{max}\)</span></td>
-<td>maximaler Messwert des ADC</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(z_{min}\)</span></td>
-<td>minimaler Messwert des ADC</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Annahme: Linearer Zusammenhang
-    <span class="arithmatex">\(E = f(z) = \beta_0 + \beta_1 z\)</span></li>
-<li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
-<li>Bei welchen Wert hat <span class="arithmatex">\(E\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
-</ul>
-</li>
-<li>2: Wie groß ist die Steigung <span class="arithmatex">\(\beta_1\)</span>?<ul>
-<li>Wie groß ist die Änderung von <span class="arithmatex">\(E\)</span> pro Änderung von <span class="arithmatex">\(z\)</span>?</li>
-<li><span class="arithmatex">\(\beta_1 = \frac{E_{max} - E_{min}}{z_{max} - z_{min}}\)</span></li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>Der folgende Code übernimmt dein Eingangswert und gibt einen normalisierten Wert zwischen 1 und 0 zurück</li>
-<li>Erstellen Sie in einer Datei <code>mappings.py</code> (im gleichen Ordner, wie die <code>code.py</code>) eine Funktion <code>map_quat()</code>, die stattdessen die oben angegeben Formel implementiert</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
-    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
-    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
-</code></pre></div>
 <hr />
 <ul>
 <li>🤓 Im besten Fall wird <code>map_ln</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden  </li>
@@ -964,7 +946,7 @@
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="losung_6"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<h3 id="losung_5"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
 <!-- _color: black -->
 
 <details class="optional-class">
@@ -1024,7 +1006,7 @@
 <li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
 </ul>
 <hr />
-<h3 id="losung_7">Lösung</h3>
+<h3 id="losung_6">Lösung</h3>
 <!-- _color: black -->
 
 <details class="optional-class">
