@@ -96,6 +96,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verbesserte-losung">✔️ Verbesserte Lösung</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</a>
@@ -381,7 +383,7 @@
 <ul>
 <li>In <code>code_state_machine.py</code> (folgende Folie) ist das auf der rechten Seite dargestellte Programm implementiert</li>
 <li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
-<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zzsammengefasst wurden</li>
+<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem zusammengefasst wurden</li>
 </ul>
 <p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
 <hr />
@@ -583,6 +585,31 @@
 <!-- _class: white -->
 
 <p><img alt="bg h:720" src="../images/mermaid-diagram-2024-01-25-115643.svg" /></p>
+<hr />
+<h3 id="verbesserte-losung"><a href="Aufgaben\2_2_2">✔️ Verbesserte Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code>stateDiagram
+    A : 100%
+    B : 0%
+    C : aufwärts
+    D : abwärts
+    A --&gt; B: kurzer Druck
+    B --&gt; A: kurzer Druck
+    A --&gt; D: langer Druck
+    B --&gt; C: langer Druck
+    C --&gt; D: loslassen
+    D --&gt; C: loslassen
+    C --&gt; C: langer Druck
+    D --&gt; D: langer Druck
+</code></pre></div>
+</details>
+<hr />
+<!-- _class: white -->
+
+<p><img alt="bg h:720" src="../images/mermaid-diagram-2024-03-18-103358.svg" /></p>
 <hr />
 <h2 id="aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</h2>
 <ul>
@@ -853,8 +880,8 @@
 
 <span class="c1"># LED</span>
 <span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
-<span class="n">PAR_SETPT</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
-<span class="n">PAR_SETPT</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
+<span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
 
 <span class="c1"># Button</span>
 
@@ -877,7 +904,7 @@
     <span class="n">H_ROOM</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">H_ROOM</span><span class="p">))</span>
 
-    <span class="n">PAR_SETPT</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_ACT</span> <span class="ow">and</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">H_ROOM</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">L_SET</span><span class="p">)</span> <span class="ow">or</span> <span class="n">L_MAN</span><span class="p">)</span>
+    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">P_ACT</span> <span class="ow">and</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">H_ROOM</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">L_SET</span><span class="p">)</span> <span class="ow">or</span> <span class="n">L_MAN</span>
     <span class="c1"># Warten</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>

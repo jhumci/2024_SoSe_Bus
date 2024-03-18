@@ -62,7 +62,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#steuerfunktion">Steuerfunktion</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_3_1-implementierung-einer-tageslichtschaltung">✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung</a>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_3_1-implementierung-einer-tageslichtschaltung">🤓✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#moglicher-startpunkt">Möglicher Startpunkt</a>
     </li>
@@ -168,7 +168,7 @@
 </code></pre></div>
 <hr />
 <h2 id="steuerfunktion">Steuerfunktion</h2>
-<div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
+<div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}}\]</div>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="p">(</span><span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">))</span> <span class="ow">or</span> <span class="n">l_man</span>
 </code></pre></div>
@@ -179,7 +179,7 @@
     <span class="n">l_set_value</span> <span class="o">=</span> <span class="n">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="aufgabe-2_3_1-implementierung-einer-tageslichtschaltung">✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung</h2>
+<h2 id="aufgabe-2_3_1-implementierung-einer-tageslichtschaltung">🤓✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung</h2>
 <ul>
 <li>Implementieren Sie die Tageslichtschaltung in Python</li>
 <li>Stellen Sie zunächst sicher, dass LED, Button und Analog-Digital-Wandler korrekt angeschlossen sind</li>
@@ -307,7 +307,7 @@
 </ul>
 <h3 id="losung_1">✔️ Lösung</h3>
 <ul>
-<li>Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändern</li>
+<li>Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändert</li>
 <li>Umrechnungen</li>
 <li>Einfacher, wenn mehr (z.B. auch die Zuweisung der Ein- und Ausgänge) in Funktionen ausgelagert wird</li>
 </ul>
