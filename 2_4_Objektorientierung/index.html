@@ -166,6 +166,7 @@
 <h2 id="motivation">Motivation</h2>
 <ul>
 <li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
+<li>Eine State-Machine hat einen Zustand, aber ist aufwendig zu implementieren und anzupassen</li>
 <li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
 </ul>
 <p><img alt="bg right" src="../images/Schwanken.png" /></p>
@@ -175,10 +176,10 @@
 <li>Objektorientierte Programmierung: Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten</li>
 <li>z.B. Objekt der Klasse <code>Sensor</code></li>
 <li>Attribute (Eigenschaften mit Datentyp):<ul>
-<li>Zählernummer</li>
+<li>Name</li>
+<li>Einheit</li>
 <li>Aktueller Messerwert </li>
 <li>Liste bisheriger Messerwerte</li>
-<li>Einheit</li>
 </ul>
 </li>
 <li>Methoden (wie Funktionen):<ul>
@@ -194,7 +195,12 @@
 <ul>
 <li>Die Sensor-Klasse beschreibt allgemein das Verhalten jedes Sensors!</li>
 <li>Jeder einzelne Sensor ist ein Objekt der Klasse Sensor, bei dem die Attribute individuell ausgeprägt 
-<img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /></li>
+<img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /><ul>
+<li>Beleuchtungsstärke-Sensor</li>
+<li>Temperatursensor</li>
+<li>...</li>
+</ul>
+</li>
 </ul>
 <hr />
 <div class="highlight"><pre><span></span><code>classDiagram
@@ -432,11 +438,10 @@
 <p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
 <hr />
 <h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
-<hr />
 <h3 id="serialisierung-von-objekten">Serialisierung von Objekten</h3>
 <p><img alt="h:300" src="../images/Signalisierung.svg" /></p>
 <ul>
-<li>Zur Übertragung zwischen Systemen müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden</li>
+<li>Zur Übertragung zwischen Systemen und Speicherung müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden</li>
 <li>Serialisierung:</li>
 <li>Objekt aus dem Arbeitsspeicher wird in eine Folge von Zeichen übersetzt (letztlich eine Folge von Bits)</li>
 <li>Austauschdateiformat (meist in Form einer Auszeichnungssprache)</li>
@@ -486,6 +491,7 @@
 <li>Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen</li>
 <li>Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?</li>
 <li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht</li>
+<li><code>del(my_dict["unit"])</code> entfernt z.B. den Eintrag <code>unit</code> aus dem Dictionary</li>
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>

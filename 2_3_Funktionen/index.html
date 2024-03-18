@@ -170,7 +170,7 @@
 <h2 id="steuerfunktion">Steuerfunktion</h2>
 <div class="arithmatex">\[L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} &lt; \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})\]</div>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">l_set</span><span class="p">(</span><span class="n">p_act</span><span class="p">,</span> <span class="n">h_room</span><span class="p">,</span> <span class="n">PAR_SETPT</span><span class="p">,</span> <span class="n">l_man</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">)</span> <span class="ow">or</span> <span class="n">l_man</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p_act</span> <span class="ow">and</span> <span class="p">(</span><span class="n">h_room</span><span class="o">&lt;</span><span class="n">PAR_SETPT</span><span class="p">))</span> <span class="ow">or</span> <span class="n">l_man</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tageslichtschaltung</span> <span class="kn">import</span> <span class="n">l_set</span>
 <span class="kn">from</span> <span class="nn">mapping</span> <span class="kn">import</span> <span class="n">map_quat</span>
@@ -309,11 +309,10 @@
 <ul>
 <li>Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändern</li>
 <li>Umrechnungen</li>
-<li>Einfacher, wenn mehr in Funktionen ausgelagert wird</li>
+<li>Einfacher, wenn mehr (z.B. auch die Zuweisung der Ein- und Ausgänge) in Funktionen ausgelagert wird</li>
 </ul>
 <hr />
 <h2 id="sichtbarkeit-von-variablen">Sichtbarkeit von Variablen</h2>
-<hr />
 <h3 id="lokale-variablen">Lokale Variablen</h3>
 <ul>
 <li>Variablen, die innerhalb einer Funktion definiert werden (z.B. <code>s</code>) sind außerhalb der Funktion nicht sichtbar (<em>Kapselung</em>)</li>

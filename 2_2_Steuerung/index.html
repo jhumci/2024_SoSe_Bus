@@ -348,6 +348,22 @@
 </li>
 </ul>
 <hr />
+<h5 id="regular-expressions">Regular Expressions</h5>
+<ul>
+<li>Eine reguläre Sprache ist eine Menge von Zeichenketten, die durch einen regulären Ausdruck beschrieben werden können</li>
+<li>z.B. Beider Suche nach einer Zeichenkette in einem Text<ul>
+<li>Alles, was <code>mapping</code> im Namen hat:<ul>
+<li><code>.*mapping.*</code></li>
+</ul>
+</li>
+<li>Alles was mit mapping beginnt und mit einer Zahl endet<ul>
+<li><code>mapping\d+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
 <h4 id="in-der-programmierpraxis">In der Programmierpraxis</h4>
 <!-- _class: white -->
 
@@ -365,7 +381,7 @@
 <ul>
 <li>In <code>code_state_machine.py</code> (folgende Folie) ist das auf der rechten Seite dargestellte Programm implementiert</li>
 <li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
-<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zusammengefasst wurden</li>
+<li>Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände <code>LED leuchtet</code> und <code>LED flackert</code> gibt und diese nicht in einem Zzsammengefasst wurden</li>
 </ul>
 <p><img alt="bg right h:720" src="../images/mermaid-diagram-2024-01-25-114138.svg" /></p>
 <hr />
@@ -487,6 +503,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erfolgreich gestartet&quot;</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Long sleep to debug the state machine</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;LED aus&quot;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;State: LED aus </span><span class="se">\n</span><span class="s2">  Warte auf Aktion&quot;</span><span class="p">)</span>
@@ -537,11 +554,11 @@
 <h2 id="aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</h2>
 <ul>
 <li>Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
-<li>Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
-<li>Durch Loslassen wir die Richtung umgekehrt</li>
-<li>Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
+<li>Durch Halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
+<li>Durch Loslassen wird die Richtung umgekehrt</li>
+<li>Durch ein kurzes Drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
 <li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
-<li>Überlegen Sie sich dazu zunächst sinnvoll Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen</li>
+<li>Überlegen Sie sich dazu zunächst sinnvolle Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen</li>
 </ul>
 <hr />
 <h3 id="losung_1"><a href="Aufgaben\2_2_2">✔️ Lösung</a></h3>
@@ -605,35 +622,38 @@
 <tr>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>0</td>
-<td>1</td>
 <td>1</td>
 </tr>
 <tr>
-<td>1</td>
 <td>0</td>
 <td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr>
 <td>1</td>
 <td>1</td>
-<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Boolsche Funktion</strong>
-<span class="arithmatex">\(L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)\)</span></p>
+<span class="arithmatex">\(L = (S_1 \land S_2) \lor (\lnot S_1 \land \lnot  S_2)\)</span></p>
 <hr />
 <h2 id="aufgabe-2_2_4-implementierung-einer-vereinfachten-tageslichtschaltung">✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung</h2>
 <p><img alt="bg right:33% h:720" src="../images/Tageslichtschaltung.png" /></p>
 <ul>
-<li>Wir vereinfachen die Tageslichtschaltung, indem wir die Zeitparameter weglassen</li>
+<li>Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke weglassen</li>
 <li>Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung</li>
-<li>Setzen Sie <code>L_MAN</code> zunächst auf <code>False</code> und schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind</li>
-<li>Nutzen Sie einen Button, um den Anwesenheitszustand <code>P_ACT</code> zu simulieren</li>
+<li>Setzen Sie <code>L_MAN</code> zunächst im Code auf <code>False</code> </li>
+<li>🤓 schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind</li>
+<li>Nutzen Sie einen Button, um den Anwesenheitszustand <code>P_ACT</code> zu simulieren
+<em>H_ROOM</em> können Sie entweder als Beleuchtungsstärke, Spannung oder  <code>ADC-Wert</code> setzen</li>
+<li><code>L_SET</code> soll das Ausgangssignal sein, das die Lampe steuert und kann zunächst auf <code>True</code> gesetzt werden. 🤓 Später können Sie diesen auch durch eine Pulsweitenmodulation setzen.</li>
 </ul>
 <hr />
 <table>
