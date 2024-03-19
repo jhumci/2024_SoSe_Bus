@@ -167,7 +167,7 @@
 <ul>
 <li>Funktionen haben wohl definierten Input und Output aber keinen Speicher / Zustand</li>
 <li>Eine State-Machine hat einen Zustand, aber ist aufwendig zu implementieren und anzupassen</li>
-<li>Bedarf für beides: wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
+<li>Bedarf für beides: wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand (letzte Messerwerte) speichern</li>
 </ul>
 <p><img alt="bg right" src="../images/Schwanken.png" /></p>
 <hr />
@@ -302,7 +302,7 @@
 <ul>
 <li>Passen Sie den gegeben Code so an, dass der Sensor auch über eine Methode verfügt, welche den Mittelwert der Messwerte zurückgibt</li>
 <li>Sie können die folgende Funktion als Ausgangspunkt verwenden</li>
-<li>Vergessen sie nicht das <code>self</code>-Argument zu übergeben</li>
+<li>Vergessen Sie nicht das <code>self</code>-Argument zu übergeben</li>
 <li>Hierdurch können sie auch die Übergabe des Parameters <code>list_of_measurements</code> vermeiden, die Sie sich im Objekt direkt auf <code>self.measurements</code> beziehen können
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">bilde_mittelwert</span><span class="p">(</span><span class="n">list_of_measurements</span><span class="p">):</span>
 <span class="w">  </span><span class="sd">&quot;&quot;&quot; Eine Funktion, die eine Liste von Werten übernimmt und das arithmetische Mittel zurück gibt&quot;&quot;&quot;</span>
@@ -490,7 +490,7 @@
 <ul>
 <li>Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen</li>
 <li>Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?</li>
-<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht</li>
+<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht und das bereiningte Dictionary zurückgibt und printen Sie es</li>
 <li><code>del(my_dict["unit"])</code> entfernt z.B. den Eintrag <code>unit</code> aus dem Dictionary</li>
 </ul>
 <hr />

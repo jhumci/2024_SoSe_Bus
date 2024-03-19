@@ -100,7 +100,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</a>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_2">❌ Lösung</a>
     </li>
@@ -556,9 +556,11 @@
 <h2 id="aufgabe-2_2_2-state-machine-fur-einen-dimmschalter">✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter</h2>
 <ul>
 <li>Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert</li>
-<li>Durch Halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden</li>
-<li>Durch Loslassen wird die Richtung umgekehrt</li>
 <li>Durch ein kurzes Drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden</li>
+<li>Durch einen Doppeldruck soll der Dimm-Modus gestartet werden</li>
+<li>in diesem wird durch Halten des Tasters die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden, je nach dem, wie lange der Taster gehalten wird</li>
+<li>Nach dem Loslassen wird die Richtung umgekehrt</li>
+<li>Durch einen einfachen Druck wird der Dimm-Modus und wieder in den normalen Modus gewechselt</li>
 <li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
 <li>Überlegen Sie sich dazu zunächst sinnvolle Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen</li>
 </ul>
@@ -594,26 +596,31 @@
 <div class="highlight"><pre><span></span><code>stateDiagram
     A : 100%
     B : 0%
-    C : aufwärts
-    D : abwärts
+    C : aufwärts - warte auf Eingabe
+    D : abwärts - warte auf Eingabe
+    E : dimme abwärts
+    F : dimme aufwärts
     A --&gt; B: kurzer Druck
     B --&gt; A: kurzer Druck
-    A --&gt; D: langer Druck
-    B --&gt; C: langer Druck
-    C --&gt; D: loslassen
-    D --&gt; C: loslassen
-    C --&gt; C: langer Druck
-    D --&gt; D: langer Druck
+    A --&gt; D: Doppel-Druck
+    B --&gt; C: Doppel-Druck
+    D --&gt; E: halten
+    E --&gt; C: loslassen
+    C --&gt; F: halten
+    F --&gt; D: loslassen
+    D --&gt; A: kurzer Druck
+    C --&gt; B: kurzer Druck
 </code></pre></div>
 </details>
 <hr />
 <!-- _class: white -->
 
-<p><img alt="bg h:720" src="../images/mermaid-diagram-2024-03-18-103358.svg" /></p>
+<p><img alt="bg h:720" src="../images/mermaid-diagram-2024-03-18-125549.svg" /></p>
 <hr />
-<h2 id="aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</h2>
+<h2 id="aufgabe-2_2_3-implementierung-eines-dimmschalter">🤓✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter</h2>
 <ul>
 <li>Implementieren Sie einen Dimmer</li>
+<li>Lösung mit einer State Machine und Darstellung der State Machine gibt 5% Bonus</li>
 </ul>
 <hr />
 <h3 id="losung_2">❌ Lösung</h3>
