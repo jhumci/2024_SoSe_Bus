@@ -67,7 +67,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#blockschaltbild">Blockschaltbild</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#dynamische-systeme">Dynamische Systeme</a>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamische-systeme">🤓 Dynamische Systeme</a>
     </li>
         </ul>
     </li>
@@ -200,7 +200,9 @@
 <h1 id="31-blockschaltbild">3.1 Blockschaltbild</h1>
 <hr />
 <h2 id="blockschaltbild">Blockschaltbild</h2>
-<p><img alt="" src="../images/Blockschaltbild1.png" /></p>
+<p><center></p>
+<p><img alt="h:300" src="../images/Blockschaltbild1.png" /></p>
+<p></center></p>
 <ul>
 <li>Grafische Beschreibung von Systemen in der Regelungs- und Steuerungstechnik</li>
 <li>Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind</li>
@@ -214,13 +216,12 @@
 </ul>
 <p><a href="Lunze">Quelle</a></p>
 <hr />
-<h3 id="dynamische-systeme">Dynamische Systeme</h3>
+<h3 id="dynamische-systeme">🤓 Dynamische Systeme</h3>
 <ul>
 <li>lineare Systeme: Systemfunktion ist eine lineare Funktion</li>
 <li>nichtlineare Systeme: Systemfunktion ist eine nichtlineare Funktion</li>
 <li>zeitinvariante Systeme: Systemfunktion ist unabhängig von der Zeit</li>
 <li>zeitvariante Systeme: Systemfunktion ist abhängig von der Zeit</li>
-<li>Totzeit: Systemfunktion ist eine Funktion der Zeit, die für <span class="arithmatex">\(t&lt;0\)</span> verschwindet</li>
 </ul>
 <hr />
 <h2 id="elemente-eines-blockschaltbildes">Elemente eines Blockschaltbildes</h2>
@@ -246,9 +247,9 @@
 <li><span class="arithmatex">\(y = f(u)=K_p \cdot u\)</span></li>
 <li>Beispiel: </li>
 <li>je höher die <span class="arithmatex">\(\text{CO}_2\)</span> Konzentration in einem Raum, desto schneller dreht sich ein Ventilator in einer Lüftungsanlage</li>
-<li><span class="arithmatex">\(y\)</span> ... Drehfrequenz der Ventilators in <span class="arithmatex">\(Hz\)</span></li>
-<li><span class="arithmatex">\(u\)</span> ... <span class="arithmatex">\(\text{CO}_2\)</span> Konzentration in <span class="arithmatex">\(ppm\)</span></li>
-<li><span class="arithmatex">\(K_p\)</span> ... Proportionalitätsfaktor in <span class="arithmatex">\(\frac{Hz}{ppm}\)</span></li>
+<li><span class="arithmatex">\(y\)</span> ... Drehfrequenz der Ventilators in <span class="arithmatex">\(\text{Hz}\)</span></li>
+<li><span class="arithmatex">\(u\)</span> ... <span class="arithmatex">\(\text{CO}_2\)</span> Konzentration in <span class="arithmatex">\(\text{ppm}\)</span></li>
+<li><span class="arithmatex">\(K_p\)</span> ... Proportionalitätsfaktor in <span class="arithmatex">\(\frac{\text{Hz}}{\text{ppm}}\)</span></li>
 </ul>
 <p><img alt="bg right:37% h:400" src="../images/p-glied-verhalten.svg" /></p>
 <hr />
@@ -334,7 +335,7 @@
 <p><a href="https://upload.wikimedia.org/wikipedia/commons/6/64/R_S_Block.svg">Quelle</a></p>
 <hr />
 <h2 id="steuerung">🧠 Steuerung</h2>
-<p><img alt="height:150" src="../images/SteuerungBlock.png" /></p>
+<p><img alt="" src="../images/SteuerungBlock.png" /></p>
 <ul>
 <li><strong>Stellgröße</strong> ist die Ausgangsgröße des Stellglieds (<span class="arithmatex">\(\rightarrow\)</span> Spannung an der LED)</li>
 <li><strong>Steuerstrecke</strong> ist das System, das durch die Stellgröße und Störgrößen beeinflusst wird (<span class="arithmatex">\(\rightarrow\)</span> Helligkeit im Raum)</li>
@@ -413,7 +414,7 @@
 <li>einfach zu verstehen</li>
 <li>und zu implementieren</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">regelabweichung</span> <span class="o">=</span> <span class="n">soll_lux</span><span class="o">-</span> <span class="n">ist_lux</span> 
+<div class="highlight"><pre><span></span><code><span class="n">regelabweichung</span> <span class="o">=</span> <span class="n">soll_lux</span> <span class="o">-</span> <span class="n">ist_lux</span> 
 
 <span class="n">zweipunkt_regler</span><span class="p">(</span><span class="n">regelabweichung</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">regelabweichung</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>

@@ -80,8 +80,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#vererbung">Vererbung</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#serialisierung-von-objekten">Serialisierung von Objekten</a>
@@ -95,6 +93,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#appendix">Appendix</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vererbung">🤓 Vererbung</a>
     </li>
         </ul>
     </li>
@@ -165,8 +169,8 @@
 <hr />
 <h2 id="motivation">Motivation</h2>
 <ul>
-<li>Funktionen haben wohl definierten Input und Output aber keinen Speicher / Zustand</li>
-<li>Eine State-Machine hat einen Zustand, aber ist aufwendig zu implementieren und anzupassen</li>
+<li><strong>Funktionen</strong> haben wohl definierten Input und Output aber <strong>keinen Speicher / Zustand</strong></li>
+<li>Eine <strong>State-Machine</strong> hat einen Zustand, aber ist <strong>aufwendig</strong> zu implementieren und anzupassen</li>
 <li>Bedarf für beides: wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand (letzte Messerwerte) speichern</li>
 </ul>
 <p><img alt="bg right" src="../images/Schwanken.png" /></p>
@@ -426,17 +430,6 @@
 </code></pre></div>
 </details>
 <hr />
-<h2 id="vererbung">Vererbung</h2>
-<!-- _class: white -->
-
-<ul>
-<li>Durch Vererbung können die <strong>Attribute</strong> und <strong>Methoden</strong> einer (Parent-)Klasse <strong>an andere</strong> (Child-)<strong>Klassen weitergegeben</strong> werden. </li>
-<li>Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. </li>
-<li>Im UML-Klassendiagramm wird die Vererbung mit meinem im <strong>leeren Dreieck endenden Pfeil</strong> dargestellt.</li>
-<li>Dies ermöglicht eine <strong>hierarchische Strukturierung</strong> von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen</li>
-</ul>
-<p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
-<hr />
 <h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
 <h3 id="serialisierung-von-objekten">Serialisierung von Objekten</h3>
 <p><img alt="h:300" src="../images/Signalisierung.svg" /></p>
@@ -542,6 +535,19 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;returns data in &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
 </code></pre></div>
 </details>
+<hr />
+<h2 id="appendix">Appendix</h2>
+<h3 id="vererbung">🤓 Vererbung</h3>
+<!-- _class: white -->
+
+<ul>
+<li>Durch Vererbung können die <strong>Attribute</strong> und <strong>Methoden</strong> einer (Parent-)Klasse <strong>an andere</strong> (Child-)<strong>Klassen weitergegeben</strong> werden. </li>
+<li>Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. </li>
+<li>Im UML-Klassendiagramm wird die Vererbung mit meinem im <strong>leeren Dreieck endenden Pfeil</strong> dargestellt.</li>
+<li>Dies ermöglicht eine <strong>hierarchische Strukturierung</strong> von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen</li>
+</ul>
+<p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
+<hr />
               
             </div>
           </div><footer>
