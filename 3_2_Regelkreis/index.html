@@ -81,7 +81,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#proportional-regler">Proportional-Regler</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2-regelung-der-co2-konzentration">✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration</a>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2-regelung-der-textco_2-konzentration">✍️ Aufgabe 3_2_2: Regelung der \(\text{CO}_2\)-Konzentration</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
     </li>
@@ -210,20 +210,17 @@
 </code></pre></div>
 <p><img alt="bg right:60% height:600" src="../images/P-Regler-Funktionen.svg" /></p>
 <hr />
-<h2 id="aufgabe-3_2_2-regelung-der-co2-konzentration">✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration</h2>
+<h2 id="aufgabe-3_2_2-regelung-der-textco_2-konzentration">✍️ Aufgabe 3_2_2: Regelung der <span class="arithmatex">\(\text{CO}_2\)</span>-Konzentration</h2>
 <ul>
 <li>Ziel ist der Entwurf eines Reglers zur Steuerung einer Belüftungsanlage auf Basis der Schadstoffkonzentration im Raum in ppm </li>
 <li>Zeichnen Sie den Verlauf der Stellgrößen (Drehzahl der Anlage) für folgende zwei Regler:</li>
-<li>stetiger Proportionalregler: <span class="arithmatex">\(u(t) = \frac{2}{min \cdot ppm} e(t)\)</span> </li>
+<li>stetiger Proportionalregler: <span class="arithmatex">\(u(t) = \frac{2}{\text{min} \cdot \text{ppm}} e(t)\)</span> </li>
 <li>Regelung nach Logik nächste Seite.</li>
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>
-<p><img alt="bg right:66% height:600" src="../images/AufgabeRegler.svg" /></p>
-<hr />
-<h3 id="losung_2">✔️ Lösung</h3>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">regler</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">letzte_drehzahl</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">e</span> <span class="o">==</span><span class="mi">1000</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">1000</span><span class="p">:</span>
     <span class="n">drehzahl</span> <span class="o">=</span> <span class="n">letzte_drehzahl</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
@@ -233,12 +230,15 @@
   <span class="k">return</span> <span class="n">drehzahl</span>
 </code></pre></div>
 <hr />
+<h3 id="losung_2">✔️ Lösung</h3>
+<p><img alt="bg right:66% height:600" src="../images/AufgabeRegler.svg" /></p>
+<hr />
 <h3 id="zusammenfassung-p-regler">Zusammenfassung P-Regler</h3>
 <p><img alt="bg right w:500" src="../images/Idealer_P_Sprungantwort.svg" /></p>
 <ul>
 <li>P-Glied, welches als Regler eingesetzt wird</li>
 <li>Zeitverhalten: reagiert <strong>unverzögert</strong> </li>
-<li>bleibende Regelabweichung bei Systemen mit Ausgleich (Regelstrecken die bei konstantem Eingang einen konstanten Wert anstreben)</li>
+<li>bleibende Regelabweichung bei Systemen mit Ausgleich (Regelstrecken welche sich nicht proportional verhalten)</li>
 </ul>
 <hr />
 <h2 id="aufgabe-3_2_3-wassertank-mit-pid-regler">✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler</h2>
@@ -282,7 +282,7 @@
 <li>Sprungantwort: <span class="arithmatex">\(u(t)=K_Pe(t)+K_d \frac{de(t)}{dt}=K_Pe(t)+T_v \frac{de(t)}{dt}\)</span></li>
 <li>kombiniert P-Regler mit Differenzial-Anteil</li>
 <li>der D-Anteil bewertet die Änderung einer Regelabweichung (differenziert) und berechnet so deren <strong>Änderungsgeschwindigkeit</strong></li>
-<li>reagiert schon auf "Ankündigungen" von Veränderungen </li>
+<li>reagiert schon auf <em>"Ankündigungen"</em> von Veränderungen </li>
 <li><strong>sehr schnell</strong>, doch bleibende <strong>Regelabweichung</strong></li>
 <li>Unruhe im Regelkreis wird verstärkt, wenn Sensorsignal verrauscht </li>
 </ul>
