@@ -32,7 +32,7 @@ theme: lemon
   * Breadboard
   * KY-018 - Fotowiderstand 
   * Optional: Sensoren und Aktoren
-    * Widerstände $10\,k\Omega$ und §470\,k\Omega$
+    * Widerstände $10\,k\Omega$ und $470\,k\Omega$
     * LEDs
     * Taster
     * Jumperkabel

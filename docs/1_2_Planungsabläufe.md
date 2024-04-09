@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
+class: invert
 
 theme: lemon
 
@@ -237,6 +237,8 @@ Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmierspra
 - **Raumklima**
     - Energieniveauwahl, Energieniveauwahl mit Startoptimierung,Sollwertermittlung, Funktionswahl, Temperaturregelung, Raum‐Zulufttemperatur‐Kaskade, Ventilatorsteuerung, Sequenzsteuerung, Stellwertbegrenzung, Luftqualitätsregelung, Nachtkühlung, Volumenstromregelung
 
+---
+
 #### Anwendungsfunktionen 
 
 
@@ -300,7 +302,7 @@ Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmierspra
 ## ✍️ Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus
 
 - Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses (aus den Folien zuvor)
-- Alle Leuchten werden über einen Aktor für das gemachte Treppenhaus zusammengefasst
+- Alle Leuchten werden über einen Aktor für das gesamte Treppenhaus zusammengefasst
 - Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein Bedienelement für die Beleuchtung angebracht werden
 - Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können
 - zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik für den Bereich gesteuert werden können

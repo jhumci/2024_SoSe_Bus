@@ -251,7 +251,7 @@
     <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>  <span class="c1"># Button is pressed (LOW)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>  
         <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_HOLD</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">PAR_HOLD</span><span class="p">)</span>  
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
             <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -262,10 +262,12 @@
 </code></pre></div>
 <hr />
 <h4 id="probleme-mit-der-naiven-losung">Probleme mit der naiven Lösung</h4>
-<p><img alt="bg right h:420" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
+<!-- _class: white -->
+
+<p><img alt="bg right:35% h:420" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
 <ul>
 <li>Erneutes betätigen des Taster setzt die Wartezeit nicht zurück</li>
-<li>Unser System hat kein Gedächtnis (Zustands)</li>
+<li>Unser System hat kein Gedächtnis (über den Zustand)</li>
 <li>Der Ablauf sollte besser nicht nur durch einen Zeitlichen Rahmen, sondern auch durch Zustände gesteuert werden</li>
 </ul>
 <hr />
@@ -294,6 +296,8 @@
 </ul>
 <hr />
 <h4 id="implementierung-eines-cola-automaten">Implementierung eines Cola-Automaten</h4>
+<!-- _class: white -->
+
 <ul>
 <li>Der Automat startet im Zustand <code>Auswahl anfordern</code></li>
 <li>Der Automat kann in den Zustand <code>Bezahlung anfordern</code> wechseln</li>
@@ -318,6 +322,8 @@
 </ul>
 <hr />
 <h4 id="in-der-theorie-der-formalen-sprachen">In der Theorie der formalen Sprachen 🤓</h4>
+<!-- _class: white -->
+
 <p><img alt="bg right:33% h:250" src="../images/DFAexample.svg" /></p>
 <ul>
 <li><span class="arithmatex">\(Q = \{S_1, S_2\}\)</span></li>
@@ -342,6 +348,8 @@
 </ul>
 <hr />
 <h4 id="in-der-programmierpraxis">In der Programmierpraxis</h4>
+<!-- _class: white -->
+
 <p><img alt="bg right:35% w:450" src="../images/mermaid-diagram-2024-01-25-100419.svg" /></p>
 <ul>
 <li>Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. Zeit muss z.B. mitgezählt werden)</li>
@@ -351,6 +359,8 @@
 </ul>
 <hr />
 <h2 id="aufgabe-2_2_1-implementierung-eines-treppenhauslichts">✍️ Aufgabe 2_2_1: Implementierung eines Treppenhauslichts</h2>
+<!-- _class: white -->
+
 <ul>
 <li>In <a href="Aufgaben\2_2_1\code_state_machine.py"><code>code_state_machine.py</code></a> ist das auf der rechten Seite dargestellte Programm implementiert</li>
 <li>Beschreiben Sie verbal, was in jedem der Zustände passiert</li>
@@ -460,6 +470,8 @@
 <li>Zeichen Sie eine State Machine, die dieses Verhalten beschreibt</li>
 </ul>
 <hr />
+<!-- _class: white -->
+
 <p><img alt="bg h:720" src="../images/mermaid-diagram-2024-01-25-115643.svg" /></p>
 <hr />
 <div class="highlight"><pre><span></span><code>stateDiagram
@@ -500,11 +512,14 @@
 </ul>
 <hr />
 <h3 id="beispiel-wechselschalter">Beispiel: Wechselschalter</h3>
+<!-- _class: white -->
+
 <ul>
 <li>Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden</li>
 <li>Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)</li>
 </ul>
-<p><img alt="" src="../images/Wechselschaltung.svg" /></p>
+<p><img alt="h:300" src="../images/Wechselschaltung.svg" /></p>
+<hr />
 <p><strong>Wahrheitstabelle</strong></p>
 <table>
 <thead>
@@ -676,10 +691,21 @@
 <span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
 <span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
 
+
+<span class="n">button_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP0</span>  <span class="c1"># Replace with the GPIO pin connected to your button</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">button_pin</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">INPUT</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pull</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Pull</span><span class="o">.</span><span class="n">UP</span>  <span class="c1"># Use pull-up resistor; change if using pull-down</span>
+
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>  <span class="c1"># Button is pressed (LOW)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Pressed!&quot;</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Button Released!&quot;</span><span class="p">)</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Add a small delay to debounce the button</span>
 </code></pre></div>
 </details>
 <details class="optional-class">

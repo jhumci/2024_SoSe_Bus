@@ -77,7 +77,7 @@ theme: lemon
 
 ### Programmieren des Pico mittels CircuitPython
 
-* Öffnen Sie im Chrome Browser die Seite des [Online Editors](https://code.circuitpython.org/)
+* Öffnen Sie im Chrome Browser die Seite des [Online Editors](https://code.circuitpython.org/) in einem Chromium-basierten Browser
 * Verbinden Sie Sich mittels USB
 * Wählen Sie die Schnittstelle `CircuitPython CDC Control` aus
 * Öffnen Sie das Verzeichnis (USB-Laufwerk) `CIRCUITPY` und wählen Sie `USE /`
@@ -144,8 +144,10 @@ while True:
 
 ###  General Purpose Input/Output
 
+* Digitale Ein- und Ausgänge
 * GPIO arbeiten von $2...16 \,\text{mA}$
 * GPIOs können binär gelesen und geschaltet werden
+* [Pin-Belegung](https://www.elektronik-kompendium.de/sites/raspberry-pi/2611051.htm)
 
 ![bg left h:500](images/raspberry-pi-pico-gpio.png)
 
@@ -171,7 +173,7 @@ while True:
 ![bg right h:600](images/20060511.gif)
 
 - $R_{pullup} = 10 \,\text{k}\Omega$
-- Verbinden Sie den Taster mit dem 3.3V Pin und dem GPIO 0
+- Verbinden Sie den Taster mit dem 3.3V Pin und dem `GPIO 0`
 - Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm
 
 ---
@@ -213,7 +215,7 @@ while True:
 - (RaspBerry Pis haben eingebaute Widerstände, die aktiviert werden können)
 
 
-[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm, https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm)
+[Quelle1](https://www.elektronik-kompendium.de/sites/raspberry-pi/2110081.htm),[Quelle2](https://www.elektronik-kompendium.de/sites/raspberry-pi/2006051.htm)
 
 ---
 
@@ -270,7 +272,7 @@ while True:
 ## ✍️ Aufgabe 2_1_3: Anschluss einer LED an einen Raspberry Pi Pico
 
 * Nun wollen wir eine LED anschließen in der Folge über den Taster schalten
-* Sie LED soll nach einem Druck auf den Taster für $1\,\text{s}$ leuchten
+* Die LED soll nach einem Druck auf den Taster ihren Zustand wechseln
 * passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile
 
 
@@ -334,7 +336,7 @@ while True:
 ### Ausgang verschalten
 
 * Wählen Sie einen geeigneten GPIO
-* Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground ($0V$)
+* Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground ($0\text{ V}$)
 
 
 ---
@@ -363,7 +365,16 @@ while True:
 
 </center>
 
+---
 
+##### 🤓 Selbsthaltefunktion
+
+* Hierbei wird durch das Schließen des Schalters ein Stromkreis geschlossen, der das Relais anzieht und somit ein andauerndes Schließen des Schalters ermöglicht
+> Wenn der Taster S2 (Schließer) betätigt wird, zieht das Relais K1 an und schließt den Kontakt K1. Wenn der Taster S2 nun losgelassen wird, überbrückt ihn der Kontakt K1 und das Relais bleibt weiterhin angezogen. Durch Betätigung des Tasters S1 (Öffner) wird das Relais stromlos und fällt ab, K1 ist damit offen. Wenn S2 betätigt wird, würde wieder K1 anziehen und in die Selbsthaltung gehen.
+
+![bg right](images/Selbsthaltung.gif)
+
+[Quelle](https://de.wikipedia.org/wiki/Selbsthaltefunktion)
 
 ---
 
@@ -427,7 +438,7 @@ while True:
 
 * Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)
 * z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen
-* Damit änder sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann
+* Damit ändert sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann
 
 ---
 
@@ -437,8 +448,9 @@ while True:
 * Dabei gibt es zwei relevante Parameter
     * Auflösung: Anzahl der möglichen Werte
     * Referenzspannung: Spannungsbereich, der in die Auflösung abgebildet wird
-    * z.B. 16 Bit Auflösung und $3.3 \,\text{V}$ Referenzspannung $\Rightarrow$ $2^{16} = 65536$ Werte zwischen $0$ und $3.3 \,\text{V}$
-* Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können
+    * z.B. 16 Bit Auflösung und $3.3 \,\text{V}$ Referenzspannung 
+    $\Rightarrow$ $2^{16} = 65536$ Werte zwischen $0$ und $3.3 \,\text{V}$
+* Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können (z.B. durch den Sleep-Timer im `while`-loop)
 
 ---
 
@@ -447,8 +459,8 @@ while True:
 * Schließen Sie einen [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
     * Links (-): GND / Masse / 0 Volt
     * Mitte: +VCC z.B. 3,3 oder 5 Volt
-    * Rechts (S): Verbindungspunkt des Spannungsteilers 
-* Fixwiderstand $10 \,\text{k}\Omega$ zwischen +VCC und S
+    * Rechts (S): Verbindungspunkt des Spannungsteilers
+* Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden
 * Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes
 
 ---
