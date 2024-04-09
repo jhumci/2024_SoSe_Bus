@@ -218,7 +218,7 @@
 <p><a href="https://www.wachendorff-prozesstechnik.de/produktgruppen/gateways-und-protokollwandler/informationen/busprotokolle-besser-verstehen/?type=98">Quelle</a></p>
 <hr />
 <h3 id="unterscheidungsmerkmale-von-bussystemen_1">Unterscheidungsmerkmale von Bussystemen</h3>
-<p><img alt="bg width:400 right:35%" src="../images/osi.png" /></p>
+<p><img alt="bg width:500 right:40%" src="../images/osi.png" /></p>
 <ul>
 <li><strong>Telegramminhalt</strong>: welche Information</li>
 <li><strong>Topologie</strong>: Verkabelung</li>
@@ -324,22 +324,24 @@
 <h3 id="synchrone-datenubertragung">Synchrone Datenübertragung</h3>
 <p><img alt="w:550" src="../images/Bus-I2C-PullUp.png" /><img alt="w:550" src="../images/Bus-I2C-Zeitdiagramm.png" /></p>
 <ul>
-<li>Neben der Datenleitung <code>SDA</code> gibt es eine Taktleitung <code>SCL</code>, mit welcher der Master vorgibt, wann <code>SDA</code> gelesen wird (z.B.<code>I²C</code>-Bus)</li>
+<li>Neben der Datenleitung <code>SDA</code> (Serial Data) gibt es eine Taktleitung <code>SCL</code> (Serial Clock), mit welcher der Master vorgibt, wann <code>SDA</code> gelesen wird (z.B.<code>I²C</code>-Bus)</li>
 <li>Probleme: </li>
 <li>Taktleitung benötigt zusätzliche Leitung</li>
-<li>Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master schon weitergezogen
+<li>Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master (System Clock) schon weitergezogen
 <a href="http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_">Quelle</a></li>
 </ul>
 <hr />
 <h3 id="asynchrone-datenubertragung">Asynchrone Datenübertragung</h3>
 <ul>
-<li>Jeder Busteilnehmer verfügt über eine eigene Taktquelle (<code>Sample Clock</code>), die deutlich schneller taktet als die Datenübertragung</li>
+<li>Jeder Busteilnehmer verfügt über eine eigene Taktquelle (<code>Sample/Serial/System Clock</code>), die deutlich schneller taktet als die Datenübertragung</li>
 <li>Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. RS-232) </li>
 </ul>
 <p><img alt="w:550" src="../images/assync.png" /></p>
 <hr />
 <h2 id="serielle-und-parallele-busse">Serielle und Parallele Busse</h2>
+<p><center></p>
 <p><img alt="" src="../images/Parallel.png" /></p>
+<p></center></p>
 <ul>
 <li>Mit mehreren parallelen Leitungen können ebenfalls 
 mehr Symbole bei gleicher Baud-Rate übertragen werden</li>
