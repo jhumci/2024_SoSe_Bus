@@ -133,6 +133,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#ubertragungsarten">Übertragungsarten</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#differentiale-busse">Differentiale Busse</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#beispiel-universal-serial-bus-usb-11-und-20">Beispiel: Universal Serial Bus (USB 1.1 und 2.0)</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#nrz-s-bitwechsel-bei-null">🤓 NRZ-S: Bitwechsel bei Null</a>
@@ -180,7 +182,9 @@
                 <h1 id="51-signalisierung-und-leitungscodes">5.1 Signalisierung und Leitungscodes</h1>
 <hr />
 <h2 id="unterschiede-sps-und-bussysteme">Unterschiede SPS und Bussysteme</h2>
+<p><center></p>
 <p><img alt="height:200" src="../images/ZentraleSPS.png" /> <img alt="height:200" src="../images/DezentralerBus.png" /></p>
+<p></center></p>
 <p><a href="https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf">Quelle</a></p>
 <hr />
 <h3 id="feldbus">Feldbus</h3>
@@ -267,10 +271,14 @@
 <ul>
 <li>Wie groß ist jeweils die Symbolrate und die Bitrate?</li>
 </ul>
+<p><center></p>
 <p><img alt="" src="../images/bit-vs-baud.png" /></p>
+<p></center></p>
 <hr />
 <h3 id="losung">✔️ Lösung</h3>
+<p><center></p>
 <p><img alt="" src="../images/bit-vs-baud-Aufgabe.png" /></p>
+<p></center></p>
 <ul>
 <li>In beiden Fällen ändert sich die Spannung zehn mal pro Sekunde <span class="arithmatex">\(\text{Symbolrate} = 10 \text{ Baud}\)</span></li>
 <li>Links: Es gibt zwei Spannungen, jedes Symbol codiert ein Bit <span class="arithmatex">\(\text{Bitrate} = 10 \frac{\text{Bit}}{\text{s}}\)</span></li>
@@ -293,7 +301,9 @@
 <p><img alt="width:1200" src="../images/Codierung.png" /></p>
 <hr />
 <h2 id="aufgabe-5_1_2-leitungscodes">✍️ Aufgabe 5_1_2: Leitungscodes</h2>
+<p><center></p>
 <p><img alt="h:200" src="../images/Codierung.png" /></p>
+<p></center></p>
 <ul>
 <li>Erklären Sie verbal, wie die Leitungscodes funktionieren</li>
 <li>Non-Return-to-Zero Low Level</li>
@@ -303,7 +313,9 @@
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>
+<p><center></p>
 <p><img alt="h:200" src="../images/Codierung.png" /></p>
+<p></center></p>
 <ul>
 <li>Non-Return-to-Zero Low Level: eine <code>1</code> wird durch eine niedrige Spannung codiert</li>
 <li>Non-Return-to-Zero Inverted: Bei jedem Auftreten einer <code>1</code> wird die Spannung invertiert</li>
@@ -322,7 +334,9 @@
 </ul>
 <hr />
 <h3 id="synchrone-datenubertragung">Synchrone Datenübertragung</h3>
+<p><center></p>
 <p><img alt="w:550" src="../images/Bus-I2C-PullUp.png" /><img alt="w:550" src="../images/Bus-I2C-Zeitdiagramm.png" /></p>
+<p></center></p>
 <ul>
 <li>Neben der Datenleitung <code>SDA</code> (Serial Data) gibt es eine Taktleitung <code>SCL</code> (Serial Clock), mit welcher der Master vorgibt, wann <code>SDA</code> gelesen wird (z.B.<code>I²C</code>-Bus)</li>
 <li>Probleme: </li>
@@ -336,7 +350,9 @@
 <li>Jeder Busteilnehmer verfügt über eine eigene Taktquelle (<code>Sample/Serial/System Clock</code>), die deutlich schneller taktet als die Datenübertragung</li>
 <li>Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. RS-232) </li>
 </ul>
+<p><center></p>
 <p><img alt="w:550" src="../images/assync.png" /></p>
+<p></center></p>
 <hr />
 <h2 id="serielle-und-parallele-busse">Serielle und Parallele Busse</h2>
 <p><center></p>
@@ -349,13 +365,18 @@ mehr Symbole bei gleicher Baud-Rate übertragen werden</li>
 </ul>
 <hr />
 <h2 id="ubertragungsarten">Übertragungsarten</h2>
+<p><center></p>
 <p><img alt="h:400" src="../images/BBE_SimplexvsDuplex_Transmissions.png" /></p>
+<p></center></p>
 <ul>
 <li>Simplex: Eine Richtung</li>
 <li>Half-Duplex: Beide Richtungen, aber nicht gleichzeitig</li>
 <li>Full-Duplex: Beide Richtungen gleichzeitig</li>
 </ul>
 <p><a href="https://www.black-box.de/de-de/page/25078/Information/Technische-Ressourcen/black-box-erklaert/Glasfaserkabel/Simplex-versus-Duplex-Glasfaser-Patchkabel">Quelle</a></p>
+<hr />
+<h2 id="differentiale-busse">Differentiale Busse</h2>
+<p><img alt="" src="../images/Differential_signal_transmission.svg" /></p>
 <hr />
 <h2 id="beispiel-universal-serial-bus-usb-11-und-20">Beispiel: Universal Serial Bus (USB  1.1 und 2.0)</h2>
 <p><img alt="bg left w:600" src="../images/7a3372ffcf82dc9282666d36df90361f--gadgets.jpg" /></p>
