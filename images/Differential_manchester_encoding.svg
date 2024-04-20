@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg  xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+	width="100%" height="100%" 
+	viewBox="-.1 0 33.2 9" >
+<title>Differential Manchester encoding</title>
+<g stroke-linecap="round" stroke-width="0.3" font-family="Arial" font-size="1.7">
+ <g stroke="#ccc">
+	<path d="M10,1v6M12,1v6M14,1v6M16,1v6M18,1v6M20,1v6M22,1v6M24,1v6M26,1v6M28,1v6M30,1v6M32,1v6"/>
+	<path d="M11,3v5M13,3v5M15,3v5M17,3v5M19,3v5M21,3v5M23,3v5M25,3v5M27,3v5M29,3v5M31,3v5" stroke-dasharray=".1 .5"/>
+ </g>
+ <g stroke="#f00" fill="none" stroke-linejoin="round">
+	<path d="M9.4,4H10v1h2V4h1v1h1V4h2v1h1V4h1v1h1V4h1v1h2V4h2v1h2V4h1v1h1V4h1v1h1V4h2v1h0.6"/>
+	<path d="M9.4,8H10V7h2v1h1V7h1v1h2V7h1v1h1V7h1v1h1V7h2v1h2V7h2v1h1V7h1v1h1V7h1v1h2V7h0.6"/>
+ </g>
+ <g transform="translate(9,2.3)" text-anchor="middle">
+	<g text-anchor="end">
+		<text>data</text>
+		<text y="3.2">equivalent</text>
+		<text y="5.2">line signals</text>
+	</g>
+	<text x="2">1</text>
+	<text x="4">0</text>
+	<text x="6">1</text>
+	<text x="8">0</text>
+	<text x="10">0</text>
+	<text x="12">1</text>
+	<text x="14">1</text>
+	<text x="16">1</text>
+	<text x="18">0</text>
+	<text x="20">0</text>
+	<text x="22">1</text>
+ </g>
+</g>
+</svg>
