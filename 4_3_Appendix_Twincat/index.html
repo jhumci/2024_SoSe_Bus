@@ -76,7 +76,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Twincat</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Twincat</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#installation-twincat-und-erstes-projekt">Installation Twincat und Erstes Projekt</a>
         <ul>
@@ -177,22 +177,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#losung_2">Lösung</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#zusammenfassungen-anweisungen">Zusammenfassungen Anweisungen</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4_3_5-aufgabe-heizungsanlage">✍️ 4_3_5: Aufgabe Heizungsanlage</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#hinweise">Hinweise:</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_3">Lösung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_4">Lösung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_5">Lösung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_7">Lösung</a>
     </li>
         </ul>
     </li>
@@ -301,7 +285,7 @@
 <h3 id="offnen-des-main-programms">Öffnen des Main Programms</h3>
 <p><img alt="height:400" src="../images/TCpou.png" /></p>
 <ul>
-<li>Relevant ist das MAIN-Programm unter /POU/ </li>
+<li>Relevant ist das MAIN-Programm unter <code>/POU/</code> </li>
 <li>Dieses besteht aus einem Variablen (oben)</li>
 <li>und einem Code-Editor (mitte)</li>
 </ul>
@@ -752,58 +736,92 @@ result := blub &gt; 10;     (* TRUE *)
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="4_3_5-aufgabe-heizungsanlage">✍️ 4_3_5: Aufgabe Heizungsanlage</h2>
-<p>Im Falle eines Appartmenthauses haben Sie es mit einer sehr störrischen Heizungsanlage zu kämpfen. Fällt diese aus, so startet sie häufig erst nach einigen Anlaufversuchen. Um über die nächsten Wochen zu kommen, bis eine neue Heizung installiert werden kann, programmieren Sie eine Notlösung:</p>
-<p><img alt="bg right" src="../images/pellet-zentralheizung.jpg" /></p>
-<hr />
-<p>Den Heizungsstatus können Sie über die Boolesche Variable <code>aInHeatingStatus</code> auslesen.
-. Die Heizungsanlage kann mit der Funktion <code>START_HEATING_SYSTEM()</code> neu gestartet. Die Funktion hat keine Parameter, gibt aber den Wert <code>TRUE</code> zurück, wenn der Startversuch erfolgreich war. Wenn dies nach 20 Versuchen nicht funktionieren sollte, wird es Zeit die Techniker:in zu informieren, damit diese sich dem Problem vor Ort annimmt. Hierzu wurde die Funktion <code>NOTIFY_TECHNICIAN()</code> bereitgestellt. Wenn es besonders kalt ist (5°C) ist das Problem besonders kritisch: anstelle des Techniker:innen, sollen in diesem Fall alle Mitarbeitenden informiert werden (<code>NOTIFY_ALL()</code>). Die Umgebungstemperatur können Sie mit der Variable <code>aInTempOutside</code> abrufen.</p>
-<hr />
-<p>Schreiben Sie ein Steuerungsprogramm als Strukturierten Text, welches in jedem Zyklus die Status der Heizungsanlage überwacht, diese bei Bedarf neu startet und ggf. die Techniker:innen und anderen Mitarbeiter:innen informiert.  Nutzen Sie dazu Schleifen und IF-Anweisungen. Gehen Sie von einer sehr langsamen Zykluszeit der Steuerung aus (ca. 5 Minute). Ein Startversuch hingegen dauert nur 2 Sekunden.</p>
-<hr />
-<h3 id="hinweise">Hinweise:</h3>
+<!--
+
+---
+
+## ✍️ 4_3_5: Aufgabe Heizungsanlage
+
+Im Falle eines Appartmenthauses haben Sie es mit einer sehr störrischen Heizungsanlage zu kämpfen. Fällt diese aus, so startet sie häufig erst nach einigen Anlaufversuchen. Um über die nächsten Wochen zu kommen, bis eine neue Heizung installiert werden kann, programmieren Sie eine Notlösung:
+
+![bg right](images/pellet-zentralheizung.jpg)
+
+---
+
+Den Heizungsstatus können Sie über die Boolesche Variable ```aInHeatingStatus``` auslesen.
+. Die Heizungsanlage kann mit der Funktion ```START_HEATING_SYSTEM()``` neu gestartet. Die Funktion hat keine Parameter, gibt aber den Wert ```TRUE``` zurück, wenn der Startversuch erfolgreich war. Wenn dies nach 20 Versuchen nicht funktionieren sollte, wird es Zeit die Techniker:in zu informieren, damit diese sich dem Problem vor Ort annimmt. Hierzu wurde die Funktion ```NOTIFY_TECHNICIAN()``` bereitgestellt. Wenn es besonders kalt ist (5°C) ist das Problem besonders kritisch: anstelle des Techniker:innen, sollen in diesem Fall alle Mitarbeitenden informiert werden (```NOTIFY_ALL()```). Die Umgebungstemperatur können Sie mit der Variable ```aInTempOutside``` abrufen.
+
+---
+
+Schreiben Sie ein Steuerungsprogramm als Strukturierten Text, welches in jedem Zyklus die Status der Heizungsanlage überwacht, diese bei Bedarf neu startet und ggf. die Techniker:innen und anderen Mitarbeiter:innen informiert.  Nutzen Sie dazu Schleifen und IF-Anweisungen. Gehen Sie von einer sehr langsamen Zykluszeit der Steuerung aus (ca. 5 Minute). Ein Startversuch hingegen dauert nur 2 Sekunden.
+
+
+---
+
+### Hinweise:
+
 <div class="highlight"><pre><span></span><code>// Abfrage des Status zu Beginn jedes Zyklus
 IF aInHeatingStatus = False THEN
   &lt;...&gt;
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code>// Mehrfacher Versuch des Starts
 FOR Versuch:=1 TO 20 BY 1 DO
   &lt;...&gt;
 
 END_FOR;
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code>// Aufruf der Startfunktion und gleichzeitiges Speichern der Rückgabe
 aInHeatingStatus := START_HEATING_SYSTEM()
 </code></pre></div>
-<hr />
-<h3 id="losung_3">Lösung</h3>
-<p>In jedem Zyklus fragen wird zu Beginn den Status der Anlage ab und werden nur aktiv, wenn diese nicht läuft</p>
+
+---
+
+### Lösung
+
+In jedem Zyklus fragen wird zu Beginn den Status der Anlage ab und werden nur aktiv, wenn diese nicht läuft
+
 <div class="highlight"><pre><span></span><code>// Abfrage des Status zu Beginn jedes Zyklus
 IF aInHeatingStatus = False THEN
   &lt;...&gt;
 </code></pre></div>
-<hr />
-<p>Dann führen wir 20 Startversuche auf.</p>
-<p>Dazu rufen wir die Funktion <code>START_HEATING_SYSTEM</code>in der For-Schleife auf.</p>
+
+---
+
+
+
+Dann führen wir 20 Startversuche auf.
+
+Dazu rufen wir die Funktion ```START_HEATING_SYSTEM```in der For-Schleife auf.
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 START_HEATING_SYSTEM(); (* Rufe die Funktion zum Starten auf*)
 
 END_FOR;
 </code></pre></div>
-<hr />
-<h3 id="losung_4">Lösung</h3>
-<p>Da wir die Versuche stoppen können, wenn die Heizung erfolgreich gestartet ist, wollen wir das Ergebnis des Startversuches in einer neuen Variable <code>aInHeatingStatus</code> speichern.</p>
+
+
+---
+
+### Lösung
+
+Da wir die Versuche stoppen können, wenn die Heizung erfolgreich gestartet ist, wollen wir das Ergebnis des Startversuches in einer neuen Variable ```aInHeatingStatus``` speichern.
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus := START_HEATING_SYSTEM(); (* Rufe die Funktion zum Starten auf*)
 
 END_FOR;
 </code></pre></div>
-<hr />
-<h3 id="losung_5">Lösung</h3>
-<p>Dazu überprüfen wir in jedem Schleifendurchlauf, ob das Starten geklappt hat. Wenn es geklappt hat, dann können wir die For-Schleife mit der Anweisung <code>EXIT</code>verlasse, ohne sie 20 mal zu durchlaufen.</p>
+
+---
+
+### Lösung
+
+Dazu überprüfen wir in jedem Schleifendurchlauf, ob das Starten geklappt hat. Wenn es geklappt hat, dann können wir die For-Schleife mit der Anweisung ```EXIT```verlasse, ohne sie 20 mal zu durchlaufen.
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus :=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
@@ -814,11 +832,16 @@ END_IF;
 
 END_FOR;
 </code></pre></div>
-<hr />
-<h3 id="losung_6">Lösung</h3>
-<p>Wenn wir beim 20. Versuch angelangt sind, und die Schleife immer noch nicht wegen Erfolgs verlassen haben, wird es Zeit den Techniker zu informieren. 
-Die Funktion zur Information <code>NOTIFY_TECHNICIAN</code> wird ausgelöst, wenn wir den 20. Durchlauf erreichen. Das Prüfen wir über eine IF-Anweisung.
-Hier rufen wir eine Funktion ohne Rückgabe auf. Deswegen steht kein neuer Variablename links der Funktion.</p>
+
+---
+
+### Lösung
+
+Wenn wir beim 20. Versuch angelangt sind, und die Schleife immer noch nicht wegen Erfolgs verlassen haben, wird es Zeit den Techniker zu informieren. 
+Die Funktion zur Information ```NOTIFY_TECHNICIAN``` wird ausgelöst, wenn wir den 20. Durchlauf erreichen. Das Prüfen wir über eine IF-Anweisung.
+Hier rufen wir eine Funktion ohne Rückgabe auf. Deswegen steht kein neuer Variablename links der Funktion.
+
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
@@ -833,9 +856,13 @@ END_IF;
 
 END_FOR;
 </code></pre></div>
-<hr />
-<h3 id="losung_7">Lösung</h3>
-<p>Um alle zu informieren, müssen wir zusätzlich die Außentemperatur überprüfen. Hierzu können eine zweite If-Abfrage mit etwas komplizierterem Booleschen Ausdruck </p>
+
+---
+
+### Lösung
+
+Um alle zu informieren, müssen wir zusätzlich die Außentemperatur überprüfen. Hierzu können eine zweite If-Abfrage mit etwas komplizierterem Booleschen Ausdruck 
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
@@ -855,8 +882,13 @@ END_IF;
 
 END_FOR;
 </code></pre></div>
-<hr />
-<p>Alternativ lassen sich auch zwei If-Anweisungen schachteln</p>
+
+---
+
+
+
+Alternativ lassen sich auch zwei If-Anweisungen schachteln
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
@@ -876,8 +908,13 @@ END_IF;
 
 END_FOR;
 </code></pre></div>
-<hr />
-<p>Gehen wir davon aus, dass der die Techniker:in sowohl auf der Liste in <code>NOTIFY_TECHNICIAN</code>als auch in <code>NOTIFY_ALL</code> steht, wäre es schön, wenn er/sie nur einmal informiert wird.  Hierzu können wir die <code>ELSIF</code>Anweisung nutzen.</p>
+
+---
+
+
+
+Gehen wir davon aus, dass der die Techniker:in sowohl auf der Liste in ```NOTIFY_TECHNICIAN```als auch in ```NOTIFY_ALL``` steht, wäre es schön, wenn er/sie nur einmal informiert wird.  Hierzu können wir die `ELSIF`Anweisung nutzen.
+
 <div class="highlight"><pre><span></span><code>FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
 
 aInHeatingStatus:=START_HEATING_SYSTEM();        (* Rufe die Funktion zum Starten auf und speichere ob es erfolgreich war *)
@@ -897,10 +934,12 @@ END_IF;
 
 END_FOR;
 </code></pre></div>
-<hr />
-<ul>
-<li>Ergänzen des äußeren <code>FOR</code>-Loops, damit der Code nur ausgeführt wird, wenn die Analge nicht läuft:</li>
-</ul>
+
+---
+
+
+- Ergänzen des äußeren `FOR`-Loops, damit der Code nur ausgeführt wird, wenn die Analge nicht läuft:
+
 <div class="highlight"><pre><span></span><code>IF aInHeatingStatus = False THEN
 
 FOR Versuch:=1 TO 20 BY 1 DO          (* Versuch es 20 mal *)
@@ -924,6 +963,8 @@ END_FOR;
 
 END_IF;
 </code></pre></div>
+
+-->
               
             </div>
           </div><footer>

@@ -52,7 +52,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Messkette</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Messkette</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#eva-prinzip">EVA-Prinzip</a>
         <ul>
@@ -65,6 +65,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#circuitpython-installieren">CircuitPython installieren</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#programmieren-des-pico-mittels-circuitpython">Programmieren des Pico mittels CircuitPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#digitaler-zwilling-mit-wokwicom">Digitaler Zwilling mit wokwi.com</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#hauptprogramm-codepy">Hauptprogramm code.py</a>
     </li>
@@ -224,7 +226,6 @@
                 <!-- paginate: true -->
 
 <h1 id="21-messkette">2.1 Messkette</h1>
-<hr />
 <h2 id="eva-prinzip">EVA-Prinzip</h2>
 <!-- _class: white -->
 <p><center></p>
@@ -244,7 +245,6 @@
 <li>i.d.R. gibt es Spannungsbereiche, die als <code>0</code> oder <code>1</code> interpretiert werden</li>
 </ul>
 <p><img alt="bg left h:500" src="../images/raspberry-pi-pico-gpio.png" /></p>
-<hr />
 <h2 id="aufgabe-2_1_1-raspberry-pi-pico-als-mikrocontroller">✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller</h2>
 <ul>
 <li>Beim Raspberry Pi Pico handelt es sich um einen Mikrocontroller, der mittels Python programmiert werden kann</li>
@@ -277,6 +277,9 @@
 <li>Öffnen Sie die Datei <code>code.py</code> und fügen Sie den folgenden Inhalt ein</li>
 <li>Öffnen Sie die Serielle Schnittstellen, um die Ausgabe zu sehen <code>Serial</code>, übertragen Sie den Code und starten Sie den Pico neu <code>Save + Run</code></li>
 </ul>
+<hr />
+<h3 id="digitaler-zwilling-mit-wokwicom">Digitaler Zwilling mit <a href="https://wokwi.com/projects/424662007489899521">wokwi.com</a></h3>
+<p><img alt="" src="../images/Wokwi.png" /></p>
 <hr />
 <h3 id="hauptprogramm-codepy">Hauptprogramm <code>code.py</code></h3>
 <ul>
@@ -470,14 +473,13 @@
 
 <span class="n">led_pin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">GP1</span>      <span class="c1"># Replace with the GPIO pin connected to your LED</span>
 
-
+<span class="c1"># Define the LED as a digital output</span>
 <span class="n">led</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">DigitalInOut</span><span class="p">(</span><span class="n">led_pin</span><span class="p">)</span>
 <span class="n">led</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">digitalio</span><span class="o">.</span><span class="n">Direction</span><span class="o">.</span><span class="n">OUTPUT</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">led</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">led</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Toggle the LED state</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># Add a small delay for debouncing</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </code></pre></div>
 <p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm">Quelle</a></p>
 <hr />
@@ -679,6 +681,9 @@
     <span class="c1"># Warten</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+<ul>
+<li>Um den Wertebereich des ADC zu testen, können Sie den Eingang direkt mit <code>+</code> und <code>-</code> verbinden</li>
+</ul>
 <hr />
 <ul>
 <li>Verbinden Sie den Eingang zunächst mit <code>+</code>, dann mit <code>-</code> </li>
@@ -819,6 +824,9 @@
 <ul>
 <li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen <code>ADC</code>-Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
 <li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
+</ul>
+<hr />
+<ul>
 <li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
 <li><span class="arithmatex">\(a =0.0015\)</span> beschreibt die Steilheit der Parabel</li>
 <li><span class="arithmatex">\(s = 44000\)</span> ist der Verschiebung der Parabel auf der x-Achse</li>
