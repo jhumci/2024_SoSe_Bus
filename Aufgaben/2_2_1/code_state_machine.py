@@ -21,6 +21,7 @@ if state == "start":
     print("Erfolgreich gestartet")
 
 while True:
+    # Long sleep to debug the state machine
     time.sleep(0.5)
     if state == "LED aus":
         print("State: LED aus \n  Warte auf Aktion")

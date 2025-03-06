@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -194,7 +194,12 @@ und mit übertragen
 
 - Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit 
 
+<center>
+
 ![height:350](images/Blocksicherung.png)
+
+</center>
+
 
 [Quelle](Gerhard Schnell & Bernhard Wiedemann )
 

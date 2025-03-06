@@ -74,7 +74,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Sprachen nach IEC 61131-3</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Sprachen nach IEC 61131-3</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#allgemeiner-aufbau-eines-sps-projekts">Allgemeiner Aufbau eines SPS-Projekts</a>
         <ul>
@@ -263,13 +263,13 @@
               
                 <!-- paginate: true -->
 
-<h1 id="42-sps-programmier-sprachen-nach-iec-61131-3">4.2 SPS Programmier-Sprachen nach IEC 61131-3</h1>
+<h1 id="42-sps-sprachen-nach-iec-61131-3">4.2 SPS-Sprachen nach IEC 61131-3</h1>
 <hr />
 <h2 id="allgemeiner-aufbau-eines-sps-projekts">Allgemeiner Aufbau eines SPS-Projekts</h2>
 <ul>
 <li>Die Folgenden Inhalte orientieren sich an der Software Twincat 3 von Beckhoff</li>
 <li>Die Inhalte sind aber auch auf andere SPS-Programmiersysteme übertragbar</li>
-<li>Da die Twincat 3 Software tief ins System eingreift, wird nicht empfohlen diese auf den privaten Rechnern zu installieren</li>
+<li>Da die Twincat 3 Software tief ins System eingreift, wird <strong>nicht empfohlen diese auf den privaten oder Arbeits-Rechnern zu installieren</strong></li>
 <li>Die Software ist aber auf den Rechnern im Labor installiert</li>
 <li>Als Alternative, kann die Software <a href="">OpenPLC Editor</a> empfohlen werden</li>
 </ul>
@@ -542,7 +542,7 @@ nLocalVariable := aCounter[2];
 <h3 id="weitere-anweisungen">Weitere Anweisungen</h3>
 <ul>
 <li><code>Return</code> wird genutzt, um einen Baustein zu verlassen</li>
-<li><code>EXIT</code>-Anweisung** wenn diese in einer FOR-, WHILE- oder REPEAT-Schleife vorkommt, dann wird die innerste Schleife beendet, ungeachtet der Abbruchbedingung.</li>
+<li><code>EXIT</code>-Anweisung wenn diese in einer FOR-, WHILE- oder REPEAT-Schleife vorkommt, dann wird die innerste Schleife beendet, ungeachtet der Abbruchbedingung.</li>
 <li><strong>Aufruf einer Fuktion</strong>: Analog zu Python werden der Funktionsname genannt und in Klammern die Attribute übergeben (z.B. <code>SQRT(IN := 9)</code>)</li>
 </ul>
 <hr />

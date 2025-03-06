@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -14,7 +14,7 @@ theme: lemon
 
 <!-- paginate: true -->
 
-# 5.4 Bussysteme in der Geäudeautomation
+# 5.4 Bussysteme in der Gebäudeautomation
 
 ---
 
@@ -92,7 +92,11 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ### Aufbau
 
+<center>
+
 ![](images/DALI-Systembild1-800x439.jpg)
+
+</center>
 
 [Quelle](https://www.ledclusive.de/blog/anleitung-zur-dali-installation-im-privathaus-fuer-jedermann/)
 
@@ -118,7 +122,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 
 * Kodierung:  
-  * Manchester-Codierung 
+  * [Differentieller Manchester-Code](https://de.wikipedia.org/wiki/Differentieller_Manchester-Code)
   * High Pegel (idle): $9.5  \text{ bis } 22.5 \text{ V}$
   * Low Pegel: $-6.5  \text{ bis } 6.5 \text{ V}$
 * Buszugriff:   
@@ -127,7 +131,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
   * Echtzeitfähig?
     * nein
 
-![bg right w:600](images/manchest.png)
+![bg right w:600](images/Differential_manchester_encoding.svg)
 
 
 [Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832)
@@ -138,24 +142,39 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ### Telegramm-Format
 
+<center>
+
 ![centered](images/5839436427__de__Web.jpg)
 
-[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832)
+</center>
+
+
+
 
 * FF: Forward Frame eines Masters
 * BF: Backward Frame Antwort eines Slaves
 * 16-und-24-Bit-Telegramme: Geräte zu konfigurieren, 
 Parameter abzufragen oder Steuerbefehle oder Ereignisse
+[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&id=5821349906969406832)
 
 ---
 
+<center>
+
 ![](images/dali-forward-frame-structure.jpg)
+
+</center>
+
 
 [Quelle](https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding)
 
 ---
 
+<center>
+
 ![](images/dali-te-timing-annotated.jpg)
+
+</center>
 
 * `1-1-01110...`
 
@@ -252,6 +271,9 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 [Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
+
+<!--
+
 ---
 
 
@@ -329,7 +351,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
   * Zuordnung zu Szenen und Gruppen
   * Zuordnung von Leuchtwerten
 
-
+-->
 
 ---
 
@@ -396,6 +418,8 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 ---
 
 ![](images/DALIExample.png)
+
+<!--
 
 ---
 
@@ -497,6 +521,8 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 - Input Devices (Sensoren) kommunizieren nicht mehr direkt mit DALI-Treibern an Leuchtmitteln
 - Application controller verarbeiten zuerst (Multimaster Prinzip)
 - Kollisions-Erkennung
+
+-->
 
 ---
 
@@ -897,11 +923,6 @@ Refrigeration, and Air Conditioning Engineers Inc
 
 ![height:250](images/ibox-bac-router.jpg)
 
-[Quelle](https://www.intesis.com/de/produkte/protocol-translator/bacnet-gateways/router-f%C3%BCr-bacnet-ms-tp-auf-bacnet-ip?ordercode=INBACRTR0320000)
-
-
-[Quelle](https://www.wago.com/at/bacnet#:~:text=BACnet%C2%AE%20%E2%80%9EBuilding%20Automation%20and,unterschiedlicher%20Hersteller%20in%20der%20Geb%C3%A4udeautomation.)
-[Quelle](https://www.ta.hu-berlin.de/res/co.php?id=14081)
 
 ---
 

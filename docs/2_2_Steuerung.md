@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -102,7 +102,7 @@ while True:
 
 <!-- _class: white -->
 
-![bg right:35% h:420](images/mermaid-diagram-2024-01-25-100419.svg)
+![bg right:35% h:520](images/mermaid-diagram-2024-03-12-163310.svg)
 
 * Erneutes betätigen des Taster setzt die Wartezeit nicht zurück
 * Unser System hat kein Gedächtnis (über den Zustand)
@@ -112,14 +112,15 @@ while True:
 
 ```Mermaid
 stateDiagram
-    A : LED ein
+    A : LED ein 1
     B : LED flackert
+    C : LED ein 2
     E : LED aus
     [*] --> E : Systemstart
     E --> A : L_MAN
-    B --> A : L_MAN
     A --> B : PAR_HOLD
-    B --> E : PAR_WARN
+    C --> E : PAR_WARN
+    B --> C
 ```
 
 ---
@@ -189,12 +190,23 @@ stateDiagram
 
 ---
 
+##### Regular Expressions
+
+* Eine reguläre Sprache ist eine Menge von Zeichenketten, die durch einen regulären Ausdruck beschrieben werden können
+* z.B. Beider Suche nach einer Zeichenkette in einem Text
+    * Alles, was `mapping` im Namen hat:
+        * `.*mapping.*`
+    * Alles was mit mapping beginnt und mit einer Zahl endet
+        * `mapping\d+`
+
+---
+
 #### In der Programmierpraxis
 
 <!-- _class: white -->
 
 
-![bg right:35% w:450](images/mermaid-diagram-2024-01-25-100419.svg)
+![bg right:35% w:450](images/mermaid-diagram-2024-03-12-163310.svg)
 
 * Die Knoten stellen Systemzustände dar. Innerhalb dieser Zustände muss das Systemen nicht statisch sein (z.B. Zeit muss z.B. mitgezählt werden)
 * Die gerichteten Kanten stellen Übergänge zwischen den Zuständen dar, die durch Events und Bedingungen ausgelöst werden
@@ -208,13 +220,92 @@ stateDiagram
 <!-- _class: white -->
 
 
-* In [`code_state_machine.py`](Aufgaben\2_2_1\code_state_machine.py) ist das auf der rechten Seite dargestellte Programm implementiert
+* In `code_state_machine.py` (folgende Folie) ist das auf der rechten Seite dargestellte Programm implementiert
 * Beschreiben Sie verbal, was in jedem der Zustände passiert
-* Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände `LED leuchtet` und `LED flackert` gibt und diese nicht in einem Zusammengefasst wurden
+* Berücksichtigen Sie dabei im Besonderen, warum es die beiden Zustände `LED leuchtet` und `LED flackert` gibt und diese nicht in einem zusammengefasst wurden
+
+![bg right h:720](images/mermaid-diagram-2024-01-25-114138.svg)
+
+
+
+---
+
+<!-- _class : white -->
+
+```Python
+import time
+import board
+import digitalio
+
+PAR_HOLD = 5
+PAR_WARN = 2
+state = "start"
+
+if state == "start":
+    button_pin = board.GP0  # Replace with the GPIO pin connected to your button
+        
+    button = digitalio.DigitalInOut(button_pin)
+    button.direction = digitalio.Direction.INPUT
+    button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
+        
+    led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
+    led = digitalio.DigitalInOut(led_pin)
+    led.direction = digitalio.Direction.OUTPUT
+
+    state = "LED aus"
+    print("Erfolgreich gestartet")
+
+while True:
+    time.sleep(0.5)
+    if state == "LED aus":
+        print("State: LED aus \n  Warte auf Aktion")
+        if not(button.value):  # Button is pressed (LOW)
+            print("Button Pressed!")
+            state = "LED an"
+            led.value = True
+
+    
+    if state == "LED an":
+        print("State: LED an")
+        time_start = time.time()
+        print("  um: ", time.time())
+        state = "LED leuchtet"
+
+    if state == "LED leuchtet":
+        if not(button.value):  # Button is pressed (LOW)
+            print("Button Pressed!")
+            state = "LED an"
+
+        print("LED leuchtet") 
+        print(" seit: ", time.time() - time_start)
+        if time.time() - time_start > PAR_HOLD:
+            state = "LED flackert" 
+
+    if state == "LED leuchtet2":
+        if not(button.value):  # Button is pressed (LOW)
+            print("Button Pressed!")
+            state = "LED an"
+
+        print(" seit Warnung: ", time.time() - time_warning)
+        if time.time() - time_warning > PAR_WARN:
+            state = "LED aus" 
+            led.value = False
+        
+    if state == "LED flackert":
+        for i in range(1,5):
+            led.value = False
+            time.sleep(0.1)
+            led.value = True
+            time.sleep(0.1)
+        time_warning = time.time()
+        state = "LED leuchtet2" 
+        led.value = True
+```
 
 ![bg right h:720](images/mermaid-diagram-2024-01-25-114138.svg)
 
 ---
+
 
 ```Mermaid
 stateDiagram
@@ -235,7 +326,6 @@ stateDiagram
     G --> C: Taster wird gedrückt   
 ```
 
-
 ---
 
 ### [✔️ Lösung](Aufgaben\2_2_1)
@@ -251,11 +341,36 @@ stateDiagram
 
 ## ✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter 
 
-* Stellen Sie einen Dimmer vor, der durch halten des Tasters die Helligkeit einer LED über die PWM steuert
-* Durch halten des Tasters soll die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden
-* Durch Loslassen wir die Richtung umgekehrt
-* Durch ein kurzes drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden
+* Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert
+* Durch ein kurzes Drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden
+* Durch einen Doppeldruck soll der Dimm-Modus gestartet werden
+* in diesem wird durch Halten des Tasters die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden, je nach dem, wie lange der Taster gehalten wird
+* Nach dem Loslassen wird die Richtung umgekehrt
+* Durch einen einfachen Druck wird der Dimm-Modus und wieder in den normalen Modus gewechselt
 * Zeichen Sie eine State Machine, die dieses Verhalten beschreibt
+* Überlegen Sie sich dazu zunächst sinnvolle Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen
+
+---
+
+### [✔️ Lösung](Aufgaben\2_2_2)
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    ```Mermaid
+    stateDiagram
+        A : 100%
+        B : 0%
+        C : aufwärts
+        D : abwärts
+        A --> B: kurzer Druck
+        B --> A: kurzer Druck
+        A --> D: langer Druck
+        B --> C: langer Druck
+        C --> D: loslassen
+        D --> C: loslassen
+    ```
+
 
 ---
 
@@ -266,34 +381,46 @@ stateDiagram
 
 ---
 
-```Mermaid
-stateDiagram
-    A : 100%
-    B : 0%
-    C : aufwärts
-    D : abwärts
-    A --> B: kurzer Druck
-    B --> A: kurzer Druck
-    A --> D: langer Druck
-    B --> C: langer Druck
-    C --> D: loslassen
-    D --> C: loslassen
-```
-
-### [✔️ Lösung](Aufgaben\2_2_2)
+### [✔️ Verbesserte Lösung](Aufgaben\2_2_2)
 
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_2_2\code.py"
+    ```Mermaid
+    stateDiagram
+        A : 100%
+        B : 0%
+        C : aufwärts - warte auf Eingabe
+        D : abwärts - warte auf Eingabe
+        E : dimme abwärts
+        F : dimme aufwärts
+        A --> B: kurzer Druck
+        B --> A: kurzer Druck
+        A --> D: Doppel-Druck
+        B --> C: Doppel-Druck
+        D --> E: halten
+        E --> C: loslassen
+        C --> F: halten
+        F --> D: loslassen
+        D --> A: kurzer Druck
+        C --> B: kurzer Druck
     ```
+
 
 ---
 
-## 🤓 ✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
+<!-- _class: white -->
+
+![bg h:720](images/mermaid-diagram-2024-03-18-125549.svg)
+
+
+---
+
+
+## 🤓✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
 
 * Implementieren Sie einen Dimmer
+* Lösung mit einer State Machine und Darstellung der State Machine gibt 5% Bonus
 
 ---
 
@@ -326,13 +453,13 @@ stateDiagram
 
 | Schalter 1 | Schalter 2 | Lampe |
 |------------|------------|-------|
-|     0      |     0      |   0   |
-|     0      |     1      |   1   |
-|     1      |     0      |   1   |
-|     1      |     1      |   0   |
+|     0      |     0      |   1   |
+|     0      |     1      |   0   |
+|     1      |     0      |   0   |
+|     1      |     1      |   1   |
 
 **Boolsche Funktion**
-$L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
+$L = (S_1 \land S_2) \lor (\lnot S_1 \land \lnot  S_2)$
 
 
 ---
@@ -342,10 +469,13 @@ $L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
 
 ![bg right:33% h:720](images/Tageslichtschaltung.png)
 
-* Wir vereinfachen die Tageslichtschaltung, indem wir die Zeitparameter weglassen
+* Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke weglassen
 * Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
-* Setzen Sie `L_MAN` zunächst auf `False` und schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
+* Setzen Sie `L_MAN` zunächst im Code auf `False` 
+* 🤓 schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
 * Nutzen Sie einen Button, um den Anwesenheitszustand `P_ACT` zu simulieren
+*H_ROOM* können Sie entweder als Beleuchtungsstärke, Spannung oder  `ADC-Wert` setzen
+* `L_SET` soll das Ausgangssignal sein, das die Lampe steuert und kann zunächst auf `True` gesetzt werden. 🤓 Später können Sie diesen auch durch eine Pulsweitenmodulation setzen.
 
 ---
 
@@ -353,18 +483,10 @@ $L = (S_1 \land \lnot S_2) \lor (\lnot S_1 \land S_2)$
 |-------|----------------|-------|-------|
 |   0   |        0       |   0   |   0   |
 |   1   |        0       |   0   |   0   |
-|   0   |        0       |   0   |   0   |
-|   1   |        0       |   0   |   0   |
-|   0   |        1       |   0   |   0   |
-|   1   |        1       |   0   |   1   |
 |   0   |        1       |   0   |   0   |
 |   1   |        1       |   0   |   1   |
 |   0   |        0       |   1   |   1   |
 |   1   |        0       |   1   |   1   |
-|   0   |        0       |   1   |   1   |
-|   1   |        0       |   1   |   1   |
-|   0   |        1       |   1   |   1   |
-|   1   |        1       |   1   |   1   |
 |   0   |        1       |   1   |   1   |
 |   1   |        1       |   1   |   1   |
 
@@ -374,7 +496,8 @@ $$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SE
 
 ### Hinweise 
 
-- Baue Sie auf Aufgaben 2_1_3 und 2_1_5 auf
+- Bauen Sie auf Aufgaben 2_1_3 und 2_1_5 auf, um die Tageslichtschaltung zu implementieren
+
 
 ??? optional-class "💡 anzeigen"
     ```python

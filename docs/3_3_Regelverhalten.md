@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -15,7 +15,7 @@ theme: lemon
 <!-- paginate: true -->
 
 
-# 3.2 Regelverhalten
+# 3.3 Regelverhalten
 
 
 ---
@@ -52,7 +52,11 @@ theme: lemon
 
 ### Bestimmung des dynamischen Verhaltens
 
-![h:300](images/ReglerDynamisch.png)
+
+![h:350](images/ReglerDynamisch.png)
+
+
+
 
 * Ziel der Regelungstechnik ist es ein erwünschtes Verhalten 
 der Regelgröße $y$ zu erhalten
@@ -120,9 +124,8 @@ der Regelgröße $y$ zu erhalten
 
 ### Praktische Überlegungen
 
-- Um eine gewünschtes Regelverhalten zu erreichen, muss ein geeigneter Regler mit den passenden Faktoren (z.B. Verstärkungsfaktor $K_P$) ausgewählt oder **kalibriert** werden. 
-- Hier lässt sich entweder ein **Modell der Regelstrecke** bilden. In der Praxis werden Regelkreise häufig durch **Ausprobieren** von Reglere
-instellungen eines PID-Regler kalibriert.
+- Um eine gewünschtes Regelverhalten zu erreichen, muss ein geeigneter Regler mit den passenden Faktoren (z.B. Verstärkungsfaktor $K_P$) ausgewählt werden. 
+- Hier lässt sich entweder ein **Modell der Regelstrecke** bilden. In der Praxis werden Regelkreise häufig durch **Ausprobieren** von Regler-Einstellungen eines PID-Regler kalibriert.
 
 ---
 
@@ -139,12 +142,12 @@ instellungen eines PID-Regler kalibriert.
 
 ## ✍️ Aufgabe 3_3_1: Auswahl Reglerverhalten
 
-Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
-- **Startoptimierung** der Raumtemperatur 
+- Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
+  - **Startoptimierung** der Raumtemperatur 
 (unter Energieffizienzgesichtspunkten)
-- **Konstantlichtregelung** 
+  - **Konstantlichtregelung** 
 (Beleuchtung aus Komfortgesichtspunkten)
-- **Bewegungssteuerung** eines Laufroboters
+  - **Bewegungssteuerung** eines Laufroboters
 
 ![bg height:200 right:30%](images/Xqt_Regler.png)
 
@@ -154,7 +157,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 
 ### Lösung
 
-Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
+- Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 - **Startoptimierung** der Raumtemperatur 
 (unter Energieffizinzgesichtspunkten)
   * Langsam kein Überschwingen
@@ -175,7 +178,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 
 ### Hardware PID-Regler
 
-![](images/pid_regler_hardware.png)
+![h:400](images/pid_regler_hardware.png)
 
 [Quelle](https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807)
 
@@ -215,7 +218,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
   ![h:200](images/znschwing.gif)
 
 * Eigenschaft Regelstrecke und P-Regler
-* dynamischen Eigenschaften hängen stark vom Verstärkungsfaktor ($K_P$) des Gesamtsystems ab.
+* dynamischen Eigenschaften hängen stark vom Verstärkungsfaktor ($K_P$ - im Bild $K_R$) des Gesamtsystems ab.
 * Ab bestimmtem $K_P^{krit}$ beginnt die Regelgröße zu schwingen (Stabilitätsgrenze)
 
 
@@ -227,7 +230,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
 - Neben der Darstellung mit Vorhalte- und  Nachhaltezeit findet sich auch häufig eine Darstellung mit Faktoren ($K$):
 - $u(t)=K_P \cdot e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}$
 
-- $u(t)=K_P e(t) + K_I\int_0^te(\tau)d\tau + K_d \frac{de(t)}{dt}$
+- $u(t)=K_P \cdot e(t) + K_I\int_0^te(\tau)d\tau + K_d \frac{de(t)}{dt}$
 
 - $u(t)=K_P \cdot [e(t) + \frac{K_I}{K_P}\int_0^te(\tau)d\tau + \frac{K_D}{K_P} \frac{de(t)}{dt}]$
 
@@ -244,7 +247,7 @@ Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
   - $K_I=0$, $K_D=0$ 
   - bzw. $T_v=0$, $T_n=∞$
 
-- $u(t)=K_P e(t) + K_I\int_0^te(\tau)d\tau + K_D \frac{de(t)}{dt}$
+- $u(t)=K_P \cdot e(t) + K_I\int_0^te(\tau)d\tau + K_D \frac{de(t)}{dt}$
 - $u(t)=K_P \cdot [e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}]$
 
 ![h:200](images/znschwing.gif)
@@ -282,13 +285,13 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 
 ![](images/ReglerEinstellen.png)
 
-- Kalibrieren Sie den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: [Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing)
+- Finden Sie gtue Werte für den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: [Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing)
 
 ---
 
 ## 🤓 ✍️ Aufgabe 3_3_2:
 
-- Kalibrieren Sie das folgende [System](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied.zcos) nach der Methode von Ziegler und Nichols
+- Finden Sie gtue Werte für den Regler für das folgende [System](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied.zcos) nach der Methode von Ziegler und Nichols
 
 ---
 
@@ -297,4 +300,4 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied_Loesung.zcos)
+    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied_Loesung.zcos)

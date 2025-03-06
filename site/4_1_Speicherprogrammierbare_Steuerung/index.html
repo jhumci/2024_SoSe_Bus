@@ -72,7 +72,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Speicherprogrammierbare Steuerung</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Speicherprogrammierbare Steuerung</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#schalter-vs-taster">Schalter vs. Taster</a>
         <ul>
@@ -113,18 +113,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#aufbau-sps">Aufbau SPS</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#industrie-30-zentrale-sps-speicherprogrammierbare-steuerung">Industrie 3.0 Zentrale SPS -Speicherprogrammierbare Steuerung</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#abgrenzung-von-sps-und-bussystemen">Abgrenzung von SPS und Bussystemen</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#sps-als-zentrales-system">SPS als zentrales System</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dezentrales-system">Dezentrales System</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#steuerung-mit-bus-system">Steuerung mit Bus-System</a>
     </li>
         </ul>
     </li>
@@ -360,14 +348,18 @@
 <p><a href="https://mermaid.live/">Quelle</a></p>
 <hr />
 <h3 id="losung-industrie-20">Lösung "Industrie 2.0"</h3>
+<p><center></p>
 <p><img alt="w:800" src="../images/Wechselschaltung.svg" /></p>
+<p></center></p>
 <ul>
 <li>S1, S2: Schalter mit zwei Zuständen</li>
 <li>H1: Glühlampe</li>
 </ul>
 <hr />
 <h4 id="wechselschaltung-im-gebaude">Wechselschaltung im Gebäude</h4>
+<p><center></p>
 <p><img alt="" src="../images/EinbauWechselschaltung.png" /></p>
+<p></center></p>
 <p><a href="https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf">Quelle</a></p>
 <hr />
 <h4 id="direkte-verbindungsprogrammierte-steuerung">Direkte verbindungsprogrammierte Steuerung</h4>
@@ -382,9 +374,11 @@
 <h3 id="losung-industrie-21">Lösung "Industrie 2.1"</h3>
 <ul>
 <li>Entkopplung von Steuerstrom und Laststromkreis durch Relais oder Schütz</li>
-<li>Steuerstromkreis hat i.d.R. niedrigere Spannung
-<img alt="width:500 right" src="../images/Relais_Animation.gif" /></li>
+<li>Steuerstromkreis hat i.d.R. niedrigere Spannung</li>
 </ul>
+<p><center></p>
+<p><img alt="width:500 right" src="../images/Relais_Animation.gif" /></p>
+<p></center></p>
 <hr />
 <h3 id="verbindungsprogrammierte-steuerung-mit-logischen-komponenten">Verbindungsprogrammierte Steuerung mit logischen Komponenten</h3>
 <p><img alt="bg right w:500" src="../images/RelaisWechsel.svg" /></p>
@@ -399,17 +393,19 @@
 <li><code>1</code>-<code>2</code> wird geschlossen</li>
 </ul>
 <p><img alt="bg right h:500" src="../images/Datenblatt_ESW12DX-UC.png" /></p>
-<p><a href="https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf">Quelle</a></p>
+<p><a href="https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik)">Quelle 1</a><a href="https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf">,2</a></p>
 <hr />
 <ul>
 <li><code>A1</code>-<code>A2</code>: Schließen des Steuerkreises löst eine Sprungfunktion in der Spannung und Strom aus (Flanke)
 *- <code>1</code>-<code>2</code> wird geschlossen</li>
 </ul>
 <p><img alt="bg right h:500" src="../images/AnschlussStromstross.png" /></p>
-<p><a href="https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik), https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf">Quelle</a></p>
+<p><a href="https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_(Elektrik/Elektronik)">Quelle 1</a><a href="https://www.eltako.com/fileadmin/downloads/de/Gesamtkatalog/Eltako_Gesamtkatalog_Kap11_low_res.pdf">,2</a></p>
 <hr />
 <h4 id="stromstoschalter">Stromstoßschalter</h4>
+<p><center></p>
 <p><img alt="" src="../images/StromStossSchaltung.png" /></p>
+<p></center></p>
 <p><a href="https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf">Quelle</a></p>
 <hr />
 <h3 id="losung-industrie-30">Lösung Industrie 3.0</h3>
@@ -429,17 +425,23 @@
 </ul>
 <hr />
 <h4 id="aufbau-sps-loxone-mini-server">Aufbau SPS - Loxone Mini Server</h4>
+<p><center></p>
 <p><img alt="height:400" src="../images/Loxone.png" /></p>
+<p></center></p>
 <p><a href="https://www.loxone.com/dede/produkte/gebaeude-und-hausautomation-miniserver/">Quelle</a></p>
 <hr />
 <h4 id="aufbau-sps-siemens-logo">Aufbau SPS - Siemens Logo</h4>
+<p><center></p>
 <p><img alt="height:400" src="../images/7942-230rceo.jpg" /></p>
+<p></center></p>
 <hr />
 <h2 id="aufbau-sps-am-beispiel-beckhoff">Aufbau SPS - am Beispiel Beckhoff</h2>
 <p><img alt="height:400" src="../images/sps-Aufbau-simpel-drawio.svg" /></p>
 <hr />
 <h3 id="aufbau-einer-sps">Aufbau einer SPS</h3>
+<p><center></p>
 <p><img alt="bg h:400 right:40%" src="../images/S7CPU3V2.png" /></p>
+<p></center></p>
 <p><a href="https://www.xplore-dna.net/mod/page/view.php?id=294">Quelle</a></p>
 <ul>
 <li>Anbringung meist an Hutschiene (<strong>modular</strong>)</li>
@@ -473,42 +475,59 @@
 </ul>
 <p><img alt="bg h:400 right:40%" src="../images/S7CPU3V2.png" /></p>
 <p><a href="https://www.xplore-dna.net/mod/page/view.php?id=294">Quelle</a></p>
-<hr />
-<h3 id="abgrenzung-von-sps-und-bussystemen">Abgrenzung von SPS und Bussystemen</h3>
-<ul>
-<li>⚠️ Die folgende Darstellung vereinfacht und stilisiert </li>
-<li>in der Praxis sind Mischformen üblich</li>
-</ul>
-<hr />
-<h4 id="sps-als-zentrales-system">SPS als zentrales System</h4>
-<p><img alt="bg right" src="../images/Nervous_system_diagram-de.svg.png" /></p>
-<ul>
-<li>SPS als Single Point of Failure</li>
-<li>häufig sternförmige Verkabelung</li>
-<li>Ein- und Ausgänge der SPS sind digital (nur zwei Zustände) oder analog</li>
-</ul>
-<p><a href="https://de.wikipedia.org/wiki/Nervensystem#">Quelle</a></p>
-<hr />
-<h3 id="dezentrales-system">Dezentrales System</h3>
-<ul>
-<li>Viele Mikrocontroller übernehmen die Steuerungsaufgaben</li>
-<li>kein Single Point of Failure</li>
-<li>andere Topologien als Sternform möglich</li>
-<li>Übermittlung von Seriellen Telegrammen auf der Busleitung</li>
-</ul>
-<p><img alt="bg right:66% height:600" src="../images/GehirnOktopus.png" /></p>
-<p><a href="https://quizizz.com/admin/quiz/605a064f172bf7001b1ea35d/tintenfische">Quelle</a></p>
-<hr />
-<h4 id="steuerung-mit-bus-system">Steuerung mit Bus-System</h4>
-<p><img alt="bg h:400 right:40%" src="../images/WelchselschalterFunk.svg" /></p>
-<ul>
-<li>Zentrale SPS wird durch mehrere <strong>dezentrale Contoller</strong> ersetzt</li>
-<li>Diese kommunizieren über Telegramme in einem standardtisierten Protokoll miteinander </li>
-<li>Anstelle von binären Schaltinformationen werden Bitfolgen übertragen</li>
-<li>Mischformen sind möglich!</li>
-</ul>
-<hr />
-<p><img alt="" src="../images/DaliMixedExample.png" /></p>
+<!--
+
+---
+
+### Abgrenzung von SPS und Bussystemen
+
+* ⚠️ Die folgende Darstellung vereinfacht und stilisiert 
+* in der Praxis sind Mischformen üblich
+
+---
+
+#### SPS als zentrales System
+
+
+![bg right](images/Nervous_system_diagram-de.svg.png)
+
+* SPS als Single Point of Failure
+* häufig sternförmige Verkabelung
+* Ein- und Ausgänge der SPS sind digital (nur zwei Zustände) oder analog
+
+[Quelle](https://de.wikipedia.org/wiki/Nervensystem#)
+
+---
+
+### Dezentrales System
+
+* Viele Mikrocontroller übernehmen die Steuerungsaufgaben
+* kein Single Point of Failure
+* andere Topologien als Sternform möglich
+* Übermittlung von Seriellen Telegrammen auf der Busleitung
+
+
+![bg right:66% height:600](images/GehirnOktopus.png)
+
+[Quelle](https://quizizz.com/admin/quiz/605a064f172bf7001b1ea35d/tintenfische)
+
+---
+
+#### Steuerung mit Bus-System
+
+![bg h:400 right:40%](images/WelchselschalterFunk.svg)
+
+* Zentrale SPS wird durch mehrere **dezentrale Contoller** ersetzt
+* Diese kommunizieren über Telegramme in einem standardtisierten Protokoll miteinander 
+* Anstelle von binären Schaltinformationen werden Bitfolgen übertragen
+* Mischformen sind möglich!
+
+---
+
+![](images/DaliMixedExample.png)
+
+-->
+
 <hr />
 <h2 id="speicherprogrammierbare-steuerung-sps">Speicherprogrammierbare Steuerung (SPS)</h2>
 <hr />
@@ -589,7 +608,9 @@
 <h2 id="eva-prinzip">EVA-Prinzip</h2>
 <!-- _class: white -->
 
+<p><center></p>
 <p><img alt="height:500" src="../images/EVA-Prinzip.svg" /></p>
+<p></center></p>
 <p><a href="https://upload.wikimedia.org/wikipedia/commons/f/f2/EVA-Prinzip.svg">Quelle</a></p>
 <hr />
 <h3 id="zyklische-verarbeitung">Zyklische Verarbeitung</h3>
@@ -627,7 +648,9 @@
 </ul>
 <hr />
 <h4 id="passive-analoge-signale">Passive Analoge Signale</h4>
+<p><center></p>
 <p><img alt="h:200" src="../images/schaltungsarten_zeichnung_beitragsbild-838x376.jpg" /></p>
+<p></center></p>
 <ul>
 <li>Nutzen Temperaturabhängigkeit eines Widerstands</li>
 <li>und Ohmsches Gesetz: <span class="arithmatex">\(U=RI\)</span></li>
@@ -641,13 +664,13 @@
 </ul>
 <p><img alt="bg left:30% w:400" src="../images/Pt100_Kennlinie.png" /></p>
 <ul>
-<li><span class="arithmatex">\(U = 24 V\)</span></li>
-<li><span class="arithmatex">\(I_m=0.16 A\)</span></li>
+<li><span class="arithmatex">\(U = 24 \text{V}\)</span></li>
+<li><span class="arithmatex">\(I_m=0.16 \text{A}\)</span></li>
 <li><span class="arithmatex">\(R=\frac{U}{I_m}=150 \Omega\)</span></li>
-<li><span class="arithmatex">\(T \approx 100°C\)</span></li>
-<li>Sollten wir den PT-Widerstand direkt mit <span class="arithmatex">\(24 V\)</span> beaufschlagen?</li>
+<li><span class="arithmatex">\(T \approx 100 \text{°C}\)</span></li>
+<li>Sollten wir den PT-Widerstand direkt mit <span class="arithmatex">\(24 \text{V}\)</span> beaufschlagen?</li>
 </ul>
-<p><a href="Kennlinie eines Pt100 (100 \(\Omega\) bei 0 °C)">Quelle</a></p>
+<p>Kennlinie eines Pt100 (100 <span class="arithmatex">\(\Omega\)</span> bei 0 °C)</p>
 <hr />
 <h3 id="einsatzgebiete-von-verstarkern">Einsatzgebiete von Verstärkern</h3>
 <p><img alt="" src="../images/Messkette.svg" /></p>
@@ -702,14 +725,18 @@
 </ul>
 <hr />
 <h4 id="signalformen">Signalformen</h4>
+<p><center></p>
 <p><img alt="h:450" src="../images/Singalformen.png" /></p>
+<p></center></p>
 <ul>
 <li>live zero lässt Kabelbruch erkennen
 <a href="https://download.beckhoff.com/download/document/Application_Notes/DK9221-1111-0059.pdf">Quelle</a></li>
 </ul>
 <hr />
 <h4 id="single-ended-vs-differential">🤓 Single-Ended vs. Differential</h4>
+<p><center></p>
 <p><img alt="h:400" src="../images/1668840971__Web.png" /></p>
+<p></center></p>
 <ul>
 <li>Single-Ended: alle Sensoren liegen auf dem gleichen V- Potential (nur ein Kabel zurück)</li>
 <li>Differential: jeder Sensor hat sein eigenes V- Potential (weniger Störanfällig)</li>
@@ -836,7 +863,9 @@
 </ul>
 <hr />
 <h3 id="analoger-eingang_1">Analoger Eingang</h3>
+<p><center></p>
 <p><img alt="height:400" src="../images/EL3024.png" /></p>
+<p></center></p>
 <ul>
 <li>Signal ist eine Stromstärke (<strong>4...20mA</strong>)</li>
 <li>Signal wird in <strong>12 Bit</strong> digitalisiert</li>
@@ -844,6 +873,7 @@
 </ul>
 <hr />
 <h3 id="beispiele-fur-analoge-und-digitale-signale">Beispiele für analoge und digitale Signale</h3>
+<p><center></p>
 <table>
 <thead>
 <tr>
@@ -865,6 +895,7 @@
 </tr>
 </tbody>
 </table>
+<p></center></p>
 <hr />
 <h2 id="aufgabe-4_1_2">✍️ Aufgabe 4_1_2:</h2>
 <p><img alt="bg right:33% w:300" src="../images/Drucksensor.png" /></p>

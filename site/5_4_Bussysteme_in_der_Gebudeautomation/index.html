@@ -87,7 +87,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Bussysteme in der Gebäudeautomation</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Bussysteme in der Gebäudeautomation</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#digital-addressable-lighting-interface-dali">Digital Addressable Lighting Interface (DALI)</a>
         <ul>
@@ -127,41 +127,11 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#stromaufnahme-berechnen">Stromaufnahme berechnen</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#verdrahtung">Verdrahtung</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#anschluss">Anschluss</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#konfiguration">Konfiguration</a>
-        <ul>
     <li class="toctree-l4"><a class="reference internal" href="#software-seitige-konfiguration">Software-seitige Konfiguration</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#anwendungsbeispiel-besprechungszimmer">Anwendungsbeispiel Besprechungszimmer</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#stuckliste">Stückliste</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#checkliste">Checkliste</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#gruppierung">Gruppierung</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#szenenzuordnung">Szenenzuordnung</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#inbetriebnahme">Inbetriebnahme</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#quelle">Quelle</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#ergebnis">Ergebnis</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dali-2">DALI 2</a>
     </li>
         </ul>
     </li>
@@ -321,7 +291,7 @@
               
                 <!-- paginate: true -->
 
-<h1 id="54-bussysteme-in-der-geaudeautomation">5.4 Bussysteme in der Geäudeautomation</h1>
+<h1 id="54-bussysteme-in-der-gebaudeautomation">5.4 Bussysteme in der Gebäudeautomation</h1>
 <hr />
 <h2 id="digital-addressable-lighting-interface-dali">Digital Addressable Lighting Interface (DALI)</h2>
 <h3 id="lernziele">🎯 Lernziele</h3>
@@ -375,7 +345,9 @@
 </ul>
 <hr />
 <h3 id="aufbau">Aufbau</h3>
+<p><center></p>
 <p><img alt="" src="../images/DALI-Systembild1-800x439.jpg" /></p>
+<p></center></p>
 <p><a href="https://www.ledclusive.de/blog/anleitung-zur-dali-installation-im-privathaus-fuer-jedermann/">Quelle</a></p>
 <hr />
 <h3 id="merkmale-von-dali">Merkmale von DALI</h3>
@@ -394,7 +366,7 @@
 <h3 id="technische-hintergrunde">Technische Hintergründe</h3>
 <ul>
 <li>Kodierung:  </li>
-<li>Manchester-Codierung </li>
+<li><a href="https://de.wikipedia.org/wiki/Differentieller_Manchester-Code">Differentieller Manchester-Code</a></li>
 <li>High Pegel (idle): <span class="arithmatex">\(9.5  \text{ bis } 22.5 \text{ V}\)</span></li>
 <li>Low Pegel: <span class="arithmatex">\(-6.5  \text{ bis } 6.5 \text{ V}\)</span></li>
 <li>Buszugriff:   </li>
@@ -405,23 +377,29 @@
 </ul>
 </li>
 </ul>
-<p><img alt="bg right w:600" src="../images/manchest.png" /></p>
+<p><img alt="bg right w:600" src="../images/Differential_manchester_encoding.svg" /></p>
 <p><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&amp;id=5821349906969406832">Quelle</a></p>
 <hr />
 <h3 id="telegramm-format">Telegramm-Format</h3>
+<p><center></p>
 <p><img alt="centered" src="../images/5839436427__de__Web.jpg" /></p>
-<p><a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&amp;id=5821349906969406832">Quelle</a></p>
+<p></center></p>
 <ul>
 <li>FF: Forward Frame eines Masters</li>
 <li>BF: Backward Frame Antwort eines Slaves</li>
 <li>16-und-24-Bit-Telegramme: Geräte zu konfigurieren, 
-Parameter abzufragen oder Steuerbefehle oder Ereignisse</li>
+Parameter abzufragen oder Steuerbefehle oder Ereignisse
+<a href="https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclib_tc3_dali/12346807435.html&amp;id=5821349906969406832">Quelle</a></li>
 </ul>
 <hr />
+<p><center></p>
 <p><img alt="" src="../images/dali-forward-frame-structure.jpg" /></p>
+<p></center></p>
 <p><a href="https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding">Quelle</a></p>
 <hr />
+<p><center></p>
 <p><img alt="" src="../images/dali-te-timing-annotated.jpg" /></p>
+<p></center></p>
 <ul>
 <li><code>1-1-01110...</code></li>
 </ul>
@@ -507,72 +485,87 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse</li>
 <li>Hierbei sind nur die Controller gemeint, die durch die DALI-Leitung versorgt werden</li>
 </ul>
 <p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h5 id="1-stromaufnahme-abschatzen">1. Stromaufnahme abschätzen</h5>
-<ul>
-<li>Jedes Gerät im DALI-Kreis nimmt über den DALI-Kreis Strom auf (parallel)</li>
-<li>Die Stromaufnahme der Steuer- und Betriebsgeräte aus Datenblatt (ca. <span class="arithmatex">\(2 \text{ mA}\)</span>).</li>
-<li>
-<p>maximalen Strom der Stromversorgung z.B. DALI PS1 (<span class="arithmatex">\(200 \text{ mA}\)</span>)</p>
-</li>
-<li>
-<p>Beispiel: DALI-Kreis mit 24 dimmbaren LED Treibern (LCA), 6 DALI XC</p>
-</li>
-<li>Gesamtstrom = Summe Stromaufnahme DALI Betriebsgeräte + Summe Stromaufnahme DALI Steuergeräte</li>
-<li>Gesamtstrom = 24 x Vorschaltgeräte + 6 x DALI XC</li>
-<li>Gesamtstrom = <span class="arithmatex">\(24 x 2 \text{ mA} + 6 x 6 \text{ mA} = 84 \text{ mA}\)</span></li>
-</ul>
-<hr />
-<h5 id="2-maximale-kabellange-berechnen">2. Maximale Kabellänge berechnen</h5>
-<ul>
-<li>Spannungsabfall durch Kabel darf <span class="arithmatex">\(2 \text{ V}\)</span> nicht überschreiten</li>
-<li>Berechnung des Spannungsabfalls:
-  <span class="arithmatex">\(U_v = R I =  \frac{2 \cdot l }{\gamma \cdot S}\cdot I\)</span></li>
-</ul>
-<p><span class="arithmatex">\(U_v\)</span> Spannungsabfall in V
-  <span class="arithmatex">\(I\)</span> Strom in A
-  <span class="arithmatex">\(S\)</span> Querschnitt in <span class="arithmatex">\(mm^2\)</span>
-  <span class="arithmatex">\(l\)</span> Leitungslänge in m
-  <span class="arithmatex">\(\gamma\)</span> Elektrische Leitfähigkeit in <span class="arithmatex">\(\frac{m}{\Omega \cdot mm }\)</span>,   bei Kupferleitungen:  <span class="arithmatex">\(56\frac{m}{\Omega \cdot mm }\)</span></p>
-<hr />
-<ul>
-<li>Beispiel: DALI-Kreis mit einer Leitungslänge von <span class="arithmatex">\(300 m\)</span> und einem Drahtquerschnitt von <span class="arithmatex">\(1.5 mm^2\)</span> und maximalem Strom von 250 mA</li>
-</ul>
-<p><span class="arithmatex">\(U_v = \frac{2 \cdot l \cdot I}{\gamma \cdot S} = \frac{2 \cdot 300 m \cdot 0.25 A}{56 \frac{m}{\Omega mm^2} \cdot 1.5 mm^2} = 1.786 V\)</span></p>
-<ul>
-<li>Spannungsabfall über Kabel ist kleiner als <span class="arithmatex">\(2V\)</span></li>
-</ul>
-<hr />
-<h3 id="verdrahtung">Verdrahtung</h3>
-<ul>
-<li>handelsübliches Installationsmaterial</li>
-<li>2 Adern für DALI-Steuerkreis </li>
-</ul>
-<p><img alt="" src="../images/DALIkabel.png" /></p>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="anschluss">Anschluss</h4>
-<ul>
-<li>auf Polarität der DALI-Leitung muss nicht beachtet werden </li>
-<li>DALI-Signal ist <strong>nicht SELV</strong>. Es gelten die Installationsvorschriften für Niederspannung.</li>
-</ul>
-<p><img alt="" src="../images/Dali_Anschluss.png" /></p>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<ul>
-<li><strong>Safety Extra Low Voltage</strong>= Sicherheitskleinspannung) bezeichnet Spannungen, die aufgrund ihrer geringen Spannungshöhe und Isolierung besonderen Schutz gegen elektrischen Schlag bieten</li>
-</ul>
-<hr />
-<h3 id="konfiguration">Konfiguration</h3>
-<ul>
-<li>Bussysteme werden in der Regel nicht programmiert, sondern anhand von bestehenden Bausteinen einer SPS oder hersteller-spezifischer Software konfiguriert</li>
-<li>Jedem Gerät werden bestimmte Eigenschaftswerte zugewiesen</li>
-<li>Steuer-Controller:</li>
-<li>Für welche Funktion ist der Schalter zuständig (Szenen, Gruppen, Dimmen)</li>
-<li>Für welche Leuchtmittel und Gruppen ist der Schalter genau zuständig</li>
-<li>LED-Controller:</li>
-<li>Zuordnung zu Szenen und Gruppen</li>
-<li>Zuordnung von Leuchtwerten</li>
-</ul>
+<!--
+
+---
+
+
+##### 1. Stromaufnahme abschätzen
+
+- Jedes Gerät im DALI-Kreis nimmt über den DALI-Kreis Strom auf (parallel)
+- Die Stromaufnahme der Steuer- und Betriebsgeräte aus Datenblatt (ca. $2 \text{ mA}$).
+- maximalen Strom der Stromversorgung z.B. DALI PS1 ($200 \text{ mA}$)
+
+- Beispiel: DALI-Kreis mit 24 dimmbaren LED Treibern (LCA), 6 DALI XC
+  - Gesamtstrom = Summe Stromaufnahme DALI Betriebsgeräte + Summe Stromaufnahme DALI Steuergeräte
+  - Gesamtstrom = 24 x Vorschaltgeräte + 6 x DALI XC
+  - Gesamtstrom = $24 x 2 \text{ mA} + 6 x 6 \text{ mA} = 84 \text{ mA}$
+
+---
+
+##### 2. Maximale Kabellänge berechnen
+
+- Spannungsabfall durch Kabel darf $2 \text{ V}$ nicht überschreiten
+- Berechnung des Spannungsabfalls:
+  $U_v = R I =  \frac{2 \cdot l }{\gamma \cdot S}\cdot I$
+
+  $U_v$ Spannungsabfall in V
+  $I$ Strom in A
+  $S$ Querschnitt in $mm^2$
+  $l$ Leitungslänge in m
+  $\gamma$ Elektrische Leitfähigkeit in $\frac{m}{\Omega \cdot mm }$,   bei Kupferleitungen:  $56\frac{m}{\Omega \cdot mm }$
+
+---
+
+- Beispiel: DALI-Kreis mit einer Leitungslänge von $300 m$ und einem Drahtquerschnitt von $1.5 mm^2$ und maximalem Strom von 250 mA
+
+  $U_v = \frac{2 \cdot l \cdot I}{\gamma \cdot S} = \frac{2 \cdot 300 m \cdot 0.25 A}{56 \frac{m}{\Omega mm^2} \cdot 1.5 mm^2} = 1.786 V$
+
+* Spannungsabfall über Kabel ist kleiner als $2V$
+
+---
+
+### Verdrahtung
+
+
+- handelsübliches Installationsmaterial
+- 2 Adern für DALI-Steuerkreis 
+
+![](images/DALIkabel.png)
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+
+---
+
+#### Anschluss
+
+- auf Polarität der DALI-Leitung muss nicht beachtet werden 
+-  DALI-Signal ist **nicht SELV**. Es gelten die Installationsvorschriften für Niederspannung.
+
+
+![](images/Dali_Anschluss.png)
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+- **Safety Extra Low Voltage**= Sicherheitskleinspannung) bezeichnet Spannungen, die aufgrund ihrer geringen Spannungshöhe und Isolierung besonderen Schutz gegen elektrischen Schlag bieten
+
+
+---
+
+### Konfiguration
+
+* Bussysteme werden in der Regel nicht programmiert, sondern anhand von bestehenden Bausteinen einer SPS oder hersteller-spezifischer Software konfiguriert
+* Jedem Gerät werden bestimmte Eigenschaftswerte zugewiesen
+* Steuer-Controller:
+  * Für welche Funktion ist der Schalter zuständig (Szenen, Gruppen, Dimmen)
+  * Für welche Leuchtmittel und Gruppen ist der Schalter genau zuständig
+* LED-Controller:
+  * Zuordnung zu Szenen und Gruppen
+  * Zuordnung von Leuchtwerten
+
+-->
+
 <hr />
 <h4 id="software-seitige-konfiguration">Software-seitige Konfiguration</h4>
 <p><img alt="bg right:66%" src="../images/DaliMasterConfig.png" /></p>
@@ -626,192 +619,111 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse</li>
 <p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
 <hr />
 <p><img alt="" src="../images/DALIExample.png" /></p>
-<hr />
-<h4 id="stuckliste">Stückliste</h4>
-<p><img alt="bg right:27% height:300" src="../images/Besprechungszimmer.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Pos.</th>
-<th>Stück</th>
-<th>Artikelbezeichnung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>DALI Stromversorgung DALI PS1 / DALI PS2</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2</td>
-<td>DALI XC in SC Modus (Szenenkontroller) DALI XC</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1</td>
-<td>DALI XC in GC Modus (Gruppenkontroller) DALI XC</td>
-</tr>
-<tr>
-<td>4</td>
-<td>6</td>
-<td>DALI LED Betriegsgerät für Langfeldleuchte LCAI one4all</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2</td>
-<td>DALI LED Betriebsgerät für LED Downlights LCAI one4all</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="checkliste">Checkliste</h4>
-<table>
-<thead>
-<tr>
-<th>DALI Bedingung</th>
-<th>Im Objekt geplant / vorhanden</th>
-<th>OK?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Max. 64 DALI Betriebsgeräte</td>
-<td>8 DALI Betriebsgeräte</td>
-<td></td>
-</tr>
-<tr>
-<td>Max. 16 Gruppen</td>
-<td>2 Gruppen</td>
-<td></td>
-</tr>
-<tr>
-<td>Max. 16 Szenen</td>
-<td>4 Szenen</td>
-<td></td>
-</tr>
-<tr>
-<td>Strom DALI-Kreis &lt; Nennstrom Power Supply</td>
-<td>34 mA</td>
-<td></td>
-</tr>
-<tr>
-<td>Leitungslänge &lt; 300 m (bei 1,5mm²)</td>
-<td>ca. 20m</td>
-<td></td>
-</tr>
-<tr>
-<td>5 Adern zu jeder Leuchte</td>
-<td>5 x 1,5mm²</td>
-<td></td>
-</tr>
-<tr>
-<td>DALI LED Betriebsgerät in Leuchte</td>
-<td>Tridonic LCAI one4all</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="gruppierung">Gruppierung</h4>
-<p><img alt="bg right:27% height:300" src="../images/Arbeitszimmer_Gruppiert.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Komponente</th>
-<th>Zuordnung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Downlights</td>
-<td>Gruppe 1</td>
-</tr>
-<tr>
-<td>Langfeldleuchten</td>
-<td>Gruppe 2</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>an Fensterfront DALI XC (GC):</li>
-<li>individuelle <strong>Dimmen der beiden Leuchtengruppen</strong>.</li>
-<li>4 Taster, je zwei für jede Gruppe</li>
-</ul>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="szenenzuordnung">Szenenzuordnung</h4>
-<ul>
-<li>an Tür: DALI XC (SC Modus) mit den <strong>Szenen</strong> „<strong>Beleuchtung ein</strong>" und „<strong>Beleuchtung aus</strong>"</li>
-<li>an Fensterfront 1 DALI XC (SC): </li>
-<li>Aufrufen von <strong>vier Szenen</strong> </li>
-<li>individuelle <strong>Dimmen der beiden Leuchtengruppen</strong>.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Bedienstelle Tür</th>
-<th>Bedienstelle Leinwand</th>
-<th>G1</th>
-<th>G2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Szene 1</td>
-<td>Licht aus</td>
-<td>Licht aus</td>
-<td>0 %</td>
-<td>0%</td>
-</tr>
-<tr>
-<td>Szene 2</td>
-<td>Licht 100 %</td>
-<td>Licht 100 %</td>
-<td>100%</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>Szene 3</td>
-<td>nicht verdrahtet</td>
-<td>Präsentation</td>
-<td>50%</td>
-<td>20 %</td>
-</tr>
-<tr>
-<td>Szene 4</td>
-<td>nicht verdrahtet</td>
-<td>Besprechung</td>
-<td>0%</td>
-<td>100%</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="inbetriebnahme">Inbetriebnahme</h4>
-<ul>
-<li>Die Programmierung kann auf zwei Arten erfolgen</li>
-<li><strong>Schalter im Programmiermodus</strong></li>
-<li><strong>PC-Anbindung</strong> mit Software</li>
-</ul>
-<h2 id="quelle"><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></h2>
-<h4 id="ergebnis">Ergebnis</h4>
-<p><img alt="" src="../images/BeispielSzenen.png" /></p>
-<p><a href="https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf">Quelle</a></p>
-<hr />
-<h4 id="dali-2">DALI 2</h4>
-<p><img alt="bg right:45% width:500" src="../images/DALI1zu2.png" /></p>
-<ul>
-<li>abwärtskompatibel</li>
-<li>Input Devices (Sensoren) kommunizieren nicht mehr direkt mit DALI-Treibern an Leuchtmitteln</li>
-<li>Application controller verarbeiten zuerst (Multimaster Prinzip)</li>
-<li>Kollisions-Erkennung</li>
-</ul>
+<!--
+
+---
+
+#### Stückliste
+
+![bg right:27% height:300](images/Besprechungszimmer.png)
+
+
+
+| Pos.  | Stück  | Artikelbezeichnung| 
+| - |- |- |
+|1| 1| DALI Stromversorgung DALI PS1 / DALI PS2|
+|2| 2 |DALI XC in SC Modus (Szenenkontroller) DALI XC|
+|3| 1 |DALI XC in GC Modus (Gruppenkontroller) DALI XC|
+|4| 6 |DALI LED Betriegsgerät für Langfeldleuchte LCAI one4all|
+|5| 2 |DALI LED Betriebsgerät für LED Downlights LCAI one4all|
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+
+---
+
+#### Checkliste
+
+| DALI Bedingung  | Im Objekt geplant / vorhanden | OK? |
+| - |- |- |
+|Max. 64 DALI Betriebsgeräte | 8 DALI Betriebsgeräte | |
+| Max. 16 Gruppen| 2 Gruppen |
+| Max. 16 Szenen | 4 Szenen |
+|Strom DALI-Kreis < Nennstrom Power Supply | 34 mA | |
+|Leitungslänge < 300 m (bei 1,5mm²) | ca. 20m | |
+5 Adern zu jeder Leuchte  | 5 x 1,5mm² | 
+|DALI LED Betriebsgerät in Leuchte |Tridonic LCAI one4all | |
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+---
+
+#### Gruppierung
+
+![bg right:27% height:300](images/Arbeitszimmer_Gruppiert.png)
+
+
+| Komponente | Zuordnung |
+| - |- |
+|Downlights  |Gruppe 1 |
+| Langfeldleuchten | Gruppe 2 |
+
+- an Fensterfront DALI XC (GC):
+  - individuelle **Dimmen der beiden Leuchtengruppen**.
+  - 4 Taster, je zwei für jede Gruppe
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+---
+
+
+#### Szenenzuordnung
+
+- an Tür: DALI XC (SC Modus) mit den **Szenen** „**Beleuchtung ein**" und „**Beleuchtung aus**"
+- an Fensterfront 1 DALI XC (SC): 
+  - Aufrufen von **vier Szenen** 
+  - individuelle **Dimmen der beiden Leuchtengruppen**.
+
+| | Bedienstelle Tür  | Bedienstelle Leinwand |G1 | G2  |
+|- |- |-| - | - |
+| Szene 1 |  Licht aus | Licht aus | 0 % | 0% |
+| Szene 2 |  Licht 100 % | Licht 100 %  | 100% | 100% |
+| Szene 3 |  nicht verdrahtet  | Präsentation | 50% | 20 %|
+| Szene 4 |  nicht verdrahtet  | Besprechung | 0% | 100% |
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+---
+
+
+#### Inbetriebnahme
+
+- Die Programmierung kann auf zwei Arten erfolgen
+  - **Schalter im Programmiermodus**
+  - **PC-Anbindung** mit Software
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+---
+
+#### Ergebnis
+
+![](images/BeispielSzenen.png)
+
+[Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
+
+---
+
+#### DALI 2
+
+![bg right:45% width:500](images/DALI1zu2.png)
+
+- abwärtskompatibel
+- Input Devices (Sensoren) kommunizieren nicht mehr direkt mit DALI-Treibern an Leuchtmitteln
+- Application controller verarbeiten zuerst (Multimaster Prinzip)
+- Kollisions-Erkennung
+
+-->
+
 <hr />
 <h2 id="ausfallsicherheit">Ausfallsicherheit</h2>
 <ul>
@@ -1282,9 +1194,6 @@ Refrigeration, and Air Conditioning Engineers Inc</li>
 <li><strong>Managementebene</strong> (Gebäudeleittechnik)</li>
 </ul>
 <p><img alt="height:250" src="../images/ibox-bac-router.jpg" /></p>
-<p><a href="https://www.intesis.com/de/produkte/protocol-translator/bacnet-gateways/router-f%C3%BCr-bacnet-ms-tp-auf-bacnet-ip?ordercode=INBACRTR0320000">Quelle</a></p>
-<p><a href="https://www.wago.com/at/bacnet#:~:text=BACnet%C2%AE%20%E2%80%9EBuilding%20Automation%20and,unterschiedlicher%20Hersteller%20in%20der%20Geb%C3%A4udeautomation.">Quelle</a>
-<a href="https://www.ta.hu-berlin.de/res/co.php?id=14081">Quelle</a></p>
 <hr />
 <h3 id="anwendungsgebiet-bacnet">Anwendungsgebiet BACnet</h3>
 <ul>

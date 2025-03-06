@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -22,8 +22,11 @@ theme: lemon
 
 ## Blockschaltbild
 
+<center>
 
-![](images/Blockschaltbild1.png)
+![h:300](images/Blockschaltbild1.png)
+
+</center>
 
 * Grafische Beschreibung von Systemen in der Regelungs- und Steuerungstechnik
 * Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind
@@ -38,13 +41,13 @@ theme: lemon
 
 ---
 
-### Dynamische Systeme
+### 🤓 Dynamische Systeme
 
 * lineare Systeme: Systemfunktion ist eine lineare Funktion
 * nichtlineare Systeme: Systemfunktion ist eine nichtlineare Funktion
 * zeitinvariante Systeme: Systemfunktion ist unabhängig von der Zeit
 * zeitvariante Systeme: Systemfunktion ist abhängig von der Zeit
-* Totzeit: Systemfunktion ist eine Funktion der Zeit, die für $t<0$ verschwindet
+
 
 
 
@@ -80,9 +83,9 @@ theme: lemon
 * $y = f(u)=K_p \cdot u$
 * Beispiel: 
   * je höher die $\text{CO}_2$ Konzentration in einem Raum, desto schneller dreht sich ein Ventilator in einer Lüftungsanlage
-  * $y$ ... Drehfrequenz der Ventilators in $Hz$
-  * $u$ ... $\text{CO}_2$ Konzentration in $ppm$
-  * $K_p$ ... Proportionalitätsfaktor in $\frac{Hz}{ppm}$
+  * $y$ ... Drehfrequenz der Ventilators in $\text{Hz}$
+  * $u$ ... $\text{CO}_2$ Konzentration in $\text{ppm}$
+  * $K_p$ ... Proportionalitätsfaktor in $\frac{\text{Hz}}{\text{ppm}}$
 
 
 
@@ -206,7 +209,7 @@ theme: lemon
 
 ## 🧠 Steuerung
 
-![height:150](images/SteuerungBlock.png)
+![](images/SteuerungBlock.png)
 
 * **Stellgröße** ist die Ausgangsgröße des Stellglieds ($\rightarrow$ Spannung an der LED)
 * **Steuerstrecke** ist das System, das durch die Stellgröße und Störgrößen beeinflusst wird ($\rightarrow$ Helligkeit im Raum)
@@ -286,7 +289,8 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 ## ✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung
 
 
-- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos) so an, dass die LED bei einer Helligkeit von 220 Lux angeht
+- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos) so an, dass die LED bei einer Helligkeit unter 220 Lux angeht
+- Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
 
 ![h:400](images/Tageslichtschaltung_xcos_.png)
 
@@ -311,7 +315,7 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
   - und zu implementieren
 
 ```Python
-regelabweichung = soll_lux- ist_lux 
+regelabweichung = soll_lux - ist_lux 
 
 zweipunkt_regler(regelabweichung):
   if regelabweichung > 0:
@@ -415,6 +419,7 @@ class zweipunkt_hysterese():
 ## ✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung
 
 - Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS`
+- Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
 
 ![](images/TagesLichtHystere.png)
 

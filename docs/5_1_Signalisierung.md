@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -20,7 +20,12 @@ theme: lemon
 ## Unterschiede SPS und Bussysteme
 
 
+<center>
+
 ![height:200](images/ZentraleSPS.png) ![height:200](images/DezentralerBus.png)
+
+</center>
+
 
 [Quelle](https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf)
 
@@ -75,7 +80,7 @@ theme: lemon
 
 ### Unterscheidungsmerkmale von Bussystemen
 
-![bg width:400 right:35%](images/osi.png)
+![bg width:500 right:40%](images/osi.png)
 
 
 
@@ -136,13 +141,24 @@ theme: lemon
 
 - Wie groß ist jeweils die Symbolrate und die Bitrate?
 
+<center>
+
 ![](images/bit-vs-baud.png)
+
+</center>
+
 
 ---
 
 ### ✔️ Lösung
 
+<center>
+
+
 ![](images/bit-vs-baud-Aufgabe.png)
+
+</center>
+
 
 * In beiden Fällen ändert sich die Spannung zehn mal pro Sekunde $\text{Symbolrate} = 10 \text{ Baud}$
 * Links: Es gibt zwei Spannungen, jedes Symbol codiert ein Bit $\text{Bitrate} = 10 \frac{\text{Bit}}{\text{s}}$
@@ -173,7 +189,12 @@ theme: lemon
 
 ## ✍️ Aufgabe 5_1_2: Leitungscodes
 
+<center>
+
 ![h:200](images/Codierung.png)
+
+</center>
+
 
 - Erklären Sie verbal, wie die Leitungscodes funktionieren
 - Non-Return-to-Zero Low Level
@@ -185,7 +206,11 @@ theme: lemon
 
 ### ✔️ Lösung
 
+<center>
+
 ![h:200](images/Codierung.png)
+
+</center>
 
 * Non-Return-to-Zero Low Level: eine `1` wird durch eine niedrige Spannung codiert
 * Non-Return-to-Zero Inverted: Bei jedem Auftreten einer `1` wird die Spannung invertiert
@@ -207,12 +232,17 @@ theme: lemon
 
 ### Synchrone Datenübertragung
 
+<center>
+
 ![w:550](images/Bus-I2C-PullUp.png)![w:550](images/Bus-I2C-Zeitdiagramm.png)
 
-* Neben der Datenleitung `SDA` gibt es eine Taktleitung `SCL`, mit welcher der Master vorgibt, wann `SDA` gelesen wird (z.B.`I²C`-Bus)
+</center>
+
+
+* Neben der Datenleitung `SDA` (Serial Data) gibt es eine Taktleitung `SCL` (Serial Clock), mit welcher der Master vorgibt, wann `SDA` gelesen wird (z.B.`I²C`-Bus)
 * Probleme: 
   * Taktleitung benötigt zusätzliche Leitung
-  * Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master schon weitergezogen
+  * Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master (System Clock) schon weitergezogen
 [Quelle](http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_)
 
 
@@ -220,16 +250,26 @@ theme: lemon
 
 ### Asynchrone Datenübertragung
 
-* Jeder Busteilnehmer verfügt über eine eigene Taktquelle (`Sample Clock`), die deutlich schneller taktet als die Datenübertragung
+* Jeder Busteilnehmer verfügt über eine eigene Taktquelle (`Sample/Serial/System Clock`), die deutlich schneller taktet als die Datenübertragung
 * Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. RS-232) 
 
+<center>
+
 ![w:550](images/assync.png)
+
+</center>
+
 
 ---
 
 ## Serielle und Parallele Busse
 
+<center>
+
 ![](images/Parallel.png)
+
+</center>
+
 
 * Mit mehreren parallelen Leitungen können ebenfalls 
 mehr Symbole bei gleicher Baud-Rate übertragen werden
@@ -239,13 +279,24 @@ mehr Symbole bei gleicher Baud-Rate übertragen werden
 
 ## Übertragungsarten
 
+<center>
+
 ![h:400](images/BBE_SimplexvsDuplex_Transmissions.png)
+
+</center>
+
 
 * Simplex: Eine Richtung
 * Half-Duplex: Beide Richtungen, aber nicht gleichzeitig
 * Full-Duplex: Beide Richtungen gleichzeitig
 
 [Quelle](https://www.black-box.de/de-de/page/25078/Information/Technische-Ressourcen/black-box-erklaert/Glasfaserkabel/Simplex-versus-Duplex-Glasfaser-Patchkabel)
+
+---
+
+## Differentiale Busse
+
+![](images/Differential_signal_transmission.svg)
 
 ---
 

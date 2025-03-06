@@ -83,7 +83,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Buszugriffsverfahren</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Buszugriffsverfahren</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#lernziele">🎯 Lernziele</a>
     </li>
@@ -122,12 +122,10 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#summenrahmenprotokoll">🧠 Summenrahmenprotokoll</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#summenrahmenprotokoll-beispiel-ethercat">Summenrahmenprotokoll Beispiel EtherCat</a>
     </li>
         </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#quelle">Quelle</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#summenrahmenprotokoll-beispiel-ethercat">Summenrahmenprotokoll Beispiel EtherCat</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-deterministischer-buszugriffsverfahren">Zusammenfassung deterministischer Buszugriffsverfahren</a>
     </li>
@@ -149,7 +147,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-5_2_2-bewertung-eines-buszugriffsverfahrens-fur-sicherheitskritische-anwendungen">✍️ Aufgabe 5_2_2:  Bewertung eines Buszugriffsverfahrens für sicherheitskritische Anwendungen</a>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-5_2_2-bewertung-eines-buszugriffsverfahrens-fur-sicherheitskritische-anwendungen">✍️ Aufgabe 5_2_2: Bewertung eines Buszugriffsverfahrens für sicherheitskritische Anwendungen</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
     </li>
@@ -247,7 +245,7 @@ img[alt~="center"] {
 <li>Telegrammlänge: <span class="arithmatex">\(2\)</span> Byte</li>
 <li><code>[Adresse].[Nachricht]</code></li>
 <li>Zykluszeit des Masters und Slaves vernachlässigbar (Antworten unmittelbar)</li>
-<li>Baud-Rate <span class="arithmatex">\(9.600 \text{ Baud}\)</span> (z.B. Dali)</li>
+<li>Baud-Rate <span class="arithmatex">\(9.600 \text{ Baud}\)</span> </li>
 <li><a href="https://en.wikipedia.org/wiki/Manchester_code">Manchester-Code</a></li>
 <li>Zykluszeit je Master + Slave: vernachlässigbar</li>
 <li>Signal-Laufzeit Fortpflanzung des Signals im Leiter mit Lichtgeschwindigkeit wird ebenfalls vernachlässigt</li>
@@ -403,12 +401,17 @@ img[alt~="center"] {
 <li><strong>garantierte Buszugriffszeiten</strong> (deterministischer Prozess)</li>
 <li>sehr effiziente Busauslastung</li>
 </ul>
-<h2 id="quelle"><a href="https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf">Quelle</a></h2>
+<p><a href="https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf">Quelle</a></p>
+<hr />
 <h5 id="summenrahmenprotokoll-beispiel-ethercat">Summenrahmenprotokoll Beispiel EtherCat</h5>
+<p><center></p>
 <p><img alt="height:450" src="../images/EhterCat.png" /></p>
+<p></center></p>
 <p><a href="https://www.youtube.com/watch?v=z2OagcHG-UU">Quelle</a></p>
 <hr />
+<p><center></p>
 <p><img alt="" src="../images/Ethercat.png" /></p>
+<p></center></p>
 <ul>
 <li>Ein- und Ausgangsklemmen werden über Ethercat angesprochen</li>
 <li>Hardware wie Ethernet, jedoch mit Summenrahmenprotokoll</li>
@@ -486,10 +489,13 @@ mit <span class="arithmatex">\(t_s\)</span> Signallaufzeit, </li>
 <p><a href="Schnell &amp; Wiedemann 2019">Quelle</a></p>
 <hr />
 <h2 id="aufgabe-5_2_2-bewertung-eines-buszugriffsverfahrens-fur-sicherheitskritische-anwendungen">✍️ Aufgabe 5_2_2:  Bewertung eines Buszugriffsverfahrens für sicherheitskritische Anwendungen</h2>
+<p><center></p>
 <p><img alt="" src="../images/Brandszenario.svg" /></p>
+<p></center></p>
 <ul>
 <li>Welche Ansätze gibt es bei einem Bussystem, die Leuchten in einer Notsituation garantiert auf den Zustand <code>leuchtend</code> zuschalten?</li>
-<li>Annahme, der defekte Schalter sendet dauerhaft den Zustand <code>aus</code> auf den Bus, wenn er sie Chance dazu hat</li>
+<li>Annahme, der defekte Schalter sendet dauerhaft den Zustand <code>aus</code> auf den Bus, wenn er er Chance dazu hat</li>
+<li>Welches Buszugriffsverfahren sollte genutzt werden?</li>
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>

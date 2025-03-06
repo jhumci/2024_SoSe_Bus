@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -83,7 +83,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 * Telegrammlänge: $2$ Byte
   * `[Adresse].[Nachricht]`
 * Zykluszeit des Masters und Slaves vernachlässigbar (Antworten unmittelbar)
-* Baud-Rate $9.600 \text{ Baud}$ (z.B. Dali)
+* Baud-Rate $9.600 \text{ Baud}$ 
 * [Manchester-Code](https://en.wikipedia.org/wiki/Manchester_code)
 * Zykluszeit je Master + Slave: vernachlässigbar
 * Signal-Laufzeit Fortpflanzung des Signals im Leiter mit Lichtgeschwindigkeit wird ebenfalls vernachlässigt
@@ -298,11 +298,18 @@ sequenceDiagram
 
 
 [Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
+
 ---
 
 ##### Summenrahmenprotokoll Beispiel EtherCat
 
+<center>
+
+
 ![height:450](images/EhterCat.png)
+
+</center>
+
 
 
 [Quelle](https://www.youtube.com/watch?v=z2OagcHG-UU)
@@ -310,7 +317,11 @@ sequenceDiagram
 
 ---
 
+<center>
+
 ![](images/Ethercat.png)
+
+</center>
 
 * Ein- und Ausgangsklemmen werden über Ethercat angesprochen
 * Hardware wie Ethernet, jedoch mit Summenrahmenprotokoll
@@ -424,14 +435,20 @@ mit $t_s$ Signallaufzeit,
 
 ## ✍️ Aufgabe 5_2_2:  Bewertung eines Buszugriffsverfahrens für sicherheitskritische Anwendungen
 
+<center>
+
 ![](images/Brandszenario.svg)
 
+</center>
+
 * Welche Ansätze gibt es bei einem Bussystem, die Leuchten in einer Notsituation garantiert auf den Zustand `leuchtend` zuschalten?
-* Annahme, der defekte Schalter sendet dauerhaft den Zustand `aus` auf den Bus, wenn er sie Chance dazu hat
+* Annahme, der defekte Schalter sendet dauerhaft den Zustand `aus` auf den Bus, wenn er er Chance dazu hat
+* Welches Buszugriffsverfahren sollte genutzt werden?
 
 ---
 
 ### ✔️ Lösung 
+
 * Wenn der defekte Schalter wirklich dauerhaft sendet, dann wird der Bus durch den defekten Schalter blockiert
 * Beim Master-Slave Verfahren würde der Master den defekten Schalter erkennen und die Leuchten auf `leuchtend` schalten und in der Folge den defekten Schalter nicht mehr ansprechen
 

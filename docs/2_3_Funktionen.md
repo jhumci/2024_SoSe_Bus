@@ -4,9 +4,9 @@ author: Julian Huber
 size: 16:9
 footer: Julian Huber - Bussysteme
 
-# Strg+[ ] for Options
+# Strg + [ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -36,11 +36,11 @@ add(3, 4) # 7
 
 ## Steuerfunktion
 
-$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})$$
+$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}}$$
 
 ```Python
 def l_set(p_act, h_room, PAR_SETPT, l_man):
-    return (p_act and h_room<PAR_SETPT) or l_man
+    return (p_act and (h_room<PAR_SETPT)) or l_man
 ```
 
 ```Python
@@ -54,7 +54,7 @@ while True:
 ---
 
 
-## ✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung
+## 🤓✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung
 
 * Implementieren Sie die Tageslichtschaltung in Python
 * Stellen Sie zunächst sicher, dass LED, Button und Analog-Digital-Wandler korrekt angeschlossen sind
@@ -153,15 +153,13 @@ def map_quat(x):
 
 ### ✔️ Lösung
 
-* Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändern
+* Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändert
 * Umrechnungen
-* Einfacher, wenn mehr in Funktionen ausgelagert wird
+* Einfacher, wenn mehr (z.B. auch die Zuweisung der Ein- und Ausgänge) in Funktionen ausgelagert wird
 
 ---
 
 ## Sichtbarkeit von Variablen
-
----
 
 ### Lokale Variablen
 

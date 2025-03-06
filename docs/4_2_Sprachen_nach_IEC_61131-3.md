@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -15,7 +15,7 @@ theme: lemon
 <!-- paginate: true -->
 
 
-# 4.2 SPS Programmier-Sprachen nach IEC 61131-3
+# 4.2 SPS-Sprachen nach IEC 61131-3
 
 ---
 
@@ -23,7 +23,7 @@ theme: lemon
 
 - Die Folgenden Inhalte orientieren sich an der Software Twincat 3 von Beckhoff
 - Die Inhalte sind aber auch auf andere SPS-Programmiersysteme übertragbar
-- Da die Twincat 3 Software tief ins System eingreift, wird nicht empfohlen diese auf den privaten Rechnern zu installieren
+- Da die Twincat 3 Software tief ins System eingreift, wird **nicht empfohlen diese auf den privaten oder Arbeits-Rechnern zu installieren**
 - Die Software ist aber auf den Rechnern im Labor installiert
 - Als Alternative, kann die Software [OpenPLC Editor]() empfohlen werden
 
@@ -362,7 +362,7 @@ nLocalVariable := aCounter[2];
 ### Weitere Anweisungen
 
 * `Return` wird genutzt, um einen Baustein zu verlassen
-* `EXIT`-Anweisung** wenn diese in einer FOR-, WHILE- oder REPEAT-Schleife vorkommt, dann wird die innerste Schleife beendet, ungeachtet der Abbruchbedingung.
+* `EXIT`-Anweisung wenn diese in einer FOR-, WHILE- oder REPEAT-Schleife vorkommt, dann wird die innerste Schleife beendet, ungeachtet der Abbruchbedingung.
 * **Aufruf einer Fuktion**: Analog zu Python werden der Funktionsname genannt und in Klammern die Attribute übergeben (z.B. ```SQRT(IN := 9)```)
 
 

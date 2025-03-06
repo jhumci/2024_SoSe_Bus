@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -21,8 +21,9 @@ theme: lemon
 
 ## Motivation
 
-- Funktion hat nur Input und Output aber keinen Speicher / Zustand
-- z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern
+* **Funktionen** haben wohl definierten Input und Output aber **keinen Speicher / Zustand**
+* Eine **State-Machine** hat einen Zustand, aber ist **aufwendig** zu implementieren und anzupassen
+* Bedarf für beides: wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand (letzte Messerwerte) speichern
 
 ![bg right](images/Schwanken.png)
 
@@ -30,13 +31,13 @@ theme: lemon
 
 ## Grundkonzepte der Objektorientierung
 
-* Objektorientierte Programmierung: Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten
+* Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten
 * z.B. Objekt der Klasse `Sensor`
   * Attribute (Eigenschaften mit Datentyp):
-    * Zählernummer
+    * Name
+    * Einheit
     * Aktueller Messerwert 
     * Liste bisheriger Messerwerte
-    * Einheit
   * Methoden (wie Funktionen):
     * Mittelwert bilden
     * Messen
@@ -53,6 +54,9 @@ theme: lemon
 * Jeder einzelne Sensor ist ein Objekt der Klasse Sensor, bei dem die Attribute individuell ausgeprägt 
 ![bg right h:600](images/mermaid-diagram-2024-01-30-104356.svg
 )
+    * Beleuchtungsstärke-Sensor
+    * Temperatursensor
+    * ...
 
 
 ---
@@ -174,7 +178,7 @@ while True:
 
 - Passen Sie den gegeben Code so an, dass der Sensor auch über eine Methode verfügt, welche den Mittelwert der Messwerte zurückgibt
 - Sie können die folgende Funktion als Ausgangspunkt verwenden
-- Vergessen sie nicht das `self`-Argument zu übergeben
+- Vergessen Sie nicht das `self`-Argument zu übergeben
 - Hierdurch können sie auch die Übergabe des Parameters `list_of_measurements` vermeiden, die Sie sich im Objekt direkt auf `self.measurements` beziehen können
 ```Python
 def bilde_mittelwert(list_of_measurements):
@@ -219,28 +223,15 @@ ergebnis = bilde_mittelwert([1,2,3])
 ---
 
 
-## Vererbung
 
-<!-- _class: white -->
-
-- Durch Vererbung können die **Attribute** und **Methoden** einer (Parent-)Klasse **an andere** (Child-)**Klassen weitergegeben** werden. 
-- Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. 
-- Im UML-Klassendiagramm wird die Vererbung mit meinem im **leeren Dreieck endenden Pfeil** dargestellt.
-- Dies ermöglicht eine **hierarchische Strukturierung** von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen
-
-![bg w:700 right:55%](images/UML-Tier_vererbung.svg)
-
----
 
 ## JSON-Darstellung eines Objekts
-
----
 
 ### Serialisierung von Objekten
 
 ![h:300](images/Signalisierung.svg)
 
-* Zur Übertragung zwischen Systemen müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden
+* Zur Übertragung zwischen Systemen und Speicherung müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden
 * Serialisierung:
   * Objekt aus dem Arbeitsspeicher wird in eine Folge von Zeichen übersetzt (letztlich eine Folge von Bits)
   * Austauschdateiformat (meist in Form einer Auszeichnungssprache)
@@ -300,7 +291,8 @@ with open("sample.json", "w") as outfile:
 
 - Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen
 - Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?
-- Implementieren Sie eine Methode `prepare_data()`, die Ihren Vorstellungen entspricht
+- Implementieren Sie eine Methode `prepare_data()`, die Ihren Vorstellungen entspricht und das bereiningte Dictionary zurückgibt und printen Sie es
+- `del(my_dict["unit"])` entfernt z.B. den Eintrag `unit` aus dem Dictionary
 
 ---
 
@@ -318,3 +310,20 @@ with open("sample.json", "w") as outfile:
     ```python
     --8<-- "Aufgaben\2_4_2\my_classes.py"
     ```
+
+---
+
+## Appendix
+
+### 🤓 Vererbung
+
+<!-- _class: white -->
+
+- Durch Vererbung können die **Attribute** und **Methoden** einer (Parent-)Klasse **an andere** (Child-)**Klassen weitergegeben** werden. 
+- Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. 
+- Im UML-Klassendiagramm wird die Vererbung mit meinem im **leeren Dreieck endenden Pfeil** dargestellt.
+- Dies ermöglicht eine **hierarchische Strukturierung** von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen
+
+![bg w:700 right:55%](images/UML-Tier_vererbung.svg)
+
+---

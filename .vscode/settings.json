@@ -3,6 +3,7 @@
         "https://raw.githubusercontent.com/dracula/marp/master/dracula/dracula.css",
         "https://raw.githubusercontent.com/hahnec/marp-recipes/master/themes/hahnec.css",
         "https://raw.githubusercontent.com/jhumci/mci_marp_themes/master/lemon.scss",
-        "https://raw.githubusercontent.com/jhumci/mci_marp_themes/master/mci_marp.scss"
+        "https://raw.githubusercontent.com/jhumci/mci_marp_themes/master/mci_marp.scss",
+        "https://raw.githubusercontent.com/jhumci/mci_marp_themes/master/beams.css"
     ]
 }

@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -30,12 +30,15 @@ theme: lemon
 
 ---
 
-### Konstantlichtregelung
+### Konstantlicht-Regelung
 
 * Lichtstärke kann (quasi) stetig gesteuert werden (z.B. über Dimmer oder Pulsweitenmodulation)
 
+<center>
+
 ![](images/Helligkeitsregelung.svg)
 
+</center>
 
 ---
 
@@ -86,18 +89,12 @@ def p-regler(e, k_p):
 
 ---
 
-## ✍️ Aufgabe 3_2_2: Regelung der CO2-Konzentration
+## ✍️ Aufgabe 3_2_2: Regelung der $\text{CO}_2$-Konzentration
 
 - Ziel ist der Entwurf eines Reglers zur Steuerung einer Belüftungsanlage auf Basis der Schadstoffkonzentration im Raum in ppm 
 - Zeichnen Sie den Verlauf der Stellgrößen (Drehzahl der Anlage) für folgende zwei Regler:
-  - stetiger Proportionalregler: $u(t) = \frac{2}{min \cdot ppm} e(t)$ 
+  - stetiger Proportionalregler: $u(t) = \frac{2}{\text{min} \cdot \text{ppm}} e(t)$ 
   - Regelung nach Logik nächste Seite.
-
----
-
-### ✔️ Lösung
-
-![bg right:66% height:600](images/AufgabeRegler.svg)
 
 ---
 
@@ -107,7 +104,7 @@ def p-regler(e, k_p):
 
 ```Python
 def regler (e, letzte_drehzahl):
-  if e ==1000:
+  if e == 1000:
     drehzahl = letzte_drehzahl
   else:
     if e > 1000:
@@ -118,6 +115,12 @@ def regler (e, letzte_drehzahl):
     
 ```
 
+---
+
+### ✔️ Lösung
+
+![bg right:66% height:600](images/AufgabeRegler.svg)
+
 
 ---
 
@@ -127,7 +130,7 @@ def regler (e, letzte_drehzahl):
 
 * P-Glied, welches als Regler eingesetzt wird
 * Zeitverhalten: reagiert **unverzögert** 
-* bleibende Regelabweichung bei Systemen mit Ausgleich (Regelstrecken die bei konstantem Eingang einen konstanten Wert anstreben)
+* bleibende Regelabweichung bei Systemen mit Ausgleich (Regelstrecken welche sich nicht proportional verhalten)
 
 ---
 
@@ -185,7 +188,7 @@ def regler (e, letzte_drehzahl):
 * Sprungantwort: $u(t)=K_Pe(t)+K_d \frac{de(t)}{dt}=K_Pe(t)+T_v \frac{de(t)}{dt}$
 * kombiniert P-Regler mit Differenzial-Anteil
 * der D-Anteil bewertet die Änderung einer Regelabweichung (differenziert) und berechnet so deren **Änderungsgeschwindigkeit**
-* reagiert schon auf "Ankündigungen" von Veränderungen 
+* reagiert schon auf *"Ankündigungen"* von Veränderungen 
 * **sehr schnell**, doch bleibende **Regelabweichung**
 * Unruhe im Regelkreis wird verstärkt, wenn Sensorsignal verrauscht 
 

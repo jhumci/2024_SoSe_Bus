@@ -67,7 +67,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Regelverhalten</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Regelverhalten</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#pid-regler">🧠 PID-Regler</a>
     </li>
@@ -181,7 +181,7 @@
               
                 <!-- paginate: true -->
 
-<h1 id="32-regelverhalten">3.2 Regelverhalten</h1>
+<h1 id="33-regelverhalten">3.3 Regelverhalten</h1>
 <hr />
 <h2 id="pid-regler">🧠 PID-Regler</h2>
 <p><img alt="" src="../images/Idealer_PID_Sprungantwort.svg" /></p>
@@ -205,7 +205,7 @@
 </ul>
 <hr />
 <h3 id="bestimmung-des-dynamischen-verhaltens">Bestimmung des dynamischen Verhaltens</h3>
-<p><img alt="h:300" src="../images/ReglerDynamisch.png" /></p>
+<p><img alt="h:350" src="../images/ReglerDynamisch.png" /></p>
 <ul>
 <li>Ziel der Regelungstechnik ist es ein erwünschtes Verhalten 
 der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
@@ -252,9 +252,8 @@ der Regelgröße <span class="arithmatex">\(y\)</span> zu erhalten</li>
 <hr />
 <h3 id="praktische-uberlegungen">Praktische Überlegungen</h3>
 <ul>
-<li>Um eine gewünschtes Regelverhalten zu erreichen, muss ein geeigneter Regler mit den passenden Faktoren (z.B. Verstärkungsfaktor <span class="arithmatex">\(K_P\)</span>) ausgewählt oder <strong>kalibriert</strong> werden. </li>
-<li>Hier lässt sich entweder ein <strong>Modell der Regelstrecke</strong> bilden. In der Praxis werden Regelkreise häufig durch <strong>Ausprobieren</strong> von Reglere
-instellungen eines PID-Regler kalibriert.</li>
+<li>Um eine gewünschtes Regelverhalten zu erreichen, muss ein geeigneter Regler mit den passenden Faktoren (z.B. Verstärkungsfaktor <span class="arithmatex">\(K_P\)</span>) ausgewählt werden. </li>
+<li>Hier lässt sich entweder ein <strong>Modell der Regelstrecke</strong> bilden. In der Praxis werden Regelkreise häufig durch <strong>Ausprobieren</strong> von Regler-Einstellungen eines PID-Regler kalibriert.</li>
 </ul>
 <hr />
 <h3 id="praktische-uberlegungen-pid-regler">🤓 Praktische Überlegungen PID-Regler</h3>
@@ -262,31 +261,35 @@ instellungen eines PID-Regler kalibriert.</li>
 <p><a href="https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)">Quelle</a></p>
 <hr />
 <h2 id="aufgabe-3_3_1-auswahl-reglerverhalten">✍️ Aufgabe 3_3_1: Auswahl Reglerverhalten</h2>
-<p>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
-- <strong>Startoptimierung</strong> der Raumtemperatur 
-(unter Energieffizienzgesichtspunkten)
-- <strong>Konstantlichtregelung</strong> 
-(Beleuchtung aus Komfortgesichtspunkten)
-- <strong>Bewegungssteuerung</strong> eines Laufroboters</p>
+<ul>
+<li>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen</li>
+<li><strong>Startoptimierung</strong> der Raumtemperatur 
+(unter Energieffizienzgesichtspunkten)</li>
+<li><strong>Konstantlichtregelung</strong> 
+(Beleuchtung aus Komfortgesichtspunkten)</li>
+<li><strong>Bewegungssteuerung</strong> eines Laufroboters</li>
+</ul>
 <p><img alt="bg height:200 right:30%" src="../images/Xqt_Regler.png" /></p>
 <p><a href="https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)">Quelle</a></p>
 <hr />
 <h3 id="losung">Lösung</h3>
-<p>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
-- <strong>Startoptimierung</strong> der Raumtemperatur 
-(unter Energieffizinzgesichtspunkten)
-  * Langsam kein Überschwingen
-- <strong>Konstantlichtregelung</strong> 
-(Beleuchtung aus Komfortgesichtspunkten)
-  * Langsam kein Überschwingen
-- <strong>Bewegungssteuerung</strong> eines Laufroboters
-  * Schnell, minimales Überschwingen</p>
+<ul>
+<li>Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen</li>
+<li><strong>Startoptimierung</strong> der Raumtemperatur 
+(unter Energieffizinzgesichtspunkten)</li>
+<li>Langsam kein Überschwingen</li>
+<li><strong>Konstantlichtregelung</strong> 
+(Beleuchtung aus Komfortgesichtspunkten)</li>
+<li>Langsam kein Überschwingen</li>
+<li><strong>Bewegungssteuerung</strong> eines Laufroboters</li>
+<li>Schnell, minimales Überschwingen</li>
+</ul>
 <p><img alt="bg height:200 right:30%" src="../images/Xqt_Regler.png" /></p>
 <p><a href="https://de.wikipedia.org/wiki/Faustformelverfahren_(Automatisierungstechnik)">Quelle</a></p>
 <hr />
 <h2 id="beispiele">Beispiele</h2>
 <h3 id="hardware-pid-regler">Hardware PID-Regler</h3>
-<p><img alt="" src="../images/pid_regler_hardware.png" /></p>
+<p><img alt="h:400" src="../images/pid_regler_hardware.png" /></p>
 <p><a href="https://www.reichelt.at/at/de/pid-regler-quantrol-lc100-5--55-c-quan-lc100-d-24-p147710.html?PROVID=2807">Quelle</a></p>
 <hr />
 <h3 id="software-baustein-pid-regler">Software Baustein PID-Regler</h3>
@@ -315,7 +318,7 @@ instellungen eines PID-Regler kalibriert.</li>
 <p><img alt="h:200" src="../images/znschwing.gif" /></p>
 <ul>
 <li>Eigenschaft Regelstrecke und P-Regler</li>
-<li>dynamischen Eigenschaften hängen stark vom Verstärkungsfaktor (<span class="arithmatex">\(K_P\)</span>) des Gesamtsystems ab.</li>
+<li>dynamischen Eigenschaften hängen stark vom Verstärkungsfaktor (<span class="arithmatex">\(K_P\)</span> - im Bild <span class="arithmatex">\(K_R\)</span>) des Gesamtsystems ab.</li>
 <li>Ab bestimmtem <span class="arithmatex">\(K_P^{krit}\)</span> beginnt die Regelgröße zu schwingen (Stabilitätsgrenze)</li>
 </ul>
 <p><a href="http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/7/tc/regelung/grundlagen/regelung_grundlagen.vlu/Page/vsc/de/ch/7/tc/regelung/grundlagen/regparam/regparam.vscml.html">Quelle</a></p>
@@ -327,7 +330,7 @@ instellungen eines PID-Regler kalibriert.</li>
 <p><span class="arithmatex">\(u(t)=K_P \cdot e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(u(t)=K_P e(t) + K_I\int_0^te(\tau)d\tau + K_d \frac{de(t)}{dt}\)</span></p>
+<p><span class="arithmatex">\(u(t)=K_P \cdot e(t) + K_I\int_0^te(\tau)d\tau + K_d \frac{de(t)}{dt}\)</span></p>
 </li>
 <li>
 <p><span class="arithmatex">\(u(t)=K_P \cdot [e(t) + \frac{K_I}{K_P}\int_0^te(\tau)d\tau + \frac{K_D}{K_P} \frac{de(t)}{dt}]\)</span></p>
@@ -342,7 +345,7 @@ instellungen eines PID-Regler kalibriert.</li>
 <p>bzw. <span class="arithmatex">\(T_v=0\)</span>, <span class="arithmatex">\(T_n=∞\)</span></p>
 </li>
 <li>
-<p><span class="arithmatex">\(u(t)=K_P e(t) + K_I\int_0^te(\tau)d\tau + K_D \frac{de(t)}{dt}\)</span></p>
+<p><span class="arithmatex">\(u(t)=K_P \cdot e(t) + K_I\int_0^te(\tau)d\tau + K_D \frac{de(t)}{dt}\)</span></p>
 </li>
 <li><span class="arithmatex">\(u(t)=K_P \cdot [e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}]\)</span></li>
 </ul>
@@ -391,12 +394,12 @@ Messung der beobachtbaren Periodendauer <span class="arithmatex">\(T^{krit}\)</s
 <h2 id="aufgabe-3_3_2">✍️ Aufgabe 3_3_2:</h2>
 <p><img alt="" src="../images/ReglerEinstellen.png" /></p>
 <ul>
-<li>Kalibrieren Sie den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: <a href="https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing">Colab</a></li>
+<li>Finden Sie gtue Werte für den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: <a href="https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing">Colab</a></li>
 </ul>
 <hr />
 <h2 id="aufgabe-3_3_3">🤓 ✍️ Aufgabe 3_3_2:</h2>
 <ul>
-<li>Kalibrieren Sie das folgende <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied.zcos">System</a> nach der Methode von Ziegler und Nichols</li>
+<li>Finden Sie gtue Werte für den Regler für das folgende <a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied.zcos">System</a> nach der Methode von Ziegler und Nichols</li>
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>
@@ -404,7 +407,7 @@ Messung der beobachtbaren Periodendauer <span class="arithmatex">\(T^{krit}\)</s
 
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p><a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_1/PT1-Glied_Loesung.zcos">Link</a></p>
+<p><a href="https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied_Loesung.zcos">Link</a></p>
 </details>
               
             </div>

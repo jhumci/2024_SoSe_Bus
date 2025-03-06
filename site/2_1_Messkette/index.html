@@ -52,7 +52,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Messkette</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Messkette</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#eva-prinzip">EVA-Prinzip</a>
         <ul>
@@ -126,15 +126,31 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken \(E\)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nachverarbeitung-nach-adc">Nachverarbeitung nach ADC</a>
+    <li class="toctree-l4"><a class="reference internal" href="#mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#losung_4">✔️ Lösung</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_5">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_6">Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_1_6">🤓 ✍️ Aufgabe 2_1_6:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analoge-ausgange">Analoge Ausgänge</a>
     </li>
         </ul>
     </li>
@@ -542,7 +558,7 @@
 <p><img alt="width:500" src="../images/Relais_Animation.gif" /></p>
 <p></center></p>
 <hr />
-<h5 id="selbsthaltefunktion">Selbsthaltefunktion</h5>
+<h5 id="selbsthaltefunktion">🤓 Selbsthaltefunktion</h5>
 <ul>
 <li>Hierbei wird durch das Schließen des Schalters ein Stromkreis geschlossen, der das Relais anzieht und somit ein andauerndes Schließen des Schalters ermöglicht<blockquote>
 <p>Wenn der Taster S2 (Schließer) betätigt wird, zieht das Relais K1 an und schließt den Kontakt K1. Wenn der Taster S2 nun losgelassen wird, überbrückt ihn der Kontakt K1 und das Relais bleibt weiterhin angezogen. Durch Betätigung des Tasters S1 (Öffner) wird das Relais stromlos und fällt ab, K1 ist damit offen. Wenn S2 betätigt wird, würde wieder K1 anziehen und in die Selbsthaltung gehen.</p>
@@ -559,6 +575,7 @@
 <li>Digitale Ausgänge können nur zwei Zustände annehmen (0 /<code>False</code> oder 1 : <code>True</code>)</li>
 <li>Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)</li>
 <li>Hierzu muss man Periodendauer <span class="arithmatex">\(T\)</span> und Duty Cycle <span class="arithmatex">\(t\)</span> (Impulsdauer) geeignet setzen</li>
+<li>Die Frequenz <span class="arithmatex">\(f = \frac{1}{T}\)</span> ist beim Raspberry Pi Pico standardmäßig <span class="arithmatex">\(500 \,\text{Hz}\)</span></li>
 </ul>
 <p><img alt="bg right w:500" src="../images/04011113.png" /> </p>
 <p><a href="https://www.elektronik-kompendium.de/sites/kom/0401111.htm">Quelle</a></p>
@@ -580,6 +597,12 @@
     <span class="k">for</span> <span class="n">cycle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">65534</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Cycles through the PWM range backwards from 65534 to 0</span>
         <span class="n">pwm</span><span class="o">.</span><span class="n">duty_cycle</span> <span class="o">=</span> <span class="n">cycle</span>  <span class="c1"># Cycles the LED pin duty cycle through the range of values</span>
 </code></pre></div>
+<ul>
+<li>Die Länge des Duty-Cycles wird durch <span class="arithmatex">\(2^{16}=65536\)</span> Werte abgestuft</li>
+<li>bei <code>duty_cycle = 0</code> der Duty-Cycle bei <span class="arithmatex">\(0 \%\)</span> und die LED aus</li>
+<li>bei <code>duty_cycle = 65535</code> der Duty-Cycle  genau so lang wie die Periodendauer</li>
+</ul>
+<p><a href="https://docs.circuitpython.org/en/latest/shared-bindings/pwmio/index.html">Quelle</a></p>
 <hr />
 <h3 id="losung_3"><a href="Aufgaben\2_1_4">✔️ Lösung</a></h3>
 <!-- _color: black -->
@@ -617,7 +640,7 @@
 <ul>
 <li>Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)</li>
 <li>z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen</li>
-<li>Damit änder sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann</li>
+<li>Damit ändert sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann</li>
 </ul>
 <hr />
 <h4 id="analog-digital-wandler">Analog-Digital-Wandler</h4>
@@ -626,28 +649,20 @@
 <li>Dabei gibt es zwei relevante Parameter<ul>
 <li>Auflösung: Anzahl der möglichen Werte</li>
 <li>Referenzspannung: Spannungsbereich, der in die Auflösung abgebildet wird</li>
-<li>z.B. 16 Bit Auflösung und <span class="arithmatex">\(3.3 \,\text{V}\)</span> Referenzspannung <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(2^{16} = 65536\)</span> Werte zwischen <span class="arithmatex">\(0\)</span> und <span class="arithmatex">\(3.3 \,\text{V}\)</span></li>
+<li>z.B. 16 Bit Auflösung und <span class="arithmatex">\(3.3 \,\text{V}\)</span> Referenzspannung 
+<span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(2^{16} = 65536\)</span> Werte zwischen <span class="arithmatex">\(0\)</span> und <span class="arithmatex">\(3.3 \,\text{V}\)</span></li>
 </ul>
 </li>
-<li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können</li>
+<li>Zudem können sich Systeme in ihrer Abtastrate unterscheiden, d.h. wie oft Werte gelesen werden können (z.B. durch den Sleep-Timer im <code>while</code>-loop)</li>
 </ul>
 <hr />
 <h2 id="aufgabe-2_1_5-anschluss-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors</h2>
 <ul>
-<li>Schließen Sie einen <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
-<li>Links (-): GND / Masse / 0 Volt</li>
-<li>Mitte: +VCC z.B. 3,3 oder 5 Volt</li>
-<li>Rechts (S): Verbindungspunkt des Spannungsteilers </li>
-</ul>
-</li>
-<li>Fixwiderstand <span class="arithmatex">\(10 \,\text{k}\Omega\)</span> zwischen +VCC und S</li>
-<li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
+<li>Verbinden Sie die <code>+</code> und <code>-</code> Leiste des Breadboards mit <span class="arithmatex">\(3.3 \,\text{V}\)</span> und <code>GND</code> des Raspberry Pi Pico</li>
+<li>Verbinden Sie den analogen Eingang <code>A2</code> mit einem Female-to-Female-Kabel</li>
+<li>Fügen Sie den folgenden Code ein</li>
 </ul>
 <hr />
-<ul>
-<li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
-<li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
-</ul>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -664,24 +679,157 @@
     <span class="c1"># Warten</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
+<hr />
+<ul>
+<li>Verbinden Sie den Eingang zunächst mit <code>+</code>, dann mit <code>-</code> </li>
+<li>Welche Werte erhalten Sie?</li>
+</ul>
+<hr />
+<h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<ul>
+<li>Bei einer direkten Verbindung des Eingangs mit <code>+</code> oder <code>-</code> erhalten Sie die maximalen (<code>2**16</code>) bzw. minimalen Werte (nahe <code>0</code>)</li>
+</ul>
+</details>
+<hr />
+<ul>
+<li>Schließen Sie einen Fotowiderstand als <a href="https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm">analogen Helligkeitssensor</a> an den Raspberry Pi Pico an<ul>
+<li>Links (I): +VCC z.B. 3,3 oder 5 Volt</li>
+<li>Mitte: GND / Masse / 0 Volt</li>
+<li>Rechts (S): Verbindungspunkt des Spannungsteilers</li>
+</ul>
+</li>
+<li>Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden</li>
+<li>Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes</li>
+<li>Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. </li>
+<li>Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen</li>
+</ul>
 <hr />
 <p><center></p>
 <p><img alt="h:500" src="../images/aufbau_pico_ky018.png" /></p>
 <p></center></p>
 <hr />
+<ul>
+<li>Zum Testen können Sie den Analog-Eingang mit <span class="arithmatex">\(3.3 \text{ Volt}\)</span> und <span class="arithmatex">\(0 \text{ Volt}\)</span> verbinden</li>
+<li>Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus</li>
+<li>Notieren Sie sich einige Werte (<code>ADC</code>) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Umgebung</th>
+<th>ADC</th>
+<th>E in Lux</th>
+<th>U in V</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abgedunkelt</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Raumlicht</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Taschenlampe</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm">Quelle</a></p>
+<hr />
+<h4 id="mapping-von-eingangswert-zu-spannung">Mapping von Eingangswert zu Spannung</h4>
+<ul>
+<li>Die Spannung und der <code>ADC</code>- Wert sind linear zueinander</li>
+<li>Entsprechend kann jeder Wert des <code>ADC</code> über einer lineare Funktion in eine Spannung umgerechnet werden</li>
+</ul>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(U_{max}\)</span></td>
+<td>maximale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(U_{min}\)</span></td>
+<td>minimale Beleuchtungsstärke</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{max}\)</span></td>
+<td>maximaler Messwert des ADC</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{min}\)</span></td>
+<td>minimaler Messwert des ADC</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Annahme: Linearer Zusammenhang
+    <span class="arithmatex">\(U = f(z) = \beta_0 + \beta_1 z\)</span></li>
+<li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
+<li>Bei welchen Wert hat <span class="arithmatex">\(U\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
+</ul>
+</li>
+<li>2: Wie groß ist die Steigung <span class="arithmatex">\(\beta_1\)</span>?<ul>
+<li>Wie groß ist die Änderung von <span class="arithmatex">\(U\)</span> pro Änderung von <span class="arithmatex">\(z\)</span>?</li>
+<li><span class="arithmatex">\(\beta_1 = \frac{{U_{max}} - U_{min}}{z_{max} - z_{min}}\)</span></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Der folgende Code übernimmt dein Eingangswert und gibt einen Spannungs-Wert zwischen 3.3 und 0 zurück</li>
+<li>Fügen Sie die Funktion <code>map_lin</code> in den Code ein und geben Sie die Spannung auf der Konsole aus</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">U_max</span> <span class="o">=</span> <span class="mf">3.3</span>
+    <span class="n">U_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">U_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">U_max</span> <span class="o">-</span> <span class="n">U_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+</code></pre></div>
+<ul>
+<li>Wenn Sie Ihren Code schön aufgeräumt haben wollen können eine Datei <code>mappings.py</code> im gleiche Ordner wie <code>code.py</code> erstellen und die Funktion dort speichern</li>
+<li>Sie können diese dann mittels <code>from mappings import map_lin</code> ins <code>main.py</code> importieren und nutzen</li>
+</ul>
+<hr />
 <h4 id="mapping-von-eingangswert-zu-physikalischer-groe">Mapping von Eingangswert zu physikalischer Größe</h4>
 <ul>
-<li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
+<li>Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen <code>ADC</code>-Werte <code>read</code> in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen</li>
 <li>Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen</li>
 <li><span class="arithmatex">\(E= f(x) = (a(x-s))^2\)</span><ul>
-<li><span class="arithmatex">\(a =0.0015\)</span> ist die Steigung der Parabel</li>
+<li><span class="arithmatex">\(a =0.0015\)</span> beschreibt die Steilheit der Parabel</li>
 <li><span class="arithmatex">\(s = 44000\)</span> ist der Verschiebung der Parabel auf der x-Achse</li>
 <li><span class="arithmatex">\(x\)</span> ist der Eingangswert</li>
 </ul>
 </li>
 </ul>
 <p><img alt="bg right:43% w:550" src="../images/CurveFitHelligkeit.png" /></p>
+<ul>
+<li>Erstellen Sie in eine Datei <code>mappings.py</code> (im gleichen Ordner, wie die <code>code.py</code>) eine Funktion <code>map_quat()</code>, die stattdessen die oben angegeben Formel implementiert</li>
+</ul>
 <hr />
 <h5 id="ubliche-beleuchtungsstarken-e">Übliche Beleuchtungsstärken <span class="arithmatex">\(E\)</span></h5>
 <table>
@@ -762,105 +910,13 @@
 <p><img alt="bg right:43% w:550" src="../images/BB-Helligkeit_Datenblatt.png" /></p>
 <p><a href="https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html">Quelle</a></p>
 <hr />
-<h3 id="losung_4"><a href="Aufgaben\2_1_5\code.py">✔️ Lösung</a></h3>
-<!-- _color: black -->
-
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<p>```python
-import board
-import analogio
-import time
-from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter">Initialisierung des ADC (Analog-Digital Converter)</h1>
-<p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung">Wiederholung</h1>
-<p>while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
-    # Warten
-    time.sleep(1)</p>
-</details>
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<p>```python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z</p>
-<p>def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)<em>a) </em>*2</p>
-</details>
-<hr />
-<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
+<h2 id="aufgabe-2_1_5-mapping-eines-analogen-helligkeitssensors">🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors</h2>
 <ul>
 <li>Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet</li>
 <li>Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus</li>
 <li>Orientieren Sie sich dabei an folgendem Code, der ein Beispiel für ein lineares Mapping zeigt</li>
+<li>Evtl. müssen Sie die Werte an Ihren Sensor und Aufbau anpassen, um die Beleuchtungsstärke in Lux zu erhalten</li>
 </ul>
-<hr />
-<table>
-<thead>
-<tr>
-<th>Symbol</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(E_{max}\)</span></td>
-<td>maximale Beleuchtungsstärke</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(E_{min}\)</span></td>
-<td>minimale Beleuchtungsstärke</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(z_{max}\)</span></td>
-<td>maximaler Messwert des ADC</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(z_{min}\)</span></td>
-<td>minimaler Messwert des ADC</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Annahme: Linearer Zusammenhang
-    <span class="arithmatex">\(E = f(z) = \beta_0 + \beta_1 z\)</span></li>
-<li>1: Wie groß ist der Y-Achsenabschnitt <span class="arithmatex">\(\beta_0\)</span>?<ul>
-<li>Bei welchen Wert hat <span class="arithmatex">\(E\)</span>, wenn <span class="arithmatex">\(z=0\)</span>?</li>
-</ul>
-</li>
-<li>2: Wie groß ist die Steigung <span class="arithmatex">\(\beta_1\)</span>?<ul>
-<li>Wie groß ist die Änderung von <span class="arithmatex">\(E\)</span> pro Änderung von <span class="arithmatex">\(z\)</span>?</li>
-<li><span class="arithmatex">\(\beta_1 = \frac{E_{max} - E_{min}}{z_{max} - z_{min}}\)</span></li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>Der folgende Code übernimmt dein Eingangswert und gibt einen normalisierten Wert zwischen 1 und 0 zurück</li>
-<li>Erstellen Sie in einer Datei <code>mappings.py</code> (im gleichen Ordner, wie die <code>code.py</code>) eine Funktion <code>map_quat()</code>, die stattdessen die oben angegeben Formel implementiert</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
-    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
-    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
-    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
-</code></pre></div>
 <hr />
 <ul>
 <li>🤓 Im besten Fall wird <code>map_ln</code> in einer eigenen Datei <code>mappings.py</code> gespeichert und kann dann mittels <code>import mappings</code> in anderen Programmen genutzt werden  </li>
@@ -890,60 +946,6 @@ def map_lin(z):
 
 <details class="optional-class">
 <summary>💡 anzeigen</summary>
-<p>```python
-import board
-import analogio
-import time
-from mappings import map_quat</p>
-<h1 id="initialisierung-des-adc-analog-digital-converter_1">Initialisierung des ADC (Analog-Digital Converter)</h1>
-<p>ldr = analogio.AnalogIn(board.A2)</p>
-<h1 id="wiederholung_1">Wiederholung</h1>
-<p>while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
-    # Warten
-    time.sleep(1)</p>
-</details>
-<details class="optional-class">
-<summary>💡 anzeigen</summary>
-<p>```python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z</p>
-<p>def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)<em>a) </em>*2</p>
-</details>
-<hr />
-<h2 id="verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</h2>
-<ul>
-<li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
-<li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>MY_NAME = &quot;Julian&quot;
-</code></pre></div>
-- Im Code können diese mittels <code>os</code> aufgerufen werden</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#  connect to your SSID</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MY_NAME&#39;</span><span class="p">))</span>
-</code></pre></div>
-<ul>
-<li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
-</ul>
-<hr />
-<h3 id="losung_6">Lösung</h3>
-<details class="optional-class">
-<summary>Lösung anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
 <span class="kn">import</span> <span class="nn">analogio</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -965,7 +967,67 @@ def map_lin(z):
 </code></pre></div>
 </details>
 <details class="optional-class">
-<summary>Lösung anzeigen</summary>
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mi">65535</span>
+    <span class="n">z_min</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">beta_0</span> <span class="o">=</span> <span class="n">E_min</span>
+    <span class="n">beta_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_max</span> <span class="o">-</span> <span class="n">E_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">z_max</span> <span class="o">-</span> <span class="n">z_min</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">beta_0</span> <span class="o">+</span> <span class="n">beta_1</span> <span class="o">*</span> <span class="n">z</span>
+
+<span class="k">def</span> <span class="nf">map_quat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">44000</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0015</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="verwendung-von-globalen-variablen">🤓 Verwendung von Globalen Variablen</h2>
+<ul>
+<li>einige Variablen sind so grundlegend, dass wir Sie nicht im Code sondern zentral verändern wollen</li>
+<li>Hierzu können wird Umgebungsvariablen in der <code>settings.toml</code> verändern im Verzeichnis <code>CIRCUITPY</code> ändern</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>MY_NAME = &quot;Julian&quot;
+</code></pre></div>
+- Im Code können diese mittels <code>os</code> aufgerufen werden</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#  connect to your SSID</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MY_NAME&#39;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>Passen Sie den Code so an, dass die zur Umwandlung benötigten Werte als Umgebungsvariablen gesetzt werden können</li>
+</ul>
+<hr />
+<h3 id="losung_6">Lösung</h3>
+<!-- _color: black -->
+
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">board</span>
+<span class="kn">import</span> <span class="nn">analogio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mappings</span> <span class="kn">import</span> <span class="n">map_quat</span>
+
+
+<span class="c1"># Initialisierung des ADC (Analog-Digital Converter)</span>
+<span class="n">ldr</span> <span class="o">=</span> <span class="n">analogio</span><span class="o">.</span><span class="n">AnalogIn</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">A2</span><span class="p">)</span>
+
+<span class="c1"># Wiederholung</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># ADC als Dezimalzahl lesen</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="n">ldr</span><span class="o">.</span><span class="n">value</span>
+    <span class="c1"># Ausgabe in der Kommandozeile/Shell</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADC:&quot;</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E in Lux&quot;</span><span class="p">,</span> <span class="n">map_quat</span><span class="p">(</span><span class="n">read</span><span class="p">))</span>
+    <span class="c1"># Warten</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="optional-class">
+<summary>💡 anzeigen</summary>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">map_lin</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
     <span class="n">E_max</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">E_min</span> <span class="o">=</span> <span class="mi">0</span>

@@ -58,7 +58,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Objektorientierung</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Objektorientierung</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation</a>
     </li>
@@ -80,8 +80,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#vererbung">Vererbung</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#serialisierung-von-objekten">Serialisierung von Objekten</a>
@@ -95,6 +93,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#aufgabe-2_4_3">✍️ Aufgabe 2_4_3:</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#appendix">Appendix</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vererbung">🤓 Vererbung</a>
     </li>
         </ul>
     </li>
@@ -165,20 +169,21 @@
 <hr />
 <h2 id="motivation">Motivation</h2>
 <ul>
-<li>Funktion hat nur Input und Output aber keinen Speicher / Zustand</li>
-<li>z.B. wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand speichern</li>
+<li><strong>Funktionen</strong> haben wohl definierten Input und Output aber <strong>keinen Speicher / Zustand</strong></li>
+<li>Eine <strong>State-Machine</strong> hat einen Zustand, aber ist <strong>aufwendig</strong> zu implementieren und anzupassen</li>
+<li>Bedarf für beides: wenn wir bei einer Messfunktionen das Signal glätten wollen, müssen wir den Zustand (letzte Messerwerte) speichern</li>
 </ul>
 <p><img alt="bg right" src="../images/Schwanken.png" /></p>
 <hr />
 <h2 id="grundkonzepte-der-objektorientierung">Grundkonzepte der Objektorientierung</h2>
 <ul>
-<li>Objektorientierte Programmierung: Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten</li>
+<li>Programmierparadigma mit Fokus auf Objekte, deren Eigenschaften und Fähigkeiten</li>
 <li>z.B. Objekt der Klasse <code>Sensor</code></li>
 <li>Attribute (Eigenschaften mit Datentyp):<ul>
-<li>Zählernummer</li>
+<li>Name</li>
+<li>Einheit</li>
 <li>Aktueller Messerwert </li>
 <li>Liste bisheriger Messerwerte</li>
-<li>Einheit</li>
 </ul>
 </li>
 <li>Methoden (wie Funktionen):<ul>
@@ -194,7 +199,12 @@
 <ul>
 <li>Die Sensor-Klasse beschreibt allgemein das Verhalten jedes Sensors!</li>
 <li>Jeder einzelne Sensor ist ein Objekt der Klasse Sensor, bei dem die Attribute individuell ausgeprägt 
-<img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /></li>
+<img alt="bg right h:600" src="../images/mermaid-diagram-2024-01-30-104356.svg" /><ul>
+<li>Beleuchtungsstärke-Sensor</li>
+<li>Temperatursensor</li>
+<li>...</li>
+</ul>
+</li>
 </ul>
 <hr />
 <div class="highlight"><pre><span></span><code>classDiagram
@@ -296,7 +306,7 @@
 <ul>
 <li>Passen Sie den gegeben Code so an, dass der Sensor auch über eine Methode verfügt, welche den Mittelwert der Messwerte zurückgibt</li>
 <li>Sie können die folgende Funktion als Ausgangspunkt verwenden</li>
-<li>Vergessen sie nicht das <code>self</code>-Argument zu übergeben</li>
+<li>Vergessen Sie nicht das <code>self</code>-Argument zu übergeben</li>
 <li>Hierdurch können sie auch die Übergabe des Parameters <code>list_of_measurements</code> vermeiden, die Sie sich im Objekt direkt auf <code>self.measurements</code> beziehen können
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">bilde_mittelwert</span><span class="p">(</span><span class="n">list_of_measurements</span><span class="p">):</span>
 <span class="w">  </span><span class="sd">&quot;&quot;&quot; Eine Funktion, die eine Liste von Werten übernimmt und das arithmetische Mittel zurück gibt&quot;&quot;&quot;</span>
@@ -420,23 +430,11 @@
 </code></pre></div>
 </details>
 <hr />
-<h2 id="vererbung">Vererbung</h2>
-<!-- _class: white -->
-
-<ul>
-<li>Durch Vererbung können die <strong>Attribute</strong> und <strong>Methoden</strong> einer (Parent-)Klasse <strong>an andere</strong> (Child-)<strong>Klassen weitergegeben</strong> werden. </li>
-<li>Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. </li>
-<li>Im UML-Klassendiagramm wird die Vererbung mit meinem im <strong>leeren Dreieck endenden Pfeil</strong> dargestellt.</li>
-<li>Dies ermöglicht eine <strong>hierarchische Strukturierung</strong> von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen</li>
-</ul>
-<p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
-<hr />
 <h2 id="json-darstellung-eines-objekts">JSON-Darstellung eines Objekts</h2>
-<hr />
 <h3 id="serialisierung-von-objekten">Serialisierung von Objekten</h3>
 <p><img alt="h:300" src="../images/Signalisierung.svg" /></p>
 <ul>
-<li>Zur Übertragung zwischen Systemen müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden</li>
+<li>Zur Übertragung zwischen Systemen und Speicherung müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden</li>
 <li>Serialisierung:</li>
 <li>Objekt aus dem Arbeitsspeicher wird in eine Folge von Zeichen übersetzt (letztlich eine Folge von Bits)</li>
 <li>Austauschdateiformat (meist in Form einer Auszeichnungssprache)</li>
@@ -485,7 +483,8 @@
 <ul>
 <li>Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen</li>
 <li>Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?</li>
-<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht</li>
+<li>Implementieren Sie eine Methode <code>prepare_data()</code>, die Ihren Vorstellungen entspricht und das bereiningte Dictionary zurückgibt und printen Sie es</li>
+<li><code>del(my_dict["unit"])</code> entfernt z.B. den Eintrag <code>unit</code> aus dem Dictionary</li>
 </ul>
 <hr />
 <h3 id="losung_1">✔️ Lösung</h3>
@@ -536,6 +535,19 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;returns data in &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
 </code></pre></div>
 </details>
+<hr />
+<h2 id="appendix">Appendix</h2>
+<h3 id="vererbung">🤓 Vererbung</h3>
+<!-- _class: white -->
+
+<ul>
+<li>Durch Vererbung können die <strong>Attribute</strong> und <strong>Methoden</strong> einer (Parent-)Klasse <strong>an andere</strong> (Child-)<strong>Klassen weitergegeben</strong> werden. </li>
+<li>Neu implementiert werden müssen dann nur zusätzliche Datenelemente und Methoden. </li>
+<li>Im UML-Klassendiagramm wird die Vererbung mit meinem im <strong>leeren Dreieck endenden Pfeil</strong> dargestellt.</li>
+<li>Dies ermöglicht eine <strong>hierarchische Strukturierung</strong> von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen</li>
+</ul>
+<p><img alt="bg w:700 right:55%" src="../images/UML-Tier_vererbung.svg" /></p>
+<hr />
               
             </div>
           </div><footer>

@@ -1,18 +1,25 @@
 ---
+
 marp: true
+theme: beams
 author: Julian Huber
 size: 16:9
-footer: Julian Huber - Bussysteme
-class: invert
-theme: lemon
-
+footer: Julian Huber - Grundlagen Informationstechnologie & Datensicherheit
+headingDivider: 2
 # Strg+[ ] for Options
 
 ---
 
+
+
+
+<!-- paginate: true -->
+
+
+
 # Bussysteme
 
----
+
 
 ## 0 Organisatorisches
 
@@ -22,7 +29,14 @@ theme: lemon
 * Während des Semesters gibt es keine Pflichtabgaben, jedoch wird die Mitarbeit in den Übungen und die Vorbereitung auf die Klausur empfohlen
 * Das Labor baut auf den Inhalten der Vorlesung auf
 
----
+
+## Leistungsbewertung
+
+* Schriftliche Klausur (100%)
+* Bei geringer Teilnehmer:innen-Zahl ist im Falle einer Nachklausur auch ein mündlicher Prüfungsmodus möglich.
+* Labor undabhängig mittels Laborbericht
+
+
 
 ## Hardware-Empfehlung
 

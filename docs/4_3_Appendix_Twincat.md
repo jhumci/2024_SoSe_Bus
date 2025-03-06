@@ -6,7 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
+class: inver
 
 theme: lemon
 
@@ -100,7 +100,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ![height:400](images/TCpou.png)
 
-- Relevant ist das MAIN-Programm unter /POU/ 
+- Relevant ist das MAIN-Programm unter `/POU/` 
 - Dieses besteht aus einem Variablen (oben)
 - und einem Code-Editor (mitte)
 
@@ -541,6 +541,8 @@ result := blub > 10;     (* TRUE *)
 | EXIT                                                      | ```EXIT;```                                                                                      |
 | Leere Anweisung                                           | ```;```     
 
+<!--
+
 ---
 
 ## ✍️ 4_3_5: Aufgabe Heizungsanlage
@@ -779,3 +781,4 @@ END_FOR;
 END_IF;
 ```
 
+-->

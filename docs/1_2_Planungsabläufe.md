@@ -1,14 +1,10 @@
 ---
 marp: true
+theme: beams
 author: Julian Huber
 size: 16:9
-footer: Julian Huber - Bussysteme
-
-# Strg+[ ] for Options
-
-class: invert
-
-theme: lemon
+footer: Julian Huber - Grundlagen Informationstechnologie & Datensicherheit
+headingDivider: 2
 
 ---
 
@@ -117,6 +113,7 @@ theme: lemon
 
 </center>
 
+---
 
 * Zuordnung von Sensoren, Aktoren und **Funktionen** zueinander
 * und zu Raum vs. Segment (keine genaue Räumliche Positionierung)

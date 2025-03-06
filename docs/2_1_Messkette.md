@@ -1,14 +1,10 @@
 ---
 marp: true
+theme: beams
 author: Julian Huber
 size: 16:9
-footer: Julian Huber - Bussysteme
-
-# Strg+[ ] for Options
-
-class: invert
-
-theme: lemon
+footer: Julian Huber - Grundlagen Informationstechnologie & Datensicherheit
+headingDivider: 2
 
 ---
 
@@ -16,8 +12,6 @@ theme: lemon
 
 
 # 2.1 Messkette	
-
----
 
 ## EVA-Prinzip
 
@@ -46,7 +40,7 @@ theme: lemon
 ![bg left h:500](images/raspberry-pi-pico-gpio.png)
 
 
----
+
 
 ## ✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller
 
@@ -83,6 +77,13 @@ theme: lemon
 * Öffnen Sie das Verzeichnis (USB-Laufwerk) `CIRCUITPY` und wählen Sie `USE /`
 * Öffnen Sie die Datei `code.py` und fügen Sie den folgenden Inhalt ein
 * Öffnen Sie die Serielle Schnittstellen, um die Ausgabe zu sehen `Serial`, übertragen Sie den Code und starten Sie den Pico neu `Save + Run`
+
+---
+
+### Digitaler Zwilling mit [wokwi.com](https://wokwi.com/projects/424662007489899521)
+
+![](images/Wokwi.png)
+
 ---
 
 ### Hauptprogramm `code.py`
@@ -385,6 +386,7 @@ while True:
 * Digitale Ausgänge können nur zwei Zustände annehmen (0 /`False` oder 1 : `True`)
 * Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)
 * Hierzu muss man Periodendauer $T$ und Duty Cycle $t$ (Impulsdauer) geeignet setzen
+* Die Frequenz $f = \frac{1}{T}$ ist beim Raspberry Pi Pico standardmäßig $500 \,\text{Hz}$
 
 ![bg right w:500](images/04011113.png) 
 
@@ -401,7 +403,7 @@ while True:
 
 ### Beispielcode für PWM
 
-```python
+```Python
 import pwmio
 import board
 
@@ -413,6 +415,12 @@ while True:
     for cycle in range(65534, 0, -1):  # Cycles through the PWM range backwards from 65534 to 0
         pwm.duty_cycle = cycle  # Cycles the LED pin duty cycle through the range of values
 ```
+
+* Die Länge des Duty-Cycles wird durch $2^{16}=65536$ Werte abgestuft
+* bei `duty_cycle = 0` der Duty-Cycle bei $0 \%$ und die LED aus
+* bei `duty_cycle = 65535` der Duty-Cycle  genau so lang wie die Periodendauer
+
+[Quelle](https://docs.circuitpython.org/en/latest/shared-bindings/pwmio/index.html)
 
 ---
 
@@ -456,17 +464,11 @@ while True:
 
 ## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
-* Schließen Sie einen [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
-    * Links (-): GND / Masse / 0 Volt
-    * Mitte: +VCC z.B. 3,3 oder 5 Volt
-    * Rechts (S): Verbindungspunkt des Spannungsteilers
-* Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden
-* Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes
+* Verbinden Sie die `+` und `-` Leiste des Breadboards mit $3.3 \,\text{V}$ und `GND` des Raspberry Pi Pico
+* Verbinden Sie den analogen Eingang `A2` mit einem Female-to-Female-Kabel
+* Fügen Sie den folgenden Code ein
 
 ---
-
-* Zum Testen können Sie den Analog-Eingang mit $3.3 \text{ Volt}$ und $0 \text{ Volt}$ verbinden
-* Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus
 
 ```Python
 import board
@@ -486,7 +488,36 @@ while True:
     time.sleep(1)
 ```
 
-[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm)
+- Um den Wertebereich des ADC zu testen, können Sie den Eingang direkt mit `+` und `-` verbinden
+
+---
+
+* Verbinden Sie den Eingang zunächst mit `+`, dann mit `-` 
+* Welche Werte erhalten Sie?
+
+---
+
+### [✔️ Lösung](Aufgaben\2_1_5\code.py)
+
+<!-- _color: black -->
+
+
+??? optional-class "💡 anzeigen"
+    * Bei einer direkten Verbindung des Eingangs mit `+` oder `-` erhalten Sie die maximalen (`2**16`) bzw. minimalen Werte (nahe `0`)
+
+
+
+---
+
+
+* Schließen Sie einen Fotowiderstand als [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
+    * Links (I): +VCC z.B. 3,3 oder 5 Volt
+    * Mitte: GND / Masse / 0 Volt
+    * Rechts (S): Verbindungspunkt des Spannungsteilers
+* Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden
+* Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes
+* Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. 
+* Optional können Sie auch die Beleuchtungsstärke mit einem Luxmeter messen und die Werte vergleichen
 
 ---
 
@@ -496,19 +527,90 @@ while True:
 
 </center>
 
+---
+
+* Zum Testen können Sie den Analog-Eingang mit $3.3 \text{ Volt}$ und $0 \text{ Volt}$ verbinden
+* Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus
+* Notieren Sie sich einige Werte (`ADC`) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte
+
+<center>
+
+| Umgebung    | ADC | E in Lux | U in V |
+|-------------|-----|----------|--------|
+| Abgedunkelt |     |          | |
+| Raumlicht   |     |          | |
+| Taschenlampe|     |          | |
+
+
+</center>
+
+[Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm)
+
+
+
+---
+
+#### Mapping von Eingangswert zu Spannung
+
+* Die Spannung und der `ADC`- Wert sind linear zueinander
+* Entsprechend kann jeder Wert des `ADC` über einer lineare Funktion in eine Spannung umgerechnet werden
+
+---
+
+| Symbol | Description |
+|--------|-------------|
+| $U_{max}$ | maximale Beleuchtungsstärke |
+| $U_{min}$ | minimale Beleuchtungsstärke |
+| $z_{max}$ | maximaler Messwert des ADC |
+| $z_{min}$ | minimaler Messwert des ADC |
+
+* Annahme: Linearer Zusammenhang
+    $U = f(z) = \beta_0 + \beta_1 z$
+* 1: Wie groß ist der Y-Achsenabschnitt $\beta_0$?
+    * Bei welchen Wert hat $U$, wenn $z=0$?
+* 2: Wie groß ist die Steigung $\beta_1$?
+    * Wie groß ist die Änderung von $U$ pro Änderung von $z$?
+    * $\beta_1 = \frac{{U_{max}} - U_{min}}{z_{max} - z_{min}}$
+
+
+
+---
+
+* Der folgende Code übernimmt dein Eingangswert und gibt einen Spannungs-Wert zwischen 3.3 und 0 zurück
+* Fügen Sie die Funktion `map_lin` in den Code ein und geben Sie die Spannung auf der Konsole aus
+
+
+```Python
+def map_lin(z):
+    U_max = 3.3
+    U_min = 0
+    z_max = 65535
+    z_min = 0
+    beta_0 = U_min
+    beta_1 = (U_max - U_min) / (z_max - z_min)
+    return beta_0 + beta_1 * z
+```
+
+* Wenn Sie Ihren Code schön aufgeräumt haben wollen können eine Datei `mappings.py` im gleiche Ordner wie `code.py` erstellen und die Funktion dort speichern
+* Sie können diese dann mittels `from mappings import map_lin` ins `main.py` importieren und nutzen
 
 ---
 
 #### Mapping von Eingangswert zu physikalischer Größe
 
-* Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen Werte `read` in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen
+* Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen `ADC`-Werte `read` in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen
 * Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen
+
+---
+
 * $E= f(x) = (a(x-s))^2$
-    * $a =0.0015$ ist die Steigung der Parabel
+    * $a =0.0015$ beschreibt die Steilheit der Parabel
     * $s = 44000$ ist der Verschiebung der Parabel auf der x-Achse
     * $x$ ist der Eingangswert
 
 ![bg right:43% w:550](images/CurveFitHelligkeit.png)
+
+* Erstellen Sie in eine Datei `mappings.py` (im gleichen Ordner, wie die `code.py`) eine Funktion `map_quat()`, die stattdessen die oben angegeben Formel implementiert
 
 ---
 
@@ -549,64 +651,17 @@ while True:
 
 [Quelle](https://shop.bb-sensors.com/Messtechnik-je-Branche/Gebaeudetechnik/Helligkeitssensor-mit-Messumformer-0-10-V.html)
 
----
-
-### [✔️ Lösung](Aufgaben\2_1_5\code.py)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\code.py"
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\mappings.py"
 
 ---
 
-## ✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors
+## 🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors
 
 * Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet
 * Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus
 * Orientieren Sie sich dabei an folgendem Code, der ein Beispiel für ein lineares Mapping zeigt
+* Evtl. müssen Sie die Werte an Ihren Sensor und Aufbau anpassen, um die Beleuchtungsstärke in Lux zu erhalten
 
 
----
-
-| Symbol | Description |
-|--------|-------------|
-| $E_{max}$ | maximale Beleuchtungsstärke |
-| $E_{min}$ | minimale Beleuchtungsstärke |
-| $z_{max}$ | maximaler Messwert des ADC |
-| $z_{min}$ | minimaler Messwert des ADC |
-
-* Annahme: Linearer Zusammenhang
-    $E = f(z) = \beta_0 + \beta_1 z$
-* 1: Wie groß ist der Y-Achsenabschnitt $\beta_0$?
-    * Bei welchen Wert hat $E$, wenn $z=0$?
-* 2: Wie groß ist die Steigung $\beta_1$?
-    * Wie groß ist die Änderung von $E$ pro Änderung von $z$?
-    * $\beta_1 = \frac{E_{max} - E_{min}}{z_{max} - z_{min}}$
-
-
-
----
-
-* Der folgende Code übernimmt dein Eingangswert und gibt einen normalisierten Wert zwischen 1 und 0 zurück
-* Erstellen Sie in einer Datei `mappings.py` (im gleichen Ordner, wie die `code.py`) eine Funktion `map_quat()`, die stattdessen die oben angegeben Formel implementiert
-
-
-```Python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z
-```
 
 ---
 
@@ -639,13 +694,16 @@ while True:
 
 <!-- _color: black -->
 
+
 ??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\code.py"
+    ```
 
 ??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\mappings.py"
+    ```
 
 ---
 
@@ -672,12 +730,16 @@ print(os.getenv('MY_NAME'))
 
 ### Lösung 
 
-??? optional-class "Lösung anzeigen"
+
+<!-- _color: black -->
+
+
+??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\code.py"
     ```
 
-??? optional-class "Lösung anzeigen"
+??? optional-class "💡 anzeigen"
     ```python
     --8<-- "Aufgaben\2_1_5\mappings.py"
     ```
