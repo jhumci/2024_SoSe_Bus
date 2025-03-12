@@ -78,6 +78,10 @@ headingDivider: 2
 * Öffnen Sie die Datei `code.py` und fügen Sie den folgenden Inhalt ein
 * Öffnen Sie die Serielle Schnittstellen, um die Ausgabe zu sehen `Serial`, übertragen Sie den Code und starten Sie den Pico neu `Save + Run`
 
+### Alternative
+
+https://urfdvw.github.io/circuitpython-online-ide-2/
+
 ---
 
 ### Digitaler Zwilling mit [wokwi.com](https://wokwi.com/projects/424662007489899521)
@@ -285,14 +289,13 @@ import digitalio
 
 led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
 
-
+# Define the LED as a digital output
 led = digitalio.DigitalInOut(led_pin)
 led.direction = digitalio.Direction.OUTPUT
 
 while True:
     led.value = not led.value  # Toggle the LED state
-    time.sleep(0.2)  # Add a small delay for debouncing
-    time.sleep(0.1)
+    time.sleep(0.2)
 ```
 
 

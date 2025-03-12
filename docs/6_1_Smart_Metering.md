@@ -663,4 +663,4 @@ eich-rechtlich zugelassen sein
 
 ![](images/VerdrahtungFail.png)
 
-[Quelle](Zentralverband der Deutschen Elektro- und Informationstechnischen Handwerke )
+Quelle: Zentralverband der Deutschen Elektro- und Informationstechnischen Handwerke

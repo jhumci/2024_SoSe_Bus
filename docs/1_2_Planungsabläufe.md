@@ -147,7 +147,7 @@ f(2) # Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe 
 
 ![bg right:20% h:400](images/Raumautomationschema_siemens.png)
 
-Vorsicht, das stimmt nicht ganze mit der üblichen Benennung bei Programmiersprachen überein
+Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprachen überein
 
 
 ---

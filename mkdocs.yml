@@ -32,7 +32,9 @@ nav:
 theme:
   name: readthedocs
 
- 
+plugins:
+  - encryptcontent:
+      global_password: mci_!!!
 
 markdown_extensions:
   - pymdownx.arithmatex:
