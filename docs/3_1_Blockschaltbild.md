@@ -6,17 +6,19 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
 <!-- paginate: true -->
 
 
-
 # 3.1 Blockschaltbild
+
+<!-- _class: title -->
+
+
+
 
 ---
 
@@ -32,9 +34,12 @@ theme: lemon
 * Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind
   * z.B. Steuerungsfunktion (z.B. in Python)
   * z.B. thermodynamisches Modell eines Raums
+
+---
+
 * I.d.R. beschäftigen wir uns mit **dynamischen Systemen**
-    * Die Ausgangsgröße hängt nicht nur  von den Eingangsgrößen ab (vgl. Funktion) 
-    * sondern auch vom Systemzustand und damit inneren Zustandsgrößen (vgl. Objekt)
+    * Die Ausgangsgröße hängt nicht nur  von den Eingangsgrößen ab (vgl. _Funktion_) 
+    * sondern auch vom Systemzustand und damit inneren Zustandsgrößen (vgl. _Objekt_)
 
 
 [Quelle](Lunze )
@@ -48,16 +53,13 @@ theme: lemon
 * zeitinvariante Systeme: Systemfunktion ist unabhängig von der Zeit
 * zeitvariante Systeme: Systemfunktion ist abhängig von der Zeit
 
-
-
-
 ---
 
 
 ## Elemente eines Blockschaltbildes
 
 
-![bg left w:600](images/Blockschaltbild2.png)
+![bg left:45% w:600](images/Blockschaltbild2.png)
 
 * Übertragungsglieder beschreiben Systeme mit deren Eigenschaften / Funktionen
 * Pfeile die Ein- und Ausgangsgrößen
@@ -117,7 +119,11 @@ theme: lemon
 
 <!-- _class: white-->
 
+<center>
+
 ![](images/P-controller-symbol-1.svg)
+
+</center>
 
 * Das Symbol repräsentiert die Sprungantwort
 * weitere Beispiele:
@@ -156,8 +162,8 @@ theme: lemon
 - Xcos ist ein grafischer Editor für Blockschaltbilder
 - die Funktionalität entspricht in etwa matlab simulink
 - allerdings ist die Software open source und kostenlos
-
-![](images/scilabhome.png)
+- Alternativ können Sie auch Matlab oder [Matlab Online](https://www.mathworks.com/products/matlab-online.html) verwenden
+![bg right:30% w:400](images/scilabhome.png)
 
 ---
 
@@ -165,7 +171,7 @@ theme: lemon
 
 ![h:400](images/xcos_start.webp)
 
-- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
+- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2025.0.0)
 - Testen Sie verschiedene Werte für den P-Wert beim `PID`-Block und die Totzeit beim `Continuous fix delay`-Block
 - Ersetzen Sie den `PID`-Block durch einen `GAIN_f`-Block
 

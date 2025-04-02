@@ -4,11 +4,9 @@ author: Julian Huber
 size: 16:9
 footer: Julian Huber - Bussysteme
 
-# Strg + [ ] for Options
+# Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
@@ -16,6 +14,10 @@ theme: lemon
 
 
 # 2.3 Funktionen
+
+<!-- _class: title -->
+
+
 
 ---
 

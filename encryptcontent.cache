@@ -1,0 +1,5 @@
+kdf_iterations: 10000
+obfuscate: {}
+password:
+  mci_!!!: ae4b367bd255333aa418cd0ed0c5712e4ca1ce529f6998d27506f4c967a51cd9;f34f8898a75f387aa56ad65af2f91cc3;8d64b725d4abb73b732a708f48e9540bc648c29784f36e4f7291b16d991f1ef3
+userpass: {}

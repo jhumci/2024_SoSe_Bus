@@ -6,9 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
@@ -16,6 +14,10 @@ theme: lemon
 
 
 # 3.2 Regelkreise
+
+<!-- _class: title -->
+
+
 
 
 ---

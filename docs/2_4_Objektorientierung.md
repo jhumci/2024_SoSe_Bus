@@ -6,9 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
@@ -16,6 +14,11 @@ theme: lemon
 
 
 # 2.4 Objektorientierung
+
+<!-- _class: title -->
+
+
+
 
 ---
 
@@ -100,6 +103,7 @@ print(sensor1.name)
 print(sensor2.name)
 ```
 
+---
 
 - Die Methode **```__init__```** wird aufgerufen, sobald ein **Objekt** einer **Klasse** instanziiert wird. Die Methode kann dafür benutzt werden, ihr Objekt auf irgendeine Weise zu initialisieren
 - wichtig ist in jeder Methode als erstes Argument **```self```** zu übergeben, damit die Methode auf das Objekt zugreifen kann
@@ -112,6 +116,8 @@ print(sensor2.name)
 * Methoden sind Funktionen, die zu einer Klasse gehören
 * Funktionen sind wieder aufrufbare Code-Einheiten, denen Argumente als Parameter übergeben werden können
 * Funktionen geben einen Rückgabewert aus, der weiterverarbeitet werden kann
+
+---
 
 ```python
 # Definition einer Klasse
@@ -229,7 +235,7 @@ ergebnis = bilde_mittelwert([1,2,3])
 
 ### Serialisierung von Objekten
 
-![h:300](images/Signalisierung.svg)
+![h:200](images/Signalisierung.svg)
 
 * Zur Übertragung zwischen Systemen und Speicherung müssen Objekte unabhängig vom der Darstellung im Arbeitsspeicher gemacht werden
 * Serialisierung:
@@ -250,6 +256,7 @@ my_dict = beleuchtungs_sensor.__dict__
 print(my_dict)
 ```
 
+--- 
 ```python
 {'last_measurement': 43114,
  'measurements': [43130, 43034, 43066, 42666, 43370, 43114, 42426, 43114], 
@@ -324,6 +331,6 @@ with open("sample.json", "w") as outfile:
 - Im UML-Klassendiagramm wird die Vererbung mit meinem im **leeren Dreieck endenden Pfeil** dargestellt.
 - Dies ermöglicht eine **hierarchische Strukturierung** von Klassen z.B. um schnell verschiedene Sensor-Klassen zu erstellen
 
-![bg w:700 right:55%](images/UML-Tier_vererbung.svg)
+![bg w:500 right:40%](images/UML-Tier_vererbung.svg)
 
 ---

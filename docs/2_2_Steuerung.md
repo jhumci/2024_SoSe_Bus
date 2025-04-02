@@ -6,9 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
@@ -16,6 +14,9 @@ theme: lemon
 
 
 # 2.2 Steuerung
+
+<!-- _class: title -->
+
 
 ---
 
@@ -56,7 +57,7 @@ theme: lemon
 
 > Über die Funktion Treppenlichtschaltung können Beleuchtungseinrichtungen temporär eingeschaltet werden. Nach Ablauf der Treppenlichthaltezeit kann eine Abschaltvorwarnzeit aktiv werden, die den Nutzer z. B. durch kurzzeitige Unterbrechung(„Flackern“) über die bevorstehende Abschaltung informiert. Ein erneuter Empfang einer Eingabeinformation zum Einschalten startet die Verzögerungszeit neu. Die Funktion benötigt als Eingabeinformation das Ergebnis der Bedienfunktion Licht stellen und liefert ihrerseits die Ausgabeinformation für eine oder mehrere Aktorfunktionen Lichtaktor.
 
-![bg right:45% h:720](images/Treppenlichtschaltung.pdf.png)
+![bg right:35% h:600](images/Treppenlichtschaltung.pdf.png)
 
 
 ---
@@ -154,7 +155,7 @@ stateDiagram
 
 ---
 
-#### (Deterministic) Finite State Machine (Endlicher Automat)
+#### 🤓 (Deterministic) Finite State Machine (Endlicher Automat)
 
 * Dieser Ansatz basiert auf der Theorie der formalen Sprachen
 * Eine DFSM beschreibt ein System mit endlich vielen Zuständen beschreibt
@@ -167,7 +168,7 @@ stateDiagram
 
 ---
 
-#### In der Theorie der formalen Sprachen 🤓
+#### 🤓 In der Theorie der formalen Sprachen
 
 <!-- _class: white -->
 
@@ -190,7 +191,7 @@ stateDiagram
 
 ---
 
-##### Regular Expressions
+##### 🤓 Regular Expressions
 
 * Eine reguläre Sprache ist eine Menge von Zeichenketten, die durch einen regulären Ausdruck beschrieben werden können
 * z.B. Beider Suche nach einer Zeichenkette in einem Text
@@ -422,11 +423,6 @@ stateDiagram
 * Implementieren Sie einen Dimmer
 * Lösung mit einer State Machine und Darstellung der State Machine gibt 5% Bonus
 
----
-
-### ❌ Lösung
-
-> Für diese Zusatzaufgabe gibt es noch keine Muster-Lösung. Senden Sie mir gerne Ihre Lösung zu, damit ich sie hier veröffentlichen kann. Für richtig gelöste Aufgaben gibt es 1% Bonus auf die Klausur.
 
 ---
 
@@ -469,9 +465,12 @@ $L = (S_1 \land S_2) \lor (\lnot S_1 \land \lnot  S_2)$
 
 ![bg right:33% h:720](images/Tageslichtschaltung.png)
 
-* Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke weglassen
+* Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke (`PAR_SETPT`) weglassen
 * Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
 * Setzen Sie `L_MAN` zunächst im Code auf `False` 
+
+--- 
+
 * 🤓 schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
 * Nutzen Sie einen Button, um den Anwesenheitszustand `P_ACT` zu simulieren
 *H_ROOM* können Sie entweder als Beleuchtungsstärke, Spannung oder  `ADC-Wert` setzen
