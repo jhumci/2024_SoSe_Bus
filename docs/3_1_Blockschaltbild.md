@@ -171,7 +171,7 @@ theme: beams
 
 ![h:400](images/xcos_start.webp)
 
-- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2025.0.0)
+- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2025.0.0) oder [GainDelay.slx](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/GainDelay.slx) in Matlab
 - Testen Sie verschiedene Werte für den P-Wert beim `PID`-Block und die Totzeit beim `Continuous fix delay`-Block
 - Ersetzen Sie den `PID`-Block durch einen `GAIN_f`-Block
 
@@ -288,14 +288,15 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.zcos)
+    [Link Scilab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.zcos)
+    [Link Matlab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.slx)
 
 ---
 
 ## ✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung
 
 
-- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos) so an, dass die LED bei einer Helligkeit unter 220 Lux angeht
+- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos), bzw [Tageslichtschaltung.slx](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/Tageslichtschaltung.slx) so an, dass die LED bei einer Helligkeit unter 220 Lux angeht
 - Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
 
 ![h:400](images/Tageslichtschaltung_xcos_.png)
@@ -424,10 +425,14 @@ class zweipunkt_hysterese():
 
 ## ✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung
 
-- Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS`
+- Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS` bzw. `Relay` in Simulink
 - Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
 
-![](images/TagesLichtHystere.png)
+<center>
+
+![h:300](images/TagesLichtHystere.png)
+
+</center>
 
 ---
 
@@ -436,4 +441,5 @@ class zweipunkt_hysterese():
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_3/3_1_3_Tageslichtschaltung_Hysterese.zcos)
+    [Link Scilab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_3/3_1_3_Tageslichtschaltung_Hysterese.zcos)
+    [Link Matlab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/Tageslichtschaltung_2.slx)

@@ -138,7 +138,7 @@ def regler (e, letzte_drehzahl):
 
 ## ✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler
 
-- Entfernen Sie den I und D-Anteil des PID-Reglers in [demo_watertank.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_3/demo_watertank.zcos) und beobachten Sie die Reaktion des Systems
+- Entfernen Sie den I und D-Anteil des PID-Reglers in [demo_watertank.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_3/demo_watertank.zcos) bzw. [Wassertank_pid.slx](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_2_3/Wassertank_pid.slx) und beobachten Sie die Reaktion des Systems
 ![](images/demo_watertank.png)
 
 
