@@ -195,61 +195,78 @@ sequenceDiagram
 -->
 
 
-## Aufgaben von Buszugriffsverfahren
 
-![height:500](images/Buszugriffsverfahren.png)
+---
+
+## 🎯 Aufgaben von Buszugriffsverfahren
+
+Buszugriffsverfahren regeln, wie Teilnehmer auf ein gemeinsames Übertragungsmedium zugreifen. Ihre Hauptaufgaben sind:
+
+1. **Vermeidung oder Handhabung von Kollisionen**: Sicherstellen, dass Datenübertragungen nicht durch gleichzeitiges Senden gestört werden.
+2. **Echtzeitfähigkeit**: Garantieren, dass Daten innerhalb einer definierten Zeit übertragen werden (wichtig für zeitkritische Anwendungen).
+
+![bg right height:300](images/Buszugriff.drawio.png)
+
+---
+
+### 🛡️ Vermeidung von Kollisionen
+
+Kollisionen entstehen, wenn mehrere Teilnehmer gleichzeitig senden. Es gibt zwei Ansätze:
+
+- **Deterministische Verfahren**: Verhindern Kollisionen durch festgelegte Zugriffsregeln (z. B. Polling, Token-Systeme).
+- **Zufällige Verfahren**: Lassen Kollisionen zu, erkennen und beheben sie (z. B. CSMA/CD).
+
+
+![bg right height:300](images/Buszugriff.drawio.png)
+
+
+
+
+---
+
+### ⏱️ Echtzeitfähigkeit
+
+**Echtzeitfähigkeit** bedeutet, dass Daten innerhalb einer garantierten Zeitspanne übertragen werden. 
+
+- **Deterministische Verfahren** (z. B. Polling, Token-Systeme):
+  - Langsamer, aber maximale Übertragungszeit berechenbar.
+  - Geeignet für zeitkritische Anwendungen (z. B. Steuerungssysteme).
+- **Zufällige Verfahren** (z. B. CSMA/CD):
+  - Keine garantierte maximale Zeit, da Kollisionen Verzögerungen verursachen.
+  - Nicht echtzeitfähig.
+
+
+---
+
+<center>
+
+![height:400](images/ZeitverhaltenEhternet.png)
+</center>
+
+
+
+**Vergleich**:
+- Polling: Berechenbare, aber längere Übertragungszeiten.
+- CSMA/CD (z.B. Ethernet): Schnell bei niedriger Auslastung, unzuverlässig bei hoher Auslastung.
 
 [Quelle](Schnell & Wiedemann 2019)
 
----
-
-### Vermeidung von Kollisionen
-
-<!-- _class: white-->
-
-![bg height:300 right](images/Buszugriff.drawio.png)
-
-- verhindern: deterministische Verfahren wie Polling sorgen dafür, das keine Kollisionen stattfinden
-- erkennen: zufällige Verfahren lassen Kollisionen zu, können aber damit umgehen
-
-
-
 
 ---
 
-### Ermöglichen von Echtzeitfähigkeit
+### 🧠 Deterministische Buszugriffsverfahren
 
-- kann garantiert werden, dass die Nachrichten in benennbar Zeit ankommen?
-- Polling: Langsam, aber maximale Zeit kann berechnet und garantiert
-- Zufällige Buszugriffsverfahren: maximale Zeit kann nicht garantiert werden (i.d.R. nicht Echtzeitfähig)
+Deterministische Verfahren garantieren einen geregelten Zugriff auf den Bus. Beispiele:
 
-![bg right height:400](images/ZeitverhaltenEhternet.png)
+1. **Master-Slave-Verfahren**: Ein Master steuert alle Slaves, keine Kollisionen.
+2. **Polling**: Der Master fragt Slaves zyklisch ab (langsam, aber berechenbar).
+3. **Token-Systeme**: Nur der Teilnehmer mit dem „Token“ darf senden.
 
-
-[Quelle](Schnell & Wiedemann 2019)
-
-
----
-
-* Zeitraum oder die Datenlänge für einen Kommunikationszyklus und damit maximale Zeitdauer, bis die Daten übertragen **ist berechenbar**
-* Damit wäre auch eine Schneckenpost echtzeitfähig, sofern die die versprochene Zustellzeit garantiert einhalten kann
-* **zufällige** Buszugriffsverfahren sind i. d. R. **nicht echtzeitfähig**
-
-![bg right](images/800px-Trautenfels_-_Bemalter_Schrank_2a.jpg)
-
-[Quelle](https://de.wikipedia.org/wiki/Schneckenpost)
-
-
-
-
----
-
-## Deterministische Buszugriffsverfahren
-
-- deterministisch:
-  - Master/Slave-Verfahren
-  - Polling (zyklische Abfrage der Slaves) - Nachteil: Langsam!
-  - **Token Systeme**
+- **Vorteile**:
+  - Keine Kollisionen.
+  - Garantierte Zugriffszeiten.
+- **Nachteile**:
+  - Oft langsamer als zufällige Verfahren.
 
 
 ---
@@ -279,39 +296,45 @@ sequenceDiagram
 
 ![center height:400](images/TokenPassing.png)
 
+- Ermöglich**Multi-Master-Betrieb** 
 - **Vorsicht:** Logischer Ablauf muss nicht der verbauten Topologie entsprechen
 
 [Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
-* **alle Teilnehmer** können die Kommunikationssteuerung übernehmen (Multi-Master)
-* nur Teilnehmer mit **Token hat Buszugriffsrecht** und agieren dann als Master
-* **garantierte Buszugriffszeiten**: Sender muss Token nach bestimmter Zeit wieder freigeben 
-* einfache Realisierung
-* Kombination mit Master-Slave möglich (Token Passing)
+Ein **Token** ist ein digitales Berechtigungszeichen, das den Zugriff auf den Bus erlaubt. Nur der Teilnehmer mit dem Token darf senden.
 
-![bg right:35% height:200 ](images/TokenPassing.png)
+**Funktionsweise**:
+- Das Token wird zwischen Teilnehmern weitergegeben (logischer Ring).
+- Nach einer festgelegten Zeit gibt der Sender das Token frei.
+- Kombination mit Master-Slave möglich (Token-Passing).
 
-[Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
+**Vorteile**:
+- Garantierte Zugriffszeiten.
+- Einfache Umsetzung.
 
 ---
 
-### 🧠 Summenrahmenprotokoll
+
 
 ![bg right:35% height:200 ](images/Summenrahmenprotokoll.png)
 
-* Der **Master** gibt alle Daten in einem **Summenrahmen** an alle Slaves
-* Im Summenrahmen ist eine Rahmen für die Inputs und Outputs aller Slaves gegeben
-* **garantierte Buszugriffszeiten** (deterministischer Prozess)
-* sehr effiziente Busauslastung
+### 📡 Summenrahmenprotokoll
+
+Beim **Summenrahmenprotokoll** sendet ein Master alle Daten in einem einzigen Rahmen an alle Slaves. Der Rahmen enthält Eingangs- und Ausgangsdaten für alle Teilnehmer.
+
+**Vorteile**:
+- Sehr effiziente Busauslastung.
+- Garantierte Zugriffszeiten (deterministisch).
+- Ideal für Echtzeitanwendungen.
 
 
 [Quelle](https://www.xplore-dna.net/pluginfile.php/623/mod_resource/content/2/Einf%C3%BChrung%20Feldbussysteme.pdf)
 
 ---
 
-##### Summenrahmenprotokoll Beispiel EtherCat
+#### Summenrahmenprotokoll Beispiel EtherCat
 
 <center>
 
@@ -320,6 +343,8 @@ sequenceDiagram
 
 </center>
 
+
+- Nutzt Ethernet-Hardware, aber mit Summenrahmenprotokoll.
 
 
 [Quelle](https://www.youtube.com/watch?v=z2OagcHG-UU)
@@ -340,39 +365,56 @@ sequenceDiagram
 
 ---
 
-### Zusammenfassung deterministischer Buszugriffsverfahren
+### 🔄 Zusammenfassung deterministischer Verfahren
 
-* Sender **vor dem Sendebeginn** eindeutig **bestimmt**
-* Buszuteilung (Sendeerlaubnis) **zentral** von einer Leitstation (Master/Slave-Verfahren) oder **dezentral** durch mehrere Steuereinheiten (Tokenbus, Tokenring)
-
+- **Merkmal**: Der Sender ist vor Sendebeginn eindeutig bestimmt.
+- **Zuteilung**:
+  - **Zentral**: Durch eine Leitstation (Master-Slave).
+  - **Dezentral**: Durch mehrere Steuereinheiten (Token-Bus, Token-Ring).
+- **Anwendung**: Sicherheitskritische Systeme, Echtzeitanwendungen.
 
 ![bg right:40% height:300](images/Buszugriffsverfahren.png)
 
 [Quelle](Schnell & Wiedemann 2019)
 
+---
+
+#### Prioritäten bei Deterministischen Verfahren
+
+- Manche Nachrichten haben höhere Priorität (z. B. Notfallmeldungen).
+- **Umsetzung**:
+  - **Prioritätsfelder**: Telegramme enthalten ein Feld, das die Priorität angibt (z. B. eine Brandmeldung).
+  - **Polling**: Der Master fragt hochpriorisierte Geräte zuerst ab.
+- **Token-Systeme**: Geräte mit höherer Priorität erhalten das Token schneller.
+
+---
+
+## 🎲 Zufällige Buszugriffsverfahren
+
+Zufällige Verfahren erlauben Teilnehmern, bei Bedarf (z. B. Tasterbetätigung) auf den Bus zuzugreifen. Beispiele: CSMA/CD, CSMA/CA.
+
+**Funktionsweise**:
+- Teilnehmer prüfen, ob der Bus frei ist (**Carrier Sense**, CS).
+- Bei Belegung wird der Zugriff verzögert (**Multiple Access**, MA).
+
+**Nachteil**:
+- Kollisionen möglich, keine garantierte Übertragungszeit (nicht echtzeitfähig).
+
+![bg right:33% height:200](images/Buszugriff.drawio.png)
 
 
 ---
 
-## Zufällige Buszugriffsverfahren
+### 🧠 Carrier Sense Multiple Access (CSMA)
 
-* die sende-willigen Teilnehmer greifen **nur bei Bedarf** (i.e., zufällig) auf das Übertragungsmedium zu
-* z.B. bei Taster-Betätigung im Beleuchtungssystem
-* Medium darf nicht anderweitig von einem anderen Teilnehmer belegt sein (**Carrier Sense**, CS)
-* Ist dies der Fall, muss die Sendung auf einen späteren Zeitpunkt verschoben werden (**Multiple Access**, MA)
+**CSMA**:
+- Teilnehmer prüfen, ob der Bus frei ist, bevor sie senden.
+- Bei belegtem Bus wird der Zugriff auf einen späteren Zeitpunkt verschoben.
+- Keine Garantie, dass der Bus beim nächsten Versuch frei ist.
+- **CSMA/CD** (Collision Detection): Kollisionen werden erkannt und aufgelöst.
+- **CSMA/CA** (Collision Avoidance): Kollisionen werden durch Prioritäten vermieden (Nachrichten mit Prio)
 
-![bg height:200 right:33%](images/Buszugriff.drawio.png)
-
-
-
----
-
-### 🧠 Carrier Sense Multiple Access (CS/MA)
-
-* falls **Busleitung belegt**, **erneuter Versuch** zu späteren Zeitpunkt 
-* es ist allerdings ungewiss, ob Busleitung beim nächsten Versuch frei ist
-* es kann keine maximale Zeit zur Datenbereitstellung garantiert (**keine Echtzeitfähig**).
-
+**Nachteil**: Keine Echtzeitfähigkeit.
 
 ![bg height:200 right:33%](images/Buszugriff.drawio.png)
 
@@ -432,8 +474,9 @@ mit $t_s$ Signallaufzeit,
 
 ####  Zeitverhalten
 
-- mit steigender Busauslastung steigt die Wahrscheinlichkeit einer Kollision
-- Verzögerung bis zum Zustellerfolg aller Nachrichten am Beispiel ETHERNET (CSMA/CD)
+- Bei niedriger Busauslastung: Schnelle Übertragung.
+- Bei hoher Busauslastung: Häufige Kollisionen, starke Verzögerungen.
+- Beispiel: Ethernet (CSMA/CD) zeigt bei hoher Last unvorhersehbare Verzögerungen.
 
 
 ![bg right height:380](images/ZeitverhaltenEhternet.png)
@@ -442,22 +485,74 @@ mit $t_s$ Signallaufzeit,
 
 ---
 
-## ✍️ Aufgabe 5_2_2:  Bewertung eines Buszugriffsverfahrens für sicherheitskritische Anwendungen
+#### Prioritäten bei CSMA/CA
 
-<center>
-
-![h:200](images/Brandszenario.svg)
-
-</center>
-
-* Welche Ansätze gibt es bei einem Bussystem, die Leuchten in einer Notsituation garantiert auf den Zustand `leuchtend` zuschalten?
-* Annahme, der defekte Schalter sendet dauerhaft den Zustand `aus` auf den Bus, wenn er er Chance dazu hat
-* Welches Buszugriffsverfahren sollte genutzt werden?
+- Geräte mit höherer Priorität erhalten schnelleren Zugriff auf den Bus.
+- **Umsetzung**:
+  - **Prioritätsfelder**: Telegramme enthalten ein Feld, das die Priorität angibt (z. B. eine Brandmeldung).
+  - **Arbitration**: Bei gleichzeitigem Zugriff entscheidet ein Schiedsverfahren, welches Gerät senden darf. Geräte mit höherer Priorität senden dominante Bits, andere warten.
+  - **Kürzere Wartezeiten**: Hochpriorisierte Geräte versuchen früher erneut, auf den Bus zuzugreifen.
 
 ---
 
-### ✔️ Lösung 
+- **Beispiel: CAN-Bus**:
+  - Jede Nachricht hat eine eindeutige ID, die die Priorität angibt (niedrigere ID = höhere Priorität).
+  - Während der Arbitration gewinnt die Nachricht mit der niedrigsten ID, da sie dominante Bits (`0`) sendet, während andere Geräte mit recessiven Bits (`1`) zurücktreten.
+  - Anwendung: In der Automobiltechnik haben Airbag-Signale Vorrang vor Komfortfunktionen.
 
-* Wenn der defekte Schalter wirklich dauerhaft sendet, dann wird der Bus durch den defekten Schalter blockiert
-* Beim Master-Slave Verfahren würde der Master den defekten Schalter erkennen und die Leuchten auf `leuchtend` schalten und in der Folge den defekten Schalter nicht mehr ansprechen
+---
 
+## ✍️ Aufgabe 5_2_2: Buszugriffsverfahren für ein Brandmeldesystem
+
+**Szenario**:
+Ein Bussystem steuert ein Brandmeldesystem in einem Gebäude. Das System umfasst Rauchmelder, Alarme und Notbeleuchtung. Im Falle eines Brandes müssen die Rauchmelder sofort einen Alarm auslösen, und die Notbeleuchtung muss auf `leuchtend` geschaltet werden. Ein defekter Schalter sendet dauerhaft das Telegramm `0010001|0`, sobald er die Chance dazu hat, was andere Geräte blockieren könnte. Im Telegramm `0010001|0` steht das erste Bit für die Priorität (`1` = hoch, `0` = niedrig).
+
+
+![center height:200](images/Brandszenario.svg)
+
+---
+
+**Fragen**:
+
+1. Welches Buszugriffsverfahren gewährleistet, dass Rauchmelder-Alarme Vorrang haben und trotz des defekten Geräts zuverlässig ausgelöst werden?
+
+---
+
+## ✔️ Lösung: Aufgabe 5_2_2
+
+**Empfohlenes Verfahren**: **Master-Slave-Verfahren**
+- **Deterministisch**: Der Master steuert alle Geräte (Slaves), wodurch Kollisionen verhindert werden.
+- Das Prioritätsfeld wird in diesem Verfahren nicht benötigt, da der Master die Kontrolle hat.
+
+---
+
+- **Ablauf**:
+1. Der Master fragt zyklisch alle Rauchmelder ab, erkennt einen Brand und sendet einen Befehl an Alarme und Notbeleuchtung (`leuchtend`).
+Im besten Fall ist noch folgendes implementiert:
+  1. Der defekte Schalter wird als fehlerhaft erkannt (z. B. durch unplausible Dauermeldungen).
+  2. Der Master ignoriert den defekten Melder und priorisiert die Aktivierung der Alarme und Beleuchtung.
+
+---
+
+**Alternative**: **Token-System mit Prioritäten**
+- Ein Token-System, bei dem Geräte mit Notfallmeldungen (z. B. Rauchmelder) das Token bevorzugt erhalten.
+- **Vorteil**: Dezentraler Ansatz, geeignet für größere Systeme.
+- **Nachteil**: Komplexere Implementierung als Master-Slave.
+
+**Warum keine zufälligen Verfahren (z. B. CSMA/CD)?**:
+- Der defekte Rauchmelder könnte den Bus durch dauerhaftes Senden blockieren, was zu unvorhersehbaren Verzögerungen führt.
+- Kollisionen verhindern eine garantierte Übertragungszeit, was in einem Brandmeldesystem inakzeptabel ist.
+- Evlt. CSMA/CA mit Prioritäten, aber auch hier besteht das Risiko, dass der defekte Melder den Bus blockiert oder zumindest verzögert.
+
+**Beispiel aus der Praxis**:
+- Systeme wie **KNX** oder **BACnet** verwenden deterministische Verfahren (z. B. Master-Slave oder Token-Passing), um sicherheitskritische Anwendungen wie Brandmeldungen zuverlässig zu steuern.
+
+---
+
+## 📚 Glossar
+
+- **Echtzeitfähigkeit**: Garantie, dass Daten innerhalb einer definierten Zeit übertragen werden.
+- **CSMA/CD**: Carrier Sense Multiple Access with Collision Detection – zufälliges Verfahren mit Kollisionserkennung.
+- **Token-System**: Deterministisches Verfahren, bei dem ein Token die Sendeberechtigung vergibt.
+- **Summenrahmenprotokoll**: Effiziente Datenübertragung durch einen Master in einem einzigen Rahmen.
+- **Master-Slave**: Deterministisches Verfahren, bei dem ein Master die Slaves steuert.

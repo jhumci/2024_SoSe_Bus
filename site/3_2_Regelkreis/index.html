@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>[Protected] Regelkreis - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "[Protected] Regelkreis";
+        var mkdocs_page_input_path = "3_2_Regelkreis.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">[Protected] Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">[Protected] Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">[Protected] Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">[Protected] Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">[Protected] Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">[Protected] Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">[Protected] Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">[Protected] Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">[Protected] Regelkreis</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#beispiel-konstantlicht-regelung">Beispiel Konstantlicht-Regelung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#konstantlicht-regelung">Konstantlicht-Regelung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_1-konstantlicht-regelung">✍️ Aufgabe 3_2_1: Konstantlicht-Regelung</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-regler">Proportional-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_2-regelung-der-textco_2-konzentration">✍️ Aufgabe 3_2_2: Regelung der \(\text{CO}_2\)-Konzentration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_2">✔️ Lösung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zusammenfassung-p-regler">Zusammenfassung P-Regler</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_3-wassertank-mit-pid-regler">✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#integral-regler">🧠 Integral-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-integral-regler">Proportional-Integral-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proportional-differenzial-regler">🧠 Proportional-Differenzial-Regler</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-3_2_4-reaktion-d-regler">✍️ Aufgabe 3_2_4: Reaktion D-Regler</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Gebudeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Regelungstechnik</li>
+      <li class="breadcrumb-item active">[Protected] Regelkreis</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div id="mkdocs-encrypted-content" style="display:none">fDwMrJmZx3jLkXF8R7I03A==;V6FGM5f5faxH1NupLr4ptdBqUqFSnYvlxwjKPLyWYKbdCrJqTrLjw/t9E/eBhwDSo340XMyInAS8c8WJAIdBBEvN6jLQdEQShiYF7kBgX8rkTOVI3kby9dZGbHXqf00l5pczJKD+A/tjLW4+y6X8gwQE5tBc7gEk8q19SYQqWF9I3Yzro8V7nXJ4mLmJ1DGsfr/Y+Us7PeeoSrYp8GX/2uLxLC+cLbBairCv7ai7ovlaZxDlH8AOUv2+tMy3A+ReroK5a98takWk/Su2J3UPE7FH3X0UUq/mxQ+b3i5KBDAWV+WUIcKqKgjmN72CortTrRXNCoV20MZ4Fbw99gl8fwi4fgdkCMXx8z3aX3HjNyFj2kqmfYLRDOQV1ULott2nYKnexXM/7oTcSfEAbOc+bGI+gbUxSrFiiLLWxcwimk+Kj4+5m6COu5Hqkzu+p17lG9JLOYUdlkBbnNxyqhlnuJnA29c1z4Hjg3o6Pw3CwzGMsG+GpxUqhRNOzJfCtehNRTAVsNyesiUjElwwl2dkeCLP1nhPo4FFRNziAUr2L7T0ysMtfnDLawq2n/n9oFmeET3A0JWanXLGji1Q6ciXJDAa7jayuoggXbfJY0bHdT2y0qPZnn1zOzlrPUxGUaBjzCbjHzrq2fRY+eBmzQ2SPlol2x54a2f12d1qHJi3+MgafFfFYwuMNjCPz7hsl7OJttvjWNLVnCFQTlhgueM/RWrnmeTWEY8/61EQE+kZEfJ+xiW9nPlMmNbgfFRXrPc5evP+zuvfR1ZhfuE7S6FBeD43iOIZzSOCNnLaNsmVrxMl80v5CHg0iDoGL/4YGGXTDJ5vW6yYEiHxLCTUnGn2NSrInXl0bh2ABMQ7D2yabK1mCQ5+niVkkkfO4hAL+wIyXD/hb/7TnBrN0+PFBO2PyBTHPOcgIh6WMcirY8cJAmlKEXQmGppH0kZ2gIGyh4eSVN44dBdEHTJfUH4U5Q93PUniuL3HSVWcl1igZdoUOdNDI5DADz+yEz9oTdjbmf01hCdSToRoNt5ujeZrXueAmsjsZdI5xnWRgvI6t8O1/iKZNN/YCU9Y10hWRXYlIIvfqBifV7pBUXfdT05VtOuo+zNJh3Ehr8KGlaeJXbr3+yUfULTtU76dF4g/wN2b9yd8yaqz9Zzb9NgY8fR7bI84qHS1OYPzRw+JdGYYThhAxcyG6tSqiL7saUK1h9T8chP4LF44/XwRuqgTk2LcRq+xImVB6UZx4eA/CQ1F8DZxj21kWKL/Lm/GlGqI9qjeIsNRPfp2dv507upvSmmvnbNqAS/IHmbHnak9mlOjlClDHO7vR28yxZesLIgrc73/jDx7nUZxi8l75DvOpBTCfOstpXduCZk+mPm2eRcu+8lI6KbI23IkNtwmT1kIyO+QTEfOR8SVAdOxCQeP0dYpzIlCxAG7IFsCLKz6xxUlt05GUd5XS6gZgqSjq64boTgA+lFzOEeQG7jsf45M0GbSHSEky5CDvRO2wkh66ZdiOEP6l+f3VLyi7mcAT21jmr/ZLXMXmydj0YPsuzS6x7pciMrwvI+2UrgBq02/mcqfV1Y0SvC6V9bd0/y+78q31NFtN0q/EV8AtIavlm3dNxIVmA5JvN/8U3syyLJAptk/2FoTtjViUEFd+h0DG5xxA4bbZWjQC8u3WPgXdyqGgyiw8n4LwBLcuFn66GZ1eIOQyzg/Q0u1UzM1rcE5N15jz031GLwEkzMtiZWrmTgaH7a8Pe0bT+PDjf9WJ2MRXbyvCf2y1LDur3DMcaJ5w29AG3my8UbzhXswwWwUUCckHzb8mMBzJHVyMt0MhVuJh8DrgPAg4GhewTwjIhtOi0Oqg8n8Z44k0CrMAIomeNr+5XQHkCTLEPDKfuipFp2kUNjblXJzG9NRJJ6K1i9SfW+OwkNUQTzL9C9rgCJXsnHtIvmco5yRlzJSLrRV6MjHmc6rpfLKarxClvY3flctWyVto9DVhr1CFKE81bVnbYdgVgXa1Q94qPrT3hILqWvCBT/X9GSYwiWT+uHFKn6IW8DyNJNRxHugnGbx7jEoLujPrcaWonXoOdODCKI22I5UyicDbTxttG5WCCfUhhyM3/01hvUrw8JyCC14vLz8TgM2HZAN4WzgGXP4uiWDqNMc7NZvhVhYvL8vNH5/oz12iJ4FwIU0dKgxiQ3qSSnR/19FdAld7/OUeNjm92hrar5Hm+HcWnZQy+JeEiYC3RR/UpoVz4oOsK/vw1eUGrunaqmYTOIXFNK1+7UHZzRNUZrXQZmSLrGB7wtrZd8Ku50dER1/4FzvtTMPH6Li8E5CeHWm/YWfakXEGggP3WccRY59fOvoSJNhTcy16IK7kjWY8UyOGlrELfaM3T1KkVBYwGmqCAoVSgxiLVbsBtKl4p6/FasZNhH9kvYtGHHS1Gps0deDNpNr2X+jwZ0nHucZ3VvylirhP8KktPxV3/EeoD47kvpFZdPAgm0T911voc1MekLByH5KwcJl3KzOOTQhpTkN1vZ0WUyhW8q57wH04mSoUvXxxX70n3c1r2xuj/06kf5cSZ3bsx5m0VFbm7Q/iP2b/Zcwz0tJxymbly9bCniVClKz/HWF+1uGdl3aMb/hdScy/IFEzPIPqncOtW/tIgu5F52AccdsnY/dA5Icyi/6aAm8TbB9pvSG07bI+dVIlKUlXzZS/mDHcD64W/sqryuDN3D433TEGkGyRx7aUmYqLXMUBuEoQMsI0eJctQzwMWySNLL3TTfTX5gvIbeR/sutiSMlOKiyKtnYKQOyWqhlTQRCmtL/re7ve39sqO93Tu+EvQ3IsGpSpQ+eKt/w56nkEusC9Vv2d1oy/RjF119m3fe4u/PZiV9Ihs9ERF1yc083hESFR+oA07VuvCXDANV+cvDyQwtFl2DwH+5+PMvlG4nnWUL5vNGe0z9aSaX0+1w1YcdS/heSHjvwI0eg3Z+VL2AHXXdq1cxAkzCOQpOCvTbGJsVr3TIDp4HHxMRMAVQk3Hou/CvLX8I9qroNoXYbtJUNGm8YY/pC/Y9mcH627nc7lAq1Im0Zh8m+HGfirDVFEA1drh6JbOWV9CEWn5NiNnttTBONrsgMJAwdM69wV45PSWdluibP66wF25UZZcwEbEbEL/vx412V/BYyJvF1OvXP98cH8iTvzMw3eO7O1N3aJE2RJW8azHTTc+whxclLMl1QzsESKAqwup8mzWP89JjNvN+nXjeWpf1E+/hER1Ylu/ZcryjbBwb/9evU4QLHhCbB0nWPf+ABBtU74vY1t9JCzSjKH1mP0SuXXKKdzPX0ehqwL14Vgtrdka5hv1L9hGsXh0doz+bGxyYQ1mHKDg9HH0IkkPzQoh7JQYzVVxDjpgLdKqEbF0ph1OSK/zuHlNoxr+RnNnoGn4OcbM6KSj4kgwsPcIqYhC2uJOTvJmuQBmXLPj4/CK2GyedsDo+IRVa5io8I9vIhORdYwlnlc53m24WcjK/BxN/giEImCiw48MQclvHYljTPZMzk+hLz/3Q2KN2ltWqYz77qqtifm29k+/CJka9mysQ9Cg/C+PRZjGajSJphZPVBXSMAuXvCVB9jwaKtx7IYdYpLy7w9fnJxsHB5vkk8dVArQByLJYnwmbvWklPiMkDlnj9RHzfKqtjzn0jq5Bz928yDPCHHOl+3FRM4Iq2nhjEVHMTXfsbwvSzSM+bPe6FhNDlfvrO8RFCvyUQOdsdjesWa6KzGTKEU4oYi8jxZeEDjaadsDOt+lT554Fg8KhIhf0WvcG4oJqYKUqESgSEnw7WfTK4A2EnWuRFWTR2QhcoDvvik7f9COSCEVgP/UGbYYG11xES9Nx/1l4GrgWaxvAtYZdhkGYtH/jmVAb53BC3YkmpZfX2NccejX+tte/3PSvl2aVDuzop4ZtJ8bICjT5ft+HSjWtOCSiQwAmThFUwqMZcVEvJEIi6jM5fnftCUxL5fZcuC8Bbc4h2+kMA13Jq7iNnzPX3yqe+c4dhwrDCEqC6HkYK5nSixWYvt7urWveuw+onqSN8cxOJN58ALcA4Tl/sFbsRfCTKWZIGtr2+Oe5eIDiKGnPQJPrRB+9ZKbbsulYWb5tzRK59WpiR5IVoqxG3gieDTaeWSchnvGnRjsPr7Ym5cc4Km2qGaTj/4vsuHC5jRopZQQBcBHdK+xJsDHRSYYweRdTisEr6fmsUMQUiq/7ncaTJWEfju9VQPy+Jo3G+WALt6LuAT5Eb/0yMe0wtmeJlWDY/+KConQwZqiCw1q0Vg/0POj93y8UROABQY3D/F3x/K7rkfEEM1nvBywYrrw3s1zc1hs9V98a0LtRRAttQ0Kxp4BusKmJq5Vf0IwpnYhJuGcpiexOUwHYPxW5WIY2kDKnFfPCXVd09DHWBAEqQa4kZC5icKorFtftJ4qpfrWUxkYgXs7YS2ANZk+by+uIcSnd4+x8u5iKrj54JYRaoLV0w8cZkQamMrB16xlu2phxCi4jti6SumdW5Go1OV+NcFV7tVbvY0pDEogReuFXwqB+0oyHiHKDEzvZB7q3xQXIaUbNs/d5jgvQixi27mMgofT+I9ThRf8Kin8bPUX8L5JWvP3M6fCGHrc/ARw8VgAcYN0smpFq97t2YRHaHdh8fTC3KQrtSdFm0Mln4ZeW52PO4cAAS8Vu+1jeZufSU6EdFZoyW8BrK5iOgVkR8uM3NpR0pr3J4rUSiITVPLESKp7z0fTJwsNa0FGmXdQRw2mYINffbbFU8CKWxE6yNTXsvN5FwV1kjRd3FYr4EOofN5VXBDPu/YJBfdnL1JIKUTOziIbR0X68pejnD6dxLo4wVtOoRXu8i9WgEUp6GVYJZ+yTdUsmszrhMjbQOLvrFhymc39G4IVi3Anhp2X/dh9fFowqRR3n9WvpMPxa2GplG6wy47PZo48Frml44zYyoSI1motYCSSp2HAOgwcwLogPEjvkoOVJI1BjjbXrpwwGFK5ffN/TGQa8z4ab388Xw+tOdxtf8rY+qAsFtWMNY2JsnVIH6lYS4G8t48TzG3EoVDaahvaaKUrT0zhN+lW4Z32Jnwyz8+uEppwuuHN65knE0dS7/xtHGiMG5oeMw0bMwwZ0xHLWolS6NXpepK56Fv9zHEj/begJT/o28+xm6qiMF7HPnlKrhJea9xEhXJHlW3FrhDwisVxQZvBT3KB8kR2bVCTH+Rx2RsvTFmVtNw2Hz9Mn/RLUpf3Wxepb1SDAfv3qRnYS6b9NxWFKWNGzBGKS7De11qY01qkGdvjTokEJ7ZWM6VPQ6cSvUNj9v1SZr0qO6RD798lrjvK+EiMNkN55ER7trM20zFpd0s3Z0kM+EBRgqAVEmnZWhETIzpzmHoFi6Q3aRawyf5HSIl2f4YZeWkusMbs6KIxD6eSWuLc4U5cSOKQNgPp3SFBjvysTTb3WQAY717tR5wh9qoswDTh93+wS0qRlZCZO3GMiB5oSpaXx9FE22Zr6wrMA1k3fdOGn67H4wI8bBNNwvh6EPRxyztyehPJk+3pgx645ivMapxpaIxbjwdAaSu/krNGruX99YAgnXZAwLl8OoGHPuYlmdcKPE9KRPH4rFMsPjyv7ZagqxumsPpWl2BOywZJ7YbqWVIk6/mt0/R07yvbWTamVjmrWZZyApauoArUYslbalXmo6K8ay6x2eS7DVItu8vvdRMWXfSfyr54FmqEu4P8q/eQUiZojTSg5nZnVAHbW0kENTo2YjgSRmeNScpm0E4vwJqFVdwhdvCkpayB9yt0kb10ETckQsnWMnYSnQCNtFWY1VNphpueM9n8cdHaSaO2GLBTfcgqHswDlzXX/WiOInNPLjy0WHbrrOSOZmNGeAaxZ1DIrwcoNuSl6b7EryvV0pv36nRMQbYeUwQru+VnUb0gy7KcQZw5JvZl9IjXzRwybXZB+iuppBdOudOyStZtzi3NZCZChlvlFUlf6S9qcIO9HidsFLdiDwdvdfpdZE90NhXBcn8uqJ2VkJ1oHBJfyv3EQhgyDPxFFWqSqhlyPItWjKuJJwYG4sDo3IPerIbuCkDdz4jwH78yY94sv6ZHBWmV5OBn5ubIUigC8EcTr4KD1XPo55Q6S+wmQvJ5l9xY6BPsxPjGEA2yWWQlY25uselVR1SJNID9vB5hEhhEDrxfae65CKBfXVRlJcSa046q+xdeEM5Mp1CLsDQqgaZgX7T2tjdiZQ9ixTcVKjjWx0SSdEWJX7KsWErpt7KVNa0zhPumwkvfCLLIyVAL0ZWrMtwb3P0AMEDHNIpXtoKKbM+BE2PR2kcYDUgYXM0ii5M4kaKnOFV0ZyB7b6v8rDEypktmMe0V/2wWHPOAld6QbzozQ687FxqBQzOP8xUeSnunFWTC2zT4d0XID0/Q3KTholgtBlG7n/CbLiSG1nW2JYH2r4kIO/PjdksEXniTw/5JStJAwYPZKREFwA8rySmtZRQ39Z6p0hRFDSFTmPJ9B/eUTz7myYe324Zxyp2QKsIk2rNhI0gp2ExVXxWfGAn9rd+1s5/vUrhWTpjm1EGmWasDB3y654/AbxdXMrYlticlUGEOsOW9DBRJFiya+/sfHt2wg0APKDhl1otdU3vm2F1TtsfJfJ0dygudCihb+y8SwiJFYJlgwvhlunkOVyx9I+IZ8i8Oj+59qTdVSwN5F2EDYzuZaKYTeMv4IENSmml+bhMCDzYx6g7x/k0avILDbBA/m9vPPRl3+er5/1gG218h3wKaOITPLc52ZH3/LEvJ1RQrhJ3hiM0OtYSElq9Ld9oGX80/nY8Zi3NP9Nm5PCI72VpYkMO4KM16gojAbJMslo222A+2xv1YmYeXFZLNPHg8F3ExWpKJrTyEYi9hCgAP3RVbvQHDoLc8gAzYpPuPCE6UGPlifTpS9RyyWCkc/m3SWg58VOnhPij5KO6cB816KTGYxgQj8QCo9Z17xTfeZ/U4xh5OrWCwdYyon12Rx9cHhwnHIV3WGDq4Efz9pSW52KmunIVaWJtPFA3mbdjHO3fIpPsTuk6pYARKnQcmk4+Fe9f5INKBA/F0cEtm7aSG/AEL3+Ol2MMNBQCKFVEX3iEywhj0KTXTewGuLDuQXKxZRKHo5Oio5JV/NJKZPV4fBx3xBx/trbTUCexlbMFHxUdFHPTiN9KdmC6TgAbi2p76aEJ2Ecd988CBGPpMMrP+niU3OYkiu8uKEFiNU4KlBPH7o7gB1tmghQULZ9MMtK8ugexV0mj49XhzMAIZSZjG6hEwGLYSA1ckmIXAWhHjpNIeSFRxMY+lNmbivuntTNC4FFZTx3/qLjdipA2eVYSx/GjKQziMcZ+Cy6GIfMZzIztvEV8KOw0yDqho3wtFp7vdnKUUdo0xYH9Vqy+c/S7SuvSQ+eKbE5DBsJSSrchm02S81RrnPIUYuHo5vKl6ldA7XgN1y0Fk7u0fOHJrty1ECXQr4ROiFqGfZUC5ntYqcyR/eMBrQASoh0qjtfdlhdG7zHopZfRINEL32kHhO3nTC+RVlsOUI0K3+JwUzqzQOJpoxwsn/TFC6W8lkIcuGuK+sva0bRvWYTef7NZKCd5kuZ+wbqJ1ZuZMZcPI2nMkUx15uekANKtl/YBp8/HlO1+/5IUihq/oIh9DSMWQIZC6vthXk9ywb5q9L2ghv7h8uTGE9VlQIAd/TOUl0yfnYzDBIdBslYotZAxgpiSwd2NSSuTq5cP1bYaUxfofc14pJwJe1FrtuYGXPinLels0tWyPfBg6z3jFCfghLztqFUEXsWkiQ0zn5h5S35LfjJZnAgRHvVH8exgKecWx4dLyWZluA+KRC7Lso1Pb7mSUuYVBoGylUmVedyUXM8QTrmt1UPK/PHYh2uatpJ3guFelRBHqKKLcD9agUt0h/n2udA4PdgxNQb6PTYES5VLPIytu/xQfkuZJMz7S927RvmwZ6qgBz8fRERwo29/AGDAws+GV5MzcpgDJnNPuAIjIJUWqZ6PTKp/kjIBUN/HHuyF0w6HEvEVn2jYyrg4aAIplo6likGnUn4oi+c3RA9dZQ+vEMyUeVQDWmvZPDKOt2UXv90z9kiZqIPAmrupoT0/ptp6UfzWtgv+LZ/OkcSGil1wC3NkVwsFgtHySkM3U9v5oDvFvTqhOz6TjgZAt0CiJ1xjuCXqCp96w4ExsAZgL8wJ09Vr2suVYP+RRMhtLPsEh8L/taq/4h+c7e8OPX4ErTb17cu2cK1it4mRFUfXcVItnL7q/HyJoJ/AH5a3XS3Xnufe4nOKemJClrgdWp5KZvgxXXzaRXTFaOicphqO1gr0ArGiv3eyW+G7Su/Qy5QQANWYXNxZcjfkDzMvUdcDpNhfbujkGS4zdlywj4enPMbVtiPEo8yPU2Ec6uw2VRvAJXtyt85P7XUGkOH3RZxl+eYf/n6j6jJc2anTZTdGdRwTVaRWVm0X8xDa/O+e1f6h7FNjjeT8awHgu2WSdq80quFs4py9/yBcoCYZXAmyrGSH8P9Z02iIkTvvBkA2vU9h8z46bUtom4OQQTld8HnpOdv264b0WZKE5LbNtDnwK/+rH/lpzkf/afbHAybSy8wUUNCvpRT70Ryavowx3+EbYKvy4N56UM3KMe0/Pm46V4ZWM08uYh5C2BtIp7AWQNcmRac3gPA5qjJwNCSZzFtjn93yVLrGnHle7Wz7cOUe2DrWwZV6ZVnKzJ/Famt0Qo4q8NsH16JsdjMzf1GDmyL9n861ia6c5Di5Uoy/wtf/pGA28+UbOS/7JsvDcmKy3FI30+c7Xtj5+n17OG9szSyB9Tv6XYtA0WMF+FBfEziQJ6t/6mYrhG6Ve3617j7GPKwQAlYYWwMWsOwmi7gZ/RRdevhusFUY9EayxyEIpUrD3dk31Y4zYaJ+kjG055INpS4K/eXeVygjYUK8o+y2z1xICN7whv7HS64KWO8c61apO778TewSoeEGFPpwlqjlFY5YcHJ0bA1aEPbNva6IlCselYldG4Lb/XlXM4bYv/pPaZJuO+rw2VnyoUeuZqQUq+3gvNKhXAavmvOBHgms274/RnGjizoljWqYUELA7BiuQx/hgWOz9N/ht0jF/EFv2shjTfwVq9epWj92EzFIPUt/Lzg64xaK+GPfjB4eujv0DqVAoGSHar+vYYPLSRjL2ZLl5TzE7GcxP9RLMim/+DqdpgPUly9NIaNodrTdFPP4dhmA/rxhKFWN+n9RDje4S37qjt5kNn0fuDF4o6HUqi5cc5uqeZn8ck1ryx+1T8iRhasp/8C/3ZF1y3qHrI5QiRWDdKaWtkhKFebYpZREWM5kqt4uDqWDJCPVX1AZVSaFjDPk4IFtwHiPjZ0ZtwbvPYofaGLQKAt7NAyWWYr2H8FxPs8MqeX2mIV7UUHM5W2TKlMK0EMzIpIbBLUUeavh8pXFf8P6MJRlwjw7rcgcSDLnlh0bK8vwxxXDqiitzDcnh5CK6qlbv0rcNEMbzBBj5MfwPqLQ1cC1aOX16lfu+RPiU3POkwWC9tgJlQxboqn9reu0Ccaf8s74fRG0WSjgZBMwm6iyYMTUzdoTB2KXeKPU4zIEsTITk6y5FXwZOdOnGZYAApxx8a+rm6hSslR1Rc8FAttVkPCskt3UN/yeHzd4BrTOtX/NyEfDfkPxnbd5596DA+HUDVGb19+mQ9MIHNZyZ/dX0buPeAtW3zxCP+XM9r9yn2vFhqf/tKjA1i+0ImJQeP22RsFi22oLhvoRk/BFexp/ubb94PANd/Tbn7QJA2T6LVRoXzuQQRIeu/BDxXLuDjvx97JbFnwjNl4MPFNMOOUQDWxRxKRappyPmS9u1/sVrU+5EDRDOJwbqcUjL0BrW956UY1PwWxE1JASDebraX/y5xzmLIK++1/Y1QFIIyIWI1iUb3IMZnbeXAj0I1Z9EJhUR+GCTcfzuXw59p1WvW1f4bhfUtRUAW+idsvmtKjkIGuoj6sWogIIk/uSFsuqqGy3buPXhKRW53RYXx5t13mub3gE2ATUnQ0/OERpn+2RsyQ7tMm0zdYcC3M69U7jOsKL1WAg7amAQljlVf+q3DC7nvi1K0+l7CdSTrJ+HFV2Sc8Rb42eRzrMP3wNyx9E+Q92Znwlwt67gQADMKShiNIRgGuhlJZihpYvNqP7mno1n/mzmo28JeudXYWStfJLvhDpRplgxQFriyBYNeb8shui4FCKz+PaY2Z00sTCzS2GXh27SExjw9WiXx4QBF3AjCVafCRx5sbKsS/zTurXfpQTFot1AQZm0vH9B2Yl6Eci7MkDMLe5hLQTa2+ipUDSYyBMta3+xbAAXih8ZqXvM+RX47yzFZf80naZUNBIzjyTzASwIshff3OHj5QRoKmiDih6Gzj8tDndmhHnJqFLzjRONiZ9R3wrUtSMJX47u1wRiOoAjkiGAHrwA+vjfyjP/RWROJLl8k//Ghp8V6pwGzlfpwFJ6iLBNBSOgSMMSx89nYEbjROtwpq+t9j9G3GGur7xZsgmtluSUv0XD4+GkwifZdVhNIU2zF2a/STyrQQMkAwA9ZbbmADxtT+Fk11WShsZOm0GEs+DpMY+ztVz+u1idlw/IbtL7sdafQolusdGe+fetL1SFfCL+CiTCmcFNs8Ck1oLkyCAla7AmTKOD4biCapRIbTmIVuWVDehT628Aa8QnS49ei/p/Xb+MwnqCdQBQD2aXcGZPf9bMzKlLdg6s/+gqX+J/RWoEP5hU8oI0lOmP+WfmymBGFQ9VhLFMmST10kHRkt8bb9b7ZY60rwzgn3Ehpy87Z03urV9RkWsrYiTu29Q23BfCjxqeNtebNutEb3OoNW5CMr8FOYQvds15sqyPHvccyNCwI2CRpsX6Q1NpdKKJJp3GXK7CgsFpyD4xxr0JTb6/IstiFarNHHZFsW7N+MClGVVUAQAdvixq/R7Ip7SEbQvthcRTJcPfj4jmeomGpyAuL/ocsvjsVkU6JQ1V1lx4ya5X7+r8hsFtk9mQun4Ulr06MnEqCuvELZCzHYizfC7s8YWClT+bICkUfXGHu8Tu7cXy8vU6bmO967pc7XrTf9lnW306I5FjiKgwZkuZSg/OXzp2sE0/ceYDBvVNd55dUwktm1Wc5PVmfZSyfZtgyYvbvvI8/tMtV+ediIlEZJr2i5+FCVYjTfcBLNWVQ4S6geo2EiBgyFR0WepDvO72o3XotyTWqle36ZJV7CctUpAYOLBxzWUXfFzXKyW4bhv9VX/9JXjy7/YfceV</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "3_2_Regelkreis/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["6u2tdw6hlJCUawEIC9+YYw==;ZRQtbe17URMV+3u2LnM4k7DcCTBCrmaxSeKvWxfxrB1DS1QojchYIHwFQrKGIAWQSCZSXW2eOzal3DxS0eGJHxeT37pszxtmtaXpGmeCgGpf10uYMDdhOvsjslPWmUAd;80+ImKdfOHqlatZa8vkcww=="];
+var encryptcontent_obfuscate = 0;
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/enc-base64.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/cipher-core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/sha256.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/hmac.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/pbkdf2.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/aes.js"></script>
+<script type="text/javascript" src="../assets/javascripts/decrypt-contents.js" defer></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../3_1_Blockschaltbild/" class="btn btn-neutral float-left" title="[Protected] Blockschaltbild "><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../3_3_Regelverhalten/" class="btn btn-neutral float-right" title="Regelverhalten">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../3_1_Blockschaltbild/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../3_3_Regelverhalten/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

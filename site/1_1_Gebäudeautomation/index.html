@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>[Protected] Gebäudeautomation - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "[Protected] Geb\u00e4udeautomation";
+        var mkdocs_page_input_path = "1_1_Geb\u00e4udeautomation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">[Protected] Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">[Protected] Gebäudeautomation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#aufgaben-der-gebaudeautomation">Aufgaben der Gebäudeautomation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#abgrenzung-verschiedene-ebenen-der-gebaudeautomation">Abgrenzung verschiedene Ebenen der Gebäudeautomation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#anlagenautomation">Anlagenautomation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raumautomation">Raumautomation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#schalenmodell-nach-vdi-3813-blatt-1">Schalenmodell nach VDI 3813 Blatt 1</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#segment">Segment:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#raum">Raum:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bereich">Bereich:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gebaude">Gebäude:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#gebaudeautomation-management">Gebäudeautomation-Management</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hierarchie-der-gebaudeautomation-automatisierungspyramide">Hierarchie der Gebäudeautomation (Automatisierungspyramide)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fazit">Fazit</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">Twincat</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_1_Signalisierung/">Signalisierung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Gebudeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Gebäudeautomation</li>
+      <li class="breadcrumb-item active">[Protected] Gebäudeautomation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div id="mkdocs-encrypted-content" style="display:none">9ufpEwJnDtgwMakBiQZThw==;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</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "1_1_Geb%C3%A4udeautomation/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["6u2tdw6hlJCUawEIC9+YYw==;ZRQtbe17URMV+3u2LnM4k7DcCTBCrmaxSeKvWxfxrB1DS1QojchYIHwFQrKGIAWQSCZSXW2eOzal3DxS0eGJHxeT37pszxtmtaXpGmeCgGpf10uYMDdhOvsjslPWmUAd;80+ImKdfOHqlatZa8vkcww=="];
+var encryptcontent_obfuscate = 0;
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/enc-base64.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/cipher-core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/sha256.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/hmac.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/pbkdf2.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/aes.js"></script>
+<script type="text/javascript" src="../assets/javascripts/decrypt-contents.js" defer></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="[Protected] Übersicht"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../1_2_Planungsabl%C3%A4ufe/" class="btn btn-neutral float-right" title="Planungsabläufe">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../1_2_Planungsabl%C3%A4ufe/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

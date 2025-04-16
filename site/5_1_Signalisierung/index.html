@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Julian Huber" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>[Protected] Signalisierung - Bussysteme</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "[Protected] Signalisierung";
+        var mkdocs_page_input_path = "5_1_Signalisierung.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Bussysteme
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">[Protected] Übersicht</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gebäudeautomation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_1_Geb%C3%A4udeautomation/">[Protected] Gebäudeautomation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_2_Planungsabl%C3%A4ufe/">[Protected] Planungsabläufe</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Computer-Systeme</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_1_Messkette/">[Protected] Messkette</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_2_Steuerung/">[Protected] Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_3_Funktionen/">[Protected] Funktionen</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_4_Objektorientierung/">[Protected] Objektorientierung</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Regelungstechnik</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_1_Blockschaltbild/">[Protected] Blockschaltbild </a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_2_Regelkreis/">[Protected] Regelkreis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3_3_Regelverhalten/">[Protected] Regelverhalten</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Speicherprogrammierbare Steuerung</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_1_Speicherprogrammierbare_Steuerung/">[Protected] Speicherprogrammierbare Steuerung</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_2_Sprachen_nach_IEC_61131-3/">[Protected] Sprachen nach IEC 61131-3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4_3_Appendix_Twincat/">[Protected] Twincat</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Bussysteme</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">[Protected] Signalisierung</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#unterschiede-sps-und-bussysteme">Unterschiede SPS und Bussysteme</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#feldbus">Feldbus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vielfalt-an-bussystemen">Vielfalt an Bussystemen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unterscheidungsmerkmale-von-bussystemen">Unterscheidungsmerkmale von Bussystemen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unterscheidungsmerkmale-von-bussystemen_1">Unterscheidungsmerkmale von Bussystemen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bitubertragungsschicht-signalisierung-von-telegrammen">Bitübertragungsschicht / Signalisierung von Telegrammen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#informationsgehalt-von-telegrammen">Informationsgehalt von Telegrammen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#symbolrate-und-bitrate">Symbolrate und Bitrate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-5_1_1-symbolrate">✍️ Aufgabe 5_1_1: Symbolrate</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#leitungscodes">Leitungscodes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#weitere-leitungscodes">Weitere Leitungscodes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aufgabe-5_1_2-leitungscodes">✍️ Aufgabe 5_1_2: Leitungscodes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#losung_1">✔️ Lösung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubermittlung-der-taktrate">Übermittlung der Taktrate</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#synchrone-datenubertragung">Synchrone Datenübertragung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asynchrone-datenubertragung">Asynchrone Datenübertragung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#serielle-und-parallele-busse">Serielle und Parallele Busse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ubertragungsarten">Übertragungsarten</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#differentiale-busse">Differentiale Busse</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#beispiel-universal-serial-bus-usb-11-und-20">Beispiel: Universal Serial Bus (USB 1.1 und 2.0)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#nrz-s-bitwechsel-bei-null">🤓 NRZ-S: Bitwechsel bei Null</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_2_Buszugriffsverfahren/">Buszugriffsverfahren</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_3_Uebertragungssicherheit/">Übertragungssicherheit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_4_Bussysteme_in_der_Gebudeautomation/">Bussysteme in der Gebäudeautomation</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Smart Metering</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_1_Smart_Metering/">Smart Metering</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Bussysteme</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Bussysteme</li>
+      <li class="breadcrumb-item active">[Protected] Signalisierung</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div id="mkdocs-encrypted-content" style="display:none">WTweFr9bHXDcH1PeaG/jCg==;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</div>
+<div id="mkdocs-decrypted-content">
+    <form id="mkdocs-decrypt-form">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "5_1_Signalisierung/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["6u2tdw6hlJCUawEIC9+YYw==;ZRQtbe17URMV+3u2LnM4k7DcCTBCrmaxSeKvWxfxrB1DS1QojchYIHwFQrKGIAWQSCZSXW2eOzal3DxS0eGJHxeT37pszxtmtaXpGmeCgGpf10uYMDdhOvsjslPWmUAd;80+ImKdfOHqlatZa8vkcww=="];
+var encryptcontent_obfuscate = 0;
+
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/enc-base64.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/cipher-core.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/sha256.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/hmac.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/pbkdf2.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/aes.js"></script>
+<script type="text/javascript" src="../assets/javascripts/decrypt-contents.js" defer></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../4_3_Appendix_Twincat/" class="btn btn-neutral float-left" title="[Protected] Twincat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5_2_Buszugriffsverfahren/" class="btn btn-neutral float-right" title="Buszugriffsverfahren">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../4_3_Appendix_Twincat/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5_2_Buszugriffsverfahren/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="/javascripts/mathjax.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

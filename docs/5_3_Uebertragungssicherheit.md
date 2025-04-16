@@ -12,158 +12,142 @@ theme: beams
 
 <!-- paginate: true -->
 
-
 # 5.3 Übertragungssicherheit
 
-
-
 <!-- _class: title -->
-
-<style>
-img[alt~="center"] {
-  display: block;
-  margin: 0 auto;
-}
-</style>
 
 ---
 
 ## 🎯 Lernziele
 
-Nach dieser Einheit sind Sie in der Lage dazu
-* verschiedene Fehlertypen bei der Datenübertragung unterscheiden
-* Maßnahmen zur Erkennung und Behebung von Übertragungsfehlern beschreiben
-* die Hamming-Distanz verschiedener Codes ermitteln
+Nach dieser Einheit können Sie:
+
+- Verschiedene Fehlertypen bei der Datenübertragung unterscheiden.
+- Maßnahmen zur Erkennung und Korrektur von Übertragungsfehlern erklären.
+- Den Hamming-Abstand von Codes berechnen und dessen Bedeutung verstehen.
+
+---
+
+## 🧠 Aufbau von Datenpaketen
+
+![center](images/2022-05-10-13_47_26-Window.webp)
+
+Datenpakete (auch „Telegramme“) enthalten Informationen, die über ein Bussystem übertragen werden. Der Aufbau variiert je nach System, umfasst jedoch typischerweise:
+
+- **Steuerfeld**: Definiert die Priorität der Nachricht.
+- **Quelladresse**: Identifiziert den Absender (ähnlich einer MAC-Adresse).
+- **Zieladresse**: Gibt den Empfänger an.
+- **Routing-Zähler**: Zählt, wie oft die Nachricht über Koppler weitergeleitet wurde.
+- **Nutzinformation**: Die eigentlichen Daten, z. B. Messwerte eines Sensors.
+- **Sicherungsfeld**: Prüft, ob die Daten korrekt übertragen wurden (z. B. Prüfsumme).
 
 
 
 ---
 
-## 🧠 Informationsgehalt von Telegrammen
+## 🛡️ Datensicherung
 
-![](images/2022-05-10-13_47_26-Window.webp)
-
-* Unterscheidet sich je nach Bussystem, üblich sind unter anderem:
-  * **Steuerfeld**: Priorität der Nachricht
-  * **Quelladresse**: Absender (vgl. MAC-Adresse)
-  * **Zieladresse**: Empfänger (vgl. MAC-Adresse)
-  * **Routing Zähler**: Zählt wie oft über Koppler gesendet
-  * **Nutzinformation**: Eigentlich Information (z.B. Messwerte eines Sensor)
-  * **Sicherungs-Feld**: Wurden die Daten richtig übertragen (vgl. Hash)
-
----
-
-## Datensicherung
+Daten können durch Störungen verloren gehen oder verfälscht werden. Beispiel:
 
 ```
 Gesendet:    010000010000001110000000
-Empfangen 1: 010000110000001110000000
-Empfangen 2: 01000010000001110000000
+Empfangen 1: 010000110000001110000000  (1 Bitfehler)
+Empfangen 2: 01000010000001110000000   (2 Bitfehler)
 ```
-- Bit können aus verschiedenen Gründen verloren gehen (z.B. Störung durch Elektromagnetische Felder, Probleme mit der Taktung, etc.)
-* wie stellt man sicher, dass keine Daten **verloren** gehen 
-oder **korrumpiert** werden?
-  * OSI-Schicht 1: **technische Vorkehrungen** die Wahrscheinlichkeit von Störungen, z.B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
-  * OSI-Schicht 2: **Überwachung** der Nachricht auf Fehler und Gegenmaßnahmen
 
 ---
 
-#### 🧠 Fehlerarten
+## 🛡️ Datensicherung
 
-- Wir betrachten im Folgenden meist transparente (**bitorientierte**) Codes. (d.h. jede Bitkombination ist erlaubt und sinnvoll)
-- Bitfolge allein lässt nicht auf einen eventuellen Fehler schließen
-- Es gibt drei Arten von Fehlern 
+### Ursachen für Fehler:
+- Elektromagnetische Störungen.
+- Probleme mit der Taktung.
+- Defekte Hardware.
 
+### Maßnahmen zur Datensicherung
+- **OSI-Schicht 1 (Physikalische Schicht)**: Abgeschirmte Kabel, Glasfaserkabel oder potentialfreie Übertragung reduzieren Störungen.
+- **OSI-Schicht 2 (Sicherungsschicht)**: Überwachung der Daten auf Fehler und Korrekturmaßnahmen.
+
+---
+
+## 🧠 Fehlerarten
+
+Wir betrachten **bitorientierte Codes**, bei denen jede Bitkombination gültig ist. Fehler sind nicht direkt erkennbar, da keine Bitfolge „verboten“ ist. Es gibt drei Haupttypen von Fehlern:
+
+- **Offensichtlicher Fehler**
+- **Nicht erkennbarer Fehler**
+- **Erkennbarer Fehler**
 
 ![bg right:33% height:300](images/Fehlertypen.svg)
 
+---
+
+## 📏 Fehlermaße
+
+Die **Bitfehlerrate** ($p$) gibt an, wie häufig Fehler auftreten:
+
+$$p = \frac{\text{Anzahl fehlerhafter Bits}}{\text{Gesamtzahl gesendeter Bits}}$$
+
+- **Ungünstigster Fall**: $p = 0.5$ (jedes zweite Bit ist fehlerhaft, Nachricht unbrauchbar).
+- **Extremfall**: $p = 1$ (alle Bits invertiert, z. B. `001` → `110`).
+- **Realistischer Wert**: $p = 10^{-4}$ (1 von 10.000 Bits ist fehlerhaft).
 
 ---
 
-### Fehlermaße
+## 🔍 Fehlererkennung durch Codierung
 
-* **Bitfehlerrate** $p$
-  $p = \frac{Anzahl \ der \ fehlerhaften \ Bits}{Gesamtzahl \ der \ gesendeten \ Bits}$
-* Der ungünstigste Wert $p = 0.5$. 
-Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
-* wäre $p=1$: 
-  * ```001``` : ```110```
-* realistischer Wert $p = 10^{-4}$
+Die Art der Codierung beeinflusst, ob Fehler erkannt werden können. Beispiel mit einem nicht-bitorientierten Code (Deutsche Sprache):
+
+- **Offensichtlicher Fehler**: `Gxbäude` → erkennbar, korrigierbar zu `Gebäude`.
+- **Nicht erkennbarer Fehler**: `Mein` → `Dein` (beides gültige Wörter).
+- **Erkennbarer Fehler**: `Tein` → ungültiges Wort.
 
 ---
 
+**Beispiel für einen einfachen binären Code**:
+- `00`: Schalter **ein**
+- `11`: Schalter **aus**
+- `01`, `10`: Ungültig
 
-### Erkennen von Übertragungsfehlern
-
-* Ob Fehler erkennbar sind, hängt auch davon ab, wie die Information codiert wurde
-* Code: z.B. Deutsche Sprache (nicht bitorientiert)
-  * Fehler ist offensichtlich: ```Mein```, ```Tein```
-  * Fehler ist nicht erkennbar: ```Mein```, ```Dein```
-  * Fehler ist erkennbar und korrigierbar: ```Gxbäude```, ```Gebäude```
+Ein Ein-Bit-Fehler (z. B. `00` → `01`) führt zu einem ungültigen Codewort und ist erkennbar.
 
 ![bg right:40% height:300](images/Fehlertypen.svg)
 
 ---
 
-* Codes können wortorientiert so definiert, werden, dass das Auftreten einzelner Übertragungsfehler offensichtlich wird.
-  * ```00```: Schalter **ein**
-  * ```01```: nicht definiert
-  * ```10```: nicht definiert  
-  * ```11```: Schalter **aus**
-  * Die Schalterstellung kann nicht verwechselt werden (bei einem Ein-Bit-Fehler) 
+## 📏 Hamming-Abstand
 
-![bg right:40% height:300](images/Fehlertypen.svg)
+Der **Hamming-Abstand** misst, wie viele Positionen sich zwischen zwei gleich langen Codewörtern unterscheiden. Der Hamming-Abstand eines Codes ist der **kleinste** Abstand zwischen zwei gültigen Codewörtern.
 
---- 
+**Beispiele**:
+- Code `{00, 11}`: Hamming-Abstand = 2.
+- Code `{00, 01, 10, 11}`: Hamming-Abstand = 1.
+- Code `{'Haus', 'Baum', 'Tier'}`: Hamming-Abstand = 2.
 
-## Hamming-Abstand
-
-- Der **Hamming-Abstand** zwischen zwei gleich langen Wörtern ist die Anzahl der Positionen, an denen sie sich unterscheiden.
-- Der **Hamming-Abstand eines Codes** ist das **kleinste** solcher Abstände zwischen **verschiedenen Wörtern** im Code.
-- Beispiel:
-  - $H(\{ 00,11 \}) = 2$
-  - $H(\{ 00,01,10,11 \}) = 1$
-  - $H(\{ 00110,00100 \}) = 1$
-  - $H(\{ '12345','13349' \}) = 2$
-  - $H(\{ 'Haus','Baum','Tier' \}) = 3$
-
-[Quelle](Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen)
- 
----
-
-### Anwendung des Hamming-Abstands zur Fehlererkennung
-
-- Gegeben ist ein Code mit folgenden drei Wörtern:
-`aus`, `ein`, `sie`
-- Der **kleinste Hamming-Abstand** zwischen zwei verschiedenen Wörtern beträgt 2:
-- Zum Beispiel: `"ein"` und `"sie"` unterscheiden sich an zwei Positionen.
-- → **Hamming-Abstand des Codes: $h = 2$**
-
-
---- 
-
-### Anwendung des Hamming-Abstands zur Fehlererkennung
-
-- Ein Code mit Hamming-Abstand **$h = 2$** kann **alle 1-Bit-Fehler erkennen**:
-- Wenn sich in einem Wort **ein Zeichen** verändert, entsteht **kein anderes gültiges Codewort**.
-- Beispiel: Aus `"sie"` wird durch einen Fehler z. B. `"sie" → "s_e"`, `"si_"`, `"_ie"`  
-  → keines dieser Wörter ist gültig im Code.
-
-- Ein **2-Bit-Fehler** kann jedoch **nicht immer erkannt werden**:
-  - Beispiel: `"ein"` → `"sie"` durch zwei fehlerhafte Zeichen
-  - In diesem Fall sieht das empfangene Wort wie ein **gültiges Codewort** aus,
-    obwohl es aus einem anderen stammt.
-  - → Der Fehler bleibt **unbemerkt**.
-
+**Regel**: Ein Code mit Hamming-Abstand $h$ kann bis zu $h-1$ Bitfehler erkennen.
 
 ---
 
-## ✍️ Aufgabe 5_3_1: Drehschalter 
+## 🛠️ Fehlererkennung mit Hamming-Abstand
 
-* Drehschalter **vier Einstellmöglichkeiten**
-* werden als binäre Zahl (Codewort) an einen Empfänger übermittelt:  
-  - ```00```, ```01```, ```10```, ```11```
-* Empfänger erhält das Codewort, hat sonst keine Möglichkeit, die Schalterstellung zu überprüfen
+**Beispiel-Code**: `{0001, 0110, 1000}`
+
+- Kleinster Hamming-Abstand: 2 (z. B. `1000` und `0001` unterscheiden sich an 2 Positionen).
+- **Fazit**: Der Code kann **1-Bit-Fehler** erkennen, da ein Fehler kein anderes gültiges Codewort erzeugt (z. B. `0001` → `0011` ist ungültig).
+- **Problem**: Ein **2-Bit-Fehler** kann unbemerkt bleiben (z. B. `0001` → `1000`).
+
+**Regel für Fehlerkorrektur**:
+- Um $t$ Fehler zu korrigieren, muss der Hamming-Abstand mindestens $h=2 t + 1$ betragen.
+
+---
+
+## ✍️ Aufgabe 5_3_1: Drehschalter
+
+Ein Drehschalter hat vier Einstellungen, die als binäre Codes übertragen werden: `00`, `01`, `10`, `11`. Der Hamming-Abstand beträgt 1, sodass ein Ein-Bit-Fehler ein anderes gültiges Codewort erzeugt (z. B. `00` → `01`).
+
+**Aufgabe**: Entwickeln Sie einen binären Code mit Hamming-Abstand ≥ 3, der:
+- Fehler erkennt **und** korrigiert.
+- Nur Einfachfehler (max. 1 Bitfehler) berücksichtigt.
 
 ![bg right](images/Drehschalter.png)
 
@@ -171,54 +155,49 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 
 ---
 
-* ```00```, ```01```, ```10```, ```11```
-* Hamming-Abstand zwischen den vier Worten ist jeweils 1, 
-* d. h. falls durch einen Fehler nur ein Bit umgekehrt wird, erhält der Empfänger zwar ein anderes, aber ebenso gültiges Codewort
-  * Angenommen es treten nur Einfachfehler auf (es wird also maximal ein Bit geflippt)
-  * _Kann man einen binären Code entwickeln, der es nicht nur ermöglicht Fehler zu erkennen, sondern diese auch zu beheben?_
+## ✔️ Lösung: Drehschalter
 
+Ein Code mit Hamming-Abstand ≥ 3 ermöglicht die Korrektur von Einfachfehlern. Beispielcode für vier Einstellungen:
 
----
+- `11000000`: Stellung 1
+- `00110000`: Stellung 2
+- `00001100`: Stellung 3
+- `00000011`: Stellung 4
 
-### ✔️ Lösung
+**Hamming-Abstand**: Mindestens 3 (z. B. `11000000` und `00110000` unterscheiden sich an 3 Positionen).
 
-- Um Einfachfehler zu korrigieren benötigt man einen Code, der einen Hamming-Abstand ≥ 3 hat: 
-  * z. B. ```11000000```, ```00110000```, `00001100`,`00000011` .
-* Einfachfehler können nur erkannt und behoben werden:
-  * `10000000` --> `11000000`
-  * `11100000` --> `11000000`
-  * `10110000` --> `00110000`
-
+**Fehlerkorrektur**:
+- Empfangen: `10000000` → am nächsten zu `11000000` (1 Bit Unterschied) → korrigiert.
+- Empfangen: `11100000` → am nächsten zu `11000000` (2 Bits Unterschied) → nicht korrigierbar.
 
 ---
 
-## Paritätsbit zur Fehlererkennung
+## 🔢 Paritätsbit (Even-Bit) zur Fehlererkennung
 
-<!-- class: white -->
+Ein **Paritätsbit** wird hinzugefügt, um die Anzahl der `1`-Bits in einer Nachricht gerade (oder ungerade) zu machen. Beispiel:
 
-* Wir senden eine Zahl mit 4 Bit, z. B. ```0010``` ($2_{10}$)
-* Zahl der positiven Bits im Binärcode ist ungerade 
-* Paritätsbit ```E=1``` (even = True) wird hinzugefügt (Paritäts-/ Evenbit ist 1, wenn einegerade Zahl von Bit übertagen werden)
-und mit übertragen
+- Gesendet: `0010` (2 in Binär, 1 `1`-Bit → ungerade).
+- Paritätsbit (gerade Parität): `1` (macht die Gesamtzahl der `1`-Bits gerade).
+- Übertragen: `00101`.
 
-* Alle ungeraden Anzahlen an Fehlern werden erkannt:
-  * Original:   ```0010``` - ```E=1``` - erwartet ```E=1```
-  * 1 Fehler:   ```0011``` - ```E=1``` - erwartet ```E=0```
-  * 1 Fehler:   ```0010``` - ```E=0``` - erwartet ```E=1```
-  * 2 Fehler:   ```1010``` - ```E=1``` - erwartet ```E=1```
+**Fehlererkennung**:
+- Empfangen: `00111` → 3 `1`-Bits (ungerade) → Fehler erkannt.
+- Empfangen: `10101` → 4 `1`-Bits (gerade) → kein Fehler erkannt (2-Bit-Fehler bleibt unbemerkt).
+
+**Einschränkung**: Nur ungerade Anzahlen an Fehlern werden erkannt.
 
 ![bg right:25% width:300](images/800px-Code_Even_dualergaenzt.svg.png)
 
-
 ---
 
-## Blocksicherung
+## 🧱 Blocksicherung
 
-- Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit 
+- Die Blocksicherung erweitert das Paritätsbit-Konzept auf eine Matrix aus Datenbits. Für jede Zeile und Spalte wird ein Paritätsbit berechnet.
+- Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit (im Beispielsweise P als Even-Bit) eingefügt.
 
 <center>
 
-![height:350](images/Blocksicherung.png)
+![height:250](images/Blocksicherung.png)
 
 </center>
 
@@ -227,21 +206,35 @@ und mit übertragen
 
 ---
 
+
 ![height:700](images/BeispielBlocksicherung/Folie1.JPG)
+
+* Ein Ein-Bit-Fehler in der Matrix wird erkannt und kann korrigiert werden.
 
 ---
 
 ![height:700](images/BeispielBlocksicherung/Folie2.JPG)
 
+* Ein Ein-Bit-Fehler im Kontrollfeld wird erkannt und kann korrigiert werden.
+
 ---
 
 ![height:700](images/BeispielBlocksicherung/Folie3.JPG)
 
----
-
-![height:700](images/BeispielBlocksicherung/Folie4.JPG)
+* Ein Zwei-Bit-Fehler im Kontrollfeld wird erkannt, aber nicht korrigiert.
 
 
 ---
+
+## 📚 Glossar
+
+- **Bitfehlerrate**: Anteil fehlerhafter Bits an allen gesendeten Bits.
+- **Hamming-Abstand**: Anzahl der Positionen, an denen sich zwei Codewörter unterscheiden.
+- **Paritätsbit bzw. Even-Bit**: Zusätzliches Bit, das die Anzahl der `1`-Bits in einer Nachricht gerade oder ungerade macht.
+- **Blocksicherung**: Methode zur Fehlererkennung und -korrektur durch Hinzufügen von Paritätsbits für Zeilen und Spalten eines Datenblocks.
+
+---
+
+## 📽️ Weiterführende Ressource
 
 [▶️ 3Blue1Brown: A discovery-oriented introduction to error correction code](https://www.youtube.com/watch?v=X8jsijhllIA)
