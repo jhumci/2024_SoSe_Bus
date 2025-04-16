@@ -6,11 +6,18 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
+
+<!-- paginate: true -->
+
+
+# 5.3 Übertragungssicherheit
+
+
+
+<!-- _class: title -->
 
 <style>
 img[alt~="center"] {
@@ -19,7 +26,7 @@ img[alt~="center"] {
 }
 </style>
 
-# 5.3 Übertragungssicherheit
+---
 
 ## 🎯 Lernziele
 
@@ -56,14 +63,14 @@ Empfangen 2: 01000010000001110000000
 - Bit können aus verschiedenen Gründen verloren gehen (z.B. Störung durch Elektromagnetische Felder, Probleme mit der Taktung, etc.)
 * wie stellt man sicher, dass keine Daten **verloren** gehen 
 oder **korrumpiert** werden?
-  * OSI-Schicht 1: **technische Vorkehrungen** die Wahrscheinlichkeit von Störungen, z. B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
+  * OSI-Schicht 1: **technische Vorkehrungen** die Wahrscheinlichkeit von Störungen, z.B. durch geschirmte Kabel, Glasfaserkabel, potentialfreie Übertragung.
   * OSI-Schicht 2: **Überwachung** der Nachricht auf Fehler und Gegenmaßnahmen
 
 ---
 
 #### 🧠 Fehlerarten
 
-- Wir betrachten im Folgenden stets transparente (**bitorientierte**) Codes. (d.h. jede Bitkombination ist erlaubt und sinnvoll)
+- Wir betrachten im Folgenden meist transparente (**bitorientierte**) Codes. (d.h. jede Bitkombination ist erlaubt und sinnvoll)
 - Bitfolge allein lässt nicht auf einen eventuellen Fehler schließen
 - Es gibt drei Arten von Fehlern 
 
@@ -89,7 +96,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 ### Erkennen von Übertragungsfehlern
 
 * Ob Fehler erkennbar sind, hängt auch davon ab, wie die Information codiert wurde
-* Code: z.B. Deutsche Sprache
+* Code: z.B. Deutsche Sprache (nicht bitorientiert)
   * Fehler ist offensichtlich: ```Mein```, ```Tein```
   * Fehler ist nicht erkennbar: ```Mein```, ```Dein```
   * Fehler ist erkennbar und korrigierbar: ```Gxbäude```, ```Gebäude```
@@ -98,7 +105,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 
 ---
 
-* Codes können so definiert, werden, dass das Auftreten einzelner Übertragungsfehler offensichtlich wird.
+* Codes können wortorientiert so definiert, werden, dass das Auftreten einzelner Übertragungsfehler offensichtlich wird.
   * ```00```: Schalter **ein**
   * ```01```: nicht definiert
   * ```10```: nicht definiert  
@@ -111,27 +118,42 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 
 ## Hamming-Abstand
 
-* Unter dem Hamming-Abstand $H$ eines Codes versteht man das **Minimum aller Abstände** zwischen verschiedenen Wörtern innerhalb des Codes
-* **Abstand**: An wie vielen Stellen muss ein Wort verändert werden
-* $H(\{ 00,11\})=2$
-* $H(\{ 00,01,10,11\})=1$
-* $H(\{ 00110,00100\})=1$
-* $H(\{ '12345','13349'\})=2$
-* $H(\{ 'Haus','Baum', 'Tier'\})=2$
+- Der **Hamming-Abstand** zwischen zwei gleich langen Wörtern ist die Anzahl der Positionen, an denen sie sich unterscheiden.
+- Der **Hamming-Abstand eines Codes** ist das **kleinste** solcher Abstände zwischen **verschiedenen Wörtern** im Code.
+- Beispiel:
+  - $H(\{ 00,11 \}) = 2$
+  - $H(\{ 00,01,10,11 \}) = 1$
+  - $H(\{ 00110,00100 \}) = 1$
+  - $H(\{ '12345','13349' \}) = 2$
+  - $H(\{ 'Haus','Baum','Tier' \}) = 3$
 
 [Quelle](Beachte: bei den Strings zählt nicht, wie weit die Buchstaben auseinander liegen)
  
 ---
 
-### Anwendung des Hamming-Abstand zur Fehlererkennung
+### Anwendung des Hamming-Abstands zur Fehlererkennung
+
+- Gegeben ist ein Code mit folgenden drei Wörtern:
+`aus`, `ein`, `sie`
+- Der **kleinste Hamming-Abstand** zwischen zwei verschiedenen Wörtern beträgt 2:
+- Zum Beispiel: `"ein"` und `"sie"` unterscheiden sich an zwei Positionen.
+- → **Hamming-Abstand des Codes: $h = 2$**
 
 
-* Ein Code besteht aus folgenden drei Wörtern:
-* ```aus```, ```ein```, `sie`
-* Der kleinste der drei Abstände ist 2, also ist der Hamming-Abstand des Codes ebenfalls gleich $h=2$ (zwischen ```ein```, `sie`).
-* Bei Codes mit Hamming-Abstand ```h=2``` **können alle ```1```-Bit-Fehler erkannt werden.** 
-* D.h. der veränderte Code kann mit keinem anderen Wort verwechselt werden (`_ie`, `s_e`, `si_`)
-* Ein  ```2```-Bit-Fehler kann nicht immer erkannt werden  (`ein`, `_i_`, `sie`)
+--- 
+
+### Anwendung des Hamming-Abstands zur Fehlererkennung
+
+- Ein Code mit Hamming-Abstand **$h = 2$** kann **alle 1-Bit-Fehler erkennen**:
+- Wenn sich in einem Wort **ein Zeichen** verändert, entsteht **kein anderes gültiges Codewort**.
+- Beispiel: Aus `"sie"` wird durch einen Fehler z. B. `"sie" → "s_e"`, `"si_"`, `"_ie"`  
+  → keines dieser Wörter ist gültig im Code.
+
+- Ein **2-Bit-Fehler** kann jedoch **nicht immer erkannt werden**:
+  - Beispiel: `"ein"` → `"sie"` durch zwei fehlerhafte Zeichen
+  - In diesem Fall sieht das empfangene Wort wie ein **gültiges Codewort** aus,
+    obwohl es aus einem anderen stammt.
+  - → Der Fehler bleibt **unbemerkt**.
 
 
 ---
@@ -153,7 +175,7 @@ Jedes zweite Bit ist dann im Mittel gestört, die Nachricht also wertlos
 * Hamming-Abstand zwischen den vier Worten ist jeweils 1, 
 * d. h. falls durch einen Fehler nur ein Bit umgekehrt wird, erhält der Empfänger zwar ein anderes, aber ebenso gültiges Codewort
   * Angenommen es treten nur Einfachfehler auf (es wird also maximal ein Bit geflippt)
-  * Kann man einen binären Code entwickeln, der es nicht nur ermöglicht Fehler zu erkennen, sondern diese auch zu beheben?
+  * _Kann man einen binären Code entwickeln, der es nicht nur ermöglicht Fehler zu erkennen, sondern diese auch zu beheben?_
 
 
 ---

@@ -6,15 +6,19 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
 <!-- paginate: true -->
 
+
 # 4.1 Speicherprogrammierbare Steuerung (SPS)
+
+<!-- _class: title -->
+
+
+
 
 
 ---
@@ -320,13 +324,15 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ![](images/DaliMixedExample.png)
 
+
+---
+
 -->
 
 ---
 
 ## Speicherprogrammierbare Steuerung (SPS)
 
----
 
 ### Messkette: Elektronische Sicht der Steuerung
 
@@ -585,21 +591,13 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 
 - Es gibt Sensoren mit 2, 3, 4 Leitern
 - Zunehmende Messgenauigkeit (Einfluss des Leiterwiderstands kann herausgerechnet werden)
-![h:500](images/2-3Leiter-Sensoren.png)
 
----
-
-#### Signalformen
 
 <center>
 
-![h:450](images/Singalformen.png)
+![h:400](images/2-3Leiter-Sensoren.png)
 
 </center>
-
-
-* live zero lässt Kabelbruch erkennen
-[Quelle](https://download.beckhoff.com/download/document/Application_Notes/DK9221-1111-0059.pdf)
 
 ---
 
@@ -615,7 +613,24 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 * Single-Ended: alle Sensoren liegen auf dem gleichen V- Potential (nur ein Kabel zurück)
 * Differential: jeder Sensor hat sein eigenes V- Potential (weniger Störanfällig)
 
-[Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/ep3356/1668832651.html&id=)
+[Bildquelle](https://infosys.beckhoff.com/index.php?content=../content/1031/ep3356/1668832651.html&id=)
+
+---
+
+#### Signalformen
+
+<center>
+
+![h:450](images/Singalformen.png)
+
+</center>
+
+
+* live zero lässt Kabelbruch erkennen
+
+[Bildquelle](https://download.beckhoff.com/download/document/Application_Notes/DK9221-1111-0059.pdf)
+
+
 
 ---
 
@@ -750,12 +765,12 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 
 ![bg right:33% w:300](images/Drucksensor.png)
 
-- In einer Lüftungsanlage soll ein Drucksensor (Druckbereich 0-10 bar) mit einem verbaut werden
+- In einer Lüftungsanlage soll ein Drucksensor (Druckbereich 0-10 bar) mit einem verbaut werden (siehe nöchste Folie)
 - Wichtig ist hierbei, dass ein Drahtbruch sofort erkannt wird
-* Welches Sensorsignal wählen Sie?
-* Welche Klemme wählen Sie?
-* Was ist die kleinste Druckdifferenz, die Sie an der SPS erfassen können?
-* Zeichen Sie, wie sie den Sensor anschließen würden
+  * Welches Sensorsignal wählen Sie?
+  * Welche Klemme wählen Sie (wählen Sie eine von der Beckhoff Website)?
+  * Was ist die kleinste Druckdifferenz, die Sie an der SPS erfassen können?
+  * Zeichen Sie, wie sie den Sensor anschließen würden
 
 [Quelle](https://www.sensorshop24.de/productpdf/download/file/id/1009/name/Drucktransmitter_G14%2522_oder_G12%2522_f%25C3%25BCr_%25C3%259Cber-_und_Unterdruck_mit_Normstecker_%25280%25E2%2580%259110V4%25E2%2580%259120mA%2529.pdf/)
 

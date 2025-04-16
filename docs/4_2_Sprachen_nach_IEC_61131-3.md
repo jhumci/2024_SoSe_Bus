@@ -6,9 +6,7 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
@@ -16,6 +14,11 @@ theme: lemon
 
 
 # 4.2 SPS-Sprachen nach IEC 61131-3
+
+
+<!-- _class: title -->
+
+
 
 ---
 

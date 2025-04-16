@@ -6,15 +6,27 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
 <!-- paginate: true -->
 
+
 # 5.4 Bussysteme in der Gebäudeautomation
+
+
+
+
+<!-- _class: title -->
+
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
 
 ---
 

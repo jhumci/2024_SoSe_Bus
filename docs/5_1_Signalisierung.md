@@ -6,14 +6,17 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
+<!-- paginate: true -->
+
+
 # 5.1 Signalisierung und Leitungscodes
 
+
+<!-- _class: title -->
 
 --- 
 
@@ -67,9 +70,9 @@ theme: lemon
 * **Telegramminhalt**: welche Information
 * **Topologie**: Verkabelung
 * **Teilnehmerhierarchie**: Master, Slave, ...
-* **Adressierung**: Wie erreicht man Komponenten
+* **Adressierung**: Wie erreicht man Komponenten?
 * **Buszugriffsverfahren**: Wer sendet wann?
-* **Signalisierung**: Wie werden Telegramme übertragen
+* **Signalisierung**: Wie werden Telegramme übertragen?
 * **Übertragungsmedium**: z.B: Kabel oder Funk
 
 ![bg width:400 right:35%](images/csm_Gateways-Bussysteme-sicher-verbinden_a5b35a71af.jpg)
@@ -197,9 +200,9 @@ theme: lemon
 
 
 - Erklären Sie verbal, wie die Leitungscodes funktionieren
-- Non-Return-to-Zero Low Level
-- Non-Return-to-Zero Inverted
-- Return-to-Zero
+  - Non-Return-to-Zero Low Level
+  - Non-Return-to-Zero Inverted
+  - Return-to-Zero
 - Welche Vor- und Nachteile haben die verschiedenen Leitungscodes?
 
 ---
@@ -234,15 +237,15 @@ theme: lemon
 
 <center>
 
-![w:550](images/Bus-I2C-PullUp.png)![w:550](images/Bus-I2C-Zeitdiagramm.png)
+![w:500](images/Bus-I2C-PullUp.png)![w:500](images/Bus-I2C-Zeitdiagramm.png)
 
 </center>
 
 
 * Neben der Datenleitung `SDA` (Serial Data) gibt es eine Taktleitung `SCL` (Serial Clock), mit welcher der Master vorgibt, wann `SDA` gelesen wird (z.B.`I²C`-Bus)
-* Probleme: 
-  * Taktleitung benötigt zusätzliche Leitung
-  * Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung ,welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master (System Clock) schon weitergezogen
+* Taktleitung benötigt zusätzliche Leitung
+* Bei langen Leitungen kann es zu Phasenverschiebungen kommen. D.h. bis die Spannung auf der Datenleitung, welche vom Busteilnehmer gesendet wurde, ankommt, ist der Takt beim Master (System Clock) schon weitergezogen
+
 [Quelle](http://fmh-studios.de/theorie/informationstechnik/i2c-bus/#_)
 
 
@@ -251,11 +254,12 @@ theme: lemon
 ### Asynchrone Datenübertragung
 
 * Jeder Busteilnehmer verfügt über eine eigene Taktquelle (`Sample/Serial/System Clock`), die deutlich schneller taktet als die Datenübertragung
-* Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. RS-232) 
+* Die zählt, wie lange die Spannung auf der Leitung gleich bleibt
+* Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. [RS-232](https://de.wikipedia.org/wiki/RS-232)) 
 
 <center>
 
-![w:550](images/assync.png)
+![w:650](images/assync.png)
 
 </center>
 
@@ -271,8 +275,7 @@ theme: lemon
 </center>
 
 
-* Mit mehreren parallelen Leitungen können ebenfalls 
-mehr Symbole bei gleicher Baud-Rate übertragen werden
+* Mit mehreren parallelen Leitungen können ebenfalls mehr Symbole bei gleicher Baud-Rate übertragen werden
 * Kaum Einsatz in Feldbussen (welche Geräte *im Feld* verbinden), häufig jedoch in Computern ([PCI](https://de.wikipedia.org/wiki/Peripheral_Component_Interconnect), [ATA](https://de.wikipedia.org/wiki/ATA/ATAPI))
 
 ---
@@ -307,9 +310,9 @@ mehr Symbole bei gleicher Baud-Rate übertragen werden
 * Leitungen sind über Schirmung gegen Störungen abgesichert
 * Zwei Drähte für Spannungspotentiale
 * Zwei Drähte für Daten (Werte immer gegenläufig - half duplex)
-* Kein Draht für Takt (spezielle NRZ-S Kodierung mit Bit Stuffing)
+* Kein Draht für Takt (spezielle [NRZ-S](https://de.wikipedia.org/wiki/Non_Return_to_Zero) Kodierung mit Bit Stuffing)
 * $480 \text{ Baud}$
-[Quelle](https://commons.wikimedia.org/wiki/File:USB_3.0_Kabel_und_Stecker.png, https://de.wikipedia.org/wiki/Non_Return_to_Zero)
+[Quelle](https://commons.wikimedia.org/wiki/File:USB_3.0_Kabel_und_Stecker.png)
 
 
 ---

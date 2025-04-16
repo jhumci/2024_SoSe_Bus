@@ -6,9 +6,18 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
+theme: beams
 
-theme: lemon
+---
+
+<!-- paginate: true -->
+
+
+# 5.2 Buszugriffsverfahren
+
+
+
+<!-- _class: title -->
 
 ---
 
@@ -21,7 +30,6 @@ img[alt~="center"] {
 
 <!-- paginate: true -->
 
-# 5.2 Buszugriffsverfahren
 
 ### 🎯 Lernziele
 
@@ -162,6 +170,7 @@ Kopieren Sie den folgenden Code in: https://jsfiddle.net/
 
 ---
 
+<!-- >
 ```
 sequenceDiagram
     User Interface->>Steuerung: Schalte Licht an
@@ -183,6 +192,7 @@ sequenceDiagram
 
 
 ---
+-->
 
 
 ## Aufgaben von Buszugriffsverfahren
@@ -373,7 +383,7 @@ sequenceDiagram
 
 * Zwei **Sender** beginnen etwa **gleichzeitig** mit der Sendung 
 * Sendungen kollidieren und zerstören sich gegenseitig (**Überlagerung** der Wellen)
-* Wird erkannt, wenn der Empfänger die übertragenen Daten auf Fehler überprüft (**Prüfsumme**)
+* Wird erkannt, wenn der Empfänger die übertragenen Daten auf Fehler überprüft (**Prüfsumme** vgl. Kapitel 5.3)
 * Voraussetzung: Sender empfangen ihre eigenen Signale während der Sendung. 
 * ist es zur Kollision gekommen und die Übertragung wird sofort eingestellt. (**Collision Detection**, CSMA/CD)
 
@@ -423,8 +433,7 @@ mit $t_s$ Signallaufzeit,
 ####  Zeitverhalten
 
 - mit steigender Busauslastung steigt die Wahrscheinlichkeit einer Kollision
-- Verzögerung bis zum Zustellerfolg aller
- Nachrichten am Beispiel ETHERNET (CSMA/CD)
+- Verzögerung bis zum Zustellerfolg aller Nachrichten am Beispiel ETHERNET (CSMA/CD)
 
 
 ![bg right height:380](images/ZeitverhaltenEhternet.png)
@@ -437,7 +446,7 @@ mit $t_s$ Signallaufzeit,
 
 <center>
 
-![](images/Brandszenario.svg)
+![h:200](images/Brandszenario.svg)
 
 </center>
 

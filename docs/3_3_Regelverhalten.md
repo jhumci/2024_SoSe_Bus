@@ -34,9 +34,75 @@ theme: beams
 
 ---
 
+### Umformung mit Vorhalt- und Nachstellzeit für PID-Regler:
+- Neben der Darstellung mit Vorhalte- und  Nachhaltezeit findet sich auch häufig eine Darstellung mit Faktoren ($K$):
+- $u(t)=K_P \cdot e(t) + \frac{1}{T_N}\int_0^te(\tau)d\tau + T_v \frac{de(t)}{dt}$
+
+- $u(t)=K_P \cdot e(t) + K_I\int_0^te(\tau)d\tau + K_d \frac{de(t)}{dt}$
+
+- $u(t)=K_P \cdot [e(t) + \frac{K_I}{K_P}\int_0^te(\tau)d\tau + \frac{K_D}{K_P} \frac{de(t)}{dt}]$
+
+
+---
+
+### Diskrete Implementierung als [Python-Klasse](https://colab.research.google.com/drive/1O8G7-Fn4ul-Wgq0B6-iOtqbzagVuC1Vz?usp=sharing)
+
+```Python
+class PIDRegler:
+    def __init__(self, kp, ki, kd, dt):
+        """
+        Diskreter PID-Regler ohne Begrenzung
+        :param kp: Proportionalbeiwert
+        :param ki: Integralbeiwert
+        :param kd: Differentialbeiwert
+        :param dt: Abtastzeit
+        """
+        self.kp = kp
+        self.ki = ki
+        self.kd = kd
+        self.dt = dt
+
+        self.integral = 0
+        self.last_error = 0
+
+    def reset(self):
+        """Setzt internen Zustand zurück."""
+        self.integral = 0
+        self.last_error = 0
+
+    def update(self, setpoint, measurement):
+        """
+        Berechnet den PID-Reglerausgang
+        :param setpoint: Sollwert
+        :param measurement: Istwert
+        :return: Steuersignal
+        """
+        error = setpoint - measurement
+
+        # Integralanteil
+        self.integral += error * self.dt
+
+        # Differentialanteil
+        derivative = (error - self.last_error) / self.dt
+
+        # PID-Ausgabe
+        output = self.kp * error + self.ki * self.integral + self.kd * derivative
+
+        # Fehler für nächsten Schritt speichern
+        self.last_error = error
+
+        return output
+```
+
+---
+
 ## Systeme ohne zeitliche Verzögerung
 
+<center>
+
 ![h:400](images/ohneTrägheit.svg)
+
+</center>
 
 * alle Systeme reagieren unmittelbar auf Veränderungen der Eingänge
 * z.B. wird die Lichtstärke der Lampe ($u_r$) erhöht, erhöht sich die Helligkeit im Raum ($y$)
@@ -47,7 +113,11 @@ theme: beams
 
 ## Systeme mit zeitlicher Verzögerung
 
+<center>
+
 ![h:400](images/TraegeSysteme.svg)
+
+</center>
 
 * z.B. mit Erhöhung des Durchfluss durch die Heizung ($u_r$) erwärmt sich der Raum nur langsam ($y$). Das Thermometer gibt die gemessene Temperatur ($y_m$) nur mit Verzögerung weiter
 
@@ -55,8 +125,11 @@ theme: beams
 
 ### Bestimmung des dynamischen Verhaltens
 
+<center>
 
 ![h:350](images/ReglerDynamisch.png)
+
+</center>
 
 
 
@@ -82,9 +155,164 @@ der Regelgröße $y$ zu erhalten
 
 ---
 
+## 🌡️ Aufgabe 1: Reaktion von PID und PT1 auf Einheitssprung
+
+Ziehen Sie die Elemente `Step` und `PID`, `Trasfer Fcn` und `Scope` in den Arbeitsbereich und verbinden Sie diese sinnvoll.
+
+- `Step`: Einheitssprung mit Amplitude 1 und Zeit 1
+- `PID`: PID-Regler mit `P=1`, `I=0`, `D=0`
+- `Transfer Fcn`: PT1-Glied mit Nummerator `[1]` und Denominator `[5, 1]`
+- `Scope` mit zwei Eingängen
+
+Passen die Parameter an und beobachten Sie die Reaktion des Systems.
+
+---
+
+### 🤓 Die Transferfunktion des PT1-Gliedes ist:
+
+  $$
+  G(s) = \frac{1}{5s + 1}.
+  $$
+
+Eine Transferfunktion ist eine mathematische Beschreibung eines Systems im Frequenzbereich. Für uns ist jetzt die Form wichtig, die wir in Simulink verwenden können. Die Übertragungsfunktion eines PT1-Gliedes ist:
+$$
+G(s) = \frac{1}{\tau s + 1} = \frac{\text{Ausgangsgröße im Frequenzbereich}}{\text{Eingangsgröße im Frequenzbereich}}
+$$
+
+wobei wir $\tau$ als Zeitkonstante bezeichnen. Diese Zeitkonstante beschreibt, wie schnell das System auf eine Änderung reagiert. In unserem Fall ist $\tau = 5$ Sekunden. Zu diesem Zeitpunkt hat das System 63% der Endantwort erreicht. Nach 5 Zeitkonstanten ($t=5\tau$) hat das System 99% der Endantwort erreicht.
+
+
+---
+
+## 🌡️ Aufgabe 2: Heizkurve einer Heizung (ohne Regelung)
+
+<center>
+
+![h:500](https://www.energiesparhaus.at/bilderupload2023/20231127846784.jpg)
+
+</center>
+
+---
+
+### Situation
+
+In einem ausgekühlten Gebäude wird die Raumtemperatur durch eine einfache **Heizkurve** gesteuert. Es gibt **keine Rückkopplung**, sondern nur eine fest definierte Beziehung zwischen der **Außentemperatur** und der **Vorlauftemperatur** der Heizung. Wir nehmen an dies passiert im Stellglied verzögert mittels PT1-Glied ($\tau=60 \text{ min}$). Die Vorlauftemperatur beeinflusst wiederum die **Raumtemperatur** in der Steuerstrecke, ebenfalls mit trägem Verhalten verzögert mittels PT1-Glied ($\tau=120 \text{ min}$ und eine proportionale Verstärkung von $0.35$).
+
+---
+
+### Die Zusammenhänge sind wie folgt:
+
+Die [Heizkurve](https://de.wikipedia.org/wiki/Heizkurve) berechnet die Vorlauftemperatur $T_{\text{VL}}$ aus der Außentemperatur $T_{\text{außen}}$:
+
+$$
+T_{\text{VL}} = a \cdot (T_{\text{außen}}) + b
+$$
+
+mit:
+
+- $a = -1{,}5$ (Steigung der Heizkurve)  
+- $b = 60$ (Basisaufschlag)
+
+Die **Raumtemperatur** $T_{\text{Raum}}$ reagiert auf die Vorlauftemperatur mit einem **PT1-Verhalten**: Für die Simulation im Matlab verwenden wir die Übertragungsfunktion:
+
+$$
+G(s) = \frac{1}{\tau s + 1}, \quad \tau = 120\ \text{min}
+$$
+
+---
+
+### 🧩 Aufgabe 2a: Blockschaltbild zeichnen
+
+Zeichnen Sie ein Blockschaltbild der Steuerkette mit folgenden Blöcken:
+
+- Außentemperatur (Eingangsgröße)  
+- Heizkurve (Stellglied)  
+- Vorlauftemperatur (Stellgröße)  
+- Raum (Steuerstrecke)  
+- Raumtemperatur (zu steuernde Größe)  
+
+> **Hinweis:** Es handelt sich um eine *Steuerung*, d. h. **keine Rückführung** der Raumtemperatur!
+
+---
+
+### 🛠️ Aufgabe 2b: Umsetzung in Simulink
+
+Erstellen Sie in MATLAB Simulink ein Modell der oben beschriebenen Steuerstrecke:
+
+- Außentemperatur als **Step-Block** mit einem Sprunghaften Abfall nach 1000 Minuten von 10 auf -5°C.  
+- Heizkurve als **einfache Rechenvorschrift** (Gain- und Summierblöcke).  
+- Die Stellglied und Raumdynamik als **Transfer Fcn** mit:  
+  $$
+  G(s) = \frac{1}{\tau s + 1}
+  $$
+- Der Raum mit einem zusätzlichen Gain-Glied von $0.35$ (Verstärkung).
+
+
+---
+
+### 🔍 Beobachtung
+
+- Visualisieren Sie die Raumtemperatur, Vorlauftemperatur und Außentemperatur im **Scope**.
+- Wie entwickelt sich die Raumtemperatur über der Zeit?  
+- Was passiert, wenn die Außentemperatur plötzlich sinkt?  
+- Wie gut funktioniert die Steuerung?
+
+
+---
+
+## 🔁 Aufgabe 3: Temperaturregelung eines Raumes mit P-Regler
+
+### Situation
+
+Der Raum soll nun auf eine gewünschte Temperatur geregelt werden. Die **Regelgröße** ist die **Raumtemperatur** $T(t)$, die durch das Heizsystem geregelt wird.
+Das gesamte Heizsystem wird nun als $PID$-Regler abgebildet. An dessen Eingang wird der Unterschied zwischen **Soll- und Ist-Temperatur** erfasst. Die Raum verhält sich, wie bisher (PT1 + Gain). Wir können die Raumtemperatur exakt und unmittelbar messen. 
+
+
+---
+
+## 🧩 Aufgabe 2a: Blockschaltbild
+
+Zeichnen Sie ein **Blockschaltbild** des Regelkreises. Die folgenden Elemente sollen enthalten sein:
+
+- Soll-Temperatur (Führungsgröße)
+- Temperatur-Differenz (Regelabweichung $e(t)$)
+- Heizsystem (Regler)  
+- Regelstrecke (Raum als PT1-Glied)
+- Ist-Temperatur (Regelgröße)
+
+
+---
+
+## 🛠️ Aufgabe 2b: Umsetzung in Simulink
+
+Erstellen Sie in **MATLAB Simulink** ein Modell des beschriebenen Regelkreises:
+
+- Verwenden Sie einen **Step-Block** für die Solltemperatur (z. B. Sprung  von $15$ auf $20^\circ \text{C}$ bei $t = 300$ min).  
+- Implementieren Sie den **PID-Regler** zunächt mit einem $K_p = 3$ und ohne I und D-Anteil.  
+- Simulationsdauer: **1000 Sekunden**  
+- Beobachten Sie die Entwicklung der Führungsgröße, Regelabweichung und Ist-Temperatur im **Scope**.
+
+---
+
+## 🔍 Beobachtungen
+
+- Wird die Soll-Temperatur erreicht?
+- Wie verändert sich die Regelung, wenn Sie $K_p$ erhöhen oder verkleinern?
+- Passen Sie auch die Größen $T_n$ ($1/$ `I`) und $T_v$ (`D`) an.
+- Was müsste man ändern, um die Regelabweichung vollständig zu eliminieren?
+- Testen Sie die `Tune`-Funktion von Simulink. Was passiert?
+
+
+
+---
+
 ## Regelverlauf der verschiedenen Reglertypen im Zeitverlauf
 
+<center>
+
 ![](images/Reglervergleich.gif)
+
+</center>
 
 * Reaktion auf Sprungfunktion im einfachen Regelkreis
 * Deutlich wird die bleibende Regelabweichung des P-Reglers
