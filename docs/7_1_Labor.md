@@ -6,54 +6,125 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: inver
-
-theme: lemon
+theme: beams
 
 ---
 
 <!-- paginate: true -->
 
-# Bussysteme Labor
+
+
+# Labor: Bussysteme & Elektrotechnik
+
+<!-- _class: title -->
+
+Julian Huber & Michael Renzler 
 
 ---
 
-## Organisatorisches
+## Labore
 
-- Das Labor besteht aus verschiedenen Teilen
-- Der Laborbericht bezieht sich jedoch nur auf einen der Teile
-- Der Laborbericht wird in Gruppen von 2-3 Personen erstellt
-- Die Vorgaben für den Laborbericht sind im Academic Walkthrough zu finden
+### Grundlegendes
 
----
-
-### Aufgabenstellung
-
-- Im Rahmen dieses Labores geben Sie **einen** Laborbericht ab
-- 
+- Bewertung anhand Laborbericht nach Vorgaben des *Academic Walkthrough*
+-  Abweichungen werden von der Lehrveranstaltungsleitung bekannt gegeben
+- Vollständige Anwesenheitspflicht
 
 ---
 
-## Themenkomplex 1: SPS-Programmierung
+### Ziele des Labors
 
-- Bearbeiten Sie zunächst die Aufgabenstellung zur SPS-Programmierung (Appendix: 4.3 Twincat) durch, um sich mit der Programmierung der SPS vertraut zu machen.
-
----
-
-## Themenkomplex 2: SPS-Programmierung mit Funktionsbausteinen
-
----
-
-## Themenkomplex 3: Datenübertragung mittels MQTT
+- Hinterfragen der Theorie
+- Entwickeln von Lösungen
+- Selbsthilfe beim Umgang mit neuen Themen
+- Anfertigen einer Technischen / Wissenschaftlichen Dokumentation (**Laborbericht**)
+- **Spaß!**
 
 ---
 
-### Optional: Schaltung per MQTT steuern
+### Gruppen und Planung
 
----
-
-## Themenkomplex 4: Lichtsteuerung mit DALI
+- Pro Laborgruppe (1, 2, 3) können weitere Gruppen (z.B. Zweier-Teams gebildet werden)
+- Diese geben auch gemeinsam den Bericht ab
+- Das Bussystem-Labor findet in im SBT-Labor *4C-313* statt
+- Das Elektrotechnik-Labor findet in der Andreas-Hofer-Str. 4. im *MCI VI* statt
+- Die Passagen des *Academic Walkthrough* zum Labor und die Labor-Unterlagen sind **vor** dem ersten Labortermin zu lesen
 
 
 ---
 
+## Sicherheit
+
+
+### Sicherheitsregeln für Arbeiten unter Spannung
+
+- Freischalten (ab 50 V AC bzw. 120 V DC),
+- gegen Wiedereinschalten sichern 
+- Spannungsfreiheit feststellen,
+- Erden und Kurzschließen:
+    - a) Hochspannungsanlagen jedenfalls,
+    - b) in Kleinspannungs- oder Niederspannungsanlagen, wenn die Gefahr besteht, dass die Anlage unter Spannung gesetzt wird
+- benachbarte, unter Spannung stehende Teile abdecken oder abschranken.
+
+###### https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20007682
+
+
+---
+
+## Sicherheit
+
+### Stromunfälle
+
+1. In allen Elektro-Technik-Laboren gibt es **Not-Aus-Schalter**, diese sind in Notfällen zu betätigen.
+2. Ist eine Person im Stromkreis oder besteht die Gefahr, dass eine **Person im Stromkreis** sein könnte, ist darauf zu achten, diese Person nicht zu berühren, sondern **mittels nichtleitender Hilfsmittel** aus dem Stromkreis zu befördern ist (Decke, Besen et cetera).
+3. Wird ein Not-Aus-Schalter betätigt, ist dies unbedingt und unverzüglich einer Lektorin oder einem Lektor beziehungsweise einer Tutorin oder einem Tutor zu **melden**. Auf keinen Fall darf der **Not-Aus-Schalter selbst wieder entsichert** werden.
+
+
+---
+
+## Sicherheit
+
+### Erste Hilfe
+
+1. Ruhe bewahren und überlegt handeln.
+2. Auf die eigene Sicherheit achten.
+3. Die Rettung von Personen ist wichtiger als die Bergung von Sachgütern.
+4. Betreuerin oder Betreuer informieren.
+5. Gegebenenfalls ist eine Schockbekämpfung durchzuführen.
+
+- Nummer Rettung: **144**
+
+- Bei hohen Spannungen auch ohne Auffälligkeiten zur Beobachtung ins Krankenhaus!
+
+
+
+---
+
+## Bussysteme
+
+### Themen
+
+- SPS-Programmierung mit Strukturiertem Text
+- SPS-Programmierung mit Funktionsbausteinen
+- Datenübertragung in die Cloud mittels MQTT
+- Lichtsteuerung mit DALI
+
+- Nützlich
+    - [SPS Einführung](https://www.youtube.com/watch?v=GOFUsWc61Hk&list=PL2LjUivoqcmUNF4wfaZdWQEZm9ptpIFuw)
+![bg right](images/IMG_20220513_143419.jpg)
+
+---
+
+## Elektrotechnik
+
+
+### Themen
+
+- Gleichstrom
+- Kondensator und Spule
+- Wechselstrom
+
+- Nützlich
+    - [Multimeter schützen](https://www.youtube.com/watch?v=KOTmfqc9nzU)
+    - [Einführung Oszilloskop](https://www.youtube.com/watch?v=lI-zZ85lKco)
+![bg right](images/8182.15-p.gif)

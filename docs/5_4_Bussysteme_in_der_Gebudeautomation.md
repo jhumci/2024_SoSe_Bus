@@ -651,6 +651,81 @@ Je nach Bussystem stellen verschiedene Anbieter, verschiedene Softwarelösungen 
 * 1: Bei Ausbleiben eines Steuerbefehls an Vorschaltgerät für länger als konfigurierte Zeit wird dies als Befehl zum Anschalten interpretiert 
 * 2: Bei längerem Ausbleiben eines Steuerbefehls der Steuercontroller wird eine Warnung angezeigt
 
+
+---
+
+## Rechercheaufgabe: Gebäudebussysteme und ihre Anwendungsfälle
+
+Jeder recherchiert ein spezifisches Gebäudebussystem und beschreibt einen praxisnahen Anwendungsfall, um ein tiefgehendes Verständnis für die Funktionsweise und Einsatzmöglichkeiten von Bussystemen in der Gebäudeautomation zu entwickeln.
+
+--- 
+
+### Aufgabenbeschreibung
+
+- Wählen Sie eines der folgenden Gebäudebussysteme aus: KNX, BACnet, Modbus, M-Bus, LON, LCN, SMI, DMX, ZigBee, EnOcean, Z-Wave, WirelessHART, WirelessKNX, Wireless M-Bus, LoRaWAN.
+- Alternativ können Sie ein anderes Gebäudebussystem mit Rücksprache des Dozenten wählen.
+- Jedes Bussystem darf nur von einem Studierenden bearbeitet werden.
+- Recherche des Bussystems: Beschreiben Sie die folgenden Aspekte des gewählten Bussystems:
+
+--- 
+
+### Technische Grundlagen:
+
+- Welche Übertragungsmedien (z. B. Twisted Pair, Funk, Ethernet, Funk) werden verwendet
+- Welche Baudrate, Spannungslevel, Leitungscodes oder Codierungsverfahren auf Wellen sind typisch?
+
+### Buszugriff und Kommunikation:
+
+- Welches Buszugriffverfahren (z. B. Master/Slave, Multi-Master, CSMA/CA) wird genutzt?
+- Wie ist der Telegrammaufbau strukturiert?
+
+---
+
+### Hauptanwendungsbereiche:
+
+- In welchen Bereichen der Gebäudeautomation wird das System eingesetzt (z. B. Beleuchtung, Heizung, Zählerdaten)?
+
+### Vorteile und Einschränkungen:
+
+- Was sind die Stärken und Schwächen des Systems im  - Vergleich zu anderen Bussystemen?
+- Nutzen Sie mindestens drei verlässliche Quellen (z. B. Herstellerseiten, Fachliteratur, wissenschaftliche Artikel). Geben Sie alle Quellen in einer Literaturliste an.
+
+---
+
+### Beschreibung eines Anwendungsfalls:
+
+- Entwickeln Sie einen konkreten, praxisnahen Anwendungsfall für das gewählte Bussystem. Beispiele:
+Steuerung der Beleuchtung in einem Bürogebäude (DALI).
+- Überwachung der Raumtemperatur in einem Schulgebäude (KNX).
+- Erfassung von Verbrauchsdaten in einem Wohnkomplex (M-Bus).
+
+---
+
+### Beschreibung eines Anwendungsfalls:
+
+- Beschreiben Sie den Anwendungsfall detailliert:
+  - Szenario: Welche Umgebung und Anforderungen gibt es (z. B. Büro mit 20 Arbeitsplätzen, variable Beleuchtung)?
+  - Komponenten: Welche Geräte (Sensoren, Aktoren, Controller) werden eingesetzt?
+  - Funktionsweise: Wie kommunizieren die Komponenten? Welche Daten werden übertragen?
+  - Nutzen: Welche Vorteile bietet das Bussystem in diesem Szenario (z. B. Energieeinsparung, Flexibilität)?
+
+---
+
+### Präsentation der Ergebnisse:
+
+- Erstellen Sie eine Präsentation (max. 3 Folien).
+- Kurze Vorstellung des Bussystems mit Technische Details: Zusammenfassung der recherchierten Aspekte.
+- Anwendungsfall: Detaillierte Beschreibung des Szenarios.
+- Fazit: Bewertung der Eignung des Systems für den Anwendungsfall.
+- Literaturliste: Auflistung aller verwendeten Quellen (z. B. im APA-Format).
+- Bereiten Sie eine kurze mündliche Präsentation (max. 5 Minuten) vor, in der Sie Ihre Ergebnisse der Gruppe vorstellen.
+
+---
+
+### Hinweise
+
+Arbeiten Sie eigenständig, um ein tiefes Verständnis zu entwickeln. Nutzen Sie Herstellerseiten (z. B. Tridonic für DALI, KNX Association für KNX) und technische Dokumentationen als Hauptquellen. Bei Fragen zur Auswahl des Bussystems oder des Anwendungsfalls wenden Sie sich frühzeitig an den Dozenten.
+
 ---
 
 ## KNX
