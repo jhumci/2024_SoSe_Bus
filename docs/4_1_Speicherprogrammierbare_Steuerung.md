@@ -89,11 +89,11 @@ stateDiagram-v2
 
 ### Lösung "Industrie 2.0"
 
-<center>
+
 
 ![w:800](images/Wechselschaltung.svg)
 
-</center>
+
 
 * S1, S2: Schalter mit zwei Zuständen
 * H1: Glühlampe
@@ -102,11 +102,11 @@ stateDiagram-v2
 
 #### Wechselschaltung im Gebäude
 
-<center>
+
 
 ![](images/EinbauWechselschaltung.png)
 
-</center>
+
 
 [Quelle](https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf)
 
@@ -129,11 +129,11 @@ stateDiagram-v2
 * Entkopplung von Steuerstrom und Laststromkreis durch Relais oder Schütz
 * Steuerstromkreis hat i.d.R. niedrigere Spannung
 
-<center>
+
 
 ![width:500 right](images/Relais_Animation.gif)
 
-</center>
+
 
 ---
 
@@ -168,11 +168,11 @@ stateDiagram-v2
 
 #### Stromstoßschalter
 
-<center>
+
 
 ![](images/StromStossSchaltung.png)
 
-</center>
+
 
 [Quelle](https://cdn-reichelt.de/documents/datenblatt/TIPP/Elektroinstallation(Kopp).pdf)
 
@@ -200,11 +200,11 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 #### Aufbau SPS - Loxone Mini Server
 
-<center>
+
 
 ![height:400](images/Loxone.png)
 
-</center>
+
 
 [Quelle](https://www.loxone.com/dede/produkte/gebaeude-und-hausautomation-miniserver/)
 
@@ -212,11 +212,11 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 #### Aufbau SPS - Siemens Logo
 
-<center>
+
 
 ![height:400](images/7942-230rceo.jpg)
 
-</center>
+
 
 ---
 
@@ -228,11 +228,11 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 ### Aufbau einer SPS
 
-<center>
+
 
 ![bg h:400 right:40%](images/S7CPU3V2.png)
 
-</center>
+
 
 [Quelle](https://www.xplore-dna.net/mod/page/view.php?id=294)
 
@@ -433,11 +433,11 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 ## EVA-Prinzip
 <!-- _class: white -->
 
-<center>
+
 
 ![height:500](images/EVA-Prinzip.svg)
 
-</center>
+
 
 
 [Quelle](https://upload.wikimedia.org/wikipedia/commons/f/f2/EVA-Prinzip.svg)
@@ -496,11 +496,11 @@ bOut1 = stromstossschalter(s1,s2,status_lampe)
 
 #### Passive Analoge Signale
 
-<center>
+
 
 ![h:200](images/schaltungsarten_zeichnung_beitragsbild-838x376.jpg)
 
-</center>
+
 
 
 * Nutzen Temperaturabhängigkeit eines Widerstands
@@ -593,21 +593,21 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 - Zunehmende Messgenauigkeit (Einfluss des Leiterwiderstands kann herausgerechnet werden)
 
 
-<center>
+
 
 ![h:400](images/2-3Leiter-Sensoren.png)
 
-</center>
+
 
 ---
 
 #### 🤓 Single-Ended vs. Differential
 
-<center>
+
 
 ![h:400](images/1668840971__Web.png)
 
-</center>
+
 
 
 * Single-Ended: alle Sensoren liegen auf dem gleichen V- Potential (nur ein Kabel zurück)
@@ -619,11 +619,11 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 
 #### Signalformen
 
-<center>
+
 
 ![h:450](images/Singalformen.png)
 
-</center>
+
 
 
 * live zero lässt Kabelbruch erkennen
@@ -734,11 +734,11 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 
 ### Analoger Eingang
 
-<center>
+
 
 ![height:400](images/EL3024.png)
 
-</center>
+
 
 
 - Signal ist eine Stromstärke (**4...20mA**)
@@ -750,14 +750,14 @@ Kennlinie eines Pt100 (100 $\Omega$ bei 0 °C)
 
 ### Beispiele für analoge und digitale Signale
 
-<center>
+
 
 |         | Eingang          | Ausgang         |
 |---------|------------------|-----------------|
 | Digital | Taster, ...           | Kontrollleuchte, ... |
 | Analog  | Temperaturfühler, ... | Elektromotor, ...   |
 
-</center>
+
 
 ---
 

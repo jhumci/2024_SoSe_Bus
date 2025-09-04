@@ -22,11 +22,11 @@ headingDivider: 2
 ## Planungsabläufe für die Gebäudeautomation
 
 <!-- _class: white -->
-<center>
+
 
 ![w:850](images/PlanungGebäudeautimatisierung.png)
 
-</center>
+
 
 
 [Quelle](Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation)
@@ -94,12 +94,12 @@ headingDivider: 2
 
 ### Komponenten-Sicht durch Preplanning
 
-<center>
+
 
 ![h:580](images/light-building-eplan-preplanning-02.jpg)
 
 
-</center>
+
 
 [Quelle](https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/)
 
@@ -107,11 +107,11 @@ headingDivider: 2
 
 ### Funktions-Sicht durch Raumautomations-Schema (VDI 3813)
 
-<center>
+
 
 ![h:390](images/RA-Schema.png)
 
-</center>
+
 
 ---
 
@@ -189,11 +189,11 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 ##### Beispiel Verschattungkorrektur
 
-<center>
+
 
 ![](images/11659900299__de__Web.jpg)
 
-</center>
+
 
 
 [Quelle](https://infosys.beckhoff.com/index.php?content=../content/1031/tcplclibhvac/11659363083.html&id=)
@@ -260,11 +260,11 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 ##### Zusammenhang zwischen verschiedenen Funktionen
 
-<center>
+
 
 ![h:400](images/RA-Schema.pdf.png)
 
-</center>
+
 
 
 [Quelle](https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf)
@@ -275,12 +275,12 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 #### Schritt Raumautomations-Schema
 
-<center>
+
 
 
 ![](images/Funktionsschema.svg)
 
-</center>
+
 
 
 ---
@@ -306,11 +306,11 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 ---
 
-<center>
+
 
 ![h:600](images/RA_schemaCut.png)
 
-</center>
+
 
 
 ---

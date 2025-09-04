@@ -16,11 +16,11 @@ headingDivider: 2
 ## EVA-Prinzip
 
 <!-- _class: white -->
-<center>
+
 
 ![](images/Messkette.svg)
 
-</center>
+
 
 
 * Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert
@@ -250,11 +250,11 @@ while True:
 ### Digitale Ausgänge
 
 <!-- _class: white -->
-<center>
+
 
 ![](images/Messkette.svg)
 
-</center>
+
 
 * Ausgänge können mit einer Spannung beschaltet werden
 * Bei einem Raspberry Pi Pico sind die Ausgänge auf $3.3 \,\text{V}$ begrenzt
@@ -305,11 +305,11 @@ while True:
 
 ### Leuchtdioden
 
-<center>
+
 
 ![h:450](images/LED-Aufbau.png)
 
-</center>
+
 
 - Langes Bein: Anode
 
@@ -363,11 +363,11 @@ while True:
 * Relais sind elektromagnetische Schalter, die eine hohe Leistung schalten können indem sie einen Schaltkontakt öffnen oder schließen
 * heute meist nicht mehr mechanisch sondern elektronisch realisiert mit Zusatzfunktionen (Stromstoßrelais, Zeitrelais, Schütze)
 
-<center>
+
 
 ![width:500](images/Relais_Animation.gif)
 
-</center>
+
 
 ---
 
@@ -441,11 +441,11 @@ while True:
 ### Analoge Eingänge
 
 <!-- _class: white -->
-<center>
+
 
 ![](images/Messkette.svg)
 
-</center>
+
 
 * Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)
 * z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen
@@ -524,11 +524,11 @@ while True:
 
 ---
 
-<center>
+
 
 ![h:500](images/aufbau_pico_ky018.png)
 
-</center>
+
 
 ---
 
@@ -536,7 +536,7 @@ while True:
 * Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus
 * Notieren Sie sich einige Werte (`ADC`) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte
 
-<center>
+
 
 | Umgebung    | ADC | E in Lux | U in V |
 |-------------|-----|----------|--------|
@@ -545,7 +545,7 @@ while True:
 | Taschenlampe|     |          | |
 
 
-</center>
+
 
 [Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm)
 
@@ -761,11 +761,11 @@ print(os.getenv('MY_NAME'))
 ### Analoge Ausgänge
 
 <!-- _class: white -->
-<center>
+
 
 ![](images/Messkette.svg)
 
-</center>
+
 
 * Entsprechend gibt es auch analoge Ausgänge
 * Diese können z.B. zur Ansteuerung von Motoren genutzt werden

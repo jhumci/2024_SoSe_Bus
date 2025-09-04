@@ -98,11 +98,11 @@ class PIDRegler:
 
 ## Systeme ohne zeitliche Verzögerung
 
-<center>
+
 
 ![h:400](images/ohneTrägheit.svg)
 
-</center>
+
 
 * alle Systeme reagieren unmittelbar auf Veränderungen der Eingänge
 * z.B. wird die Lichtstärke der Lampe ($u_r$) erhöht, erhöht sich die Helligkeit im Raum ($y$)
@@ -113,11 +113,11 @@ class PIDRegler:
 
 ## Systeme mit zeitlicher Verzögerung
 
-<center>
+
 
 ![h:400](images/TraegeSysteme.svg)
 
-</center>
+
 
 * z.B. mit Erhöhung des Durchfluss durch die Heizung ($u_r$) erwärmt sich der Raum nur langsam ($y$). Das Thermometer gibt die gemessene Temperatur ($y_m$) nur mit Verzögerung weiter
 
@@ -125,11 +125,11 @@ class PIDRegler:
 
 ### Bestimmung des dynamischen Verhaltens
 
-<center>
+
 
 ![h:350](images/ReglerDynamisch.png)
 
-</center>
+
 
 
 
@@ -186,11 +186,11 @@ wobei wir $\tau$ als Zeitkonstante bezeichnen. Diese Zeitkonstante beschreibt, w
 
 ## 🌡️ Aufgabe 2: Heizkurve einer Heizung (ohne Regelung)
 
-<center>
+
 
 ![h:500](https://www.energiesparhaus.at/bilderupload2023/20231127846784.jpg)
 
-</center>
+
 
 ---
 
@@ -308,11 +308,11 @@ Erstellen Sie in **MATLAB Simulink** ein Modell des beschriebenen Regelkreises:
 
 ## Regelverlauf der verschiedenen Reglertypen im Zeitverlauf
 
-<center>
+
 
 ![](images/Reglervergleich.gif)
 
-</center>
+
 
 * Reaktion auf Sprungfunktion im einfachen Regelkreis
 * Deutlich wird die bleibende Regelabweichung des P-Reglers

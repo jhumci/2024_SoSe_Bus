@@ -195,11 +195,11 @@ Ein **Paritätsbit** wird hinzugefügt, um die Anzahl der `1`-Bits in einer Nach
 - Die Blocksicherung erweitert das Paritätsbit-Konzept auf eine Matrix aus Datenbits. Für jede Zeile und Spalte wird ein Paritätsbit berechnet.
 - Anstelle nur nach allen X-Bits eine Paritätsbit einzufügen wird auch ein spaltenweises Paritätsbit (im Beispielsweise P als Even-Bit) eingefügt.
 
-<center>
+
 
 ![height:250](images/Blocksicherung.png)
 
-</center>
+
 
 
 [Quelle](Gerhard Schnell & Bernhard Wiedemann )

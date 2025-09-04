@@ -35,11 +35,11 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 >Struktur nach VDI 3814
 
-<center>
+
 
 ![w:700](images/Sktruktur_Gebäudeautomation.png)
 
-</center>
+
 
 [Quelle](Lauckner und Krimmling 2020)
 
@@ -65,11 +65,11 @@ dezentrale Teilprozesse, zur Aufrechterhaltung eines **lokalen** Raumklimas durc
 
 <!-- _class: white -->
 
-<center>
+
 
 ![](images/Schalenmodell.png)
 
-</center>
+
 
 [Quelle](VDI 3813 Blatt 1)
 

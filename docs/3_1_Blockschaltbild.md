@@ -24,11 +24,11 @@ theme: beams
 
 ## Blockschaltbild
 
-<center>
+
 
 ![h:300](images/Blockschaltbild1.png)
 
-</center>
+
 
 * Grafische Beschreibung von Systemen in der Regelungs- und Steuerungstechnik
 * Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind
@@ -119,11 +119,11 @@ theme: beams
 
 <!-- _class: white-->
 
-<center>
+
 
 ![](images/P-controller-symbol-1.svg)
 
-</center>
+
 
 * Das Symbol repräsentiert die Sprungantwort
 * weitere Beispiele:
@@ -428,11 +428,11 @@ class zweipunkt_hysterese():
 - Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS` bzw. `Relay` in Simulink
 - Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
 
-<center>
+
 
 ![h:300](images/TagesLichtHystere.png)
 
-</center>
+
 
 ---
 
