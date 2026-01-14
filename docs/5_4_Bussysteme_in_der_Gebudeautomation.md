@@ -51,7 +51,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 * DALI-USB: Schnittstelle zur Programmierung ggf. ersetzt durch SPS zur Steuerung des Bussystems
 
 
-![bg right](images/DALIVerdrahtungsdiagramm.png)
+![bg right:45%](images/DALIVerdrahtungsdiagramm.png)
 
 [Quelle](https://www.tridonic.com/com/de/download/technical/DALI-Handbuch_de.pdf)
 
@@ -104,11 +104,11 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ### Aufbau
 
-<center>
+
 
 ![](images/DALI-Systembild1-800x439.jpg)
 
-</center>
+
 
 [Quelle](https://www.ledclusive.de/blog/anleitung-zur-dali-installation-im-privathaus-fuer-jedermann/)
 
@@ -117,8 +117,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 ### Merkmale von DALI
 
 - Installation: 
-  - **Versorgungs- und Steueradern** können zusammen 
-  **im selben Kabel** verlegt werden. 
+  - **Versorgungs- und Steueradern** können zusammen **im selben Kabel** verlegt werden. 
   - Die **Verdrahtung** kann in Reihe, sternförmig oder in einer **gemischten Form** erfolgen.
   - Keine Polarität: Die Polarität (DA+/DA-) der DALI-Steuerleitung muss nicht beachtet werden
 - **Verteilte Intelligenz**:
@@ -154,11 +153,11 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ### Telegramm-Format
 
-<center>
+
 
 ![centered](images/5839436427__de__Web.jpg)
 
-</center>
+
 
 
 
@@ -171,22 +170,22 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ---
 
-<center>
+
 
 ![](images/dali-forward-frame-structure.jpg)
 
-</center>
+
 
 
 [Quelle](https://www.picotech.com/library/oscilloscopes/dali-serial-protocol-decoding)
 
 ---
 
-<center>
+
 
 ![](images/dali-te-timing-annotated.jpg)
 
-</center>
+
 
 * `1-1-01110...`
 
@@ -200,8 +199,8 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ![bg right height:300](images/Stromversorgung.png)
 
-- Versorgt den gesamten DALI-DALI-Kreis mit **24 V Gleichstrom**
-- z.B. Leuchtmittel >5 W, Steuercontroller
+- Versorgt den gesamten DALI-DALI-Kreis mit **$24 \text{ V}$ Gleichstrom**
+- z.B. Leuchtmittel $>5 \text{ W}$, Steuercontroller
 
 ---
 
@@ -214,7 +213,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 
 ---
 
-#### Steuermodule Betriebsarten
+#### Betriebsarten von Steuermodulen
 
 
 
@@ -254,7 +253,7 @@ Parameter abzufragen oder Steuerbefehle oder Ereignisse
 #### Betriebsgeräte
 
 - Steuerung und/oder **Stromversorgung** von Leuchtmitteln (z.B. LEDs)
-- Teilweise Transformatoren und Gleichrichter für $230V / AC$
+- Teilweise Transformatoren und Gleichrichter für $230 \text{ V | AC}$
 - Mehrere Betriebsgeräte können zu **einer Gruppe zusammengefasst** werden
 
 ![bg right height:200](images/LED-Betriebsgeräte.png)

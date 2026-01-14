@@ -238,10 +238,10 @@ Kollisionen entstehen, wenn mehrere Teilnehmer gleichzeitig senden. Es gibt zwei
 
 ---
 
-<center>
+
 
 ![height:400](images/ZeitverhaltenEhternet.png)
-</center>
+
 
 
 
@@ -336,12 +336,12 @@ Beim **Summenrahmenprotokoll** sendet ein Master alle Daten in einem einzigen Ra
 
 #### Summenrahmenprotokoll Beispiel EtherCat
 
-<center>
+
 
 
 ![height:450](images/EhterCat.png)
 
-</center>
+
 
 
 - Nutzt Ethernet-Hardware, aber mit Summenrahmenprotokoll.
@@ -352,11 +352,11 @@ Beim **Summenrahmenprotokoll** sendet ein Master alle Daten in einem einzigen Ra
 
 ---
 
-<center>
+
 
 ![](images/Ethercat.png)
 
-</center>
+
 
 * Ein- und Ausgangsklemmen werden über Ethercat angesprochen
 * Hardware wie Ethernet, jedoch mit Summenrahmenprotokoll

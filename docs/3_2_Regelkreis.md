@@ -36,11 +36,11 @@ theme: beams
 
 * Lichtstärke kann (quasi) stetig gesteuert werden (z.B. über Dimmer oder Pulsweitenmodulation)
 
-<center>
+
 
 ![](images/Helligkeitsregelung.svg)
 
-</center>
+
 
 ---
 

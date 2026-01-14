@@ -23,11 +23,11 @@ theme: beams
 ## Unterschiede SPS und Bussysteme
 
 
-<center>
+
 
 ![height:200](images/ZentraleSPS.png) ![height:200](images/DezentralerBus.png)
 
-</center>
+
 
 
 [Quelle](https://webuser.hs-furtwangen.de/~hoenig/2016/Wiki/ac_08/0_Inhalt/01_U-Han/6feldbus.pdf)
@@ -144,23 +144,23 @@ theme: beams
 
 - Wie groß ist jeweils die Symbolrate und die Bitrate?
 
-<center>
+
 
 ![](images/bit-vs-baud.png)
 
-</center>
+
 
 
 ---
 
 ### ✔️ Lösung
 
-<center>
+
 
 
 ![](images/bit-vs-baud-Aufgabe.png)
 
-</center>
+
 
 
 * In beiden Fällen ändert sich die Spannung zehn mal pro Sekunde $\text{Symbolrate} = 10 \text{ Baud}$
@@ -192,11 +192,11 @@ theme: beams
 
 ## ✍️ Aufgabe 5_1_2: Leitungscodes
 
-<center>
+
 
 ![h:200](images/Codierung.png)
 
-</center>
+
 
 
 - Erklären Sie verbal, wie die Leitungscodes funktionieren
@@ -209,11 +209,11 @@ theme: beams
 
 ### ✔️ Lösung
 
-<center>
+
 
 ![h:200](images/Codierung.png)
 
-</center>
+
 
 * Non-Return-to-Zero Low Level: eine `1` wird durch eine niedrige Spannung codiert
 * Non-Return-to-Zero Inverted: Bei jedem Auftreten einer `1` wird die Spannung invertiert
@@ -235,11 +235,11 @@ theme: beams
 
 ### Synchrone Datenübertragung
 
-<center>
+
 
 ![w:500](images/Bus-I2C-PullUp.png)![w:500](images/Bus-I2C-Zeitdiagramm.png)
 
-</center>
+
 
 
 * Neben der Datenleitung `SDA` (Serial Data) gibt es eine Taktleitung `SCL` (Serial Clock), mit welcher der Master vorgibt, wann `SDA` gelesen wird (z.B.`I²C`-Bus)
@@ -257,22 +257,22 @@ theme: beams
 * Die zählt, wie lange die Spannung auf der Leitung gleich bleibt
 * Durch die Übertragung eines Start- und Stop-Bits wird die Taktquelle des Senders und Empfängers synchronisiert (z.B. [RS-232](https://de.wikipedia.org/wiki/RS-232)) 
 
-<center>
+
 
 ![w:650](images/assync.png)
 
-</center>
+
 
 
 ---
 
 ## Serielle und Parallele Busse
 
-<center>
+
 
 ![](images/Parallel.png)
 
-</center>
+
 
 
 * Mit mehreren parallelen Leitungen können ebenfalls mehr Symbole bei gleicher Baud-Rate übertragen werden
@@ -282,11 +282,11 @@ theme: beams
 
 ## Übertragungsarten
 
-<center>
+
 
 ![h:400](images/BBE_SimplexvsDuplex_Transmissions.png)
 
-</center>
+
 
 
 * Simplex: Eine Richtung

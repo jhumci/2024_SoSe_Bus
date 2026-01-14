@@ -6,19 +6,21 @@ footer: Julian Huber - Bussysteme
 
 # Strg+[ ] for Options
 
-class: invert
-
-theme: lemon
+theme: beams
 
 ---
 
 <!-- paginate: true -->
+
+<!-- _class: title -->
+
 
 # Smart Metering
 
 ---
 
 ## Globale Aspekte der Energieversorgung
+
 
 ---
 
@@ -101,7 +103,7 @@ $= 49.2$
 #### Wasserkocher
 
 
-* $P = 3.7 \cdot \frac{11,630}{8760}\frac{kWh}{h}=4.9kW$
+* $P = 3.7 \cdot \frac{11,630}{8760}\frac{\text{kWh}}{\text{h}}=4.9 \text{kW}$
 * als würden mehrere Wasserkocher kontinuierlich durchlaufen
 * **Is it bad to have too many energy slaves / kettles?**
 ![bg right](images/WaterKettle.png)
@@ -116,7 +118,6 @@ $= 49.2$
 * Kosten: Energieerzeugung ist teuer
   ![height:350](images/energy_Cost_bip.png)
 
-* This forecast was from before Russia's attack on Ukraine
 
 
 [Quelle](https://www.bloomberg.com/news/articles/2022-03-16/energy-costs-set-to-reach-record-13-of-global-gdp-this-year)
@@ -241,7 +242,7 @@ $= 49.2$
 
 ---
 
-### Elektrische Energie aus Strom ist ein Homogenes Gut
+### Elektrische Energie aus Strom ist ein homogenes Gut
 
 * Eine kWh Strom kann überall im Europäischen Stromnetz eingespeist werden
 * Eingespeiste und entnommene Energie können nicht nachverfolgt werden
@@ -278,9 +279,9 @@ $= 49.2$
 ### Rollen auf dem Energiemarkt (vereinfacht)
 
 * Ein Unternehmen kann gleichzeitig unterschiedliche Rollen einnehmen
-* Stromanbieter: Große Erzeuger vom elektrischem Strom (Kraftwerksparks) verkaufen Energiemengen
-* Stromnachfrager: Energieversorgungsunternehmen (EVU) kaufen Energiemengen
-* Endverbraucher: Haushalte und Gewerbe, beziehen Strom von den Energieversorgungsunternehmen und rechen über Tarife ab (nur sehr große Firmen handeln selbst auf der Strombörse)
+* __Stromanbieter__: Große Erzeuger vom elektrischem Strom (Kraftwerksparks) verkaufen Energiemengen
+* ist auch __Stromnachfrager__: Energieversorgungsunternehmen (EVU) kaufen Energiemengen
+* __Endverbraucher__: Haushalte und Gewerbe, beziehen Strom von den Energieversorgungsunternehmen und rechen über Tarife ab (nur sehr große Firmen handeln selbst auf der Strombörse)
 * Netzbetreiber: Greifen nicht in den Handel mit Strom ein
 
 
