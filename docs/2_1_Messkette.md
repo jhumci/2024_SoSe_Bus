@@ -400,6 +400,8 @@ while True:
 
 ## 🤓 ✍️ Aufgabe 2_1_4: Anschluss einer LED mit PWM an einen Raspberry Pi Pico
 
+> PWM ist die Grundlage für stufenlose Lichtsteuerung – und damit für die **Konstantlichtregelung** (Kapitel 3): Dort muss die Helligkeit nicht nur an/aus, sondern kontinuierlich auf einen Sollwert geregelt werden. Ein binärer Ausgang reicht dafür nicht – PWM macht es möglich.
+
 * Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für $1\,\text{s}$ leuchtet und dann langsam über $5\,\text{s}$ ausgeht
 
 ---
@@ -657,7 +659,7 @@ def map_lin(z):
 
 ---
 
-## 🤓✍️ Aufgabe 2_1_5: Mapping eines Analogen Helligkeitssensors
+## 🤓✍️ Aufgabe 2_1_6: Mapping eines Analogen Helligkeitssensors
 
 * Oben ist die quadratische Funktion gegeben, die die gemessenen Werte in Beleuchtungsstärke in Lux umrechnet
 * Implementieren Sie diese Funktion in Python und geben Sie dann eine Nachricht mit der Beleuchtungsstärke in Lux aus
@@ -746,14 +748,6 @@ print(os.getenv('MY_NAME'))
     ```python
     --8<-- "Aufgaben\2_1_5\mappings.py"
     ```
-
-
----
-
-## 🤓 ✍️ Aufgabe 2_1_6: 
-
-* Nicht bei jedem Sensor wird die gefittete Kurve perfekt passen
-* passen Sie den Code so an, dass die Parameter der Kurve in der `settings.toml` hinterlegt werden können, um diese möglichst einfach anzupassen
 
 
 ---

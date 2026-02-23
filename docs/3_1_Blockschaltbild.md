@@ -156,24 +156,55 @@ theme: beams
 
 ---
 
-## Simulation mit scilab xcos
+## Simulation von Blockschaltbildern
 
-- Installieren Sie [scilab xcos](https://www.scilab.org/download/scilab-2024.0.0)
-- Xcos ist ein grafischer Editor für Blockschaltbilder
-- die Funktionalität entspricht in etwa matlab simulink
-- allerdings ist die Software open source und kostenlos
-- Alternativ können Sie auch Matlab oder [Matlab Online](https://www.mathworks.com/products/matlab-online.html) verwenden
-![bg right:30% w:400](images/scilabhome.png)
+Blockschaltbilder lassen sich mit grafischen Simulationswerkzeugen direkt simulieren (z.B. Scilab xcos, Matlab Simulink, Python/scipy). In den folgenden Aufgaben wird beschrieben, **welche Bausteine** verbunden werden sollen – das konkrete Werkzeug wählen Sie oder wird in der Vorlesung festgelegt.
+
+---
+
+## ✍️ Aufgabe 3_0: Tageslichtschaltung als Blockschaltbild (Papier)
+
+> Bevor wir simulieren: Übersetzen Sie den Code, den Sie in Kapitel 2 geschrieben haben, in die Sprache der Blockschaltbilder.
+
+**Aufgabe (kein Werkzeug nötig):**
+
+Skizzieren Sie auf Papier das Blockschaltbild der Tageslichtschaltung aus Aufgabe 2_3_1. Beantworten Sie dabei:
+
+1. Welche Python-Variable entspricht der **Führungsgröße** (gewünschter Sollwert)?
+2. Welche Variable ist die **Messgröße** (tatsächlich gemessener Wert)?
+3. Was ist das **Stellglied** – und welches Python-Objekt setzt es um?
+4. Was ist die **Steuerstrecke** – also das System, das durch die Stellgröße beeinflusst wird?
+5. Gibt es **Störgrößen**? Wenn ja: Welche?
+
+---
+
+### ✔️ Lösung
+
+<!-- _color: black -->
+
+??? optional-class "💡 anzeigen"
+    - Führungsgröße: `PAR_SETPT` (Helligkeitssollwert in Lux)
+    - Messgröße: `h_room` (gemessene Raumhelligkeit über LDR + ADC)
+    - Stellglied: LED-Aktor (Python: `led.value`), gesteuert durch `l_set()`
+    - Steuerstrecke: die Raumhelligkeit als physikalisches System (Licht verteilt sich im Raum)
+    - Störgrößen: Tageslichteinfall von außen, andere Lichtquellen im Raum
 
 ---
 
 ## ✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied
 
-![h:400](images/xcos_start.webp)
+**Zu modellieren:**
 
-- Öffnen Sie [P_totzeit.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/P_totzeit.zcos) in [scilab xcos](https://www.scilab.org/download/scilab-2025.0.0) oder [GainDelay.slx](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_0/GainDelay.slx) in Matlab
-- Testen Sie verschiedene Werte für den P-Wert beim `PID`-Block und die Totzeit beim `Continuous fix delay`-Block
-- Ersetzen Sie den `PID`-Block durch einen `GAIN_f`-Block
+- Eingangsquelle: Sprungfunktion (Amplitude 1, Sprungzeitpunkt $t=1\,\text{s}$)
+- Glied 1: Proportionalglied (Verstärkung $K_P = 2$)
+- Glied 2: Totzeitglied (Totzeit $T_t = 3\,\text{s}$)
+- Ausgang: Zeitverlauf-Plot (Eingang und Ausgang überlagert)
+
+**Aufgaben:**
+- Beobachten Sie den Zeitverlauf am Ausgang
+- Variieren Sie $K_P$ (z.B. 0,5 / 2 / 5) und $T_t$ (z.B. 1 s / 3 s / 8 s) – was verändert sich am Ausgangssignal?
+
+![h:300](images/xcos_start.webp)
 
 
 ---
@@ -276,10 +307,19 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 
 ## ✍️ Aufgabe 3_1_1: Wassertank ohne Steuerung
 
-- Bauen Sie das folgende Modell aus `CONST`, `INTEGRAL_m`, `CSCOPE` und `CLOCK_c` nach
-- Modellieren Sie einen 100 l fassenden Wassertank, der zu Begin mit 10 l gefüllt ist und in den 5 l pro Minute einfließen
+**Szenario:** Ein 100 l fassender Wassertank ist zu Beginn mit 10 l gefüllt. Es fließen konstant 5 l/min hinein.
 
-![h:400](images/xcos_simple.png)
+**Zu modellieren:**
+
+- Konstante Quelle: Zufluss $5\,\text{l/min}$ (konstanter Block)
+- Integrationsglied: integriert den Zufluss über die Zeit → ergibt den Füllstand in Liter (Anfangswert = 10 l)
+- Ausgang: Zeitverlauf-Plot des Füllstands
+
+![h:300](images/xcos_simple.png)
+
+**Fragen:**
+- Nach wie vielen Minuten ist der Tank voll?
+- Was passiert, wenn der Zufluss auf 2 l/min sinkt?
 
 ---
 
@@ -288,18 +328,25 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link Scilab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.zcos)
-    [Link Matlab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_1/Wassertank.slx)
+    Der Füllstand wächst linear: $V(t) = 10 + 5t$. Nach $t = 18\,\text{min}$ ist der Tank voll.
 
 ---
 
 ## ✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung
 
+> Hier übersetzen wir die Tageslichtschaltung aus Aufgabe 2_3_1 erstmals in ein Blockschaltbild.
 
-- passen Sie den Threshold in `Dynamic` in [3_1_2_Tageslichtschaltung.zcos](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos), bzw [Tageslichtschaltung.slx](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/Tageslichtschaltung.slx) so an, dass die LED bei einer Helligkeit unter 220 Lux angeht
-- Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
+**Zu modellieren:**
 
-![h:400](images/Tageslichtschaltung_xcos_.png)
+- Eingangsquelle: Zeitverlauf der Außenhelligkeit (z.B. Sinuskurve: tagsüber 500 Lux, nachts 0 Lux, Periode 24 h)
+- Schwellwertglied (Schalter): gibt `1` aus wenn Helligkeit < 220 Lux, sonst `0`
+- Ausgang: Zeitverlauf-Plot (Helligkeit und LED-Zustand überlagert)
+
+![h:300](images/Tageslichtschaltung_xcos_.png)
+
+**Fragen:**
+- Überprüfen Sie: Geht die LED bei Unterschreitung von 220 Lux an oder aus?
+- Welchen Wert müsste der Schwellwert haben, damit die LED bei Raumlicht (300 Lux) gerade noch brennt?
 
 ---
 
@@ -308,7 +355,7 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/3_1_2_Tageslichtschaltung.zcos)
+    Der Schalter muss so konfiguriert sein, dass er bei Werten **unterhalb** des Schwellwerts `1` ausgibt (LED an). Der Schwellwert ist auf 220 Lux einzustellen.
 
 ---
 
@@ -423,16 +470,21 @@ class zweipunkt_hysterese():
 
 ---
 
-## ✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung
+## ✍️ Aufgabe 3_1_3: Zweipunktregelung für Tageslichtschaltung
 
-- Ersetzen Sie den Schalter `Dynamic` mit einem Hystereseschalter `HYSTERESIS` bzw. `Relay` in Simulink
-- Überlegen sie auch, ob die Richtung der Schaltung so stimmt un passen Sie diese bei Bedarf an
+> Erweitern Sie das Modell aus 3_1_2 um eine Hysterese, um das ständige Schalten bei Helligkeitswerten nahe am Schwellwert zu vermeiden.
 
+**Zu modellieren:**
 
+- Eingangsquelle: gleicher Helligkeitsverlauf wie in 3_1_2
+- Schwellwertglied **mit Hysterese**: LED geht bei Helligkeit < **200 Lux** an, geht bei Helligkeit > **250 Lux** aus (Schaltband = 50 Lux)
+- Ausgang: Zeitverlauf-Plot (Helligkeit + LED-Zustand)
 
-![h:300](images/TagesLichtHystere.png)
+![h:250](images/TagesLichtHystere.png)
 
-
+**Fragen:**
+- Vergleichen Sie den Schaltverlauf mit 3_1_2: Wie oft schaltet die LED?
+- Was passiert, wenn das Schaltband (Hysterese) sehr groß (z.B. 300 Lux) oder sehr klein (z.B. 5 Lux) gewählt wird?
 
 ---
 
@@ -441,5 +493,4 @@ class zweipunkt_hysterese():
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link Scilab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_3/3_1_3_Tageslichtschaltung_Hysterese.zcos)
-    [Link Matlab](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_1_2/Tageslichtschaltung_2.slx)
+    Mit Hysterese schaltet die LED deutlich seltener. Ein zu großes Schaltband führt zu langen Phasen mit falscher Beleuchtung; ein zu kleines Schaltband verhält sich fast wie ohne Hysterese (häufiges Flattern).

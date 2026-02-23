@@ -544,7 +544,7 @@ Nach dieser Einheit sind Sie in der Lage dazu
 
 ---
 
-## ✍️ Aufgabe 2_4_6: Zeitbausteine
+## ✍️ Aufgabe 4_2_6: Zeitbausteine
 
 - Zeichnen Sie das Ausgangssignal 
   - einer Ausschaltverzögerung TOF mit ```PT = 2s```

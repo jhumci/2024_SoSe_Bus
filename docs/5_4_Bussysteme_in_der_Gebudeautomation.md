@@ -686,7 +686,9 @@ Jeder recherchiert ein spezifisches Gebäudebussystem und beschreibt einen praxi
 
 ### Vorteile und Einschränkungen:
 
-- Was sind die Stärken und Schwächen des Systems im  - Vergleich zu anderen Bussystemen?
+- Was sind die Stärken und Schwächen des Systems im Vergleich zu anderen Bussystemen?
+- Welche **Auswahlkriterien** aus der Planungsphase (Kap. 1.2) sind besonders relevant: Kosten, Offenheit, Erweiterbarkeit, Wartbarkeit, Herstellerbindung?
+- Ist das System kompatibel mit den Energieeffizienzanforderungen nach **EN 15232** (z.B. Klasse A: Einzelraumregelung mit Kommunikation)?
 - Nutzen Sie mindestens drei verlässliche Quellen (z. B. Herstellerseiten, Fachliteratur, wissenschaftliche Artikel). Geben Sie alle Quellen in einer Literaturliste an.
 
 ---
@@ -718,6 +720,16 @@ Steuerung der Beleuchtung in einem Bürogebäude (DALI).
 - Fazit: Bewertung der Eignung des Systems für den Anwendungsfall.
 - Literaturliste: Auflistung aller verwendeten Quellen (z. B. im APA-Format).
 - Bereiten Sie eine kurze mündliche Präsentation (max. 5 Minuten) vor, in der Sie Ihre Ergebnisse der Gruppe vorstellen.
+
+---
+
+### Abschlussfrage (Kreis schließen)
+
+> Am Anfang des Kurses haben Sie in **Aufgabe 1_2_1** ein Raumautomations-Schema für eine Treppenhausbeleuchtung gezeichnet.
+
+- Welches der in der Klasse präsentierten Bussysteme würden Sie für diese Anlage wählen?
+- Begründen Sie Ihre Wahl mit mindestens zwei konkreten Kriterien (z.B. Baudrate, Topologie, Kosten, Norm-Kompatibilität).
+- Ergänzen Sie Ihr Raumautomations-Schema aus Aufgabe 1_2_1 um die Angabe des gewählten Bussystems und des Übertragungsmediums.
 
 ---
 

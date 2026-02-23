@@ -155,16 +155,18 @@ der Regelgröße $y$ zu erhalten
 
 ---
 
-## 🌡️ Aufgabe 1: Reaktion von PID und PT1 auf Einheitssprung
+## ✍️ Aufgabe 3_3_1: Reaktion von PID und PT1 auf Einheitssprung
 
-Ziehen Sie die Elemente `Step` und `PID`, `Trasfer Fcn` und `Scope` in den Arbeitsbereich und verbinden Sie diese sinnvoll.
+**Zu modellieren** (offener Regelkreis – kein Feedback):
 
-- `Step`: Einheitssprung mit Amplitude 1 und Zeit 1
-- `PID`: PID-Regler mit `P=1`, `I=0`, `D=0`
-- `Transfer Fcn`: PT1-Glied mit Nummerator `[1]` und Denominator `[5, 1]`
-- `Scope` mit zwei Eingängen
+- Eingang: Einheitssprung (Amplitude 1, Sprungzeitpunkt $t = 1\,\text{s}$)
+- Regler: PID-Glied mit $K_P = 1$, $K_I = 0$, $K_D = 0$
+- Strecke: PT1-Glied mit Zeitkonstante $\tau = 5\,\text{s}$
+- Ausgang: Zeitverlauf-Plot von Eingang und Ausgang
 
-Passen die Parameter an und beobachten Sie die Reaktion des Systems.
+**Aufgaben:**
+- Variieren Sie $K_P$ und $\tau$: Wie beeinflusst die Zeitkonstante die Anstiegsgeschwindigkeit?
+- Schalten Sie den I-Anteil zu ($K_I > 0$): Was verändert sich?
 
 ---
 
@@ -184,7 +186,7 @@ wobei wir $\tau$ als Zeitkonstante bezeichnen. Diese Zeitkonstante beschreibt, w
 
 ---
 
-## 🌡️ Aufgabe 2: Heizkurve einer Heizung (ohne Regelung)
+## ✍️ Aufgabe 3_3_2: Heizkurve einer Heizung (ohne Regelung)
 
 
 
@@ -213,7 +215,7 @@ mit:
 - $a = -1{,}5$ (Steigung der Heizkurve)  
 - $b = 60$ (Basisaufschlag)
 
-Die **Raumtemperatur** $T_{\text{Raum}}$ reagiert auf die Vorlauftemperatur mit einem **PT1-Verhalten**: Für die Simulation im Matlab verwenden wir die Übertragungsfunktion:
+Die **Raumtemperatur** $T_{\text{Raum}}$ reagiert auf die Vorlauftemperatur mit einem **PT1-Verhalten**:
 
 $$
 G(s) = \frac{1}{\tau s + 1}, \quad \tau = 120\ \text{min}
@@ -235,17 +237,15 @@ Zeichnen Sie ein Blockschaltbild der Steuerkette mit folgenden Blöcken:
 
 ---
 
-### 🛠️ Aufgabe 2b: Umsetzung in Simulink
+### ✍️ Aufgabe 3_3_2b: Simulation der Steuerkette
 
-Erstellen Sie in MATLAB Simulink ein Modell der oben beschriebenen Steuerstrecke:
+**Zu modellieren** (offene Steuerkette – keine Rückkopplung):
 
-- Außentemperatur als **Step-Block** mit einem Sprunghaften Abfall nach 1000 Minuten von 10 auf -5°C.  
-- Heizkurve als **einfache Rechenvorschrift** (Gain- und Summierblöcke).  
-- Die Stellglied und Raumdynamik als **Transfer Fcn** mit:  
-  $$
-  G(s) = \frac{1}{\tau s + 1}
-  $$
-- Der Raum mit einem zusätzlichen Gain-Glied von $0.35$ (Verstärkung).
+- Außentemperatur: Sprungblock, fällt nach 1000 min von $10°C$ auf $-5°C$
+- Heizkurve: Proportionalglied ($a = -1{,}5$) plus Konstantblock ($b = 60$) → ergibt Vorlauftemperatur
+- Stellglied: PT1-Glied mit $\tau = 60\,\text{min}$ (träge Reaktion der Heizanlage)
+- Strecke: PT1-Glied mit $\tau = 120\,\text{min}$ und Verstärkung $0{,}35$ (Raumdynamik)
+- Ausgang: Zeitverlauf-Plot von Außentemperatur, Vorlauftemperatur und Raumtemperatur
 
 
 ---
@@ -260,7 +260,7 @@ Erstellen Sie in MATLAB Simulink ein Modell der oben beschriebenen Steuerstrecke
 
 ---
 
-## 🔁 Aufgabe 3: Temperaturregelung eines Raumes mit P-Regler
+## ✍️ Aufgabe 3_3_3: Temperaturregelung eines Raumes mit P-Regler
 
 ### Situation
 
@@ -270,39 +270,33 @@ Das gesamte Heizsystem wird nun als $PID$-Regler abgebildet. An dessen Eingang w
 
 ---
 
-## 🧩 Aufgabe 2a: Blockschaltbild
+### ✍️ Aufgabe 3_3_3a: Blockschaltbild zeichnen (Papier)
 
-Zeichnen Sie ein **Blockschaltbild** des Regelkreises. Die folgenden Elemente sollen enthalten sein:
+Zeichnen Sie ein **Blockschaltbild** des Regelkreises. Folgende Elemente sollen enthalten sein:
 
-- Soll-Temperatur (Führungsgröße)
-- Temperatur-Differenz (Regelabweichung $e(t)$)
-- Heizsystem (Regler)  
-- Regelstrecke (Raum als PT1-Glied)
-- Ist-Temperatur (Regelgröße)
-
-
----
-
-## 🛠️ Aufgabe 2b: Umsetzung in Simulink
-
-Erstellen Sie in **MATLAB Simulink** ein Modell des beschriebenen Regelkreises:
-
-- Verwenden Sie einen **Step-Block** für die Solltemperatur (z. B. Sprung  von $15$ auf $20^\circ \text{C}$ bei $t = 300$ min).  
-- Implementieren Sie den **PID-Regler** zunächt mit einem $K_p = 3$ und ohne I und D-Anteil.  
-- Simulationsdauer: **1000 Sekunden**  
-- Beobachten Sie die Entwicklung der Führungsgröße, Regelabweichung und Ist-Temperatur im **Scope**.
+- Soll-Temperatur (Führungsgröße $w$)
+- Summationsstelle → Regelabweichung $e(t) = w - T_{\text{Raum}}$
+- Heizsystem als Regler (P-Regler zunächst)
+- Strecke: Raum als PT1-Glied
+- Rückführung: gemessene Raumtemperatur
 
 ---
 
-## 🔍 Beobachtungen
+### ✍️ Aufgabe 3_3_3b: Simulation des Regelkreises
 
-- Wird die Soll-Temperatur erreicht?
-- Wie verändert sich die Regelung, wenn Sie $K_p$ erhöhen oder verkleinern?
-- Passen Sie auch die Größen $T_n$ ($1/$ `I`) und $T_v$ (`D`) an.
+**Zu modellieren** (geschlossener Regelkreis):
+
+- Solltemperatur: Sprungblock von $15°C$ auf $20°C$ bei $t = 300\,\text{min}$
+- Summationsstelle: $e = w - T_{\text{Raum}}$
+- Regler: P-Regler mit $K_P = 3$ (I- und D-Anteil zunächst = 0)
+- Strecke: PT1-Glied mit $\tau = 120\,\text{min}$, Verstärkung $0{,}35$
+- Rückführung: direkter Pfad ohne Verzögerung
+- Ausgang: Zeitverlauf von Sollwert $w$, Raumtemperatur und Regelabweichung $e$
+
+**Beobachtungen:**
+- Wird die Soll-Temperatur erreicht? Gibt es eine bleibende Regelabweichung?
+- Was verändert sich bei größerem/kleinerem $K_P$?
 - Was müsste man ändern, um die Regelabweichung vollständig zu eliminieren?
-- Testen Sie die `Tune`-Funktion von Simulink. Was passiert?
-
-
 
 ---
 
@@ -371,7 +365,7 @@ Erstellen Sie in **MATLAB Simulink** ein Modell des beschriebenen Regelkreises:
 ---
 
 
-## ✍️ Aufgabe 3_3_1: Auswahl Reglerverhalten
+## ✍️ Aufgabe 3_3_4: Auswahl Reglerverhalten
 
 - Welchen Reglerverlauf wünschen Sie sich für folgende Anwendungen
   - **Startoptimierung** der Raumtemperatur 
@@ -512,17 +506,29 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 
 ---
 
-## ✍️ Aufgabe 3_3_2:
+## ✍️ Aufgabe 3_3_5: Ziegler-Nichols – Regler einstellen
+
+Wenden Sie die Methode von Ziegler und Nichols an, um gute Regler-Parameter für die unten abgebildeten Systeme zu finden.
+
+**Vorgehen:**
+1. Erhöhen Sie $K_P$ schrittweise (bei $K_I = 0$, $K_D = 0$) bis das System dauerhaft schwingt → kritische Verstärkung $K_P^{krit}$
+2. Lesen Sie die Schwingungsdauer $T^{krit}$ ab
+3. Berechnen Sie die Regler-Parameter nach der Tabelle (vgl. Folie)
 
 ![](images/ReglerEinstellen.png)
 
-- Finden Sie gtue Werte für den Regler für die folgenden Anwendungen nach der Methode von Ziegler und Nichols: [Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing)
+> 🤓 **Optional – Simulation:** Eine interaktive Simulation steht unter [Google Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing) bereit. Nutzen Sie diese, um Ihre berechneten Parameter zu überprüfen.
 
 ---
 
-## 🤓 ✍️ Aufgabe 3_3_2:
+## 🤓 ✍️ Aufgabe 3_3_6: Ziegler-Nichols auf PT1-Strecke
 
-- Finden Sie gtue Werte für den Regler für das folgende [System](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied.zcos) nach der Methode von Ziegler und Nichols
+**Zu modellieren** (für die Simulation):
+
+- Geschlossener Regelkreis mit PT1-Strecke ($\tau = 10\,\text{s}$, Verstärkung = 1) und Totzeit ($T_t = 2\,\text{s}$)
+- Wenden Sie Ziegler-Nichols an: Erhöhen Sie $K_P$ bis zum Dauerschwingen
+
+**Aufgabe:** Berechnen Sie die PID-Parameter und überprüfen Sie das Regelverhalten im Modell.
 
 ---
 
@@ -531,4 +537,4 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    [Link](https://github.com/jhumci/scilab_xcos_solutions/blob/main/Bussysteme/3_3_3/PT1-Glied_Loesung.zcos)
+    Erhöhen Sie $K_P$ schrittweise. Bei $K_P^{krit}$ beginnt das System zu schwingen. Lesen Sie $T^{krit}$ ab und berechnen Sie nach der Ziegler-Nichols-Tabelle.

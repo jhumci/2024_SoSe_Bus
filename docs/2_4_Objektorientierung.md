@@ -294,19 +294,24 @@ with open("sample.json", "w") as outfile:
 
 ---
 
-## ✍️ Aufgabe 2_4_3:
+## ✍️ Aufgabe 2_4_3: Datenvorbereitung für Busübertragung
 
-- Nehmen wir an, wir möchten die Messwerte eines Sensors über ein Bussystem übertragen
-- Halten Sie es für sinnvoll, das ganze Dictionary zu übertragen? Wenn nein, welche Werte würden Sie übertragen?
-- Implementieren Sie eine Methode `prepare_data()`, die Ihren Vorstellungen entspricht und das bereiningte Dictionary zurückgibt und printen Sie es
+> **Vorgriff auf Kapitel 5:** Bussysteme in der Gebäudeautomation haben oft sehr geringe Datenraten. Der DALI-Bus (Beleuchtungssteuerung) überträgt z.B. nur **1.200 Bit/s** – das entspricht ca. 150 Byte pro Sekunde. Jedes unnötige Feld im Datenpaket kostet wertvolle Übertragungskapazität und verlängert Reaktionszeiten.
+
+- Nehmen wir an, wir möchten die Messwerte unseres Helligkeitssensors über ein Bussystem übertragen
+- Das aktuelle Dictionary des Sensor-Objekts enthält: Messwert, Einheit, Name, Liste aller bisherigen Messwerte, Zeitstempel
+- **Frage 1:** Welche dieser Felder müssen bei jeder Übertragung mitgesendet werden – und welche können weggelassen werden?
+- **Frage 2:** Was würde sich ändern, wenn statt DALI (1.200 Baud) ein Ethernet-basiertes BACnet-System (10 MBit/s) verwendet würde?
+- Implementieren Sie eine Methode `prepare_data()`, die ein bereinigtes Dictionary zurückgibt und es ausgibt
 - `del(my_dict["unit"])` entfernt z.B. den Eintrag `unit` aus dem Dictionary
 
 ---
 
 ### ✔️ Lösung
 
-* Ob es sinnvoll ist das gesamte Dictionary zu übertragen, hängt von unter anderem von der Bandbreite des Bussystems ab. Ist diese begrenzt macht es ggf. Sinn nur die sich verändernden Werte zu übertragen. Wenn man alle Information aus den Nachrichten extrahieren möchte, ist es aber auch sinnvolle das ganze Dictionary zu übertragen. 
-* Priorität hat die Übertragung der Messwerte und ggf. die Einheit
+* Ob es sinnvoll ist das gesamte Dictionary zu übertragen, hängt von der Bandbreite des Bussystems ab. Bei DALI (1.200 Baud) macht es Sinn, nur den aktuellen Messwert zu senden – Einheit, Name und Messwertverlauf sind der Gegenstelle bekannt oder werden nur bei Bedarf übertragen.
+* Bei Hochband-Systemen (BACnet/IP) ist der Overhead vernachlässigbar; dort überwiegt der Vorteil vollständiger Datenpakete für Logging und Diagnose.
+* Priorität hat immer der aktuelle Messwert (`last_measurement`)
 
 
 ---

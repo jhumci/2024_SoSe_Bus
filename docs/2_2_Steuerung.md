@@ -340,88 +340,37 @@ stateDiagram
 
 ---
 
-## ✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter 
+## ✍️ Aufgabe 2_2_2: Treppenlicht mit zwei Tastern (State Machine entwerfen)
 
-* Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert
-* Durch ein kurzes Drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden
-* Durch einen Doppeldruck soll der Dimm-Modus gestartet werden
-* in diesem wird durch Halten des Tasters die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden, je nach dem, wie lange der Taster gehalten wird
-* Nach dem Loslassen wird die Richtung umgekehrt
-* Durch einen einfachen Druck wird der Dimm-Modus und wieder in den normalen Modus gewechselt
-* Zeichen Sie eine State Machine, die dieses Verhalten beschreibt
-* Überlegen Sie sich dazu zunächst sinnvolle Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen
+> Erweitern Sie das Treppenlicht aus Aufgabe 2_2_1: Ein echtes Treppenhaus hat auf **jedem Stockwerk** einen eigenen Taster. Beide sollen das Licht einschalten und die Haltezeit neu starten können.
+
+* Das Treppenhaus verbindet zwei Stockwerke mit je einem Taster (`BUTTON_A`, `BUTTON_B`)
+* Drückt man einen beliebigen Taster, geht das Licht für `PAR_HOLD` Sekunden an
+* Nach Ablauf der Haltezeit flackert das Licht für `PAR_WARN` Sekunden als Vorwarnung
+* Ein erneuter Druck auf irgendeinen der beiden Taster (auch während der Vorwarnung) startet die Haltezeit neu
+* **Zeichnen Sie** die State Machine (Zustände, Übergänge, Ausgaben) – zunächst ohne Code
+
+**Fragen:**
+- Welche Zustände brauchen Sie?
+- Wie ändern sich die Übergänge im Vergleich zu 2_2_1, wenn zwei Taster möglich sind?
+- Was ändert sich am Code (Bedingungen in den `if`-Zweigen)?
 
 ---
 
-### [✔️ Lösung](Aufgaben\2_2_2)
+### ✔️ Lösung
 
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    ```Mermaid
-    stateDiagram
-        A : 100%
-        B : 0%
-        C : aufwärts
-        D : abwärts
-        A --> B: kurzer Druck
-        B --> A: kurzer Druck
-        A --> D: langer Druck
-        B --> C: langer Druck
-        C --> D: loslassen
-        D --> C: loslassen
-    ```
-
+    Die Zustände sind identisch mit 2_2_1. Der einzige Unterschied: jede Taster-Bedingung lautet nun `not(button_a.value) or not(button_b.value)` statt nur `not(button.value)`. Die State Machine selbst ändert sich strukturell nicht.
 
 ---
 
+## 🤓✍️ Aufgabe 2_2_3: Treppenlicht mit zwei Tastern implementieren
 
-<!-- _class: white -->
-
-![bg h:720](images/mermaid-diagram-2024-01-25-115643.svg)
-
----
-
-### [✔️ Verbesserte Lösung](Aufgaben\2_2_2)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```Mermaid
-    stateDiagram
-        A : 100%
-        B : 0%
-        C : aufwärts - warte auf Eingabe
-        D : abwärts - warte auf Eingabe
-        E : dimme abwärts
-        F : dimme aufwärts
-        A --> B: kurzer Druck
-        B --> A: kurzer Druck
-        A --> D: Doppel-Druck
-        B --> C: Doppel-Druck
-        D --> E: halten
-        E --> C: loslassen
-        C --> F: halten
-        F --> D: loslassen
-        D --> A: kurzer Druck
-        C --> B: kurzer Druck
-    ```
-
-
----
-
-<!-- _class: white -->
-
-![bg h:720](images/mermaid-diagram-2024-03-18-125549.svg)
-
-
----
-
-
-## 🤓✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
-
-* Implementieren Sie einen Dimmer
-* Lösung mit einer State Machine und Darstellung der State Machine gibt 5% Bonus
+* Implementieren Sie die erweiterte Treppenlichtschaltung aus Aufgabe 2_2_2 auf dem Raspberry Pi Pico
+* Schließen Sie einen zweiten Taster an `GP2` an
+* Passen Sie den Code aus Aufgabe 2_2_1 so an, dass beide Taster die Haltezeit starten und neu starten können
 
 
 ---
