@@ -22,6 +22,48 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 7 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 6: Steuerung II | **Einheit 7: Regelungstechnik I** | Einheit 8: Regelungstechnik II |
+
+### Was haben wir bisher gelernt?
+
+* Ablauf- und Verknüpfungssteuerungen (FSM, Boolesche Logik)
+* OOP: Sensor- und Aktorklassen, JSON-Serialisierung
+* Tageslichtschaltung implementiert – aber: was tun bei Störungen?
+
+### Wo wollen wir hin?
+
+Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. Heute lernen wir, Signalflüsse mit **Blockschaltbildern** darzustellen. Wir modellieren den offenen Regelkreis und implementieren eine erste **Zweipunktregelung** für die Konstantlichtregelung.
+
+---
+
+## Lernziele – Einheit 7
+
+* Blockschaltbild-Elemente (P-, I-, D-Glied, Totzeitglied) erklären
+* Tageslichtschaltung als Blockschaltbild darstellen
+* Offenen Regelkreis (Steuerkette) von geschlossenem Regelkreis abgrenzen
+* Zweipunktregelung mit Hysterese beschreiben und implementieren
+* Simulationsparameter (Verstärkung, Zeitkonstante) identifizieren
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 3_0 | Tageslichtschaltung in Blockschaltbild übersetzen (Papier) |
+| ✍️ 3_1_1 | Zweipunktregelung: Blöcke und Parameter identifizieren |
+| ✍️ 3_1_2 | Zweipunktregelung simulieren |
+| ✍️ 3_1_3 | Zweipunktregelung für Tageslichtschaltung |
+
+---
+
+
 ## Blockschaltbild
 
 

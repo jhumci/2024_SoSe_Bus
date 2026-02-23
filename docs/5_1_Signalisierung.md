@@ -20,6 +20,45 @@ theme: beams
 
 --- 
 
+## Orientierung – Einheit 11 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 10: SPS – Grundlagen | **Einheit 11: Bussysteme I – Signalisierung** | Einheit 12: Bussysteme II (Zugriffsverfahren) |
+
+### Was haben wir bisher gelernt?
+
+* SPS-Aufbau und -Programmstruktur; EVA in der Industrie
+* IEC 61131-3 im Überblick; Programmierung im Labor
+
+### Wo wollen wir hin?
+
+Punkt-zu-Punkt-Verdrahtung wird beim Ausbau eines Gebäudes schnell unübersichtlich und teuer. Heute lernen wir, wie **Bussysteme** das lösen – und was auf Bitebene passiert: Leitungscodes, Symbolrate und differentielle Signalübertragung.
+
+---
+
+## Lernziele – Einheit 11
+
+* Unterschied Punkt-zu-Punkt-Verdrahtung vs. Bussystem erklären
+* Leitungscodes (NRZ, Manchester, …) beschreiben und vergleichen
+* Symbolrate (Baud) von Bitrate unterscheiden
+* Serielle vs. parallele Übertragung abgrenzen
+* Differentiale Busse (Vorteil bei Störfestigkeit) erklären
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 5_1_1 | Leitungscodes vergleichen und Vor-/Nachteile bewerten |
+| ✍️ 5_1_2 | Bitrate und Symbolrate berechnen |
+
+---
+
+
 ## Unterschiede SPS und Bussysteme
 
 

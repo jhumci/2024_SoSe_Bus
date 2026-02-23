@@ -22,6 +22,46 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 8 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 7: Regelungstechnik I | **Einheit 8: Regelungstechnik II** | Einheit 9: Regelungstechnik III |
+
+### Was haben wir bisher gelernt?
+
+* Blockschaltbild-Elemente und Signalflüsse
+* Zweipunktregelung mit Hysterese
+* Simulationsmodelle: P-Glied, PT1, Totzeitglied
+
+### Wo wollen wir hin?
+
+Die Zweipunktregelung ist robust, aber schaltet nur an/aus. Heute schließen wir den **Regelkreis** und lernen P-, PI- und PID-Regler kennen. Was beeinflusst Stabilität, Überschwingen und Restabweichung? Die Konstantlichtregelung wird unser Leitbeispiel.
+
+---
+
+## Lernziele – Einheit 8
+
+* Geschlossenen Regelkreis mit Führungs-, Regel-, Stell- und Störgröße beschreiben
+* Wirkung von P-, I- und D-Anteil auf Regelverhalten erklären
+* Trägheit und Totzeit eines Systems im Regelkreis berücksichtigen
+* Regelkreis für Konstantlichtregelung und CO₂-Regelung modellieren
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 3_2_1 | Konstantlichtregelung im Regelkreis modellieren |
+| ✍️ 3_2_2 | CO₂-Regelung mit PI-Regler simulieren |
+| ✍️ 3_2_3 | P, PI, PID-Regler vergleichen |
+
+---
+
+
 ## Beispiel Konstantlicht-Regelung
 
 > regelt die Raumbeleuchtung oder Teile davon bei Belegung automatisch so, dass eine eingestellte Mindestbeleuchtungsstärke nicht unterschritten wird

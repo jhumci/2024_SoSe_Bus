@@ -3,8 +3,8 @@ marp: true
 theme: beams
 author: Julian Huber
 size: 16:9
-footer: Julian Huber - Grundlagen Informationstechnologie & Datensicherheit
-headingDivider: 2
+footer: Julian Huber - Bussysteme
+
 
 ---
 
@@ -21,6 +21,44 @@ Nach dieser Einheit sind Sie in der Lage dazu
 * Die Aufgaben auf Feld-, Automations-, und Managementebene abgrenzen
 
 ---
+
+## Orientierung – Einheit 1 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| — | **Einheit 1: Einführung GA** | Einheit 2: Planung & Funktionen |
+
+### Was haben wir bisher gelernt?
+
+*(Erste Einheit – Los geht's!)*
+
+### Wo wollen wir hin?
+
+Wir starten mit der Frage: **Warum automatisieren wir Gebäude überhaupt?** Wir lernen, wie GA in Komfort, Energieeffizienz und Betriebskosten wirkt, und strukturieren die Aufgaben nach VDI-Normen in Feld-, Automations- und Managementebene.
+
+---
+
+## Lernziele – Einheit 1
+
+* Ziele der Gebäudeautomation (Komfort, Energie, Betriebskosten) erklären
+* Ebenenmodell nach VDI 3814 (Feld / Automation / Management) beschreiben
+* Schalenmodell nach VDI 3813 (Segment / Raum / Bereich) beschreiben
+* Raum-, Anlagen- und Management-Automation abgrenzen
+* EN 15232 – Energieeffizienzklassen durch GA erklären
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 1_1_1 | Ebenenmodell und Schalenmodell identifizieren |
+| ✍️ 1_1_2 | Recherche: GA-Systeme in der Praxis |
+
+---
+
 
 ## Aufgaben der Gebäudeautomation
 

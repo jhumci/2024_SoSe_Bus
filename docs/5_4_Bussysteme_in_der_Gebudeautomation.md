@@ -30,6 +30,46 @@ img[alt~="center"] {
 
 ---
 
+## Orientierung – Einheit 14 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 13: Bussysteme III | **Einheit 14: Bussysteme IV – GA-Systeme** | — |
+
+### Was haben wir bisher gelernt?
+
+* Signalisierung, Leitungscodes, Symbolrate
+* Buszugriffsverfahren: Master/Slave, CSMA
+* Übertragungssicherheit: Parität, Hamming-Abstand, CRC
+
+### Wo wollen wir hin?
+
+Jetzt verbinden wir alle gelernten Konzepte mit der **Praxis**. Welche Bussysteme gibt es wirklich in Gebäuden? Die Studierenden erarbeiten und präsentieren selbst je ein GA-Bussystem. Am Ende kehren wir zurück zu unserem RA-Schema aus Einheit 2 und wählen ein System für die Treppenlichtinstallation.
+
+---
+
+## Lernziele – Einheit 14
+
+* Topologie, Übertragungsmedium und Zugriffsverfahren eines realen GA-Bussystems beschreiben
+* Typische Anwendungsfälle für KNX, BACnet, DALI, Modbus, EnOcean, LON benennen
+* Auswahlkriterien (Kosten, Offenheit, Erweiterbarkeit) für GA-Bussysteme anwenden
+* Ein Bussystem für eine konkrete Aufgabe (Treppenlichtinstallation) begründet auswählen
+* RA-Schema aus Einheit 2 mit Bussystem-Angaben ergänzen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ Recherche | GA-Bussystem recherchieren und präsentieren |
+| ✍️ Abschluss | Bussystem für Treppenlichtinstallation wählen und RA-Schema annotieren |
+
+---
+
+
 ## Digital Addressable Lighting Interface (DALI) 
 
 

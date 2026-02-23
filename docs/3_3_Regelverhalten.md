@@ -23,6 +23,49 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 9 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 8: Regelungstechnik II | **Einheit 9: Regelungstechnik III** | Einheit 10: SPS – Grundlagen |
+
+### Was haben wir bisher gelernt?
+
+* Geschlossener Regelkreis; Regelkreisbegriffe
+* P-, PI-, PID-Regler und ihre Wirkungen
+* Konstantlichtregelung und CO₂-Regelung modelliert
+
+### Wo wollen wir hin?
+
+Wie gut ist unser Regler? Wir lernen Gütekriterien kennen und wenden die **Methode nach Ziegler-Nichols** zur Reglerauslegung an. Danach können wir fundiert entscheiden, welcher Regler für welche GA-Aufgabe geeignet ist.
+
+---
+
+## Lernziele – Einheit 9
+
+* Gütekriterien (Überschwingen, Ausregelzeit, bleibende Abweichung) beschreiben
+* Kritische Verstärkung und Periodendauer am Modell ermitteln
+* Ziegler-Nichols-Methode auf einen Regelkreis anwenden
+* Regler für typische GA-Aufgaben (Temperatur, CO₂, Licht) auswählen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 3_3_1 | Gütekriterien am Regelverlauf ablesen |
+| ✍️ 3_3_2 | Kritische Verstärkung und Periodendauer bestimmen |
+| ✍️ 3_3_3 | Ziegler-Nichols Reglerparameter berechnen |
+| ✍️ 3_3_4 | P-Regler in Simulation testen |
+| ✍️ 3_3_5 | Ziegler-Nichols in Simulation anwenden |
+| 🤓 ✍️ 3_3_6 | Totzeit-System identifizieren |
+
+---
+
+
 ## 🧠 PID-Regler
 
 

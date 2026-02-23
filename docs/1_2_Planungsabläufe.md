@@ -3,8 +3,8 @@ marp: true
 theme: beams
 author: Julian Huber
 size: 16:9
-footer: Julian Huber - Grundlagen Informationstechnologie & Datensicherheit
-headingDivider: 2
+footer: Julian Huber - Bussysteme
+
 
 ---
 
@@ -19,6 +19,45 @@ headingDivider: 2
 
 ---
 
+## Orientierung – Einheit 2 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 1: Einführung GA | **Einheit 2: Planung & Funktionen** | Einheit 3: Messkette I (digital) |
+
+### Was haben wir bisher gelernt?
+
+* Ziele der GA; Ebenen- und Schalenmodell nach VDI 3813/3814
+* EN 15232: Energieeffizienzklassen durch GA-Automatisierungsgrad
+
+### Wo wollen wir hin?
+
+Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir erarbeiten Planungsphasen, erstellen ein **Raumautomations-Schema** und identifizieren Sensor-, Aktor- und Anwendungsfunktionen – die Bausteine aller späteren Kapitel.
+
+---
+
+## Lernziele – Einheit 2
+
+* Planungsphasen der GA (Lastenheft, Pflichtenheft) erklären
+* Raumautomations-Schema (RA-Schema) lesen und erstellen
+* Sensor-, Aktor- und Anwendungsfunktionen abgrenzen
+* Funktionen Treppenlicht, Konstantlicht, Automatiklicht beschreiben
+* RA-Schema für einen Beispielraum (Treppenlicht + Konstantlicht) erstellen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 1_2_1 | RA-Schema für Treppenlicht und Konstantlichtregelung erstellen |
+| ✍️ 1_2_2 | Pflichtenheft für eine Raumautomation formulieren |
+
+---
+
+
 ## Planungsabläufe für die Gebäudeautomation
 
 <!-- _class: white -->
@@ -32,22 +71,6 @@ headingDivider: 2
 [Quelle](Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation)
 
 
----
-
-| Leistungsphase |                      Bezeichnung                     | Gebäude (§ 34) | Innenräume (§ 34) | Technische Ausrüstung (§ 55) |
-|:---------------------:|:----------------------------------------------------:|:--------------:|:-----------------:|:----------------------------:|
-|           1           | Grundlagenermittlung                                 |       2 %      |        2 %        |              2 %             |
-|           2           | Vorplanung                                           |       7 %      |        7 %        |              9 %             |
-|           3           | Entwurfsplanung                                      |      15 %      |        15 %       |             17 %             |
-|           4           | Genehmigungsplanung                                  |       3 %      |        2 %        |              2 %             |
-|           5           | Ausführungsplanung                                   |      25 %      |        30 %       |             22 %             |
-|           6           | Vorbereitung der Vergabe                             |      10 %      |        7 %        |              7 %             |
-|           7           | Mitwirkung bei der Vergabe                           |       4 %      |        3 %        |              5 %             |
-|           8           | Objektüberwachung – Bauüberwachung und Dokumentation |      32 %      |        32 %       |             35 %             |
-|           9           | Objektbetreuung                                      |       2 %      |        2 %        |              1 %             |
-|         Summe         |                                                      |      100 %     |       100 %       |             100 %            |
-
-[Quelle](Leistungsbild gemäß HOAI 2013 und HOAI 2021)
 
 ---
 
