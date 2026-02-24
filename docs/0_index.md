@@ -17,7 +17,7 @@ footer: Julian Huber - Bussysteme
 
 <!-- _class: title -->
 
-Julian Huber
+Julian Huber & Michael Renzler
 
 ---
 
@@ -27,12 +27,23 @@ Julian Huber
 
 > Ein modernes Gebäude ist kein passives Objekt – es misst, entscheidet, regelt, kommuniziert.
 
-* **40 %** des Energieverbrauchs in Europa entfallen auf Gebäude
-* GA-Systeme senken diesen Anteil nachweislich um **bis zu 30 %** (EN 15232)
+* ca. **40 %** des Energieverbrauchs in Europa entfallen auf Gebäude
+* GA-Systeme senken diesen Anteil [beispielsweise](https://www.dabonline.de/bautechnik/energieeffizienz-foerderung-gebaeudeautomation-pflicht-beg-smart-home/) um **bis zu 30 %** (EN 15232)
 * Gleichzeitig steigen Komfort und Betriebssicherheit
 
-**Was steckt dahinter?**
-Sensoren, Aktoren, Steuerungen, Regler, Bussysteme – und die Menschen, die sie planen, programmieren und in Betrieb nehmen.
+---
+
+## Was steckt dahinter?
+
+> Ein Gebäude ist ist auch ein System aus Systemem (Leuchten, Wärmepumpe, Jalousien, Lüftungsanlagen, Menschen die es nutzen und betreiben). Wir werden und auch mit der Automatisierung dieser Systeme beschäftigen.
+
+- Die hier vermittelten Konzepte und Methoden sind nicht auf die Gebäudeautomation beschränkt, sondern gelten für die Automatisierung von Systemen allgemein.
+- Die Messprinzipien und Auswertung der Daten werden Sie im kommenden Semester in der Vorlesung  __Intelligente Messtechnik und Sensorik__ vertiefen.
+- In den Vertiefungen zu __Heizungs-, Lüftungs- und Klimatechnik (HLK)__ werden Sie die Automatisierung von Gebäuden aus der Perspektive der Anlagentechnik betrachten und auf die hier vermittelten Konzepte zurückgreifen.
+
+
+
+
 
 ---
 
@@ -40,12 +51,10 @@ Sensoren, Aktoren, Steuerungen, Regler, Bussysteme – und die Menschen, die sie
 
 <!-- _class: white -->
 
-* **14 Einheiten** – von der Idee der Automatisierung bis zur Kommunikation zwischen Geräten
-* **Durchgängiges Beispiel:** Treppenlichtschaltung und Konstantlichtregelung – von der Handskizze bis zur lauffähigen Implementierung
+* **14 Einheiten** – von der Idee der Automatisierung einzelner Komponenten bis zur Kommunikation zwischen Geräten
+* **Durchgängiges Beispiel:** _Treppenlichtschaltung_ und _Konstantlichtregelung_ – von der Handskizze bis zur lauffähigen Implementierung
 * **Praxis von Anfang an:** Ab Einheit 3 programmieren Sie einen echten Mikrocontroller (Raspberry Pi Pico)
-* **Eigenverantwortliches Arbeiten:** In Einheit 14 recherchieren und präsentieren Sie selbst ein reales GA-Bussystem
-
-Die Klausur fokussiert sich auf die **Anwendung** des Wissens – nicht auf auswendig Gelerntes.
+* **Eigenverantwortliches Arbeiten:** Sie sind aufgefordert den Raspberry Pi Pico in und nach der Vorlesung weiter zu erforschen, zu programmieren und zu verstehen. In Einheit 14 recherchieren und präsentieren Sie selbst ein reales GA-Bussystem
 
 ---
 
@@ -56,7 +65,7 @@ Die Klausur fokussiert sich auf die **Anwendung** des Wissens – nicht auf ausw
 Die Vorlesung beantwortet sechs aufeinander aufbauende Fragen:
 
 | # | Leitfrage | Einheiten |
-|---|-----------|-----------|
+|---|-----------|:-----------:|
 | 1 | **Warum** automatisieren wir Gebäude? | 1–2 |
 | 2 | **Welche Funktionen** stecken in einem automatisierten Gebäude? | 2 |
 | 3 | **Wie messen** wir zuverlässig? | 3–4 |
@@ -69,7 +78,7 @@ Die Vorlesung beantwortet sechs aufeinander aufbauende Fragen:
 ## Übersicht: 14 Einheiten
 
 | Einheit | Thema |
-|---------|-------|
+|:-------:|-------|
 | 1 | Einführung Gebäudeautomation |
 | 2 | Planung & Funktionen der GA |
 | 3 | Messkette I – Digitale Signale & Hardware |
@@ -82,31 +91,28 @@ Die Vorlesung beantwortet sechs aufeinander aufbauende Fragen:
 ## Übersicht: 14 Einheiten
 
 | Einheit | Thema |
-|---------|-------|
+|:------:|-------|
 | 7 | Regelungstechnik I – Blockschaltbild & Zweipunktregelung |
 | 8 | Regelungstechnik II – Regelkreis & PID |
 | 9 | Regelungstechnik III – Regelverhalten & Auslegung |
 | 10 | SPS – Grundlagen & Hardware |
 | 11–13 | Bussysteme I–III: Signalisierung, Zugriffsverfahren, Sicherheit |
 | 14 | Bussysteme IV – GA-Systeme (Recherche & Präsentationen) |
+| 15 | Klausurvorbereitung |
 
 ---
 
-## Unser Anwendungsfall: Treppenlicht → Konstantlicht
+## Unsere Anwendungsfälle: Treppenlicht & Konstantlichtregelung
 
 <!-- _class: white -->
 
 Wir arbeiten die gesamte Vorlesung an **zwei konkreten Automatisierungsaufgaben**:
 
-**Treppenlichtschaltung**
+### Treppenlichtschaltung
 Taster gedrückt → Licht an → nach 60 s aus. Mit zwei Tastern. Als endlicher Automat.
 
-**Konstantlichtregelung**
+### Konstantlichtregelung
 Sensor misst Helligkeit → Regler stellt LED-Helligkeit nach → Sollwert wird gehalten trotz Sonnenlicht.
-
-> In Einheit 2 zeichnen Sie das **Raumautomations-Schema** für diesen Raum.
-> In Einheit 14 wählen Sie das **Bussystem**, das alles verbindet.
-> Kreis geschlossen.
 
 ---
 
@@ -121,12 +127,12 @@ Sensor misst Helligkeit → Regler stellt LED-Helligkeit nach → Sollwert wird 
 
 ## Leistungsbewertung & Organisation
 
-**Klausur (100 %)**
+### Klausur (100 %)
 * Schriftlich am Ende des Semesters
 * Fokus auf Anwendung: Berechnungen, Entwurf, Begründung von Entscheidungen
 * Bei geringer Teilnehmer:innenzahl ist im Falle einer Nachklausur auch ein mündlicher Prüfungsmodus möglich
 
-**Labor (unabhängig, Laborbericht)**
+### Labor (unabhängig, Laborbericht)
 * Baut auf den Inhalten der Vorlesung auf
 * Bewertet nach den Vorgaben des *Academic Walkthrough*
 * Vollständige Anwesenheitspflicht
@@ -149,7 +155,7 @@ Sensor misst Helligkeit → Regler stellt LED-Helligkeit nach → Sollwert wird 
 | Bauteil | Wozu |
 |---------|------|
 | Raspberry Pi Pico (WH) | Mikrocontroller für Einheiten 3–6 |
-| USB-Kabel | für Mikrocontroller |
+| Micro-USB-Kabel | für Mikrocontroller |
 | Breadboard | Steckplatine für Prototyping |
 | KY-018 Fotowiderstand | Analoger Helligkeitssensor |
 | Widerstand $10\,\text{k}\Omega$, $470\,\Omega$ | Pull-Up/Pull-Down, LED-Schutz |
@@ -177,9 +183,7 @@ Das Labor ergänzt die Vorlesung mit **industrienaher Hardware** (Beckhoff-SPS, 
 
 ## Los geht's
 
-> *"Das Gebäude der Zukunft ist kein Ort, an dem Technik versteckt wird – es ist ein Ort, an dem Technik spürbar wird."*
-
-**Einheit 1: Einführung Gebäudeautomation**
+### Einheit 1: Einführung Gebäudeautomation
 
 * Was automatisieren wir eigentlich?
 * Wie strukturieren Normen (VDI 3813/3814) die Aufgaben?
