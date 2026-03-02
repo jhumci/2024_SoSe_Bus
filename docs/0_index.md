@@ -17,6 +17,7 @@ footer: Julian Huber - Bussysteme
 
 <!-- _class: title -->
 
+__Bussysteme__
 Julian Huber & Michael Renzler
 
 ---

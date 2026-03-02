@@ -14,6 +14,11 @@ footer: Julian Huber - Bussysteme
 
 <!-- _class: title -->
 
+__Bussysteme__
+Julian Huber & Michael Renzler
+
+<!-- _class: title -->
+
 ---
 
 ## Orientierung – Einheit 1 von 14

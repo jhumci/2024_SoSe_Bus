@@ -4,7 +4,7 @@ theme: beams
 author: Julian Huber
 size: 16:9
 footer: Julian Huber - Bussysteme
-headingDivider: 2
+
 
 ---
 
@@ -14,6 +14,9 @@ headingDivider: 2
 # 2.1 Messkette II – Analoge Signale & Mapping
 
 <!-- _class: title -->
+
+__Bussysteme__
+Julian Huber & Michael Renzler
 
 ---
 

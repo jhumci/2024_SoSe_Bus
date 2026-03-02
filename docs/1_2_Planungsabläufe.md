@@ -14,14 +14,17 @@ footer: Julian Huber - Bussysteme
 
 # 1.2 Planungsabläufe
 
-* Im  folgenden wird ein Planungsablauf für die Gebäudeautomation (vereinfacht stilisiert) vorgestellt
-* Hierbei wird auf das Beispiel einer Raumautomation eingegangen
+
+
+__Bussysteme__
+Julian Huber & Michael Renzler
+
+<!-- _class: title -->
 
 ---
 
 ## Orientierung – Einheit 2 von 14
 
-<!-- _class: white -->
 
 ### Wo sind wir?
 
@@ -34,13 +37,17 @@ footer: Julian Huber - Bussysteme
 * Ziele der GA; Ebenen- und Schalenmodell nach VDI 3813/3814
 * EN 15232: Energieeffizienzklassen durch GA-Automatisierungsgrad
 
+---
+
+## Orientierung – Einheit 2 von 14
+
 ### Wo wollen wir hin?
 
 Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir erarbeiten Planungsphasen, erstellen ein **Raumautomations-Schema** und identifizieren Sensor-, Aktor- und Anwendungsfunktionen – die Bausteine aller späteren Kapitel.
 
 ---
 
-## Lernziele – Einheit 2
+## 🎯 Lernziele – Einheit 2
 
 * Planungsphasen der GA (Lastenheft, Pflichtenheft) erklären
 * Raumautomations-Schema (RA-Schema) lesen und erstellen
@@ -60,7 +67,6 @@ Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir er
 
 ## Planungsabläufe für die Gebäudeautomation
 
-<!-- _class: white -->
 
 
 ![w:850](images/PlanungGebäudeautimatisierung.png)
@@ -68,7 +74,7 @@ Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir er
 
 
 
-[Quelle](Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation)
+[Hochschule Biberach - Nachhaltiges Planen, Bauen und Betreiben durch Einsatz von Gebäudeautomation]
 
 
 
@@ -85,6 +91,8 @@ Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir er
 
 ---
 
+## Ansätze zur Dokumentation der Bedarfsplanung
+
 ### 🤓 Österreich
 
 - Leistungsgruppen der standardisierten Bauausschreibung
@@ -96,6 +104,8 @@ Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir er
   - [LG 86 GA-Management (GA-M)](https://www.bmaw.gv.at/dam/jcr:b480f287-0f66-40c9-9f3e-1fe925deaa39/LG86%20-%20GA-Management%20(GA-M).pdf)
 
 ---
+
+## Ansätze zur Dokumentation der Bedarfsplanung
 
 ### 🤓 Schweiz
 
@@ -115,38 +125,41 @@ Wie entsteht ein automatisiertes Gebäude aus der Idee bis zur Umsetzung? Wir er
 
 ---
 
-### Komponenten-Sicht durch Preplanning
+
+
+## Komponenten-Sicht durch Preplanning
+
+
+![h:350](images/light-building-eplan-preplanning-02.jpg)
 
 
 
-![h:580](images/light-building-eplan-preplanning-02.jpg)
 
-
-
-
-[Quelle](https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/)
-
----
-
-### Funktions-Sicht durch Raumautomations-Schema (VDI 3813)
-
-
-
-![h:390](images/RA-Schema.png)
-
+[Beispiel Preplanning mit Software von EPLAN](https://www.eplan.de/unternehmen/news/automatisiertes-engineering-in-der-gebaudeautomation/): Bereiche, Räume, Segmente, Funktionen, Sensoren und Aktoren werden in einem Fließbild dargestellt und miteinander verknüpft
 
 
 ---
 
-* Zuordnung von Sensoren, Aktoren und **Funktionen** zueinander
-* und zu Raum vs. Segment (keine genaue Räumliche Positionierung)
+## Funktions-Sicht durch Raumautomations-Schema (VDI 3813)
+
+
+![h:320](images/RA-Schema.png)
+
+Auch hier werden Segemente und Räume bereits am Anfang festgelegt (siehe Y-Achse). Zwar werden auch Komponenten zugeordnet (obere Hälfte), aber die Funktionen (untere Hälfte) stehen im Vordergrund. Es wird beschrieben, welche Funktionen in einem Raum/Segment benötigt werden und wie diese miteinander verknüpft sind. Die konkrete Umsetzung erfolgt erst später.
+
+---
+
+* Zuordnung von Sensoren, Aktoren und **Funktionen** zueinander (sie Verbindung von physisikalischem Präsenzmelder (Auge) zu einer Funktion "Präsenzerkennung" (Kasten links unten) 
+* und zu Raum vs. Segment (keine genaue Räumliche Positionierung,aber Entscheidung: Müssen wir die Präsenzerkennung pro Segment oder pro Raum vornehmen?)
 * Blockbausteine für Funktionen: Nutzen Attribute der Sensoren, um Attribute der Aktoren zu verändern
 
 ---
 
 
 
-#### Funktionen
+## Wiederholung Funktionen
+
+Wiederverwendbare Bausteine:
 
 ```Python
 def f(x):
@@ -158,8 +171,15 @@ def f(x):
 f(2) # Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe aus
 ```
 
+- __Eingaben__: z.B. `x` – Werte, die in die Funktion eingehen und sich abhängig vom Systemzustand ändern können
+- __Parameter__: z.B. `2` – unveränderliche Werte, die einmalig konfiguriert werden (z.B. in Abhängigkeit der Raumgröße)
+- __Ausgaben__: z.B. `y` – Werte welche von der Funktion abhängig von Parametern und Eingaben zurückgegeben werden
+
 
 ---
+
+## Wiederholung Funktionen
+
 
 
 * **Eingaben**: Werte, die in die Funktion eingehen und sich abhängig vom Systemzustand ändern können
@@ -171,6 +191,18 @@ f(2) # Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe 
 ![bg right:20% h:400](images/Raumautomationschema_siemens.png)
 
 Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprachen überein
+
+
+---
+
+## Raumautomatisierungs-Funktionen im Sinne der VDI 3813
+
+![h:350](images/Raumautomationschema_siemens.png)
+
+- Wiederverwendbare Bausteine, die in verschiedenen Räumen und Segmenten eingesetzt werden können
+- Sie nutzen Attribute der Sensoren, um Attribute der Aktoren zu verändern
+- Sie können auch andere Funktionen als Eingabe oder Ausgabe haben (z.B. Treppenlichtschaltung, siehe weiter unten)
+
 
 
 ---
@@ -191,6 +223,17 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 - Niederschlag
 
 [Quelle](VDI 3813)
+
+---
+
+##### Sensorfunktion am Beispiel der Helligkeitsmessung
+
+![bg right:40% h:720](images/Helligektismessung.pdf.png)
+
+- Eingang: meist Signal eines physischen Sensors, z.B. Helligkeitssensor (`H`)
+- Ausgabe: z.B. `H_OUT` – ein Wert, der von der Funktion abhängig von der Sensorinformation zurückgegeben wird in definierter Form (z.B. Beleuchtungsstärke in Lux)
+- Parameter: z.B. `PAR_CAL` – ein konfigurierter Parameter, z.B. Kalibrierungswert
+
 
 ---
 
@@ -275,33 +318,10 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 #### Beispiel Treppenlichtschaltung
 
-> Über die Funktion Treppenlichtschaltung können Beleuchtungseinrichtungen temporär eingeschaltet werden. Nach Ablauf der Treppenlichthaltezeit kann eine Abschaltvorwarnzeit aktiv werden, die den Nutzer z. B. durch kurzzeitige Unterbrechung(„Flackern“) über die bevorstehende Abschaltung informiert. Ein erneuter Empfang einer Eingabeinformation zum Einschalten startet die Verzögerungszeit neu. Die Funktion benötigt als Eingabeinformation das Ergebnis der Bedienfunktion Licht stellen und liefert ihrerseits die Ausgabeinformation für eine oder mehrere Aktorfunktionen Lichtaktor.
+> Über die Funktion Treppenlichtschaltung können Beleuchtungseinrichtungen temporär eingeschaltet werden. Nach [...] Treppenlichthaltezeit kann eine Abschaltvorwarnzeit aktiv werden, die [...] z.B. durch [...] „Flackern“ über die [...] Abschaltung informiert. Ein erneutes [...] Einschalten startet die Verzögerungszeit neu. Die Funktion benötigt als Eingabeinformation das Ergebnis der Bedienfunktion Licht stellen und liefert ihrerseits die Ausgabeinformation für eine oder mehrere Aktorfunktionen Lichtaktor.
 
-![bg right:45% h:720](images/Treppenlichtschaltung.pdf.png)
+![bg right:40% h:720](images/Treppenlichtschaltung.pdf.png)
 
----
-
-##### Zusammenhang zwischen verschiedenen Funktionen
-
-
-
-![h:400](images/RA-Schema.pdf.png)
-
-
-
-
-[Quelle](https://assets.new.siemens.com/siemens/assets/api/uuid:c107cd4a-cbd2-4b40-aeaa-a1face4c3dc7/planungshandbuch-gebaudeautomation-de.pdf)
-
-
-
----
-
-#### Schritt Raumautomations-Schema
-
-
-
-
-![](images/Funktionsschema.svg)
 
 
 
@@ -321,11 +341,11 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 ## ✍️ Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus
 
-- Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses (aus den Folien zuvor)
+- Befüllen Sie das vorliegende Raumautomations-Schema mit den entsprechenden Funktionen für die Beleuchtung eines Treppenhauses für eine Treppenlichtschaltung. Sie können das gesamte Treppenhaus über alle Stockwerke hinweg als einen Raum betrachten, oder aber die einzelnen Stockwerke als Segmente.
 - Alle Leuchten werden über einen Aktor für das gesamte Treppenhaus zusammengefasst
 - Das Treppenhaus verbindet zwei Stockwerke, auf jedem soll ein Bedienelement für die Beleuchtung angebracht werden
 - Die Anwendungsfunktion Treppenlichtschaltung soll hierüber gesteuert werden können
-- zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik für den Bereich gesteuert werden können
+- zusätzlich soll die Beleuchtung auch direkt aus der Gebäudeleittechnik für das Gesamte Treppenhaus gesteuert werden können
 
 ---
 
@@ -344,6 +364,27 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 
 ??? optional-class "💡 anzeigen"
   ![h:580](images/RA_Loesung.png)
+
+
+---
+
+
+
+#### Weiteres Raumautomations-Schema (nicht Normgerecht)
+
+
+
+
+![](images/Funktionsschema.svg)
+
+
+---
+
+## Planungsabläufe für die Gebäudeautomation
+
+
+
+![w:850](images/PlanungGebäudeautimatisierung.png)
 
 ---
 
@@ -372,7 +413,7 @@ Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprac
 ---
 
 
-### Bussysteme
+### Auswahl der Komponenten und Bussysteme
 
 * i.d.R. gibt es eine Vielzahl von möglichen Bussystemen, die für die Umsetzung der Funktionen in Frage kommen
 * häufig werden mehrere Bussysteme kombiniert und müssen orchestriert werden
@@ -399,16 +440,22 @@ Wartbarkeit:
 ---
 
 
-### Automatisierungspyramide
+## Automatisierungspyramide vs. Cloud
 
 ![bg w:600 right:46%](images/HierarchischeGliederungderFunktionenderGebäudeautomation.png)
 
----
-
-### Cloud
-
 * Zunehmende Bedeutung von Cloud-Systemen
 * Insbesondere die höheren Ebenen der Automatisierungspyramide werden zunehmend in die Cloud verlagert
+* Einzelne Komponenten auf Prozess-Ebene (z.B. Präsenzmelder) können auch direkt mit der Cloud (Gebäudeleittechnik) kommunizieren, ohne über die Automationsebene zu gehen.
+
+
+---
+
+## Fazit
+
+* Planungsphasen verlaufen von einer Zielbeschreibung (was? / Lastenheft) über die Konzeption (wie? /Pflichtenheft) bis zur Umsetzung (Detailplanung, Installation, Inbetriebnahme)
+* Raumautomations-Schemata sind ein Werkzeug, um das Wie? zu beschreiben, insbesondere die Funktionen und deren Verknüpfung zueinander
+* Funktionen sind wiederverwendbare Bausteine, die in verschiedenen Räumen und Segmenten eingesetzt werden können. Sie nutzen Attribute der Sensoren, um Attribute der Aktoren zu verändern
 
 ---
 
