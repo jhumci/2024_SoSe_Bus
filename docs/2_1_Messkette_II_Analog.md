@@ -30,6 +30,8 @@ Julian Huber & Michael Renzler
 |---|---|---|
 | Einheit 3: Messkette I (digital) | **Einheit 4: Messkette II** | Einheit 5: Steuerung I (FSM) |
 
+---
+
 ### Was haben wir bisher gelernt?
 
 * EVA-Prinzip und digitale Ein-/Ausgänge am Pico
@@ -42,7 +44,7 @@ Digitale Signale kennen nur 0 und 1. Viele Sensoren liefern aber **analoge Grö�
 
 ---
 
-## Lernziele – Einheit 4
+## 🎯 Lernziele – Einheit 4
 
 * ADC-Auflösung und Referenzspannung erklären und berechnen
 * PWM-Signal (Duty Cycle, Frequenz) parametrieren
@@ -132,7 +134,7 @@ while True:
 ## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
 * Verbinden Sie die `+` und `-` Leiste des Breadboards mit $3.3 \,\text{V}$ und `GND` des Raspberry Pi Pico
-* Verbinden Sie den analogen Eingang `A2` mit einem Female-to-Female-Kabel
+* Verbinden Sie den analogen Eingang `A0` mit einem Female-to-Female-Kabel
 * Fügen Sie den folgenden Code ein
 
 ---
@@ -143,7 +145,7 @@ import analogio
 import time
 
 # Initialisierung des ADC (Analog-Digital Converter)
-ldr = analogio.AnalogIn(board.A2)
+ldr = analogio.AnalogIn(board.A0)
 
 # Wiederholung
 while True:
@@ -178,9 +180,9 @@ while True:
 
 
 * Schließen Sie einen Fotowiderstand als [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
-    * Links (I): +VCC z.B. 3,3 oder 5 Volt
+    * _meist_ Links (I): +VCC z.B. 3,3 oder 5 Volt
     * Mitte: GND / Masse / 0 Volt
-    * Rechts (S): Verbindungspunkt des Spannungsteilers
+    * _meist_ Rechts (S): Verbindungspunkt des Spannungsteilers
 * Sie können den Sensor entweder auf dem Breadboard montieren oder ihn mit Male-Female-Kabeln direkt verbinden
 * Verdunkeln Sie und beleuchten Sie den Sensor und beobachten Sie die Änderung des Eingangswertes
 * Je mehr Licht auf den Fotowiderstand fällt, desto kleiner wird sein Widerstand. 
@@ -226,8 +228,8 @@ while True:
 
 | Symbol | Description |
 |--------|-------------|
-| $U_{max}$ | maximale Beleuchtungsstärke |
-| $U_{min}$ | minimale Beleuchtungsstärke |
+| $U_{max}$ | maximale Spannung |
+| $U_{min}$ | minimale Spannung |
 | $z_{max}$ | maximaler Messwert des ADC |
 | $z_{min}$ | minimaler Messwert des ADC |
 
@@ -342,7 +344,7 @@ from mappings import map_lin
 
     
 # Initialisierung des ADC (Analog-Digital Converter)
-ldr = analogio.AnalogIn(board.A2)
+ldr = analogio.AnalogIn(board.A0)
 
 # Wiederholung
 while True:

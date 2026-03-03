@@ -51,6 +51,8 @@ Sensoren liefern Werte – doch wie entscheidet das System, **was** es tun soll?
 * Code in Funktionen kapseln (Eingaben, Parameter, Ausgaben)
 * Lokale vs. globale Variablen erklären
 
+---
+
 ### Aufgaben dieser Einheit
 
 | Aufgabe | Inhalt |
@@ -393,6 +395,8 @@ stateDiagram
 * Nach Ablauf der Haltezeit flackert das Licht für `PAR_WARN` Sekunden als Vorwarnung
 * Ein erneuter Druck auf irgendeinen der beiden Taster (auch während der Vorwarnung) startet die Haltezeit neu
 * **Zeichnen Sie** die State Machine (Zustände, Übergänge, Ausgaben) – zunächst ohne Code
+
+---
 
 **Fragen:**
 - Welche Zustände brauchen Sie?

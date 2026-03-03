@@ -34,7 +34,7 @@ footer: Julian Huber - Bussysteme
 -   Ziele der Gebäudeautomation (Komfort, Energie, Betriebskosten)
 -   Ebenenmodell nach VDI 3814, Schalenmodell nach VDI 3813
 -   Raumautomations-Schema: Sensoren, Aktoren, Anwendungsfunktionen
--   Konzept der Treppenlichtschaltung und Konstantlichtregelung
+-   Konzept der [Treppenlichtschaltung](https://wokwi.com/projects/456837337834711041) und [Konstantlichtregelung](https://wokwi.com/projects/457476528115988481)
 
 ------------------------------------------------------------------------
 
@@ -54,6 +54,8 @@ Heute erarbeiten wir das Fundament aller weiteren Kapitel: **Wie gelangen Signal
 -   CircuitPython-Code schreiben, übertragen und testen
 -   LED und Taster korrekt verschalten (Vorwiderstand, GPIO-Grenzen)
 
+---
+
 ### Aufgaben dieser Einheit
 
 | Aufgabe  | Inhalt                                                  |
@@ -68,11 +70,10 @@ Heute erarbeiten wir das Fundament aller weiteren Kapitel: **Wie gelangen Signal
 
 <!-- _class: white -->
 
-![](images/Messkette.svg)
+![h:250](images/Messkette.svg)
 
--   Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert (die __Funktionen__ implementiert) die Signale __verarbeiten__
--   Hierzu werden __Eingangs__-Signale der __Sensoren__ gemessen und __Ausgangs__-signale erzeugt
--   In der Steuerungseinheit werden Funktionen implementiert, die die Messsignale in Ausgangssignale umwandeln
+-   Gebäudeautomation wird durch eine Steuerungseinheit überwacht und gesteuert (,die __Funktionen__ implementiert indem Sie Signale __verarbeitet__
+-   __Eingangs__-Signale der __Sensoren__ werden gemessen und __Ausgangs__-Signale erzeugt
 -   Steuerungseinheiten sind heute meist frei programmierbar (z.B. Speicherprogrammierbare Steuerung) oder wurden für bestimmte Funktionen vorprogrammiert (z.B. Mikrocontroller in LED-Vorschaltgeräten)
 - Er kann mittels Python programmiert werden, was den Einstieg erleichtert
 
@@ -87,13 +88,18 @@ Heute erarbeiten wir das Fundament aller weiteren Kapitel: **Wie gelangen Signal
 
 ---
 
-### Digitale Eingänge
+## Raspberry Pi Pico
 
--   Digitale Eingänge können nur zwei Zustände annehmen (0:`False` oder 1:`True`)
+
+### Digitale Eingänge und Ausgänge (`GPIOs`)
+
+-   `GPIOs` können nur zwei Zustände unterscheiden(0:`False` oder 1:`True`)
 -   Die Zustände werden durch Spannungen repräsentiert
 -   i.d.R. gibt es Spannungsbereiche, die als `0` oder `1` interpretiert werden
 
 ![bg left h:500](images/raspberry-pi-pico-gpio.png)
+
+---
 
 ## ✍️ Aufgabe 2_1_1: Raspberry Pi Pico als Mikrocontroller
 
@@ -101,9 +107,11 @@ Heute erarbeiten wir das Fundament aller weiteren Kapitel: **Wie gelangen Signal
 -   Im folgenden wird folgende Hardware benötigt:
     -   Raspberry Pi Pico (WH)
     -   Breadboard
-    -   Taster
+    -   3 Taster
     -   Widerstand ca. $470 \Omega$ und $10 \,\text{k}\Omega$
-    -   Jumperkabel
+    -   Jumperkabel (M-M und M-F)
+    -  USB-Kabel
+    - 3 LEDs
 -   Ziel ist es, dass der Mikrocontroller den Taster ausliest und den Zustand auf der Konsole ausgibt
 
 ------------------------------------------------------------------------
@@ -172,8 +180,8 @@ while True:
 ![bg left h:500](images/raspberry-pi-pico-gpio.png)
 
 -   VCC Voltage Common Connector: Spannungs- Versorgung $5$ oder $3.3 \,\text{V}$
-    -   Alles unter $0,8\,\text{V}$ ist low
-    -   alles über $1,3\,\text{V}$ ist high
+    -   Alles unter $0,8\,\text{V}$ ist __low__
+    -   alles über $1,3\,\text{V}$ ist __high__
 -   Ground: $0 \,\text{V}$
 -   Einige GPIOs können als Busleitungen genutzt werden: UART, SPI, I2C
 
@@ -183,7 +191,9 @@ while True:
 
 ### Breadboards
 
-![bg left h:560](images/bauteil_steckbrett.png) - Steckplatine für Systemtest und Prototyping - vier Reihen für Spannungsversorgung - weitere Raster sind längs verbunden
+![bg left h:560](images/bauteil_steckbrett.png) 
+
+- Steckplatine für Systemtest und Prototyping - vier Reihen für Spannungsversorgung - weitere Raster sind längs verbunden
 
 [Quelle](https://www.elektronik-kompendium.de/sites/praxis/bauteil_steckbrett.htm)
 
@@ -217,7 +227,7 @@ while True:
 ![bg right h:600](images/20060511.gif)
 
 -   $R_{pullup} = 10 \,\text{k}\Omega$
--   Verbinden Sie den Taster mit dem 3.3V Pin und dem `GPIO 0`
+-   Verbinden Sie den Taster mit dem $3.3 \text{~V}$ Pin und dem `GPIO 0`
 -   Fügen Sie die folgenden Code- Teile an den richtigen Stellen ein und starten Sie das Programm
 
 ------------------------------------------------------------------------
@@ -310,7 +320,7 @@ while True:
 
 -   Nun wollen wir eine LED anschließen in der Folge über den Taster schalten
 -   Die LED soll nach einem Druck auf den Taster ihren Zustand wechseln
--   passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile
+-   Passen Sie den Code entsprechend an und nutzen Sie dazu die folgenden Code-Teile
 
 ``` python
 import time
@@ -337,7 +347,7 @@ while True:
 
 ![h:450](images/LED-Aufbau.png)
 
--   Langes Bein: Anode
+- _Merke:_ Langes Bein: Anode
 
 [Quelle](https://nawi-werft.de/bausteine/led-ansteuern/)
 
@@ -348,10 +358,10 @@ while True:
 <!-- _class: white -->
 
 -   links: LED an Masse
-    -   GPIO auf high \> LED an
+    -   GPIO auf high \--> LED an
 -   rechts: LED an VCC
-    -   GPIO auf low \> LED an
--   $R_v = 470 \,\Omega$
+    -   GPIO auf low \--> LED an
+-   $R_v = 470 \,\Omega$, Vorwiderstand für LED, um Strom zu begrenzen
 
 ![](images/21021815.gif) ![](images/21021814.gif)
 
@@ -374,6 +384,32 @@ while True:
 
 ------------------------------------------------------------------------
 
+## Ausblick 
+
+### Pulsweitenmodulation
+
+-   Digitale Ausgänge können nur zwei Zustände annehmen (0 /`False` oder 1 : `True`)
+-   Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)
+-   Hierzu muss man Periodendauer $T$ und Duty Cycle $t$ (Impulsdauer) geeignet setzen
+-   Die Frequenz $f = \frac{1}{T}$ ist beim Raspberry Pi Pico standardmäßig $500 \,\text{Hz}$
+
+![bg right:40% w:500](images/04011113.png)
+
+[Quelle](https://www.elektronik-kompendium.de/sites/kom/0401111.htm)
+
+
+---
+
+## Fazit
+
+
+- Um Automatisierungsfunktionen zu implementieren, müssen Signale von Sensoren in die Steuerungseinheit gelangen und von dort aus Aktoren angesteuert werden
+- Hierzu wird das EVA-Prinzip (Eingabe – Verarbeitung – Ausgabe) genutzt und in Steuerungseinheiten meist frei programmierbare Mikrocontroller eingesetzt
+- Digitale Ein- und Ausgänge sind die Grundlage vieler Anwendungen
+- Taster werden mit Pull-Up oder Pull-Down Widerständen angeschlossen, um stabile Signale zu gewährleisten
+
+
+<!--
 #### Relais und Schütze
 
 -   Für viele Anwendungen ist die Leistung der GPIOs nicht ausreichend ($P=UI=3.3\text{ V} \cdot 4\text{ mA} = 13.2 \text{ mW}$)
@@ -395,17 +431,7 @@ while True:
 
 ------------------------------------------------------------------------
 
-#### Pulsweitenmodulation
 
-<!-- _class: white -->
-
--   Digitale Ausgänge können nur zwei Zustände annehmen (0 /`False` oder 1 : `True`)
--   Einige Verbraucher (z.B. Motoren, LEDs) kann man über PWM quasi-analog steuern (Ausgangsleistung quasi-stetig anpassen)
--   Hierzu muss man Periodendauer $T$ und Duty Cycle $t$ (Impulsdauer) geeignet setzen
--   Die Frequenz $f = \frac{1}{T}$ ist beim Raspberry Pi Pico standardmäßig $500 \,\text{Hz}$
-
-![bg right w:500](images/04011113.png)
-
-[Quelle](https://www.elektronik-kompendium.de/sites/kom/0401111.htm)
 
 ------------------------------------------------------------------------
+-->
