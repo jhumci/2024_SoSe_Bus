@@ -2,16 +2,16 @@ import time
 import board
 import digitalio
 
-button_pin = board.GP0  # Replace with the GPIO pin connected to your button
+button_pin = board.GP0  # GPIO-Pin des Tasters
 
 button = digitalio.DigitalInOut(button_pin)
 button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
+button.pull = digitalio.Pull.UP  # Interner Pull-Up-Widerstand
 
 while True:
-    if not button.value:  # Button is pressed (LOW)
+    if not button.value:  # Taster gedrueckt (LOW)
         print("Button Pressed!")
     else:
         print("Button Released!")
-    
-    time.sleep(0.1)  # Add a small delay to debounce the button
+
+    time.sleep(0.1)  # Entprellung

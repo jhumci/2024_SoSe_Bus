@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "author": "Julian",
+  "author": "Julian Huber",
   "editor": "wokwi",
   "parts": [
     {
@@ -8,17 +8,9 @@
       "id": "pico",
       "top": 0,
       "left": 0,
-      "rotate": 0,
-      "attrs": { "env": "circuitpython-9" }
+      "attrs": { "env": "circuitpython-8.0.2" }
     },
-    {
-      "type": "wokwi-photoresistor-sensor",
-      "id": "ldr1",
-      "top": -100,
-      "left": -180,
-      "rotate": 0,
-      "attrs": {}
-    },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": -100, "left": -180, "attrs": {} },
     {
       "type": "wokwi-resistor",
       "id": "r_pulldown",
@@ -30,9 +22,8 @@
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": -50,
-      "left": 310,
-      "rotate": 0,
+      "top": -3.6,
+      "left": 282.2,
       "attrs": { "color": "white" }
     },
     {
@@ -40,14 +31,20 @@
       "id": "r_led",
       "top": -30,
       "left": 230,
-      "rotate": 0,
       "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": 163.55,
+      "left": 355.2,
+      "attrs": { "bufferSize": "1000000", "channelNames": "PWM_LED" }
     },
     {
       "type": "wokwi-text",
       "id": "label_sensor",
-      "top": -130,
-      "left": -200,
+      "top": -153.6,
+      "left": -163.2,
       "attrs": { "text": "Sensorfunktion:\nHelligkeitsmessung" }
     },
     {
@@ -56,16 +53,26 @@
       "top": -80,
       "left": 230,
       "attrs": { "text": "Aktorfunktion:\nLichtstellen" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label_logic",
+      "top": 115.2,
+      "left": 364.8,
+      "attrs": { "text": "Logic Analyzer:\nPWM (VCD Export)" }
     }
   ],
   "connections": [
-    ["ldr1:VCC", "pico:3V3", "red", ["v20", "h80"]],
-    ["ldr1:GND", "pico:GND.1", "black", ["v30", "h90"]],
-    ["ldr1:AO", "pico:GP26", "purple", ["v50", "h60"]],
-    ["ldr1:AO", "r_pulldown:1", "purple", ["v0"]],
-    ["r_pulldown:2", "pico:GND.1", "black", ["v10", "h60"]],
-    ["pico:GP15", "r_led:1", "green", ["h10"]],
-    ["r_led:2", "led1:A", "green", ["h0"]],
-    ["led1:C", "pico:GND.8", "black", ["v20", "h-40"]]
-  ]
+    [ "ldr1:VCC", "pico:3V3", "red", [ "v-2.4", "h113.6", "v137.55" ] ],
+    [ "ldr1:GND", "pico:GND.1", "black", [ "h36.8", "v30", "h-48", "v75.95" ] ],
+    [ "ldr1:AO", "pico:GP26", "purple", [ "v-3.1", "h80" ] ],
+    [ "ldr1:AO", "r_pulldown:1", "purple", [ "v0" ] ],
+    [ "r_pulldown:2", "pico:GND.1", "black", [ "v10", "h121.85", "v-22.85" ] ],
+    [ "pico:GP15", "r_led:1", "green", [ "h10" ] ],
+    [ "r_led:2", "led1:A", "green", [ "h37.6", "v62.75" ] ],
+    [ "led1:C", "pico:GND.8", "black", [ "v20", "h-40" ] ],
+    [ "pico:GP15", "logic1:D0", "orange", [ "v60", "h30" ] ],
+    [ "logic1:GND", "pico:GND.8", "black", [ "h-259.2", "v-217.65" ] ]
+  ],
+  "dependencies": {}
 }

@@ -67,6 +67,7 @@ Digitale Signale kennen nur 0 und 1. Viele Sensoren liefern aber **analoge Grö�
 > PWM ist die Grundlage für stufenlose Lichtsteuerung – und damit für die **Konstantlichtregelung** (Kapitel 3): Dort muss die Helligkeit nicht nur an/aus, sondern kontinuierlich auf einen Sollwert geregelt werden. Ein binärer Ausgang reicht dafür nicht – PWM macht es möglich.
 
 * Sorgen Sie nun dafür, dass die LED mit PWM angesteuert wird, so dass diese nach Betätigung des Tasters für $1\,\text{s}$ leuchtet und dann langsam über $5\,\text{s}$ ausgeht
++ Sie können auf die Verkabelung und den Aufbau der vorherigen [Aufgabe](https://wokwi.com/projects/457487523147649025) aufbauen
 
 ---
 
@@ -93,14 +94,8 @@ while True:
 
 ---
 
-### [✔️ Lösung](Aufgaben\2_1_4)
+### [✔️ Lösung](https://wokwi.com/projects/457490920223097857)
 
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_4\code.py"
-    ```
 
 ---
 
@@ -134,10 +129,14 @@ while True:
 ## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
 * Verbinden Sie die `+` und `-` Leiste des Breadboards mit $3.3 \,\text{V}$ und `GND` des Raspberry Pi Pico
-* Verbinden Sie den analogen Eingang `A0` mit einem Female-to-Female-Kabel
+* Verbinden Sie den analogen Eingang `A0` (`G26`) mit einem Female-to-Female-Kabel
 * Fügen Sie den folgenden Code ein
 
+
 ---
+
+## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
+
 
 ```Python
 import board
@@ -161,25 +160,19 @@ while True:
 
 ---
 
+## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
+
 * Verbinden Sie den Eingang zunächst mit `+`, dann mit `-` 
 * Welche Werte erhalten Sie?
 
----
-
-### [✔️ Lösung](Aufgaben\2_1_5\code.py)
-
-<!-- _color: black -->
-
-
-??? optional-class "💡 anzeigen"
-    * Bei einer direkten Verbindung des Eingangs mit `+` oder `-` erhalten Sie die maximalen (`2**16`) bzw. minimalen Werte (nahe `0`)
-
 
 
 ---
 
+## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
-* Schließen Sie einen Fotowiderstand als [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an
+
+* Schließen Sie einen Fotowiderstand als [analogen Helligkeitssensor](https://www.elektronik-kompendium.de/sites/praxis/bauteil_ky018-ldr.htm) an den Raspberry Pi Pico an: [Beispiel](https://wokwi.com/projects/424662007489899521) 
     * _meist_ Links (I): +VCC z.B. 3,3 oder 5 Volt
     * Mitte: GND / Masse / 0 Volt
     * _meist_ Rechts (S): Verbindungspunkt des Spannungsteilers
@@ -190,6 +183,7 @@ while True:
 
 ---
 
+## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
 
 ![h:500](images/aufbau_pico_ky018.png)
@@ -198,9 +192,11 @@ while True:
 
 ---
 
+## ✍️ Führen Sie ein Messprotokoll
+
 * Zum Testen können Sie den Analog-Eingang mit $3.3 \text{ Volt}$ und $0 \text{ Volt}$ verbinden
 * Lesen Sie den Wert des Sensors aus und geben Sie diesen auf der Konsole aus
-* Notieren Sie sich einige Werte (`ADC`) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte
+* Notieren Sie sich einige Werte (`ADC`) für verschiedene Hell-Dunkel-Verhältnisse (z.B. Zuhalten, Raumlicht, Taschenlampe) und notieren Sie die Werte (oder Erstellen Sie eine Tabelle mit der [Simulation](https://wokwi.com/projects/424662007489899521))
 
 
 
@@ -216,8 +212,27 @@ while True:
 [Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612221.htm)
 
 
+---
+
+
+| Umgebung    | ADC | E in Lux | U in V |
+|-------------|-----|----------|--------|
+||65007| 0.1| |
+||63007|1| |
+||54301|10| |
+||49484|20| |
+||40489|50| |
+||32727|100| |
+||24950|200| |
+||15987|501| |
+||10866|1000| |
+||3952|5000| |
+||2496|10000| |
+||512|100000| |
 
 ---
+
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
 
 #### Mapping von Eingangswert zu Spannung
 
@@ -225,6 +240,9 @@ while True:
 * Entsprechend kann jeder Wert des `ADC` über einer lineare Funktion in eine Spannung umgerechnet werden
 
 ---
+
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
+
 
 | Symbol | Description |
 |--------|-------------|
@@ -235,6 +253,11 @@ while True:
 
 * Annahme: Linearer Zusammenhang
     $U = f(z) = \beta_0 + \beta_1 z$
+
+---
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
+
+
 * 1: Wie groß ist der Y-Achsenabschnitt $\beta_0$?
     * Bei welchen Wert hat $U$, wenn $z=0$?
 * 2: Wie groß ist die Steigung $\beta_1$?
@@ -244,6 +267,8 @@ while True:
 
 
 ---
+
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
 
 * Der folgende Code übernimmt dein Eingangswert und gibt einen Spannungs-Wert zwischen 3.3 und 0 zurück
 * Fügen Sie die Funktion `map_lin` in den Code ein und geben Sie die Spannung auf der Konsole aus
@@ -260,26 +285,58 @@ def map_lin(z):
     return beta_0 + beta_1 * z
 ```
 
+---
+
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
+
 * Wenn Sie Ihren Code schön aufgeräumt haben wollen können eine Datei `mappings.py` im gleiche Ordner wie `code.py` erstellen und die Funktion dort speichern
 * Sie können diese dann mittels `from mappings import map_lin` ins `main.py` importieren und nutzen
 
+### [✔️ Lösung](https://wokwi.com/projects/457492267340534785)
+
 ---
 
-#### Mapping von Eingangswert zu physikalischer Größe
+## ✍️ Berechnen Mapping von Eingangswert zu physikalischer Größe
+
 
 * Um sinnvoller mit den Werten arbeiten zu können, ist es sinnvoller die gelesen `ADC`-Werte `read` in eine Variable mit einer sinnvollen physikalischen Einheit  zu überführen
+* In Unserem Fall wollen wir die Beleuchtungsstärke $E$ in Lux erhalten
+* Zeichnen Sie zunächst die Werte von `ADC` gegen die gemessenen Beleuchtungsstärken in Lux auf (z.B. in Excel) und versuchen Sie eine Funktion zu finden, die die Werte gut beschreibt
 * Im Fall dieses Sensors und Aufbaus lassen sich die Werte gut mit einer Parabel anpassen
 
 ---
 
-* $E= f(x) = (a(x-s))^2$
-    * $a =0.0015$ beschreibt die Steilheit der Parabel
-    * $s = 44000$ ist der Verschiebung der Parabel auf der x-Achse
-    * $x$ ist der Eingangswert
+* Der Zusammenhang zwischen `ADC`-Wert und Beleuchtungsstärke $E$ in Lux sieht aus, wie eine Hyperbel.
+* Im nächten Semester werden wir lernen, dass der Fotoresistor dem Potenzgesetz folgt, d.h.  es folgt etwa $R​=C⋅E−γ$, wobei $R$ der Widerstand, $E$ die Beleuchtungsstärke, $C$ eine Konstante und $\gamma$ der sogenannte Dunkelstrom-Exponent ist. In unserem Fall lesen wir nicht direkt $R$ sondern eine Spannung, die über einem Spannungsteiler gemessen wird. Entsprechend ergibt sich eine quadratische Funktion
 
-![bg right:43% w:550](images/CurveFitHelligkeit.png)
 
-* Erstellen Sie in eine Datei `mappings.py` (im gleichen Ordner, wie die `code.py`) eine Funktion `map_quat()`, die stattdessen die oben angegeben Formel implementiert
+![bg right:43% w:550](../Aufgaben/2_1_4/messkurve/messwerte.png)
+
+---
+
+* Nach einen Fitting der Werte mit einer quadratischen Funktion kann man die Werte mit folgender Funktion annähern:
+
+```
+Modell: Potenzgesetz
+  ADC = a · Lux^(-γ) + offset
+  a      = 22461654.9
+  γ      = 0.0003 
+  offset = -22402323.8 
+  R² = 0.92727 (Güte der Anpassung)
+```
+
+```Python
+def map_pot_fotoresistor(z):
+```
+
+![bg right:43% w:550](../Aufgaben/2_1_4/messkurve/fit.png)
+
+---
+
+## ✍️ Berechnen Sie eine Mapping-Funktion zwischen ADC-Wert und Spannung
+
+
+* Ergänzen Sie in eine Datei `mappings.py` (im gleichen Ordner, wie die `code.py`) eine Funktion `map_pot_fotoresistor()`, die stattdessen das oben angegeben Modell implementiert. Und passen Sie `code.py` so an, dass die Beleuchtungsstärke in Lux ausgegeben wird.
 
 ---
 

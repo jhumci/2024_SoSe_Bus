@@ -2,25 +2,26 @@ import time
 import board
 import digitalio
 
+# Taster an GP0 (Eingang mit Pull-Up)
+button_pin = board.GP0
+button = digitalio.DigitalInOut(button_pin)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
 
-led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
-
-
+# LED an GP1 (Ausgang)
+led_pin = board.GP1
 led = digitalio.DigitalInOut(led_pin)
 led.direction = digitalio.Direction.OUTPUT
 
-
-button_pin = board.GP0  # Replace with the GPIO pin connected to your button
-
-button = digitalio.DigitalInOut(button_pin)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
+last_button_state = True  # Pull-Up: Ruhezustand = True (HIGH)
 
 while True:
-    if not button.value:  # Button is pressed (LOW)
-        print("Button Pressed!")
-        led.value = not led.value  # Toggle the LED state
-    else:
-        print("Button Released!")
-    
-    time.sleep(0.1)  # Add a small delay to debounce the button
+    current_button_state = button.value
+
+    # Flanke erkennen: Taster wurde gerade gedrueckt (HIGH -> LOW)
+    if last_button_state and not current_button_state:
+        led.value = not led.value  # LED-Zustand umschalten
+        print("LED: " + ("AN" if led.value else "AUS"))
+
+    last_button_state = current_button_state
+    time.sleep(0.1)  # Entprellung

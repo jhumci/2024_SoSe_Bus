@@ -142,7 +142,7 @@ https://urfdvw.github.io/circuitpython-online-ide-2/
 
 ------------------------------------------------------------------------
 
-### Digitaler Zwilling mit [wokwi.com](https://wokwi.com/projects/424662007489899521)
+### Digitaler Zwilling mit [wokwi.com](https://wokwi.com/projects/new/circuitpython-pi-pico)
 
 ![](images/Wokwi.png)
 
@@ -210,11 +210,9 @@ while True:
 
 ------------------------------------------------------------------------
 
-### [✔️ Lösung](Aufgaben\2_1_1\code.py)
+### [✔️ Lösung](https://wokwi.com/projects/424662007489899521)
 
-<!-- _color: black -->
 
-??? optional-class "💡 anzeigen" `python     --8<-- "Aufgaben\2_1_1\code.py"`
 
 ------------------------------------------------------------------------
 
@@ -308,11 +306,9 @@ while True:
 
 ------------------------------------------------------------------------
 
-### [✔️ Lösung](Aufgaben\2_1_2\code.py)
+### [✔️ Lösung](https://wokwi.com/projects/457486971487528961)
 
-<!-- _color: black -->
 
-??? optional-class "💡 anzeigen" `python     --8<-- "Aufgaben\2_1_2\code.py"`
 
 ------------------------------------------------------------------------
 
@@ -340,6 +336,7 @@ while True:
 ```
 
 [Quelle](https://www.elektronik-kompendium.de/sites/raspberry-pi/2612031.htm)
+
 
 ------------------------------------------------------------------------
 
@@ -374,13 +371,32 @@ while True:
 -   Wählen Sie einen geeigneten GPIO
 -   Schließen Sie die LED in Reihe an den GPIO und einen Widerstand an und verbinden Sie die andere Seite des Widerstands mit Ground ($0\text{ V}$)
 
+---
+
+### Verbesserung des Buttons durch States
+
+In der [Aufgabe 2_1_2](https://wokwi.com/projects/457486971487528961) haben wir den Button so programmiert, dass er bei gedrückt und losgelassen eine Ausgabe erzeugt. Das Problem dabei ist, dass die Ausgabe ständig erzeugt wird, solange der Button gedrückt ist. Um das zu verbessern, können wir den Code so anpassen, dass die Ausgabe nur einmal erzeugt wird, wenn der Button gedrückt wird.
+
+```Python
+last_button_state = True  # Pull-Up: Ruhezustand = True (HIGH)
+
+while True:
+    current_button_state = button.value
+
+    # Flanke erkennen: Taster wurde gerade gedrueckt (HIGH -> LOW)
+    if last_button_state and not current_button_state:
+        pass # Hier können Sie die gewünschte Aktion ausführen, z.B. LED toggeln oder eine Nachricht ausgeben
+
+    last_button_state = current_button_state
+    time.sleep(0.1)  # Entprellung    
+
+```
+
+
 ------------------------------------------------------------------------
 
-### [✔️ Lösung](Aufgaben\2_1_3\code.py)
+### [✔️ Lösung](https://wokwi.com/projects/457487523147649025)
 
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen" `python     --8<-- "Aufgaben\2_1_3\code.py"`
 
 ------------------------------------------------------------------------
 
