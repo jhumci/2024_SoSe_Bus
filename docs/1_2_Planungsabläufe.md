@@ -34,6 +34,12 @@ headingDivider: 2
 
 ---
 
+<style scoped>
+table {
+  font-size: 20px;
+}
+</style>
+
 | Leistungsphase |                      Bezeichnung                     | Gebäude (§ 34) | Innenräume (§ 34) | Technische Ausrüstung (§ 55) |
 |:---------------------:|:----------------------------------------------------:|:--------------:|:-----------------:|:----------------------------:|
 |           1           | Grundlagenermittlung                                 |       2 %      |        2 %        |              2 %             |
@@ -48,6 +54,7 @@ headingDivider: 2
 |         Summe         |                                                      |      100 %     |       100 %       |             100 %            |
 
 [Quelle](Leistungsbild gemäß HOAI 2013 und HOAI 2021)
+
 
 ---
 
@@ -77,7 +84,7 @@ headingDivider: 2
 ### 🤓 Schweiz
 
 * Stärkerer Fokus auf die Funktionen (z.B. durch Funktionstests)
-*  KBOB [Empfehlung Gebäudetechnik](https://www.kbob.admin.ch/dam/kbob/de/dokumente/Publikationen/gebaeudetechnik/KBOB_Empfehlung_Geb%C3%A4udetechnik_Endfassung_2020_d.pdf.download.pdf/KBOB_Empfehlung_Geb%C3%A4udetechnik_Endfassung_2020_d.pdf) dient als Definition der Anforderung an die gebäude-technischen Installationen und Anlagen
+*  KBOB [Empfehlung Gebäudetechnik](https://www.kbob.admin.ch/de/gebaeudetechnik-und-gebaeudeautomation) dient als Definition der Anforderung an die gebäude-technischen Installationen und Anlagen
 ---
 
 ## Vor- bis Genehmigungsplanung 
@@ -142,13 +149,15 @@ f(2) # Funktionsaufruf, führt die Funktion mit Argument aus und gibt Rückgabe 
 * **Eingaben**: Werte, die in die Funktion eingehen und sich abhängig vom Systemzustand ändern können
 * **Parameter**: unveränderliche Werte, die einmalig konfiguriert werden (z.B. in Abhängigkeit der Raumgröße)
 * **Ausgaben**: Werte, welche von der Funktion abhängig von Parametern und Eingaben zurückgegeben werden
-* Viele Funktionen stehen für viele Systeme standardisiert zur Verfügung (z.B. [Loxone](https://www.loxone.com/dede/produkte/loxone-config/), [Beckhoff](https://infosys.beckhoff.com/index.php?content=../content/1031/tf8040_tc3_buildingautomation/9281637003.html&id=1985937068038063516), etc.)
+* Viele Funktionen stehen für viele Systeme standardisiert zur Verfügung (z.B. [Loxone](https://www.loxone.com/dede/produkte/loxone-config/), [Beckhoff](https://www.beckhoff.com/de-at/branchen/entertainment-industrie/gebaeudeautomation/), etc.)
 * oder können selbst implementiert werden
 
-![bg right:20% h:400](images/Raumautomationschema_siemens.png)
+
 
 Vorsicht, das stimmt nicht ganz mit der üblichen Benennung bei Programmiersprachen überein
 
+---
+![bg right:% h:400](images/Raumautomationschema_siemens.png)
 
 ---
 
