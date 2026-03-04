@@ -23,6 +23,45 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 10 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 9: Regelungstechnik III | **Einheit 10: SPS – Grundlagen** | Einheit 11: Bussysteme I (Signalisierung) |
+
+### Was haben wir bisher gelernt?
+
+* PID-Regler; Gütekriterien und Ziegler-Nichols
+* Reglerauswahl für GA-Aufgaben (Licht, Temperatur, CO₂)
+
+### Wo wollen wir hin?
+
+Der Raspberry Pi Pico ist ein Mikrocontroller – in der Praxis der Gebäudeautomation arbeiten wir mit **speicherprogrammierbaren Steuerungen (SPS)**. Wir lernen Aufbau, Unterschiede zum Mikrocontroller und das EVA-Prinzip in der Industrie kennen. Die Programmierung vertiefen wir im Labor.
+
+---
+
+## Lernziele – Einheit 10
+
+* Aufbau und Funktionsprinzip einer SPS (am Beispiel Beckhoff/TwinCAT) beschreiben
+* Unterschied Mikrocontroller vs. SPS erklären
+* Zykluszeit und Programmstruktur einer SPS verstehen
+* Digitale und analoge I/Os einer SPS benennen
+* IEC 61131-3 Programmiersprachen im Überblick beschreiben
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 4_1_1 | SPS-Hardware identifizieren und Ein-/Ausgänge benennen |
+| ✍️ 4_1_2 | EVA-Prinzip in der SPS-Programmstruktur nachvollziehen |
+
+---
+
+
 ## Schalter vs. Taster
 
 <!-- _class: white -->

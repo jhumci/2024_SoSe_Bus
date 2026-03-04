@@ -20,6 +20,52 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 5 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 4: Messkette II (analog) | **Einheit 5: Steuerung I** | Einheit 6: Steuerung II (Verknüpfungen + OOP) |
+
+### Was haben wir bisher gelernt?
+
+* EVA-Prinzip, digitale und analoge Ein-/Ausgänge
+* PWM und ADC; Mapping von Rohwerten in physikalische Einheiten
+* Raspberry Pi Pico in CircuitPython programmieren
+
+### Wo wollen wir hin?
+
+Sensoren liefern Werte – doch wie entscheidet das System, **was** es tun soll? Heute lernen wir **Ablaufsteuerungen** mit endlichen Automaten (FSM). Die Treppenlichtschaltung aus dem RA-Schema wird Schritt für Schritt zu einem lauffähigen Programm. Dazu strukturieren wir Code mit **Funktionen**, um ihn wiederverwendbar zu machen.
+
+---
+
+## Lernziele – Einheit 5
+
+* Ablaufsteuerung vs. Verknüpfungssteuerung abgrenzen
+* Endlichen Automaten (FSM) mit Zuständen, Übergangsbedingungen und Ausgaben beschreiben
+* Zeitbedingte Übergänge (Hold-Timer) in CircuitPython implementieren
+* Treppenlichtschaltung als FSM entwerfen und implementieren
+* Code in Funktionen kapseln (Eingaben, Parameter, Ausgaben)
+* Lokale vs. globale Variablen erklären
+
+---
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 2_2_1 | Treppenhauslicht als FSM implementieren |
+| ✍️ 2_2_2 | Treppenlicht mit zwei Tastern entwerfen (FSM auf Papier) |
+| 🤓 ✍️ 2_2_3 | Treppenlicht mit zwei Tastern implementieren |
+| 🤓 ✍️ 2_3_1 | Tageslichtschaltung mit Funktionen implementieren |
+| ✍️ 2_3_2 | Code in Funktionen auslagern (Refactoring) |
+
+---
+
+
 ## Ursprünge der Steuerungstechnik und Automatisierung
 
 
@@ -340,184 +386,237 @@ stateDiagram
 
 ---
 
-## ✍️ Aufgabe 2_2_2: State Machine für einen Dimmschalter 
+## ✍️ Aufgabe 2_2_2: Treppenlicht mit zwei Tastern (State Machine entwerfen)
 
-* Stellen Sie sich einen Dimmer vor, der durch Halten des Tasters die Helligkeit einer LED über die PWM steuert
-* Durch ein kurzes Drücken des Tasters soll die Helligkeit auf 0% bzw. 100% gesetzt werden
-* Durch einen Doppeldruck soll der Dimm-Modus gestartet werden
-* in diesem wird durch Halten des Tasters die Helligkeit von 0% auf 100% hoch- bzw. heruntergefahren werden, je nach dem, wie lange der Taster gehalten wird
-* Nach dem Loslassen wird die Richtung umgekehrt
-* Durch einen einfachen Druck wird der Dimm-Modus und wieder in den normalen Modus gewechselt
-* Zeichen Sie eine State Machine, die dieses Verhalten beschreibt
-* Überlegen Sie sich dazu zunächst sinnvolle Zustände und versuchen Sie diese dann mit sinnvollen Übergängen zu verknüpfen
+> Erweitern Sie das Treppenlicht aus Aufgabe 2_2_1: Ein echtes Treppenhaus hat auf **jedem Stockwerk** einen eigenen Taster. Beide sollen das Licht einschalten und die Haltezeit neu starten können.
+
+* Das Treppenhaus verbindet zwei Stockwerke mit je einem Taster (`BUTTON_A`, `BUTTON_B`)
+* Drückt man einen beliebigen Taster, geht das Licht für `PAR_HOLD` Sekunden an
+* Nach Ablauf der Haltezeit flackert das Licht für `PAR_WARN` Sekunden als Vorwarnung
+* Ein erneuter Druck auf irgendeinen der beiden Taster (auch während der Vorwarnung) startet die Haltezeit neu
+* **Zeichnen Sie** die State Machine (Zustände, Übergänge, Ausgaben) – zunächst ohne Code
 
 ---
 
-### [✔️ Lösung](Aufgaben\2_2_2)
+**Fragen:**
+- Welche Zustände brauchen Sie?
+- Wie ändern sich die Übergänge im Vergleich zu 2_2_1, wenn zwei Taster möglich sind?
+- Was ändert sich am Code (Bedingungen in den `if`-Zweigen)?
+
+---
+
+### ✔️ Lösung
 
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    ```Mermaid
-    stateDiagram
-        A : 100%
-        B : 0%
-        C : aufwärts
-        D : abwärts
-        A --> B: kurzer Druck
-        B --> A: kurzer Druck
-        A --> D: langer Druck
-        B --> C: langer Druck
-        C --> D: loslassen
-        D --> C: loslassen
-    ```
+    Die Zustände sind identisch mit 2_2_1. Der einzige Unterschied: jede Taster-Bedingung lautet nun `not(button_a.value) or not(button_b.value)` statt nur `not(button.value)`. Die State Machine selbst ändert sich strukturell nicht.
+
+---
+
+## 🤓✍️ Aufgabe 2_2_3: Treppenlicht mit zwei Tastern implementieren
+
+* Implementieren Sie die erweiterte Treppenlichtschaltung aus Aufgabe 2_2_2 auf dem Raspberry Pi Pico
+* Schließen Sie einen zweiten Taster an `GP2` an
+* Passen Sie den Code aus Aufgabe 2_2_1 so an, dass beide Taster die Haltezeit starten und neu starten können
 
 
 ---
 
 
-<!-- _class: white -->
-
-![bg h:720](images/mermaid-diagram-2024-01-25-115643.svg)
-
 ---
 
-### [✔️ Verbesserte Lösung](Aufgaben\2_2_2)
 
-<!-- _color: black -->
+<!-- paginate: true -->
 
-??? optional-class "💡 anzeigen"
-    ```Mermaid
-    stateDiagram
-        A : 100%
-        B : 0%
-        C : aufwärts - warte auf Eingabe
-        D : abwärts - warte auf Eingabe
-        E : dimme abwärts
-        F : dimme aufwärts
-        A --> B: kurzer Druck
-        B --> A: kurzer Druck
-        A --> D: Doppel-Druck
-        B --> C: Doppel-Druck
-        D --> E: halten
-        E --> C: loslassen
-        C --> F: halten
-        F --> D: loslassen
-        D --> A: kurzer Druck
-        C --> B: kurzer Druck
-    ```
+
+# 2.3 Funktionen
+
+<!-- _class: title -->
+
 
 
 ---
 
-<!-- _class: white -->
+## Funktionale Programmierung
 
-![bg h:720](images/mermaid-diagram-2024-03-18-125549.svg)
+* Berechnung von Output aus Input wird in wieder aufrufbaren Funktionen gekapselt
+* Funktion hat nur Input und Output aber keinen Speicher / Zustand 
 
+```Python
+def add(a, b):
+    return a + b
+
+add(1, 2) # 3
+add(3, 4) # 7
+```
+
+---
+
+## Steuerfunktion
+
+$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}}$$
+
+```Python
+def l_set(p_act, h_room, PAR_SETPT, l_man):
+    return (p_act and (h_room<PAR_SETPT)) or l_man
+```
+
+```Python
+from tageslichtschaltung import l_set
+from mapping import map_quat
+
+while True:
+    l_set_value = l_set(p_act, h_room, PAR_SETPT, l_man)
+```
 
 ---
 
 
-## 🤓✍️ Aufgabe 2_2_3: Implementierung eines Dimmschalter
+## 🤓✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung
 
-* Implementieren Sie einen Dimmer
-* Lösung mit einer State Machine und Darstellung der State Machine gibt 5% Bonus
-
-
----
-
-## Verknüpfungssteuerungen
-
-* Während Ablaufsteuerungen den Ablauf eines Prozesses steuern, verknüpfen Verknüpfungssteuerungen die Eingangssignale mit den Ausgangssignalen
-* Diese Trennung ist jedoch eher akademisch, da die meisten Systeme sowohl Ablauf- als auch Verknüpfungssteuerungen enthalten
+* Implementieren Sie die Tageslichtschaltung in Python
+* Stellen Sie zunächst sicher, dass LED, Button und Analog-Digital-Wandler korrekt angeschlossen sind
+* Setzen Sie die manuelle Einstellung `l_man` dauerhaft auf `False` 
+* Setzen Sie den Sollwert `PAR_SETPT` auf einen geigneten Wert
+* Legen Sie die beiden Module `tageslichtschaltung.py` und `mappings.py` in den gleichen Ordner wie Ihre Hauptdatei
+* 🤓 Recherchieren Sie einen geeigneten Sensor, den Sie für die Anwesenheitserkennung verwenden können
 
 ---
 
-### Beispiel: Wechselschalter
+### Möglicher Startpunkt
 
-<!-- _class: white -->
+```Python
+import board
+import analogio
+import time
+from mappings import map_quat
+from tageslichtschaltung import l_set
+import digitalio
 
-* Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden
-* Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)
+# Initialisierung des ADC (Analog-Digital Converter)
+ldr = analogio.AnalogIn(board.A2)
 
+# Initialisierung der LED
+led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
+led = digitalio.DigitalInOut(led_pin)
+led.direction = digitalio.Direction.OUTPUT
 
-![h:300](images/Wechselschaltung.svg)
-
----
-
-**Wahrheitstabelle**
-
-| Schalter 1 | Schalter 2 | Lampe |
-|------------|------------|-------|
-|     0      |     0      |   1   |
-|     0      |     1      |   0   |
-|     1      |     0      |   0   |
-|     1      |     1      |   1   |
-
-**Boolsche Funktion**
-$L = (S_1 \land S_2) \lor (\lnot S_1 \land \lnot  S_2)$
-
-
----
+# Initialisierung Button
+button_pin = board.GP0  # Replace with the GPIO pin connected to your button
+button = digitalio.DigitalInOut(button_pin)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
 
 
-## ✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung
+# Parameter setzen
+PAR_SETPT = 100
+l_man = False
 
-![bg right:33% h:720](images/Tageslichtschaltung.png)
 
-* Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke (`PAR_SETPT`) weglassen
-* Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
-* Setzen Sie `L_MAN` zunächst im Code auf `False` 
+# Wiederholung
+while True:
+    # ADC als Dezimalzahl lesen
+    read = ldr.value
+    # Ausgabe in der Kommandozeile/Shell
+    print("ADC:", read)
+    print("E in Lux", map_quat(read))
 
---- 
-
-* 🤓 schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
-* Nutzen Sie einen Button, um den Anwesenheitszustand `P_ACT` zu simulieren
-*H_ROOM* können Sie entweder als Beleuchtungsstärke, Spannung oder  `ADC-Wert` setzen
-* `L_SET` soll das Ausgangssignal sein, das die Lampe steuert und kann zunächst auf `True` gesetzt werden. 🤓 Später können Sie diesen auch durch eine Pulsweitenmodulation setzen.
+```
 
 ---
 
-| `P_ACT` | `H_ROOM` `<` `PAR_SETPT` | `L_MAN` | `L_SET` |
-|-------|----------------|-------|-------|
-|   0   |        0       |   0   |   0   |
-|   1   |        0       |   0   |   0   |
-|   0   |        1       |   0   |   0   |
-|   1   |        1       |   0   |   1   |
-|   0   |        0       |   1   |   1   |
-|   1   |        0       |   1   |   1   |
-|   0   |        1       |   1   |   1   |
-|   1   |        1       |   1   |   1   |
+### `tageslichtschaltung.py`
 
-$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})$$
+```Python
+def l_set(p_act, h_room, PAR_SETPT, l_man):
+    return (p_act and h_room<PAR_SETPT) or l_man
+```
 
 ---
 
-### Hinweise 
+### `mappings.py`
 
-- Bauen Sie auf Aufgaben 2_1_3 und 2_1_5 auf, um die Tageslichtschaltung zu implementieren
+```Python
+def map_lin(z):
+    E_max = 1
+    E_min = 0
+    z_max = 65535
+    z_min = 0
+    beta_0 = E_min
+    beta_1 = (E_max - E_min) / (z_max - z_min)
+    return beta_0 + beta_1 * z
 
+def map_quat(x):
+    s = 44000
+    a = 0.0015
+    return ((x-s)*a) **2
 
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_3\code.py"
-    ```
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\code.py"
-    ```
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\mappings.py"
-    ```
+```
 
----
-
-### [✔️ Lösung](Aufgaben\2_2_4)
+### [✔️ Lösung](Aufgaben\2_3_1)
 
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
     ```python
-    --8<-- "Aufgaben\2_2_4\code.py"
+    --8<-- "Aufgaben\2_3_1\code.py"
     ```
+
+---
+
+## ✍️ Aufgabe 2_3_2:
+
+* Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?
+* Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?
+
+### ✔️ Lösung
+
+* Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändert
+* Umrechnungen
+* Einfacher, wenn mehr (z.B. auch die Zuweisung der Ein- und Ausgänge) in Funktionen ausgelagert wird
+
+---
+
+## Sichtbarkeit von Variablen
+
+### Lokale Variablen
+
+* Variablen, die innerhalb einer Funktion definiert werden (z.B. `s`) sind außerhalb der Funktion nicht sichtbar (*Kapselung*)
+* Dies gilt für die meisten Programmiersprachen und z.B. auch für Schleifen
+
+``` Python
+def map_quat(x):
+    s = 44000
+    a = 0.0015
+    return ((x-s)*a) **2
+
+print(s)
+# NameError Traceback (most recent call last)
+# <ipython-input-11-76c4dd40fb41> in <module>
+# ----> 1 print(s)
+
+# NameError: name 's' is not defined
+```
+
+---
+
+### Globale Variablen
+
+- Variablen, die (bewusst) überall im Programmcode aufrufbar sind (z.B. `PAR_SETPT`) sind **globale Variablen**
+- in Python werden globale Variablen in Großbuchstaben geschrieben
+
+```Python
+A_GLOBAL_VAR = 1
+
+def my_function():
+  a_local_variable = 2
+  return a_local_variable
+
+another_variable = my_function()
+
+print(A_GLOBAL_VAR) # 1
+print(a_local_variable) # Error
+print(another_variable) # 2
+```
+

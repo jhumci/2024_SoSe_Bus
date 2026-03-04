@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "author": "Julian Huber",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {
+        "env": "circuitpython-8.0.2"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 131,
+      "left": -134.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 60,
+      "left": -100,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 131,
+      "left": 200,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 80,
+      "left": 180,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "btn1:1.l",
+      "pico:GP0",
+      "green",
+      [
+        "v10",
+        "v-141.25"
+      ]
+    ],
+    [
+      "btn1:2.l",
+      "pico:GND.3",
+      "black",
+      [
+        "v20",
+        "h115.2",
+        "v-55.05"
+      ]
+    ],
+    [
+      "r1:1",
+      "pico:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r1:2",
+      "pico:GP0",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r2:1",
+      "pico:GP1",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r2:2",
+      "led1:A",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "led1:C",
+      "pico:GND.3",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

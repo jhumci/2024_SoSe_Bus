@@ -18,6 +18,46 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 13 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 12: Bussysteme II | **Einheit 13: Bussysteme III – Übertragungssicherheit** | Einheit 14: Bussysteme IV (Rechercheaufgabe & Präsentationen) |
+
+### Was haben wir bisher gelernt?
+
+* Buszugriffsverfahren: Master/Slave, CSMA, Worst-Case-Latenz
+* Anforderungen an verschiedene GA-Systeme
+
+### Wo wollen wir hin?
+
+Übertragungsfehler passieren – wie erkennen und korrigieren wir sie? Heute lernen wir den **Aufbau von Datenpaketen**, Fehlerarten, Paritätsbits, **Hamming-Abstand** und CRC. Diese Werkzeuge entscheiden, ob ein GA-System zuverlässig funktioniert.
+
+---
+
+## Lernziele – Einheit 13
+
+* Aufbau eines Datenrahmens (Start, Nutzdaten, Prüfsumme, Stop) beschreiben
+* Fehlerarten (Einzelbit, Burst) unterscheiden
+* Paritätsbit und Hamming-Abstand berechnen
+* CRC-Prüfsumme erklären und Anwendungsgebiete benennen
+* Gütekriterien für Übertragungssicherheit vergleichen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 5_3_1 | Paritätsbit berechnen und Fehler erkennen |
+| ✍️ 5_3_2 | Hamming-Abstand für verschiedene Codes berechnen |
+| ✍️ 5_3_3 | CRC-Prüfsumme manuell berechnen |
+
+---
+
+
 ## 🎯 Lernziele
 
 Nach dieser Einheit können Sie:

@@ -30,6 +30,46 @@ img[alt~="center"] {
 
 ---
 
+## Orientierung – Einheit 14 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 13: Bussysteme III | **Einheit 14: Bussysteme IV – GA-Systeme** | — |
+
+### Was haben wir bisher gelernt?
+
+* Signalisierung, Leitungscodes, Symbolrate
+* Buszugriffsverfahren: Master/Slave, CSMA
+* Übertragungssicherheit: Parität, Hamming-Abstand, CRC
+
+### Wo wollen wir hin?
+
+Jetzt verbinden wir alle gelernten Konzepte mit der **Praxis**. Welche Bussysteme gibt es wirklich in Gebäuden? Die Studierenden erarbeiten und präsentieren selbst je ein GA-Bussystem. Am Ende kehren wir zurück zu unserem RA-Schema aus Einheit 2 und wählen ein System für die Treppenlichtinstallation.
+
+---
+
+## Lernziele – Einheit 14
+
+* Topologie, Übertragungsmedium und Zugriffsverfahren eines realen GA-Bussystems beschreiben
+* Typische Anwendungsfälle für KNX, BACnet, DALI, Modbus, EnOcean, LON benennen
+* Auswahlkriterien (Kosten, Offenheit, Erweiterbarkeit) für GA-Bussysteme anwenden
+* Ein Bussystem für eine konkrete Aufgabe (Treppenlichtinstallation) begründet auswählen
+* RA-Schema aus Einheit 2 mit Bussystem-Angaben ergänzen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ Recherche | GA-Bussystem recherchieren und präsentieren |
+| ✍️ Abschluss | Bussystem für Treppenlichtinstallation wählen und RA-Schema annotieren |
+
+---
+
+
 ## Digital Addressable Lighting Interface (DALI) 
 
 
@@ -686,7 +726,9 @@ Jeder recherchiert ein spezifisches Gebäudebussystem und beschreibt einen praxi
 
 ### Vorteile und Einschränkungen:
 
-- Was sind die Stärken und Schwächen des Systems im  - Vergleich zu anderen Bussystemen?
+- Was sind die Stärken und Schwächen des Systems im Vergleich zu anderen Bussystemen?
+- Welche **Auswahlkriterien** aus der Planungsphase (Kap. 1.2) sind besonders relevant: Kosten, Offenheit, Erweiterbarkeit, Wartbarkeit, Herstellerbindung?
+- Ist das System kompatibel mit den Energieeffizienzanforderungen nach **EN 15232** (z.B. Klasse A: Einzelraumregelung mit Kommunikation)?
 - Nutzen Sie mindestens drei verlässliche Quellen (z. B. Herstellerseiten, Fachliteratur, wissenschaftliche Artikel). Geben Sie alle Quellen in einer Literaturliste an.
 
 ---
@@ -718,6 +760,16 @@ Steuerung der Beleuchtung in einem Bürogebäude (DALI).
 - Fazit: Bewertung der Eignung des Systems für den Anwendungsfall.
 - Literaturliste: Auflistung aller verwendeten Quellen (z. B. im APA-Format).
 - Bereiten Sie eine kurze mündliche Präsentation (max. 5 Minuten) vor, in der Sie Ihre Ergebnisse der Gruppe vorstellen.
+
+---
+
+### Abschlussfrage (Kreis schließen)
+
+> Am Anfang des Kurses haben Sie in **Aufgabe 1_2_1** ein Raumautomations-Schema für eine Treppenhausbeleuchtung gezeichnet.
+
+- Welches der in der Klasse präsentierten Bussysteme würden Sie für diese Anlage wählen?
+- Begründen Sie Ihre Wahl mit mindestens zwei konkreten Kriterien (z.B. Baudrate, Topologie, Kosten, Norm-Kompatibilität).
+- Ergänzen Sie Ihr Raumautomations-Schema aus Aufgabe 1_2_1 um die Angabe des gewählten Bussystems und des Übertragungsmediums.
 
 ---
 

@@ -21,6 +21,44 @@ theme: beams
 
 ---
 
+## Orientierung – Einheit 12 von 14
+
+<!-- _class: white -->
+
+### Wo sind wir?
+
+| Abgeschlossen | **Heute** | Als nächstes |
+|---|---|---|
+| Einheit 11: Bussysteme I | **Einheit 12: Bussysteme II – Zugriffsverfahren** | Einheit 13: Bussysteme III (Übertragungssicherheit) |
+
+### Was haben wir bisher gelernt?
+
+* Leitungscodes; Symbolrate vs. Bitrate; differentielle Busse
+* Bussystem-Grundidee: gemeinsames Medium für viele Teilnehmer
+
+### Wo wollen wir hin?
+
+Mehrere Teilnehmer teilen sich ein Kabel – wer darf wann senden? Heute lernen wir **Buszugriffsverfahren**: Master/Slave-Polling und zufällige Verfahren (CSMA). Wie groß ist die Worst-Case-Latenz? Was eignet sich für sicherheitskritische Systeme wie Brandmeldung?
+
+---
+
+## Lernziele – Einheit 12
+
+* Master/Slave-Polling erklären und Worst-Case-Latenz berechnen
+* CSMA-Verfahren und Kollisionsbehandlung beschreiben
+* Anforderungen an GA- und Brandmeldesysteme ableiten
+* Zugriffsverfahren nach Anforderungen auswählen
+
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 5_2_1 | Worst-Case-Latenz für Master/Slave-Polling berechnen |
+| ✍️ 5_2_2 | Zugriffsverfahren für verschiedene GA-Szenarien wählen |
+
+---
+
+
 <style>
 img[alt~="center"] {
   display: block;
