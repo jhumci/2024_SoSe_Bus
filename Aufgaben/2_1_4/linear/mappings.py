@@ -1,19 +1,9 @@
-import board
-import analogio
-import time
+def map_lin(z):
+    E_max = 1
+    E_min = 0
+    z_max = 65535
+    z_min = 0
+    beta_0 = E_min
+    beta_1 = (E_max - E_min) / (z_max - z_min)
+    return beta_0 + beta_1 * z
 
-from mappings import map_lin
-
-# Initialisierung des ADC (Analog-Digital Converter)
-ldr = analogio.AnalogIn(board.A0)
-
-# Wiederholung
-while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("Spannunng in V:", map_lin(read))
-    print("\n") # neue Zeile
-    # Warten
-    time.sleep(1)
