@@ -1,0 +1,21 @@
+stateDiagram-v2
+    A : Start
+    C : LED an
+    D : LED leuchtet
+    E : LED leuchtet2
+    F : LED flackert
+    G : LED aus
+    H : Dauerbetrieb
+    [*] --> A : Systemstart
+    A --> G
+    G --> C : Taster
+    G --> H : Schalter AN
+    C --> D
+    D --> F : PAR_HOLD vergeht
+    D --> C : Taster
+    D --> H : Schalter AN
+    F --> E
+    E --> G : PAR_WARN vergeht
+    E --> C : Taster
+    E --> H : Schalter AN
+    H --> G : Schalter AUS

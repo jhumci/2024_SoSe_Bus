@@ -1,160 +1,29 @@
 ---
 marp: true
-theme: beams
 author: Julian Huber
 size: 16:9
 footer: Julian Huber - Bussysteme
-headingDivider: 2
+
+# Strg+[ ] for Options
+
+theme: beams
 
 ---
 
 <!-- paginate: true -->
 
 
-# 2.2 Steuerung II – Verknüpfungen & Objektorientierung
+# 2.5 Steuerung: Objektorientierung
 
 <!-- _class: title -->
 
----
-
-## Orientierung – Einheit 6 von 14
-
-<!-- _class: white -->
-
-### Wo sind wir?
-
-| Abgeschlossen | **Heute** | Als nächstes |
-|---|---|---|
-| Einheit 5: Steuerung I (FSM) | **Einheit 6: Steuerung II** | Einheit 7: Regelungstechnik I |
-
-### Was haben wir bisher gelernt?
-
-* Ablaufsteuerungen mit FSM (Zustände, Übergänge, Ausgaben)
-* Treppenlichtschaltung implementiert
-* Code mit Funktionen strukturieren (Kapselung, Parameter, Rückgabewerte)
-
-### Wo wollen wir hin?
-
-Nicht jede Steuerung folgt einem zeitlichen Ablauf – manchmal hängt der Ausgang einfach von mehreren Eingängen **gleichzeitig** ab. Heute lernen wir **Verknüpfungssteuerungen** mit Boolescher Algebra. Danach strukturieren wir komplexere Systeme objektorientiert: Sensoren und Aktoren als Klassen mit Attributen und Methoden.
-
----
-
-## Lernziele – Einheit 6
-
-* Verknüpfungssteuerung mit Wahrheitstabelle und Boolescher Funktion beschreiben
-* Tageslichtschaltung als Boolesche Funktion implementieren
 * OOP-Grundkonzepte erklären: Klassen, Objekte, Attribute, Methoden, `__init__`
 * Sensor-Klasse mit Messwertspeicher implementieren
 * JSON-Serialisierung von Objekten verstehen
 * Datenpakete für Busübertragung vorbereiten (Vorgriff auf Bussysteme)
-
-### Aufgaben dieser Einheit
-
-| Aufgabe | Inhalt |
-|---------|--------|
-| ✍️ 2_2_4 | Tageslichtschaltung als Verknüpfungssteuerung |
-| ✍️ 2_4_1 | Sensor-Klasse mit Mittelwertmethode |
-| 🤓 ✍️ 2_4_2 | Sensor-Klasse mit Mapping und optionalen Parametern |
-| ✍️ 2_4_3 | Daten für Busübertragung vorbereiten (DALI vs. BACnet) |
-
----
-
-## Verknüpfungssteuerungen
-
-* Während Ablaufsteuerungen den Ablauf eines Prozesses steuern, verknüpfen Verknüpfungssteuerungen die Eingangssignale mit den Ausgangssignalen
-* Diese Trennung ist jedoch eher akademisch, da die meisten Systeme sowohl Ablauf- als auch Verknüpfungssteuerungen enthalten
-
----
-
-### Beispiel: Wechselschalter
-
-<!-- _class: white -->
-
-* Verknüpfungssteuerungen können z.B. durch Wahreheitstabellen und Boolsche Funktionen beschrieben werden
-* Später werden wir hierzu noch grafische Beschreibungen kennenlernen (Funktionsplan, Kontaktplan, ...)
-
-
-![h:300](images/Wechselschaltung.svg)
-
----
-
-**Wahrheitstabelle**
-
-| Schalter 1 | Schalter 2 | Lampe |
-|------------|------------|-------|
-|     0      |     0      |   1   |
-|     0      |     1      |   0   |
-|     1      |     0      |   0   |
-|     1      |     1      |   1   |
-
-**Boolsche Funktion**
-$L = (S_1 \land S_2) \lor (\lnot S_1 \land \lnot  S_2)$
-
-
 ---
 
 
-## ✍️ Aufgabe 2_2_4: Implementierung einer vereinfachten Tageslichtschaltung
-
-![bg right:33% h:720](images/Tageslichtschaltung.png)
-
-* Wir vereinfachen die Tageslichtschaltung, indem wir die Parameter für Zeit und Mindest-Beleuchtungsstärke (`PAR_SETPT`) weglassen
-* Zeichen Sie zunächst eine Wahrheitstabelle für die Tageslichtschaltung
-* Setzen Sie `L_MAN` zunächst im Code auf `False` 
-
---- 
-
-* 🤓 schließen Sie dafür nur einen zusätzlichen Button dafür an, wenn Sie mit der restlichen Schaltung fertig sind
-* Nutzen Sie einen Button, um den Anwesenheitszustand `P_ACT` zu simulieren
-*H_ROOM* können Sie entweder als Beleuchtungsstärke, Spannung oder  `ADC-Wert` setzen
-* `L_SET` soll das Ausgangssignal sein, das die Lampe steuert und kann zunächst auf `True` gesetzt werden. 🤓 Später können Sie diesen auch durch eine Pulsweitenmodulation setzen.
-
----
-
-| `P_ACT` | `H_ROOM` `<` `PAR_SETPT` | `L_MAN` | `L_SET` |
-|-------|----------------|-------|-------|
-|   0   |        0       |   0   |   0   |
-|   1   |        0       |   0   |   0   |
-|   0   |        1       |   0   |   0   |
-|   1   |        1       |   0   |   1   |
-|   0   |        0       |   1   |   1   |
-|   1   |        0       |   1   |   1   |
-|   0   |        1       |   1   |   1   |
-|   1   |        1       |   1   |   1   |
-
-$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}})$$
-
----
-
-### Hinweise 
-
-- Bauen Sie auf Aufgaben 2_1_3 und 2_1_5 auf, um die Tageslichtschaltung zu implementieren
-
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_3\code.py"
-    ```
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\code.py"
-    ```
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_1_5\mappings.py"
-    ```
-
----
-
-### [✔️ Lösung](Aufgaben\2_2_4)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_2_4\code.py"
-    ```
----
 
 
 <!-- paginate: true -->
@@ -164,6 +33,13 @@ $$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SE
 
 <!-- _class: title -->
 
+### Aufgaben dieser Einheit
+
+| Aufgabe | Inhalt |
+|---------|--------|
+| ✍️ 2_3_1 | Sensor-Klasse mit Mittelwertmethode |
+| 🤓 ✍️ 2_3_2 | Sensor-Klasse mit Mapping und optionalen Parametern |
+| ✍️ 2_3_3 | Daten für Busübertragung vorbereiten (DALI vs. BACnet) |
 
 
 

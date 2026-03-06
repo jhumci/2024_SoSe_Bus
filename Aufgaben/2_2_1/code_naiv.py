@@ -20,7 +20,7 @@ while True:
     if not(button.value):  # Button is pressed (LOW)
         print("Button Pressed!")  
         led.value = True
-        time.sleep(PAR_HOLD)  # Add a small delay to debounce the button
+        time.sleep(PAR_HOLD)  
         for i in range(1,5):
             led.value = False
             time.sleep(0.1)

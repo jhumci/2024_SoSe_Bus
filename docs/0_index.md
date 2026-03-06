@@ -78,14 +78,14 @@ Die Vorlesung beantwortet sechs aufeinander aufbauende Fragen:
 
 ## Übersicht: 14 Einheiten
 
-| Einheit | Thema |
-|:-------:|-------|
-| 1 | Einführung Gebäudeautomation |
-| 2 | Planung & Funktionen der GA |
-| 3 | Messkette I – Digitale Signale & Hardware |
-| 4 | Messkette II – Analoge Signale & Mapping |
-| 5 | Steuerung I – Ablaufsteuerungen & FSM |
-| 6 | Steuerung II – Verknüpfungen & OOP |
+| Einheit | Thema | Lecture |
+|:-------:|-------|---|
+| 1 | Einführung Gebäudeautomation |0, 1_1 |
+| 2 | Planung & Funktionen der GA | 1_2 |
+| 3 | Messkette I – Digitale Signale & Hardware | 2_1 | 
+| 4 | Messkette II – Analoge Signale & Mapping | 2_1 |
+| 5 | Steuerung I – Ablaufsteuerungen & FSM | 2_2 |
+| 6 | Steuerung II – Verknüpfungen & OOP | 2_2 |
 
 --- 
 
@@ -93,12 +93,12 @@ Die Vorlesung beantwortet sechs aufeinander aufbauende Fragen:
 
 | Einheit | Thema |
 |:------:|-------|
-| 7 | Regelungstechnik I – Blockschaltbild & Zweipunktregelung |
-| 8 | Regelungstechnik II – Regelkreis & PID |
-| 9 | Regelungstechnik III – Regelverhalten & Auslegung |
-| 10 | SPS – Grundlagen & Hardware |
-| 11–13 | Bussysteme I–III: Signalisierung, Zugriffsverfahren, Sicherheit |
-| 14 | Bussysteme IV – GA-Systeme (Recherche & Präsentationen) |
+| 7 | Regelungstechnik I – Blockschaltbild & Zweipunktregelung | 3_1 |
+| 8 | Regelungstechnik II – Regelkreis & PID | 3_2 |
+| 9 | Regelungstechnik III – Regelverhalten & Auslegung | 3_3 |
+| 10 | SPS – Grundlagen & Hardware | 4_1 |
+| 11–13 | Bussysteme I–III: Signalisierung, Zugriffsverfahren, Sicherheit | 5_1, 5_2, 5_3 |
+| 14 | Bussysteme IV – GA-Systeme (Recherche & Präsentationen) | 5_4 |
 | 15 | Klausurvorbereitung |
 
 ---

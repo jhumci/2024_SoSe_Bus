@@ -13,7 +13,7 @@ theme: beams
 <!-- paginate: true -->
 
 
-# 2.2 Steuerung
+# 2.2 Steuerung: State-Machine & Ablaufsteuerung
 
 <!-- _class: title -->
 
@@ -36,13 +36,15 @@ theme: beams
 * PWM und ADC; Mapping von Rohwerten in physikalische Einheiten
 * Raspberry Pi Pico in CircuitPython programmieren
 
+---
+
 ### Wo wollen wir hin?
 
 Sensoren liefern Werte – doch wie entscheidet das System, **was** es tun soll? Heute lernen wir **Ablaufsteuerungen** mit endlichen Automaten (FSM). Die Treppenlichtschaltung aus dem RA-Schema wird Schritt für Schritt zu einem lauffähigen Programm. Dazu strukturieren wir Code mit **Funktionen**, um ihn wiederverwendbar zu machen.
 
 ---
 
-## Lernziele – Einheit 5
+## 🎯 Lernziele – Einheit 5
 
 * Ablaufsteuerung vs. Verknüpfungssteuerung abgrenzen
 * Endlichen Automaten (FSM) mit Zuständen, Übergangsbedingungen und Ausgaben beschreiben
@@ -108,7 +110,7 @@ Sensoren liefern Werte – doch wie entscheidet das System, **was** es tun soll?
 
 ---
 
-#### Naive Lösung
+#### [Naive Lösung](https://wokwi.com/projects/457731414156006401)
 
 ```Python
 import time
@@ -118,23 +120,23 @@ import digitalio
 PAR_HOLD = 3
 PAR_WARN = 1
 
-button_pin = board.GP0  # Replace with the GPIO pin connected to your button
+btn1 = digitalio.DigitalInOut(board.GP2)  # Taster Unten
+btn1.direction = digitalio.Direction.INPUT
+btn1.pull = digitalio.Pull.UP
 
-button = digitalio.DigitalInOut(button_pin)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
+btn2 = digitalio.DigitalInOut(board.GP3)  # Taster Oben
+btn2.direction = digitalio.Direction.INPUT
+btn2.pull = digitalio.Pull.UP
 
-led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
-led = digitalio.DigitalInOut(led_pin)
+led = digitalio.DigitalInOut(board.GP15)
 led.direction = digitalio.Direction.OUTPUT
 
-
 while True:
-    if not(button.value):  # Button is pressed (LOW)
-        print("Button Pressed!")  
+    if not btn1.value or not btn2.value:
+        print("Taster gedrückt!")
         led.value = True
-        time.sleep(PAR_HOLD)  
-        for i in range(1,5):
+        time.sleep(PAR_HOLD)
+        for i in range(5):
             led.value = False
             time.sleep(0.1)
             led.value = True
@@ -155,20 +157,21 @@ while True:
 * Unser System hat kein Gedächtnis (über den Zustand)
 * Der Ablauf sollte besser nicht nur durch einen Zeitlichen Rahmen, sondern auch durch Zustände gesteuert werden
 
----
-
+<!-- _
 ```Mermaid
 stateDiagram
     A : LED ein 1
     B : LED flackert
     C : LED ein 2
     E : LED aus
-    [*] --> E : Systemstart
-    E --> A : L_MAN
-    A --> B : PAR_HOLD
-    C --> E : PAR_WARN
-    B --> C
+    [*] -.-> E : Systemstart
+    E -.-> A : L_MAN
+    A -.-> B : PAR_HOLD
+    C -.-> E : PAR_WARN
+    B -.-> C
 ```
+
+-->
 
 ---
 
@@ -289,69 +292,65 @@ PAR_WARN = 2
 state = "start"
 
 if state == "start":
-    button_pin = board.GP0  # Replace with the GPIO pin connected to your button
-        
-    button = digitalio.DigitalInOut(button_pin)
-    button.direction = digitalio.Direction.INPUT
-    button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
-        
-    led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
-    led = digitalio.DigitalInOut(led_pin)
+    btn1 = digitalio.DigitalInOut(board.GP2)
+    btn1.direction = digitalio.Direction.INPUT
+    btn1.pull = digitalio.Pull.UP
+
+    btn2 = digitalio.DigitalInOut(board.GP3)
+    btn2.direction = digitalio.Direction.INPUT
+    btn2.pull = digitalio.Pull.UP
+
+    led = digitalio.DigitalInOut(board.GP15)
     led.direction = digitalio.Direction.OUTPUT
 
     state = "LED aus"
     print("Erfolgreich gestartet")
 
 while True:
-    time.sleep(0.5)
-    if state == "LED aus":
-        print("State: LED aus \n  Warte auf Aktion")
-        if not(button.value):  # Button is pressed (LOW)
-            print("Button Pressed!")
-            state = "LED an"
-            led.value = True
+    time.sleep(0.1)
+    taster = not btn1.value or not btn2.value
 
-    
-    if state == "LED an":
-        print("State: LED an")
+    if state == "LED aus":
+        if taster:
+            print("Taster -> LED an")
+            state = "LED an"
+
+    elif state == "LED an":
+        led.value = True
         time_start = time.time()
-        print("  um: ", time.time())
+        print("LED an um:", time_start)
         state = "LED leuchtet"
 
-    if state == "LED leuchtet":
-        if not(button.value):  # Button is pressed (LOW)
-            print("Button Pressed!")
+    elif state == "LED leuchtet":
+        if taster:
+            print("Taster -> Neustart")
             state = "LED an"
+        elif time.time() - time_start > PAR_HOLD:
+            state = "LED flackert"
 
-        print("LED leuchtet") 
-        print(" seit: ", time.time() - time_start)
-        if time.time() - time_start > PAR_HOLD:
-            state = "LED flackert" 
-
-    if state == "LED leuchtet2":
-        if not(button.value):  # Button is pressed (LOW)
-            print("Button Pressed!")
-            state = "LED an"
-
-        print(" seit Warnung: ", time.time() - time_warning)
-        if time.time() - time_warning > PAR_WARN:
-            state = "LED aus" 
-            led.value = False
-        
-    if state == "LED flackert":
-        for i in range(1,5):
+    elif state == "LED flackert":
+        for i in range(5):
             led.value = False
             time.sleep(0.1)
             led.value = True
             time.sleep(0.1)
         time_warning = time.time()
-        state = "LED leuchtet2" 
-        led.value = True
+        state = "LED leuchtet2"
+
+    elif state == "LED leuchtet2":
+        if taster:
+            print("Taster -> Neustart")
+            state = "LED an"
+        elif time.time() - time_warning > PAR_WARN:
+            state = "LED aus"
+            led.value = False
+            print("LED aus")
 ```
 
 ![bg right h:720](images/mermaid-diagram-2024-01-25-114138.svg)
 
----
+<!--
+
 
 
 ```Mermaid
@@ -362,261 +361,124 @@ stateDiagram
     E:  LED leuchtet2
     F:  LED flackert
     G : LED aus
-    [*] --> A : Systemstart
-    A --> C : Taster wird gedrückt
-    C --> D : 
-    D --> F : PAR_HOLD vergeht
-    E --> G : PAR_WARN vergeht
-    F --> E: 
-    D --> C: Taster wird gedrückt
-    E --> C: Taster wird gedrückt   
-    G --> C: Taster wird gedrückt   
+    [*] -.-> A : Systemstart
+    A -.-> C : Taster wird gedrückt
+    C -.-> D : 
+    D -.-> F : PAR_HOLD vergeht
+    E -.-> G : PAR_WARN vergeht
+    F -.-> E: 
+    D -.-> C: Taster wird gedrückt
+    E -.-> C: Taster wird gedrückt   
+    G -.-> C: Taster wird gedrückt   
 ```
+-->
 
 ---
 
-### [✔️ Lösung](Aufgaben\2_2_1)
-
-<!-- _color: black -->
-
-??? optional-class "Lösung anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_2_1\code_state_machine.py"
-    ```
-
----
-
-## ✍️ Aufgabe 2_2_2: Treppenlicht mit zwei Tastern (State Machine entwerfen)
-
-> Erweitern Sie das Treppenlicht aus Aufgabe 2_2_1: Ein echtes Treppenhaus hat auf **jedem Stockwerk** einen eigenen Taster. Beide sollen das Licht einschalten und die Haltezeit neu starten können.
-
-* Das Treppenhaus verbindet zwei Stockwerke mit je einem Taster (`BUTTON_A`, `BUTTON_B`)
-* Drückt man einen beliebigen Taster, geht das Licht für `PAR_HOLD` Sekunden an
-* Nach Ablauf der Haltezeit flackert das Licht für `PAR_WARN` Sekunden als Vorwarnung
-* Ein erneuter Druck auf irgendeinen der beiden Taster (auch während der Vorwarnung) startet die Haltezeit neu
-* **Zeichnen Sie** die State Machine (Zustände, Übergänge, Ausgaben) – zunächst ohne Code
-
----
-
-**Fragen:**
-- Welche Zustände brauchen Sie?
-- Wie ändern sich die Übergänge im Vergleich zu 2_2_1, wenn zwei Taster möglich sind?
-- Was ändert sich am Code (Bedingungen in den `if`-Zweigen)?
-
----
-
-### ✔️ Lösung
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    Die Zustände sind identisch mit 2_2_1. Der einzige Unterschied: jede Taster-Bedingung lautet nun `not(button_a.value) or not(button_b.value)` statt nur `not(button.value)`. Die State Machine selbst ändert sich strukturell nicht.
-
----
-
-## 🤓✍️ Aufgabe 2_2_3: Treppenlicht mit zwei Tastern implementieren
-
-* Implementieren Sie die erweiterte Treppenlichtschaltung aus Aufgabe 2_2_2 auf dem Raspberry Pi Pico
-* Schließen Sie einen zweiten Taster an `GP2` an
-* Passen Sie den Code aus Aufgabe 2_2_1 so an, dass beide Taster die Haltezeit starten und neu starten können
+### [✔️ Lösung](https://wokwi.com/projects/457731811963823105)
 
 
 ---
 
+## ✍️ Aufgabe 2_2_2: Treppenlicht mit und Gebäudeleittechnik
+
+- Erinnern Sie sich an __Aufgabe 1_2_1: Raumautomationsschema für ein Treppenhaus__. Hier war gefordert, dass man die Beleuchtung auch aus der Gebäudeleittechnik (GLT) manuell einschalten können soll.
+- Ihre Aufgabe ist es nun, die Treppenlichtschaltung so zu erweitern, dass sie auch auf ein manuelles Einschalten durch die GLT reagiert.
+- Erweitern Sie dazu zunächst die Zeichnung des endlichen Automaten um die Möglichkeit, dass die Lampe auch durch ein manuelles Signal eingeschaltet werden kann (aus den Zuständen `LED leuchtet` und `LED leuchtet2`  und `LED aus` heraus). Aus dem neuen Zustand kann man nur durch ein erneutes manuelles Signal zurück in den Zustand `LED aus` wechseln.
 
 ---
 
-
-<!-- paginate: true -->
-
-
-# 2.3 Funktionen
-
-<!-- _class: title -->
-
+### ✔️ [Lösung](https://wokwi.com/projects/457732997390827521)
 
 
 ---
 
-## Funktionale Programmierung
+![h:600](../Aufgaben/2_2_2/mermaid-diagram-2026-03-06-095439.png)
 
-* Berechnung von Output aus Input wird in wieder aufrufbaren Funktionen gekapselt
-* Funktion hat nur Input und Output aber keinen Speicher / Zustand 
+---
 
 ```Python
-def add(a, b):
-    return a + b
-
-add(1, 2) # 3
-add(3, 4) # 7
-```
-
----
-
-## Steuerfunktion
-
-$$L_{\text{SET}} = (P_{\text{ACT}} \land (H_{\text{ROOM}} < \text{PAR}_{\text{SETPT}})) \lor  L_{\text{MAN}}$$
-
-```Python
-def l_set(p_act, h_room, PAR_SETPT, l_man):
-    return (p_act and (h_room<PAR_SETPT)) or l_man
-```
-
-```Python
-from tageslichtschaltung import l_set
-from mapping import map_quat
-
-while True:
-    l_set_value = l_set(p_act, h_room, PAR_SETPT, l_man)
-```
-
----
-
-
-## 🤓✍️ Aufgabe 2_3_1: Implementierung einer Tageslichtschaltung
-
-* Implementieren Sie die Tageslichtschaltung in Python
-* Stellen Sie zunächst sicher, dass LED, Button und Analog-Digital-Wandler korrekt angeschlossen sind
-* Setzen Sie die manuelle Einstellung `l_man` dauerhaft auf `False` 
-* Setzen Sie den Sollwert `PAR_SETPT` auf einen geigneten Wert
-* Legen Sie die beiden Module `tageslichtschaltung.py` und `mappings.py` in den gleichen Ordner wie Ihre Hauptdatei
-* 🤓 Recherchieren Sie einen geeigneten Sensor, den Sie für die Anwesenheitserkennung verwenden können
-
----
-
-### Möglicher Startpunkt
-
-```Python
-import board
-import analogio
 import time
-from mappings import map_quat
-from tageslichtschaltung import l_set
+import board
 import digitalio
 
-# Initialisierung des ADC (Analog-Digital Converter)
-ldr = analogio.AnalogIn(board.A2)
+PAR_HOLD = 5
+PAR_WARN = 2
+state = "start"
 
-# Initialisierung der LED
-led_pin = board.GP1      # Replace with the GPIO pin connected to your LED
-led = digitalio.DigitalInOut(led_pin)
-led.direction = digitalio.Direction.OUTPUT
+if state == "start":
+    btn1 = digitalio.DigitalInOut(board.GP2)   # Taster Unten
+    btn1.direction = digitalio.Direction.INPUT
+    btn1.pull = digitalio.Pull.UP
 
-# Initialisierung Button
-button_pin = board.GP0  # Replace with the GPIO pin connected to your button
-button = digitalio.DigitalInOut(button_pin)
-button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP  # Use pull-up resistor; change if using pull-down
+    btn2 = digitalio.DigitalInOut(board.GP3)   # Taster Oben
+    btn2.direction = digitalio.Direction.INPUT
+    btn2.pull = digitalio.Pull.UP
 
+    btn3 = digitalio.DigitalInOut(board.GP4)   # GLT Dauerbetrieb
+    btn3.direction = digitalio.Direction.INPUT
+    btn3.pull = digitalio.Pull.UP
 
-# Parameter setzen
-PAR_SETPT = 100
-l_man = False
+    led = digitalio.DigitalInOut(board.GP15)
+    led.direction = digitalio.Direction.OUTPUT
 
+    dauer_aktiv = False
+    btn3_vorher = True
 
-# Wiederholung
+    state = "LED aus"
+    print("Erfolgreich gestartet")
+
 while True:
-    # ADC als Dezimalzahl lesen
-    read = ldr.value
-    # Ausgabe in der Kommandozeile/Shell
-    print("ADC:", read)
-    print("E in Lux", map_quat(read))
+    time.sleep(0.1)
+    taster = not btn1.value or not btn2.value
 
+    # Toggle-Erkennung: nur bei fallender Flanke umschalten
+    btn3_jetzt = btn3.value
+    if not btn3_jetzt and btn3_vorher:
+        dauer_aktiv = not dauer_aktiv
+        print("GLT Dauerbetrieb:", dauer_aktiv)
+    btn3_vorher = btn3_jetzt
+
+    if state == "LED aus":
+        if dauer_aktiv:
+            state = "Dauerbetrieb"
+            led.value = True
+        elif taster:
+            state = "LED an"
+
+    elif state == "LED an":
+        led.value = True
+        time_start = time.time()
+        state = "LED leuchtet"
+
+    elif state == "LED leuchtet":
+        if dauer_aktiv:
+            state = "Dauerbetrieb"
+        elif taster:
+            state = "LED an"
+        elif time.time() - time_start > PAR_HOLD:
+            state = "LED flackert"
+
+    elif state == "LED flackert":
+        for i in range(5):
+            led.value = False
+            time.sleep(0.1)
+            led.value = True
+            time.sleep(0.1)
+        time_warning = time.time()
+        state = "LED leuchtet2"
+
+    elif state == "LED leuchtet2":
+        if dauer_aktiv:
+            state = "Dauerbetrieb"
+        elif taster:
+            state = "LED an"
+        elif time.time() - time_warning > PAR_WARN:
+            state = "LED aus"
+            led.value = False
+
+    elif state == "Dauerbetrieb":
+        if not dauer_aktiv:
+            state = "LED aus"
+            led.value = False
 ```
-
----
-
-### `tageslichtschaltung.py`
-
-```Python
-def l_set(p_act, h_room, PAR_SETPT, l_man):
-    return (p_act and h_room<PAR_SETPT) or l_man
-```
-
----
-
-### `mappings.py`
-
-```Python
-def map_lin(z):
-    E_max = 1
-    E_min = 0
-    z_max = 65535
-    z_min = 0
-    beta_0 = E_min
-    beta_1 = (E_max - E_min) / (z_max - z_min)
-    return beta_0 + beta_1 * z
-
-def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)*a) **2
-
-```
-
-### [✔️ Lösung](Aufgaben\2_3_1)
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    ```python
-    --8<-- "Aufgaben\2_3_1\code.py"
-    ```
-
----
-
-## ✍️ Aufgabe 2_3_2:
-
-* Welche Teile des Codes könnte man ebenfalls in Funktionen auslagern?
-* Wie schätzen Sie den Aufwand ein, wenn man nun weitere Tageslicht-Schaltungen mit anderen LEDs und Sensoren auf der gleichen Platine realisieren möchte?
-
-### ✔️ Lösung
-
-* Initialisierung, da die Code immer gleich ist und sich nur je nach Aufbau die Pins ändert
-* Umrechnungen
-* Einfacher, wenn mehr (z.B. auch die Zuweisung der Ein- und Ausgänge) in Funktionen ausgelagert wird
-
----
-
-## Sichtbarkeit von Variablen
-
-### Lokale Variablen
-
-* Variablen, die innerhalb einer Funktion definiert werden (z.B. `s`) sind außerhalb der Funktion nicht sichtbar (*Kapselung*)
-* Dies gilt für die meisten Programmiersprachen und z.B. auch für Schleifen
-
-``` Python
-def map_quat(x):
-    s = 44000
-    a = 0.0015
-    return ((x-s)*a) **2
-
-print(s)
-# NameError Traceback (most recent call last)
-# <ipython-input-11-76c4dd40fb41> in <module>
-# ----> 1 print(s)
-
-# NameError: name 's' is not defined
-```
-
----
-
-### Globale Variablen
-
-- Variablen, die (bewusst) überall im Programmcode aufrufbar sind (z.B. `PAR_SETPT`) sind **globale Variablen**
-- in Python werden globale Variablen in Großbuchstaben geschrieben
-
-```Python
-A_GLOBAL_VAR = 1
-
-def my_function():
-  a_local_variable = 2
-  return a_local_variable
-
-another_variable = my_function()
-
-print(A_GLOBAL_VAR) # 1
-print(a_local_variable) # Error
-print(another_variable) # 2
-```
-
