@@ -10,11 +10,11 @@ def l_set(p_act, h_room, PAR_OND, PAR_OFFD, l_man, l_last):
     l_last:   Letzter Schaltzustand (True/False)
     """
     if l_man:
-        return True          # manuelle Einschaltung hat Vorrang
+        return True
     if not p_act:
-        return False         # niemand anwesend -> aus
+        return False
     if h_room < PAR_OND:
-        return True          # zu dunkel -> einschalten
+        return True
     if h_room > PAR_OFFD:
-        return False         # hell genug -> ausschalten
-    return l_last            # Hysterese: letzten Zustand beibehalten
+        return False
+    return l_last

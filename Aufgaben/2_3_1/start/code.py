@@ -3,13 +3,6 @@ import digitalio
 import analogio
 import time
 from mappings import map_lin, map_log_log_lin
-from tageslichtschaltung import l_set
-
-PAR_OND  = 100   # Lux: einschalten, wenn dunkler
-PAR_OFFD = 300   # Lux: ausschalten, wenn heller
-L_MAN    = False
-
-l_last = False   # Startzustand
 
 # Initialisierung des ADC (Analog-Digital Converter)
 ldr = analogio.AnalogIn(board.A0)
@@ -28,7 +21,10 @@ last_button = True  # Pull-Up: nicht gedrückt = True
 
 while True:
     current = button.value  # False = gedrückt (Pull-Up)
-    h_room = map_log_log_lin(ldr.value)
+
+
+    read = ldr.value
+    print("Beleuchtungsstärke in Lux:", map_log_log_lin(read))
 
 
     # Flanke: war nicht gedrückt, jetzt gedrückt
@@ -38,10 +34,5 @@ while True:
         print(f"Toggle: {toggle_state}")
 
     last_button = current
-    p_act  = last_button
-    l_last = l_set(p_act, h_room, PAR_OND, PAR_OFFD, L_MAN, l_last)
-    led.value = l_last
-
-    print(f"H_ROOM: {h_room:.1f} Lux | P_ACT: {p_act} | L_SET: {l_last}")
 
     time.sleep(0.05)  # Entprellung

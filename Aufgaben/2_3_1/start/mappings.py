@@ -1,18 +1,5 @@
 import math
 
-LN10   = math.log(10)
-BETA_1 = -2.3332
-BETA_0 = 11.9614
-
-def map_log_log_lin(z):
-    """Rechnet ADC-Rohwert in Beleuchtungsstaerke (Lux) um."""
-    if z < 1:
-        z = 1
-    log10_z = math.log(z) / LN10
-    log10_E = BETA_1 * log10_z + BETA_0
-    return math.exp(log10_E * LN10)
-import math
-
 def map_lin(z):
     U_max = 3.3
     U_min = 0
