@@ -225,7 +225,7 @@ while True:
 
 ---
 
-### Sichtbarkeit von Variablen
+### 🤓 Sichtbarkeit von Variablen
 
 * Variablen innerhalb einer Funktion sind **lokal** – außerhalb nicht sichtbar
 
@@ -255,23 +255,29 @@ def l_set(...):
 ## Objektorientierung
 
 
-### Problem: Messrauschen führt zu Flackern
+### Probleme, die wir bisher noch nicht gelöst haben
 
 * Lichtsensoren liefern **keine stabilen Werte** – der ADC-Rohwert schwankt von Messung zu Messung
 * Bei Helligkeitswerten nahe den Schwellwerten kann die Lampe dadurch **flackern**
+* Jeder Fotoresistor hat eine andere Kennlinie – die Umrechnung von ADC-Wert zu Lux ist nicht immer gleich
+
 
 ---
 
-**Beispiel: aufeinanderfolgende Messungen nahe PAR_OND = 100 Lux**
+### Beispiel: aufeinanderfolgende Messungen nahe PAR_OFFD = 300 Lux
 
-| t | ADC-Wert | Lux | L_SET |
-|---|---------|-----|-------|
-| 0 | 32 500 | 102 | 0 (aus) |
-| 1 | 33 100 | 95 | 1 (ein) |
-| 2 | 32 600 | 101 | 0 (aus) |
-| 3 | 33 200 | 94 | 1 (ein) |
+* z.B. durch Sonnenlichtreflexion, Bewegung, Sensorrauschen
+* Licht ist an, Raum ist bei ca. 280 Lux
 
-→ Die Beleuchtung schaltet jede halbe Sekunde, obwohl sich kaum etwas ändert (trotz Hysterese!)
+| t | Lux | L_SET | Grund |
+|---|-----|-------|-------|
+| 0 | 280 | 1 | Hysterese → bleibt an |
+| 1 | 285 | 1 | Hysterese → bleibt an |
+| 2 | 310 | **0** | > PAR_OFFD → **aus** |
+| 3 | 275 | 0 | Hysterese → bleibt aus |
+| 4 | 280 | 0 | Hysterese → bleibt aus |
+
+→ Ein einzelner Ausreißer schaltet das Licht **dauerhaft** aus, obwohl der Raum eigentlich zu dunkel ist.
 
 ---
 
@@ -281,16 +287,18 @@ Anstatt den Einzelmesswert zu verwenden, berechnen wir den **Durchschnitt der le
 
 $$\bar{x}_t = \frac{1}{n} \sum_{i=0}^{n-1} x_{t-i}$$
 
+---
 **Beispiel mit n = 4**
 
-| t | Messwert | Puffer | Mittelwert | Lux |
-|---|---------|--------|-----------|-----|
-| 0 | 32 500 | [32500, 32500, 32500, 32500] | 32 500 | 102 |
-| 1 | 33 100 | [32500, 32500, 32500, 33100] | 32 650 | 99 |
-| 2 | 32 600 | [32500, 32500, 33100, 32600] | 32 675 | 98 |
-| 3 | 33 200 | [32500, 33100, 32600, 33200] | 32 850 | 96 |
+| t | Messwert | Puffer | Mittelwert |
+|---|---------|--------|-----------|
+| 0 | 280 | [280] | 280.0 |
+| 1 | 285 | [280, 285] | 282.5 |
+| 2 | 310 | [280, 285, 310] | 291.7 |
+| 3 | 275 | [280, 285, 310, 275] | 287.5 |
+| 4 | 280 | [285, 310, 275, 280] | 287.5 |
 
-→ Der geglättete Wert bleibt stabil – kein Flackern mehr
+→ Der geglättete Wert bleibt unter 300 – das Licht bleibt **an**.
 
 ---
 
@@ -304,39 +312,172 @@ $$\bar{x}_t = \frac{1}{n} \sum_{i=0}^{n-1} x_{t-i}$$
 
 ---
 
-## Objektorientierung (OOP)
+## Objektorientierung (OOP) – Das kennen Sie schon!
 
-* Bisher: Funktionen kapseln **Berechnungen** (Input → Output, kein Gedächtnis)
-* **Klassen** kapseln **Daten (Attribute)** und **Operationen (Methoden)** zusammen
-* Ein **Objekt** ist eine konkrete Instanz einer Klasse
+Sie haben in jeder Einheit bereits mit Objekten gearbeitet, ohne es zu wissen:
 
+```python
+# ldr ist ein Objekt der Klasse AnalogIn
+ldr = analogio.AnalogIn(board.A0)
+print(ldr.value)              # Attribut lesen
 
+# led ist ein Objekt der Klasse DigitalInOut
+led = digitalio.DigitalInOut(board.GP15)
+led.direction = digitalio.Direction.OUTPUT  # Attribut setzen
+led.value = True                            # Attribut schreiben
+```
+
+* Jede Variable mit einem Punkt-Zugriff (`.`) ist ein **Objekt**
+* `ldr` und `led` sind zwei verschiedene Objekte – jedes hat seinen eigenen Zustand (es kann also, wie eine variable, Werte speichern)
 
 ---
 
+## Klasse vs. Objekt
+
+<!-- _class: white -->
+
+| Begriff | Bedeutung | Beispiel |
+|---------|-----------|---------|
+| **Klasse** | Bauplan / Schablone | `DigitalInOut` |
+| **Objekt** | konkretes Exemplar | `led`, `button` |
+| **Attribut** | gespeicherter Wert | `led.value`, `ldr.value` |
+| **Methode** | Funktion des Objekts | – |
 
 ```python
-class LDRSensor:
+# Zwei Objekte der gleichen Klasse – unabhängige Zustände für die jeweilige LED:
+led1 = digitalio.DigitalInOut(board.GP15)
+led2 = digitalio.DigitalInOut(board.GP14)
 
-    def __init__(self, pin, n=10):   # Konstruktor
-        self.adc    = ...            # Attribut: ADC-Objekt
-        self.n      = n              # Attribut: Puffergröße
-        self.buffer = [...]          # Attribut: Ringpuffer
-
-    def update(self):                # Methode: Messwert einlesen
-        ...
-
-    def get_lux(self):               # Methode: geglätteten Wert ausgeben
-        ...
+led1.value = True   # nur led1 leuchtet
+led2.value = False  # led2 bleibt aus
+# Hilft uns z.B. bei der unabhängigen Steuerung von mehreren Aktoren
 ```
 
 ---
 
-### Aufbau der Sensor-Klasse
+## Warum brauchen wir eigene Klassen?
+
+Unser Problem: Die Funktion `map_log_log_lin` hat kein Gedächtnis – sie kann keine vergangenen Messwerte speichern.
 
 ```python
-import analogio
-import math
+# Reine Funktion: kein Gedächtnis
+def map_log_log_lin(z):
+    ...             # immer nur ein Messwert, nie ein Puffer
+
+# Was wir bräuchten:
+letzten_10_werte = ???   # wo speichern wir die?
+```
+
+### Lösung
+Eine Klasse, die den Puffer als **Attribut** speichert und das Lesen + Mitteln als **Methoden** anbietet.
+__Methoden__ sind Funktionen, die Zugriff auf die Attribute des Objekts haben – sie können also den Puffer aktualisieren und den geglätteten Wert zurückgeben.
+
+---
+
+## Eine eigene Klasse schreiben
+
+```python
+class LDRSensor:           # Klassendefinition: Bauplan
+
+    def __init__(self, pin, n=10):   # Konstruktor
+        # Attribute anlegen – jedes Objekt bekommt seine eigene Kopie
+        self.adc    = analogio.AnalogIn(pin)
+        self.n      = n
+        self.buffer = [self.adc.value]
+
+    def update(self):                # Methode 1
+        ...
+
+    def get_lux(self):               # Methode 2
+        ...
+```
+
+```python
+# Objekt aus der Klasse erstellen:
+sensor = LDRSensor(board.A0, n=10)
+#                  ^^^^^^^^^  ^^^^
+#                  Argumente für __init__
+```
+
+---
+
+## `__init__` – Der Konstruktor
+
+`__init__` wird **einmalig** aufgerufen, wenn das Objekt erstellt wird.
+Hier werden alle Attribute initialisiert.
+
+```python
+def __init__(self, pin, n=10):
+    self.adc    = analogio.AnalogIn(pin)  # ADC-Objekt speichern
+    self.n      = n                       # Puffergröße speichern
+    self.buffer = [self.adc.value]        # Puffer mit aktuellem Wert füllen
+```
+
+```python
+sensor_raum = LDRSensor(board.A0, n=10)
+# → __init__ läuft: self.adc = AnalogIn(A0), self.n = 10, self.buffer = [...]
+
+sensor_gang = LDRSensor(board.A1, n=5)
+# → __init__ läuft erneut für ein zweites, unabhängiges Objekt
+```
+
+Beide Objekte haben **eigene** `adc`-, `n`- und `buffer`-Attribute.
+
+---
+
+## `self` – Das Objekt kennt sich selbst
+
+`self` ist der Name für das Objekt, auf dem die Methode gerade aufgerufen wird.
+
+```python
+sensor = LDRSensor(board.A0, n=10)
+sensor.update()
+# Python ruft intern auf: LDRSensor.update(sensor)
+#                                            ^^^^^^ das ist self
+```
+
+Innerhalb der Methode:
+
+```python
+def update(self):
+    self.buffer.pop(0)          # greift auf den Puffer DIESES Objekts zu
+    self.buffer.append(...)     # nicht auf den Puffer eines anderen Objekts
+```
+
+**Faustegel**: Jede Variable, die das Objekt über mehrere Methodenaufrufe hinweg erinnern soll, wird als `self.xyz` gespeichert.
+
+---
+
+## Methoden – Funktionen des Objekts
+
+Methoden sehen aus wie Funktionen, haben aber immer `self` als ersten Parameter und Zugriff auf alle Attribute.
+
+```python
+def update(self):
+    """Liest einen neuen ADC-Wert und fügt ihn dem Puffer hinzu."""
+    self.buffer.pop(0)                  # ältesten Wert entfernen
+    self.buffer.append(self.adc.value)  # neuen Wert hinzufügen
+
+def get_lux(self):
+    """Gibt den geglätteten Helligkeitswert in Lux zurück."""
+    avg = sum(self.buffer) / self.n
+    return map_log_log_lin(avg)
+```
+
+Aufruf – `self` wird **nicht** explizit übergeben:
+
+```python
+sensor.update()            # Python ergänzt self automatisch
+h = sensor.get_lux()
+```
+
+---
+
+## Die vollständige Sensor-Klasse
+
+```python
+import analogio, math
+from mappings import map_log_log_lin
 
 class LDRSensor:
     """Helligkeitssensor (LDR) mit gleitendem Mittelwert."""
@@ -344,35 +485,29 @@ class LDRSensor:
     def __init__(self, pin, n=10):
         self.adc    = analogio.AnalogIn(pin)
         self.n      = n
-        self.buffer = [self.adc.value] * n  # Puffer mit aktuellem Wert füllen
+        self.buffer = [self.adc.value] * n   # Puffer vorbelegen
 
     def update(self):
-        """Liest einen neuen ADC-Wert und fügt ihn dem Puffer hinzu."""
-        self.buffer.pop(0)                  # ältesten Wert entfernen
-        self.buffer.append(self.adc.value)  # neuen Wert hinzufügen
+        self.buffer.pop(0)
+        self.buffer.append(self.adc.value)
 
     def get_lux(self):
-        """Gibt den geglätteten Helligkeitswert in Lux zurück."""
         avg = sum(self.buffer) / self.n
         return map_log_log_lin(avg)
 ```
 
-* `self` verweist auf das Objekt selbst → Zugriff auf eigene Attribute und Methoden
-* `__init__` ist der **Konstruktor** – wird beim Erstellen des Objekts einmalig ausgeführt
-
 ---
 
-### Verwendung der Klasse
+### Verwendung im Hauptprogramm wenn in der `sensor.py` definiert
 
 ```python
 from sensor import LDRSensor
 
-# Objekt erstellen: Konstruktor wird aufgerufen
-sensor = LDRSensor(board.A0, n=10)
+sensor = LDRSensor(board.A0, n=10)   # Objekt erstellen
 
 while True:
-    sensor.update()            # neuen Messwert einlesen
-    h_room = sensor.get_lux() # geglätteten Wert abrufen
+    sensor.update()             # neuen Messwert einlesen
+    h_room = sensor.get_lux()  # geglätteten Wert abrufen
 
     l_last = l_set(p_act, h_room, PAR_OND, PAR_OFFD, L_MAN, l_last)
     led.value = l_last
@@ -380,7 +515,7 @@ while True:
     time.sleep(0.1)
 ```
 
-**Mehrere Sensoren** – kein Problem:
+**Mehrere Sensoren** – einfach mehrere Objekte erstellen:
 
 ```python
 sensor_raum = LDRSensor(board.A0, n=10)
@@ -402,4 +537,17 @@ Jedes Objekt verwaltet seinen eigenen Puffer – der Hauptcode muss sich nicht d
 * Beobachten Sie, wie sich das Verhalten durch die Glättung verändert
 * 🤓 Experimentieren Sie mit verschiedenen Puffergrößen (`n`): Was passiert bei sehr großem `n`?
 
-### [✔️ Lösung 2_3_2](PLATZHALTER)
+--- 
+
+### [✔️ Lösung 2_3_2](https://wokwi.com/projects/457742519220103169)
+
+---
+
+## Fazit
+
+* Verknüpfungssteuerungen hängen von den aktuellen Eingangswerten ab – keine zeitlichen Abläufe (streng genommen)
+* Wir müssen trotzem auch zeitliche Aspekte berücksichtigen, wenn wir sinnvoll Steuerungen implementieren wollen. Hierzu haben zwei zwei Ansätze kennengelernt:
+  * Hysterese mit zwei Schwellwerten (`PAR_OND`, `PAR_OFFD`)
+  * Gleitender Mittelwert zur Glättung von Sensorwerten
+* Objektorientierung ermöglicht es uns, **Zustand** (z.B. den Puffer der letzten Messwerte) in **Objekten** zu speichern und durch **Methoden** zu
+* In der Aufgabe 2_3_1 haben wir das Problem zwar mit einer reinen Funktion gelöst, aber wenn man genau hinsieht etwas getrickst: Mit `l_last` haben wir den Zustand der Hysterese von außerhalb der Funktion verwaltet. Das hätte man auch in einer Klasse mit einem `self.l_last`-Attribut lösen können.
