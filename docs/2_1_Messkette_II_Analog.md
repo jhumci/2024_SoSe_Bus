@@ -94,7 +94,7 @@ while True:
 
 ---
 
-### [✔️ Lösung](https://wokwi.com/projects/457490920223097857)
+### [✔️ Lösung](https://wokwi.com/projects/458180124100438017)
 
 
 ---
@@ -109,7 +109,7 @@ while True:
 
 
 * Sensoren liefern meist analoge Signale (z.B. Spannung, Strom, Widerstand)
-* z.B. basieren viele Temperatur-Sensoren auf dem Widerstand von Metallen
+* z.B. basieren viele Temperatursensoren auf dem Widerstand von Metallen
 * Damit ändert sich bei gleichbleibender Spannung der Strom, welcher am Eingang gemessen werden kann
 
 ---
@@ -129,7 +129,7 @@ while True:
 ## ✍️ Aufgabe 2_1_5: Anschluss eines analogen Helligkeitssensors
 
 * Verbinden Sie die `+` und `-` Leiste des Breadboards mit $3.3 \,\text{V}$ und `GND` des Raspberry Pi Pico
-* Verbinden Sie den analogen Eingang `A0` (`G26`) mit einem Female-to-Female-Kabel
+* Verbinden Sie den analogen Eingang `A0` (`G26`) mit einem Kabel
 * Fügen Sie den folgenden Code ein
 
 
@@ -379,10 +379,10 @@ def map_log_log_lin(z):
 
 ##### Nachverarbeitung nach ADC
 
-* Viele (teurere) Peripherie-Geräte kommen als Transmitter (Kombination aus dem Sensor selbst und einem Messumformer)
-* Diese linearisieren sie spannungs-(oder Strom) Ausgabe
-* Eine Umrechnung der Spannungswerte an Eingang in die Physikalische Größen muss jedoch weiterhin stattfinden
-* Informationen hierzu finden sich meinst im [Datenblatt](https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf)
+* Viele (teurere) Peripheriegeräte kommen als Transmitter (Kombination aus dem Sensor selbst und einem Messumformer)
+* Diese linearisieren sie Spannungs-(oder Strom-)Ausgabe
+* Eine Umrechnung der Spannungswerte an Eingang in die physikalische Größen muss jedoch weiterhin stattfinden
+* Informationen hierzu finden sich meist im [Datenblatt](https://shop.bb-sensors.com/out/media/Bedienungsanleitung_Helligkeitssensor_Messumformer_0555%20300x.pdf)
 
 ![bg right:43% w:550](images/BB-Helligkeit_Datenblatt.png)
 
