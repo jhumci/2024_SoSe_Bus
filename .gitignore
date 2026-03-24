@@ -1,3 +1,4 @@
 *.xlsx
 *.pdf
 Talk Track LV1.docx
+.venv/

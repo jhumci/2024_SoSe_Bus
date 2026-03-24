@@ -38,9 +38,11 @@ theme: beams
 * OOP: Sensor- und Aktorklassen, JSON-Serialisierung
 * Tageslichtschaltung implementiert – aber: was tun bei Störungen?
 
+---
+
 ### Wo wollen wir hin?
 
-Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. Heute lernen wir, Signalflüsse mit **Blockschaltbildern** darzustellen. Wir modellieren den offenen Regelkreis und implementieren eine erste **Zweipunktregelung** für die Konstantlichtregelung.
+Eine Steuerung reagiert nicht auf Störungen (z.B. Verschattung, Reflexionen, etc.) – dafür brauchen wir Regelung. Heute lernen wir, Signalflüsse mit **Blockschaltbildern** darzustellen. Wir modellieren den offenen Regelkreis und implementieren eine erste **Zweipunktregelung** für die Konstantlichtregelung.
 
 ---
 
@@ -52,14 +54,16 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 * Zweipunktregelung mit Hysterese beschreiben und implementieren
 * Simulationsparameter (Verstärkung, Zeitkonstante) identifizieren
 
+---
+
 ### Aufgaben dieser Einheit
 
 | Aufgabe | Inhalt |
 |---------|--------|
-| ✍️ 3_0 | Tageslichtschaltung in Blockschaltbild übersetzen (Papier) |
-| ✍️ 3_1_1 | Zweipunktregelung: Blöcke und Parameter identifizieren |
-| ✍️ 3_1_2 | Zweipunktregelung simulieren |
-| ✍️ 3_1_3 | Zweipunktregelung für Tageslichtschaltung |
+| ✍️ 3_1_1 | Tageslichtschaltung in Blockschaltbild übersetzen (Papier) |
+| ✍️ 3_1_2 | Zweipunktregelung: Blöcke und Parameter identifizieren |
+| ✍️ 3_1_3 | Zweipunktregelung simulieren |
+| ✍️ 3_1_4 | Zweipunktregelung für Tageslichtschaltung |
 
 ---
 
@@ -76,12 +80,14 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 * Systeme werden durch Blöcke dargestellt, die durch Pfeile verbunden sind
   * z.B. Steuerungsfunktion (z.B. in Python)
   * z.B. thermodynamisches Modell eines Raums
+* Systeme werden durch Eingangsgrößen beeinflusst und verändern Ausgangsgrößen
 
 ---
 
 * I.d.R. beschäftigen wir uns mit **dynamischen Systemen**
     * Die Ausgangsgröße hängt nicht nur  von den Eingangsgrößen ab (vgl. _Funktion_) 
     * sondern auch vom Systemzustand und damit inneren Zustandsgrößen (vgl. _Objekt_)
+* Entsprechend lernen wir nun eine abstraktere Darstellung von Systemen kennen, die wird schon implementiert haben.
 
 
 [Quelle](Lunze )
@@ -113,10 +119,13 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 
 ### Proportionalglied (P-Glied)
 
-* Linear und zeitinvariant
+* Linear und zeitinvariant (kein Gedächtnis)
 * Beschreibt Systeme mit direktem proportionaler Systemfunktion $f$ für den Zusammenhang zwischen Eingang ($u$) und Ausgang ($y$)
   * $y = f(u)=K_p \cdot u$
   * $K_p$ ... Proportionalitätsfaktor
+* Praktische Beispiele:
+  * Lineare Verstärkung
+  * Übersetzung beim Getriebe
 
 ![bg right:33% w:400](images/P-controller-symbol-1.svg)
 
@@ -130,6 +139,7 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
   * $y$ ... Drehfrequenz der Ventilators in $\text{Hz}$
   * $u$ ... $\text{CO}_2$ Konzentration in $\text{ppm}$
   * $K_p$ ... Proportionalitätsfaktor in $\frac{\text{Hz}}{\text{ppm}}$
+> Rechts grafische Darstellung im Funktionsbereich
 
 
 
@@ -141,12 +151,15 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 
 * Unabhängig vom Verlauf der Eingangsgröße $u(t)$ ist der Wert der Ausgangsgröße $y(t)$ immer proportional
 
+> Links grafische Darstellung im Zeitbereich
+
 ---
 
 #### 🧠 Einheits-Sprungfunktion
 
+* beliebtes Werkzeug in die Regelungstechnik: Wie reagiert ein System, wenn wir eine Sprungfunktion an den Eingang legen (auch in der E-Technik z.B. durch Rechteckspannung!)
 * Eine Funktion, die am Zeitpunkt $t=0$ von $u=0$ auf $u=1$ springt und sonst konstant bleibt
-* beliebtes Werkzeug in die Regelungstechnik: Wie reagiert ein System, wenn wir eine Sprungfunktion an den Eingang legen (auch in der E-Technik!)
+
 
 ![bg right h:300](images/Sprungfunktion.svg)
 
@@ -167,7 +180,7 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 
 
 
-* Das Symbol repräsentiert die Sprungantwort
+* Das Symbol repräsentiert die Sprungantwort im Zeitbereich
 * weitere Beispiele:
   * Entwicklung Spannungsabfall am Ohmschen Widerstand 
   beim Anlegen einer Quellenspannung
@@ -181,11 +194,14 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 ### Totzeitglied (T-Glied)
 
 * beschreibt die zeitliche Verzögerung, bis ein System auf das Eingangssignal (z.B. der Sprungfunktion) reagiert. 
-* Nicht die Trägheit des Systems sondern eine Leerlaufzeit $T_t$. 
+* Nicht die Trägheit des Systems sondern eine Leerlaufzeit $T_t$.
+* z.B. in Bussystem: Weiterleitung von Signalen im fixen Takt
 
 ![bg right w:400](images/Totzeit-controller-symbol-1.svg.png)
 
 ---
+
+## Verknüpfung von Systemen im Blockschaltbild
 
 ![](images/VerzoegerterSprung.svg)
 
@@ -200,75 +216,10 @@ Eine Steuerung reagiert nicht auf Störungen – dafür brauchen wir Regelung. H
 
 ## Simulation von Blockschaltbildern
 
-Blockschaltbilder lassen sich mit grafischen Simulationswerkzeugen direkt simulieren (z.B. Scilab xcos, Matlab Simulink, Python/scipy). In den folgenden Aufgaben wird beschrieben, **welche Bausteine** verbunden werden sollen – das konkrete Werkzeug wählen Sie oder wird in der Vorlesung festgelegt.
+* Blockschaltbilder lassen sich mit grafischen Simulationswerkzeugen direkt simulieren (z.B. Scilab xcos, Matlab Simulink, Python/scipy). In den folgenden Aufgaben wird beschrieben, **welche Bausteine** verbunden werden sollen – das konkrete Werkzeug wählen Sie oder wird in der Vorlesung festgelegt.
+* Dies dient z.B. der Auslegung und dem Test von Raumautomationsfunktionen, wie der Tageslichtschaltung
 
----
-
-## ✍️ Aufgabe 3_0: Tageslichtschaltung als Blockschaltbild (Papier)
-
-> Bevor wir simulieren: Übersetzen Sie den Code, den Sie in Kapitel 2 geschrieben haben, in die Sprache der Blockschaltbilder.
-
-**Aufgabe (kein Werkzeug nötig):**
-
-Skizzieren Sie auf Papier das Blockschaltbild der Tageslichtschaltung aus Aufgabe 2_3_1. Beantworten Sie dabei:
-
-1. Welche Python-Variable entspricht der **Führungsgröße** (gewünschter Sollwert)?
-2. Welche Variable ist die **Messgröße** (tatsächlich gemessener Wert)?
-3. Was ist das **Stellglied** – und welches Python-Objekt setzt es um?
-4. Was ist die **Steuerstrecke** – also das System, das durch die Stellgröße beeinflusst wird?
-5. Gibt es **Störgrößen**? Wenn ja: Welche?
-
----
-
-### ✔️ Lösung
-
-<!-- _color: black -->
-
-??? optional-class "💡 anzeigen"
-    - Führungsgröße: `PAR_SETPT` (Helligkeitssollwert in Lux)
-    - Messgröße: `h_room` (gemessene Raumhelligkeit über LDR + ADC)
-    - Stellglied: LED-Aktor (Python: `led.value`), gesteuert durch `l_set()`
-    - Steuerstrecke: die Raumhelligkeit als physikalisches System (Licht verteilt sich im Raum)
-    - Störgrößen: Tageslichteinfall von außen, andere Lichtquellen im Raum
-
----
-
-## ✍️ Aufgabe 3_1_0: Proportional mit Totzeitglied
-
-**Zu modellieren:**
-
-- Eingangsquelle: Sprungfunktion (Amplitude 1, Sprungzeitpunkt $t=1\,\text{s}$)
-- Glied 1: Proportionalglied (Verstärkung $K_P = 2$)
-- Glied 2: Totzeitglied (Totzeit $T_t = 3\,\text{s}$)
-- Ausgang: Zeitverlauf-Plot (Eingang und Ausgang überlagert)
-
-**Aufgaben:**
-- Beobachten Sie den Zeitverlauf am Ausgang
-- Variieren Sie $K_P$ (z.B. 0,5 / 2 / 5) und $T_t$ (z.B. 1 s / 3 s / 8 s) – was verändert sich am Ausgangssignal?
-
-![h:300](images/xcos_start.webp)
-
-
----
-
-### Proportionalglied mit Verzögerung 1. Ordnung (PT1-Glied)
-
-* beschreibt Trägheit im System oder eine Dämpfung 
-* nähert sich über die Zeit einer waagrechten Linie an
-  * z.B. Spannung am Kondensator
-  * z.B. Temperatur im Raum nach dem Einschalten einer Fußbodenheizung
-  * Beschränktes Wachstum
-
-
-![bg right:40% w:400](images/Pt1-controller-symbol-1.svg.png)
-
-
----
-
-- Es gibt noch viele weitere typische Glieder 
-- Mehr dazu beim Thema stetige Regler
-- aus diesen lassen sich komplexe Modelle zusammenstellen lassen 
-(z.B. als Blockschaltbild)
+![bg right:33% h:720](images/Tageslichtschaltung.png)
 
 ---
 
@@ -312,8 +263,9 @@ Skizzieren Sie auf Papier das Blockschaltbild der Tageslichtschaltung aus Aufgab
 (z.B. Rechenzeit als Totzeit)
 
 ```Python
-def l_set(p_act, h_room, PAR_SETPT, l_man):
-    return (p_act and h_room<PAR_SETPT) or l_man
+def tageslichtschaltung(p_act, h_room, PAR_SETPT, l_man):
+    L_SET = (p_act and h_room<PAR_SETPT) or l_man
+    return L_SET
 ```
 
 ---
@@ -325,6 +277,12 @@ def l_set(p_act, h_room, PAR_SETPT, l_man):
 * zeitliche Reaktion meist nicht unmittelbar (z.B. PT1-Glied)
 
 ```Python
+def lichtaktor(L_SET):
+  # ...
+  return L_STA # Momentanwert der Beleuchtung
+```
+
+```Python
 def beleuchtungsstraerke_raum_lux(lichtabgabe_led, lichteinfall_aussen, wand_farbe):
   # Größe des Raumes
   # Größe der Fenster
@@ -333,21 +291,198 @@ def beleuchtungsstraerke_raum_lux(lichtabgabe_led, lichteinfall_aussen, wand_far
   return beleuchtungsstraerke_raum_lux
 ```
 
-```Python
-def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
-  # Temperatur im Zeitpunkt zuvor
-  # Trägheit der Temperaturänderung
-  # Größe des Raumes
-  # Isolation der Raumes
-  <...>
-  return raum_temp_in_c
-```
+---
+
+## ✍️ Aufgabe 3_1_1: Tageslichtschaltung als Blockschaltbild (Papier)
+
+> Bevor wir simulieren: Stellen Sie die Tageslichtschaltung als Blockschaltbild dar.
+
+**Aufgabe (kein Werkzeug nötig):**
+
+Skizzieren Sie auf Papier das Blockschaltbild der Tageslichtschaltung aus Aufgabe 2_3_1. Beantworten Sie dabei:
+
+1. Was ist die **Führungsgröße** (gewünschter Sollwert)?
+2. Welche Variable ist die **Messgröße** (tatsächlich gemessener Wert)?
+3. Was ist das **Stellglied** – und dessen Ein und Ausgang? Welche Entscheidung wird hier getroffen?
+4. Was ist die **Steuerstrecke** – also das System, das durch die Stellgröße beeinflusst wird?
+5. Gibt es **Störgrößen**? Wenn ja: Welche?
+
+---
+
+### ✔️ Lösung 
+
+![](images/steuerung_tageslichtschaltung.svg)
+
+- Führungsgröße: `H_ROOM` (gemessene Raumhelligkeit über LDR + ADC)
+- Stellglied: RA-Funktion
+- Stellgröße: `L_SET` (Steuerbefehl für die Beleuchtung)
+- Steuerstrecke: Der Lichtaktor, der durch das Stellglied beeinflusst wird.
+- Störgröße: In diesem Fall nicht relevant, ggf. Kurzschluss
+
+---
+
+## ✍️ Aufgabe 3_1_2: Proportionalglied mit Totzeitglied (Simulink Online)
+
+### Ziel
+
+Modellieren Sie eine Reihenschaltung aus **Proportionalglied** und **Totzeitglied** in MATLAB Simulink Online und untersuchen Sie den Einfluss der Parameter auf das Ausgangssignal.
+
+---
+
+### Modell-Aufbau
+
+| # | Block | Bibliothekspfad | Parameter |
+|---|-------|-----------------|-----------|
+| 1 | **Step** (Sprungfunktion) | *Sources → Step* | Step time = `1`, Final value = `1` |
+| 2 | **Gain** (Proportionalglied) | *Math Operations → Gain* | Gain = `2` |
+| 3 | **Transport Delay** (Totzeitglied) | *Continuous → Transport Delay* | Time delay = `3` |
+| 4 | **Scope** (Zeitverlauf-Plot) | *Sinks → Scope* | — |
+
+---
+
+### Schritt-für-Schritt-Anleitung
+
+1. **Simulink Online öffnen**
+   Melden Sie sich bei [MATLAB Online](https://matlab.mathworks.com) an und klicken Sie auf **Simulink → Blank Model**.
+
+2. **Blöcke einfügen**
+   Öffnen Sie die **Simulink Library** (Tastenkürzel: Doppelklick auf die leere Arbeitsfläche oder über das `+`-Symbol in der Toolbar). Suchen Sie die vier Blöcke aus der Tabelle oben und ziehen Sie sie auf die Arbeitsfläche.
+
+3. **Blöcke verbinden**
+   Verbinden Sie die Blöcke in Reihe, indem Sie den Ausgangsport eines Blocks auf den Eingangsport des nächsten ziehen:
+
+   ```
+   Step ──▶ Gain (Kₚ = 2) ──▶ Transport Delay (Tₜ = 3 s) ──▶ Scope
+   ```
+
+4. **Eingang zusätzlich zum Scope führen**
+   Um Eingang und Ausgang **überlagert** darzustellen:
+   - Fügen Sie einen **Mux**-Block ein (*Signal Routing → Mux*).
+   - Verbinden Sie den Ausgang von **Step** *und* den Ausgang von **Transport Delay** jeweils mit einem Eingang des Mux.
+   - Verbinden Sie den Mux-Ausgang mit dem **Scope**.
+   
+   Das Blockschaltbild sieht dann so aus:
+
+   ```
+                    ┌──────────────────────────────────────┐
+                    │                                      ▼
+   Step ──▶ Gain ──▶ Transport Delay ──▶ Mux ──▶ Scope
+   ```
+
+   > **Hinweis:** Alternativ können Sie den Step-Ausgang per Abzweigung (Rechtsklick auf die Leitung → *Branch*) direkt an den Mux führen.
+
+5. **Simulationsparameter einstellen**
+   - Klicken Sie auf das Zahnrad-Symbol oder *Simulation → Model Configuration Parameters*.
+   - Setzen Sie die **Stop Time** auf `15` (Sekunden).
+
+6. **Simulation starten**
+   Klicken Sie auf den grünen **Run**-Button (▶). Öffnen Sie anschließend den **Scope** per Doppelklick.
+
+---
+
+### Beobachtungsaufgaben
+
+**a) Beschreiben Sie den Zeitverlauf am Ausgang:**
+- Ab welchem Zeitpunkt erscheint das Ausgangssignal?
+- Welchen Wert hat das Ausgangssignal im eingeschwungenen Zustand?
+- Wie unterscheidet sich das Ausgangssignal vom Eingangssignal?
+
+**b) Parameterstudie – Verstärkung $K_P$ variieren:**
+
+Ändern Sie den **Gain**-Wert per Doppelklick auf den Block und beobachten Sie die Auswirkung.
+
+| $K_P$ | Erwarteter stationärer Endwert |
+|-------|-------------------------------|
+| 0,5   | ?                             |
+| 2     | ?                             |
+| 5     | ?                             |
+
+→ Welcher Zusammenhang besteht zwischen $K_P$ und dem Endwert?
+
+**c) Parameterstudie – Totzeit $T_t$ variieren:**
+
+Ändern Sie den **Time delay**-Wert im Transport-Delay-Block.
+
+| $T_t$  | Beobachtung am Ausgangssignal |
+|--------|-------------------------------|
+| 1 s    | ?                             |
+| 3 s    | ?                             |
+| 8 s    | ?                             |
+
+→ Was verändert sich am Ausgangssignal? Verändert sich der stationäre Endwert?
+
+---
+
+### Reflexionsfragen
+
+- Wo tritt eine Totzeit in der Gebäudeautomation auf? Nennen Sie ein konkretes Beispiel.
+- Warum ist die Totzeit für die Regelung besonders problematisch?
+
+---
+
+### Ausblick: PT1-Glied (Proportionalglied mit Verzögerung 1. Ordnung)
+
+Das PT1-Glied beschreibt **Trägheit** oder **Dämpfung** in einem System. Das Ausgangssignal nähert sich exponentiell einem stationären Endwert an.
+
+**Beispiele aus der Gebäudeautomation:**
+- Spannung am Kondensator nach dem Anlegen einer Gleichspannung
+- Raumtemperatur nach dem Einschalten einer Fußbodenheizung (beschränktes Wachstum)
+
+In Simulink: Block **Transfer Fcn** (*Continuous → Transfer Function*) mit Zähler = `[K]` und Nenner = `[T 1]`.
+
+> Es gibt viele weitere typische Übertragungsglieder (PT2, I, D, PID, …). Aus diesen lassen sich komplexe Modelle als Blockschaltbilder zusammenstellen. Mehr dazu beim Thema *stetige Regler*.
+
+
+## ✍️ Aufgabe 3_1_2: Proportional mit Totzeitglied
+
+**Zu modellieren:**
+
+- Eingangsquelle: Sprungfunktion (Amplitude 1, Sprungzeitpunkt $t=1\,\text{s}$)
+- Glied 1: Proportionalglied (Verstärkung $K_P = 2$)
+- Glied 2: Totzeitglied (Totzeit $T_t = 3\,\text{s}$)
+- Ausgang: Zeitverlauf-Plot (Eingang und Ausgang überlagert)
+
+---
+
+
+https://matlab.mathworks.com/
+
+---
+
+**Aufgaben:**
+- Beobachten Sie den Zeitverlauf am Ausgang
+- Variieren Sie $K_P$ (z.B. 0,5 / 2 / 5) und $T_t$ (z.B. 1 s / 3 s / 8 s) – was verändert sich am Ausgangssignal?
+
+![h:300](images/xcos_start.webp)
+
+
+---
+
+### Proportionalglied mit Verzögerung 1. Ordnung (PT1-Glied)
+
+* beschreibt Trägheit im System oder eine Dämpfung 
+* nähert sich über die Zeit einer waagrechten Linie an
+  * z.B. Spannung am Kondensator
+  * z.B. Temperatur im Raum nach dem Einschalten einer Fußbodenheizung
+  * Beschränktes Wachstum
+
+
+![bg right:40% w:400](images/Pt1-controller-symbol-1.svg.png)
+
+
+---
+
+- Es gibt noch viele weitere typische Glieder 
+- Mehr dazu beim Thema stetige Regler
+- aus diesen lassen sich komplexe Modelle zusammenstellen lassen 
+(z.B. als Blockschaltbild)
+
 
 
 
 ---
 
-## ✍️ Aufgabe 3_1_1: Wassertank ohne Steuerung
+## ✍️ Aufgabe 3_1_2: Wassertank ohne Steuerung
 
 **Szenario:** Ein 100 l fassender Wassertank ist zu Beginn mit 10 l gefüllt. Es fließen konstant 5 l/min hinein.
 
@@ -374,7 +509,7 @@ def raumtemperatur(heizleistung_in_w, aussen_temp_in_c):
 
 ---
 
-## ✍️ Aufgabe 3_1_2: Einfache Tageslichtschaltung
+## ✍️ Aufgabe 3_1_3: Einfache Tageslichtschaltung
 
 > Hier übersetzen wir die Tageslichtschaltung aus Aufgabe 2_3_1 erstmals in ein Blockschaltbild.
 
@@ -512,7 +647,7 @@ class zweipunkt_hysterese():
 
 ---
 
-## ✍️ Aufgabe 3_1_3: Zweipunktregelung für Tageslichtschaltung
+## ✍️ Aufgabe 3_1_4: Zweipunktregelung für Tageslichtschaltung
 
 > Erweitern Sie das Modell aus 3_1_2 um eine Hysterese, um das ständige Schalten bei Helligkeitswerten nahe am Schwellwert zu vermeiden.
 
