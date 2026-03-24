@@ -198,18 +198,25 @@ der Regelgröße $y$ zu erhalten
 
 ---
 
-## ✍️ Aufgabe 3_3_1: Reaktion von PID und PT1 auf Einheitssprung
+## ✍️ Aufgabe 3_3_1: Reaktion von PID und PT1 auf Einheitssprung (Python)
 
 **Zu modellieren** (offener Regelkreis – kein Feedback):
 
-- Eingang: Einheitssprung (Amplitude 1, Sprungzeitpunkt $t = 1\,\text{s}$)
-- Regler: PID-Glied mit $K_P = 1$, $K_I = 0$, $K_D = 0$
-- Strecke: PT1-Glied mit Zeitkonstante $\tau = 5\,\text{s}$
-- Ausgang: Zeitverlauf-Plot von Eingang und Ausgang
+```python
+from blockdiagram import Step, PID, PT1, Scope
+
+u       = Step(t_step=1, final=1)
+regler  = PID(Kp=1, Ki=0, Kd=0, source=u)
+strecke = PT1(tau=5, K=1, source=regler)
+
+Scope(t_end=30).run(Eingang=u, Ausgang=strecke)
+```
+
+Notebook: `Aufgaben/3_3_1/aufgabe_3_3_pid_pt1.ipynb`
 
 **Aufgaben:**
-- Variieren Sie $K_P$ und $\tau$: Wie beeinflusst die Zeitkonstante die Anstiegsgeschwindigkeit?
-- Schalten Sie den I-Anteil zu ($K_I > 0$): Was verändert sich?
+- Variieren Sie `Kp` und `tau`: Wie beeinflusst die Zeitkonstante die Anstiegsgeschwindigkeit?
+- Schalten Sie den I-Anteil zu (`Ki > 0`): Was verändert sich?
 
 ---
 
@@ -280,24 +287,41 @@ Zeichnen Sie ein Blockschaltbild der Steuerkette mit folgenden Blöcken:
 
 ---
 
-### ✍️ Aufgabe 3_3_2b: Simulation der Steuerkette
+### ✍️ Aufgabe 3_3_2b: Simulation der Steuerkette (Python)
 
 **Zu modellieren** (offene Steuerkette – keine Rückkopplung):
 
-- Außentemperatur: Sprungblock, fällt nach 1000 min von $10°C$ auf $-5°C$
-- Heizkurve: Proportionalglied ($a = -1{,}5$) plus Konstantblock ($b = 60$) → ergibt Vorlauftemperatur
-- Stellglied: PT1-Glied mit $\tau = 60\,\text{min}$ (träge Reaktion der Heizanlage)
-- Strecke: PT1-Glied mit $\tau = 120\,\text{min}$ und Verstärkung $0{,}35$ (Raumdynamik)
-- Ausgang: Zeitverlauf-Plot von Außentemperatur, Vorlauftemperatur und Raumtemperatur
+```python
+from blockdiagram import Step, Gain, Constant, Sum, PT1, Scope
 
+# Außentemperatur: Sprung von 10°C auf -5°C nach 1000 min
+T_aussen = Step(t_step=1000, initial=10, final=-5)
+
+# Heizkurve: T_VL = -1.5 * T_aussen + 60
+heizkurve = Sum(
+    Gain(K=-1.5, source=T_aussen),
+    Constant(60),
+    signs=[+1, +1]
+)
+
+stellglied = PT1(tau=60, K=1, source=heizkurve)
+raum       = PT1(tau=120, K=0.35, source=stellglied, initial=10*0.35)
+
+Scope(t_end=3000, ylabel="Temperatur [°C]", xlabel="Zeit [min]").run(
+    Aussentemperatur=T_aussen,
+    Vorlauftemperatur=stellglied,
+    Raumtemperatur=raum
+)
+```
+
+Notebook: `Aufgaben/3_3_2/aufgabe_3_3_2_heizkurve.ipynb`
 
 ---
 
 ### 🔍 Beobachtung
 
-- Visualisieren Sie die Raumtemperatur, Vorlauftemperatur und Außentemperatur im **Scope**.
-- Wie entwickelt sich die Raumtemperatur über der Zeit?  
-- Was passiert, wenn die Außentemperatur plötzlich sinkt?  
+- Wie entwickelt sich die Raumtemperatur über der Zeit?
+- Was passiert, wenn die Außentemperatur plötzlich sinkt?
 - Wie gut funktioniert die Steuerung?
 
 
@@ -325,20 +349,31 @@ Zeichnen Sie ein **Blockschaltbild** des Regelkreises. Folgende Elemente sollen 
 
 ---
 
-### ✍️ Aufgabe 3_3_3b: Simulation des Regelkreises
+### ✍️ Aufgabe 3_3_3b: Simulation des Regelkreises (Python)
 
-**Zu modellieren** (geschlossener Regelkreis):
+```python
+from blockdiagram import Step, Sum, PID, PT1, Scope
 
-- Solltemperatur: Sprungblock von $15°C$ auf $20°C$ bei $t = 300\,\text{min}$
-- Summationsstelle: $e = w - T_{\text{Raum}}$
-- Regler: P-Regler mit $K_P = 3$ (I- und D-Anteil zunächst = 0)
-- Strecke: PT1-Glied mit $\tau = 120\,\text{min}$, Verstärkung $0{,}35$
-- Rückführung: direkter Pfad ohne Verzögerung
-- Ausgang: Zeitverlauf von Sollwert $w$, Raumtemperatur und Regelabweichung $e$
+Kp = 3
+w      = Step(t_step=300, initial=15, final=20)
+e      = Sum()
+regler = PID(Kp=Kp, Ki=0, Kd=0, source=e)
+raum   = PT1(tau=120, K=0.35, source=regler, initial=15)
+e.connect(w, +1)
+e.connect(raum, -1)
+
+Scope(t_end=1500, ylabel="Temperatur [°C]", xlabel="Zeit [min]").run(
+    Sollwert=w,
+    Raumtemperatur=raum,
+    Regelabweichung=e
+)
+```
+
+Notebook: `Aufgaben/3_3_3/aufgabe_3_3_3_temperaturregelung.ipynb`
 
 **Beobachtungen:**
 - Wird die Soll-Temperatur erreicht? Gibt es eine bleibende Regelabweichung?
-- Was verändert sich bei größerem/kleinerem $K_P$?
+- Was verändert sich bei größerem/kleinerem `Kp`?
 - Was müsste man ändern, um die Regelabweichung vollständig zu eliminieren?
 
 ---
@@ -549,27 +584,62 @@ Messung der beobachtbaren Periodendauer $T^{krit}$
 
 ---
 
-## ✍️ Aufgabe 3_3_5: Ziegler-Nichols – Regler einstellen
+## ✍️ Aufgabe 3_3_5: Ziegler-Nichols – Regler einstellen (Python)
 
-Wenden Sie die Methode von Ziegler und Nichols an, um gute Regler-Parameter für die unten abgebildeten Systeme zu finden.
+Wenden Sie die Methode von Ziegler und Nichols an, um gute Regler-Parameter zu finden.
 
 **Vorgehen:**
-1. Erhöhen Sie $K_P$ schrittweise (bei $K_I = 0$, $K_D = 0$) bis das System dauerhaft schwingt → kritische Verstärkung $K_P^{krit}$
-2. Lesen Sie die Schwingungsdauer $T^{krit}$ ab
+1. Erhöhen Sie `Kp` schrittweise (bei `Ki=0`, `Kd=0`) bis das System dauerhaft schwingt → $K_P^{krit}$
+2. Lesen Sie die Schwingungsdauer $T^{krit}$ aus dem Plot ab
 3. Berechnen Sie die Regler-Parameter nach der Tabelle (vgl. Folie)
 
-![](images/ReglerEinstellen.png)
+```python
+from blockdiagram import Step, Sum, PID, PT1, Scope
 
-> 🤓 **Optional – Simulation:** Eine interaktive Simulation steht unter [Google Colab](https://colab.research.google.com/drive/1NHJB1KzMxQen6Ehki6Cs0nEQDZiuFb8t?usp=sharing) bereit. Nutzen Sie diese, um Ihre berechneten Parameter zu überprüfen.
+# Schritt 1: Stabilitätsgrenze suchen
+Kp = 5.0   # ← schrittweise erhöhen
+
+w      = Step(t_step=300, initial=15, final=20)
+e      = Sum()
+regler = PID(Kp=Kp, Ki=0, Kd=0, source=e)
+raum   = PT1(tau=120, K=0.35, source=regler, initial=15)
+e.connect(w, +1)
+e.connect(raum, -1)
+
+Scope(t_end=2000, xlabel="Zeit [min]").run(Sollwert=w, Raumtemperatur=raum)
+
+# Schritt 2+3: Ziegler-Nichols-Parameter berechnen
+Kp_krit = 10.0   # ← gefundene kritische Verstärkung eintragen
+T_krit  = 480.0  # ← Schwingungsdauer in Minuten eintragen
+
+Kp_pid = 0.6  * Kp_krit
+Ki_pid = Kp_pid / (0.5 * T_krit)
+Kd_pid = Kp_pid * 0.12 * T_krit
+print(f"PID: Kp={Kp_pid:.3f}, Ki={Ki_pid:.5f}, Kd={Kd_pid:.1f}")
+```
+
+Notebook: `Aufgaben/3_3_3/aufgabe_3_3_3_temperaturregelung.ipynb`
 
 ---
 
-## 🤓 ✍️ Aufgabe 3_3_6: Ziegler-Nichols auf PT1-Strecke
+## 🤓 ✍️ Aufgabe 3_3_6: Ziegler-Nichols auf PT1-Strecke (Python)
 
-**Zu modellieren** (für die Simulation):
+**Zu modellieren:**
 
-- Geschlossener Regelkreis mit PT1-Strecke ($\tau = 10\,\text{s}$, Verstärkung = 1) und Totzeit ($T_t = 2\,\text{s}$)
-- Wenden Sie Ziegler-Nichols an: Erhöhen Sie $K_P$ bis zum Dauerschwingen
+```python
+from blockdiagram import Step, Sum, PID, PT1, TransportDelay, Scope
+
+# PT1-Strecke mit Totzeit
+w       = Step(final=1)
+e       = Sum()
+regler  = PID(Kp=1, Ki=0, Kd=0, source=e)   # Kp schrittweise erhöhen
+strecke = PT1(tau=10, K=1,
+              source=TransportDelay(Tt=2, source=regler))
+e.connect(w, +1)
+e.connect(strecke, -1)
+
+Scope(t_end=150).run(Sollwert=w, Regelgroesse=strecke)
+```
 
 **Aufgabe:** Berechnen Sie die PID-Parameter und überprüfen Sie das Regelverhalten im Modell.
 
@@ -580,4 +650,4 @@ Wenden Sie die Methode von Ziegler und Nichols an, um gute Regler-Parameter für
 <!-- _color: black -->
 
 ??? optional-class "💡 anzeigen"
-    Erhöhen Sie $K_P$ schrittweise. Bei $K_P^{krit}$ beginnt das System zu schwingen. Lesen Sie $T^{krit}$ ab und berechnen Sie nach der Ziegler-Nichols-Tabelle.
+    Erhöhen Sie `Kp` schrittweise. Bei $K_P^{krit}$ beginnt das System zu schwingen. Lesen Sie $T^{krit}$ ab und berechnen Sie nach der Ziegler-Nichols-Tabelle.

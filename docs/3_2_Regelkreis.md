@@ -84,24 +84,35 @@ Die Zweipunktregelung ist robust, aber schaltet nur an/aus. Heute schließen wir
 
 ---
 
-## ✍️ Aufgabe 3_2_1: Konstantlicht-Regelung
+## ✍️ Aufgabe 3_2_1: Konstantlicht-Regelung (Python)
 
 **Zu modellieren** (geschlossener Regelkreis):
 
-- Sollwert-Quelle: Führungsgröße $w = 100\,\text{Lux}$ (Konstantblock)
-- Summationsstelle: berechnet Regelabweichung $e = w - y_m$
-- Regler: Proportionalglied mit Verstärkung $K_P$ (zunächst $K_P = 1$)
-- Streckenmodell: PT1-Glied mit Zeitkonstante $\tau = 2\,\text{s}$ und Totzeit $T_t = 0{,}5\,\text{s}$ (modelliert träge Raumhelligkeit)
-- Rückkopplung: Messgröße $y_m$ zurück zur Summationsstelle
-- Ausgang: Zeitverlauf-Plot von $w$, $y_m$ und $e$
+```python
+from blockdiagram import Step, Sum, Gain, TransportDelay, PT1, Scope
 
-![](images/Konstantlichtregelung_nur_p.png)
+Kp      = 1
+w       = Step(final=100)          # Sollwert: 100 Lux
+e       = Sum()                    # Summationsstelle
+regler  = Gain(K=Kp, source=e)
+delay   = TransportDelay(Tt=0.5, source=regler)
+strecke = PT1(tau=2, K=1, source=delay)
+
+e.connect(w,       sign=+1)   # Sollwert addieren
+e.connect(strecke, sign=-1)   # Istwert subtrahieren (Rückführung)
+
+Scope(t_end=20, ylabel="Helligkeit [Lux]").run(
+    Sollwert_w=w,
+    Istwert_y=strecke,
+    Regelabweichung_e=e
+)
+```
+
+Notebook: `Aufgaben/3_2_1/aufgabe_3_2_1_konstantlicht.ipynb`
 
 **Aufgaben:**
 - Welche Komponenten aus dem RA-Schema (Kap. 1.2) werden durch welche Bausteine dargestellt?
-- Variieren Sie $K_P$ (z.B. 0,5 / 2 / 10): Wann wird das System instabil?
-
----
+- Variieren Sie `Kp` (z.B. 0,5 / 2 / 10): Wann wird das System instabil?
 
 ### ✔️ Lösung
 
@@ -188,23 +199,34 @@ def regler (e, letzte_drehzahl):
 
 ---
 
-## ✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler
+## ✍️ Aufgabe 3_2_3: Wassertank mit PID-Regler (Python)
 
-> Erweitern Sie das Modell aus Aufgabe 3_1_1: Der Wassertank bekommt nun einen Regelkreis.
+> Erweitern Sie das Modell aus Aufgabe 3_1_2b: Der Wassertank bekommt nun einen Regelkreis.
 
-**Zu modellieren** (geschlossener Regelkreis, Erweiterung von 3_1_1):
+**Zu modellieren** (geschlossener Regelkreis):
 
-- Sollwert-Quelle: Führungsgröße $w = 60\,\text{l}$ (gewünschter Füllstand)
-- Summationsstelle: $e = w - \text{Füllstand}$
-- Regler: PID-Glied (Parameter: $K_P$, $K_I$, $K_D$)
-- Strecke: Integralglied (Füllstand = Integral des Netto-Zuflusses; Anfangswert = 10 l)
-- Ausgang: Zeitverlauf von $w$ und Füllstand
+```python
+from blockdiagram import Step, Sum, PID, Integrator, Scope
 
-![](images/demo_watertank.png)
+w          = Step(final=60)
+e          = Sum()
+regler     = PID(Kp=1, Ki=0, Kd=0, source=e)   # zunächst reiner P-Regler
+fuellstand = Integrator(K=1, initial=10, source=regler)
+
+e.connect(w,          sign=+1)
+e.connect(fuellstand, sign=-1)
+
+Scope(t_end=30, ylabel="Füllstand [l]").run(
+    Sollwert=w,
+    Fuellstand=fuellstand
+)
+```
+
+Notebook: `Aufgaben/3_2_3/aufgabe_3_2_3_wassertank_pid.ipynb`
 
 **Aufgaben:**
-- Starten Sie mit reinem P-Regler ($K_I = 0$, $K_D = 0$): Gibt es eine bleibende Regelabweichung?
-- Aktivieren Sie den I-Anteil ($K_I > 0$): Was ändert sich?
+- Starten Sie mit reinem P-Regler (`Ki=0`, `Kd=0`): Gibt es eine bleibende Regelabweichung?
+- Aktivieren Sie den I-Anteil (`Ki > 0`): Was ändert sich?
 - Was passiert, wenn Sie den D-Anteil stark erhöhen?
 
 
